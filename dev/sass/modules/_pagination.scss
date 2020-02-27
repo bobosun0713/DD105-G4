@@ -1,0 +1,44 @@
+.pagination{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    // border: 1px solid red ;
+
+    .pageBtn{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid white;
+        font-weight: 700;
+        font-size: 18px;
+
+        .toLeft{
+            position: relative;
+            left: -5px;
+            top: 1px;
+        }
+
+        .toRight{
+            position: relative;
+            right: -5px;
+            top: 1px;
+        }
+    }
+
+    p{
+        width: 15px;
+        opacity: .6;
+        text-align: center;
+        // border: 1px solid blue;
+    
+    }
+
+    .PageSelected{
+        opacity: 1;
+        border-bottom: 1px solid white;
+        
+    }
+}
