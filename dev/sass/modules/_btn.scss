@@ -1,0 +1,66 @@
+//共用屬性
+.btn {
+    transition: all 0.3s ease 0s !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    position: relative;
+    @include rect(180px ,42px);
+    padding: 10px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+//第一組
+.btn-default {
+    background-color: $btn-bgc ;
+    border-color: $border-default;
+    color: $text-color;
+    border-radius: 20px;
+
+    &:hover {
+        background-color: darken($btn-bgc, 10%) ;
+        border-color: darken($border-default, 5%);
+        color: $text-color;
+    }
+
+    &:active, &.active, &.active:focus, &:active:focus, &:active:hover {
+        background-color: darken($btn-bgc, 10%);
+        border-color: lighten($border-default, 5%);
+        color: darken($text-color,20%);
+    }
+
+    &:focus {
+        background-color: darken($btn-bgc, 10%);
+        border-color: darken($border-default, 5%);
+        color: darken($text-color,20%);
+    }
+}
+
+//第二組
+.btn-outline {
+    border: 1px solid $white;
+    color: $white;
+    border-radius: 20px;
+
+    &:hover {
+        background-color: $white;
+        border-color: $white;
+        color: $black;
+    }
+
+    &:active, &.active, &.active:focus, &:active:focus, &:active:hover {
+        background-color: darken($btn-bgc, 10%);
+        border-color: lighten($border-default, 5%);
+        color: darken($text-color,20%);
+    }
+
+    &:focus {
+        background-color: darken($btn-bgc, 10%);
+        border-color: darken($border-default, 5%);
+        color: darken($text-color,20%);
+    }
+}

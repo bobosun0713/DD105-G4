@@ -1,0 +1,41 @@
+//header style basic  setting
+
+// 通用字體設置
+$font_basic : 'Open Sans',sans-serif;
+$font_lato : 'Lato',sans-serif;
+$font_shansan : 'source-han-sans-traditional',sans-serif;
+
+
+
+//是否使用google 字體  true 使用 下一個變數是網址
+$googlefont : false, '//fonts.googleapis.com/earlyaccess/cwtexming.css';
+
+//基本字級大小
+
+$body: (
+  font-family: $font_basic,
+  line-height: 1.5,
+  font-weight: 400,
+  font-size: 14px,
+  color: #fff,
+  letter-spacing: 0.01rem,
+  word-spacing: 2px,
+  background-color: rgb(36, 36, 36));
+
+//layout
+//是否使用套件
+//hover 套件 https://ianlunn.github.io/Hover/
+@import './node_modules/hover.css/scss/hover.scss';
+
+
+
+
+
+//  breakpoint 斷點
+$breakpoint: (
+  medium: 992px, // 992px以下是平板
+  small: 768px, //768以下是手機
+  extra_small: 576px //576以下是超小手機
+
+
+);

@@ -1,0 +1,25 @@
+//共用的header
+header {
+    width: 1300px;
+    background-color: rgb(247, 1, 1);
+ }
+
+
+
+//平板
+@include respond(medium){
+header {
+    width: 600px;
+    background-color: rgb(247, 1, 1);
+ }
+}
+
+
+//手機版
+@include respond(small){
+    header {
+        width: 200px;
+        background-color: rgb(247, 1, 1);
+     }
+
+}

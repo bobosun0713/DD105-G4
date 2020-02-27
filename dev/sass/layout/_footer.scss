@@ -1,0 +1,24 @@
+//共用的header
+footer {
+    width: 1300px;
+    background-color: #3bfc00;
+ }
+
+
+ //平板
+@include respond(medium){
+    footer {
+        width: 600px;
+        background-color: #3bfc00;
+     }
+    }
+    
+    
+    //手機版
+    @include respond(small){
+        footer {
+            width: 200px;
+            background-color: #3bfc00;
+         }
+    
+    }

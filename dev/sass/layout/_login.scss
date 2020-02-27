@@ -1,0 +1,24 @@
+.login {
+    @include rect(300px,200px);
+    background-color: #37cffd;
+ }
+
+
+
+//平板
+@include respond(medium){
+    .login {
+        @include rect(100%,150px);
+        background-color: #37cffd;
+     }
+}
+
+
+//手機版
+@include respond(small){
+    .login {
+        @include rect(100%,100px);
+        background-color: #37cffd;
+     }
+
+}

@@ -1,0 +1,69 @@
+
+
+
+//主狀態色系
+
+$primary: #fc0004;
+$lightPrimary: lighten($primary, 10%);
+$darkPrimary: darken($primary, 10%);
+$success: #5cb85c;
+$info: #46b8da;
+$warning: #eea236;
+$danger: #d43f3a;
+$white : #fff;
+$black : #000;
+
+
+//body  主要顏色
+$main-background: #151515;
+$main-text-color: #fff; 
+
+
+// header的顏色
+$header-background: #1C2B36;
+$headerBorder-color: transparent;
+$headerText-color: $white;
+$headerElements-color: $white;
+
+// 手機版導覽列顏色
+
+$menuMobile-color: darken($header-background, 15%);
+$menuMobileBorder-color: darken($header-background, 20%);
+
+
+//主要導覽列的顏色
+$nav-background: #1C2B36;
+$navText-color: #a7b1c2;
+$navTextHover-color: $white;
+$navTextActive-color: $white;
+$navActive-color: #7266BA;
+$navHover-color: #15232D;
+
+
+
+//按鈕的顏色
+$btn-bgc : $primary;
+$border-default : $primary;
+$text-color : $white;
+
+
+
+//側邊欄的顏色
+$sidebar-background: #1C2B36;
+$sidebarText-color: $white;
+$sidebarBorder-color: transparent;
+$sidebarBorder-width: 0;
+
+
+//其他的顏色
+$loadingbar-color: #7266BA;
+$selection-background: $primary;
+$selection-color: $white;
+
+// 黑跟灰的漸層
+
+@for $i from 0 through 10 {
+   .gray-#{$i*10} {
+        background-color: darken(#fff , $i *10%);
+    }
+}

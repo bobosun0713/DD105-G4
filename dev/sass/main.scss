@@ -1,0 +1,126 @@
+//=====================
+//基本設定
+//=====================
+
+//=================
+// reset setting
+//=================
+@import "base/reset";
+
+
+//=================
+//mixins 
+//=================
+@import "mixin/mixins";
+
+
+//=================
+// color 變數
+//=================
+@import "base/color";
+
+
+//=================
+// base setting
+//=================
+@import "base/setting";
+
+
+
+
+//=================
+// font setting
+//=================
+@import "base/font";
+
+//=================
+// modules 
+//=================
+
+@import "modules/btn";
+
+
+
+//=================
+// layout setting
+//=================
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/login";
+
+
+
+//=================
+// RWD setting
+//=================
+
+@import "respond/desktop";
+@import "respond/medium";
+@import "respond/small";
+
+
+@import "base/common";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=================
+// libary setting
+//=================
+
+
+
+//=================
+// modules 模組 每個專案都會累積不同的
+// 要詳細寫說明
+//=================
+
+
+
+//=================
+//pages
+//=================
+
+
+
+
+
+
+
+
+

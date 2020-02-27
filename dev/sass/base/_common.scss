@@ -1,0 +1,19 @@
+//常用的
+.container {
+    width: 1200px;
+    @include margin-auto();
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.float_right {
+    float: right;
+}
+
+.float_left {
+    float: left;
+}
+
+//........共用的設定  可以放在這裡
