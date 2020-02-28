@@ -1,555 +1,552 @@
-#section1 {
-    border: 1px solid red;
-    margin: 0px auto;
-    // margin-top: 150px;
-    width: 100%;
-    height: 580px;
-    display: inline-flex;
-    justify-content: center;
+#ghostIslandSection1 {
+  border: 1px solid red;
+  margin: 0px auto;
+  // margin-top: 150px;
+  width: 100%;
+  height: 580px;
+  display: inline-flex;
+  justify-content: center;
+  box-sizing: border-box;
+
+  //select bt
+  #areaList {
+    // border: 1px solid blue;
+    width: 200px;
+    height: 300px;
+    margin: 50px;
+  }
+
+  #mapArea {
+    // border: 1px solid green;
+    // background: #502c2c;
+    width: 800px;
+    height: 500px;
+    // float: right;
+    margin: 50px 0;
     box-sizing: border-box;
-  
-    //select bt
-    #areaList {
-      // border: 1px solid blue;
-      width: 200px;
-      height: 300px;
-      margin: 50px;
-  
-      
-    }
-  
-    #mapArea {
-      // border: 1px solid green;
-      // background: #502c2c;
+    position: relative;
+
+    #twMap {
       width: 800px;
-      height: 500px;
-      // float: right;
-      margin: 50px 0;
-      box-sizing: border-box;
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
       position: relative;
-  
-      #twMap {
-        width: 800px;
-        position: absolute;
-        right: 0px;
-        bottom: 0px;
-        position: relative;
-  
-        img {
-          // border: 1px solid green;
-          width: 100%;
-          margin: 0 auto;
-        }
-  
-        .twMapWidth {
-          width: 30%;
-          height: 100%;
-          // border: 1px solid green;
-          position: absolute;
-        }
-  
-        #twMap01 {
-          top: 0px;
-          left: 0%;
-  
-          //1
-          #loc1 {
-            position: absolute;
-            top: 100px;
-            left: 70px;
-            transition: all 0.3s linear;
-  
-            &:hover + #spell1 {
-              opacity: 1;
-            }
-          }
-  
-          #spell1 {
-            position: absolute;
-            top: 110px;
-            left: 40px;
-          }
-  
-          //2
-          #loc2 {
-            position: absolute;
-            top: 80px;
-            left: 120px;
-            transition: all 0.3s linear;
-  
-            &:hover + #spell2 {
-              opacity: 1;
-            }
-          }
-  
-          #spell2 {
-            position: absolute;
-            top: 90px;
-            left: 90px;
-          }
-  
-          //3
-          #loc3 {
-            position: absolute;
-            top: 150px;
-            left: 70px;
-            transition: all 0.3s linear;
-  
-            &:hover + #spell3 {
-              opacity: 1;
-            }
-          }
-  
-          #spell3 {
-            position: absolute;
-            top: 160px;
-            left: 40px;
-          }
-  
-          #loc4 {
-            position: absolute;
-            top: 230px;
-            left: 150px;
-            transition: all 0.3s linear;
-  
-            &:hover + #spell4 {
-              opacity: 1;
-            }
-          }
-  
-          #spell4 {
-            position: absolute;
-            top: 240px;
-            left: 110px;
-          }
-  
-          //5
-          #loc5 {
-            position: absolute;
-            top: 130px;
-            left: 120px;
-            transition: all 0.3s linear;
-  
-            &:hover + #spell5 {
-              opacity: 1;
-            }
-          }
-  
-          #spell5 {
-            position: absolute;
-            top: 140px;
-            left: 80px;
-          }
-        }
+
+      img {
+        // border: 1px solid green;
+        width: 100%;
+        margin: 0 auto;
       }
-  
-      #twMap02 {
+
+      .twMapWidth {
+        width: 30%;
+        height: 100%;
+        // border: 1px solid green;
+        position: absolute;
+      }
+
+      #twMap01 {
         top: 0px;
-        left: 30%;
-  
-        #loc6 {
+        left: 0%;
+
+        //1
+        #loc1 {
           position: absolute;
-          bottom: 100px;
+          top: 100px;
           left: 70px;
           transition: all 0.3s linear;
-          &:hover + #spell6 {
+
+          &:hover + #spell1 {
             opacity: 1;
           }
         }
-        #spell6 {
+
+        #spell1 {
           position: absolute;
-          bottom: -70px;
+          top: 110px;
           left: 40px;
         }
-  
-        #loc7 {
+
+        //2
+        #loc2 {
           position: absolute;
-          bottom: 60px;
+          top: 80px;
+          left: 120px;
+          transition: all 0.3s linear;
+
+          &:hover + #spell2 {
+            opacity: 1;
+          }
+        }
+
+        #spell2 {
+          position: absolute;
+          top: 90px;
+          left: 90px;
+        }
+
+        //3
+        #loc3 {
+          position: absolute;
+          top: 150px;
+          left: 70px;
+          transition: all 0.3s linear;
+
+          &:hover + #spell3 {
+            opacity: 1;
+          }
+        }
+
+        #spell3 {
+          position: absolute;
+          top: 160px;
+          left: 40px;
+        }
+
+        #loc4 {
+          position: absolute;
+          top: 230px;
           left: 150px;
           transition: all 0.3s linear;
-          &:hover + #spell7 {
+
+          &:hover + #spell4 {
             opacity: 1;
           }
         }
-        #spell7 {
+
+        #spell4 {
           position: absolute;
-          bottom: -110px;
+          top: 240px;
+          left: 110px;
+        }
+
+        //5
+        #loc5 {
+          position: absolute;
+          top: 130px;
           left: 120px;
-        }
-  
-        #loc8 {
-          position: absolute;
-          bottom: 200px;
-          left: 50px;
           transition: all 0.3s linear;
-          &:hover + #spell8 {
+
+          &:hover + #spell5 {
             opacity: 1;
           }
         }
-        #spell8 {
+
+        #spell5 {
           position: absolute;
-          bottom: 30px;
-          left: 20px;
-        }
-  
-        #loc9 {
-          position: absolute;
-          bottom: 140px;
-          left: 190px;
-          transition: all 0.3s linear;
-          &:hover + #spell9 {
-            opacity: 1;
-          }
-        }
-        #spell9 {
-          position: absolute;
-          bottom: -30px;
-          left: 160px;
-        }
-  
-        #loc10 {
-          position: absolute;
-          bottom: 120px;
-          left: 100px;
-          transition: all 0.3s linear;
-          &:hover + #spell10 {
-            opacity: 1;
-          }
-        }
-        #spell10 {
-          position: absolute;
-          bottom: -50px;
-          left: 70px;
+          top: 140px;
+          left: 80px;
         }
       }
-  
-      #twMap03 {
-        top: 0px;
-        left: 60%;
-  
-        #loc11 {
-          position: absolute;
-          bottom: 70px;
-          left: 70px;
-          transition: all 0.3s linear;
-          &:hover + #spell11 {
-            opacity: 1;
-          }
-        }
-        #spell11 {
-          position: absolute;
-          bottom: -100px;
-          left: 40px;
-        }
-  
-        #loc12 {
-          position: absolute;
-          bottom: 60px;
-          left: 40px;
-          transition: all 0.3s linear;
-          &:hover + #spell12 {
-            opacity: 1;
-          }
-        }
-        #spell12 {
-          position: absolute;
-          bottom: -110px;
-          left: 0px;
-        }
-  
-        #loc13 {
-          position: absolute;
-          bottom: 200px;
-          left: 50px;
-          transition: all 0.3s linear;
-          &:hover + #spell13 {
-            opacity: 1;
-          }
-        }
-        #spell13 {
-          position: absolute;
-          bottom: 30px;
-          left: 20px;
-        }
-  
-        #loc14 {
-          position: absolute;
-          bottom: 170px;
-          left: 190px;
-          transition: all 0.3s linear;
-          &:hover + #spell14 {
-            opacity: 1;
-          }
-        }
-        #spell14 {
-          position: absolute;
-          bottom: 0px;
-          left: 160px;
-        }
-  
-        #loc15 {
-          position: absolute;
-          bottom: 120px;
-          left: 100px;
-          transition: all 0.3s linear;
-          &:hover + #spell15 {
-            opacity: 1;
-          }
-        }
-        #spell15 {
-          position: absolute;
-          bottom: -50px;
-          left: 70px;
-        }
-      }
-  
-      .location {
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background: red;
-        opacity: 0.6;
-        border-style: double;
-        box-shadow: 0px 0px 12px 4px rgb(255, 57, 57);
-        cursor: pointer;
-        transition: opacity 0.3s linear;
-  
-        &:hover {
+    }
+
+    #twMap02 {
+      top: 0px;
+      left: 30%;
+
+      #loc6 {
+        position: absolute;
+        bottom: 100px;
+        left: 70px;
+        transition: all 0.3s linear;
+        &:hover + #spell6 {
           opacity: 1;
         }
       }
-  
-      .spellSize {
-        width: 70px !important;
-        opacity: 0;
-        pointer-events: none;
+      #spell6 {
+        position: absolute;
+        bottom: -70px;
+        left: 40px;
+      }
+
+      #loc7 {
+        position: absolute;
+        bottom: 60px;
+        left: 150px;
         transition: all 0.3s linear;
-        transform-origin: top;
-        animation: swingSpell 2s ease-in-out infinite;
-      }
-      @keyframes swingSpell {
-        0% {
-          transform: rotate3d(1, -0.5, 0, -30deg);
-        }
-        50% {
-          transform: rotate3d(1, -0.5, 0, -20deg);
-        }
-        100% {
-          transform: rotate3d(1, -0.5, 0, -30deg);
+        &:hover + #spell7 {
+          opacity: 1;
         }
       }
-  
-      .locationWrap {
-        width: 100%;
-        height: 100%;
-        // border: 1px solid green;
+      #spell7 {
+        position: absolute;
+        bottom: -110px;
+        left: 120px;
+      }
+
+      #loc8 {
+        position: absolute;
+        bottom: 200px;
+        left: 50px;
+        transition: all 0.3s linear;
+        &:hover + #spell8 {
+          opacity: 1;
+        }
+      }
+      #spell8 {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+      }
+
+      #loc9 {
+        position: absolute;
+        bottom: 140px;
+        left: 190px;
+        transition: all 0.3s linear;
+        &:hover + #spell9 {
+          opacity: 1;
+        }
+      }
+      #spell9 {
+        position: absolute;
+        bottom: -30px;
+        left: 160px;
+      }
+
+      #loc10 {
+        position: absolute;
+        bottom: 120px;
+        left: 100px;
+        transition: all 0.3s linear;
+        &:hover + #spell10 {
+          opacity: 1;
+        }
+      }
+      #spell10 {
+        position: absolute;
+        bottom: -50px;
+        left: 70px;
       }
     }
-  
-    #bigG {
-      width: 300px;
-      position: absolute;
-      right: 80px;
-      bottom: 280px;
-      transform: rotate(5deg);
-  
-      img {
-        // border: 1px solid green;
-        width: 100%;
+
+    #twMap03 {
+      top: 0px;
+      left: 60%;
+
+      #loc11 {
+        position: absolute;
+        bottom: 70px;
+        left: 70px;
+        transition: all 0.3s linear;
+        &:hover + #spell11 {
+          opacity: 1;
+        }
+      }
+      #spell11 {
+        position: absolute;
+        bottom: -100px;
+        left: 40px;
+      }
+
+      #loc12 {
+        position: absolute;
+        bottom: 60px;
+        left: 40px;
+        transition: all 0.3s linear;
+        &:hover + #spell12 {
+          opacity: 1;
+        }
+      }
+      #spell12 {
+        position: absolute;
+        bottom: -110px;
+        left: 0px;
+      }
+
+      #loc13 {
+        position: absolute;
+        bottom: 200px;
+        left: 50px;
+        transition: all 0.3s linear;
+        &:hover + #spell13 {
+          opacity: 1;
+        }
+      }
+      #spell13 {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+      }
+
+      #loc14 {
+        position: absolute;
+        bottom: 170px;
+        left: 190px;
+        transition: all 0.3s linear;
+        &:hover + #spell14 {
+          opacity: 1;
+        }
+      }
+      #spell14 {
+        position: absolute;
+        bottom: 0px;
+        left: 160px;
+      }
+
+      #loc15 {
+        position: absolute;
+        bottom: 120px;
+        left: 100px;
+        transition: all 0.3s linear;
+        &:hover + #spell15 {
+          opacity: 1;
+        }
+      }
+      #spell15 {
+        position: absolute;
+        bottom: -50px;
+        left: 70px;
       }
     }
-  
-    #G1_L {
-      width: 150px;
-      position: absolute;
-      right: 300px;
-      top: 65px;
+
+    .location {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: red;
+      opacity: 0.6;
+      border-style: double;
+      box-shadow: 0px 0px 12px 4px rgb(255, 57, 57);
+      cursor: pointer;
+      transition: opacity 0.3s linear;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .spellSize {
+      width: 70px !important;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s linear;
       transform-origin: top;
-      animation: L_swing 3s linear infinite;
-  
-      img {
-        // border: 1px solid green;
-        width: 100%;
-      }
+      animation: swingSpell 2s ease-in-out infinite;
     }
-    @keyframes L_swing {
+    @keyframes swingSpell {
       0% {
-        transform: rotate(0deg);
-        filter: brightness(1);
-      }
-      25% {
-        transform: rotate(-12deg);
-        filter: brightness(0.8);
+        transform: rotate3d(1, -0.5, 0, -30deg);
       }
       50% {
-        transform: rotate(0deg);
-        filter: brightness(1);
-      }
-      75% {
-        transform: rotate(15deg);
-        filter: brightness(0.6);
+        transform: rotate3d(1, -0.5, 0, -20deg);
       }
       100% {
-        transform: rotate(0deg);
-        filter: brightness(1);
+        transform: rotate3d(1, -0.5, 0, -30deg);
       }
     }
-  
-    #ship {
-      width: 100px;
-      opacity: 0.7;
-      position: absolute;
-      left: -50px;
-      bottom: 65px;
-      animation: floatShip 2s linear infinite;
-  
-      img {
-        width: 100%;
-      }
-    }
-    @keyframes floatShip {
-      0% {
-        transform: rotate(0deg) translateY(0px);
-      }
-      33% {
-        transform: rotate(-5deg) translateY(3px);
-      }
-      66% {
-        transform: rotate(5deg) translateY(-3px);
-      }
-      100% {
-        transform: rotate(0deg) translateY(0px);
-      }
-    }
-  
-    //海浪
-    .loader {
-      width: 100px;
-      height: 20px;
-      color: rgba(#000000, 0);
-      opacity: 0.6;
-      overflow: hidden;
-      position: absolute;
-  
-      &:before {
-        content: attr(data-text);
-        position: relative;
-        top: -30px;
-        font-size: 2em;
-        text-decoration-style: wavy;
-        text-decoration-color: whitesmoke;
-        text-decoration-line: underline;
-        animation: wavy 1.5s linear infinite;
-      }
-    }
-    @keyframes wavy {
-      0% {
-        left: 0;
-      }
-      100% {
-        left: -30px;
-      }
-    }
-  
-    .loader1 {
-      bottom: 65px;
-      left: -45px;
-    }
-  
-    .loader2 {
-      top: -50px;
-      left: 200px;
-    }
-  
-    .loader3 {
-      bottom: 0px;
-      right: 200px;
-    }
-  
-    .loader4 {
-      width: 60px !important;
-      top: 0px;
-      right: 0px;
-    }
-  
-    .loader5 {
-      width: 60px !important;
-      bottom: 120px;
-      right: 40px;
-    }
-  
-    .route1 {
-      width: 450px;
-      position: absolute;
-      left: -200px;
-      bottom: -40px;
-  
-      img {
-        width: 100%;
-      }
+
+    .locationWrap {
+      width: 100%;
+      height: 100%;
+      // border: 1px solid green;
     }
   }
-  
-  #section2 {
-    // height: 2000px;
-    background-image: url("../img/map/map_BG.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    // background-attachment: local;
-    // border: 1px solid red;
-  
-    position: relative;
-  
-    display: flex;
-    justify-content: center;
-  
-    .cardContain {
-      // border: 1px solid blue;
-      max-width: 1200px;
-      // margin: 0 auto;
-      display: inline-flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: flex-start;
-      align-content: flex-start;
-      // overflow: hidden;
-  
-  
-      #Ghost2 {
-        width: 240px;
-        position: absolute;
-        left: -70px;
-        top: 300px;
-        // filter: brightness(.9);
-  
-        img {
-          width: 100%;
-        }
-      }
-  
-      #Ghost3 {
-        width: 200px;
-        position: absolute;
-        right: 0px;
-        bottom: -270px;
-  
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
-  
-  .route2 {
-    width: 700px;
-    margin: 0 auto;
-    // border: 1px solid blue;
-    position: relative;
-    height: 250px;
-  
+
+  #bigG {
+    width: 300px;
+    position: absolute;
+    right: 80px;
+    bottom: 280px;
+    transform: rotate(5deg);
+
     img {
-      width: 105%;
-      position: absolute;
-      transform: rotate(-3deg);
+      // border: 1px solid green;
+      width: 100%;
     }
   }
+
+  #G1_L {
+    width: 150px;
+    position: absolute;
+    right: 300px;
+    top: 65px;
+    transform-origin: top;
+    animation: L_swing 3s linear infinite;
+
+    img {
+      // border: 1px solid green;
+      width: 100%;
+    }
+  }
+  @keyframes L_swing {
+    0% {
+      transform: rotate(0deg);
+      filter: brightness(1);
+    }
+    25% {
+      transform: rotate(-12deg);
+      filter: brightness(0.8);
+    }
+    50% {
+      transform: rotate(0deg);
+      filter: brightness(1);
+    }
+    75% {
+      transform: rotate(15deg);
+      filter: brightness(0.6);
+    }
+    100% {
+      transform: rotate(0deg);
+      filter: brightness(1);
+    }
+  }
+
+  #ship {
+    width: 100px;
+    opacity: 0.7;
+    position: absolute;
+    left: -50px;
+    bottom: 65px;
+    animation: floatShip 2s linear infinite;
+
+    img {
+      width: 100%;
+    }
+  }
+  @keyframes floatShip {
+    0% {
+      transform: rotate(0deg) translateY(0px);
+    }
+    33% {
+      transform: rotate(-5deg) translateY(3px);
+    }
+    66% {
+      transform: rotate(5deg) translateY(-3px);
+    }
+    100% {
+      transform: rotate(0deg) translateY(0px);
+    }
+  }
+
+  //海浪
+  .loader {
+    width: 100px;
+    height: 20px;
+    color: rgba(#000000, 0);
+    opacity: 0.6;
+    overflow: hidden;
+    position: absolute;
+
+    &:before {
+      content: attr(data-text);
+      position: relative;
+      top: -30px;
+      font-size: 2em;
+      text-decoration-style: wavy;
+      text-decoration-color: whitesmoke;
+      text-decoration-line: underline;
+      animation: wavy 1.5s linear infinite;
+    }
+  }
+  @keyframes wavy {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -30px;
+    }
+  }
+
+  .loader1 {
+    bottom: 65px;
+    left: -45px;
+  }
+
+  .loader2 {
+    top: -50px;
+    left: 200px;
+  }
+
+  .loader3 {
+    bottom: 0px;
+    right: 200px;
+  }
+
+  .loader4 {
+    width: 60px !important;
+    top: 0px;
+    right: 0px;
+  }
+
+  .loader5 {
+    width: 60px !important;
+    bottom: 120px;
+    right: 40px;
+  }
+
+  .route1 {
+    width: 450px;
+    position: absolute;
+    left: -200px;
+    bottom: -40px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#ghostIslandSection2 {
+  // height: 2000px;
+  background-image: url("../img/map/map_BG.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  // background-attachment: local;
+  // border: 1px solid red;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  .cardContain {
+    // border: 1px solid blue;
+    max-width: 1200px;
+    // margin: 0 auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    // overflow: hidden;
+
+    #Ghost2 {
+      width: 240px;
+      position: absolute;
+      left: -70px;
+      top: 300px;
+      // filter: brightness(.9);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    #Ghost3 {
+      width: 200px;
+      position: absolute;
+      right: 0px;
+      bottom: -270px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.route2 {
+  width: 700px;
+  margin: 0 auto;
+  // border: 1px solid blue;
+  position: relative;
+  height: 250px;
+
+  img {
+    width: 105%;
+    position: absolute;
+    transform: rotate(-3deg);
+  }
+}

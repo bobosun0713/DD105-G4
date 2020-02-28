@@ -44,7 +44,8 @@
 .btn-outline {
     border: 1px solid $white;
     color: $white;
-    border-radius: 20px;
+    border-radius: 100px;
+    cursor: pointer;
 
     &:hover {
         background-color: $white;

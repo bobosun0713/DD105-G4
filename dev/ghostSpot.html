@@ -1,40 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     @@include('layout/head.html')
     <title>前進鬼島-新莊廢棄醫院</title>
 </head>
+
 <body>
-    <div class=".wrapper">
-        @@include('layout/header.html')
+    <div class="wrapper">
 
-        <section id="section1">
-            <div class="breadcrumb">
-                <ul>
-                    <li>首頁</li>
-                    <li>前進鬼島</li>
-                    <li>新莊廢棄醫院</li>
-                </ul>
-            </div>
-            <div class="spotIntro">
-                <div class="picZone">
-                    <div class="bigPic">
-                        <img src="./img/spot/spot1/SP_big_1.png">
-                    </div>
-                    <div class="">
-                        
-                    </div>
 
+        <div id="ghostSpotBG">
+            @@include('layout/header.html')
+
+            <section id="ghostSpotSection1" class="section1">
+
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="">首頁</a></li>
+                        <li><a href="">前進鬼島</a></li>
+                        <li><a href="">新莊廢棄醫院</a></li>
+                    </ul>
                 </div>
 
-            </div>
-            <div>
+                <div class="spotIntro">
 
-            </div>
-        </section>
+                    <div class="picZone">
+                        <div class="bigPic">
+                            <img src="./img/spot/spot1/SP_big_1.png">
+                        </div>
+                        <div class="photobook">
+                            <h2>
+                                <img src="./img/icon/camera.png">
+                                靈異相簿
+                            </h2>
+                            <div class="smallPicZone">
+                                <img src="./img/spot/spot1/SP_small_1.png" class="smallPic selected">
+                                <img src="./img/spot/spot1/SP_small_2.png" class="smallPic">
+                                <img src="./img/spot/spot1/SP_small_3.png" class="smallPic">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="txtZone">
+                        <h1>【新莊廢棄醫院】</h1>
+                        <div class="introTxt">
+                            <h3>令人毛骨悚然的郊區醫院</h3>
+                            <p>
+                                日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到手術台、診療台，甚連夜晚的手術室與大體室都還健在，驚悚指數超高！
+                            </p>
+                        </div>
+
+                        <div class="spotInform">
+                            <ul>
+                                <li>
+                                    <img src="./img/icon/location.png">
+                                    新北市新莊區雙鳳里及桃園市龜山區迴龍里
+                                </li>
+                                <li>
+                                    <img src="./img/icon/pulse.png">
+                                    膽量指數：<span> 8.5</span> /10
+                                </li>
+                                <li>
+                                    <img src="./img/icon/vote-03.png">
+                                    靈異票選 204 票
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="spotInform">
+                            <p class="btn-outline">
+                                投給【新莊廢棄醫院】
+                            </p>
+                        </div>
+
+                        <div class="spiderweb">
+                            <img src="./img/spot/spiderweb.png" >
+                        </div>
+                    </div>
+
+                    
+                    
+
+                </div>
+                <div>
+
+                </div>
+            </section>
+
+        </div>
+
+
 
         @@include('layout/footer.html')
     </div>
-    
+
 </body>
+
 </html>
