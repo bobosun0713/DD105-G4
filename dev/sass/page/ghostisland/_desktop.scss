@@ -15,54 +15,7 @@
       height: 300px;
       margin: 50px;
   
-      .checkBT {
-        margin-bottom: 50px;
-        position: relative;
-        top: 60px;
-      }
-  
-      input[type="checkbox"] {
-        display: none;
-        margin: 20px;
-  
-        & + label {
-          border: 3px solid white;
-          border-radius: 100px;
-          padding: 10px 30px 10px 50px;
-          text-align: center;
-          color: white;
-          cursor: pointer;
-  
-          &:before {
-            display: inline-block;
-            content: "";
-            width: 30px;
-            height: 30px;
-            background-image: url("../img/component/checkbox/uncheck_box.png");
-            background-size: 100%;
-            background-repeat: no-repeat;
-  
-            position: absolute;
-            left: 15px;
-            bottom: -4px;
-          }
-        }
-  
-        &:checked + label {
-          background-color: red;
-          border: 3px solid red;
-  
-          &:before {
-            background-image: url("../img/component/checkbox/checked_box.png");
-            background-size: 110%;
-          }
-        }
-  
-        &:hover + label {
-          background-color: red;
-          border: 3px solid red;
-        }
-      }
+      
     }
   
     #mapArea {
