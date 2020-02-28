@@ -590,9 +590,13 @@
   .route2 {
     width: 700px;
     margin: 0 auto;
-    // position: absolute;
+    // border: 1px solid blue;
+    position: relative;
+    height: 250px;
   
     img {
-      width: 100%;
+      width: 105%;
+      position: absolute;
+      transform: rotate(-3deg);
     }
   }
