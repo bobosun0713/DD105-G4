@@ -14,10 +14,15 @@ header {
       border: 1px solid red;
       padding: 10px 0px;
       display: inline-flex;
-      width: 1200px;
+      width: 1000px;
       justify-content: flex-end;
       align-items: center;
       box-sizing: border-box;
+
+      p{
+        font-size: .6rem;
+        
+      }
   
       #soundStatus{
         display: inline-flex;
@@ -50,7 +55,7 @@ header {
           text-decoration: none;
           // border: 1px solid blue;
           margin: 0px 2px;
-          color: white;
+          color:#cccccc;
   
           img {
             width: 25px;

@@ -1,187 +1,251 @@
 #ghostSpotBG {
-  border: 1px solid blue;
+//   border: 1px solid blue;
   background-image: url("../img/spot/BG/spotBG.png");
   background-size: 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #ghostSpotSection1 {
-//   border: 1px solid red;
+  //   border: 1px solid red;
   width: 1000px;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 5px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
 
-
-  .breadcrumb {
-      padding: 5px;
-    ul {
-    //   border: 1px solid green;
-      display: inline-flex;
-
-      li {
-        // border: 1px solid green;
-        padding: 0px 2px;
-        opacity: .7;
-
-        a{
-            text-decoration: none;
-            color: white;
-            padding-left: 5px;
-        }
-
-        &:hover{
-            opacity: 1;
-        }
-
-        &:before {
-          content: "/";
-        }
-
-        &:first-child {
-          &:before {
-            content: "";
-          }
-        }
-      }
-    }
-  }
-
-  .spotIntro{
+  .spotIntro {
     // border: 1px solid red;
     padding: 20px;
     display: inline-flex;
     justify-content: space-around;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
 
-    .picZone{
-        width: 40%;
-        // border: 1px solid green;
+    #rank {
+      position: absolute;
+      right: -20px;
+      top: -80px;
+      opacity: 0.7;
 
-        .bigPic{
-            width: 100%;
+      p {
+        position: absolute;
+        right: 25px;
+        top: 45px;
+        transform: rotate(30deg);
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
 
-            img{
-                width: 100%;
-            }
-        }
-
-        .photobook{
-            width: 100%;
-            // border: 1px solid blue;
-            
-            h2{
-                font-size: 1.2rem;
-                margin: 5px 0;
-                opacity: .7;
-
-                img{
-                    width: 26px;
-                }
-            }
-
-            .smallPicZone{
-                // border: 1px solid greenyellow;
-                display: inline-flex;
-                justify-content: space-between;
-
-                img{
-                    width: 30%;
-                    box-sizing: border-box;
-                }
-
-                .selected{
-                    border: 5px solid #700000;
-                    border-radius: 2px;
-                }
-            }
-        }
-
+      img {
+        width: 150px;
+      }
     }
 
-    .txtZone{
-        // border: 1px solid green;
-        width: 55%;
-        position: relative;
+    .picZone {
+      width: 40%;
+      // border: 1px solid green;
 
-        h1{
-            font-size: 2rem;
+      .bigPic {
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .photobook {
+        width: 100%;
+        // border: 1px solid blue;
+
+        h2 {
+          font-size: 1.2rem;
+          margin: 5px 0;
+          opacity: 0.7;
+
+          img {
+            width: 26px;
+          }
         }
 
-        .introTxt{
-            // border: 1px solid greenyellow;
-            margin: 20px;
+        .smallPicZone {
+          // border: 1px solid greenyellow;
+          display: inline-flex;
+          justify-content: space-between;
 
-            h3{
-                font-size: 1.2rem;
-                color: #8c8a8a;
-                padding: 0px;
+          img {
+            width: 30%;
+            box-sizing: border-box;
+            filter: grayscale(1) blur(1px);
+            transition: filter 0.3s linear;
+            cursor: pointer;
+
+            &:hover {
+              filter: grayscale(0) blur(0);
+              
             }
+          }
 
-            p{
-                color: #8c8a8a;
-                margin: 5px;
-            }
+          .selected {
+            border: 3px solid #700000;
+            border-radius: 2px;
+            filter: grayscale(0) blur(0);
+          }
         }
-
-        .spotInform{
-            // border: 1px solid greenyellow;
-            margin: 20px 20px;
-
-            ul{
-                li{
-                    margin: 5px 0;
-                    color: #8c8a8a;
-                    // border: 1px solid red;
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    padding: auto 0;
-
-                    span{
-                        font-size: 2rem;
-                        font-weight: 800;
-                    }
-
-                    img{
-                        margin-right: 10px;
-                    }
-
-
-                    &:nth-child(2){
-                        color: white;
-                        text-shadow: 0 0 5px red;
-                    }
-                }
-            }
-        }
-
-        .btn-outline{
-            width: 90%;
-            margin: 0 auto;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-
-        .spiderweb{
-            width: 400px;
-            position: absolute;
-            top: 150px;
-            right: -150px;
-
-            img{
-                width: 100%;
-            }
-
-        }
+      }
     }
 
+    .txtZone {
+      // border: 1px solid green;
+      width: 55%;
+      position: relative;
 
+      h1 {
+        font-size: 2rem;
+      }
 
+      .introTxt {
+        // border: 1px solid greenyellow;
+        margin: 20px;
+
+        h3 {
+          font-size: 1.2rem;
+          color: #8c8a8a;
+          padding: 0px;
+        }
+
+        p {
+          color: #8c8a8a;
+          margin: 5px;
+        }
+      }
+
+      .spotInform {
+        // border: 1px solid greenyellow;
+        margin: 30px 20px;
+
+        ul {
+          li {
+            margin: 5px 0;
+            color: #8c8a8a;
+            // border: 1px solid red;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: auto 0;
+
+            span {
+              font-size: 2rem;
+              font-weight: 800;
+              // border: 1px solid greenyellow;
+            }
+
+            img {
+              margin-right: 10px;
+            }
+
+            &:nth-child(2) {
+              color: white;
+              text-shadow: 0 0 5px red;
+              align-items: baseline;
+            }
+          }
+        }
+      }
+
+      .btn-outline {
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .spiderweb {
+        width: 400px;
+        position: absolute;
+        top: 150px;
+        right: -150px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#ghostSpotSection2 {
+  padding: 50px 0;
+  //   height: 500px;
+
+  .titleZone {
+    border-bottom: 1px solid #cbcbcb;
+    width: 350px;
+    text-align: right;
+    padding: 20px 0;
+    position: relative;
+
+    h1 {
+      font-size: 2rem;
+      position: relative;
+      right: -20px;
+      color: #cbcbcb;
+    }
+
+    img{
+        width: 100%;
+        position: absolute;
+        bottom: -220px;
+        right: 0px;
+    }
   }
 
+  .cardContain {
+    margin: 30px auto;
+    padding: 20px 0;
+    width: 900px;
+    border: 1px solid greenyellow;
+    overflow: hidden;
+    
+    #cardDisplay{
+        width: 2000px;
 
+        .tourCard{
+            float: left;
+        }
+    }
+  }
+
+}
+
+#ghostSpotSection3 {
+  border: 1px solid darkcyan;
+  height: 500px;
+  width: 1000px;
+  margin: 10px auto;
+  padding: 50px;
+
+  nav {
+    display: inline-flex;
+
+    .tablink {
+      font-size: 1.2rem;
+      color: #cbcbcb;
+      padding: 5px 0;
+      margin-right: 20px;
+      cursor: pointer;
+
+      &:hover {
+        border-bottom: 1px solid;
+        color: #cbcbcb;
+      }
+    }
+
+    .selected {
+      border-bottom: 1px solid;
+      color: #cbcbcb;
+    }
+  }
 }

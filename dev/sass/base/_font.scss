@@ -1,6 +1,11 @@
 @include body-setting($body);
 @include fontFamily ($googlefont...);
 
+.title{
+    letter-spacing: 3px;
+    font-family: $googlefont;
+}
+
 
 
 

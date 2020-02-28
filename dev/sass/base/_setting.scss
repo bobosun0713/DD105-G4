@@ -8,7 +8,7 @@ $font_shansan : 'source-han-sans-traditional',sans-serif;
 
 
 //是否使用google 字體  true 使用 下一個變數是網址
-$googlefont : false, '//fonts.googleapis.com/earlyaccess/cwtexming.css';
+$googlefont : true, 'https://fonts.googleapis.com/css?family=Noto+Serif+TC:500,600,700&display=swap';
 
 //基本字級大小
 
@@ -18,7 +18,7 @@ $body: (
   font-weight: 400,
   font-size: 14px,
   color: #fff,
-  letter-spacing: 0.01rem,
+  letter-spacing: 0.05rem,
   word-spacing: 2px,
   background-color: rgb(36, 36, 36));
 
