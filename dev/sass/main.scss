@@ -66,6 +66,13 @@
 // 要詳細寫說明
 //=================
 
+
+// 引導頁= guide-page ssetting
+//=================
+@import "./page/guide-pages/desktop";
+@import "./page/guide-pages/medium";
+@import "./page/guide-pages/small";
+
 //=================
 //pages
 //=================
@@ -73,12 +80,6 @@
 @import './page/ghostSpot/desktop';
 
 //=================
-// 引導頁= guide-pagessetting
-//=================
-@import "./page/guide-pages/desktop";
-@import "./page/guide-pages/medium";
-@import "./page/guide-pages/small";
-
 //=================
 // 首頁= index setting
 //=================

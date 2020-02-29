@@ -92,7 +92,7 @@ gulp.task('default', function() {
     browserSync.init({
         server: {
             baseDir: './dest',
-            index: 'forum.html',
+            index: 'guide-pages.html',
         },
     })
     gulp.watch(web.html, ['fileinclude']).on('change', reload)

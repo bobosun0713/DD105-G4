@@ -5,12 +5,13 @@
 
 }
 
-body{
-    background-image: url(../img/guide-pages/Guide-pages.jpg);
+#Guide-page-img{
     width: auto;
     width: 100%;
+    background-image: url(../img/guide-pages/Guide-img.jpg);
+    background-color: black;
     background-repeat: no-repeat;
-}
+
 /* 幽靈  */
 #ghost{
     display: flex;
@@ -125,4 +126,4 @@ body{
 }
 
 
-
+}
