@@ -1,591 +1,591 @@
 #ghostSpotBG {
-  //   border: 1px solid blue;
-  background-image: url("../img/spot/BG/spotBG.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    //   border: 1px solid blue;
+    background-image: url('../img/spot/BG/spotBG.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #ghostSpotSection1 {
-  //   border: 1px solid red;
-  width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 5px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
-
-  .spotIntro {
-    // border: 1px solid red;
+    //   border: 1px solid red;
+    width: 1000px;
+    margin: 20px auto;
     padding: 20px;
-    display: inline-flex;
-    justify-content: space-around;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
 
-    #rank {
-      position: absolute;
-      right: -20px;
-      top: -80px;
-      opacity: 0.7;
-
-      p {
-        position: absolute;
-        right: 25px;
-        top: 45px;
-        transform: rotate(30deg);
-        font-size: 1.2rem;
-        font-weight: 800;
-      }
-
-      img {
-        width: 150px;
-      }
-    }
-
-    .picZone {
-      width: 40%;
-      // border: 1px solid green;
-
-      .bigPic {
+    .spotIntro {
+        // border: 1px solid red;
+        padding: 20px;
+        display: inline-flex;
+        justify-content: space-around;
         width: 100%;
+        box-sizing: border-box;
+        position: relative;
 
-        img {
-          width: 100%;
-        }
-      }
+        #rank {
+            position: absolute;
+            right: -20px;
+            top: -80px;
+            opacity: 0.7;
 
-      .photobook {
-        width: 100%;
-        // border: 1px solid blue;
-
-        h2 {
-          font-size: 1.2rem;
-          margin: 5px 0;
-          opacity: 0.7;
-
-          img {
-            width: 26px;
-          }
-        }
-
-        .smallPicZone {
-          // border: 1px solid greenyellow;
-          display: inline-flex;
-          justify-content: space-between;
-
-          img {
-            width: 30%;
-            box-sizing: border-box;
-            filter: grayscale(1) blur(1px);
-            transition: filter 0.3s linear;
-            cursor: pointer;
-
-            &:hover {
-              filter: grayscale(0) blur(0);
-            }
-          }
-
-          .selected {
-            border: 3px solid #700000;
-            border-radius: 2px;
-            filter: grayscale(0) blur(0);
-          }
-        }
-      }
-    }
-
-    .txtZone {
-      // border: 1px solid green;
-      width: 55%;
-      position: relative;
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .introTxt {
-        // border: 1px solid greenyellow;
-        margin: 20px;
-
-        h3 {
-          font-size: 1.2rem;
-          color: #8c8a8a;
-          padding: 0px;
-        }
-
-        p {
-          color: #8c8a8a;
-          margin: 5px;
-        }
-      }
-
-      .spotInform {
-        // border: 1px solid greenyellow;
-        margin: 30px 20px;
-
-        ul {
-          li {
-            margin: 5px 0;
-            color: #8c8a8a;
-            // border: 1px solid red;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            padding: auto 0;
-
-            span {
-              font-size: 2rem;
-              font-weight: 800;
-              // border: 1px solid greenyellow;
+            p {
+                position: absolute;
+                right: 25px;
+                top: 45px;
+                transform: rotate(30deg);
+                font-size: 1.2rem;
+                font-weight: 800;
             }
 
             img {
-              margin-right: 10px;
+                width: 150px;
+            }
+        }
+
+        .picZone {
+            width: 40%;
+            // border: 1px solid green;
+
+            .bigPic {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
             }
 
-            &:nth-child(2) {
-              color: white;
-              text-shadow: 0 0 5px red;
-              align-items: baseline;
+            .photobook {
+                width: 100%;
+                // border: 1px solid blue;
+
+                h2 {
+                    font-size: 1.2rem;
+                    margin: 5px 0;
+                    opacity: 0.7;
+
+                    img {
+                        width: 26px;
+                    }
+                }
+
+                .smallPicZone {
+                    // border: 1px solid greenyellow;
+                    display: inline-flex;
+                    justify-content: space-between;
+
+                    img {
+                        width: 30%;
+                        box-sizing: border-box;
+                        filter: grayscale(1) blur(1px);
+                        transition: filter 0.3s linear;
+                        cursor: pointer;
+
+                        &:hover {
+                            filter: grayscale(0) blur(0);
+                        }
+                    }
+
+                    .selected {
+                        border: 3px solid #700000;
+                        border-radius: 2px;
+                        filter: grayscale(0) blur(0);
+                    }
+                }
             }
-          }
         }
-      }
 
-      .btn-outline {
-        width: 90%;
-        margin: 0 auto;
-        padding: 10px 0;
-        text-align: center;
-        font-size: 1.1rem;
-      }
+        .txtZone {
+            // border: 1px solid green;
+            width: 55%;
+            position: relative;
 
-      .spiderweb {
-        width: 400px;
-        position: absolute;
-        top: 150px;
-        right: -150px;
+            h1 {
+                font-size: 2rem;
+            }
 
-        img {
-          width: 100%;
+            .introTxt {
+                // border: 1px solid greenyellow;
+                margin: 20px;
+
+                h3 {
+                    font-size: 1.2rem;
+                    color: #8c8a8a;
+                    padding: 0px;
+                }
+
+                p {
+                    color: #8c8a8a;
+                    margin: 5px;
+                }
+            }
+
+            .spotInform {
+                // border: 1px solid greenyellow;
+                margin: 30px 20px;
+
+                ul {
+                    li {
+                        margin: 5px 0;
+                        color: #8c8a8a;
+                        // border: 1px solid red;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        padding: auto 0;
+
+                        span {
+                            font-size: 2rem;
+                            font-weight: 800;
+                            // border: 1px solid greenyellow;
+                        }
+
+                        img {
+                            margin-right: 10px;
+                        }
+
+                        &:nth-child(2) {
+                            color: white;
+                            text-shadow: 0 0 5px red;
+                            align-items: baseline;
+                        }
+                    }
+                }
+            }
+
+            .btn-outline {
+                width: 90%;
+                margin: 0 auto;
+                padding: 10px 0;
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .spiderweb {
+                width: 400px;
+                position: absolute;
+                top: 150px;
+                right: -150px;
+
+                img {
+                    width: 100%;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 #ghostSpotSection2 {
-  padding: 50px 0;
-  //   height: 500px;
+    padding: 50px 0;
+    //   height: 500px;
 
-  .titleZone {
-    border-bottom: 1px solid #cbcbcb;
-    width: 350px;
-    text-align: right;
-    padding: 20px 0;
-    position: relative;
+    .titleZone {
+        border-bottom: 1px solid #cbcbcb;
+        width: 350px;
+        text-align: right;
+        padding: 20px 0;
+        position: relative;
 
-    h1 {
-      font-size: 2rem;
-      position: relative;
-      right: -20px;
-      color: #cbcbcb;
+        h1 {
+            font-size: 2rem;
+            position: relative;
+            right: -20px;
+            color: #cbcbcb;
+        }
+
+        img {
+            width: 100%;
+            position: absolute;
+            bottom: -220px;
+            right: 0px;
+        }
     }
 
-    img {
-      width: 100%;
-      position: absolute;
-      bottom: -220px;
-      right: 0px;
+    .cardContain {
+        margin: 30px auto;
+        padding: 20px 0;
+        width: 900px;
+        border: 1px solid greenyellow;
+        overflow: hidden;
+
+        #cardDisplay {
+            width: 2000px;
+
+            .tourCard {
+                float: left;
+            }
+        }
     }
-  }
-
-  .cardContain {
-    margin: 30px auto;
-    padding: 20px 0;
-    width: 900px;
-    border: 1px solid greenyellow;
-    overflow: hidden;
-
-    #cardDisplay {
-      width: 2000px;
-
-      .tourCard {
-        float: left;
-      }
-    }
-  }
 }
 
 #ghostSpotSection3 {
-  //   border: 1px solid darkcyan;
-  width: 1000px;
-  margin: 10px auto;
-  padding: 50px;
+    //   border: 1px solid darkcyan;
+    width: 1000px;
+    margin: 10px auto;
+    padding: 50px;
 
-  nav {
-    display: inline-flex;
-
-    .tablink {
-      font-size: 1.2rem;
-      color: #cbcbcb;
-      padding: 5px 0;
-      margin-right: 20px;
-      cursor: pointer;
-
-      &:hover {
-        border-bottom: 1px solid;
-        color: #cbcbcb;
-      }
-    }
-
-    .selected {
-      border-bottom: 1px solid;
-      color: #cbcbcb;
-    }
-  }
-
-  #tabPage1 {
-    #officalTour {
-      height: 800px;
-      // width: 1000px;
-      margin: auto;
-      padding: 50px 0px 0px 0px;
-      // border: 1px solid darkcyan;
-      background-image: url("../../../img/spot/shortPaper.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-
-      position: relative;
-
-      color: #3b3b3b;
-      text-align: center;
-      vertical-align: middle;
-
-      .newOffTour {
-        display: block;
-        width: 200px;
-        border: 2px solid #700000;
-        color: #700000;
-
-        font-size: 1.2rem;
-
-        float: right;
-        margin: 0px 80px 50px 0px;
-
-        &:hover {
-          background: #700000;
-          color: white;
-        }
-      }
-
-      .tourSpot {
-        width: 80%;
-        margin-bottom: 80px;
-        //   border: 1px solid darkcyan;
-
+    nav {
         display: inline-flex;
-        justify-content: space-between;
 
-        .tourImg {
-          width: 35%;
-
-          img {
-            width: 100%;
-          }
-        }
-
-        .tourSpotTxt {
-          text-align: left;
-          width: 55%;
-          // border: 1px solid red;
-
-          .spotTitle {
+        .tablink {
             font-size: 1.2rem;
-            color: #700000;
-          }
-
-          p {
-            margin-left: 10px;
-          }
-
-          .tourSpotInfo {
-            margin-top: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .btn-outline2 {
-              margin-right: 5px;
-            }
-          }
-        }
-      }
-
-      .tourStatus {
-        //   border: 1px solid red;
-        position: absolute;
-        top: 200px;
-        left: 370px;
-
-        ul {
-          li {
-            margin-bottom: 240px;
-          }
-
-          .statusCircle {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #8c8a8a;
-
-            .circle {
-              width: 28px;
-              height: 28px;
-              border-radius: 50%;
-              border: 1px solid #8c8a8a;
-              position: relative;
-              top: -4px;
-              right: 3.5px;
-            }
-
-            .line {
-              width: 1px;
-              height: 235px;
-              border: 2px dashed #8c8a8a;
-              position: relative;
-              top: -20px;
-              right: -9px;
-            }
-
-            .selected2 {
-              border: 1px solid #700000;
-            }
-          }
-
-          .selected {
-            background: #700000;
-          }
-        }
-      }
-    }
-
-    .myTourGuide {
-      // border: 1px solid goldenrod;
-      height: 200px;
-      padding-right: 100px;
-      position: relative;
-      // text-align: right;
-
-      .G1 {
-        // width: 300px;
-        margin: 0px 0px 0px 50px;
-
-        //   border: 1px solid greenyellow;
-        position: absolute;
-        top: -200px;
-
-        .G1img {
-          transform: scaleX(-1);
-          width: 350px;
-          animation: G_swing 3s linear infinite;
-        }
-        @keyframes G_swing {
-          0% {
-            transform: scaleX(-1) translateY(5px);
-          }
-          50% {
-            transform: scaleX(-1) translateY(0px);
-          }
-          100% {
-            transform: scaleX(-1) translateY(5px);
-          }
-        }
-
-        .G1L {
-          width: 160px;
-          position: relative;
-          right: 100px;
-          top: 20px;
-          transform-origin: top;
-          animation: L_swing 3s linear infinite;
-        }
-        @keyframes L_swing {
-          0% {
-            transform: rotate(0deg);
-            filter: brightness(1);
-          }
-          25% {
-            transform: rotate(-12deg);
-            filter: brightness(0.8);
-          }
-          50% {
-            transform: rotate(0deg);
-            filter: brightness(1);
-          }
-          75% {
-            transform: rotate(15deg);
-            filter: brightness(0.6);
-          }
-          100% {
-            transform: rotate(0deg);
-            filter: brightness(1);
-          }
-        }
-
-        .ghostTalk {
-          position: relative;
-          bottom: 280px;
-          left: 300px;
-
-          p {
-            font-size: 1rem;
-          }
-
-          .line {
-            width: 100px;
-            border: 1px solid white;
-
-            &:first-child {
-              transform: rotate(-10deg) translateY(-10px);
-            }
-
-            &:last-child {
-              transform: rotate(10deg) translateY(10px);
-            }
-          }
-        }
-      }
-
-      .newMyTour {
-        display: block;
-        // width: 200px;
-
-        padding: 10px 40px;
-        color: white;
-        text-align: center;
-        float: right;
-
-        font-size: 1.2rem;
-
-        margin: 0px 80px 50px 0px;
-
-        &:hover {
-          background: #700000;
-          border: #700000;
-          color: white;
-        }
-      }
-    }
-  }
-
-  #tabPage2 {
-    // border: 1px solid red;
-    height: 1000px;
-
-    .writeBtnWrap {
-    //   border: 1px solid red;
-      width: 90%;
-      padding: 20px 10px;
-
-      .btn-outline {
-        float: right;
-        padding: 5px 20px;
-      }
-    }
-
-    .msgZone {
-      margin-top: 30px;
-
-      .spotMsg {
-        width: 90%;
-        //   height: 150px;
-        background: white;
-        border-radius: 20px 200px 200px 20px;
-        padding: 10px 20px;
-        margin-bottom: 20px;
-
-        display: inline-flex;
-        justify-content: space-between;
-
-        .msgWrap {
-          display: inline-flex;
-          justify-content: start;
-
-          .headIcon {
-            width: 40px;
+            color: #cbcbcb;
+            padding: 5px 0;
             margin-right: 20px;
-            // border: 1px solid red;
+            cursor: pointer;
 
-            img {
-              width: 100%;
+            &:hover {
+                border-bottom: 1px solid;
+                color: #cbcbcb;
             }
-          }
+        }
 
-          .txtZone {
-            width: 80%;
-            // border: 1px solid red;
+        .selected {
+            border-bottom: 1px solid;
+            color: #cbcbcb;
+        }
+    }
+
+    #tabPage1 {
+        #officalTour {
+            height: 800px;
+            // width: 1000px;
+            margin: auto;
+            padding: 50px 0px 0px 0px;
+            // border: 1px solid darkcyan;
+            background-image: url('../../../img/spot/shortPaper.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            position: relative;
+
             color: #3b3b3b;
+            text-align: center;
+            vertical-align: middle;
 
-            .msgInfo {
-              width: 100%;
-              display: inline-flex;
-              justify-content: start;
+            .newOffTour {
+                display: block;
+                width: 200px;
+                border: 2px solid #700000;
+                color: #700000;
 
-              p {
-                margin: 0px;
-                font-size: 0.7rem;
-                color: #8c8a8a;
-                margin-right: 15px;
-              }
+                font-size: 1.2rem;
+
+                float: right;
+                margin: 0px 80px 50px 0px;
+
+                &:hover {
+                    background: #700000;
+                    color: white;
+                }
             }
 
-            .msgContent {
-              width: 100%;
-              //   border: 1px solid greenyellow;
+            .tourSpot {
+                width: 80%;
+                margin-bottom: 80px;
+                //   border: 1px solid darkcyan;
 
-              p {
-                margin: 10px 0px 20px 0px;
-              }
+                display: inline-flex;
+                justify-content: space-between;
+
+                .tourImg {
+                    width: 35%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .tourSpotTxt {
+                    text-align: left;
+                    width: 55%;
+                    // border: 1px solid red;
+
+                    .spotTitle {
+                        font-size: 1.2rem;
+                        color: #700000;
+                    }
+
+                    p {
+                        margin-left: 10px;
+                    }
+
+                    .tourSpotInfo {
+                        margin-top: 20px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .btn-outline2 {
+                            margin-right: 5px;
+                        }
+                    }
+                }
             }
 
-            .reportZone {
-              // border:  1px solid green;
-              display: inline-flex;
-              justify-content: end;
-              float: right;
-              cursor: pointer;
+            .tourStatus {
+                //   border: 1px solid red;
+                position: absolute;
+                top: 200px;
+                left: 370px;
 
-              img {
-                width: 12px;
-                margin-right: 5px;
-              }
+                ul {
+                    li {
+                        margin-bottom: 240px;
+                    }
 
-              p {
-                margin: 0;
-                font-size: 0.7rem;
-                color: #8c8a8a;
-              }
+                    .statusCircle {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background: #8c8a8a;
+
+                        .circle {
+                            width: 28px;
+                            height: 28px;
+                            border-radius: 50%;
+                            border: 1px solid #8c8a8a;
+                            position: relative;
+                            top: -4px;
+                            right: 3.5px;
+                        }
+
+                        .line {
+                            width: 1px;
+                            height: 235px;
+                            border: 2px dashed #8c8a8a;
+                            position: relative;
+                            top: -20px;
+                            right: -9px;
+                        }
+
+                        .selected2 {
+                            border: 1px solid #700000;
+                        }
+                    }
+
+                    .selected {
+                        background: #700000;
+                    }
+                }
             }
-          }
         }
 
-        .ghostFace {
-          //   border: 1px solid green;
-          width: 60px;
-          margin: 5px;
+        .myTourGuide {
+            // border: 1px solid goldenrod;
+            height: 200px;
+            padding-right: 100px;
+            position: relative;
+            // text-align: right;
 
-          img {
-            width: 100%;
-          }
+            .G1 {
+                // width: 300px;
+                margin: 0px 0px 0px 50px;
+
+                //   border: 1px solid greenyellow;
+                position: absolute;
+                top: -200px;
+
+                .G1img {
+                    transform: scaleX(-1);
+                    width: 350px;
+                    animation: G_swing 3s linear infinite;
+                }
+                @keyframes G_swing {
+                    0% {
+                        transform: scaleX(-1) translateY(5px);
+                    }
+                    50% {
+                        transform: scaleX(-1) translateY(0px);
+                    }
+                    100% {
+                        transform: scaleX(-1) translateY(5px);
+                    }
+                }
+
+                .G1L {
+                    width: 160px;
+                    position: relative;
+                    right: 100px;
+                    top: 20px;
+                    transform-origin: top;
+                    animation: L_swing 3s linear infinite;
+                }
+                @keyframes L_swing {
+                    0% {
+                        transform: rotate(0deg);
+                        filter: brightness(1);
+                    }
+                    25% {
+                        transform: rotate(-12deg);
+                        filter: brightness(0.8);
+                    }
+                    50% {
+                        transform: rotate(0deg);
+                        filter: brightness(1);
+                    }
+                    75% {
+                        transform: rotate(15deg);
+                        filter: brightness(0.6);
+                    }
+                    100% {
+                        transform: rotate(0deg);
+                        filter: brightness(1);
+                    }
+                }
+
+                .ghostTalk {
+                    position: relative;
+                    bottom: 280px;
+                    left: 300px;
+
+                    p {
+                        font-size: 1rem;
+                    }
+
+                    .line {
+                        width: 100px;
+                        border: 1px solid white;
+
+                        &:first-child {
+                            transform: rotate(-10deg) translateY(-10px);
+                        }
+
+                        &:last-child {
+                            transform: rotate(10deg) translateY(10px);
+                        }
+                    }
+                }
+            }
+
+            .newMyTour {
+                display: block;
+                // width: 200px;
+
+                padding: 10px 40px;
+                color: white;
+                text-align: center;
+                float: right;
+
+                font-size: 1.2rem;
+
+                margin: 0px 80px 50px 0px;
+
+                &:hover {
+                    background: #700000;
+                    border: #700000;
+                    color: white;
+                }
+            }
         }
-      }
     }
 
-    .pageWrap {
-      text-align: center;
-      margin-top: 20px;
+    #tabPage2 {
+        // border: 1px solid red;
+        height: 1000px;
+
+        .writeBtnWrap {
+            //   border: 1px solid red;
+            width: 90%;
+            padding: 20px 10px;
+
+            .btn-outline {
+                float: right;
+                padding: 5px 20px;
+            }
+        }
+
+        .msgZone {
+            margin-top: 30px;
+
+            .spotMsg {
+                width: 90%;
+                //   height: 150px;
+                background: white;
+                border-radius: 20px 200px 200px 20px;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+
+                display: inline-flex;
+                justify-content: space-between;
+
+                .msgWrap {
+                    display: inline-flex;
+                    justify-content: start;
+
+                    .headIcon {
+                        width: 40px;
+                        margin-right: 20px;
+                        // border: 1px solid red;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .txtZone {
+                        width: 80%;
+                        // border: 1px solid red;
+                        color: #3b3b3b;
+
+                        .msgInfo {
+                            width: 100%;
+                            display: inline-flex;
+                            justify-content: start;
+
+                            p {
+                                margin: 0px;
+                                font-size: 0.7rem;
+                                color: #8c8a8a;
+                                margin-right: 15px;
+                            }
+                        }
+
+                        .msgContent {
+                            width: 100%;
+                            //   border: 1px solid greenyellow;
+
+                            p {
+                                margin: 10px 0px 20px 0px;
+                            }
+                        }
+
+                        .reportZone {
+                            // border:  1px solid green;
+                            display: inline-flex;
+                            justify-content: end;
+                            float: right;
+                            cursor: pointer;
+
+                            img {
+                                width: 12px;
+                                margin-right: 5px;
+                            }
+
+                            p {
+                                margin: 0;
+                                font-size: 0.7rem;
+                                color: #8c8a8a;
+                            }
+                        }
+                    }
+                }
+
+                .ghostFace {
+                    //   border: 1px solid green;
+                    width: 60px;
+                    margin: 5px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .pageWrap {
+            text-align: center;
+            margin-top: 20px;
+        }
     }
-  }
 }

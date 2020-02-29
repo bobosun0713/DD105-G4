@@ -3,164 +3,161 @@ footer {
     width: 100%;
     // height: 500px;
     // border: 1px solid red;
-    background-image: url("../img/footer/footerBg.png");
+    background-image: url('../img/footer/footerBg.png');
     background-size: cover;
     padding-top: 200px;
     color: #3b3b3b;
     position: relative;
-  
+
     #warn {
-      // border: 1px solid red;
-      width: 50%;
-      margin: 0px auto;
-  
-      #warnTitle {
-        width: 300px;
-        color: red;
-        // border: 1px solid blue;
-        transform: rotate(-20deg) translateY(-50px);
-        text-align: center;
-  
-        span {
-          font-size: 30px;
-          margin-right: 5px;
+        // border: 1px solid red;
+        width: 50%;
+        margin: 0px auto;
+
+        #warnTitle {
+            width: 300px;
+            color: red;
+            // border: 1px solid blue;
+            transform: rotate(-20deg) translateY(-50px);
+            text-align: center;
+
+            span {
+                font-size: 30px;
+                margin-right: 5px;
+            }
+
+            &::before {
+                content: url('../img/icon/warning.png');
+                position: relative;
+                bottom: -11px;
+                left: -10px;
+            }
         }
-  
-        &::before {
-          content: url("../img/icon/warning.png");
-          position: relative;
-          bottom: -11px;
-          left: -10px;
+
+        ol {
+            width: 60%;
+            margin: 10px auto;
+
+            li {
+                // border: 1px solid blue;
+                margin: 10px 0;
+            }
         }
-      }
-  
-      ol {
-        width: 60%;
-        margin: 10px auto;
-  
-        li {
-          // border: 1px solid blue;
-          margin: 10px 0;
-        }
-      }
     }
-  
+
     #spell {
-      // float: right;
-      width: 20%;
-      // max-width: 300px;
-      position: absolute;
-      right: 10%;
-      top: 25%;
-      pointer-events: none;
-      // border: 1px solid blue;
-  
-      img {
-        width: 100%;
+        // float: right;
+        width: 20%;
+        // max-width: 300px;
+        position: absolute;
+        right: 10%;
+        top: 25%;
+        pointer-events: none;
         // border: 1px solid blue;
-        transform-origin: 80% 0%;
-        animation: swingSpell 4s ease-in-out infinite;
-        animation-delay: 1.3s;
-      }
-  
-      @keyframes swingSpell {
-        0% {
-          transform: rotate3d(-1, -1, 0, -25deg);
+
+        img {
+            width: 100%;
+            // border: 1px solid blue;
+            transform-origin: 80% 0%;
+            animation: swingSpell 4s ease-in-out infinite;
+            animation-delay: 1.3s;
         }
-        50% {
-          transform: rotate3d(-1, -1, 0, -0deg);
+
+        @keyframes swingSpell {
+            0% {
+                transform: rotate3d(-1, -1, 0, -25deg);
+            }
+            50% {
+                transform: rotate3d(-1, -1, 0, -0deg);
+            }
+            100% {
+                transform: rotate3d(-1, -1, 0, -25deg);
+            }
         }
-        100% {
-          transform: rotate3d(-1, -1, 0, -25deg);
-        }
-      }
     }
-  
+
     //3d動畫效果
     .cameraSpell {
-      transform: perspective(500px);
-      perspective-origin: 8000px left;
-      .papper {
-        margin-right: 10px;
-        transform-style: 3d;
-      }
-    }
-  
-    #footLink {
-      // border: 1px solid red;
-      width: 100%;
-      margin: 10px auto;
-      margin-top: 100px;
-      padding: 10px 0px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-  
-      #BottomLogo {
-        width: 150px;
-      }
-      nav {
-        margin-left: 40px;
-  
-        ul {
-          // border: 1px solid red;
-          display: inline-flex;
-          text-align: center;
-  
-          li {
-            list-style: none;
-            margin-right: 20px;
-            // border: 1px solid blue;
-  
-            p {
-              width: 100%;
-              // border: 1px solid green;
-              margin: 10px 0px;
-              padding: 2px 0px;
-              display: block;
-              border-bottom: 1px solid #3b3b3b;
-  
-              span {
-                // border: 1px solid green;
-                // margin: 10px;
-                display: flex;
-  
-                a {
-                  font-size: 14px;
-                  color: #6f6f6f;
-                }
-              }
-            }
-  
-            a {
-              // border: 1px solid green;
-              text-decoration: none;
-              margin: 0px 10px 10px 10px;
-              color: #3b3b3b;
-              cursor: pointer;
-            }
-          }
+        transform: perspective(500px);
+        perspective-origin: 8000px left;
+        .papper {
+            margin-right: 10px;
+            transform-style: 3d;
         }
-      }
     }
-  }
 
+    #footLink {
+        // border: 1px solid red;
+        width: 100%;
+        margin: 10px auto;
+        margin-top: 100px;
+        padding: 10px 0px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
 
- //平板
-@include respond(medium){
+        #BottomLogo {
+            width: 150px;
+        }
+        nav {
+            margin-left: 40px;
+
+            ul {
+                // border: 1px solid red;
+                display: inline-flex;
+                text-align: center;
+
+                li {
+                    list-style: none;
+                    margin-right: 20px;
+                    // border: 1px solid blue;
+
+                    p {
+                        width: 100%;
+                        // border: 1px solid green;
+                        margin: 10px 0px;
+                        padding: 2px 0px;
+                        display: block;
+                        border-bottom: 1px solid #3b3b3b;
+
+                        span {
+                            // border: 1px solid green;
+                            // margin: 10px;
+                            display: flex;
+
+                            a {
+                                font-size: 14px;
+                                color: #6f6f6f;
+                            }
+                        }
+                    }
+
+                    a {
+                        // border: 1px solid green;
+                        text-decoration: none;
+                        margin: 0px 10px 10px 10px;
+                        color: #3b3b3b;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//平板
+@include respond(medium) {
     footer {
         width: 600px;
         background-color: #3bfc00;
-     }
     }
-    
-    
-    //手機版
-    @include respond(small){
-        footer {
-            width: 200px;
-            background-color: #3bfc00;
-         }
-    
+}
+
+//手機版
+@include respond(small) {
+    footer {
+        width: 200px;
+        background-color: #3bfc00;
     }
+}

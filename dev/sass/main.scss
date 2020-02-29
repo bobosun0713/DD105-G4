@@ -5,128 +5,69 @@
 //=================
 // reset setting
 //=================
-@import "base/reset";
-
+@import 'base/reset';
 
 //=================
-//mixins 
+//mixins
 //=================
-@import "mixin/mixins";
-
+@import 'mixin/mixins';
 
 //=================
 // color 變數
 //=================
-@import "base/color";
-
+@import 'base/color';
 
 //=================
 // base setting
 //=================
-@import "base/setting";
-
-
-
+@import 'base/setting';
 
 //=================
 // font setting
 //=================
-@import "base/font";
+@import 'base/font';
 
 //=================
-// modules 
+// modules
 //=================
 
-@import "modules/btn";
-@import "modules/spotCard";
-@import "modules/tourCard.scss";
-@import "modules/pagination";
-@import "modules/checkBox";
-@import "modules/breadCrumb";
-
-
+@import 'modules/btn';
+@import 'modules/spotCard';
+@import 'modules/tourCard.scss';
+@import 'modules/pagination';
+@import 'modules/checkBox';
+@import 'modules/breadCrumb';
+@import 'modules/smoke';
 
 //=================
 // layout setting
 //=================
 
-@import "layout/header";
-@import "layout/footer";
-@import "layout/login";
-
-
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/login';
 
 //=================
 // RWD setting
 //=================
 
-@import "respond/desktop";
-@import "respond/medium";
-@import "respond/small";
+@import 'respond/desktop';
+@import 'respond/medium';
+@import 'respond/small';
 
-
-@import "base/common";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@import 'base/common';
 
 //=================
 // libary setting
 //=================
-
-
 
 //=================
 // modules 模組 每個專案都會累積不同的
 // 要詳細寫說明
 //=================
 
-
-
 //=================
 //pages
 //=================
-@import "./page/ghostisland/desktop";
-@import "./page/ghostSpot/desktop";
-
-
-
-
-
-
-
-
+@import './page/ghostisland/desktop';
+@import './page/ghostSpot/desktop';
