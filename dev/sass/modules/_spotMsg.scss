@@ -1,0 +1,83 @@
+.spotMsg {
+    width: 800px;
+    //   height: 150px;
+    background: white;
+    border-radius: 20px 200px 200px 20px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+
+    display: inline-flex;
+    justify-content: space-between;
+
+    .msgWrap {
+      display: inline-flex;
+      justify-content: start;
+
+      .headIcon {
+        width: 40px;
+        margin-right: 20px;
+        // border: 1px solid red;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .txtZone {
+        width: 80%;
+        // border: 1px solid red;
+        color: #3b3b3b;
+
+        .msgInfo {
+          width: 100%;
+          display: inline-flex;
+          justify-content: start;
+
+          p {
+            margin: 0px;
+            font-size: 0.7rem;
+            color: #8c8a8a;
+            margin-right: 15px;
+          }
+        }
+
+        .msgContent {
+          width: 100%;
+        //   border: 1px solid greenyellow;
+
+          p {
+            margin: 10px 0px 20px 0px;
+          }
+        }
+
+        .reportZone {
+          // border:  1px solid green;
+          display: inline-flex;
+          justify-content: end;
+          float: right;
+          cursor: pointer;
+
+          img {
+            width: 12px;
+            margin-right: 5px;
+          }
+
+          p {
+            margin: 0;
+            font-size: 0.7rem;
+            color: #8c8a8a;
+          }
+        }
+      }
+    }
+
+    .ghostFace {
+    //   border: 1px solid green;
+      width: 60px;
+      margin: 5px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }

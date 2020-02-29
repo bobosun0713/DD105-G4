@@ -65,3 +65,35 @@
         color: darken($text-color,20%);
     }
 }
+
+
+// 第三組
+.btn-outline2 {
+    border: 2px solid #3b3b3b;
+    padding: 5px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b3b3b;
+    border-radius: 100px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #3b3b3b;
+        
+
+        p{
+            color: white;
+        }
+    }
+
+    img {
+      width: 12px;
+    }
+
+    p {
+      color: #3b3b3b;
+      margin: 0px;
+      font-size: .8rem;
+    }
+  }
