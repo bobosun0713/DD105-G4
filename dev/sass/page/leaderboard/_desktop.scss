@@ -29,8 +29,6 @@ body{
             white-space: nowrap;
             font-size: 3rem;
           }
-
-
       }
 
 }
@@ -80,11 +78,11 @@ body{
           width: 500px;
           height: 50px;
           line-height: 50px;
-          margin-top: -50px;
+          margin-top: -35px;
           display: flex;
           justify-content: flex-end;
           margin-left: 20px;
-          word-spacing:50px;
+          word-spacing:50px;//空白建間隔
           }
 
   
@@ -96,7 +94,6 @@ body{
   display: flex;
   flex-direction:column;
   margin-left: 78.4%;
-  // float: right;
   max-height: 800px;
   margin-top: -450px;
         .alternately-p{
