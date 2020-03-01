@@ -2,16 +2,21 @@
 <html lang="en">
 
 <head>
+    
     @@include('layout/head.html')
     <title>前進鬼島-新莊廢棄醫院</title>
+
+ </body>
+
 </head>
 
 <body>
     <div class="wrapper">
 
-
+        <!-- @@include('layout/component/smoke.html') -->
         <div id="ghostSpotBG">
             @@include('layout/header.html')
+            
 
             <section id="ghostSpotSection1">
 
@@ -40,9 +45,15 @@
                                 靈異相簿
                             </h2>
                             <div class="smallPicZone">
-                                <img src="./img/spot/spot1/SP_small_1.png" class="smallPic selected">
-                                <img src="./img/spot/spot1/SP_small_2.png" class="smallPic">
-                                <img src="./img/spot/spot1/SP_small_3.png" class="smallPic">
+                                
+                                    <img src="./img/spot/spot1/SP_big_1.png" class="smallPic ">
+                                
+                                
+                                    <img src="./img/spot/spot1/SP_big_2.png" class="smallPic">
+                                
+                                
+                                    <img src="./img/spot/spot1/SP_big_3.png" class="smallPic">
+
                             </div>
                         </div>
 
@@ -85,9 +96,6 @@
                         </div>
                     </div>
 
-
-
-
                 </div>
 
                 <div>
@@ -106,7 +114,7 @@
 
                     <div id="cardDisplay">
 
-                        <div class="tourCard">
+                        <div class="tourCard ">
                             <a href="">
                                 <div class="tourImg">
                                     <img src="./img/component/card/spotCard01.png">
@@ -250,6 +258,102 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tourFavorite">
+                                    <p class="like">
+                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
+                                        10
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="tourCard">
+                            <a href="">
+                                <div class="tourImg">
+                                    <img src="./img/component/card/spotCard01.png">
+                                </div>
+                                <div class="tourTxt">
+                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
+
+                                    <div class="tourHost">
+                                        <img src="./img/icon/header1.png" class="header">
+                                        <p class="name">富江我老婆</p>
+                                    </div>
+
+                                    <div class="tourInfo">
+
+                                        <div class="date">
+                                            <img src="./img/icon/date.svg">
+                                            <p>
+                                                出團日期：2020/01/29
+                                            </p>
+                                        </div>
+
+                                        <div class="tourSpot">
+                                            <img src="./img/icon/location_red.png">
+                                            <p>
+                                                新莊廢棄醫院、天后宮、酸辣粉
+                                            </p>
+                                        </div>
+
+                                        <div class="tourJoin">
+                                            <img src="./img/icon/tourCount.svg">
+                                            <p>
+                                                參加人數：6/10 人
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="tourFavorite">
+                                    <p class="like">
+                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
+                                        10
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="tourCard">
+                            <a href="">
+                                <div class="tourImg">
+                                    <img src="./img/component/card/spotCard01.png">
+                                </div>
+                                <div class="tourTxt">
+                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
+
+                                    <div class="tourHost">
+                                        <img src="./img/icon/header1.png" class="header">
+                                        <p class="name">富江我老婆</p>
+                                    </div>
+
+                                    <div class="tourInfo">
+
+                                        <div class="date">
+                                            <img src="./img/icon/date.svg">
+                                            <p>
+                                                出團日期：2020/01/29
+                                            </p>
+                                        </div>
+
+                                        <div class="tourSpot">
+                                            <img src="./img/icon/location_red.png">
+                                            <p>
+                                                新莊廢棄醫院、天后宮、酸辣粉
+                                            </p>
+                                        </div>
+
+                                        <div class="tourJoin">
+                                            <img src="./img/icon/tourCount.svg">
+                                            <p>
+                                                參加人數：6/10 人
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                                 <div class="tourFavorite">
                                     <p class="like">
                                         <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
@@ -308,6 +412,22 @@
                         </div>
 
                     </div>
+
+                    <button id="rightScroll" class="scrollBtn" disabled>
+                        <span>〈</span>
+                    </button>
+                    <button id="leftScroll" class="scrollBtn"> 
+                        <span>〉</span> 
+                    </button>
+                </div>
+
+                <div class="G2">
+                    <img src="./img/spot/G2.png">
+                </div>
+                <div class="ghostTalk">
+                    <p class="line"></p>
+                    <p>天乾物燥...小心火燭...</p>
+                    <p class="line"></p>
                 </div>
 
             </section>
@@ -315,8 +435,8 @@
 
             <section id="ghostSpotSection3">
                 <nav>
-                    <h3 class="tablink selected" id="">推薦行程</h3>
-                    <h3 class="tablink" id="">景點留言</h3>
+                    <h3 class="tablink selected" id="tab1">推薦行程</h3>
+                    <h3 class="tablink" id="tab2">景點留言</h3>
                 </nav>
 
                 <div id="tabPage1">
@@ -340,16 +460,30 @@
                                     <div class="btn-outline2">
                                         <img src="./img/icon/location.png">
                                         <p>地理位置</p>
+                                        <div class="moreInfo">
+                                            台北市新莊區思源路177巷32號
+                                        </div>
+                                        <div class="triangle"></div>
+                                        
+                                        
                                     </div>
 
                                     <div class="btn-outline2">
                                         <img src="./img/icon/tool.png">
                                         <p>所需工具</p>
+                                        <div class="moreInfo">
+                                            一顆虔誠的心
+                                        </div>
+                                        <div class="triangle"></div>
                                     </div>
 
                                     <div class="btn-outline2">
                                         <img src="./img/icon/fee.png">
                                         <p>參加費用</p>
+                                        <div class="moreInfo">
+                                            香油錢150圓
+                                        </div>
+                                        <div class="triangle"></div>
                                     </div>
                                 </div>
                             </div>
@@ -368,16 +502,28 @@
                                     <div class="btn-outline2">
                                         <img src="./img/icon/location.png">
                                         <p>地理位置</p>
+                                        <div class="moreInfo">
+                                            台北市新莊區思源路177巷32號
+                                        </div>
+                                        <div class="triangle"></div>
                                     </div>
 
                                     <div class="btn-outline2">
                                         <img src="./img/icon/tool.png">
                                         <p>所需工具</p>
+                                        <div class="moreInfo">
+                                            手電筒
+                                        </div>
+                                        <div class="triangle"></div>
                                     </div>
 
                                     <div class="btn-outline2">
                                         <img src="./img/icon/fee.png">
                                         <p>參加費用</p>
+                                        <div class="moreInfo">
+                                            0圓
+                                        </div>
+                                        <div class="triangle"></div>
                                     </div>
 
                                 </div>
@@ -426,6 +572,7 @@
 
                     <div class="writeBtnWrap">
                         <div class="btn-outline">
+                            <img src="./img/icon/writeMsg.svg" width="20px">
                             撰寫留言
                         </div>
                     </div>
@@ -630,6 +777,17 @@
             @@include('layout/footer.html')
         </div>
     </div>
+
+
+ <!-- 功能 -->
+ <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <!-- TAB 標籤 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./js/ghostSpotTab.js"></script>
+
+
+ <script src="./js/ghostSpotCarasoul.js"></script>
+ <script src="./js/ghostSpotSwitchImg.js"></script>
 
 </body>
 
