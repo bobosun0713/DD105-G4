@@ -18,7 +18,7 @@
 <body>
     <div class="wrapper">
 
-
+        
         <div id="ghostSpotBG">
             <header>
     <div id="navStatus">
@@ -75,6 +75,7 @@
         </ul>
     </nav>
 </header>
+            
 
             <section id="ghostSpotSection1">
 
@@ -104,16 +105,14 @@
                             </h2>
                             <div class="smallPicZone">
                                 
-                                    <img src="./img/spot/spot1/SP_small_1.png" class="smallPic ">
+                                    <img src="./img/spot/spot1/SP_big_1.png" class="smallPic ">
                                 
                                 
-                                    <img src="./img/spot/spot1/SP_small_2.png" class="smallPic">
+                                    <img src="./img/spot/spot1/SP_big_2.png" class="smallPic">
                                 
                                 
-                                    <img src="./img/spot/spot1/SP_small_3.png" class="smallPic">
-                                
-                                
-                                
+                                    <img src="./img/spot/spot1/SP_big_3.png" class="smallPic">
+
                             </div>
                         </div>
 
@@ -155,9 +154,6 @@
                             <img src="./img/spot/spiderweb.png">
                         </div>
                     </div>
-
-
-
 
                 </div>
 
@@ -484,13 +480,22 @@
                     </button>
                 </div>
 
+                <div class="G2">
+                    <img src="./img/spot/G2.png">
+                </div>
+                <div class="ghostTalk">
+                    <p class="line"></p>
+                    <p>天乾物燥...小心火燭...</p>
+                    <p class="line"></p>
+                </div>
+
             </section>
 
 
             <section id="ghostSpotSection3">
                 <nav>
-                    <h3 class="tablink selected" id="">推薦行程</h3>
-                    <h3 class="tablink" id="">景點留言</h3>
+                    <h3 class="tablink selected" id="tab1">推薦行程</h3>
+                    <h3 class="tablink" id="tab2">景點留言</h3>
                 </nav>
 
                 <div id="tabPage1">
@@ -566,7 +571,7 @@
                                         <img src="./img/icon/tool.png">
                                         <p>所需工具</p>
                                         <div class="moreInfo">
-                                            台北市新莊區思源路177巷32號
+                                            手電筒
                                         </div>
                                         <div class="triangle"></div>
                                     </div>
@@ -575,7 +580,7 @@
                                         <img src="./img/icon/fee.png">
                                         <p>參加費用</p>
                                         <div class="moreInfo">
-                                            台北市新莊區思源路177巷32號
+                                            0圓
                                         </div>
                                         <div class="triangle"></div>
                                     </div>
@@ -626,6 +631,7 @@
 
                     <div class="writeBtnWrap">
                         <div class="btn-outline">
+                            <img src="./img/icon/writeMsg.svg" width="20px">
                             撰寫留言
                         </div>
                     </div>
@@ -934,6 +940,11 @@
 
  <!-- 功能 -->
  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <!-- TAB 標籤 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./js/ghostSpotTab.js"></script>
+
+
  <script src="./js/ghostSpotCarasoul.js"></script>
  <script src="./js/ghostSpotSwitchImg.js"></script>
 

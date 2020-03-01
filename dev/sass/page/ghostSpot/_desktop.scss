@@ -1,3 +1,5 @@
+
+
 #ghostSpotBG {
   //   border: 1px solid blue;
   background-image: url("../img/spot/BG/spotBG.png");
@@ -7,7 +9,7 @@
 }
 
 #ghostSpotSection1 {
-  //   border: 1px solid red;
+  // border: 1px solid red;
   width: 1000px;
   margin: 20px auto;
   padding: 20px;
@@ -73,10 +75,6 @@
           // border: 1px solid greenyellow;
           display: inline-flex;
           justify-content: space-between;
-
-          a{
-            //   width: 30%;
-          }
 
           img {
             // width: 100%;
@@ -181,7 +179,10 @@
 }
 
 #ghostSpotSection2 {
+//   border: 1px solid red;
   padding: 50px 0;
+  margin-bottom: 80px;
+  position: relative;
   //   height: 500px;
 
   .titleZone {
@@ -239,8 +240,8 @@
       cursor: pointer;
       margin-right: 10px;
 
-      &:disabled{
-        opacity: .5;
+      &:disabled {
+        opacity: 0.5;
       }
     }
 
@@ -255,6 +256,61 @@
       span {
         position: relative;
         left: 5px;
+      }
+    }
+  }
+
+  .G2 {
+    width: 350px;
+    // border: 1px solid red;
+    position: absolute;
+    right: 0px;
+    bottom: -50px;
+    
+
+    img {
+      width: 100%;
+      animation: G_link 3s ease-in infinite;
+    }
+
+    @keyframes G_link {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(20px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+      }
+
+  }
+
+  
+
+  .ghostTalk {
+    position: absolute;
+    right: 370px;
+    bottom: 0px;
+    animation: G_link 3s ease-in infinite;
+
+    .line {
+      position: relative;
+      left: 50px;
+      border: 1px solid white;
+      width: 100px;
+
+      p{
+          font-size: 1rem;
+      }
+
+      &:first-child {
+        transform: rotate(10deg) translateY(-10px);
+      }
+
+      &:last-child {
+        transform: rotate(-10deg) translateY(10px);
       }
     }
   }
@@ -517,6 +573,7 @@
           position: relative;
           bottom: 280px;
           left: 300px;
+          animation: GT_swing 3s linear infinite;
 
           p {
             font-size: 1rem;
@@ -534,6 +591,17 @@
               transform: rotate(10deg) translateY(10px);
             }
           }
+        }
+        @keyframes GT_swing {
+            0% {
+              transform: translateY(5px);
+            }
+            50% {
+              transform: translateY(0px);
+            }
+            100% {
+              transform: translateY(5px);
+            }
         }
       }
 
@@ -570,7 +638,8 @@
 
       .btn-outline {
         float: right;
-        padding: 5px 20px;
+        padding: 10px 20px;
+        display: inline-flex;
       }
     }
 
