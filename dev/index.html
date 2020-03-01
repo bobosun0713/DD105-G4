@@ -154,45 +154,44 @@
                     <input type="button" id="left_btn" disabled />
                     <input type="button" id="right_btn" />
                 </div>
+                <!-- 未寫完 還要改寫-->
+                <script>
+                    function $id(id) {
+                        return document.getElementById(id)
+                    }
+                    window.addEventListener('load', function() {
+                        let card = 0
+                        let slider = document.getElementById('card_slider')
+                        let left_btn = document.getElementById('left_btn')
+                        let right_btn = document.getElementById('right_btn')
+
+                        $id('right_btn').onclick = function() {
+                            card++
+                            card_slider.style.left = -370 * card + 'px'
+                            $id('left_btn').disabled = false
+                            left_btn.style.opacity = 1
+                            if (card == 5) {
+                                $id('right_btn').disabled = true
+                                right_btn.style.opacity = 0.6
+                            }
+                            console.log(card)
+                        }
+                        $id('left_btn').onclick = function() {
+                            card--
+                            card_slider.style.left = -370 * card + 'px'
+                            $id('right_btn').disabled = false
+                            right_btn.style.opacity = 1
+                            left_btn.style.opacity = 1
+                            if (card == 0) {
+                                $id('left_btn').disabled = true
+                                left_btn.style.opacity = 0.6
+                            }
+                            console.log(card)
+                        }
+                    })
+                </script>
             </section>
             @@include('layout/footer.html')
         </div>
-
-        <!-- 未寫完 還要改寫-->
-        <script>
-            function $id(id) {
-                return document.getElementById(id)
-            }
-            window.addEventListener('load', function() {
-                let card = 0
-                let slider = document.getElementById('card_slider')
-                let left_btn = document.getElementById('left_btn')
-                let right_btn = document.getElementById('right_btn')
-
-                $id('right_btn').onclick = function() {
-                    card++
-                    card_slider.style.left = -370 * card + 'px'
-                    $id('left_btn').disabled = false
-                    left_btn.style.opacity = 1
-                    if (card == 5) {
-                        $id('right_btn').disabled = true
-                        right_btn.style.opacity = 0.6
-                    }
-                    console.log(card)
-                }
-                $id('left_btn').onclick = function() {
-                    card--
-                    card_slider.style.left = -370 * card + 'px'
-                    $id('right_btn').disabled = false
-                    right_btn.style.opacity = 1
-                    left_btn.style.opacity = 1
-                    if (card == 0) {
-                        $id('left_btn').disabled = true
-                        left_btn.style.opacity = 0.6
-                    }
-                    console.log(card)
-                }
-            })
-        </script>
     </body>
 </html>
