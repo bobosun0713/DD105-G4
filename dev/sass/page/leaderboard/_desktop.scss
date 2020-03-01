@@ -2,7 +2,7 @@
 * {
   /* 格線 */
   outline:0;
-  outline:1px solid rgb(189, 205, 211);
+  // outline:1px solid rgb(189, 205, 211);
 }
 
 body{
@@ -53,19 +53,19 @@ body{
           filter:contrast(140%); //对比度滤镜，使图片色彩对比度更明显
          }
         .Strip-background{
-          background-image: url(../img/leaderboard/ghost-4-1.png);
+          background-image: url(../img/leaderboard/ghost-4.png);//幽靈長條圖
           background-repeat: no-repeat;
-          margin-top: 210px;
-          margin-left: -55px;
+          margin-top: 180px;
+          margin-left: -65px;
           display: inline-block;
-          width: 700px;
-          max-height: 150px;
+          width: 800px;
+          max-height: 180px;
           }
         //h2
         .Haunted-house-t{
           width: 250px;
           max-height: 100px;
-          line-height: 100px;
+          line-height: 150px;
           margin-top: -50px;
           font-size: 8rem;
           display: flex;
@@ -78,7 +78,7 @@ body{
         .Haunted-house-p{
           width: 500px;
           height: 50px;
-          line-height: 50px;
+          line-height: 110px;
           margin-top: -40px;
           display: flex;
           justify-content: flex-end;
@@ -90,7 +90,7 @@ body{
 }
 // 來抓交替囉 
 #alternately{
-  width: 410px;
+  width: 400px;
   display: flex;
   flex-direction:column;
   float: right;
@@ -108,7 +108,10 @@ body{
        
           }
 }
-
+//手機板的幽靈隱藏
+#ghost-2-s{
+  display: none;
+}
 // 排行榜表單
 
 #leaderboard-form{//div-leaderboard-form
@@ -116,7 +119,6 @@ body{
   background-repeat: no-repeat;
   margin-bottom: 150px;
   margin-top: 200px;
-
       #leaderboard-form-1{//table-leaderboard-form-1
         padding:30px;
         display: flex;
@@ -168,7 +170,28 @@ body{
  body{
 width: 990px;
 width: 100%;
+ /* 投給你內心 */
+   #vote{
+      display: flex;
+      justify-content: space-around;
+      max-height: 300px;
+      margin-bottom:110px;
+          .vote-img{
+            display: inline-block;
+          
+          }
+          .vote-text{
+            margin-top: 110px;
+            width: 400px;
+            margin-bottom: 0px;
+            display: inline-block;
+            border-bottom: 5px solid rgb(231, 231, 231);
+            white-space: nowrap;
+            font-size: 3rem;
+          }
+      }
 
+}
 /* div.Haunted-house 排行TOP前三名 */
 .Haunted-house{
   width: 990px;
@@ -178,41 +201,44 @@ width: 100%;
         .Haunted-house-i{
           width: 15%;
          }
-        .Strip-background{//div
-          margin-top: 60px;
+         .Strip-background{//div
+          background-image: url(../img/leaderboard/ghost-4.png);//幽靈長條圖
+          margin-top: 30px;
           width: 1200px;
-          width: 60%;
+          width: 63%;
+          
+
           }
         //h2
         .Haunted-house-t{
-          font-size: 6rem;
-          margin-top: -20px;
+          font-size: 6.5rem;
+          margin-top: -35px;
+          margin-left: -1px;
           }
         //p
         .Haunted-house-p{
-          margin-top: -45px;
+          margin-top: -50px;
           }
   
 }
 // 來抓交替囉 
 #alternately{
-  width: 300px;
-  margin-top:-350px;
+  width: 280px;
 
         .alternately-p{
-          width: 300px;
+          width: 280px;
           max-height:30px;
           }
         .alternately-i{
-          width: 300px;
-          max-height: 300px;
+          width: 280px;
+          max-height: 280px;
           }
 }
 
 // 排行榜表單
 
 #leaderboard-form{//div-leaderboard-form
-  background-image: url(../img/leaderboard/ghost-2-s.png);//幽靈圖
+  background-image: url(../img/leaderboard/ghost-2.png);//幽靈圖
       #leaderboard-form-1{//table-leaderboard-form-1
           #Form-name{//名次的tr
               width: 200px;
@@ -223,26 +249,26 @@ width: 100%;
                 // line-height: 50px;
                 text-align: center;
                 padding: 5px;
-                }
             }
+        }
             .Ranking{
                     width: 200px;
                     td{
                         padding: 5px;
                         width: 220px;
                         }
-                    }
+              }
 
-        }
+    }
 
   }
 
-// 老鼠
+    // 老鼠
        .mouse{
         width: 230px;
        }
 
-  }
+  
 
 
 }
@@ -253,15 +279,28 @@ width: 100%;
     body{
       width: 990px;
       width: 100%;
-      background-color: sandybrown;
-      background-image: url(..);
+/* 投給你內心 */
+#vote{
+      .vote-img{
+        width: 250px;
+        height: 200px;
+      }
+      .vote-text{
+        margin-top: 50px;
+        width: 350px;
+        margin-bottom: 50px;
+        font-size: 2.2rem;
+      }
+  }
+
+}
 
 
 /* div.Haunted-house 排行TOP前三名 */
 .Haunted-house{
   width: 990px;
   width: 100%;
-  max-height:200px;
+  max-height:180px;
         /* 景點圖片 */
         .Haunted-house-i{
           width: 15%;
@@ -269,31 +308,34 @@ width: 100%;
         .Strip-background{//div
           margin-top: 60px;
           width: 1200px;
-          width: 60%;
+          width: 62%;
+          height: 200px;
+          margin-top: 15px;
+          background-image: url(../img/leaderboard/ghost-4-1.png);
           }
         //h2
         .Haunted-house-t{
-          font-size: 6rem;
+          font-size: 5.5rem;
           margin-top: -20px;
           }
         //p
         .Haunted-house-p{
+          margin-left: -55px;
           margin-top: -45px;
+          word-spacing:0px;//空白建間隔
           }
   
 }
 // 來抓交替囉 
 #alternately{
-  width: 300px;
+  width: 200px;
   margin-top:-350px;
 
         .alternately-p{
-          width: 300px;
-          max-height:30px;
+          display: none;
           }
         .alternately-i{
-          width: 300px;
-          max-height: 300px;
+          display: none;
           }
 }
 
@@ -307,17 +349,17 @@ width: 100%;
               line-height: 50px;
               background-color: rgb(139, 4, 4);
               td.Form-name{
-                width: 220px;
+                width: 200px;
                 // line-height: 50px;
                 text-align: center;
                 padding: 5px;
                 }
             }
             .Ranking{
-                    width: 200px;
+                    width: 180px;
                     td{
                         padding: 5px;
-                        width: 220px;
+                        width: 200px;
                         }
                     }
 
@@ -329,8 +371,7 @@ width: 100%;
        .mouse{
         width: 230px;
        }
-
-  }
-
-
 }
+
+
+
