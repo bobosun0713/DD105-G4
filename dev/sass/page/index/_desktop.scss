@@ -16,8 +16,123 @@
     // height: 800px;
 }
 
+// ========================= 討論區
 #section4 {
-    border: 1px solid blue;
-    width: 100%;
-    // height: 800px;
+    border: 1px solid red;
+    height: 800px;
+
+    .card_channel {
+        position: relative;
+        margin: 0 auto;
+        border: 1px solid blue;
+        // width: 1800px;
+        height: 600px;
+        overflow: hidden;
+        .card_warp {
+            // border: 1px solid blue;
+            position: absolute;
+            transition: all 1s;
+            margin: 10px auto;
+            width: 3000px;
+            color: black;
+            display: flex;
+
+            .card_border {
+                // border: 1px solid green;
+                position: relative;
+                margin: 0 20px;
+                border-radius: 30px;
+                background-color: whitesmoke;
+                padding: 35px;
+                width: 360px;
+                height: 450px;
+
+                //-- 頭像
+                .card_user {
+                    // border: 1px solid red;
+                    display: flex;
+                    img {
+                        height: 50px;
+                        width: 50px;
+                    }
+                    .card_title_user {
+                        // border: 1px solid blue;
+                        margin-left: 20px;
+
+                        .title_name {
+                            font-size: 20px;
+                        }
+                        .title_time {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                //-- 內文
+                .card_content {
+                    // border: 1px solid black;
+                    margin: 30px 0;
+                    font-size: 18px;
+                }
+
+                //-- 狀態欄
+                .card_status {
+                    // border: 1px solid red;
+                    margin-top: 50px;
+                    display: flex;
+                    justify-content: flex-end;
+                    .card_icon {
+                        margin-right: 15px;
+                        span {
+                            font-size: 18px;
+                        }
+                        img {
+                            vertical-align: middle;
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+
+                //-- 三角形
+                .card_arrow {
+                    bottom: -50px;
+                    right: 60px;
+                    width: 0;
+                    border-left: 50px solid transparent;
+                    border-right: 0px solid transparent;
+                    border-top: 50px solid whitesmoke;
+                    border-bottom: 0px solid whitesmoke;
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    //-- 左右控制鈕
+    #card_btn {
+        border: 1px solid red;
+        #left_btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid whitesmoke;
+            background-color: rgba(31, 31, 31, 0);
+            border-radius: 100%;
+            background-image: url('/img/icon/left-chevron.svg');
+            background-repeat: no-repeat;
+            background-position: 6px;
+            background-size: 25px;
+        }
+        #right_btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid whitesmoke;
+            background-color: rgba(31, 31, 31, 0);
+            border-radius: 100%;
+            background-image: url('/img/icon/right-chevron.svg');
+            background-repeat: no-repeat;
+            background-position: 12px;
+            background-size: 25px;
+        }
+    }
 }
