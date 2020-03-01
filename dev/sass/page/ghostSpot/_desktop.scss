@@ -1,7 +1,7 @@
 
 
 #ghostSpotBG {
-  //   border: 1px solid blue;
+  //border: 1px solid blue;
   background-image: url("../img/spot/BG/spotBG.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -9,12 +9,13 @@
 }
 
 #ghostSpotSection1 {
-  // border: 1px solid red;
+  //border: 1px solid red;
   width: 1000px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 5px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
+  overflow: hidden;
 
   .spotIntro {
     // border: 1px solid red;
