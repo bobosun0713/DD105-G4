@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- css -->
-<link rel="stylesheet" href="./css/main.css">
-<!-- 鬼島logo小圖示 -->
-<link rel="shortcut icon" href="../img/icon/logo-icon.png" />
+        @@include('layout/head.html')
         <title>討論區</title>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -66,73 +61,9 @@
     <body>
         <div class="forum_wrapper">
             <!-- 霧氣 -->
-            <section class="fog">
-    <figure
-        class="absolute-bg"
-        style="background-image: url('https://source.unsplash.com/3ytjETpQMNY/1600x900');"
-    ></figure>
-    <div class="fog__container">
-        <div class="fog__img fog__img--first"></div>
-        <div class="fog__img fog__img--second"></div>
-    </div>
-</section>
-
+            @@include('layout/component/smoke.html')
             <!-- 導覽列 -->
-            <header>
-    <div id="navStatus">
-        <div id="soundStatus">
-            <img src="./img/icon/soundOn.png">
-            <p>Sound On</p>
-        </div>
-        <div id="memStatus">
-            <a href="">
-                <img src="./img/icon/default_header.svg">
-            </a>
-            <p><a href="">登入</a></p>
-            <p><a href="">註冊</a></p>
-        </div>
-
-    </div>
-    <nav>
-        <ul>
-            <li>
-                <a href="">
-                    前進鬼島
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    尋鬼探險
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    靈異票選
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img id="topLogo" src="./img/logo/LOGO_white.png">
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    試膽測驗
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    靈異討論
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    會員中心
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
+            @@include('layout/header.html')
             <div class="forum_container">
                 <!-- 文章標題 -->
                 <div class="article_title">
@@ -564,98 +495,7 @@
                     </form>
                 </div>
             </div>
-            <footer>
-    <div id="warn">
-        <p id="warnTitle"><span>鬼島探險</span>注意事項</p>
-        <ol>
-            <li>美食壯膽，再出發探險</li>
-            <li>不要半夜吹口哨、不要嬉笑打鬧</li>
-            <li>有人拍肩，不要回頭看</li>
-            <li>尋鬼探險事後三炷香</li>
-            <li>探險完畢若有不適，本站既不負責</li>
-        </ol>
-    </div>
-    <div id="spell" class="cameraSpell">
-        <div class="papper">
-            <img src="./img/footer/spell_1.png">
-        </div>
-        
-    </div>
-    <div id="footLink">
-        <a href="">
-            <img src="./img/logo/LOGO_black.png" id="BottomLogo">
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <p>
-                        <a href="">
-                            前進鬼島
-                        </a>
-                    </p>
-
-                    <p>
-                        <a href="">
-                            尋鬼探險
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="">
-                            靈異票選
-                        </a>
-                    </p>
-
-                    <p>
-                        <a href="">
-                            試膽測驗
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="">
-                            試膽測驗
-                        </a>
-                    </p>
-
-                    <p>
-                        <a href="">
-                            文章投稿
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="">
-                            會員中心
-                        </a>
-
-                    </p>
-                    <p>
-                        <span class="subLink">
-                            <a href="">
-                                會員資料
-                            </a>
-                            <a href="">
-                                揪團紀錄
-                            </a>
-                        </span>
-                        <span class="subLink">
-                            <a href="">
-                                我的收藏
-                            </a>
-                            <a href="">
-                                投稿紀錄
-                            </a>
-                        </span>
-                    </p>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</footer>
+            @@include('layout/footer.html')
         </div>
     </body>
 </html>
