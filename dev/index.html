@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     @@include('layout/head.html')
     <!-- 視差滑動 -->
@@ -11,9 +11,11 @@
 <body>
     <div class="wrapper">
         <div id="ghostSpotBG">
+
             @@include('layout/header.html')
+
             <section id="indexSection1">
-                
+
                 <div class="parallaxContainer">
 
                     <ul id="scene">
@@ -49,7 +51,7 @@
                             <img src="./img/index/g1.png" class="G1">
                         </li>
 
-                        <li class="layer" data-depth="0.1" >
+                        <li class="layer" data-depth="0.1">
                             <img src="./img/index/g9.png" class="G9">
                         </li>
 
@@ -61,8 +63,224 @@
                 </div>
             </section>
 
+            <div class="indexTitleZone1">
+                <h1 class="title">靈異景點</h1>
+                <h1 class="title2">TOP3</h1>
+                <img src="./img/index/spiderweb01.png">
+            </div>
+
             <section id="indexSection2">
-                lily
+
+                <div class="mapZone">
+                    <img src="./img/index/map.png">
+                    <div class="mapWidth">
+
+                        <div class="loc1">
+                            <img src="./img/index/top1.png" class="rank" id="mapRank1">
+                            <p class="location" id="loc1"></p>
+                            <img src="./img/map/spell1.png" id="spell1" class="spellSize" />
+                        </div>
+
+                        <div class="loc2">
+                            <img src="./img/index/top2.png" class="rank" id="mapRank2">
+                            <p class="location" id="loc2"></p>
+                            <img src="./img/map/spell7.png" id="spell2" class="spellSize" />
+                        </div>
+
+                        <div class="loc3">
+                            <img src="./img/index/top3.png" class="rank" id="mapRank3">
+                            <p class="location" id="loc3"></p>
+                            <img src="./img/map/spell11.png" id="spell3" class="spellSize" />
+                        </div>
+
+                        <div class="loader loader1" data-text="loaderloader"></div>
+                        <div class="loader loader2" data-text="loaderloader"></div>
+                        <div class="loader loader3" data-text="loaderloader"></div>
+                        <div class="loader loader4" data-text="loaderloader"></div>
+                    </div>
+
+                </div>
+
+                <div class="spotInfoZone">
+
+                    <div id="spotInfoWrap">
+
+                        <div class="spotInfo">
+
+                            <div class="imgZone">
+                                <a href="./ghostSpot.html">
+                                    <img src="./img/index/top1Img_1.png">
+                                    <img src="./img/index/top1Img_2.png" class="moreInfo">
+                                </a>
+                            </div>
+
+                            <div class="txtZone">
+
+                                <div class="locInfo">
+                                    <img src="./img/icon/location.png">
+                                    <p>
+                                        靈異地址：新北市新莊區雙鳳里
+                                    </p>
+                                </div>
+
+                                <div class="spotContent">
+                                    <img src="./img/icon/report.svg">
+                                    <p>
+                                        景點簡介：<br>
+                                        早期專門用來隔離麻瘋病患的療養院。現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等....
+                                    </p>
+                                </div>
+
+                                <div class="msgInfo">
+
+                                    <div class="msgTitle">
+                                        <img src="./img/icon/msgindex.png">
+                                        <p>
+                                            熱門評論：
+                                        </p>
+                                    </div>
+
+                                    <div class="msgNew">
+                                        <img src="./img/icon/header1.png">
+                                        <div class="msgContent">
+                                            <p class="name">富江我老婆<span>2020-03-05 18:34</span></p>
+                                            <p class="msg">陰暗的地下室，配上到處丟棄的醫療用品，半夜去探險超毛！！！</p>
+                                        </div>
+                                        <p class="triangle"></p>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn-outline">
+                                    查看景點詳情
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="spotInfo">
+
+                            <div class="imgZone">
+                                <a href="./ghostSpot.html">
+                                    <img src="./img/index/top1Img_1.png">
+                                    <img src="./img/index/top1Img_2.png" class="moreInfo">
+                                </a>
+                            </div>
+
+                            <div class="txtZone">
+
+                                <div class="locInfo">
+                                    <img src="./img/icon/location.png">
+                                    <p>
+                                        靈異地址：新北市新莊區雙鳳里
+                                    </p>
+                                </div>
+
+                                <div class="spotContent">
+                                    <img src="./img/icon/report.svg">
+                                    <p>
+                                        景點簡介：<br>
+                                        早期專門用來隔離麻瘋病患的療養院。現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等....
+                                    </p>
+                                </div>
+
+                                <div class="msgInfo">
+
+                                    <div class="msgTitle">
+                                        <img src="./img/icon/msgindex.png">
+                                        <p>
+                                            熱門評論：
+                                        </p>
+                                    </div>
+
+                                    <div class="msgNew">
+                                        <img src="./img/icon/header1.png">
+                                        <div class="msgContent">
+                                            <p class="name">富江我老婆<span>2020-03-05 18:34</span></p>
+                                            <p class="msg">陰暗的地下室，配上到處丟棄的醫療用品，半夜去探險超毛！！！</p>
+                                        </div>
+                                        <p class="triangle"></p>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn-outline">
+                                    查看景點詳情
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="spotInfo">
+
+                            <div class="imgZone">
+                                <a href="./ghostSpot.html">
+                                    <img src="./img/index/top1Img_1.png">
+                                    <img src="./img/index/top1Img_2.png" class="moreInfo">
+                                </a>
+                            </div>
+
+                            <div class="txtZone">
+
+                                <div class="locInfo">
+                                    <img src="./img/icon/location.png">
+                                    <p>
+                                        靈異地址：新北市新莊區雙鳳里
+                                    </p>
+                                </div>
+
+                                <div class="spotContent">
+                                    <img src="./img/icon/report.svg">
+                                    <p>
+                                        景點簡介：<br>
+                                        早期專門用來隔離麻瘋病患的療養院。現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等....
+                                    </p>
+                                </div>
+
+                                <div class="msgInfo">
+
+                                    <div class="msgTitle">
+                                        <img src="./img/icon/msgindex.png">
+                                        <p>
+                                            熱門評論：
+                                        </p>
+                                    </div>
+
+                                    <div class="msgNew">
+                                        <img src="./img/icon/header1.png">
+                                        <div class="msgContent">
+                                            <p class="name">富江我老婆<span>2020-03-05 18:34</span></p>
+                                            <p class="msg">陰暗的地下室，配上到處丟棄的醫療用品，半夜去探險超毛！！！</p>
+                                        </div>
+                                        <p class="triangle"></p>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn-outline">
+                                    查看景點詳情
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button id="rightScroll" class="scrollBtn" disabled>
+                        <span>〈</span>
+                    </button>
+                    <button id="leftScroll" class="scrollBtn">
+                        <span>〉</span>
+                    </button>
+
+                </div>
+
             </section>
 
             <section id="section3">
@@ -251,6 +469,10 @@
         var scene = document.getElementById('scene');
         var parallax = new Parallax(scene);
     </script>
+
+    <!-- 靈異景點top3輪播 -->
+    <script src="./js/indexSpotCarasoul.js"></script>
+
 
 </body>
 
