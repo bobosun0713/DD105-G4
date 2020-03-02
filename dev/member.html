@@ -2,11 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>member</title>
-    <!-- <link rel="stylesheet" type="text/css" href="./member_center/css/member.css">
-    <link rel="stylesheet" type="text/css" href="./member_center/css/main.css"> -->
 
     @@include('layout/head.html')
 </head>
@@ -14,12 +10,18 @@
 <body>
     <div class="wrapper">
         <!-- header -->
-      
-        @@include('layout/head.html')
+
+        @@include('layout/header.html')
         <!-- header end -->
 
+        <div class="breadcrumb1">
+            <ul>
+                <li><a href="">首頁</a></li>
+                <li id="symble">/</li>
+                <li><a href="">會員中心</a></li>
+            </ul>
+        </div>
 
-        <div class="title"><a href="">首頁</a><span class="symbol">&nbsp/</span><a href="">會員中心</a></div>
         <!-- btnall -->
         <div class="btnall">
             <div class="member_data">
@@ -46,7 +48,7 @@
                 <input id="tab-5" type="radio" name="tab-group" />
                 <label for="tab-5">我的收藏</label>
                 <br>
-                
+
                 <!-- content -->
                 <hr class="hr1">
                 <div id="content">
@@ -103,10 +105,10 @@
                                 <br>
                                 <li><span><img src="./img/member/point.png"
                                             style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                <li><span><img src="./img/member/calender.png"
-                                            style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                <li><span><img src="./img/member/money.png"
-                                            style="width: 15px;">&nbsp</span>總預算約:1000元</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
                                 <li><button class="btn-type1">重新發佈</button></li>
                             </ul>
                             <br>
@@ -124,10 +126,10 @@
                                 <br>
                                 <li><span><img src="./img/member/point.png"
                                             style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                <li><span><img src="./img/member/calender.png"
-                                            style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                <li><span><img src="./img/member/money.png"
-                                            style="width: 15px;">&nbsp</span>總預算約:1000元</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
                                 <li><button class="btn-type1">重新發佈</button></li>
                             </ul>
                             <br>
@@ -145,17 +147,18 @@
                                 <br>
                                 <li><span><img src="./img/member/point.png"
                                             style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                <li><span><img src="./img/member/calender.png"
-                                            style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                <li><span><img src="./img/member/money.png"
-                                            style="width: 15px;">&nbsp</span>總預算約:1000元</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
                                 <li><button class="btn-type1">取消揪團</button></li>
 
                                 <!-- <li class="clear"></li> -->
 
                                 <ul id="tour_msg">
-                                <li id="people_join"><span>參加人數 :</span><span><img src="./img/member/mems_head.png" alt=""></span><span>4 / 10</span></li>
-                                <li id="people_join_img"><img src="./img/member/progress_bar.png" alt=""></li>
+                                    <li id="people_join"><span>參加人數 :</span><span><img src="./img/member/mems_head.png"
+                                                alt=""></span><span>4 / 10</span></li>
+                                    <li id="people_join_img"><img src="./img/member/progress_bar.png" alt=""></li>
                                 </ul>
                                 <br>
                                 <li id="msg_tour">
@@ -172,8 +175,8 @@
                                         <br>
                                         <p id="msg_detail">這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到
                                             人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到人家。</p>
-                                        <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png" id="img_report"
-                                                style="width: 20px;"></span>
+                                        <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png"
+                                                id="img_report" style="width: 20px;"></span>
                                     </li>
                                 </ul>
                                 <br>
@@ -186,10 +189,21 @@
                                         <br>
                                         <p id="msg_detail">這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到
                                             人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到人家。</p>
-                                        <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png" id="img_report"
-                                                style="width: 20px;"></span>
+                                        <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png"
+                                                id="img_report" style="width: 20px;"></span>
                                     </li>
                                 </ul>
+                            </ul>
+                            <br>
+                            <ul class="pagination">
+                                <li class="pageBtn"><span class="toLeft">〈 </span></li>
+                                <p class="PageSelected">1</p>
+                                <p>2</p>
+                                <p>3</p>
+                                <p>4</p>
+                                <p>5</p>
+                                <p>6</p>
+                                <li class="pageBtn"><span class="toRight"> 〉</span></li>
                             </ul>
                         </ul>
                     </div>
@@ -198,9 +212,11 @@
                     <!-- content-3 -->
                     <div id="content-3">
                         <form class="table1" method="" action="">
-                            <input class="all_join_tour" type="radio" name="join_tour" id="all_join_tour" value="all_join_tour">
+                            <input class="all_join_tour" type="radio" name="join_tour" id="all_join_tour"
+                                value="all_join_tour">
                             <label for="all_join_tour">全部</label>
-                            <input class="est_join_tour" type="radio" name="join_tour" id="est_join_tour" value="est_join_tour">
+                            <input class="est_join_tour" type="radio" name="join_tour" id="est_join_tour"
+                                value="est_join_tour">
                             <label for="est_join_tou">參加中的揪團</label>
                             <input class="end" type="radio" name="join_tour" id="end_join_tour" value="end_join_tour">
                             <label for="end_join_tour">已結束揪團</label>
@@ -212,8 +228,8 @@
                                 </li>
                                 <li>
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span><span><img
-                                                id="add_icon" src="./img/member/add.png"
-                                                style="width: 20px;"></span></h1>
+                                                id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
+                                    </h1>
                                 </li>
                                 <br>
                                 <li>
@@ -222,10 +238,10 @@
                                 <br>
                                 <li><span><img src="./img/member/point.png"
                                             style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                <li><span><img src="./img/member/calender.png"
-                                            style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                <li><span><img src="./img/member/money.png"
-                                            style="width: 15px;">&nbsp</span>總預算約:1000元</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
                                 <li><button class="btn-type1">已結束</button></li>
                             </ul>
                             <br>
@@ -234,8 +250,8 @@
                                 </li>
                                 <li>
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span><span><img
-                                                id="add_icon" src=".//img/member/add.png"
-                                                style="width: 20px;"></span></h1>
+                                                id="add_icon" src=".//img/member/add.png" style="width: 20px;"></span>
+                                    </h1>
                                 </li>
                                 <br>
                                 <li>
@@ -244,10 +260,10 @@
                                 <br>
                                 <li><span><img src="./img/member/point.png"
                                             style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                <li><span><img src="./img/member/calender.png"
-                                            style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                <li><span><img src="./img/member/money.png"
-                                            style="width: 15px;">&nbsp</span>總預算約:1000元</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
                                 <li><button class="btn-type1">取消參加</button></li>
                             </ul>
                             <br>
@@ -256,8 +272,8 @@
                                 </li>
                                 <li>
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span><span><img
-                                                id="add_icon" src="./img/member/add.png"
-                                                style="width: 20px;"></span></h1>
+                                                id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
+                                    </h1>
                                 </li>
                                 <br>
                                 <li>
@@ -266,50 +282,62 @@
                                 <br>
                                 <li><span><img src="./img/member/point.png"
                                             style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                <li><span><img src="./img/member/calender.png"
-                                            style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                <li><span><img src="./img/member/money.png"
-                                            style="width: 15px;">&nbsp</span>總預算約:1000元</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
                                 <li><button class="btn-type1">取消參加</button></li>
 
                                 <!-- <li class="clear"></li> -->
                                 <ul id="tour_msg">
-                                    <li id="people_join"><span>參加人數 :</span><span><img src="./img/member/mems_head.png" alt=""></span><span>4 / 10</span></li>
+                                    <li id="people_join"><span>參加人數 :</span><span><img src="./img/member/mems_head.png"
+                                                alt=""></span><span>4 / 10</span></li>
                                     <li id="people_join_img"><img src="./img/member/progress_bar.png" alt=""></li>
-                                    </ul>
-                                    <br>
-                                    <li id="msg_tour">
-                                        <h1>揪團留言</h1>
+                                </ul>
+                                <br>
+                                <li id="msg_tour">
+                                    <h1>揪團留言</h1>
+                                </li>
+                                <br>
+                                <br>
+                                <ul id="msg_1">
+                                    <li><img id="msg_img" src="./img/member/dog.jpg">
+                                        <span id="msg_title">富江我老婆</span>&nbsp&nbsp<span
+                                            id="msg_data">2020-04-06</span>&nbsp&nbsp<span
+                                            id="msg_time">18:49</span>&nbsp&nbsp<span id="indeed">發表</span>
+                                        <br>
+                                        <br>
+                                        <p id="msg_detail">這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到
+                                            人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到人家。</p>
+                                        <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png"
+                                                id="img_report" style="width: 20px;"></span>
                                     </li>
-                                    <br>
-                                    <br>
-                                    <ul id="msg_1">
-                                        <li><img id="msg_img" src="./img/member/dog.jpg">
-                                            <span id="msg_title">富江我老婆</span>&nbsp&nbsp<span
-                                                id="msg_data">2020-04-06</span>&nbsp&nbsp<span
-                                                id="msg_time">18:49</span>&nbsp&nbsp<span id="indeed">發表</span>
-                                            <br>
-                                            <br>
-                                            <p id="msg_detail">這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到
-                                                人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到人家。</p>
-                                            <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png" id="img_report"
-                                                    style="width: 20px;"></span>
-                                        </li>
-                                    </ul>
-                                    <br>
-                                    <ul id="msg_1">
-                                        <li><img id="msg_img" src="./img/member/dog.jpg">
-                                            <span id="msg_title">富江我老婆</span>&nbsp&nbsp<span
-                                                id="msg_data">2020-04-06</span>&nbsp&nbsp<span
-                                                id="msg_time">18:49</span>&nbsp&nbsp<span id="indeed">發表</span>
-                                            <br>
-                                            <br>
-                                            <p id="msg_detail">這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到
-                                                人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到人家。</p>
-                                            <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png" id="img_report"
-                                                    style="width: 20px;"></span>
-                                        </li>
-                                    </ul>    
+                                </ul>
+                                <br>
+                                <ul id="msg_1">
+                                    <li><img id="msg_img" src="./img/member/dog.jpg">
+                                        <span id="msg_title">富江我老婆</span>&nbsp&nbsp<span
+                                            id="msg_data">2020-04-06</span>&nbsp&nbsp<span
+                                            id="msg_time">18:49</span>&nbsp&nbsp<span id="indeed">發表</span>
+                                        <br>
+                                        <br>
+                                        <p id="msg_detail">這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到
+                                            人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會這個地方我來了很多次，特別有愛所以寫攻略文，這邊有居民所以還是希望不要來打擾到人家。</p>
+                                        <span><span id="msg_report">檢舉留言</span><img src="./img/member/true.png"
+                                                id="img_report" style="width: 20px;"></span>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <br>
+                            <ul class="pagination">
+                                <li class="pageBtn"><span class="toLeft">〈 </span></li>
+                                <p class="PageSelected">1</p>
+                                <p>2</p>
+                                <p>3</p>
+                                <p>4</p>
+                                <p>5</p>
+                                <p>6</p>
+                                <li class="pageBtn"><span class="toRight"> 〉</span></li>
                             </ul>
                         </ul>
                     </div>
@@ -317,7 +345,7 @@
 
                     <!-- content-4 -->
                     <div id="content-4">
-                        
+
                         <ul id="tour_table_all">
                             <ul id="tour_table">
                                 <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
@@ -333,10 +361,12 @@
                                 <br>
                                 <br>
                                 <br>
-                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png" style="width: 120px;"></span>
+                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png"
+                                            style="width: 120px;"></span>
                                     <span id="love_icon"><img src="./img/member/love.png" style="width: 30px;">40</span>
                                     <span id="dis_icon"><img src="./img/member/talk.png" style="width: 30px;">22</span>
-                                    <span id="view_icon"><img src="./img/member/eyes.png" style="width: 30px;">1320</span>
+                                    <span id="view_icon"><img src="./img/member/eyes.png"
+                                            style="width: 30px;">1320</span>
                                     </span>
                                 </li>
                             </ul>
@@ -355,10 +385,12 @@
                                 <br>
                                 <br>
                                 <br>
-                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png" style="width: 120px;"></span>
+                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png"
+                                            style="width: 120px;"></span>
                                     <span id="love_icon"><img src="./img/member/love.png" style="width: 30px;">40</span>
                                     <span id="dis_icon"><img src="./img/member/talk.png" style="width: 30px;">22</span>
-                                    <span id="view_icon"><img src="./img/member/eyes.png" style="width: 30px;">1320</span>
+                                    <span id="view_icon"><img src="./img/member/eyes.png"
+                                            style="width: 30px;">1320</span>
                                     </span>
                                 </li>
                             </ul>
@@ -377,10 +409,12 @@
                                 <br>
                                 <br>
                                 <br>
-                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png" style="width: 120px;"></span>
+                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png"
+                                            style="width: 120px;"></span>
                                     <span id="love_icon"><img src="./img/member/love.png" style="width: 30px;">40</span>
                                     <span id="dis_icon"><img src="./img/member/talk.png" style="width: 30px;">22</span>
-                                    <span id="view_icon"><img src="./img/member/eyes.png" style="width: 30px;">1320</span>
+                                    <span id="view_icon"><img src="./img/member/eyes.png"
+                                            style="width: 30px;">1320</span>
                                     </span>
                                 </li>
                             </ul>
@@ -399,113 +433,137 @@
                                 <br>
                                 <br>
                                 <br>
-                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png" style="width: 120px;"></span>
+                                <li><span id="espl_icon">&nbsp<img src="./img/member/espl.png"
+                                            style="width: 120px;"></span>
                                     <span id="love_icon"><img src="./img/member/love.png" style="width: 30px;">40</span>
                                     <span id="dis_icon"><img src="./img/member/talk.png" style="width: 30px;">22</span>
-                                    <span id="view_icon"><img src="./img/member/eyes.png" style="width: 30px;">1320</span>
+                                    <span id="view_icon"><img src="./img/member/eyes.png"
+                                            style="width: 30px;">1320</span>
                                     </span>
                                 </li>
+                            </ul>
+                            <br>
+                            <ul class="pagination">
+                                <li class="pageBtn"><span class="toLeft">〈 </span></li>
+                                <p class="PageSelected">1</p>
+                                <p>2</p>
+                                <p>3</p>
+                                <p>4</p>
+                                <p>5</p>
+                                <p>6</p>
+                                <li class="pageBtn"><span class="toRight"> 〉</span></li>
                             </ul>
                         </ul>
                     </div>
-                        <!-- content-4 end-->
+                    <!-- content-4 end-->
 
 
-                        <!-- content-5 -->
-                        <div id="content-5">
-                            <form class="table1" method="" action="">
-                                <input class="tour_fav" type="radio" name="tour_fav" id="tour_fav" value="all">
-                                <label for="alltour">揪團收藏</label>
-                                <input class="article_fav" type="radio" name="tour_fav" id="article_fav" value="est">
-                                <label for="article_fav">文章收藏</label>
-                            </form>
-                            <br>
-                            <ul id="tour_table_all">
-                                <ul id="tour_table">
-                                    <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
-                                    </li>
-                                    <li>
-                                        <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon" src="./img/member/add.png"
-                                                    style="width: 20px;"></span></h1>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
-                                    </li>
-                                    <br>
-                                    <li><span><img src="./img/member/point.png"
-                                                style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                    <li><span><img src="./img/member/calender.png"
-                                                style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                    <li><span><img src="./img/member/money.png"
-                                                style="width: 15px;">&nbsp</span>總預算約:1000元</li>
-                                    <li><button class="btn-type1">立即加入</button></li>
-                                </ul>
+                    <!-- content-5 -->
+                    <div id="content-5">
+                        <form class="table1" method="" action="">
+                            <input class="tour_fav" type="radio" name="tour_fav" id="tour_fav" value="all">
+                            <label for="alltour">揪團收藏</label>
+                            <input class="article_fav" type="radio" name="tour_fav" id="article_fav" value="est">
+                            <label for="article_fav">文章收藏</label>
+                        </form>
+                        <br>
+                        <ul id="tour_table_all">
+                            <ul id="tour_table">
+                                <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
+                                </li>
+                                <li>
+                                    <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon"
+                                                    src="./img/member/add.png" style="width: 20px;"></span></h1>
+                                </li>
                                 <br>
-                                <ul id="tour_table">
-                                    <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
-                                    </li>
-                                    <li>
-                                        <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon" src="./img/member/add.png"
-                                                    style="width: 20px;"></span></h1>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
-                                    </li>
-                                    <br>
-                                    <li><span><img src="./img/member/point.png"
-                                                style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                    <li><span><img src="./img/member/calender.png"
-                                                style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                    <li><span><img src="./img/member/money.png"
-                                                style="width: 15px;">&nbsp</span>總預算約:1000元</li>
-                                    <li><button class="btn-type1">立即加入</button></li>
-                                </ul>
+                                <li>
+                                    <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
+                                </li>
                                 <br>
-                                <ul id="tour_table">
-                                    <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
-                                    </li>
-                                    <li>
-                                        <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon" src="./img/member/add.png"
-                                                    style="width: 20px;"></span></h1>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
-                                    </li>
-                                    <br>
-                                    <li><span><img src="./img/member/point.png"
-                                                style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                    <li><span><img src="./img/member/calender.png"
-                                                style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                    <li><span><img src="./img/member/money.png"
-                                                style="width: 15px;">&nbsp</span>總預算約:1000元</li>
-                                    <li><button class="btn-type1">立即加入</button></li>
-                                </ul>
-                                <ul id="tour_table">
-                                    <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
-                                    </li>
-                                    <li>
-                                        <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon" src="./img/member/add.png"
-                                                    style="width: 20px;"></span></h1>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
-                                    </li>
-                                    <br>
-                                    <li><span><img src="./img/member/point.png"
-                                                style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
-                                    <li><span><img src="./img/member/calender.png"
-                                                style="width: 20px;">&nbsp</span>出發日期 :2020-01-20</li>
-                                    <li><span><img src="./img/member/money.png"
-                                                style="width: 15px;">&nbsp</span>總預算約:1000元</li>
-                                    <li><button class="btn-type1">立即加入</button></li>
-                                </ul>
+                                <li><span><img src="./img/member/point.png"
+                                            style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
+                                <li><button class="btn-type1">立即加入</button></li>
                             </ul>
-                        </div>
-                        <!-- content-5 end-->                  
+                            <br>
+                            <ul id="tour_table">
+                                <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
+                                </li>
+                                <li>
+                                    <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon"
+                                                    src="./img/member/add.png" style="width: 20px;"></span></h1>
+                                </li>
+                                <br>
+                                <li>
+                                    <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
+                                </li>
+                                <br>
+                                <li><span><img src="./img/member/point.png"
+                                            style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
+                                <li><button class="btn-type1">立即加入</button></li>
+                            </ul>
+                            <br>
+                            <ul id="tour_table">
+                                <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
+                                </li>
+                                <li>
+                                    <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon"
+                                                    src="./img/member/add.png" style="width: 20px;"></span></h1>
+                                </li>
+                                <br>
+                                <li>
+                                    <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
+                                </li>
+                                <br>
+                                <li><span><img src="./img/member/point.png"
+                                            style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
+                                <li><button class="btn-type1">立即加入</button></li>
+                            </ul>
+                            <ul id="tour_table">
+                                <li><img id="spotimg" src="./img/member/cancel.jpg" width="300px"></<img>
+                                </li>
+                                <li>
+                                    <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button><span><img id="add_icon"
+                                                    src="./img/member/add.png" style="width: 20px;"></span></h1>
+                                </li>
+                                <br>
+                                <li>
+                                    <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如 白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
+                                </li>
+                                <br>
+                                <li><span><img src="./img/member/point.png"
+                                            style="width: 15px;">&nbsp&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</li>
+                                <li><span><img src="./img/member/calender.png" style="width: 20px;">&nbsp</span>出發日期
+                                    :2020-01-20</li>
+                                <li><span><img src="./img/member/money.png" style="width: 15px;">&nbsp</span>總預算約:1000元
+                                </li>
+                                <li><button class="btn-type1">立即加入</button></li>
+                            </ul>
+                            <br>
+                            <ul class="pagination">
+                                <li class="pageBtn"><span class="toLeft">〈 </span></li>
+                                <p class="PageSelected">1</p>
+                                <p>2</p>
+                                <p>3</p>
+                                <p>4</p>
+                                <p>5</p>
+                                <p>6</p>
+                                <li class="pageBtn"><span class="toRight"> 〉</span></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <!-- content-5 end-->
                 </div>
                 <!-- content end-->
             </div>
@@ -514,8 +572,9 @@
         <!-- btnall end-->
 
 
-         <!-- footer -->
-         @@include('layout/footer.html')
+        <!-- footer -->
+        @@include('layout/footer.html')
         <!-- footer end -->
 </body>
+
 </html>
