@@ -10,12 +10,8 @@ header {
   text-align: center;
   box-sizing: border-box;
   padding: 0px 0px 50px 0px;
-<<<<<<< HEAD
-  background: linear-gradient(to bottom, rgb(0, 0, 0, .6) 50%, rgba(0, 0, 0));
-=======
   background: linear-gradient(to bottom, rgba(0,0,0, .6), rgba(0,0,0,0));
 
->>>>>>> 49049e77faa39d432d2c755e4126d4bd7560f63e
   #navStatus {
     text-align: right;
     // border: 1px solid red;
@@ -89,9 +85,6 @@ header {
       transform-origin: top left;
       transition: transform 0.5s ease-out;
 
-      &:hover {
-        // transform: rotate(10deg);
-      }
 
       a {
         width: 100%;
