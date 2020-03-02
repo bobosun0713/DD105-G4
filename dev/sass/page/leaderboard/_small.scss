@@ -3,3 +3,226 @@
    
   
   }
+  //桌基板幽靈隱藏
+#leaderboard-form{//div-leaderboard-form
+  background-image: none;}
+//  -------RWD--------- 576px *767px------------- 
+ 
+@media screen and (min-width:576px) and (max-width:767px){
+  body{
+    width: 570px;
+    width: 100%;
+/* 投給你內心 */
+#vote{
+    .vote-img{
+      width: 200px;
+      height: 170px;
+    }
+    .vote-text{
+      margin-top: 65px;
+      width: 270px;
+      margin-bottom: 50px;
+      font-size: 1.4rem;
+    }
+}
+
+}
+
+
+/* div.Haunted-house 排行TOP前三名 */
+.Haunted-house{
+width: 570px;
+width: 100%;
+max-height:170px;
+      /* 景點圖片 */
+      .Haunted-house-i{
+        width: 25%;
+       }
+      .Strip-background{//div
+        background-image: url(../img/leaderboard/ghost-4-s-2.png);
+        margin-top: 60px;
+        width: 570px;
+        width: 65%;
+        height: 200px;
+        margin-left: -40px;
+        margin-top: 50px;
+        }
+      //h2
+      .Haunted-house-t{
+        font-size: 4rem;
+        margin-top: -60px;
+        margin-left: -60px;
+        }
+      //p
+      .Haunted-house-p{
+        margin-left: 1px;
+        margin-top: -53px;
+        line-height: 30px;
+        text-align: right;
+        word-spacing:110px;//空白建間隔
+        width: 280px;
+        word-wrap:break-word;//文字強迫換行
+        }
+
+}
+// 來抓交替囉隱藏
+#alternately{
+      .alternately-p{
+        display: none;
+        }
+      .alternately-i{
+        display: none;
+        }
+}
+//手機板的幽靈隱藏
+#ghost-2-s{
+  display: block;
+  margin-top: 150px;
+  margin-bottom: -180px;
+
+}
+
+// 老鼠
+     .mouse{
+      width: 180px;
+      margin-top: 10px;
+     }
+
+     .Vote-btn{//按鈕
+       margin-bottom: 50px;
+       margin-top: -50px;
+     }
+}
+
+
+
+
+
+//  -------RWD--------- 319px *575px------------- 
+ 
+@media screen and (min-width:319px) and (max-width:575px){
+  body{
+    width: 320px;
+    width: 100%;
+    float: left;
+    // background-color: sandybrown;
+    background-image: none;
+/* 投給你內心 */
+#vote{
+  // margin-left: -30px;
+  width: 320px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    .vote-img{
+      width: 80px;
+      // width: 25%;
+      height: 70px;
+      float: left;
+      margin-left: 5px;
+
+    }
+    .vote-text{
+      margin-top: 15px;
+      max-width: 130px;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      margin-left: 40px;
+    }
+}
+
+}
+
+
+/* div.Haunted-house 排行TOP前三名 */
+.Haunted-house{
+width: 570px;
+width: 100%;
+max-height:170px;
+      /* 景點圖片 */
+      .Haunted-house-i{
+        width: 25%;
+       }
+      .Strip-background{//div
+        background-image: url(../img/leaderboard/ghost-4-s-2.png);
+        margin-top: 60px;
+        width: 570px;
+        width: 65%;
+        height: 200px;
+        margin-left: -40px;
+        margin-top: 50px;
+        }
+      //h2
+      .Haunted-house-t{
+        font-size: 4rem;
+        margin-top: -60px;
+        margin-left: -60px;
+        }
+      //p
+      .Haunted-house-p{
+        margin-left: 1px;
+        margin-top: -53px;
+        line-height: 30px;
+        text-align: right;
+        word-spacing:110px;//空白建間隔
+        width: 280px;
+        word-wrap:break-word;//文字強迫換行
+        }
+
+}
+// 來抓交替囉隱藏
+#alternately{
+      .alternately-p{
+        display: none;
+        }
+      .alternately-i{
+        display: none;
+        }
+}
+//手機板的幽靈隱藏
+#ghost-2-s{
+  display: block;
+  margin-top: 150px;
+  margin-bottom: -180px;
+
+}
+// 排行榜表單
+
+#leaderboard-form{//div-leaderboard-form
+margin-bottom: 250px;
+    #leaderboard-form-1{//table-leaderboard-form-1
+        #Form-name{//名次的tr
+            width: 180px;
+            line-height: 50px;
+            background-color: rgb(139, 4, 4);
+            td.Form-name{
+              width: 180px;
+              // line-height: 50px;
+              text-align: center;
+              padding: 5px;
+              }
+          }
+          .Ranking{
+                  width: 180px;
+                  td{
+                      padding: 5px;
+                      width: 180px;
+                      }
+                  }
+
+      }
+
+}
+
+// 老鼠
+     .mouse{
+      width: 180px;
+      margin-top: 10px;
+     }
+
+     .Vote-btn{//按鈕
+       margin-bottom: 50px;
+       margin-top: -50px;
+     }
+}
+
