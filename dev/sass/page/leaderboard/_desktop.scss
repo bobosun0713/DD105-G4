@@ -7,7 +7,7 @@
   // outline:1px solid rgb(189, 205, 211);
 }
 
-body{
+#leaderboard{
   
   background-image: url(../img/leaderboard/Background-image.png);
   width: 1200px;
@@ -169,7 +169,7 @@ body{
 //  -------RWD---------1300px *1680px------------- 
  
 @media screen and (min-width:1300px) and (max-width:1700px){
- body{
+  #leaderboard{
 width: 990px;
 width: 100%;
  /* 投給你內心 */
@@ -278,7 +278,7 @@ width: 100%;
 //  -------RWD---------992px *1299px------------- 
  
 @media screen and (min-width:992px) and (max-width:1299px){
-    body{
+  #leaderboard{
       width: 990px;
       width: 100%;
 /* 投給你內心 */

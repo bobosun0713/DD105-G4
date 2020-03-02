@@ -9,7 +9,7 @@
 //  -------RWD--------- 576px *767px------------- 
  
 @media screen and (min-width:576px) and (max-width:767px){
-  body{
+  #leaderboard{
     width: 570px;
     width: 100%;
 /* 投給你內心 */
@@ -103,7 +103,7 @@ max-height:170px;
 //  -------RWD--------- 480px *575px------------- 
  
 @media screen and (min-width:480px) and (max-width:575px){
-  body{
+  #leaderboard{
     width: 320px;
     width: 100%;
     float: left;
@@ -228,7 +228,7 @@ margin-bottom: 250px;
 //  -------RWD--------- 319px *479px------------- 
  
 @media screen and (min-width:319px) and (max-width:479px){
-  body{
+  #leaderboard{
     width: 320px;
     width: 100%;
     float: left;
