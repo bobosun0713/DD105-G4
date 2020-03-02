@@ -1,23 +1,222 @@
-#section1 {
-    border: 1px solid red;
-    width: 100%;
-    // height: 800px;
+#indexSection1 {
+//   border: 1px solid red;
+  width: 100%;
+  // height: 1000px;
+  position: relative;
+
+  .parallaxContainer {
+    // border: 1px solid green;
+    width: 800px;
+    height: 800px;
+    margin: 50px auto;
+    background-attachment: fixed;
+
+    li {
+      filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.4));
+    }
+
+    .G8 {
+      opacity: 0.6;
+      animation: G8_swing 3s linear infinite;
+    }
+    @keyframes G8_swing {
+      0% {
+        transform: translateY(0px);
+      }
+      30% {
+        transform: translateY(20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .G7 {
+      opacity: 0.7;
+      animation: G8_swing 3s linear infinite;
+    }
+
+    .G6 {
+      opacity: 0.9;
+    }
+
+    .G5 {
+      opacity: 0.9;
+      animation: G5_swing 3s linear infinite;
+    }
+    @keyframes G5_swing {
+      0% {
+        transform: translateX(0px);
+      }
+      30% {
+        transform: translateX(15px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+    }
+    .G4 {
+      opacity: 0.9;
+      animation: G8_swing 4s linear infinite;
+    }
+
+    .G3 {
+      opacity: 0.95;
+      animation: G8_swing 3s linear infinite;
+    }
+
+    .G2 {
+      opacity: 0.9;
+      animation: G8_swing 4s linear infinite;
+    }
+
+    .G1 {
+      animation: G8_swing 5s linear infinite;
+    }
+  }
+
+  .route1{
+      width: 280px;
+      position: absolute;
+      right: 450px;
+      bottom: -460px;
+
+      img{
+        width: 100%;
+      }
+  }
 }
 
-#section2 {
-    border: 1px solid orange;
-    // width: 100%;
-    // height: 800px;
+#indexSection2 {
+  border: 1px solid orange;
+  // width: 100%;
+  height: 800px;
+  margin-top: 300px;
 }
 
 #section3 {
-    border: 1px solid green;
-    width: 100%;
-    // height: 800px;
+  border: 1px solid green;
+  width: 100%;
+  // height: 800px;
 }
 
+// ========================= 討論區
 #section4 {
+  border: 1px solid red;
+  height: 800px;
+
+  .card_channel {
+    position: relative;
+    margin: 0 auto;
     border: 1px solid blue;
-    width: 100%;
-    // height: 800px;
+    // width: 1800px;
+    height: 600px;
+    overflow: hidden;
+    .card_warp {
+      // border: 1px solid blue;
+      position: absolute;
+      transition: all 1s;
+      margin: 10px auto;
+      width: 3000px;
+      color: black;
+      display: flex;
+
+      .card_border {
+        // border: 1px solid green;
+        position: relative;
+        margin: 0 20px;
+        border-radius: 30px;
+        background-color: whitesmoke;
+        padding: 35px;
+        width: 360px;
+        height: 450px;
+
+        //-- 頭像
+        .card_user {
+          // border: 1px solid red;
+          display: flex;
+          img {
+            height: 50px;
+            width: 50px;
+          }
+          .card_title_user {
+            // border: 1px solid blue;
+            margin-left: 20px;
+
+            .title_name {
+              font-size: 20px;
+            }
+            .title_time {
+              font-size: 12px;
+            }
+          }
+        }
+
+        //-- 內文
+        .card_content {
+          // border: 1px solid black;
+          margin: 30px 0;
+          font-size: 18px;
+        }
+
+        //-- 狀態欄
+        .card_status {
+          // border: 1px solid red;
+          margin-top: 50px;
+          display: flex;
+          justify-content: flex-end;
+          .card_icon {
+            margin-right: 15px;
+            span {
+              font-size: 18px;
+            }
+            img {
+              vertical-align: middle;
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+
+        //-- 三角形
+        .card_arrow {
+          bottom: -50px;
+          right: 60px;
+          width: 0;
+          border-left: 50px solid transparent;
+          border-right: 0px solid transparent;
+          border-top: 50px solid whitesmoke;
+          border-bottom: 0px solid whitesmoke;
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  //-- 左右控制鈕
+  #card_btn {
+    border: 1px solid red;
+    #left_btn {
+      width: 50px;
+      height: 50px;
+      border: 2px solid whitesmoke;
+      background-color: rgba(31, 31, 31, 0);
+      border-radius: 100%;
+      background-image: url("/img/icon/left-chevron.svg");
+      background-repeat: no-repeat;
+      background-position: 6px;
+      background-size: 25px;
+    }
+    #right_btn {
+      width: 50px;
+      height: 50px;
+      border: 2px solid whitesmoke;
+      background-color: rgba(31, 31, 31, 0);
+      border-radius: 100%;
+      background-image: url("/img/icon/right-chevron.svg");
+      background-repeat: no-repeat;
+      background-position: 12px;
+      background-size: 25px;
+    }
+  }
 }

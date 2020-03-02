@@ -1,17 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        @@include('layout/head.html')
-        <title>首頁</title>
-    </head>
-    <body>
-        <div class="wrapper">
+<head>
+    @@include('layout/head.html')
+    <!-- 視差滑動 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <title>首頁</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="ghostSpotBG">
             @@include('layout/header.html')
-            <section id="section1">
-                lily
+            <section id="indexSection1">
+                
+                <div class="parallaxContainer">
+
+                    <ul id="scene">
+                        <li class="layer" data-depth="1">
+                            <img src="./img/index/g8.png" class="G8">
+                        </li>
+
+                        <li class="layer" data-depth="0.9">
+                            <img src="./img/index/g7.png" class="G7">
+                        </li>
+
+                        <li class="layer" data-depth="0.7">
+                            <img src="./img/index/g6.png" class="G6">
+                        </li>
+
+                        <li class="layer" data-depth="0.6">
+                            <img src="./img/index/g4.png" class="G4">
+                        </li>
+
+                        <li class="layer" data-depth="0.8">
+                            <img src="./img/index/g5.png" class="G5">
+                        </li>
+
+                        <li class="layer" data-depth="0.5">
+                            <img src="./img/index/g3.png" class="G3">
+                        </li>
+
+                        <li class="layer" data-depth="0.4">
+                            <img src="./img/index/g2.png" class="G2">
+                        </li>
+
+                        <li class="layer" data-depth="0.2">
+                            <img src="./img/index/g1.png" class="G1">
+                        </li>
+
+                        <li class="layer" data-depth="0.1" >
+                            <img src="./img/index/g9.png" class="G9">
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="route1">
+                    <img src="./img/index/route1.png">
+                </div>
             </section>
 
-            <section id="section2">
+            <section id="indexSection2">
                 lily
             </section>
 
@@ -20,9 +70,189 @@
             </section>
 
             <section id="section4">
-                佳播
+                <div class="card_channel">
+                    <div class="card_warp" id="card_slider">
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/default_header.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體是的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui reiciendis, beatae
+                                dolorumincidunt iure voluptates tempora architecto optio, illo atque quibusdam quam
+                                delectus sunt utcommodi, adipisci id s
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/default_header.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體是的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui reiciendis, beatae
+                                dolorumincidunt iure voluptates tempora architecto optio, illo atque quibusdam quam
+                                delectus sunt utcommodi, adipisci id s
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/default_header.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體是的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui reiciendis, beatae
+                                dolorumincidunt iure voluptates tempora architecto optio, illo atque quibusdam quam
+                                delectus sunt utcommodi, adipisci id s
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/default_header.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體是的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui reiciendis, beatae
+                                dolorumincidunt iure voluptates tempora architecto optio, illo atque quibusdam quam
+                                delectus sunt utcommodi, adipisci id s
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/default_header.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體是的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui reiciendis, beatae
+                                dolorumincidunt iure voluptates tempora architecto optio, illo atque quibusdam quam
+                                delectus sunt utcommodi, adipisci id s
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 左右按鈕 -->
+                <div id="card_btn">
+                    <input type="button" id="left_btn" disabled />
+                    <input type="button" id="right_btn" />
+                </div>
+                <!-- 未寫完 還要改寫-->
+                <script>
+                    function $id(id) {
+                        return document.getElementById(id)
+                    }
+                    window.addEventListener('load', function () {
+                        let card = 0
+                        let slider = document.getElementById('card_slider')
+                        let left_btn = document.getElementById('left_btn')
+                        let right_btn = document.getElementById('right_btn')
+
+                        $id('right_btn').onclick = function () {
+                            card++
+                            card_slider.style.left = -370 * card + 'px'
+                            $id('left_btn').disabled = false
+                            left_btn.style.opacity = 1
+                            if (card == 5) {
+                                $id('right_btn').disabled = true
+                                right_btn.style.opacity = 0.6
+                            }
+                            console.log(card)
+                        }
+                        $id('left_btn').onclick = function () {
+                            card--
+                            card_slider.style.left = -370 * card + 'px'
+                            $id('right_btn').disabled = false
+                            right_btn.style.opacity = 1
+                            left_btn.style.opacity = 1
+                            if (card == 0) {
+                                $id('left_btn').disabled = true
+                                left_btn.style.opacity = 0.6
+                            }
+                            console.log(card)
+                        }
+                    })
+                </script>
             </section>
             @@include('layout/footer.html')
         </div>
-    </body>
+
+    </div>
+
+    <!-- 視差滑動 -->
+    <script>
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+    </script>
+
+</body>
+
+
 </html>
