@@ -92,7 +92,15 @@ gulp.task('default', function() {
     browserSync.init({
         server: {
             baseDir: './dest',
+<<<<<<< HEAD
             index: 'leaderboard.html',
+=======
+<<<<<<< HEAD
+            index: 'leaderboard.html',
+=======
+            index: 'member.html',
+>>>>>>> 49049e77faa39d432d2c755e4126d4bd7560f63e
+>>>>>>> 10e388d2aa2a3169cfd198f656e563e3648de34f
         },
     })
     gulp.watch(web.html, ['fileinclude']).on('change', reload)
