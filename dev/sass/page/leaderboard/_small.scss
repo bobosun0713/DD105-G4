@@ -1,4 +1,3 @@
-// @import "./page/leaderboard/small";
 @include respond(small) {
     //手機都寫在裡面
    
@@ -40,7 +39,7 @@ max-height:170px;
         width: 25%;
        }
       .Strip-background{//div
-        background-image: url(../img/leaderboard/ghost-4-s-2.png);
+        background-image: url(../img/leaderboard/ghost-4-s-1.png);
         margin-top: 60px;
         width: 570px;
         width: 65%;
@@ -85,13 +84,15 @@ max-height:170px;
 
 // 老鼠
      .mouse{
-      width: 180px;
+      width: 140px;
       margin-top: 10px;
      }
 
      .Vote-btn{//按鈕
        margin-bottom: 50px;
        margin-top: -50px;
+       max-width:170px;
+       min-height: 30px;
      }
 }
 
@@ -99,15 +100,13 @@ max-height:170px;
 
 
 
-//  -------RWD--------- 319px *575px------------- 
+//  -------RWD--------- 480px *575px------------- 
  
-@media screen and (min-width:319px) and (max-width:575px){
+@media screen and (min-width:480px) and (max-width:575px){
   body{
     width: 320px;
     width: 100%;
     float: left;
-    // background-color: sandybrown;
-    background-image: none;
 /* 投給你內心 */
 #vote{
   // margin-left: -30px;
@@ -116,98 +115,94 @@ max-height:170px;
     display: flex;
     justify-content:center;
     .vote-img{
-      width: 80px;
+      width: 150px;
       // width: 25%;
-      height: 70px;
+      height: 100px;
       float: left;
       margin-left: 5px;
 
     }
     .vote-text{
       margin-top: 15px;
-      max-width: 130px;
+      max-width: 150px;
       margin-bottom: 5px;
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-left: 40px;
+      padding: 5px;
     }
 }
 
 }
 
-
 /* div.Haunted-house 排行TOP前三名 */
 .Haunted-house{
-width: 570px;
-width: 100%;
-max-height:170px;
-      /* 景點圖片 */
-      .Haunted-house-i{
-        width: 25%;
-       }
-      .Strip-background{//div
-        background-image: url(../img/leaderboard/ghost-4-s-2.png);
-        margin-top: 60px;
-        width: 570px;
-        width: 65%;
-        height: 200px;
-        margin-left: -40px;
-        margin-top: 50px;
-        }
-      //h2
-      .Haunted-house-t{
-        font-size: 4rem;
-        margin-top: -60px;
-        margin-left: -60px;
-        }
-      //p
-      .Haunted-house-p{
-        margin-left: 1px;
-        margin-top: -53px;
-        line-height: 30px;
-        text-align: right;
-        word-spacing:110px;//空白建間隔
-        width: 280px;
-        word-wrap:break-word;//文字強迫換行
-        }
+  width:320px;
+  width: 100%;
+  max-height:140px;
+        /* 景點圖片 */
+        .Haunted-house-i{
+          width: 38%;
+         }
+        .Strip-background{//div
+          background-image: none;
+          margin-top: 50px;
+          width: 320px;
+          width: 44%;
+          height: 200px;
+          margin-left: -50px;
+          // margin-top: 50px;
+          }
+        //h2
+        .Haunted-house-t{
+          font-size: 3.2rem;
+          margin-top: -20px;
+          margin-left: -60px;
+          }
+        //p
+        .Haunted-house-p{
+          margin-left: 43px;
+          margin-top: -110px;
+          line-height: 50px;
+          text-align: right;
+          word-spacing:0px;//空白建間隔
+          width: 170px;
+          border-bottom: 3px solid rgb(231, 231, 231);
 
-}
-// 來抓交替囉隱藏
-#alternately{
-      .alternately-p{
-        display: none;
-        }
-      .alternately-i{
-        display: none;
-        }
-}
-//手機板的幽靈隱藏
-#ghost-2-s{
-  display: block;
-  margin-top: 150px;
-  margin-bottom: -180px;
-
-}
+          // color: rgb(73, 70, 70);
+          // white-space:nowrap;//文字不換行
+          }
+  
+  }
+  // 來抓交替囉隱藏
+  #alternately{
+        .alternately-p{
+          display: none;
+          }
+        .alternately-i{
+          display: none;
+          }
+  }
 // 排行榜表單
 
 #leaderboard-form{//div-leaderboard-form
 margin-bottom: 250px;
     #leaderboard-form-1{//table-leaderboard-form-1
         #Form-name{//名次的tr
-            width: 180px;
+            width: 160px;
             line-height: 50px;
             background-color: rgb(139, 4, 4);
             td.Form-name{
-              width: 180px;
+              width: 160px;
               // line-height: 50px;
               text-align: center;
               padding: 5px;
               }
           }
           .Ranking{
-                  width: 180px;
+                  width: 160px;
                   td{
                       padding: 5px;
-                      width: 180px;
+                      width: 160px;
                       }
                   }
 
@@ -224,6 +219,139 @@ margin-bottom: 250px;
      .Vote-btn{//按鈕
        margin-bottom: 50px;
        margin-top: -50px;
+       max-height: 48px;
+       max-width: 170px;
      }
+}
+
+
+//  -------RWD--------- 319px *479px------------- 
+ 
+@media screen and (min-width:319px) and (max-width:479px){
+  body{
+    width: 320px;
+    width: 100%;
+    float: left;
+    // background-color: rgb(244, 96, 187);
+    background-image: none;
+/* 投給你內心 */
+#vote{
+  // margin-left: -30px;
+  width: 320px;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    .vote-img{
+      width: 100px;
+      // width: 25%;
+      height: 90px;
+      float: left;
+      margin-left: -5px;
+
+    }
+    .vote-text{
+      margin-top: 15px;
+      max-width: 130px;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      margin-left: 40px;
+    }
+}
+
+}
+
+/* div.Haunted-house 排行TOP前三名 */
+.Haunted-house{
+  width:320px;
+  width: 100%;
+  max-height:130px;
+  display: flex;
+  justify-content: center;
+        /* 景點圖片 */
+        .Haunted-house-i{
+          width: 38%;
+         }
+        .Strip-background{//div
+          background-image:none;
+          margin-top: 40px;
+          width: 320px;
+          width: 60%;
+          height: 200px;
+          margin-left: -40px;
+          // margin-top: 50px;
+          }
+        //h2
+        .Haunted-house-t{
+          font-size: 3.2rem;
+          margin-top: -20px;
+          margin-left: -60px;
+          }
+        //p
+        .Haunted-house-p{
+          margin-left: 36px;
+          margin-top: -110px;
+          line-height: 50px;
+          text-align: right;
+          word-spacing:0px;//空白建間隔
+          width: 170px;
+          border-bottom: 3px solid rgb(231, 231, 231);
+
+          // color: rgb(73, 70, 70);
+          // white-space:nowrap;//文字不換行
+          }
+  
+  }
+  // 來抓交替囉隱藏
+  #alternately{
+        .alternately-p{
+          display: none;
+          }
+        .alternately-i{
+          display: none;
+          }
+  }
+// 排行榜表單
+
+#leaderboard-form{//div-leaderboard-form
+margin-bottom: 250px;
+    #leaderboard-form-1{//table-leaderboard-form-1
+        #Form-name{//名次的tr
+            width: 100px;
+            line-height: 30px;
+            background-color: rgb(139, 4, 4);
+            td.Form-name{
+              width: 100px;
+              // line-height: 50px;
+              text-align: center;
+              padding: 1px;
+
+              }
+          }
+          .Ranking{
+                  width: 100px;
+                  td{
+                      padding: 1px;
+                      width: 100px;
+                    
+                      }
+                  }
+
+      }
+
+}
+
+// 老鼠
+     .mouse{
+      width: 100px;
+      margin-top: 10px;
+     }
+
+
+     .Vote-btn{//按鈕
+      margin-bottom: 50px;
+      margin-top: -50px;
+      max-height: 38px;
+      max-width: 150px;
+    }
 }
 
