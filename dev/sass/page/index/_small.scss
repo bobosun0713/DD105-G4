@@ -1,5 +1,19 @@
 @include respond(small) {
-    //手機都寫在裡面
-   
-  
+  //手機都寫在裡面
+
+  #indexSection1 {
+    .parallaxContainer {
+      width: 100%;
+    }
+
+    .route1 {
+      display: none;
+    }
   }
+
+  .indexTitleZone1{
+    bottom: -150px;
+  }
+
+
+}

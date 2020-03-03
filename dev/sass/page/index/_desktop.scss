@@ -1,3 +1,12 @@
+#ghostIndexBG{
+  background-image: url("../img/spot/BG/spotBG.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  overflow: hidden;
+}
+
 #indexSection1 {
   // border: 1px solid red;
   width: 100%;
@@ -5,9 +14,13 @@
 
   .parallaxContainer {
     // border: 1px solid green;
-    width: 800px;
-    margin: 50px auto;
+    width: 700px;
+    margin: 0px auto;
     background-attachment: fixed;
+
+    img{
+      width: 100%;
+    }
 
     #scene {
       li {
@@ -94,7 +107,7 @@
   text-align: right;
   padding: 20px 0;
   position: absolute;
-  bottom: -450px;
+  bottom: -300px;
 
   h1 {
     font-size: 2.5rem;
@@ -115,7 +128,7 @@
 #indexSection2 {
   //   border: 1px solid orange;
   width: 100%;
-  margin: 100px 0;
+  margin: 250px 0;
   //   padding: 0px 200px;
   display: inline-flex;
   justify-content: center;
