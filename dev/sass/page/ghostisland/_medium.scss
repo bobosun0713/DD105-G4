@@ -1,5 +1,59 @@
 @include respond(medium) {
-    //平板都寫在裡面
-  
-  
+  //平板都寫在裡面
+  #ghostIslandWrapper{
+    overflow: hidden;
+    background: url("../../../img/spot/BG/spotBG.png");
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-attachment: fixed;
   }
+
+  #ghostIslandSection1 {
+    height: 0;
+    position: relative;
+
+    #areaList {
+      position: absolute;
+      left: 100px;
+      // float: 0;
+      z-index: 88;
+    }
+
+    #mapArea {
+
+      #bigG {
+        width: 400px;
+        position: absolute;
+        right: -50px;
+        bottom: -10px;
+      }
+
+      #G1_L {
+        width: 150px;
+        position: absolute;
+        right: 260px;
+        top: 310px;
+      }
+
+      #twMap {
+        display: none;
+      }
+
+      .loader {
+        display: none;
+      }
+
+      #ship {
+        display: none;
+      }
+    }
+
+    .route1 {
+      width: 450px;
+      position: absolute;
+      left: 100px;
+      bottom: -40px;
+    }
+  }
+}

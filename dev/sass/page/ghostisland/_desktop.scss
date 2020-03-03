@@ -1,5 +1,10 @@
+#ghostIslandWrapper{
+  background: linear-gradient(to right, rgba(0,0,0,.7),rgba(0,0,0,0)60%);
+}
+
+
 #ghostIslandSection1 {
-  border: 1px solid red;
+  // border: 1px solid red;
   margin: 0px auto;
   // margin-top: 150px;
   width: 100%;
@@ -13,7 +18,7 @@
     // border: 1px solid blue;
     width: 200px;
     height: 300px;
-    margin: 50px;
+    margin: 50px 10px;
   }
 
   #mapArea {
@@ -495,12 +500,6 @@
 }
 
 #ghostIslandSection2 {
-  // height: 2000px;
-  background-image: url("../img/map/map_BG.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  // background-attachment: local;
-  // border: 1px solid red;
 
   position: relative;
 
@@ -509,14 +508,15 @@
 
   .cardContain {
     // border: 1px solid blue;
-    max-width: 1200px;
-    // margin: 0 auto;
+    max-width: 1250px;
+    margin: 0 auto;
     display: inline-flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
     // overflow: hidden;
+    box-sizing: border-box;
 
     #Ghost2 {
       width: 240px;

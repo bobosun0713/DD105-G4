@@ -1,5 +1,46 @@
 @include respond(small) {
-    //手機都寫在裡面
-   
-  
+  //手機都寫在裡面
+  #ghostIslandSection1 {
+
+    #areaList {
+      position: absolute;
+      left: 50px;
+      margin: 50px 10px;
+      // float: 0;
+      z-index: 88;
+    }
+
+    #mapArea {
+      height: 450px;
+
+      #bigG {
+        opacity: .7;
+        width: 350px;
+        position: absolute;
+        right: -50px;
+        bottom: -40px;
+      }
+
+      #G1_L {
+        width: 150px;
+        position: absolute;
+        right: 210px;
+        top: 320px;
+      }
+    }
+
+    .route1 {
+      display: none;
+    }
   }
+  #ghostIslandSection2 {
+    margin-bottom: 100px;
+    #Ghost2 {
+      display: none;
+    }
+  }
+
+  .route2 {
+    display: none;
+  }
+}
