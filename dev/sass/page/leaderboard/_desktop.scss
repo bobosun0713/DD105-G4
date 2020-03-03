@@ -1,10 +1,10 @@
 
-/* CSS Reset */
-* {
-    /* 格線 */
-    outline: 0;
-    // outline:1px solid rgb(189, 205, 211);
-}
+// /* CSS Reset */
+// * {
+//     /* 格線 */
+//     outline: 0;
+//     // outline:1px solid rgb(189, 205, 211);
+// }
 
 body {
     // background-image: url(../img/leaderboard/Background-image.png);
@@ -32,123 +32,6 @@ body {
 }
 
 /* div.Haunted-house 排行TOP前三名 */
-<<<<<<< HEAD
-.Haunted-house{
-  width: 1200px;
-  width: 100%;
-  display: flex;
-  justify-content: center;  
-  font-size: 1rem;
-  height: 385px;
-  background-repeat: no-repeat;
-  margin-bottom: 100px;
-  margin-top: 120px;
-        /* 景點圖片 */
-        .Haunted-house-i{
-          width: 21%;
-          border-radius: 100%;
-          display: flex;
-          justify-content: flex-start ;
-          filter:contrast(140%); //对比度滤镜，使图片色彩对比度更明显
-         }
-        .Strip-background{
-          background-image: url(../img/leaderboard/ghost-4.png);//幽靈長條圖
-          background-repeat: no-repeat;
-          margin-top: 180px;
-          margin-left: -65px;
-          display: inline-block;
-          width: 800px;
-          max-height: 180px;
-          }
-        //h2
-        .Haunted-house-t{
-          width: 250px;
-          max-height: 100px;
-          line-height: 150px;
-          margin-top: -60px;
-          font-size: 8rem;
-          display: flex;
-          justify-content: space-around  ;         
-          color:  rgb(179, 177, 177) ;
-          filter:blur(1.5px);
-          // text-shadow:1px 1px 10px ;
-          text-shadow: shadow1, shadow2, shadow3;
-          text-shadow: 1px 1px 0px rgb(228, 216, 216), 9px 8px 0px rgba(235, 173, 173, 0.15);
-          }
-        //p
-        .Haunted-house-p{
-          width: 500px;
-          height: 50px;
-          line-height: 110px;
-          margin-top: -40px;
-          display: flex;
-          justify-content: flex-end;
-          margin-left: 20px;
-          word-spacing:50px;//空白建間隔
-          }
-
-  
-=======
-.Haunted-house {
-    width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-    height: 385px;
-    background-repeat: no-repeat;
-    margin-bottom: 100px;
-    margin-top: 120px;
-    /* 景點圖片 */
-    .Haunted-house-i {
-        width: 21%;
-        border-radius: 100%;
-        display: flex;
-        justify-content: flex-start;
-        filter: contrast(140%); //对比度滤镜，使图片色彩对比度更明显
-    }
-    .Strip-background {
-        background-image: url(../img/leaderboard/ghost-4.png); //幽靈長條圖
-        background-repeat: no-repeat;
-        margin-top: 180px;
-        margin-left: -65px;
-        display: inline-block;
-        width: 800px;
-        max-height: 180px;
-    }
-    //h2
-    .Haunted-house-t {
-        width: 250px;
-        max-height: 100px;
-        line-height: 150px;
-        margin-top: -50px;
-        font-size: 8rem;
-        display: flex;
-        justify-content: space-around;
-        color: rgba(120, 119, 119, 0.9);
-        filter: blur(1.5px);
-    }
-    //p
-    .Haunted-house-p {
-        width: 500px;
-        height: 50px;
-        line-height: 110px;
-        margin-top: -40px;
-        display: flex;
-        justify-content: flex-end;
-        margin-left: 20px;
-        word-spacing: 50px; //空白建間隔
-    }
->>>>>>> bd6d75a8f7b5d3d50cc4618cda2c634ad6f7f07c
-}
-// 來抓交替囉
-#alternately {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    float: right;
-    max-height: 800px;
-    margin-top: -450px;
     .alternately-p {
         width: 300px;
         max-height: 50px;
@@ -159,7 +42,6 @@ body {
         width: 400px;
         max-height: 400px;
     }
-}
 //手機板的幽靈隱藏
 #ghost-2-s {
     display: none;
@@ -197,7 +79,6 @@ body {
             td {
                 padding: 8px;
                 width: 300px;
-                line-height: 50px;
                 text-align: center;
             }
         }
