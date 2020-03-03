@@ -9,10 +9,9 @@
 //  -------RWD---------992px *1299px------------- 
  
 @media screen and (min-width:768px) and (max-width:991px){
-  body{
+  #leaderboard{
     width: 760px;
     width: 100%;
-    // background-color: sandybrown;
 /* 投給你內心 */
 #vote{
     .vote-img{
@@ -34,14 +33,10 @@
 .Haunted-house{
 width: 680px;
 width: 100%;
-<<<<<<< HEAD
 max-height:180px;
-=======
-max-height:200px;
->>>>>>> bd6d75a8f7b5d3d50cc4618cda2c634ad6f7f07c
       /* 景點圖片 */
       .Haunted-house-i{
-        width: 22%;
+        width: 21%;
        }
       .Strip-background{//div
         background-image: url(../img/leaderboard/ghost-4-s.png);
