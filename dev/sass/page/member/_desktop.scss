@@ -1,4 +1,4 @@
-.wrapper {
+.membertop {
 	background-image: url("/dev/img/member/mem_background_img.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -12,16 +12,12 @@
 	li {
 		display: inline-block;
 	}
-	#symble {
-		font-size: 1.5rem;
-	}
 	li a {
 		text-decoration: none;
-		color: white;
-		font-size: 1.5rem;
+		color: #8c8a8a;
 		cursor: pointer;
 		&:hover {
-			color: $primary;
+			color: white;
 		}
 	}
 }
@@ -79,7 +75,6 @@
 
 .hr1 {
 	margin-top: 36px;
-	/* margin-bottom: 33px; */
 	border: white 2px solid;
 }
 
@@ -120,7 +115,6 @@ input.visible {
 
 /* #content-1 */
 #content-1 {
-	background-image: url("/img/mem_data_background.png");
 	p {
 		width: 700px;
 		font-size: 1.5rem;
