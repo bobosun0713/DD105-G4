@@ -1,18 +1,15 @@
 #indexSection1 {
-    // border: 1px solid red;
+  // border: 1px solid red;
   width: 100%;
-  // height: 1000px;
   position: relative;
 
   .parallaxContainer {
     // border: 1px solid green;
     width: 800px;
-    // height: 800px;
     margin: 50px auto;
     background-attachment: fixed;
 
     #scene {
-
       li {
         filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.4));
       }
@@ -88,7 +85,6 @@
       width: 100%;
     }
   }
-
 }
 
 .indexTitleZone1 {
@@ -98,7 +94,7 @@
   text-align: right;
   padding: 20px 0;
   position: absolute;
-  bottom: -450px; 
+  bottom: -450px;
 
   h1 {
     font-size: 2.5rem;
@@ -117,10 +113,10 @@
 }
 
 #indexSection2 {
-    // border: 1px solid orange;
+  //   border: 1px solid orange;
   width: 100%;
-  margin: 200px 0;
-    // padding: 0px 200px;
+  margin: 100px 0;
+  //   padding: 0px 200px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -511,7 +507,6 @@
     }
   }
 }
-
 #section3 {
   border: 1px solid green;
   width: 100%;
@@ -533,6 +528,7 @@
     .card_warp {
       // border: 1px solid blue;
       position: absolute;
+      left: 0;
       transition: all 1s;
       margin: 10px auto;
       width: 3000px;
