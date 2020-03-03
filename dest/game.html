@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quiz</title>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- css -->
+<link rel="stylesheet" href="./css/main.css">
+<!-- 鬼島logo小圖示 -->
+<link rel="shortcut icon" href="../img/icon/logo-icon.png" />
+  </head>
+  <body>
+   
+    <div class="game">
+      <div id="dolphin_block">
+        <div class="box right"> </div>
+    </div>
+      
+      <div class="grid">
+        <div id="camera1">
+          <div class="box1">
+            <div id="L_magicpaper"></div>
+          </div>
+        </div>
+
+        <div id="camera2">
+          <div class="box2">
+            <div id="R_magicpaper"></div>
+          </div>
+        </div>
+
+        <div id="quiz">
+          <div id="logoimg"><img src="img/game/logo.png" /></div>
+          <h1 id="testheading">--試膽測驗--</h1>
+
+          <div class="startbtn">
+            <button id="startbtn">開始遊戲</button>
+          </div>
+          <div class="gotoindex">
+            <button id="gotoindex">回到首頁</button>
+          </div>
+          <div class="quizimg"><img class="innerimg" src="" /></div>
+          <div class="progressblock">
+            <p id="progress"></p>
+          </div>
+          <p id="question"></p>
+          <div id="resultheading"></div>
+          <div id="test_score"></div>
+          <div id="resulttitle"></div>
+          <div id="resultinnertext"></div>
+          <div class="btnshowupagaingroup">
+          <button id="playagain_btn"><span>再玩一次</span></button>
+          <button id="gotoindex_btn"><span>回到首頁</span></button>
+          </div> 
+          <div class="buttons">
+            <button id="btn0" value="0"><span class="choice"></span></button>
+            <button id="btn1" value="1"><span class="choice"></span></button>
+            <button id="btn2" value="2"><span class="choice"></span></button>
+          </div>
+          <h4 class="recommendtext">為您推薦</h4>
+          <div class="recommendcardground">
+            <div class="spotcard">
+              <img src="img/game/recommendspot.png">
+              <h3>劉家昌廢墟</h3>
+              <p>曾拍過偶像劇流星花園的豪宅，為了抵債被政府徵收後，變成廢墟....(more)</p>
+            </div>
+            <div class="spotcard">
+              <img src="img/game/recommendspot.png">
+              <h3>劉家昌廢墟</h3>
+              <p>曾拍過偶像劇流星花園的豪宅，為了抵債被政府徵收後，變成廢墟....(more)</p>
+            </div>
+          </div>
+
+          <!-- <hr style="margin-top: 50px"> -->
+        </div>
+        <div class="allcandlesblock">
+            <div class="outercontainer">
+                <div class="container1">
+                  <div class="red light"></div>
+                  <div class="orangered light"></div>
+                  <div class="orange light"></div>
+                  <div class="yellow light"></div>
+                  <div class="white light"></div>
+                </div>
+                <img class="candle" src="img/game/candle.png" />
+              </div>
+              <div class="outercontainer2">
+                <div class="container2">
+                  <div class="red light"></div>
+                  <div class="orangered light"></div>
+                  <div class="orange light"></div>
+                  <div class="yellow light"></div>
+                  <div class="white light"></div>
+                </div>
+                <img class="candle2" src="img/game/candle.png" />
+              </div>
+          </div>
+      </div>
+      
+      
+    </div>
+
+    <script src="js/game.js"></script>
+  </body>
+</html>
