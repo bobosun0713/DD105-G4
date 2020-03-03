@@ -49,6 +49,8 @@
       #twMap01 {
         top: 0px;
         left: 0%;
+        opacity: 0;
+        transition: opacity .3s linear;
 
         //1
         #loc1 {
@@ -144,6 +146,8 @@
     #twMap02 {
       top: 0px;
       left: 30%;
+      opacity: 0;
+        transition: opacity .3s linear;
 
       #loc6 {
         position: absolute;
@@ -224,6 +228,8 @@
     #twMap03 {
       top: 0px;
       left: 60%;
+      opacity: 0;
+        transition: opacity .3s linear;
 
       #loc11 {
         position: absolute;
@@ -426,7 +432,7 @@
     height: 20px;
     color: rgba(#000000, 0);
     opacity: 0.6;
-    // overflow: hidden;
+    overflow: hidden;
     position: absolute;
 
     &:before {

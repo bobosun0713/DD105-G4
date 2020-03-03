@@ -1,5 +1,6 @@
 //共用的header
 header {
+<<<<<<< HEAD
   width: 100%;
 //   position: fixed;
 //   z-index: 99;
@@ -18,52 +19,72 @@ header {
     // border: 1px solid red;
     padding: 10px 50px 20px 0px;
     display: inline-flex;
+=======
+>>>>>>> 37b76115c981c04a408cf18ebc4177a4d65c8844
     width: 100%;
-    justify-content: flex-end;
-    align-items: center;
+    //   position: fixed;
+    //   z-index: 99;
+    //   margin-top: 0px;
+    // width: 1200px;
+    // margin: auto;
+    border: 1px solid blue;
+    text-align: center;
     box-sizing: border-box;
+    padding: 0px 0px 50px 0px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 
-    p {
-      font-size: 0.6rem;
-    }
+    #navStatus {
+        text-align: right;
+        // border: 1px solid red;
+        padding: 10px 50px 20px 0px;
+        display: inline-flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        box-sizing: border-box;
 
-    #soundStatus {
-      display: inline-flex;
-      align-items: center;
-      // border: 1px solid blue;
-      margin-right: 20px;
-
-      img {
-        width: 20px;
-        // border: 1px solid blue;
-        margin-right: 4px;
-        cursor: pointer;
-      }
-    }
-
-    #memStatus {
-      display: inline-flex;
-      align-items: center;
-
-      p:last-child {
-        &:before {
-          content: "/";
+        p {
+            font-size: 0.6rem;
         }
-      }
 
-      a {
-        text-decoration: none;
-        // border: 1px solid blue;
-        margin: 0px 2px;
-        color: #cccccc;
+        #soundStatus {
+            display: inline-flex;
+            align-items: center;
+            // border: 1px solid blue;
+            margin-right: 20px;
 
-        img {
-          width: 25px;
+            img {
+                width: 20px;
+                // border: 1px solid blue;
+                margin-right: 4px;
+                cursor: pointer;
+            }
         }
-      }
-    }
-  }
 
+        #memStatus {
+            display: inline-flex;
+            align-items: center;
+
+            p:last-child {
+                &:before {
+                    content: '/';
+                }
+            }
+
+            a {
+                text-decoration: none;
+                // border: 1px solid blue;
+                margin: 0px 2px;
+                color: #cccccc;
+
+                img {
+                    width: 25px;
+                }
+            }
+        }
+    }
+
+<<<<<<< HEAD
   ul {
     border: 1px solid red;
     // width: 1200px;
@@ -91,72 +112,146 @@ header {
       // }
 
       a {
+=======
+    ul {
+        border: 1px solid red;
+        // width: 1200px;
+>>>>>>> 37b76115c981c04a408cf18ebc4177a4d65c8844
         width: 100%;
-        height: 100%;
-        text-decoration: none;
-        color: white;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
 
-        &:hover {
-          text-shadow: 0px 0px 5px red, 0px 0px 20px red;
-          animation: linkBlink 2s linear infinite;
-        //   animation-delay: .5s;
+        li {
+            list-style: none;
+            padding: 5px 10px;
+            margin: 0px 10px;
+            vertical-align: middle;
+            border: 1px solid blue;
+            // width: 100px;
+            font-size: 1.3rem;
+            color: white;
+            opacity: 0.7;
+            cursor: pointer;
+            transform-origin: top left;
+            transition: transform 0.5s ease-out;
+
+            &:hover {
+                transform: rotate(10deg);
+            }
+
+            a {
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    text-shadow: 0px 0px 5px red, 0px 0px 20px red;
+                    animation: linkBlink 2s linear infinite;
+                    //   animation-delay: .5s;
+                }
+
+                @keyframes linkBlink {
+                    0% {
+                        opacity: 1;
+                    }
+                    5% {
+                        opacity: 0.4;
+                    }
+                    10% {
+                        opacity: 0.7;
+                    }
+                    15% {
+                        opacity: 0.4;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }
         }
 
-        @keyframes linkBlink {
-            0%{
-                opacity: 1;
+        li:nth-child(4) {
+            padding: 0px;
+
+            #topLogo {
+                // border: 1px solid green;
+                width: 150px;
+                margin: 0px;
             }
-            5%{
-                opacity: .4;
+
+            &:hover {
+                transform: rotate(0deg);
+                animation: 0;
             }
-            10%{
-                opacity: .7;
-            }
-            15%{
-                opacity: .4;
-            }
-            100%{
-                opacity: 1;
-            }
-            
         }
-      }
     }
 
-    li:nth-child(4) {
-      padding: 0px;
+    .rwdHeader{
+        display: none;
+        
 
-      #topLogo {
-        // border: 1px solid green;
-        width: 150px;
-        margin: 0px;
-      }
+        #topLogo2 {
+            // border: 1px solid green;
+            width: 80px;
+            margin: 0px;
+        }
 
-      &:hover {
-        transform: rotate(0deg);
-        animation: 0;
-      }
+        .hamburger{
+            width: 80px;
+            height: 80px;
+
+            float: right;
+        }
     }
-  }
 }
-
-
 
 //平板
 @include respond(medium) {
-  header {
+    header {
+        // background: seagreen;
+        padding: 0px 0px 20px 0px;
 
-    background: seagreen;
-    ul {
-      width: 100%;
+        #navStatus{
+            padding: 10px 20px 10px 0px;
+        }
+
+
+        ul {
+            width: 100%;
+
+            li {
+                font-size: 1rem;
+                padding: 5px;
+            }
+
+            #topLogo {
+                width: 120px;
+            }
+        }
     }
-  }
 }
 
 //手機版
 @include respond(small) {
-  header {
-    width: 200px;
-    background-color: rgb(247, 1, 1);
-  }
+    header {
+        width: 100%;
+        padding: 5px 0px;
+        // background-color: rgb(247, 1, 1);
+
+        #navStatus{
+            display: none;
+        }
+
+        .desktopHeader{
+            display: none;
+        }
+
+        .rwdHeader{
+            display: block;
+
+            
+        }
+    }
 }

@@ -23,6 +23,7 @@
 <!-- 阿禎scorll外掛 -->
 <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
         <title>前進鬼島</title>
+        
     </head>
 
     <body>
@@ -42,10 +43,10 @@
         </div>
 
     </div>
-    <nav>
+    <nav class="desktopHeader">
         <ul>
             <li>
-                <a href="">
+                <a href="../ghostIsland.html">
                     前進鬼島
                 </a>
             </li>
@@ -55,12 +56,12 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="../leaderboard.html">
                     靈異票選
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../index.html">
                     <img id="topLogo" src="./img/logo/LOGO_white.png">
                 </a>
             </li>
@@ -70,16 +71,28 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="../forum.html">
                     靈異討論
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="../member.html">
                     會員中心
                 </a>
             </li>
         </ul>
+    </nav>
+
+    <nav class="rwdHeader">
+        <a href="../index.html">
+            <img id="topLogo2" src="./img/logo/LOGO_white.png">
+        </a>
+        
+        <button class="hamburger hamburger--elastic is-active" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </nav>
 </header>
 
@@ -87,7 +100,7 @@
                 <div id="areaList">
                     <form action="">
                         <div class="checkBT">
-                            <input type="checkbox" name="allArea" id="allArea" />
+                            <input type="checkbox" name="allArea" id="allArea" checked/>
                             <label for="allArea" class="areaSelect">全部區域</label>
                         </div>
 
@@ -712,20 +725,20 @@
             <ul>
                 <li>
                     <p>
-                        <a href="">
+                        <a href="../ghostIsland.html">
                             前進鬼島
                         </a>
                     </p>
 
                     <p>
-                        <a href="">
+                        <a href="../index.html">
                             尋鬼探險
                         </a>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <a href="">
+                        <a href="../leaderboard.html">
                             靈異票選
                         </a>
                     </p>
@@ -744,32 +757,32 @@
                     </p>
 
                     <p>
-                        <a href="">
+                        <a href="../forum.html">
                             文章投稿
                         </a>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <a href="">
+                        <a href="../member.html">
                             會員中心
                         </a>
 
                     </p>
                     <p>
                         <span class="subLink">
-                            <a href="">
+                            <a href="../member.html">
                                 會員資料
                             </a>
-                            <a href="">
+                            <a href="../member.html">
                                 揪團紀錄
                             </a>
                         </span>
                         <span class="subLink">
-                            <a href="">
+                            <a href="../member.html">
                                 我的收藏
                             </a>
-                            <a href="">
+                            <a href="../member.html">
                                 投稿紀錄
                             </a>
                         </span>
@@ -780,5 +793,6 @@
     </div>
 </footer>
         </div>
+        <script src="./js/ghostIslandSelect.js"></script>
     </body>
 </html>

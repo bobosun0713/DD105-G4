@@ -3,6 +3,7 @@
     <head>
         @@include('layout/head.html')
         <title>前進鬼島</title>
+        
     </head>
 
     <body>
@@ -13,7 +14,7 @@
                 <div id="areaList">
                     <form action="">
                         <div class="checkBT">
-                            <input type="checkbox" name="allArea" id="allArea" />
+                            <input type="checkbox" name="allArea" id="allArea" checked/>
                             <label for="allArea" class="areaSelect">全部區域</label>
                         </div>
 
@@ -615,5 +616,6 @@
 
             @@include('layout/footer.html')
         </div>
+        <script src="./js/ghostIslandSelect.js"></script>
     </body>
 </html>

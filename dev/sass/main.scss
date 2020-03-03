@@ -38,6 +38,7 @@
 @import 'modules/checkBox';
 @import 'modules/breadCrumb';
 @import 'modules/smoke';
+@import './modules/hamburgers';
 
 //=================
 // layout setting
@@ -66,58 +67,3 @@
 // modules 模組 每個專案都會累積不同的
 // 要詳細寫說明
 //=================
-
-// 引導頁= guide-page ssetting
-//=================
-@import './page/guide-pages/desktop';
-@import './page/guide-pages/medium';
-@import './page/guide-pages/small';
-
-//=================
-//pages
-//=================
-
-@import './page/ghostSpot/desktop';
-
-//=================
-//=================
-// 首頁= index setting
-//=================
-@import './page/index/desktop';
-@import './page/index/medium';
-@import './page/index/small';
-
-//=================
-//前進鬼島= ghostiland setting
-//=================
-@import './page/ghostisland/desktop';
-@import './page/ghostisland/medium';
-@import './page/ghostisland/small';
-
-//=================
-//尋鬼探險= adventure setting
-//=================
-@import './page/adventure/desktop';
-@import './page/adventure/medium';
-@import './page/adventure/small';
-
-//=================
-// 排行榜 leaderboard setting
-//=================
-// @import "./page/leaderboard/desktop";
-// @import "./page/leaderboard/medium";
-// @import "./page/leaderboard/small";
-
-//=================
-// 會員中心=  member setting
-//=================
-@import './page/member/desktop';
-@import './page/member/medium';
-@import './page/member/small';
-
-//=================
-// 討論區= forum setting
-//=================
-@import './page/forum/desktop';
-@import './page/forum/medium';
-@import './page/forum/small';
