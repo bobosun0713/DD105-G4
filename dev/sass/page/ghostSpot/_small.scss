@@ -1,5 +1,50 @@
 @include respond(small) {
     //手機都寫在裡面
-   
+    #ghostSpotSection1{
+      width: 100%;
+      margin-top: 100px;
+
+      .spotIntro{
+        flex-wrap: wrap;
+
+        .picZone{
+          width: 90%;
+          display: inline-flex;
+          justify-content: space-around;
+          flex-wrap: nowrap;
+          margin-bottom: 30px;
+
+          .bigPic{
+            width: 75%;
+          }
+
+          .photobook{
+            width: 20%;
+            
+
+            h2{
+              display: none;
+            }
+
+            .smallPicZone{
+              flex-wrap: wrap;
+
+              img{
+                margin-top: 5px;
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .txtZone{
+          width: 90%;
+
+          .spiderweb{
+            display: none;
+          }
+        }
+      }
+    }
   
   }

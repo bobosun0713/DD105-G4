@@ -1,119 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        @@include('layout/head.html')
-        <title>前進鬼島</title>
-        
-    </head>
 
-    <body>
-        <div id="ghostIslandWrapper">
-            @@include('layout/header.html')
+<head>
+    @@include('layout/head.html')
+    <title>前進鬼島</title>
 
-            <section id="ghostIslandSection1">
-                <div id="areaList">
-                    <form action="">
-                        <div class="checkBT">
-                            <input type="checkbox" name="allArea" id="allArea" checked/>
-                            <label for="allArea" class="areaSelect">全部區域</label>
-                        </div>
+</head>
 
-                        <div class="checkBT">
-                            <input type="checkbox" name="northArea" id="northArea" />
-                            <label for="northArea" class="areaSelect">北部區域</label>
-                        </div>
+<body>
+    <div id="ghostIslandWrapper">
+        @@include('layout/header.html')
 
-                        <div class="checkBT">
-                            <input type="checkbox" name="midArea" id="midArea" />
-                            <label for="midArea" class="areaSelect">中部區域</label>
-                        </div>
+        <section id="ghostIslandSection1">
+            <div id="areaList">
+                <form action="">
+                    <div class="checkBT">
+                        <input type="checkbox" name="allArea" id="allArea" checked />
+                        <label for="allArea" class="areaSelect">全部區域</label>
+                    </div>
 
-                        <div class="checkBT">
-                            <input type="checkbox" name="southArea" id="southArea" />
-                            <label for="southArea" class="areaSelect">南部區域</label>
-                        </div>
-                    </form>
+                    <div class="checkBT">
+                        <input type="checkbox" name="northArea" id="northArea" />
+                        <label for="northArea" class="areaSelect">北部區域</label>
+                    </div>
+
+                    <div class="checkBT">
+                        <input type="checkbox" name="midArea" id="midArea" />
+                        <label for="midArea" class="areaSelect">中部區域</label>
+                    </div>
+
+                    <div class="checkBT">
+                        <input type="checkbox" name="southArea" id="southArea" />
+                        <label for="southArea" class="areaSelect">南部區域</label>
+                    </div>
+                </form>
+            </div>
+            <div id="mapArea">
+                <div id="bigG">
+                    <img src="./img/map/G1.png" />
                 </div>
-                <div id="mapArea">
-                    <div id="bigG">
-                        <img src="./img/map/G1.png" />
-                    </div>
-                    <div id="twMap">
-                        <img class="mapImg" src="./img/map/twMap.png" />
-                        <div class="twMapWidth" id="twMap01">
-                            <div class="locationWrap">
-                                <p class="location" id="loc3"></p>
-                                <img src="./img/map/spell1.png" id="spell3" class="spellSize" />
-                                <p class="location" id="loc4"></p>
-                                <img src="./img/map/spell2.png" id="spell4" class="spellSize" />
-                                <p class="location" id="loc5"></p>
-                                <img src="./img/map/spell3.png" id="spell5" class="spellSize" />
-                                <p class="location" id="loc1"></p>
-                                <img src="./img/map/spell4.png" id="spell1" class="spellSize" />
-                                <p class="location" id="loc2"></p>
-                                <img src="./img/map/spell1.png" id="spell2" class="spellSize" />
-                            </div>
-                        </div>
-
-                        <div class="twMapWidth" id="twMap02">
-                            <div class="locationWrap">
-                                <p class="location" id="loc6"></p>
-                                <img src="./img/map/spell6.png" id="spell6" class="spellSize" />
-                                <p class="location" id="loc7"></p>
-                                <img src="./img/map/spell7.png" id="spell7" class="spellSize" />
-                                <p class="location" id="loc8"></p>
-                                <img src="./img/map/spell8.png" id="spell8" class="spellSize" />
-                                <p class="location" id="loc9"></p>
-                                <img src="./img/map/spell9.png" id="spell9" class="spellSize" />
-                                <p class="location" id="loc10"></p>
-                                <img src="./img/map/spell10.png" id="spell10" class="spellSize" />
-                            </div>
-                        </div>
-                        <div class="twMapWidth" id="twMap03">
-                            <div class="locationWrap">
-                                <p class="location" id="loc11"></p>
-                                <img src="./img/map/spell11.png" id="spell11" class="spellSize" />
-                                <p class="location" id="loc12"></p>
-                                <img src="./img/map/spell12.png" id="spell12" class="spellSize" />
-                                <p class="location" id="loc13"></p>
-                                <img src="./img/map/spell13.png" id="spell13" class="spellSize" />
-                                <p class="location" id="loc14"></p>
-                                <img src="./img/map/spell14.png" id="spell14" class="spellSize" />
-                                <p class="location" id="loc15"></p>
-                                <img src="./img/map/spell12.png" id="spell15" class="spellSize" />
-                            </div>
+                <div id="twMap">
+                    <img class="mapImg" src="./img/map/twMap.png" />
+                    <div class="twMapWidth" id="twMap01">
+                        <div class="locationWrap">
+                            <p class="location" id="loc3"></p>
+                            <img src="./img/map/spell1.png" id="spell3" class="spellSize" />
+                            <p class="location" id="loc4"></p>
+                            <img src="./img/map/spell2.png" id="spell4" class="spellSize" />
+                            <p class="location" id="loc5"></p>
+                            <img src="./img/map/spell3.png" id="spell5" class="spellSize" />
+                            <p class="location" id="loc1"></p>
+                            <img src="./img/map/spell4.png" id="spell1" class="spellSize" />
+                            <p class="location" id="loc2"></p>
+                            <img src="./img/map/spell1.png" id="spell2" class="spellSize" />
                         </div>
                     </div>
-                    <div id="G1_L">
-                        <img src="./img/map/G1_L.png" />
-                    </div>
 
-                    <div id="ship">
-                        <img src="./img/map/ship.png" />
+                    <div class="twMapWidth" id="twMap02">
+                        <div class="locationWrap">
+                            <p class="location" id="loc6"></p>
+                            <img src="./img/map/spell6.png" id="spell6" class="spellSize" />
+                            <p class="location" id="loc7"></p>
+                            <img src="./img/map/spell7.png" id="spell7" class="spellSize" />
+                            <p class="location" id="loc8"></p>
+                            <img src="./img/map/spell8.png" id="spell8" class="spellSize" />
+                            <p class="location" id="loc9"></p>
+                            <img src="./img/map/spell9.png" id="spell9" class="spellSize" />
+                            <p class="location" id="loc10"></p>
+                            <img src="./img/map/spell10.png" id="spell10" class="spellSize" />
+                        </div>
                     </div>
-
-                    <div class="route1">
-                        <img src="./img/map/route1.png" />
+                    <div class="twMapWidth" id="twMap03">
+                        <div class="locationWrap">
+                            <p class="location" id="loc11"></p>
+                            <img src="./img/map/spell11.png" id="spell11" class="spellSize" />
+                            <p class="location" id="loc12"></p>
+                            <img src="./img/map/spell12.png" id="spell12" class="spellSize" />
+                            <p class="location" id="loc13"></p>
+                            <img src="./img/map/spell13.png" id="spell13" class="spellSize" />
+                            <p class="location" id="loc14"></p>
+                            <img src="./img/map/spell14.png" id="spell14" class="spellSize" />
+                            <p class="location" id="loc15"></p>
+                            <img src="./img/map/spell12.png" id="spell15" class="spellSize" />
+                        </div>
                     </div>
-
-                    <div class="loader loader1" data-text="loaderloader"></div>
-                    <div class="loader loader2" data-text="loaderloader"></div>
-                    <div class="loader loader3" data-text="loaderloader"></div>
-                    <div class="loader loader4" data-text="loaderloader"></div>
-                    <div class="loader loader5" data-text="loaderloader"></div>
                 </div>
-            </section>
+                <div id="G1_L">
+                    <img src="./img/map/G1_L.png" />
+                </div>
 
-            <section id="ghostIslandSection2">
+                <div id="ship">
+                    <img src="./img/map/ship.png" />
+                </div>
+
+                <div class="route1">
+                    <img src="./img/map/route1.png" />
+                </div>
+
+                <div class="loader loader1" data-text="loaderloader"></div>
+                <div class="loader loader2" data-text="loaderloader"></div>
+                <div class="loader loader3" data-text="loaderloader"></div>
+                <div class="loader loader4" data-text="loaderloader"></div>
+                <div class="loader loader5" data-text="loaderloader"></div>
+            </div>
+        </section>
+
+        <section id="ghostIslandSection2">
+            
+            <div class="cardDisplay">
+
                 <div class="cardContain">
-
                     <div class="spotCard">
                         <div class="spotImg">
                             <img src="./img/component/card/spotCard01.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png">
-                                <p>NO.1</p> 
+                                <p>NO.1</p>
                             </div>
                         </div>
                         <div class="spotTxt">
@@ -147,14 +150,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -167,7 +170,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -177,14 +180,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -197,7 +200,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -207,14 +210,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -227,7 +230,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -237,14 +240,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -257,7 +260,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -267,14 +270,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -287,71 +290,7 @@
                                 130
                             </p>
                         </div>
-                
-                    </div>
 
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png">
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png">
-                                <p>NO.1</p> 
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
-                        </div>
-                        <hr>
-                        <div class="spotStatus">
-                            <p class="like">
-                                <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                80
-                            </p>
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg">
-                                130
-                            </p>
-                        </div>
-                
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png">
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
-                        </div>
-                        <hr>
-                        <div class="spotStatus">
-                            <p class="like">
-                                <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                80
-                            </p>
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg">
-                                130
-                            </p>
-                        </div>
-                
                     </div>
 
                     <div class="spotCard">
@@ -360,19 +299,19 @@
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png">
-                                <p>NO.1</p> 
+                                <p>NO.1</p>
                             </div>
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -385,7 +324,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -395,14 +334,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -415,7 +354,41 @@
                                 130
                             </p>
                         </div>
-                
+
+                    </div>
+
+                    <div class="spotCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard01.png">
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                            <div id="rank">
+                                <img src="./img/component/card/rank.png">
+                                <p>NO.1</p>
+                            </div>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="spotStatus">
+                            <p class="like">
+                                <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
+                                80
+                            </p>
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg">
+                                130
+                            </p>
+                        </div>
+
                     </div>
 
                     <div class="spotCard">
@@ -425,14 +398,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -445,7 +418,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -455,14 +428,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -475,7 +448,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -485,14 +458,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -505,7 +478,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -515,14 +488,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -535,7 +508,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -545,14 +518,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -565,7 +538,7 @@
                                 130
                             </p>
                         </div>
-                
+
                     </div>
 
                     <div class="spotCard">
@@ -575,14 +548,14 @@
                         </div>
                         <div class="spotTxt">
                             <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                                <p class="spotIntro">
-                                    <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                                </p>
-                                <p class="groupJoin">
-                                    <a href="">
-                                        查看景點相關揪團
-                                    </a>
-                                </p>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
                         </div>
                         <hr>
                         <div class="spotStatus">
@@ -595,27 +568,61 @@
                                 130
                             </p>
                         </div>
-                
+
+                    </div>
+
+                    <div class="spotCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard01.png">
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <p class="spotIntro">
+                                <a href="">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="spotStatus">
+                            <p class="like">
+                                <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
+                                80
+                            </p>
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg">
+                                130
+                            </p>
+                        </div>
+
                     </div>
 
 
-
-                    <div id="Ghost2">
-                        <img src="./img/map/G2.png" />
-                    </div>
-
-                    <div id="Ghost3">
-                        <img src="./img/map/G3.png" />
-                    </div>
                 </div>
-            </section>
 
-            <div class="route2">
-                <img src="./img/map/route2.png" />
+
+
+                <div id="Ghost2">
+                    <img src="./img/map/G2.png" />
+                </div>
+
+                <div id="Ghost3">
+                    <img src="./img/map/G3.png" />
+                </div>
             </div>
+        </section>
 
-            @@include('layout/footer.html')
+        <div class="route2">
+            <img src="./img/map/route2.png" />
         </div>
-        <script src="./js/ghostIslandSelect.js"></script>
-    </body>
+
+        @@include('layout/footer.html')
+    </div>
+    <script src="./js/ghostIslandSelect.js"></script>
+</body>
+
 </html>
