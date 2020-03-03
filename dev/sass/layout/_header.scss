@@ -143,14 +143,18 @@ header {
 
         #topLogo2 {
             // border: 1px solid green;
-            width: 80px;
+            width: 100px;
             margin: 0px;
+            position: relative;
+            left: 50px;
         }
 
         .hamburger{
             width: 80px;
             height: 80px;
-
+            // border: 1px solid green;
+            color: white;
+            // background: white;
             float: right;
         }
     }
