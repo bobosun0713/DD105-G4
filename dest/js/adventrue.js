@@ -8,6 +8,8 @@ $(document).ready(function () {
         })
     })
 
+
+
     $(window).scroll(function () {
 
         /* Check the location of each desired element */
@@ -25,8 +27,11 @@ $(document).ready(function () {
                     opacity: '1',
                     bottom: "0px"
                 }, 800);
+
             }
+
         });
+
     });
 })
 
