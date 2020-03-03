@@ -3,10 +3,25 @@
     <head>
         <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- css -->
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+<!-- ---------------------共用區---------------------- -->
+<!--all css -->
 <link rel="stylesheet" href="./css/main.css">
 <!-- 鬼島logo小圖示 -->
 <link rel="shortcut icon" href="../img/icon/logo-icon.png" />
+<!-- jquery-3.4.1 -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- TweenMax.min外掛 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<!-- awesome icon外掛包 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+
+
+<!-- ---------------------阿禎區---------------------- -->
+<!-- 阿禎scorll外掛 -->
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
         <title>討論區</title>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -93,10 +108,10 @@
         </div>
 
     </div>
-    <nav>
+    <nav class="desktopHeader">
         <ul>
             <li>
-                <a href="">
+                <a href="../ghostIsland.html">
                     前進鬼島
                 </a>
             </li>
@@ -106,12 +121,12 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="../leaderboard.html">
                     靈異票選
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../index.html">
                     <img id="topLogo" src="./img/logo/LOGO_white.png">
                 </a>
             </li>
@@ -121,22 +136,34 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="../forum.html">
                     靈異討論
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="../member.html">
                     會員中心
                 </a>
             </li>
         </ul>
     </nav>
+
+    <nav class="rwdHeader">
+        <a href="../index.html">
+            <img id="topLogo2" src="./img/logo/LOGO_white.png">
+        </a>
+        
+        <button class="hamburger hamburger--elastic" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </nav>
 </header>
             <div class="forum_container">
                 <!-- 文章標題 -->
                 <div class="article_title">
-                    <div class="title">所有文章列表<span>共519篇文章</span></div>
+                    <div class="art_title">所有文章列表<span>共519篇文章</span></div>
                     <span id="opener">投稿</span>
                 </div>
                 <!-- 篩選 -->
@@ -165,7 +192,7 @@
                 <!-- 文章 -->
                 <div class="forum_filter_articlec content_btn">
                     <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
+                        <img src="https://picsum.photos/350/280" alt="" />
                     </div>
                     <div class="art_con">
                         <div class="art_title">
@@ -200,7 +227,7 @@
                 </div>
                 <div class="forum_filter_articlec content_btn">
                     <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
+                        <img src="https://picsum.photos/350/280" alt="" />
                     </div>
                     <div class="art_con">
                         <div class="art_title">
@@ -235,7 +262,7 @@
                 </div>
                 <div class="forum_filter_articlec content_btn">
                     <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
+                        <img src="https://picsum.photos/350/280" alt="" />
                     </div>
                     <div class="art_con">
                         <div class="art_title">
@@ -270,7 +297,7 @@
                 </div>
                 <div class="forum_filter_articlec content_btn">
                     <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
+                        <img src="https://picsum.photos/350/280" alt="" />
                     </div>
                     <div class="art_con">
                         <div class="art_title">
@@ -305,7 +332,7 @@
                 </div>
                 <div class="forum_filter_articlec content_btn">
                     <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
+                        <img src="https://picsum.photos/350/280" alt="" />
                     </div>
                     <div class="art_con">
                         <div class="art_title">
@@ -338,111 +365,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="/img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="/img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="/img/icon/chat.svg" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="/img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="/img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="/img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="/img/icon/chat.svg" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="/img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/250" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="/img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="/img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="/img/icon/chat.svg" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="/img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- 發表燈箱 -->
                 <div id="post＿article">
                     <h1>發表文章</h1>
@@ -589,20 +512,20 @@
             <ul>
                 <li>
                     <p>
-                        <a href="">
+                        <a href="../ghostIsland.html">
                             前進鬼島
                         </a>
                     </p>
 
                     <p>
-                        <a href="">
+                        <a href="../index.html">
                             尋鬼探險
                         </a>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <a href="">
+                        <a href="../leaderboard.html">
                             靈異票選
                         </a>
                     </p>
@@ -621,32 +544,32 @@
                     </p>
 
                     <p>
-                        <a href="">
+                        <a href="../forum.html">
                             文章投稿
                         </a>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <a href="">
+                        <a href="../member.html">
                             會員中心
                         </a>
 
                     </p>
                     <p>
                         <span class="subLink">
-                            <a href="">
+                            <a href="../member.html">
                                 會員資料
                             </a>
-                            <a href="">
+                            <a href="../member.html">
                                 揪團紀錄
                             </a>
                         </span>
                         <span class="subLink">
-                            <a href="">
+                            <a href="../member.html">
                                 我的收藏
                             </a>
-                            <a href="">
+                            <a href="../member.html">
                                 投稿紀錄
                             </a>
                         </span>

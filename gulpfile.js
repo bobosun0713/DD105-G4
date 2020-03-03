@@ -88,14 +88,13 @@ gulp.task('mini_img', function() {
 //   gulp.watch(['*.html' , '**/*.html'],  ['fileinclude']);
 // });
 
-gulp.task('default', function () {
+gulp.task('default', function() {
     browserSync.init({
         server: {
-            baseDir: "./dest",
-            index: "index.html"
+            baseDir: './dest',
+            index: 'index.html',
         },
-    });
-
+    })
     gulp.watch(web.html, ['fileinclude']).on('change', reload)
     gulp.watch(web.sass, ['sass']).on('change', reload)
     gulp.watch(web.js, ['concatjs']).on('change', reload)

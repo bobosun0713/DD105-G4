@@ -1,131 +1,160 @@
 //共用屬性
 .btn {
-    transition: all 0.3s ease 0s !important;
-    background-image: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    position: relative;
-    @include rect(180px, 42px);
-    padding: 10px;
-    text-align: center;
-    border-radius: 2px;
-    cursor: pointer;
-    margin: 10px 0;
-    display: inline-block;
+  transition: all 0.3s ease 0s !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  position: relative;
+  @include rect(180px, 42px);
+  padding: 10px;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 10px 0;
+  display: inline-block;
 }
 
 //第一組
 .btn-default {
-    background-color: $btn-bgc;
-    border-color: $border-default;
+  background-color: $btn-bgc;
+  border-color: $border-default;
+  color: $text-color;
+  border-radius: 20px;
+  &:hover {
+    background-color: darken($btn-bgc, 10%);
+    border-color: darken($border-default, 5%);
     color: $text-color;
-    border-radius: 20px;
+  }
 
-    &:hover {
-        background-color: darken($btn-bgc, 10%);
-        border-color: darken($border-default, 5%);
-        color: $text-color;
-    }
+  &:active,
+  &.active,
+  &.active:focus,
+  &:active:focus,
+  &:active:hover {
+    background-color: darken($btn-bgc, 10%);
+    border-color: lighten($border-default, 5%);
+    color: darken($text-color, 20%);
+  }
 
-    &:active,
-    &.active,
-    &.active:focus,
-    &:active:focus,
-    &:active:hover {
-        background-color: darken($btn-bgc, 10%);
-        border-color: lighten($border-default, 5%);
-        color: darken($text-color, 20%);
-    }
-
-    &:focus {
-        background-color: darken($btn-bgc, 10%);
-        border-color: darken($border-default, 5%);
-        color: darken($text-color, 20%);
-    }
+  &:focus {
+    background-color: darken($btn-bgc, 10%);
+    border-color: darken($border-default, 5%);
+    color: darken($text-color, 20%);
+  }
 }
 
 //第二組
 .btn-outline {
-    border: 1px solid $white;
-    color: $white;
-    border-radius: 100px;
-    cursor: pointer;
+  border: 1px solid $white;
+  color: $white;
+  border-radius: 100px;
+  cursor: pointer;
 
-    &:hover {
-        background-color: $white;
-        border-color: $white;
-        color: $black;
-    }
+  &:hover {
+    background-color: $white;
+    border-color: $white;
+    color: $black;
+  }
 
-    &:active,
-    &.active,
-    &.active:focus,
-    &:active:focus,
-    &:active:hover {
-        background-color: darken($btn-bgc, 10%);
-        border-color: lighten($border-default, 5%);
-        color: darken($text-color, 20%);
-    }
+  &:active,
+  &.active,
+  &.active:focus,
+  &:active:focus,
+  &:active:hover {
+    background-color: darken($btn-bgc, 10%);
+    border-color: lighten($border-default, 5%);
+    color: darken($text-color, 20%);
+  }
 
-    &:focus {
-        background-color: darken($btn-bgc, 10%);
-        border-color: darken($border-default, 5%);
-        color: darken($text-color, 20%);
-    }
+  &:focus {
+    background-color: darken($btn-bgc, 10%);
+    border-color: darken($border-default, 5%);
+    color: darken($text-color, 20%);
+  }
 }
 
 // 第三組
 .btn-outline2 {
-    border: 2px solid #3b3b3b;
-    padding: 5px 20px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #3b3b3b;
-    border-radius: 100px;
-    cursor: pointer;
+  border: 2px solid #3b3b3b;
+  padding: 5px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b3b3b;
+  border-radius: 100px;
+  cursor: pointer;
 
-    &:hover {
-        background-color: #3b3b3b;
-
-        p {
-            color: white;
-        }
-    }
-
-    img {
-        width: 12px;
-    }
+  &:hover {
+    background-color: #3b3b3b;
 
     p {
-        color: #3b3b3b;
-        margin: 0px;
-        font-size: 0.8rem;
+      color: white;
     }
+  }
+
+  img {
+    width: 12px;
+  }
+
+  p {
+    color: #3b3b3b;
+    margin: 0px;
+    font-size: 0.8rem;
+  }
 }
 
 //============  討論區
 .btn-border3 {
-    width: 145px;
-    height: 35px;
-    line-height: 35px;
-    color: red;
-    border: 1px solid red;
-    border-radius: 10px;
-    font-size: 16px;
-    text-align: center;
+  width: 145px;
+  height: 35px;
+  line-height: 35px;
+  color: red;
+  border: 1px solid red;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .btn-type4 {
-    width: 150px;
-    height: 50px;
-    line-height: 35px;
-    background-color: $primary;
-    color: $white;
-    border-radius: 10px;
-    font-size: 18px;
-    &:hover {
-        background-color: darken($primary, 10%);
-        color: darken($white, 10%);
-    }
+  width: 150px;
+  height: 50px;
+  line-height: 35px;
+  background-color: $primary;
+  color: $white;
+  border-radius: 10px;
+  font-size: 18px;
+  &:hover {
+    background-color: darken($primary, 10%);
+    color: darken($white, 10%);
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+//============  尋鬼探險
+
+
+//這是紅色填滿按鈕，拿來做立即加入
+.btn_fill_red {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color:#d11c00;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color ease 0.5s;
+    margin-bottom: 5px;
+    &:hover {
+      background-color:red;
+      cursor: pointer;
+    }
+  }
+  
