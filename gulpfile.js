@@ -15,6 +15,7 @@ var web = {
     js: ['dev/js/*.js'],
     img: ['dev/img/*.*', 'dev/img/**/*.*'],
     font: ['dev/font/*.*', 'dev/font/**/*.*'],
+    music: ['dev/music/*.*'],
 }
 
 //流程
@@ -28,6 +29,9 @@ gulp.task('img', function() {
 
 gulp.task('font', function() {
     gulp.src(web.font).pipe(gulp.dest('dest/font'))
+})
+gulp.task('music', function() {
+    gulp.src('dev/music/*.*').pipe(gulp.dest('dest/music'))
 })
 
 //任務串連
@@ -101,4 +105,5 @@ gulp.task('default', function() {
     // gulp.watch(web.js, ['lint']).on('change', reload);
     gulp.watch(web.img, ['img']).on('change', reload)
     gulp.watch(web.font, ['font']).on('change', reload)
+    // gulp.watch(web.music, ['music'].on('change'), reload)
 })

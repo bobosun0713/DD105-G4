@@ -1,5 +1,10 @@
 #ghostIslandWrapper{
   background: linear-gradient(to right, rgba(0,0,0,.7),rgba(0,0,0,0)60%);
+  background-image: url("../img/spot/BG/spotBG.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -2;
 }
 
 
@@ -320,14 +325,32 @@
       height: 15px;
       border-radius: 50%;
       background: red;
-      opacity: 0.6;
+      opacity: 0.5;
       border-style: double;
       box-shadow: 0px 0px 12px 4px rgb(255, 57, 57);
       cursor: pointer;
       transition: opacity 0.3s linear;
+      animation: loc_blink 2s 3;
 
       &:hover {
         opacity: 1;
+      }
+    }
+    @keyframes loc_blink {
+      0% {
+        filter: brightness(1);
+      }
+      25% {
+        filter: brightness(0.5);
+      }
+      50% {
+        filter: brightness(1);
+      }
+      75% {
+        filter: brightness(0.5);
+      }
+      100% {
+        filter: brightness(1);
       }
     }
 
@@ -364,17 +387,40 @@
     right: 80px;
     bottom: 280px;
     transform: rotate(5deg);
+    animation: bigG_float 3s linear infinite;
 
     img {
       // border: 1px solid green;
       width: 100%;
     }
   }
+  @keyframes bigG_float {
+    0% {
+      transform: translateY(0px) rotate(5deg) ;
+      filter: brightness(1);
+    }
+    25% {
+      transform: translateY(-10px) rotate(5deg);
+      filter: brightness(0.8);
+    }
+    50% {
+      transform: translateY(0px) rotate(5deg);
+      filter: brightness(1);
+    }
+    75% {
+      transform: translateY(-10px) rotate(5deg);
+      filter: brightness(0.6);
+    }
+    100% {
+      transform: translateY(0px) rotate(5deg);
+      filter: brightness(1);
+    }
+  }
 
   #G1_L {
     width: 150px;
     position: absolute;
-    right: 300px;
+    right: 290px;
     top: 65px;
     transform-origin: top;
     animation: L_swing 3s linear infinite;

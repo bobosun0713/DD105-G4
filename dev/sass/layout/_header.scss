@@ -1,18 +1,18 @@
 //共用的header
 header {
   width: 100%;
-    position: fixed;
-    top:0;
-    z-index: 99;
+  position: fixed;
+  top: 0;
+  z-index: 99;
   //   margin-top: 0px;
   // width: 1200px;
   // margin: auto;
-    // border: 1px solid blue;
+  // border: 1px solid blue;
   text-align: center;
   box-sizing: border-box;
   // padding: 0px 0px 50px 0px;
-  background: linear-gradient(to bottom,rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, .8) 60%, rgba(0, 0, 0, 0));
-  transition: 1s linear;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0));
+  transition: .7s linear;
 
   #navStatus {
     text-align: right;
@@ -33,12 +33,19 @@ header {
       align-items: center;
       // border: 1px solid blue;
       margin-right: 20px;
+      
 
       img {
-        width: 20px;
+        opacity: .6;
+        width: 30px;
         // border: 1px solid blue;
         margin-right: 4px;
         cursor: pointer;
+        transition: opacity .5s linear;
+
+        &:hover{
+          opacity: 1;
+        }
       }
     }
 
@@ -172,7 +179,6 @@ header {
         float: right;
       }
     }
-
   }
 
   #rwdHamburgerMenu {
@@ -236,6 +242,18 @@ header {
       }
     }
   }
+}
+
+//鎖住html的設定
+html.noscroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+html.fixWindow {
+  position: fixed;
+  width: 100%;
 }
 
 //平板
