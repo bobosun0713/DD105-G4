@@ -39,16 +39,16 @@ window.addEventListener('load', function(){
         }
     }
 
-    $id("loc1").onmouseover = function(e){
+    // $id("loc1").onmouseover = function(e){
     
-        e.target.nextElementSibling.style.opacity = 1;
-        console.log(e.target.nextElementSibling);
-    }
+    //     e.target.nextElementSibling.style.opacity = 1;
+    //     console.log(e.target.nextElementSibling);
+    // }
 
-    $id("loc1").onmouseout = function(e){
-        e.target.nextElementSibling.style.opacity = 0;
-        console.log(e.target.nextElementSibling);
-    }
+    // $id("loc1").onmouseout = function(e){
+    //     e.target.nextElementSibling.style.opacity = 0;
+    //     console.log(e.target.nextElementSibling);
+    // }
 
 
 
