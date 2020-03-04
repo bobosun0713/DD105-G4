@@ -1,117 +1,66 @@
-@include respond(medium) {
-    //平板都寫在裡面
-}
-//桌基板幽靈隱藏
-#leaderboard-form {
-    //div-leaderboard-form
-    background-image: none;
-}
-//  -------RWD---------992px *1299px-------------
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    body {
-        width: 760px;
-        width: 100%;
-        // background-color: sandybrown;
-        /* 投給你內心 */
-        #vote {
-            .vote-img {
-                width: 230px;
-                height: 170px;
-            }
-            .vote-text {
-                margin-top: 55px;
-                width: 300px;
-                margin-bottom: 50px;
-                font-size: 1.8rem;
-            }
-        }
-    }
-
-    /* div.Haunted-house 排行TOP前三名 */
-    .Haunted-house {
-        width: 680px;
-        width: 100%;
-        max-height: 200px;
-        /* 景點圖片 */
-        .Haunted-house-i {
-            width: 22%;
-        }
-        .Strip-background {
-            //div
-            background-image: url(../img/leaderboard/ghost-4-s.png);
-            margin-top: 60px;
-            width: 1200px;
-            width: 67%;
-            height: 200px;
-            margin-top: 15px;
-        }
-        //h2
-        .Haunted-house-t {
-            font-size: 4.8rem;
-            margin-top: -1px;
-            margin-left: -15px;
-        }
-        //p
-        .Haunted-house-p {
-            margin-left: -105px;
-            margin-top: -63px;
-            word-spacing: 0px; //空白建間隔
-        }
-    }
-    // 來抓交替囉隱藏
-    #alternately {
-        .alternately-p {
-            display: none;
-        }
-        .alternately-i {
-            display: none;
-        }
-    }
-    //手機板的幽靈隱藏
-    #ghost-2-s {
-        display: block;
-        margin-top: 150px;
-        margin-bottom: -180px;
-    }
-    // 排行榜表單
-
-    #leaderboard-form {
-        //div-leaderboard-form
-        margin-bottom: 250px;
-        #leaderboard-form-1 {
-            //table-leaderboard-form-1
-            #Form-name {
-                //名次的tr
-                width: 180px;
-                line-height: 50px;
-                background-color: rgb(139, 4, 4);
-                td.Form-name {
-                    width: 180px;
-                    // line-height: 50px;
-                    text-align: center;
-                    padding: 5px;
+//  -------RWD---------768pxpx *992px------------- 
+ 
+@media screen and (min-width:768px) and (max-width:991px){
+    #Guide-page-img{
+        width:768px;
+        width: 100%;    
+/* 血跡圖片位置 */
+.front-end{
+            /* 前端血跡圖 */
+            #front-end{
+                background-image: url(../img/guide-pages/Bloodstain-s.png);
+                max-height: 200px;
+                width: 250px;
                 }
-            }
-            .Ranking {
-                width: 180px;
-                td {
-                    padding: 5px;
-                    width: 180px;
+
+            /* 後端血跡圖 */
+            #rear-end{
+                background-image: url(../img/guide-pages/Bloodstain-s.png);
+                max-height: 200px;
+                width: 250px;
                 }
+
+            /* 前後端血跡文字 */
+            .front-span{
+                font-size: 45px;
+                margin-top: -52px;
+                margin-left: -60px;
+                }
+
+}
+
+
+        /* 女鬼 與鬼島logo大div */
+        .Female-ghost{
+            margin-top: 205px;
+            max-height: 255px;
+            #Female-ghost{
+            display: none;//隱藏女鬼 大圖
             }
+            #Female-ghost-s{
+            display:block;//顯示女鬼 小圖
+            width: 200px;
+
+            }
+            
+                /* 喜歡冒險文字typewriter */
+                .typewriter{
+                    margin-top: -80px;
+                    font-size: 1.1rem;
+                    letter-spacing: 1px;
+            
+                    }
+                    #logo-white-b{
+                        display: none;//隱藏logo大圖
+                    }
+                    #logo-white-s{
+                        display:block;//顯示logo小圖
+                        width: 150px;
+                        height: 150px;
+                        margin-top: 70px;
+                    }
+        
         }
-    }
-
-    // 老鼠
-    .mouse {
-        width: 180px;
-        margin-top: 10px;
-    }
-
-    .Vote-btn {
-        //按鈕
-        margin-bottom: 50px;
-        margin-top: -50px;
-    }
+    } 
 }

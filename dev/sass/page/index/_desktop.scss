@@ -520,10 +520,221 @@ background-image: url("../img/spot/BG/spotBG.png");
     }
 }
 #section3 {
+<<<<<<< HEAD
+  margin-bottom: 50px;
+  border: 1px solid rgb(97, 115, 97);
+  width: 100%;
+  background-image: url("../img/adventrue/恐怖背景.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .adventure_main {
+    display: flex;
+    border: 1px solid rgb(97, 115, 97);
+    width: 1200px;
+    margin: 0 auto;
+    // 這區是左邊按鈕
+    .adventure_btn {
+      .ghost_btn {
+        margin-bottom: 50px;
+        position: relative;
+        width: 360px;
+        height: 250px;
+        -webkit-filter: grayscale(0.8);
+        transition: all 0.8s;
+        //讓他變亮
+        &:hover {
+          -webkit-filter: grayscale(0);
+        }
+        //讓他飛起來
+        &:hover .ghost_btn1 > img {
+          transform: translateY(-40px);
+        }
+        //字變畫還在想
+        &:hover .ghost_tape > span {
+        }
+        //這是背景
+        .ghost_btn_img1 {
+          position: absolute;
+          top: 0;
+        }
+        .ghost_btn1 {
+          position: absolute;
+          top: -100px;
+          height: 355px;
+          overflow: hidden;
+          padding-top: 50px;
+
+          > img {
+            transition: transform 0.8s;
+          }
+        }
+        //這是膠帶
+        .ghost_tape {
+          position: absolute;
+          bottom: -50px;
+          right: -50px;
+          > span {
+            display: block;
+            position: absolute;
+            z-index: 5;
+            font-size: 35px;
+            left: 50%;
+            top: 50%;
+            margin-left: -70px;
+            margin-top: -30px;
+            transform: rotate(-3deg);
+            font-weight: 700;
+            color: #2c0c0a;
+          }
+        }
+      }
+      .ghost_btn2 {
+        margin-bottom: 50px;
+        position: relative;
+        width: 360px;
+        height: 250px;
+        -webkit-filter: grayscale(0.8);
+        transition: all 0.8s;
+        //讓他變亮
+        &:hover {
+          -webkit-filter: grayscale(0);
+        }
+        //讓他飛起來
+        &:hover .ghost_btn2 > img {
+          // transform: translateX(40px);
+          left: -170px;
+        }
+        //字變畫還在想
+        &:hover .ghost_tape > span {
+        }
+        //這是背景
+        .ghost_btn_img2 {
+          position: absolute;
+          top: 0;
+        }
+        //鬼本身
+        .ghost_btn2 {
+          position: absolute;
+          top: 0px;
+          width: 370px;
+          height: 355px;
+          overflow: hidden;
+          > img {
+            position: absolute;
+            left: -350px;
+            transition: all 0.8s;
+          }
+        }
+        //這是膠帶
+        .ghost_tape {
+          position: absolute;
+          bottom: -50px;
+          right: -50px;
+          > span {
+            display: block;
+            position: absolute;
+            z-index: 5;
+            font-size: 35px;
+            left: 50%;
+            top: 50%;
+            margin-left: -70px;
+            margin-top: -30px;
+            transform: rotate(-3deg);
+            font-weight: 700;
+            color: #2c0c0a;
+          }
+        }
+      }
+    }
+    .adventure_word {
+      height: 100%;
+      width: 100%;
+      background-size: contain;
+      position: relative;
+       .adventure_img {
+        position: absolute;
+        z-index: -1;
+        transform:translateX(-120px);
+        width:1000px;
+        top:50%;
+        left:50%;
+        margin-top:-250px;
+        margin-left:-400px;
+        img{
+          width:100%;
+        }
+      }
+      .adventure_tab {
+        // border:1px solid red;
+        padding-left: 50px;
+        box-sizing: border-box;
+        > span {
+          display: inline-block;
+          font-size: 0;
+          &:first-child::after {
+            content: "/";
+            font-size: 20px;
+            padding-left: 10px;
+          }
+          > a {
+            color: white;
+            font-size: 35px;
+            font-weight: 600;
+          }
+        }
+        > a {
+          display: inline-block;
+          color: rgb(96, 96, 96);
+          border: 1px solid rgb(96, 96, 96);
+          padding: 3px 6px;
+          margin-left: 20px;
+          font-size: 12px;
+          box-sizing: border-box;
+        }
+      }
+      table {
+        width: 100%;
+        padding: 20px 30px 30px 30px;
+        display: inline-block;
+        text-align: center;
+
+        thead {
+          // background-color: rgb(44, 43, 43);
+          text-align: center;
+          border-bottom: 1px solid rgb(96, 96, 96);
+          > td {
+            width: 80px;
+          }
+        }
+        tr {
+          border-bottom: 1px solid rgb(96, 96, 96);
+          display: flex;
+          align-items: center;
+          transition: all 0.5s;
+          text-align: center;
+          &:hover {
+            background-color: rgba(214, 214, 214, 0.163);
+            cursor: pointer;
+          }
+
+          > td {
+            width: 180px;
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+    // .adventure_word
+  }
+  // .section3_main
+=======
     border: 1px solid green;
     width: 100%;
     // height: 800px;
+>>>>>>> 0ffb3c4f2d7cfe53f869e6cd4e44b1d6147a41d4
 }
+//#section3
 
 // ========================= 討論區
 
