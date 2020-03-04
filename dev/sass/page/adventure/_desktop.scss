@@ -694,16 +694,3 @@ $frame: 1px solid red;
 .hide_tab_content {
   display: none;
 }
-
-//滑鼠鬼跟者
-#mouse {
-  width: 100px;
-  height: 100px;
-  background-size: contain;
-  position: absolute;
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background-image: url("../img/adventrue/text.png");
-}
