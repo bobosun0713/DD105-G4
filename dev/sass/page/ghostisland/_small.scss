@@ -1,8 +1,11 @@
 @include respond(small) {
   //手機都寫在裡面
   #ghostIslandSection1 {
+    margin-top: 0px;
+
     #areaList {
       position: absolute;
+      top: 0px;
       left: 50px;
       margin: 50px 10px;
       // float: 0;
@@ -11,6 +14,7 @@
 
     #mapArea {
       height: 450px;
+      // top: 0px;
 
       #bigG {
         opacity: 0.7;
@@ -32,6 +36,8 @@
       display: none;
     }
   }
+
+
   #ghostIslandSection2 {
     margin-bottom: 150px;
 

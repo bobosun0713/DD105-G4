@@ -1,13 +1,13 @@
-// #ghostIndexBG{
-//     background-image: url("../img/spot/BG/spotBG.png");
-//   background-size: 100%;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
+#ghostIndexBG{
+background-image: url("../img/spot/BG/spotBG.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-//   overflow: hidden;
+  overflow: hidden;
 
-//   z-index: -2;
-// }
+  z-index: -2;
+}
 
 #indexSection1 {
     border: 1px solid transparent;
@@ -127,7 +127,7 @@
 #indexSection2 {
     //   border: 1px solid orange;
     width: 100%;
-    margin: 100px 0;
+    margin: 300px 0;
     //   padding: 0px 200px;
     display: inline-flex;
     justify-content: center;

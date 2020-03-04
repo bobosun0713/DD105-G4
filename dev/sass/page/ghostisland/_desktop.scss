@@ -6,7 +6,7 @@
 #ghostIslandSection1 {
   // border: 1px solid red;
   margin: 100px auto;
-  padding-top: 230px;
+  padding-top: 150px;
   width: 100%;
   height: 580px;
   display: inline-flex;
@@ -26,7 +26,6 @@
     // background: #502c2c;
     width: 800px;
     height: 500px;
-    // float: right;
     margin: 50px 0;
     box-sizing: border-box;
     position: relative;
@@ -42,6 +41,11 @@
         // border: 1px solid green;
         width: 100%;
         margin: 0 auto;
+      }
+
+      a{
+        text-decoration: none;
+        color: white;
       }
 
       .twMapWidth {
@@ -71,7 +75,7 @@
 
         #spell1 {
           position: absolute;
-          top: 110px;
+          top: 130px;
           left: 40px;
         }
 
@@ -89,7 +93,7 @@
 
         #spell2 {
           position: absolute;
-          top: 90px;
+          top: 110px;
           left: 90px;
         }
 
@@ -104,10 +108,9 @@
             opacity: 1;
           }
         }
-
         #spell3 {
           position: absolute;
-          top: 160px;
+          top: 180px;
           left: 40px;
         }
 
@@ -124,7 +127,7 @@
 
         #spell4 {
           position: absolute;
-          top: 240px;
+          top: 260px;
           left: 110px;
         }
 
@@ -142,7 +145,7 @@
 
         #spell5 {
           position: absolute;
-          top: 140px;
+          top: 160px;
           left: 80px;
         }
       }
@@ -501,7 +504,7 @@
 
 #ghostIslandSection2 {
   // border: 1px solid red;
-  margin-top: 140px;
+  margin-top: 50px;
   position: relative;
 
   display: flex;

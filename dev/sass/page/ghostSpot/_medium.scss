@@ -1,32 +1,36 @@
 @include respond(medium) {
-    //平板都寫在裡面
-    #ghostSpotSection1{
+  //平板都寫在裡面
+  #ghostSpotBG {
+    background-size: 200%;
+    background-position-x: center;
+    background-attachment: fixed;
+  }
+
+  #ghostSpotSection1 {
+    width: 90%;
+  }
+
+  #ghostSpotSection2 {
+    .cardContain {
       width: 90%;
+      overflow-x: scroll;
 
-    }
+      button {
+        display: none;
+      }
 
-    #ghostSpotSection2{
-      
-      .cardContain{
-        width: 90%;
-        overflow-x: scroll;
-        
-        button{
-          display: none;
-        }
-
-        &::-webkit-scrollbar{
-          height: 10px;
-          background-color: rgba(255,255,255,0);
-        }
-        &::-webkit-scrollbar-track{
-          background-color: rgba(0, 0, 0, .6);
-          border-radius: 10px;
-        }
-        &::-webkit-scrollbar-thumb{
-          background-color: rgba(255,255,255,.6);
-          border-radius: 10px;
-        }
+      &::-webkit-scrollbar {
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
       }
     }
   }
+}
