@@ -540,19 +540,19 @@ background-image: url("../img/spot/BG/spotBG.png");
                 position: relative;
                 width: 360px;
                 height: 250px;
-                -webkit-filter: grayscale(0.8);
+               filter: grayscale(0.8);
                 transition: all 0.8s;
                 //讓他變亮
                 &:hover {
-                    -webkit-filter: grayscale(0);
+                    filter: grayscale(0);
                 }
                 //讓他飛起來
                 &:hover .ghost_btn1 > img {
                     transform: translateY(-40px);
                 }
                 //字變畫還在想
-                &:hover .ghost_tape > span {
-                }
+                // &:hover .ghost_tape > span {
+                // }
                 //這是背景
                 .ghost_btn_img1 {
                     position: absolute;
@@ -593,11 +593,11 @@ background-image: url("../img/spot/BG/spotBG.png");
                 position: relative;
                 width: 360px;
                 height: 250px;
-                -webkit-filter: grayscale(0.8);
+                filter: grayscale(0.8);
                 transition: all 0.8s;
                 //讓他變亮
                 &:hover {
-                    -webkit-filter: grayscale(0);
+                   filter: grayscale(0);
                 }
                 //讓他飛起來
                 &:hover .ghost_btn2 > img {
@@ -605,8 +605,8 @@ background-image: url("../img/spot/BG/spotBG.png");
                     left: -170px;
                 }
                 //字變畫還在想
-                &:hover .ghost_tape > span {
-                }
+                // &:hover .ghost_tape > span {
+                // }
                 //這是背景
                 .ghost_btn_img2 {
                     position: absolute;
