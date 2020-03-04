@@ -50,5 +50,31 @@
         }
       }
     }
+
+    #ghostSpotSection3{
+
+      #tabPage1{
+        #officalTour{
+          .tourSpot{
+            .btn-outline2{
+            display: none;
+          }
+          }
+          
+        }
+        .myTourGuide{
+          padding: 0px;
+          .G1 {
+            pointer-events: none;
+            left: -180px;
+            top: -50px;
+          }
+  
+          .newMyTour{
+            margin: 100px 20px;
+          }
+        }
+      }
+    }
   
   }

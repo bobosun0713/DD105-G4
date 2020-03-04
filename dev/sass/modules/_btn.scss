@@ -48,6 +48,7 @@
   border: 1px solid $white;
   color: $white;
   border-radius: 100px;
+  transition: all .5s linear;
   cursor: pointer;
 
   &:hover {
@@ -83,6 +84,7 @@
   color: #3b3b3b;
   border-radius: 100px;
   cursor: pointer;
+  transition: all .5s linear;
 
   &:hover {
     background-color: #3b3b3b;
