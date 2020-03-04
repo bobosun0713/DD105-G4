@@ -1,12 +1,17 @@
 #ghostIslandWrapper{
   background: linear-gradient(to right, rgba(0,0,0,.7),rgba(0,0,0,0)60%);
+  background-image: url("../img/spot/BG/spotBG.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -2;
 }
 
 
 #ghostIslandSection1 {
   // border: 1px solid red;
   margin: 100px auto;
-  padding-top: 230px;
+  padding-top: 150px;
   width: 100%;
   height: 580px;
   display: inline-flex;
@@ -26,7 +31,6 @@
     // background: #502c2c;
     width: 800px;
     height: 500px;
-    // float: right;
     margin: 50px 0;
     box-sizing: border-box;
     position: relative;
@@ -42,6 +46,11 @@
         // border: 1px solid green;
         width: 100%;
         margin: 0 auto;
+      }
+
+      a{
+        text-decoration: none;
+        color: white;
       }
 
       .twMapWidth {
@@ -71,7 +80,7 @@
 
         #spell1 {
           position: absolute;
-          top: 110px;
+          top: 130px;
           left: 40px;
         }
 
@@ -89,7 +98,7 @@
 
         #spell2 {
           position: absolute;
-          top: 90px;
+          top: 110px;
           left: 90px;
         }
 
@@ -104,10 +113,9 @@
             opacity: 1;
           }
         }
-
         #spell3 {
           position: absolute;
-          top: 160px;
+          top: 180px;
           left: 40px;
         }
 
@@ -124,7 +132,7 @@
 
         #spell4 {
           position: absolute;
-          top: 240px;
+          top: 260px;
           left: 110px;
         }
 
@@ -142,7 +150,7 @@
 
         #spell5 {
           position: absolute;
-          top: 140px;
+          top: 160px;
           left: 80px;
         }
       }
@@ -317,14 +325,32 @@
       height: 15px;
       border-radius: 50%;
       background: red;
-      opacity: 0.6;
+      opacity: 0.5;
       border-style: double;
       box-shadow: 0px 0px 12px 4px rgb(255, 57, 57);
       cursor: pointer;
       transition: opacity 0.3s linear;
+      animation: loc_blink 2s 3;
 
       &:hover {
         opacity: 1;
+      }
+    }
+    @keyframes loc_blink {
+      0% {
+        filter: brightness(1);
+      }
+      25% {
+        filter: brightness(0.5);
+      }
+      50% {
+        filter: brightness(1);
+      }
+      75% {
+        filter: brightness(0.5);
+      }
+      100% {
+        filter: brightness(1);
       }
     }
 
@@ -361,17 +387,40 @@
     right: 80px;
     bottom: 280px;
     transform: rotate(5deg);
+    animation: bigG_float 3s linear infinite;
 
     img {
       // border: 1px solid green;
       width: 100%;
     }
   }
+  @keyframes bigG_float {
+    0% {
+      transform: translateY(0px) rotate(5deg) ;
+      filter: brightness(1);
+    }
+    25% {
+      transform: translateY(-10px) rotate(5deg);
+      filter: brightness(0.8);
+    }
+    50% {
+      transform: translateY(0px) rotate(5deg);
+      filter: brightness(1);
+    }
+    75% {
+      transform: translateY(-10px) rotate(5deg);
+      filter: brightness(0.6);
+    }
+    100% {
+      transform: translateY(0px) rotate(5deg);
+      filter: brightness(1);
+    }
+  }
 
   #G1_L {
     width: 150px;
     position: absolute;
-    right: 300px;
+    right: 290px;
     top: 65px;
     transform-origin: top;
     animation: L_swing 3s linear infinite;
@@ -501,7 +550,7 @@
 
 #ghostIslandSection2 {
   // border: 1px solid red;
-  margin-top: 140px;
+  margin-top: 50px;
   position: relative;
 
   display: flex;

@@ -1,32 +1,32 @@
 @include respond(medium) {
-  #ghostIndexBG{
-    background-size: cover;
-    background-position: center;
-  }
-  
   //平板都寫在裡面
-  #indexSection1 {
-    .route1 {
-      width: 200px;
-      right: 200px;
-      bottom: -350px;
+  #ghostIndexBG {
+    background-size: 200%;
+    background-position-x: center;
+    background-attachment: fixed;
 
-      img {
-        width: 100%;
+    #indexSection1 {
+      .route1 {
+        width: 200px;
+        right: 200px;
+        bottom: -350px;
+
+        img {
+          width: 100%;
+        }
       }
     }
-  }
 
-  .indexTitleZone1 {
-    bottom: -300px;
-  }
-
-  #indexSection2 {
-    margin: 350px 0;
-
-    .mapZone {
-      display: none;
+    .indexTitleZone1 {
+      bottom: -300px;
     }
 
+    #indexSection2 {
+      margin: 200px 0;
+
+      .mapZone {
+        display: none;
+      }
+    }
   }
 }

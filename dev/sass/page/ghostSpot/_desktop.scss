@@ -5,6 +5,7 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  padding-top: 250px;
 }
 
 #ghostSpotSection1 {
@@ -12,6 +13,7 @@
   width: 1000px;
   margin: 20px auto;
   padding: 20px;
+  // margin-top: 200px;
   border-radius: 5px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
   overflow: hidden;
@@ -315,10 +317,15 @@
 }
 
 #ghostSpotSection3 {
-    border: 1px solid darkcyan;
+  // border: 1px solid darkcyan;
   width: 1000px;
   margin: 10px auto;
   padding: 50px;
+  height: 1200px;
+
+  .allTabPage{
+    position: relative;
+  }
 
   nav {
     display: inline-flex;
@@ -343,6 +350,11 @@
   }
 
   #tabPage1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    // border: 1px solid yellowgreen;
+
     #officalTour {
       height: 800px;
       // width: 1000px;
@@ -626,18 +638,39 @@
   }
 
   #tabPage2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     // border: 1px solid red;
     height: 1000px;
 
     .writeBtnWrap {
       //   border: 1px solid red;
       width: 90%;
-      padding: 20px 10px;
+      padding: 25px 10px;
 
       .btn-outline {
         float: right;
         padding: 10px 20px;
         display: inline-flex;
+
+        &:before{
+          content: url("../img/icon/writeMsg.svg");
+          width:20px;
+        }
+
+        &:hover{
+          
+          &:before{
+            content: url("../img/icon/writeMsg_gray.svg");
+          }
+        }
+        &:active{
+          &:before{
+            content: url("../../../img/icon/writeMsg.svg");
+          }
+        }
+        
       }
     }
 
@@ -734,4 +767,16 @@
       margin-top: 20px;
     }
   }
+
+  .tabpage{
+    opacity: 0;
+    transition: opacity .2s linear;
+  }
+
+  .tabshow{
+    opacity: 1;
+  }
+
+
 }
+

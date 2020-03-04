@@ -10,7 +10,9 @@
   }
 
   #ghostIslandSection1 {
-    height: 0;
+    height: 100%;
+    padding-top: 0px;
+    margin-bottom: 0px;
     position: relative;
 
     #areaList {
@@ -21,7 +23,8 @@
     }
 
     #mapArea {
-
+      position: relative;
+      
       #bigG {
         width: 400px;
         position: absolute;
@@ -55,5 +58,9 @@
       left: 100px;
       bottom: -40px;
     }
+  }
+
+  #ghostIslandSection2{
+    margin-top: 0px;
   }
 }

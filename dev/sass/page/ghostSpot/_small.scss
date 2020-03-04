@@ -1,8 +1,12 @@
 @include respond(small) {
     //手機都寫在裡面
+    #ghostSpotBG {
+      padding-top: 100px;
+    }
+
     #ghostSpotSection1{
       width: 100%;
-      margin-top: 100px;
+      margin-top: 0px;
 
       .spotIntro{
         flex-wrap: wrap;

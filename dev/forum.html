@@ -60,10 +60,12 @@
     </head>
     <body>
         <div class="forum_wrapper">
+            <!-- 滑鼠 -->
+            @@include('layout/component/mouse_ghost.html')
             <!-- 霧氣 -->
             @@include('layout/component/smoke.html')
             <!-- 導覽列 -->
-            @@include('layout/header.html')
+            <!-- @@include('layout/header.html') -->
             <div class="forum_container">
                 <!-- 文章標題 -->
                 <div class="article_title">
@@ -82,6 +84,18 @@
                         <option value="" selected>景點名稱</option>
                         <option value="">第一條</option>
                         <option value="">第二條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
+                        <option value="">第三條</option>
                         <option value="">第三條</option>
                     </select>
                     <select name="">
@@ -393,5 +407,6 @@
             </div>
             @@include('layout/footer.html')
         </div>
+        <script src="js/soundSwitch.js"></script>
     </body>
 </html>
