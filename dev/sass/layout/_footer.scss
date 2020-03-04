@@ -37,10 +37,12 @@ footer {
         ol {
             width: 60%;
             margin: 10px auto;
+            list-style-type: decimal;
 
             li {
                 // border: 1px solid blue;
                 margin: 10px 0;
+                font-size: 1.2rem;
             }
         }
     }
@@ -111,6 +113,7 @@ footer {
                 li {
                     list-style: none;
                     margin-right: 20px;
+                    font-size: 1.1rem;
                     // border: 1px solid blue;
 
                     p {
@@ -149,15 +152,39 @@ footer {
 //平板
 @include respond(medium) {
     footer {
-        width: 600px;
-        background-color: #3bfc00;
+        
+        // background-color: #3bfc00;
+
+        #warn {
+            width: 70%;
+        }
+
+        #spell{
+            width: 30%;
+            right: 5%;
+        }
     }
 }
 
 //手機版
 @include respond(small) {
     footer {
-        width: 200px;
-        background-color: #3bfc00;
+        // width: 200px;
+        // background-color: #3bfc00;
+
+        #warn {
+            width: 70%;
+        }
+
+        #footLink{
+            nav{
+                display: none;
+            }
+
+            #BottomLogo {
+                // border: 1px solid red;
+                width: 200px;
+            }
+        }
     }
 }

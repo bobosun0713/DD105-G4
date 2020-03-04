@@ -1,357 +1,247 @@
-@include respond(small) {
-    //手機都寫在裡面
-   
-  
-  }
-  //桌基板幽靈隱藏
-#leaderboard-form{//div-leaderboard-form
-  background-image: none;}
-//  -------RWD--------- 576px *767px------------- 
+
+//  -------RWD---------576pxpx *992px------------- 
  
-@media screen and (min-width:576px) and (max-width:767px){
-  body{
-    width: 570px;
-    width: 100%;
-/* 投給你內心 */
-#vote{
-    .vote-img{
-      width: 200px;
-      height: 170px;
+@media screen and (min-width:576px) and (max-width:768px){
+    #Guide-page-img{
+        width:768px;
+        width: 100%;
+/* 血跡圖片位置 */
+.front-end{
+            /* 前端血跡圖 */
+            #front-end{
+                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
+                max-height: 180px;
+                width: 250px;
+                }
+
+            /* 後端血跡圖 */
+            #rear-end{
+                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
+                max-height: 180px;
+                width: 250px;
+                }
+
+           
+                /* 前後端血跡文字 */
+                .front-span{
+                    width: 150px;
+                    font-size: 2rem;
+                    margin-top: -70px;
+                    margin-left: -118px;
+                    }
+    
     }
-    .vote-text{
-      margin-top: 65px;
-      width: 270px;
-      margin-bottom: 50px;
-      font-size: 1.4rem;
-    }
-}
+    
 
-}
-
-
-/* div.Haunted-house 排行TOP前三名 */
-.Haunted-house{
-width: 570px;
-width: 100%;
-max-height:170px;
-      /* 景點圖片 */
-      .Haunted-house-i{
-        width: 25%;
-       }
-      .Strip-background{//div
-        background-image: url(../img/leaderboard/ghost-4-s-1.png);
-        margin-top: 60px;
-        width: 570px;
-        width: 65%;
-        height: 200px;
-        margin-left: -40px;
-        margin-top: 50px;
+        /* 女鬼 與鬼島logo大div */
+        .Female-ghost{
+            margin-top: 180px;
+            max-height: 300px;
+            #Female-ghost{
+            display: none;//隱藏女鬼 大圖
+            }
+            #Female-ghost-s{
+            display:block;//顯示女鬼 小圖
+            width: 130px;
+            height: 130px;
+            margin-top: 90px;
+            }
+            
+                 /* 喜歡冒險文字typewriter */
+                 .typewriter{
+                    width: 320px;
+                    width: 100%;
+                    margin-top: -68px;
+                    font-size: 1.2rem;
+                    line-height: 40px;
+                    letter-spacing: 5px;
+                    height: 300px;
+                    }
+                    #logo-white-b{
+                        display: none;//隱藏logo大圖
+                    }
+                    #logo-white-s{
+                        display:block;//顯示logo小圖
+                         width: 90px;   
+                         height: 80px;
+                         margin-top: 140px;
+                    }
+        
         }
-      //h2
-      .Haunted-house-t{
-        font-size: 4rem;
-        margin-top: -60px;
-        margin-left: -60px;
-        }
-      //p
-      .Haunted-house-p{
-        margin-left: 1px;
-        margin-top: -53px;
-        line-height: 30px;
-        text-align: right;
-        word-spacing:110px;//空白建間隔
-        width: 280px;
-        word-wrap:break-word;//文字強迫換行
-        }
-
-}
-// 來抓交替囉隱藏
-#alternately{
-      .alternately-p{
-        display: none;
-        }
-      .alternately-i{
-        display: none;
-        }
-}
-//手機板的幽靈隱藏
-#ghost-2-s{
-  display: block;
-  margin-top: 150px;
-  margin-bottom: -180px;
-
-}
-
-// 老鼠
-     .mouse{
-      width: 140px;
-      margin-top: 10px;
-     }
-
-     .Vote-btn{//按鈕
-       margin-bottom: 50px;
-       margin-top: -50px;
-       max-width:170px;
-       min-height: 30px;
-     }
+    } 
 }
 
 
 
 
-
-//  -------RWD--------- 480px *575px------------- 
+//  -------RWD---------480pxpx *575px------------- 
  
 @media screen and (min-width:480px) and (max-width:575px){
-  body{
-    width: 320px;
-    width: 100%;
-    float: left;
-/* 投給你內心 */
-#vote{
-  // margin-left: -30px;
-  width: 320px;
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    .vote-img{
-      width: 150px;
-      // width: 25%;
-      height: 100px;
-      float: left;
-      margin-left: 5px;
+    #Guide-page-img{
+        width:768px;
+        width: 100%;    
+    
+        .ghost{//縮小幽靈圖
+            width: 120px;
+            height: 120px;
+        }
+/* 血跡圖片位置 */
+.front-end{
+        width: 320px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        display: grid;
+            /* 前端血跡圖 */
+            #front-end{
+                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
+                max-height: 130px;
+                width: 180px;
+                margin: 20px;
+                margin-top:40px;
+                }
 
-    }
-    .vote-text{
-      margin-top: 15px;
-      max-width: 150px;
-      margin-bottom: 5px;
-      font-size: 1rem;
-      margin-left: 40px;
-      padding: 5px;
-    }
-}
+            /* 後端血跡圖 */
+            #rear-end{
+                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
+                max-height: 130px;
+                width: 180px;
+                margin: 20px;
+                margin-top:40px;
+                }
 
-}
-
-/* div.Haunted-house 排行TOP前三名 */
-.Haunted-house{
-  width:320px;
-  width: 100%;
-  max-height:140px;
-        /* 景點圖片 */
-        .Haunted-house-i{
-          width: 38%;
-         }
-        .Strip-background{//div
-          background-image: none;
-          margin-top: 50px;
-          width: 320px;
-          width: 44%;
-          height: 200px;
-          margin-left: -50px;
-          // margin-top: 50px;
-          }
-        //h2
-        .Haunted-house-t{
-          font-size: 3.2rem;
-          margin-top: -20px;
-          margin-left: -60px;
-          }
-        //p
-        .Haunted-house-p{
-          margin-left: 43px;
-          margin-top: -110px;
-          line-height: 50px;
-          text-align: right;
-          word-spacing:0px;//空白建間隔
-          width: 170px;
-          border-bottom: 3px solid rgb(231, 231, 231);
-
-          // color: rgb(73, 70, 70);
-          // white-space:nowrap;//文字不換行
-          }
-  
-  }
-  // 來抓交替囉隱藏
-  #alternately{
-        .alternately-p{
-          display: none;
-          }
-        .alternately-i{
-          display: none;
-          }
-  }
-// 排行榜表單
-
-#leaderboard-form{//div-leaderboard-form
-margin-bottom: 250px;
-    #leaderboard-form-1{//table-leaderboard-form-1
-        #Form-name{//名次的tr
-            width: 160px;
-            line-height: 50px;
-            background-color: rgb(139, 4, 4);
-            td.Form-name{
-              width: 160px;
-              // line-height: 50px;
-              text-align: center;
-              padding: 5px;
-              }
-          }
-          .Ranking{
-                  width: 160px;
-                  td{
-                      padding: 5px;
-                      width: 160px;
-                      }
-                  }
-
-      }
+           
+            /* 前後端血跡文字 */
+            .front-span{
+                width: 150px;
+                font-size: 2rem;
+                margin-top: -70px;
+                margin-left: -118px;
+                }
 
 }
 
-// 老鼠
-     .mouse{
-      width: 180px;
-      margin-top: 10px;
-     }
 
-     .Vote-btn{//按鈕
-       margin-bottom: 50px;
-       margin-top: -50px;
-       max-height: 48px;
-       max-width: 170px;
-     }
+        /* 女鬼 與鬼島logo大div */
+        .Female-ghost{
+            margin-top: 180px;
+            max-height: 255px;
+            #Female-ghost{
+            display: none;//隱藏女鬼 大圖
+            }
+            #Female-ghost-s{
+            display:block;//顯示女鬼 小圖
+            width: 100px;
+            height: 100px;
+            margin-top: 120px;
+            }
+            
+                /* 喜歡冒險文字typewriter */
+                .typewriter{
+                    width: 320px;
+                    width: 100%;
+                    margin-top: -30px;
+                    font-size: 16px;
+                    line-height: 31px;
+                    // letter-spacing: 0px;
+                    }
+                    #logo-white-b{
+                        display: none;//隱藏logo大圖
+                    }
+                    #logo-white-s{
+                        display:block;//顯示logo小圖
+                         width: 90px;   
+                         height: 80px;
+                         margin-top: 140px;
+                    }
+        
+        }
+    } 
 }
 
 
-//  -------RWD--------- 319px *479px------------- 
+//  -------RWD---------320pxpx *400px------------- 
  
 @media screen and (min-width:319px) and (max-width:479px){
-  body{
-    width: 320px;
-    width: 100%;
-    float: left;
-    // background-color: rgb(244, 96, 187);
-    background-image: none;
-/* 投給你內心 */
-#vote{
-  // margin-left: -30px;
-  width: 320px;
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    .vote-img{
-      width: 100px;
-      // width: 25%;
-      height: 90px;
-      float: left;
-      margin-left: -5px;
+    #Guide-page-img{
+        width:319px;
+        width: 100%;    
+    
+        .ghost{//縮小幽靈圖
+            width: 120px;
+            height: 120px;
+        }
+/* 血跡圖片位置 */
+.front-end{
+        width: 320px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        display: grid;
+            /* 前端血跡圖 */
+            #front-end{
+                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
+                max-height: 130px;
+                width: 180px;
+                margin: 20px;
+                margin-top:40px;
+                }
 
-    }
-    .vote-text{
-      margin-top: 15px;
-      max-width: 130px;
-      margin-bottom: 5px;
-      font-size: 0.9rem;
-      margin-left: 40px;
-    }
-}
+            /* 後端血跡圖 */
+            #rear-end{
+                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
+                max-height: 130px;
+                width: 180px;
+                margin: 20px;
+                margin-top:40px;
+                }
 
-}
-
-/* div.Haunted-house 排行TOP前三名 */
-.Haunted-house{
-  width:320px;
-  width: 100%;
-  max-height:130px;
-  display: flex;
-  justify-content: center;
-        /* 景點圖片 */
-        .Haunted-house-i{
-          width: 38%;
-         }
-        .Strip-background{//div
-          background-image:none;
-          margin-top: 40px;
-          width: 320px;
-          width: 60%;
-          height: 200px;
-          margin-left: -40px;
-          // margin-top: 50px;
-          }
-        //h2
-        .Haunted-house-t{
-          font-size: 3.2rem;
-          margin-top: -20px;
-          margin-left: -60px;
-          }
-        //p
-        .Haunted-house-p{
-          margin-left: 36px;
-          margin-top: -110px;
-          line-height: 50px;
-          text-align: right;
-          word-spacing:0px;//空白建間隔
-          width: 170px;
-          border-bottom: 3px solid rgb(231, 231, 231);
-
-          // color: rgb(73, 70, 70);
-          // white-space:nowrap;//文字不換行
-          }
-  
-  }
-  // 來抓交替囉隱藏
-  #alternately{
-        .alternately-p{
-          display: none;
-          }
-        .alternately-i{
-          display: none;
-          }
-  }
-// 排行榜表單
-
-#leaderboard-form{//div-leaderboard-form
-margin-bottom: 250px;
-    #leaderboard-form-1{//table-leaderboard-form-1
-        #Form-name{//名次的tr
-            width: 100px;
-            line-height: 30px;
-            background-color: rgb(139, 4, 4);
-            td.Form-name{
-              width: 100px;
-              // line-height: 50px;
-              text-align: center;
-              padding: 1px;
-
-              }
-          }
-          .Ranking{
-                  width: 100px;
-                  td{
-                      padding: 1px;
-                      width: 100px;
-                    
-                      }
-                  }
-
-      }
+           
+            /* 前後端血跡文字 */
+            .front-span{
+                width: 150px;
+                font-size: 2rem;
+                margin-top: -70px;
+                margin-left: -118px;
+                }
 
 }
 
-// 老鼠
-     .mouse{
-      width: 100px;
-      margin-top: 10px;
-     }
 
-
-     .Vote-btn{//按鈕
-      margin-bottom: 50px;
-      margin-top: -50px;
-      max-height: 38px;
-      max-width: 150px;
-    }
+        /* 女鬼 與鬼島logo大div */
+        .Female-ghost{
+            margin-top: 180px;
+            max-height: 255px;
+            #Female-ghost{
+            display: none;//隱藏女鬼 大圖
+            }
+            #Female-ghost-s{
+            display:block;//顯示女鬼 小圖
+            width: 80px;
+            height: 80px;
+            margin-top: 120px;
+            }
+            
+                /* 喜歡冒險文字typewriter */
+                .typewriter{
+                    width: 320px;
+                    width: 100%;
+                    margin-top: -45px;
+                    font-size: 12px;
+                    line-height: 31px;
+                    height: 280px;
+                    // letter-spacing: 0px;
+                    }
+                    #logo-white-b{
+                        display: none;//隱藏logo大圖
+                    }
+                    #logo-white-s{
+                        display:block;//顯示logo小圖
+                         width: 60px;   
+                         height: 60px;
+                         margin-top: 140px;
+                    }
+        
+        }
+    } 
 }
-

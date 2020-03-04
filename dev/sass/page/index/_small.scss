@@ -1,5 +1,26 @@
 @include respond(small) {
-    //手機都寫在裡面
-   
-  
+  //手機都寫在裡面
+
+  #indexSection1 {
+    .parallaxContainer {
+      width: 100%;
+      margin-top: 100px;
+    }
+
+    .route1 {
+      display: none;
+    }
   }
+
+  .indexTitleZone1{
+    position: relative;
+    left: -100px;
+    bottom: -100px;
+  }
+
+  #indexSection2{
+    margin: 150px 0;;
+  }
+
+
+}

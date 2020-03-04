@@ -1,9 +1,9 @@
-.wrapper {
-	background-image: url("/member_center/img/mem_background_img.jpg");
+.membertop {
+	background-image: url("../member/mem_background_img.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
-}
+
 
 .title {
 	display: inline-block;
@@ -80,7 +80,6 @@ a:hover {
 
 .hr1 {
 	margin-top: 36px;
-	/* margin-bottom: 33px; */
 	border: white 2px solid;
 }
 
@@ -419,3 +418,4 @@ h2 {
 	}
 }
 /* content-5 end*/
+}

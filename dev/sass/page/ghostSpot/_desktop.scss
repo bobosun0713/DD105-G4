@@ -1,6 +1,4 @@
 
-
-
 #ghostSpotBG {
   //border: 1px solid blue;
   background-image: url("../img/spot/BG/spotBG.png");
@@ -181,7 +179,7 @@
 }
 
 #ghostSpotSection2 {
-//   border: 1px solid red;
+  // border: 1px solid red;
   padding: 50px 0;
   margin-bottom: 80px;
   position: relative;
@@ -213,9 +211,7 @@
     margin: 30px auto;
     padding: 20px 0px 5px 0px;
     width: 900px;
-    // border: 1px solid greenyellow;
-
-    // overflow: auto;
+    // border: 1px solid greenyellow;s
     overflow: hidden;
 
     #cardDisplay {
@@ -319,7 +315,7 @@
 }
 
 #ghostSpotSection3 {
-  //   border: 1px solid darkcyan;
+    border: 1px solid darkcyan;
   width: 1000px;
   margin: 10px auto;
   padding: 50px;
