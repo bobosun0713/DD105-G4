@@ -43,7 +43,6 @@ $hamburger-types: (
     arrowturn,
     arrowturn-r,
     boring,
-    collapse,
     collapse-r,
     elastic,
     elastic-r,
@@ -65,11 +64,7 @@ $hamburger-types: (
 
 // Base Hamburger (We need this)
 // ==================================================
-<<<<<<< HEAD
-// @import "base";
-=======
 @import 'types/base';
->>>>>>> 0ffb3c4f2d7cfe53f869e6cd4e44b1d6147a41d4
 
 // Hamburger types
 // ==================================================
