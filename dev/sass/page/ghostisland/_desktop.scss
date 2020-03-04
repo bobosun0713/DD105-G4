@@ -5,14 +5,14 @@
 
 #ghostIslandSection1 {
   // border: 1px solid red;
-  margin: 0px auto;
-  // margin-top: 150px;
+  margin: 100px auto;
+  padding-top: 230px;
   width: 100%;
   height: 580px;
   display: inline-flex;
   justify-content: center;
   box-sizing: border-box;
-
+  // border: 1px solid red;
   //select bt
   #areaList {
     // border: 1px solid blue;
@@ -500,7 +500,8 @@
 }
 
 #ghostIslandSection2 {
-
+  // border: 1px solid red;
+  margin-top: 140px;
   position: relative;
 
   display: flex;
@@ -517,29 +518,33 @@
     // overflow: hidden;
     box-sizing: border-box;
 
-    #Ghost2 {
-      width: 240px;
-      position: absolute;
-      left: -70px;
-      top: 300px;
-      // filter: brightness(.9);
 
-      img {
-        width: 100%;
-      }
-    }
+  }
 
-    #Ghost3 {
-      width: 200px;
-      position: absolute;
-      right: 0px;
-      bottom: -270px;
+  #Ghost2 {
+    width: 240px;
+    position: absolute;
+    left: -70px;
+    top: 300px;
+    // filter: brightness(.9);
 
-      img {
-        width: 100%;
-      }
+    img {
+      width: 100%;
     }
   }
+
+  #Ghost3 {
+    // border: 1px solid red;
+    width: 200px;
+    position: absolute;
+    right: 0px;
+    bottom: -270px;
+
+    img {
+      width: 100%;
+    }
+  }
+
 }
 
 .route2 {

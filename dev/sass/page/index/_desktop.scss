@@ -1,16 +1,19 @@
-#ghostIndexBG{
-  background-image: url("../img/spot/BG/spotBG.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+// #ghostIndexBG{
+//     background-image: url("../img/spot/BG/spotBG.png");
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
 
-  overflow: hidden;
-}
+//   overflow: hidden;
+
+//   z-index: -2;
+// }
 
 #indexSection1 {
-    // border: 1px solid red;
+    border: 1px solid transparent;
     width: 100%;
     position: relative;
+    padding-top: 150px;
 
     .parallaxContainer {
         // border: 1px solid green;
