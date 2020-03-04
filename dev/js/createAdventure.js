@@ -1,22 +1,30 @@
 window.addEventListener("load", function() {
   // 挑選薯條
-  let addbtn = document.getElementsByClassName("addbtn");
+  var addbtn = document.getElementsByClassName("addbtn");
+  var spotlightbox = document.querySelector(".spotlightbox");
   for (let m = 0; m < addbtn.length; m++) {
     addbtn[m].onclick = function(n) {
       var additinerarybtn = document.querySelector(".additinerarybtn");
-      var spotlightbox = document.querySelector(".spotlightbox");
+      var clonecontent=document.querySelector("clonecontent"); 
       spotlightbox.style.display = "block";
-      let selectedspot = n.target.parentNode.cloneNode(true);
-
+      // console.log(n.target.parentNode.nextElementSibling);
+      let selectedspot = n.target.parentNode.nextElementSibling.cloneNode(true);
       spotlightbox.insertBefore(selectedspot, additinerarybtn);
-      console.log(selectedspot);
+      let details=selectedspot.getElementsByTagName("input")[0].value;
+      let getdetails=details.split('|')[1];
+      console.log(getdetails)
+
+      
+      spotlightbox.getElementsByClassName("detailstext")[0].innerText=getdetails;
+      // spotlightbox.querySelector(".detailstext").innerHTML=getdetails;
+      
+     
       spotlightbox.getElementsByTagName("button")[0].onclick = closelightbox;
     };
     function closelightbox(p) {
       p.target.parentNode.style.display = "none";
-      console.log(p.target.parentNode);
-
-      // spotdlightbox.removeChild(parentNode);
+      spotlightbox.removeChild(p.target.nextElementSibling);
+      
     }
   }
   //上一步 下一步 btns controller

@@ -194,14 +194,19 @@
     position: absolute;
     background-color: grey;
     width: 340px;
-    height: 400px;
+    height: 450px;
     z-index: 99;
     border-radius: 10px;
     padding: 8px;
+    margin: 0 auto;
     display: none;
+
+    
+
   }
+
   .spotlightbox button {
-    border: 1px solid tomato;
+    // border: 1px solid tomato;
     border-radius: 15px;
     line-height: 24px;
     color: white;
@@ -209,10 +214,30 @@
     padding: 3px 10px;
     background-color: transparent;
   }
-  .spotlightbox img {
-    width: 185px;
-    height: 137px;
+  .spotlightbox .cancelbtn{
+    float:right;
   }
+  .spotlightbox button:hover{
+    cursor: pointer;
+    background-color: tomato;
+  }
+  .spotlightbox .additinerarybtn{
+    margin-top: 18px;
+    float: right;
+  }
+  .spotlightbox img {
+    width: 85%;
+    height: 40%;
+    
+  }
+  .spotlightbox span{
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  .spotlightbox .detailstext{
+    font-size: 1.2rem;
+  }
+  
   .spotselections .selectionsframe {
     border: 2px solid white;
     border-radius: 5px;

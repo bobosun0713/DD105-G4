@@ -280,29 +280,23 @@ h4{
 #gotoindex:hover {
   cursor: pointer;
 }
-
-#gotoindex:hover::after{
-  display: block;
+#startbtn::after {
+  content: "";
   background: url("../img/game/L_ghost_small.png") no-repeat;
   position: absolute;
   top: -24px;
   left: -35px;
-  z-index: 3;
+  z-index: 2;
   width: 89px;
   height: 154px;
   animation: updown 1.5s infinite ease-in-out alternate-reverse;
+  
 }
-// #startbtn::after {
-//   content: "";
-//   background: url("../img/game/L_ghost_small.png") no-repeat;
-//   position: absolute;
-//   top: -24px;
-//   left: -35px;
-//   z-index: 2;
-//   width: 89px;
-//   height: 154px;
-//   animation: updown 1.5s infinite ease-in-out alternate-reverse;
-// }
+
+#gotoindex:hover:after{
+  display: block;
+ 
+}
 
 #gotoindex::after {
   content: "";
