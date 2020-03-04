@@ -1,14 +1,19 @@
 .forum_wrapper {
+    border: 1px solid red;
+    // margin-top: 190px;
     background-image: url('/img/banner/banner.png');
     background-size: contain;
     background-repeat: no-repeat;
+    // background-attachment: fixed;
     .forum_container {
+        border: 1px solid blue;
+        padding-top: 300px;
         font-size: 24px;
     }
 }
 //========================== 文章標題
 .article_title {
-    // border: 1px solid red;
+    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -76,11 +81,14 @@
         // text-align: center;
         text-align-last: center;
         option {
+            -webkit-appearance: none;
             background-color: black;
         }
     }
 
     input {
+        vertical-align: top;
+        border: 0px;
         outline: none;
         padding: 0px 15px;
         width: 495px;
