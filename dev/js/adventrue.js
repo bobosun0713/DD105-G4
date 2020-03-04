@@ -1,38 +1,37 @@
 
 $(document).ready(function () {
-    $(window).on("mousemove", function (e) {
-        TweenMax.to("#mouse", 0.5, {
-            top: e.pageY + 10 + "px",
-            left: e.pageX + 10 + "px",
-
-        })
-    })
-
+    // $(window).on("mousemove", function (e) {
+    //     TweenMax.to("#mouse", 0.5, {
+    //         top: e.pageY + 10 + "px",
+    //         left: e.pageX + 10 + "px",
+    //     })
+    // })
 
 
-    $(window).scroll(function () {
 
-        /* Check the location of each desired element */
-        $('.item').each(function (i) {
+$(window).scroll(function () {
+
+    /* Check the location of each desired element */
+    $('.item').each(function (i) {
         //  each是幹嘛的?
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            //頁面最頂到物件頂+物件高度
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-          //滾輪頂部跟你往下滾中間距離   + 視窗高度
-          console.log($(window).height());
-            /* If the object is completely visible in the window, fade it it */
-            if (bottom_of_window > bottom_of_object) {
+        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        //頁面最頂到物件頂+物件高度
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+        //滾輪頂部跟你往下滾中間距離   + 視窗高度
+        console.log($(window).height());
+        /* If the object is completely visible in the window, fade it it */
+        if (bottom_of_window > bottom_of_object) {
 
-                $(this).animate({
-                    opacity: '1',
-                    bottom: "0px"
-                }, 800);
+            $(this).animate({
+                opacity: '1',
+                bottom: "0px"
+            }, 800);
 
-            }
-
-        });
+        }
 
     });
+
+});
 })
 
 
@@ -62,15 +61,15 @@ $(document).ready(function () {
 var infScroll = new InfiniteScroll(".item_all", {
     path: function () {
         // 頁面路徑
-      
-        if (this.loadCount <1) {
-            
+
+        if (this.loadCount < 1) {
+
             // 只讀取前兩頁資料
-            var nextIndex = this.loadCount +2 // 2
+            var nextIndex = this.loadCount + 2 // 2
             return "page" + nextIndex + ".html"; // page2.html
             console.log(this.loadCount)
         }
-      
+
     },
     append: '.item', // 把頁面顯示出來的方式,預設是false
     // responseType: 'text', // 設定頁面請求返回的響應型別 text時是json
