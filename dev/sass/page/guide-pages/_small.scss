@@ -1,20 +1,20 @@
 
-//  -------RWD---------576pxpx *992px------------- 
+//  -------RWD---------576pxpx *768px------------- 
  
 @media screen and (min-width:576px) and (max-width:768px){
     #Guide-page-img{
         width:768px;
         width: 100%;
-/* 血跡圖片位置 */
+// 血跡圖片位置 
 .front-end{
-            /* 前端血跡圖 */
+            // 前端血跡圖
             #front-end{
                 background-image: url(../img/guide-pages/Bloodstain-s-1.png);
                 max-height: 180px;
                 width: 250px;
                 }
 
-            /* 後端血跡圖 */
+            // 後端血跡圖 
             #rear-end{
                 background-image: url(../img/guide-pages/Bloodstain-s-1.png);
                 max-height: 180px;
@@ -22,7 +22,7 @@
                 }
 
            
-                /* 前後端血跡文字 */
+                // 前後端血跡文字
                 .front-span{
                     width: 150px;
                     font-size: 2rem;
@@ -33,9 +33,9 @@
     }
     
 
-        /* 女鬼 與鬼島logo大div */
+        // 女鬼 與鬼島logo大div 
         .Female-ghost{
-            margin-top: 180px;
+            margin-top: 150px;
             max-height: 300px;
             #Female-ghost{
             display: none;//隱藏女鬼 大圖
@@ -47,7 +47,7 @@
             margin-top: 90px;
             }
             
-                 /* 喜歡冒險文字typewriter */
+                 // 喜歡冒險文字typewriter 
                  .typewriter{
                     width: 320px;
                     width: 100%;
@@ -85,14 +85,14 @@
             width: 120px;
             height: 120px;
         }
-/* 血跡圖片位置 */
+// 血跡圖片位置
 .front-end{
         width: 320px;
         width: 100%;
         display: flex;
         flex-direction: column;
         display: grid;
-            /* 前端血跡圖 */
+            // 前端血跡圖 
             #front-end{
                 background-image: url(../img/guide-pages/Bloodstain-s-1.png);
                 max-height: 130px;
@@ -101,7 +101,7 @@
                 margin-top:40px;
                 }
 
-            /* 後端血跡圖 */
+            // 後端血跡圖 
             #rear-end{
                 background-image: url(../img/guide-pages/Bloodstain-s-1.png);
                 max-height: 130px;
@@ -111,7 +111,7 @@
                 }
 
            
-            /* 前後端血跡文字 */
+            // 前後端血跡文字 
             .front-span{
                 width: 150px;
                 font-size: 2rem;
@@ -122,9 +122,9 @@
 }
 
 
-        /* 女鬼 與鬼島logo大div */
+        // 女鬼 與鬼島logo大div 
         .Female-ghost{
-            margin-top: 180px;
+            margin-top: 169px;
             max-height: 255px;
             #Female-ghost{
             display: none;//隱藏女鬼 大圖
@@ -136,7 +136,7 @@
             margin-top: 120px;
             }
             
-                /* 喜歡冒險文字typewriter */
+                //喜歡冒險文字typewriter 
                 .typewriter{
                     width: 320px;
                     width: 100%;
@@ -160,25 +160,24 @@
 }
 
 
-//  -------RWD---------320pxpx *400px------------- 
+//  -------RWD---------320pxpx *479px------------- 
  
 @media screen and (min-width:319px) and (max-width:479px){
     #Guide-page-img{
         width:319px;
         width: 100%;    
-    
         .ghost{//縮小幽靈圖
             width: 120px;
             height: 120px;
         }
-/* 血跡圖片位置 */
+// 血跡圖片位置 
 .front-end{
         width: 320px;
         width: 100%;
         display: flex;
         flex-direction: column;
         display: grid;
-            /* 前端血跡圖 */
+            // 前端血跡圖 
             #front-end{
                 background-image: url(../img/guide-pages/Bloodstain-s-1.png);
                 max-height: 130px;
@@ -187,7 +186,7 @@
                 margin-top:40px;
                 }
 
-            /* 後端血跡圖 */
+            // 後端血跡圖
             #rear-end{
                 background-image: url(../img/guide-pages/Bloodstain-s-1.png);
                 max-height: 130px;
@@ -197,7 +196,7 @@
                 }
 
            
-            /* 前後端血跡文字 */
+            // 前後端血跡文字 
             .front-span{
                 width: 150px;
                 font-size: 2rem;
@@ -208,9 +207,9 @@
 }
 
 
-        /* 女鬼 與鬼島logo大div */
+        // 女鬼 與鬼島logo大div 
         .Female-ghost{
-            margin-top: 180px;
+            margin-top: 158px;
             max-height: 255px;
             #Female-ghost{
             display: none;//隱藏女鬼 大圖
@@ -222,7 +221,7 @@
             margin-top: 120px;
             }
             
-                /* 喜歡冒險文字typewriter */
+                //喜歡冒險文字typewriter
                 .typewriter{
                     width: 320px;
                     width: 100%;
