@@ -38,4 +38,36 @@ window.addEventListener('load', function(){
             spell3.style.opacity = 0;
         }
     }
+
+    $id("loc1").onmouseover = function(e){
+    
+        e.target.nextElementSibling.style.opacity = 1;
+        console.log(e.target.nextElementSibling);
+    }
+
+    $id("loc1").onmouseout = function(e){
+        e.target.nextElementSibling.style.opacity = 0;
+        console.log(e.target.nextElementSibling);
+    }
+
+
+
+    //點符咒右邊輪播滑動 現在寫不出來
+    // $id("spell1").onclick = function(){
+    //     spell1.style.opacity = 1;
+    //     spell2.style.opacity = 0;
+    //     spell3.style.opacity = 0;
+    // }
+
+    // $id("spell2").onclick = function(){
+    //     spell1.style.opacity = 0;
+    //     spell2.style.opacity = 1;
+    //     spell3.style.opacity = 0;
+    // }
+
+    // $id("spell3").onclick = function(){
+    //     spell1.style.opacity = 0;
+    //     spell2.style.opacity = 0;
+    //     spell3.style.opacity = 1;
+    // }
 });
