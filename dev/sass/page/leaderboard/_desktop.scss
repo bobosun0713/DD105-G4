@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* CSS Reset */
 * {
@@ -9,6 +10,19 @@
   background-image: url(../img/leaderboard/Background-image.png);
   width: 1200px;
   width: 100%;
+=======
+// /* CSS Reset */
+// * {
+//     /* 格線 */
+//     outline: 0;
+//     // outline:1px solid rgb(189, 205, 211);
+// }
+
+body {
+    // background-image: url(../img/leaderboard/Background-image.png);
+    width: 1200px;
+    width: 100%;
+>>>>>>> f192ebf25c57f76e4685856ea5928997aff07e00
     /* 投給你內心 */
    #vote{
       display: flex;
@@ -33,6 +47,7 @@
 }
 
 /* div.Haunted-house 排行TOP前三名 */
+<<<<<<< HEAD
 .Haunted-house{
   width: 1200px;
   width: 100%;
@@ -107,6 +122,17 @@
           max-height: 400px;
        
           }
+=======
+.alternately-p {
+    width: 300px;
+    max-height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.alternately-i {
+    width: 400px;
+    max-height: 400px;
+>>>>>>> f192ebf25c57f76e4685856ea5928997aff07e00
 }
 //手機板的幽靈隱藏
 #ghost-2-s{

@@ -1,5 +1,82 @@
 @include respond(small) {
-    //手機都寫在裡面
-   
-  
+  //手機都寫在裡面
+  #ghostIslandSection1 {
+    #areaList {
+      position: absolute;
+      left: 50px;
+      margin: 50px 10px;
+      // float: 0;
+      z-index: 88;
+    }
+
+    #mapArea {
+      height: 450px;
+
+      #bigG {
+        opacity: 0.7;
+        width: 350px;
+        position: absolute;
+        right: -50px;
+        bottom: -40px;
+      }
+
+      #G1_L {
+        width: 150px;
+        position: absolute;
+        right: 210px;
+        top: 320px;
+      }
+    }
+
+    .route1 {
+      display: none;
+    }
   }
+  #ghostIslandSection2 {
+    margin-bottom: 150px;
+
+    .cardDisplay {
+      // border: 1px solid green;
+      padding-top: 30px;
+      margin: 0px 0px 0px 30px;
+      width: 100%;
+      height: 470px;
+      overflow-x: scroll;
+
+      .cardContain {
+        // border: 1px solid blue;
+        min-width: 4900px;
+        float: left;
+      }
+
+      &::-webkit-scrollbar{
+        height: 10px;
+        background-color: rgba(255,255,255,0);
+      }
+      &::-webkit-scrollbar-track{
+        background-color: rgba(0, 0, 0, .6);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: rgba(255,255,255,.6);
+        border-radius: 10px;
+      }
+
+    }
+
+    #Ghost2 {
+      display: none;
+    }
+
+    #Ghost3{
+      position: absolute;
+      right: 0;
+      bottom: -330px;
+      pointer-events: none;
+    }
+  }
+
+  .route2 {
+    display: none;
+  }
+}
