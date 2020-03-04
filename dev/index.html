@@ -8,10 +8,13 @@
     </head>
 
     <body>
+        @@include('layout/component/mouse_ghost.html')
+
         <div class="wrapper">
             <div id="ghostIndexBG">
                 <!-- 霧氣 -->
-                @@include('layout/component/indexsmoke.html') @@include('layout/header.html')
+                @@include('layout/component/indexsmoke.html') 
+                @@include('layout/header.html')
 
                 <section id="indexSection1">
                     <div class="parallaxContainer">
@@ -95,7 +98,9 @@
                     </div>
 
                     <div class="spotInfoZone">
+
                         <div id="spotInfoWrap">
+
                             <div class="spotInfo">
                                 <div class="imgZone">
                                     <a href="./ghostSpot.html">
@@ -253,6 +258,7 @@
                         <button id="leftScroll" class="scrollBtn">
                             <span>〉</span>
                         </button>
+                        
                     </div>
                 </section>
 

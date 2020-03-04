@@ -437,6 +437,7 @@
               &:hover {
                 .moreInfo {
                   display: block;
+                  z-index: 10;
                 }
 
                 .triangle {
