@@ -21,8 +21,6 @@ window.addEventListener('load', function () {
       hamburger.classList.add("is-active");
       hamburgerMenu.style.left = "0%";
 
-      
-
       // 鎖住畫面
       if ($(document).height() > $(window).height()) {
         $("html").addClass("noscroll");
@@ -30,7 +28,6 @@ window.addEventListener('load', function () {
         $("html").addClass("fixWindow");
       }
 
-      
     }
-  }
-});
+  }})
+
