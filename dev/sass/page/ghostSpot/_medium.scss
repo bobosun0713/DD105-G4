@@ -33,4 +33,66 @@
       }
     }
   }
+
+  #ghostSpotSection3 {
+    width: 100%;
+    padding: 50px 0px;
+    height: 1100px;
+
+    nav {
+      padding: 0px 50px;
+    }
+
+    .allTabPage {
+      width: 100%;
+    }
+    #tabPage1 {
+      #officalTour {
+        background-size: cover;
+        background-position: center;
+        height: 700px;
+        padding: 0px auto;
+
+        .newOffTour{
+          margin: 0px 50px 50px 50px;
+        }
+
+        .tourSpot{
+          flex-wrap: wrap;
+          // justify-content: start;
+          width: 90%;
+          margin-bottom: 50px;
+
+
+          .tourImg {
+            width: 38%;
+          }
+
+          .tourSpotTxt{
+            width: 60%;
+
+          }
+        }
+
+        .tourStatus {
+          display: none;
+          width: 15px;
+          top: 200px;
+          left: 80%;
+        }
+      }
+
+      .myTourGuide{
+        .G1 {
+          pointer-events: none;
+          left: -100px;
+          top: -100px;
+        }
+
+        .newMyTour{
+          margin: 100px 0px;
+        }
+      }
+    }
+  }
 }

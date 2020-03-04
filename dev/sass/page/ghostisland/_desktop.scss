@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   z-index: -2;
+  // animation: background_wave 10s infinite;
 }
 
 
@@ -576,9 +577,28 @@
     left: -70px;
     top: 300px;
     // filter: brightness(.9);
+    animation: Ghost2_float 2s infinite;
+    pointer-events: none;
 
     img {
       width: 100%;
+    }
+  }
+  @keyframes Ghost2_float {
+    0% {
+      transform: translateY(0px) rotate(5deg) ;
+    }
+    25% {
+      transform: translateY(-10px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(5deg);
+    }
+    75% {
+      transform: translateY(-10px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(5deg);
     }
   }
 
@@ -588,9 +608,27 @@
     position: absolute;
     right: 0px;
     bottom: -270px;
+    animation: Ghost3_float 2s infinite;
 
     img {
       width: 100%;
+    }
+  }
+  @keyframes Ghost3_float {
+    0% {
+      transform: translateY(0px) ;
+    }
+    25% {
+      transform: translateY(-10px) ;
+    }
+    50% {
+      transform: translateY(0px) ;
+    }
+    75% {
+      transform: translateY(-10px) ;
+    }
+    100% {
+      transform: translateY(0px);
     }
   }
 
