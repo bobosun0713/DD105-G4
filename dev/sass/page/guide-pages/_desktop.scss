@@ -1,17 +1,15 @@
 * {
     /* 格線 */
-    // outline: 1px solid rgb(161, 239, 243);
-    outline:0;
-
+    outline: 1px solid rgb(112, 227, 233);
+    // outline:0;
 }
 
 #Guide-page-img{
     width: auto;
     width: 100%;
     background-image: url(../img/guide-pages/Guide-img.jpg);
-    background-color: black;
     background-repeat: no-repeat;
-
+    // background-color: rgb(61, 57, 57);
 /* 幽靈  */
 #ghost{
     display: flex;
@@ -19,23 +17,24 @@
     min-height: auto;
     min-height: 300px;
 
+
 /* 幽靈圖動態 */
 .ghost{
     animation: ghost 20s infinite;
     max-height: 200px;
     margin-top: 40px;
- 
+
     }
     /* 幽靈圖滑動動態出現 */
 @keyframes ghost {
     0% {
-        transform: translate(8px, 5px);
+        transform: translate(-8px, 5px);
     }
     50% {
         transform: translate(-185px, -10px);
     }
     100% {
-        transform: translate(8px, -30px);
+        transform: translate(-8px, -30px);
     }
 }
 
@@ -45,24 +44,22 @@
 /* 血跡圖片位置 */
 .front-end{
     display: flex;
-    margin-left: 34%;
-    margin-right: 34%;
-    width: 800px;
-    margin-top: -30px;
-    /* height: 712px; */
+    width: 1200px;
+    width: 100%;
+    margin-top: -90px;
+    height: 300px; 
     display: flex;
-    justify-content: space-between;
-
+    justify-content: center;
             /* 前端血跡圖 */
             #front-end{
                 background-image: url(../img/guide-pages/Bloodstain-b.png);
                 background-repeat: no-repeat;
                 color: ghostwhite;
-                width: 400px;
-                height: 300px;
+                width: 430px;
+                height: 280px;
                 position: relative; 
-                right: 23.5%;
-                animation: front-end 2s infinite;
+                margin: 60px;
+                animation: front-end 1.6s infinite;
                 }
 
             /* 後端血跡圖 */
@@ -70,10 +67,11 @@
                 background-image: url(../img/guide-pages/Bloodstain-b.png);
                 background-repeat: no-repeat;
                 color: ghostwhite;
-                width: 400px;
-                height: 300px;
+                width: 430px;
+                height: 280px;
                 position: relative;
-                animation: front-end 2s infinite; 
+                margin: 60px;
+                animation: front-end 1.6s infinite; 
             
                 }
 
@@ -105,25 +103,64 @@
 /* 女鬼 與鬼島logo大div */
 .Female-ghost{
     display: flex;
-    margin-top: 90px;
+    margin-top: 85px;
     flex-direction: row;
     justify-content: space-between;
- 
-    
+    #Female-ghost-s{
+        display:none;//影藏女鬼 小圖
+    }
+
         /* 喜歡冒險文字typewriter */
         .typewriter{
             color: rgb(218, 216, 211);
             text-align: center;
             display: block;
-            height: 200px;
+            height: 250px;
             margin-top: 30px;
-            line-height: 50px;
-            font-size: 1.5rem;
+            line-height: 60px;
+            font-size: 1.3rem;
             letter-spacing: 8px;
             }
+
+            #logo-white-s{
+                display: none;//隱藏logo小圖
+            }
+}
 
 
 }
 
-
+//  -------RWD---------992px *1300px------------- 
+ 
+@media screen and (min-width:992px) and (max-width:1300px){
+    #Guide-page-img{
+        width:990px;
+        width: 100%;   
+        /* 女鬼 與鬼島logo大div */
+        .Female-ghost{
+            margin-top: 170px;
+            max-height: 350px;
+            #Female-ghost{
+            display: none;//隱藏女鬼 大圖
+            margin-top: 15px;
+            }
+            #Female-ghost-s{
+            display:block;//顯示女鬼 小圖
+            width: 250px;
+            }
+            
+                /* 喜歡冒險文字typewriter */
+                .typewriter{
+                    margin-top: -30px;
+                    font-size: 1.2rem;
+                    }
+                    #logo-white-b{
+                        display: none;//隱藏logo大圖
+                    }
+                    #logo-white-s{
+                        display:block;//顯示logo小圖
+                    }
+        
+        }
+    } 
 }
