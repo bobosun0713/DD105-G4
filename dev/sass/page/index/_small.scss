@@ -2,9 +2,15 @@
   //手機都寫在裡面
 
   #indexSection1 {
+    padding-top: 50px;
+    
     .parallaxContainer {
       width: 100%;
       margin-top: 100px;
+
+      img{
+        width:100%;
+      }
     }
 
     .route1 {
@@ -15,7 +21,7 @@
   .indexTitleZone1{
     position: relative;
     left: -100px;
-    bottom: -100px;
+    top: 150px;
   }
 
   #indexSection2{
