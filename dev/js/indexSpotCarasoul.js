@@ -9,14 +9,7 @@ window.addEventListener('load', function() {
     let spell2 = document.querySelector('#spell2')
     let spell3 = document.querySelector('#spell3')
 
-<<<<<<< HEAD
-    let spotInfo = document.querySelectorAll('.spotInfo');
-    
-
-    spell1.style.opacity = 1;
-=======
     spell1.style.opacity = 1
->>>>>>> bb45765b67b84b70423524a4c345f58a51546718
 
     $id('leftScroll').onclick = function() {
         curIndex = curIndex + 1
