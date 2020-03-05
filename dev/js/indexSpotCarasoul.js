@@ -9,6 +9,9 @@ window.addEventListener('load', function(){
     let spell2 = document.querySelector("#spell2");
     let spell3 = document.querySelector("#spell3");
 
+    let spotInfo = document.querySelectorAll('.spotInfo');
+    
+
     spell1.style.opacity = 1;
 
     $id("leftScroll").onclick = function(){
