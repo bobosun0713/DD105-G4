@@ -1,7 +1,7 @@
 .forum_wrapper {
     // border: 1px solid red;
     // margin-top: 190px;
-    background-image: url('/img/banner/banner.png');
+    background-image: url('../img/banner/banner.png');
     background-size: contain;
     background-repeat: no-repeat;
     // background-attachment: fixed;
@@ -115,6 +115,7 @@
         > img {
             width: 350px;
             height: 280px;
+            object-fit: cover;
         }
     }
 

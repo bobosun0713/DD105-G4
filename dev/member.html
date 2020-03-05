@@ -15,17 +15,9 @@
     @@include('layout/header.html')
     @@include('layout/component/mouse_ghost.html')
     <div class="wrapper_member">
-    <div class="breadcrumb1">
-        <ul>
-            <li><a href="">首頁</a></li>
-            <li class="slash">/</li>
-            <li><a href="">會員中心</a></li>
-        </ul>
-    </div>
-
     <div class="membertop">
-        <section class="row">
-            <div class="col-3 menu">
+        <section class="section1_member">
+            <div class="menu">
                 <form enctype="multipart/form-data" action="" method="post">
                     <div id="preview" style="width:200px; height:200px; border:1px solid gray; border-radius: 50%;">
                     </div>
@@ -34,8 +26,7 @@
             </div>
         </section>
 
-        <section class="row2">
-            <div class="col-9 ">
+        <section class="section2_member">
                 <div class="bar-block">
                     <div class="container">
                     </div>
@@ -49,11 +40,9 @@
                         <a href="javascript:void(0)" class="bar-item button1 tablink"
                             onclick="openClass(event, 'class4')">討論區紀錄</a>
                         <a href="javascript:void(0)" class="bar-item button1 tablink"
-                            onclick="openClass(event, 'class5')">我的收藏</a>
-                            
+                            onclick="openClass(event, 'class5')">我的收藏</a>  
                     </div>
 
-                    <hr class="hr1">
                     <div id="class1" class="container class">
                         <form action="" method="">
                             <p><span class="span1">編號</span><span class="mem_id" id="mem_id">A0123456789</span></p>
@@ -96,7 +85,7 @@
                             <div>
                                 <img id="spotimg" src="./img/member/cancel.jpg"></<img>
                             </div>
-                            <div>
+                            <div class="spot_cotent">
                                 <h1>【午夜醫院探險】<span><img id="add_icon" src="./img/member/add.png"
                                             style="width: 20px;"></span>
                                 </h1>
@@ -126,7 +115,7 @@
                             <div>
                                 <img id="spotimg" src="./img/member/cancel.jpg"></<img>
                             </div>
-                            <div>
+                            <div class="spot_cotent">
                                 <h1>【午夜醫院探險】<span><img id="add_icon" src="./img/member/add.png"
                                             style="width: 20px;"></span>
                                 </h1>
@@ -157,7 +146,7 @@
                             <div>
                                 <img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                             </div>
-                            <div>
+                            <div class="spot_cotent">
                                 <h1>【午夜醫院探險】<span><img id="add_icon" src="./img/member/add.png"
                                             style="width: 20px;"></span>
                                 </h1>
@@ -212,7 +201,7 @@
                                 <div>
                                     <img id="spotimg" src="./img/member/cancel.jpg"></<img>
                                 </div>
-                                <div>
+                                <div class="spot_cotent">
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span> <span><img
                                                 id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
                                     </h1>
@@ -238,7 +227,7 @@
                             <div id="tour_table">
                                 <div><img id="spotimg" src="./img/member/cancel.jpg"></<img>
                                 </div>
-                                <div>
+                                <div class="spot_cotent">
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span> <span><img
                                                 id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
                                     </h1>
@@ -256,14 +245,14 @@
                                     <div><span><img src="./img/member/money.png"
                                                 style="width: 15px;">&nbsp</span>總預算約:1000元
                                     </div>
-                                    <div><button class="btn-type1">取消參加</button></div>
+                                    <div><button class="btn-type1">已結束</button></div>
                                 </div>
                             </div>
                             <br>
                             <div id="tour_table2">
-                                <div><img id="spotimg" src="./img/member/cancel.jpg"></<img>
+                                <div><img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                                 </div>
-                                <div>
+                                <div class="spot_cotent">
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span> <span><img
                                                 id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
                                     </h1>
@@ -301,9 +290,9 @@
                         <div id="tour_table_all">
                             <div id="tour_table">
                                 <div>
-                                    <img id="spotimg" src="./img/member/cancel.jpg"></<img>
+                                    <img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                                 </div>
-                                <div>
+                                <div class="spot_cotent">
                                     <h1>【午夜醫院探險】<span id="discuss_pr">2020-04-10刊登</span></h1>
 
                                     <br>
@@ -332,9 +321,9 @@
                         <br>
                         <div id="tour_table">
                             <div>
-                                <img id="spotimg" src="./img/member/cancel.jpg"></<img>
+                                <img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                             </div>
-                            <div>
+                            <div class="spot_cotent">
                                 <h1>【午夜醫院探險】<span id="discuss_pr">2020-04-10刊登</span></h1>
 
                                 <br>
@@ -361,9 +350,9 @@
                         <br>
                         <div id="tour_table">
                             <div>
-                                <img id="spotimg" src="./img/member/cancel.jpg"></<img>
+                                <img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                             </div>
-                            <div>
+                            <div class="spot_cotent">
                                 <h1>【午夜醫院探險】<span id="discuss_pr">2020-04-10刊登</span></h1>
 
                                 <br>
@@ -401,9 +390,9 @@
                         <br>
                         <div id="tour_table_all">
                             <div id="tour_table">
-                                <div><img id="spotimg" src="./img/member/cancel.jpg"></<img>
+                                <div><img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                                 </div>
-                                <div>
+                                <div class="spot_cotent">
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span> <span><img
                                                 id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
                                     </h1>
@@ -426,9 +415,9 @@
                             </div>
                             <br>
                             <div id="tour_table">
-                                <div><img id="spotimg" src="./img/member/cancel.jpg"></<img>
+                                <div><img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                                 </div>
-                                <div>
+                                <div class="spot_cotent">
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span> <span><img
                                                 id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
                                     </h1>
@@ -451,9 +440,9 @@
                             </div>
                             <br>
                             <div id="tour_table">
-                                <div><img id="spotimg" src="./img/member/cancel.jpg"></<img>
+                                <div><img id="spotimg" src="./img/member/cancel_spot.png"></<img>
                                 </div>
-                                <div>
+                                <div class="spot_cotent">
                                     <h1>【午夜醫院探險】<span><button class="btn-type5">聯絡團主</button></span> <span><img
                                                 id="add_icon" src="./img/member/add.png" style="width: 20px;"></span>
                                     </h1>
@@ -478,7 +467,7 @@
 
                         </div>
                     </div>
-
+                    <!-- @@include('layout/component/pagination.html') -->
                     <script src="js/member.js"></script>
                 </div>
         </section>
