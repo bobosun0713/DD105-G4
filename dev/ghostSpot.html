@@ -11,8 +11,35 @@
 </head>
 
 <body>
+
     <!-- 鬼箭頭 -->
     @@include('layout/component/mouse_ghost.html')
+
+    <!-- 撰寫留言視窗 -->
+        <!-- 跳出個人視窗 -->
+        <div class="spotWroteMsgBG">
+            <div class="spotWroteMsgContent">
+                <h2>【新莊廢棄醫院】</h2>
+                <div class="writeMsgZone">
+                    <div class="personalMsg">
+                        <div class="headIcon">
+                            <img src="./img/icon/header2.png">
+                        </div>
+                        <div class="neme">
+                            <p>黃冠禎</p>
+                        </div>
+                    </div>
+                    <form action="">
+                        <textarea name="" id="spotMsg" cols="30" rows="10" placeholder="詳細說明你的靈異體驗...."></textarea>
+                        <div class="btnWrap">
+                            <input type="reset" value="取消" id="cancelMsgBtn" class="btn-outline cancelMsg">
+                            <input type="submit" value="發佈" class="btn-outline sendMsg">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
 
     <div class="wrapper">
 
@@ -447,7 +474,9 @@
                         <div id="officalTour">
 
                             <div class="newOffTour btn-outline2">
-                                建立推薦行程
+                                <a href="./createAdventure.html">
+                                    建立推薦行程
+                                </a> 
                             </div>
 
                             <div class="tourSpot">
@@ -564,7 +593,9 @@
                             </div>
 
                             <div class="newMyTour btn-outline">
-                                建立客製化揪團
+                                <a href="./createAdventure.html">
+                                    建立客製化揪團
+                                </a>
                             </div>
 
                         </div>
@@ -574,8 +605,7 @@
                     <div id="tabPage2" class="tabpage">
 
                         <div class="writeBtnWrap">
-                            <div class="btn-outline">
-                                <!-- <img src="./img/icon/writeMsg.svg" width="20px"> -->
+                            <div class="btn-outline OpenwriteMsgBox">
                                 撰寫留言
                             </div>
                         </div>
@@ -785,15 +815,19 @@
     </div>
 
 
+
+    <!-- ============================JS的部分========================= -->
     <!-- 功能 -->
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-    <!-- TAB 標籤 -->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <!-- TAB 標籤-JQ -->
     <script src="./js/ghostSpotTab.js"></script>
-
-
+    <!-- 揪團輪播-JS -->
     <script src="./js/ghostSpotCarasoul.js"></script>
+    <!-- 景點照片大圖換小圖-JQ -->
     <script src="./js/ghostSpotSwitchImg.js"></script>
+    <!-- 留言燈箱 -->
+    <script src="./js/ghostIslandWriteMsg.js"></script>
 
 </body>
 

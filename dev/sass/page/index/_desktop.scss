@@ -421,12 +421,21 @@
               }
             }
 
+<<<<<<< HEAD
+    .spotInfoZone {
+        // border: 1px solid red;
+        width: 470px;
+        padding: 5px;
+        overflow: hidden;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0));
+=======
             .msgNew {
               // border: 1px solid white;
               width: 92%;
               display: inline-flex;
               align-items: flex-start;
               justify-content: end;
+>>>>>>> 37256304076b77d3d43405dc2452e03dbd995e14
 
               img {
                 width: 50px;
