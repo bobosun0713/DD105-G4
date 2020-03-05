@@ -75,6 +75,7 @@ function btnClick(e) {
         document.querySelector('.recommendtext').style.display = 'block'
         document.querySelector('.recommendcardground').style.display = 'flex'
         document.querySelector('#dolphin_block').style.display = 'block'
+        document.querySelectorAll(".spotcard")[0].style.display = 'block'
         if (total < 3) {
             document.querySelector('#resulttitle').innerHTML = types[0].resulttitle
             document.querySelector('#resultinnertext').innerHTML = types[0].resultinnertext
