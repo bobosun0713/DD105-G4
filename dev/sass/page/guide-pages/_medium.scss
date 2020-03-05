@@ -4,24 +4,24 @@
 @media screen and (min-width:768px) and (max-width:991px){
     #Guide-page-img{
         width:768px;
-        width: 100%;    
-/* 血跡圖片位置 */
+        width: 100%;
+// 血跡圖片位置 
 .front-end{
-            /* 前端血跡圖 */
+            // 前端血跡圖 
             #front-end{
                 background-image: url(../img/guide-pages/Bloodstain-s.png);
                 max-height: 200px;
                 width: 250px;
                 }
 
-            /* 後端血跡圖 */
+            // 後端血跡圖
             #rear-end{
                 background-image: url(../img/guide-pages/Bloodstain-s.png);
                 max-height: 200px;
                 width: 250px;
                 }
 
-            /* 前後端血跡文字 */
+            // 前後端血跡文字 
             .front-span{
                 font-size: 45px;
                 margin-top: -52px;
@@ -31,9 +31,9 @@
 }
 
 
-        /* 女鬼 與鬼島logo大div */
+        // 女鬼 與鬼島logo大div
         .Female-ghost{
-            margin-top: 205px;
+            margin-top: 196px;
             max-height: 255px;
             #Female-ghost{
             display: none;//隱藏女鬼 大圖
@@ -44,7 +44,7 @@
 
             }
             
-                /* 喜歡冒險文字typewriter */
+                // 喜歡冒險文字typewriter
                 .typewriter{
                     margin-top: -80px;
                     font-size: 1.1rem;

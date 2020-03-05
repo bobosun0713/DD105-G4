@@ -63,20 +63,21 @@ function btnClick(e) {
         document.querySelector('.buttons').style.display = 'none'
         document.querySelector('#progress').style.display = 'none'
         //  document.getElementsByClassName("innerimg")[0].src="";
-        document.querySelector(".quizimg").style.display='none';
-        
-        document.getElementById('test_score').innerHTML="<font size='50px'>膽量指數:</font>"+total+"<font size='50px'>/10</font>";
-        document.querySelector("#resultheading").style.display='block';
-        document.querySelector("#resultheading").innerHTML="分析結果";
-        document.getElementById("playagain_btn").style.display='inline-block';
-        document.getElementById("gotoindex_btn").style.display='inline-block';
-        document.querySelector(".grid").style.backgroundImage="url('../img/game/quizreport_bg.png')";
-        document.querySelector(".recommendtext").style.display="block";
-        document.querySelector(".recommendcardground").style.display="flex";
-        document.querySelector("#dolphin_block").style.display="block";
-        if(total<3){
-            document.querySelector("#resulttitle").innerHTML=types[0].resulttitle;
-            document.querySelector("#resultinnertext").innerHTML=types[0].resultinnertext;
+        document.querySelector('.quizimg').style.display = 'none'
+
+        document.getElementById('test_score').innerHTML =
+            "<font size='50px'>膽量指數:</font>" + total + "<font size='50px'>/10</font>"
+        document.querySelector('#resultheading').style.display = 'block'
+        document.querySelector('#resultheading').innerHTML = '分析結果'
+        document.getElementById('playagain_btn').style.display = 'inline-block'
+        document.getElementById('gotoindex_btn').style.display = 'inline-block'
+        document.querySelector('.grid').style.backgroundImage = "url('../img/game/quizreport_bg.png')"
+        document.querySelector('.recommendtext').style.display = 'block'
+        document.querySelector('.recommendcardground').style.display = 'flex'
+        document.querySelector('#dolphin_block').style.display = 'block'
+        if (total < 3) {
+            document.querySelector('#resulttitle').innerHTML = types[0].resulttitle
+            document.querySelector('#resultinnertext').innerHTML = types[0].resultinnertext
         }
     }
     document.getElementsByClassName('innerimg')[0].src = questions[currentquestionIndex].quizimg

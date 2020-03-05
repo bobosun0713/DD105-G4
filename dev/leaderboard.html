@@ -5,7 +5,12 @@
         <title>靈異票選</title>
     </head>
     <body>
-        @@include('layout/header.html')
+        <!-- header -->
+         @@include('layout/header.html')
+        <!-- 霧氣 -->
+        @@include('layout/component/indexsmoke.html')
+        <!-- 有鬼箭頭元素 -->
+        @@include('layout/component/mouse_ghost.html') 
         <div id="leaderboard">
             <!-- 投給你內心 -->
             <div id="vote">
@@ -44,11 +49,14 @@
                 <p class="alternately-p">╲ 來抓交替囉！ ╱</p>
                 <img class="alternately-i" src="./img/leaderboard/ghost-1.png" alt="" />
             </div>
-            <!--手機板的幽靈 -->
-            <img id="ghost-2-s" src="./img/leaderboard/ghost-2-s.png" alt="" />
+
+
+             <!--桌機板的幽靈 -->
+                 <!-- <img id="ghost-2" src="./img/leaderboard/ghost-2.png" alt="" /> -->
+             <!--手機板的幽靈 -->
+             <img id="ghost-2-s" src="./img/leaderboard/ghost-2-s.png" alt="" />
 
             <!-- 排行榜表單 -->
-
             <div id="leaderboard-form">
                 <table id="leaderboard-form-1">
                     <tr id="Form-name">
@@ -113,8 +121,7 @@
             <div id="Vote-button" align="center" style="position:relative;top:-70px;">
                 <button
                     class="Vote-btn"
-                    style="width: 200px;height: 50px;  color: rgb(218, 3, 3); font-size: 1.2rem; background-color: rgb(59, 58, 58);border-radius: 30px; border: red 1px solid;"
-                >
+                    style="width: 200px;height: 50px;  color: rgb(218, 3, 3); font-size: 1.2rem; background-color: rgb(59, 58, 58);border-radius: 30px; border: red 1px solid;">
                     參加投票
                 </button>
             </div>
