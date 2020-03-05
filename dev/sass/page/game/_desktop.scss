@@ -2,13 +2,14 @@
 *{ font-family: Microsoft JhengHei;
 }
 
-// body{ 
+body{ 
+   background-image: url("../img/game/game_index_bg.jpg");
+  background-size: cover;
+ 
+}
+.game{
   
  
-// }
-.game{
-  background-image: url("img/game/game_index_bg.jpg");
-
   h1{
   color:white;
   font-size: 38px;
@@ -25,7 +26,7 @@ h4{
 
 .grid {
   width: 430px;
-  margin: 100px auto;
+  margin: 0px auto;
   /* border: 2px solid #cbcbcb; */
   border-radius: 10px;
   text-align: center;
@@ -318,7 +319,7 @@ h4{
 .quizimg{
   /* background-color: teal; */
   width: 400px;
-  height: 230px;
+  // height: 230px;
   margin:auto;
   overflow: hidden;
   position: relative;
