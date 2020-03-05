@@ -62,7 +62,7 @@ var infScroll = new InfiniteScroll(".item_all", {
     path: function () {
         // 頁面路徑
 
-        if (this.loadCount < 1) {
+        if (this.loadCount < 2) {
             // 只讀取前兩頁資料
             var nextIndex = this.loadCount + 2 // 2
             return "page" + nextIndex + ".html"; // page2.html
