@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,14 @@
 <!-- 打字機文字 -->
 <script src="./js/jquery-3.4.1.min.js"></script>
 <script src="./js/t.min.js"></script>
+<!-- 霧氣 -->
+    @@include('layout/component/indexsmoke.html')
+<!-- 有鬼箭頭元素 -->
+     @@include('layout/component/mouse_ghost.html') 
+
 </head>
 <body>
 <div id="Guide-page-img">
-
-
 <!-- 幽靈 -->
 <div id="ghost">
     <img class="ghost" src="./img/guide-pages/ghost.png" alt="">
@@ -18,10 +22,10 @@
  <!-- 前後端按鈕 -->
 <div class="front-end">
     <div id="front-end">
-        <span class="front-span">前 端</span>
+        <a class="front-span"  href="../index.html"> 前 端 </a>
     </div>
     <div id="rear-end">
-        <span class="front-span">後 端</span>
+        <a class="front-span" href="#"> 後 端 </a>
     </div>
 </div>
 

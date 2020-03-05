@@ -9,8 +9,8 @@
 <body>
     @@include('layout/component/mouse_ghost.html')
 
-      <!-- 導覽列 -->
-   
+    <!-- 導覽列 -->
+
     <!-- 往上箭頭 -->
     <div class="go_top">
         <i class="fas fa-arrow-up"></i>
@@ -124,9 +124,11 @@
     <!-- 跳出個人視窗 -->
 
     <div class="adventure_wrap">
-          <!-- 霧氣 -->
-      @@include('layout/component/smoke.html')
+        <!-- 霧氣 -->
+        @@include('layout/component/smoke.html')
         @@include('layout/header.html')
+
+        <!-- 目前開團人數 -->
         <div class="people_Layout">
             <!-- 包住開團人數納區 -->
             <div class="people_group">
@@ -138,11 +140,11 @@
                 </div>
             </div>
         </div>
-
+        <!-- 目前開團人數 -->
 
         <div class="adventure_container">
 
-            <!-- 這新20200225 -->
+            <!--上方篩選欄位 -->
             <form action="">
                 <div class="filter">
                     <!-- <h1></h1> -->
@@ -207,9 +209,11 @@
                     </select>
                 </div>
             </div>
+            <!--上方篩選欄位 -->
 
 
 
+            
             <div class="item_all">
                 <div class="search_list">搜尋結果如下</div>
                 <!-- item -->
