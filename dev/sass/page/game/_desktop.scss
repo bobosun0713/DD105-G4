@@ -6,12 +6,7 @@ body{
   background-image: url("../img/game/game_index_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-
- 
-
 .game{
-  
-
   h1{
   color:white;
   font-size: 38px;
@@ -28,7 +23,7 @@ h4{
 
 .grid {
   width: 430px;
-  margin: 0px auto;
+  margin: 30px auto 0 auto;
   /* border: 2px solid #cbcbcb; */
   border-radius: 10px;
   text-align: center;
@@ -411,10 +406,18 @@ h4{
   display: none;
   
 }
+#playagain_btn:hover,
+#gotoindex_btn:hover{
+cursor: pointer;
+background-color: rgba(0,0,0,1);
+color: #fff;
+  
+}
 
 .buttons {
   margin: 30px; 
   display: none;
+
   
 }
 
