@@ -9,29 +9,29 @@ $(document).ready(function () {
 
 
 
-$(window).scroll(function () {
+    $(window).scroll(function () {
 
-    /* Check the location of each desired element */
-    $('.item').each(function (i) {
-        //  each是幹嘛的?
-        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-        //頁面最頂到物件頂+物件高度
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
-        //滾輪頂部跟你往下滾中間距離   + 視窗高度
-        console.log($(window).height());
-        /* If the object is completely visible in the window, fade it it */
-        if (bottom_of_window > bottom_of_object) {
+        /* Check the location of each desired element */
+        $('.item').each(function (i) {
+            //  each是幹嘛的?
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            //頁面最頂到物件頂+物件高度
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            //滾輪頂部跟你往下滾中間距離   + 視窗高度
+            console.log($(window).height());
+            /* If the object is completely visible in the window, fade it it */
+            if (bottom_of_window > bottom_of_object) {
 
-            $(this).animate({
-                opacity: '1',
-                bottom: "0px"
-            }, 800);
+                $(this).animate({
+                    opacity: '1',
+                    bottom: "0px"
+                }, 800);
 
-        }
+            }
+
+        });
 
     });
-
-});
 })
 
 
@@ -63,7 +63,6 @@ var infScroll = new InfiniteScroll(".item_all", {
         // 頁面路徑
 
         if (this.loadCount < 1) {
-
             // 只讀取前兩頁資料
             var nextIndex = this.loadCount + 2 // 2
             return "page" + nextIndex + ".html"; // page2.html
@@ -125,15 +124,12 @@ $(".main_people_img").click(function () {
     tab_contents[0].className = "tab_content"
     tab_heads[0].className = 'show_tab';
 })
-
 function tabChange() {
     console.log(tab_heads);
     for (let i = 0; i < tab_heads.length; i++) {
         if (tab_heads[i] === this) {
             tab_heads[i].className = 'show_tab';
             tab_contents[i].className = 'tab_content';
-
-
 
         } else {
             // tab_heads[i].className = '';
