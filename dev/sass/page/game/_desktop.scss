@@ -2,12 +2,15 @@
 *{ font-family: Microsoft JhengHei;
 }
 
-// body{ 
-  
+body{ 
+  background-image: url("../img/game/game_index_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
  
-// }
+
 .game{
-  background-image: url("img/game/game_index_bg.jpg");
+  
 
   h1{
   color:white;
@@ -25,7 +28,7 @@ h4{
 
 .grid {
   width: 430px;
-  margin: 100px auto;
+  margin: 0px auto;
   /* border: 2px solid #cbcbcb; */
   border-radius: 10px;
   text-align: center;
@@ -589,3 +592,4 @@ h4{
 
 }
 
+}
