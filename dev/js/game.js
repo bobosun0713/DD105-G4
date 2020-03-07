@@ -1,9 +1,11 @@
 // create quiz
 var startbtn = document.getElementById('startbtn')
 startbtn.onclick = startGame
+document.querySelector('.recommendcardground').style.display = 'none'
 
 let shufflequestion, currentquestionIndex
 function startGame() {
+
     document.getElementById('startbtn').parentNode.style.display = 'none'
     document.getElementById('gotoindex').parentNode.style.display = 'none'
     document.querySelector('.progressblock').style.display = 'block'
@@ -26,15 +28,16 @@ function startGame() {
 }
 
 function setnextquestion() {
+
     document.querySelector('#testheading').style.display = 'none'
     document.querySelector('#logoimg').style.display = 'none'
     document.querySelector('.buttons').style.display = 'block'
     document.querySelector('#progress').style.display = 'block'
     document.getElementsByClassName('innerimg')[0].src = questions[currentquestionIndex].quizimg
     document.getElementById('question').innerHTML = questions[currentquestionIndex].title
-    document.getElementsByClassName('choice')[0].innerHTML = questions[currentquestionIndex].choice[0]
-    document.getElementsByClassName('choice')[1].innerHTML = questions[currentquestionIndex].choice[1]
-    document.getElementsByClassName('choice')[2].innerHTML = questions[currentquestionIndex].choice[2]
+    document.querySelectorAll('.choice')[0].innerHTML = questions[currentquestionIndex].choice[0]
+    document.querySelectorAll('.choice')[1].innerHTML = questions[currentquestionIndex].choice[1]
+    document.querySelectorAll('.choice')[2].innerHTML = questions[currentquestionIndex].choice[2]
     console.log('目前第幾題' + currentquestionIndex)
 }
 
@@ -69,10 +72,10 @@ function btnClick(e) {
             "<font size='50px'>膽量指數:</font>" + total + "<font size='50px'>/10</font>"
         document.querySelector('#resultheading').style.display = 'block'
         document.querySelector('#resultheading').innerHTML = '分析結果'
-        document.getElementById('playagain_btn').style.display = 'inline-block'
-        document.getElementById('gotoindex_btn').style.display = 'inline-block'
+        document.querySelector('#playagain_btn').style.display = 'inline-block'
+        document.querySelector('#gotoindex_btn').style.display = 'inline-block'
         document.querySelector('.grid').style.backgroundImage = "url('../img/game/quizreport_bg.png')"
-        document.querySelector('.recommendtext').style.display = 'block'
+        document.querySelector('.recommendtitle').innerHTML = '為您推薦';
         document.querySelector('.recommendcardground').style.display = 'flex'
         document.querySelector('#dolphin_block').style.display = 'block'
         if (total < 3) {
@@ -81,16 +84,15 @@ function btnClick(e) {
         }
     }
     document.getElementsByClassName('innerimg')[0].src = questions[currentquestionIndex].quizimg
-
     document.getElementById('question').innerHTML = questions[currentquestionIndex].title
-    document.getElementsByClassName('choice')[0].innerHTML = questions[currentquestionIndex].choice[0]
-    document.getElementsByClassName('choice')[1].innerHTML = questions[currentquestionIndex].choice[1]
-    document.getElementsByClassName('choice')[2].innerHTML = questions[currentquestionIndex].choice[2]
+    document.querySelectorAll('.choice')[0].innerHTML = questions[currentquestionIndex].choice[0]
+    document.querySelectorAll('.choice')[1].innerHTML = questions[currentquestionIndex].choice[1]
+    document.querySelectorAll('.choice')[2].innerHTML = questions[currentquestionIndex].choice[2]
 
     // console.log("btnclick目前第幾題"+currentquestionIndex)
     document.getElementById('progress').innerHTML = currentquestionIndex + 1 + '/' + Qnum
 
-    total = total + parseInt(e.target.parentNode.value)
+    total = total + parseInt(e.target.value)
 }
 // create questions here
 
