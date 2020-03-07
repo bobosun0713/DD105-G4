@@ -14,18 +14,41 @@
     }
 
     .route1 {
-      display: none;
+      width: 100px;
+      right: 0px;
+      bottom: -200px;
+      // display: none;
     }
   }
 
-  .indexTitleZone1{
-    position: relative;
-    left: -100px;
-    top: 150px;
-  }
+
 
   #indexSection2{
     margin: 150px 0;;
+
+    .indexTitleZone1{
+      left: -150px;
+      
+    }
+
+    .spotInfoZone{
+      width: 100%;
+      overflow-x: scroll;
+      #spotInfoWrap{
+
+      .spotInfo{
+        width: 350px;
+        margin-right: 20px;
+      }
+
+      }
+
+    }
+
+    button{
+      display: none;
+    }
+
   }
 
 
