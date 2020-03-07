@@ -14,21 +14,23 @@
 
     #mapArea {
       height: 450px;
+      // border: 1px solid blue;
       // top: 0px;
+      margin-bottom: 0px;
 
       #bigG {
         opacity: 0.7;
-        width: 350px;
+        width: 300px;
         position: absolute;
         right: -50px;
         bottom: -40px;
       }
 
       #G1_L {
-        width: 150px;
+        width: 100px;
         position: absolute;
-        right: 210px;
-        top: 320px;
+        right: 190px;
+        top: 340px;
       }
     }
 
@@ -39,7 +41,7 @@
 
 
   #ghostIslandSection2 {
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 
     .cardDisplay {
       // border: 1px solid green;
@@ -51,7 +53,8 @@
 
       .cardContain {
         // border: 1px solid blue;
-        min-width: 4900px;
+        // min-width: 4900px;
+        // max-width: 4900px;
         float: left;
       }
 
@@ -77,7 +80,7 @@
     #Ghost3{
       position: absolute;
       right: 0;
-      bottom: -330px;
+      bottom: -250px;
       pointer-events: none;
     }
   }
