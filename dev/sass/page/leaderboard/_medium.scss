@@ -7,14 +7,18 @@
         width: 760px;
         width: 100%;
         font-size: 1rem;
+        background-image: url(../img/leaderboard/Background-image-1.png);
+
     //投給你內心 
     #vote{
+      margin-bottom: -80px;
         .vote-img{
           width: 230px;
-          height: 190px;
+          height: 220px;
+          margin-left: 40px;
         }
         .vote-text{
-          margin-top: 55px;
+          margin-top: 110px;
           width: 300px;
           margin-bottom: 50px;
           font-size: 1.8rem;
@@ -28,11 +32,17 @@
     .Haunted-house{
     width: 680px;
     width: 100%;
-    max-height:180px;
+    max-height:250px;
           // 景點圖片 
           .Haunted-house-i{
-            width: 21%;
+            width: 250px;
            }
+          //滑鼠滑過去圖片放大
+         .Haunted-house-i:hover{
+          width: 300px;
+          height:300px;
+          margin-top: -25px;
+         }
           .Strip-background{//div
             background-image: url(../img/leaderboard/ghost-4-s.png);
             margin-top: 60px;
