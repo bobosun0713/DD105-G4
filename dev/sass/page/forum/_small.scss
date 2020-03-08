@@ -1,5 +1,93 @@
 @include respond(small) {
     //手機都寫在裡面
-   
-  
-  }
+    .forum_wrapper {
+        .forum_container {
+            padding-top: 150px;
+            // 標題
+            .article_title {
+                .art_title {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+            // 篩選
+            .forum_filter {
+                select {
+                    width: 105px;
+                    height: 45px;
+                    background-size: 8px;
+                    background-position-x: 85px;
+                    font-size: 1rem;
+                }
+            }
+            // 文章
+            .forum_filter_articlec {
+                .art_con {
+                    .art_title {
+                        padding: 15px 15px;
+                        margin: 0;
+                        h1 {
+                            font-size: 1.125rem;
+                            span {
+                                font-size: 0.875rem;
+                            }
+                        }
+                    }
+                }
+                .art_p {
+                    margin: 0px 15px;
+                    h1 {
+                        font-size: 1.124rem;
+                    }
+                    p {
+                        margin: 10px 0 10px;
+                        font-size: 1rem;
+                    }
+                }
+                .art_info {
+                    margin: 10px 15px;
+                }
+            }
+        }
+    }
+
+    //========================== 發表燈箱
+    #forum_chatbox {
+        .chatbox {
+            padding: 20px;
+            width: 100%;
+
+            .chat_editor {
+                height: 180px;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    //========================== 文章燈箱
+    #forum_contentbox {
+        .cotentbox {
+            width: 100%;
+            padding: 15px;
+
+            .chatbox_user {
+                padding: 15px 0;
+                .user_path {
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .user_name {
+                    line-height: 45px;
+                }
+            }
+        }
+        .chat_msg {
+            bottom: 7%;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
