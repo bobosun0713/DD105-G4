@@ -12,15 +12,14 @@ var reload = browserSync.reload
 var web = {
     html: ['dev/*.html', 'dev/**/*.html'],
     sass: ['dev/sass/*.scss', 'dev/sass/**/*.scss'],
-    js: ['dev/js/*.js'],
+    js: ['dev/js/*.js', 'dev/js/**/*.*'],
     img: ['dev/img/*.*', 'dev/img/**/*.*'],
     font: ['dev/font/*.*', 'dev/font/**/*.*'],
-    music: ['dev/music/*.*'],
 }
 
 //流程
 gulp.task('concatjs', function() {
-    gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js'))
+    gulp.src(web.js).pipe(gulp.dest('dest/js'))
 })
 
 gulp.task('img', function() {
