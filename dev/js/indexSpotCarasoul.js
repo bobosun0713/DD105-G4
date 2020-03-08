@@ -4,12 +4,18 @@ function $id(id) {
 
 window.addEventListener('load', function () {
     let curIndex = 0
+    let spotInfoZone = document.querySelector('.spotInfoZone')
     let spotDisplay = document.querySelector('#spotInfoWrap')
+    let spotInfo = document.querySelectorAll('.spotInfo')
     let spell1 = document.querySelector('#spell1')
     let spell2 = document.querySelector('#spell2')
     let spell3 = document.querySelector('#spell3')
 
-    
+
+    if(window.innerWidth <= 768 ){
+        spotDisplay.style.minWidth = (spotInfo.clientWidth)*3;
+        console.log(spotInfoZone.clientWidth);
+    }
 
     spell1.style.opacity = 1
 
