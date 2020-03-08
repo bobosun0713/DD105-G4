@@ -1,4 +1,76 @@
 @include respond(medium) {
     //平板都寫在裡面
+    .forum_wrapper {
+        .forum_container {
+            // 標題
+            .article_title {
+                width: 90%;
+            }
+            // 篩選
+            .forum_filter {
+                width: 90%;
+                flex-wrap: wrap;
+                // text-align: center;
 
-  }
+                .forum_filter_serch {
+                    display: flex;
+                    // justify-content: center;
+                    input {
+                        margin: 10px 10px 0 0;
+                        width: 54%;
+                    }
+                    label {
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            // 文章
+            .forum_filter_articlec {
+                width: 90%;
+                display: block;
+
+                .art_img {
+                    > img {
+                        width: 100%;
+                        height: 280px;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    //========================== 文章內容燈箱
+
+    #forum_contentbox {
+        .cotentbox {
+            width: 80%;
+            height: 70%;
+            .chatbox_content {
+                // border: 1px solid red;
+                display: inline-block;
+
+                .conten_img {
+                    width: 100%;
+                    height: 400px;
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .content_p {
+                    width: 100%;
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .chat_msg {
+            left: 10%;
+            bottom: 9%;
+            width: 80%;
+        }
+    }
+}
