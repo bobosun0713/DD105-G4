@@ -5,26 +5,24 @@ $frame: 1px solid red;
 * {
   font-family: "微軟正黑體";
 }
+body {
+  display: block;
+}
 
-//讓右邊滾輪消失
-// body::-webkit-scrollbar {
-//   display: none;
-// }
-
-// .adventure_wrap {
-//   // background-color: #161616;
-//   background-image: url("../img/adventrue/尋鬼探險.png");
-//   // background-image: url("../img/spot/BG/spotBG.png");
-//   background-size: 100%;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   width: 100vw;
-//   height: 100%;
-//   // border:2px solid green;
-// }
+.adventure_wrap {
+  // background-color: #161616;
+  background-image: url("../img/adventrue/尋鬼探險.png");
+  // background-image: url("../img/spot/BG/spotBG.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100%;
+  // border:2px solid green;
+}
 
 .people_Layout {
-  padding-top: 200px;
+  padding: 100px 0 100px 0;
   // border: 2px solid red;
   text-align: center;
   // border:1px solid red;
@@ -118,7 +116,6 @@ $frame: 1px solid red;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-
       width: 100%;
       border-radius: 2px;
       overflow: hidden;
@@ -443,18 +440,23 @@ $frame: 1px solid red;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        .main_people_img {
-          width: 80px;
-          height: 80px;
-          padding-bottom: 10px;
-          img {
-            width: 100%;
+        .main_people {
+          display: flex;
+          flex-direction:column;
+          align-items: center;
+          .main_people_img {
+            width: 80px;
+            height: 80px;
+            padding-bottom: 10px;
+            img {
+              width: 100%;
+            }
           }
-        }
-        .main_people_name {
-          color: $subtitle;
-          padding: 5px 0 15px 0;
-          font-size: 14px;
+          .main_people_name {
+            color: $subtitle;
+            padding: 5px 0 15px 0;
+            font-size: 14px;
+          }
         }
 
         .last_time {

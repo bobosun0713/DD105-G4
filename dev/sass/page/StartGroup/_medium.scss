@@ -14,7 +14,7 @@
         .bigPic {
           // width: 100%;
           width: 100%;
-          height: 50%;
+          height: 360px;
 
           img {
             width: 100%;
@@ -22,22 +22,22 @@
             object-fit: cover;
           }
         }
-        .photobook {
-          .smallPicZone {
-            img {
-            }
-          }
-        }
+        // .photobook {
+        //   .smallPicZone {
+        //     img {
+        //     }
+        //   }
+        // }
       }
       .txtZone {
         p {
         }
       }
     }
-    .progress {
+    // .progress {
 
 
-    }
+    // }
   }
 
   
@@ -178,61 +178,57 @@ margin: 0 auto;
           width: 300px;
           transition: all 0.8s;
           //讓他變亮
-          &:hover {
-      
-          }
+        
           //讓他飛起來
-          &:hover .ghost_btn1 > img {
+          // &:hover .ghost_btn1 > img {
        
-          }
+          // }
           //字變畫還在想
           // &:hover .ghost_tape > span {
           // }
           //這是背景
-          .ghost_btn_img1 {
+          // .ghost_btn_img1 {
        
-          }
-          .ghost_btn1 {
+          // }
+          // .ghost_btn1 {
            
-            > img {
+            // > img {
          
-            }
-          }
+            // }
+          // }
           //這是膠帶
-          .ghost_tape {
+          // .ghost_tape {
            
-            > span {
+          //   > span {
             
-            }
-          }
+          //   }
+          // }
         }
-        .ghost_btn2 {
+        // .ghost_btn2 {
      
           //讓他變亮
-          &:hover {
+          // &:hover {
          
-          }
+          // }
           //讓他飛起來
-          &:hover .ghost_btn2 > img {
         
-          }
           //字變畫還在想
           // &:hover .ghost_tape > span {
           // }
           //這是背景
-          .ghost_btn_img2 {
-          }
+          // .ghost_btn_img2 {
+          // }
           //鬼本身
-          .ghost_btn2 {
-            > img {
-            }
-          }
+          // .ghost_btn2 {
+          //   > img {
+          //   }
+          // }
           //這是膠帶
-          .ghost_tape {
-            > span {
-            }
-          }
-        }
+          // .ghost_tape {
+            // > span {
+            // }
+          // }
+        // }
       }
     }
   }
