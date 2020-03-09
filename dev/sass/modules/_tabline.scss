@@ -1,0 +1,67 @@
+
+//做hover後的線
+@mixin show_tab($color){
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid $color;
+    transition: 0.4s;
+    animation: line 0.8s;
+  }
+  @keyframes line {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}
+//白色底線
+.show_tab {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid white;
+    transition: 0.4s;
+    animation: line 0.8s;
+  }
+  @keyframes line {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}
+.show_tab_gray {
+  color: rgb(29, 29, 29);
+  position: relative;
+   &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid rgb(71, 71, 71);
+    transition: 0.4s;
+    animation: line 0.8s;
+  }
+  @keyframes line {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}
