@@ -1,51 +1,51 @@
-// @include respond(medium) {
-//     // 平板都寫在裡面
-//     .createAdventure{
-//       .section_wrapper{
-//         .wrapper{
-//           //???
-//           width: 95%;
-//           // background-color: greenyellow;
-//           #tab-1 {
-//             border: 1px solid white;
-//             padding: 0;
-//             max-width: 90%;
-//             justify-content: center;
-//             .left{
-//               width: 60%;
-//               margin: 0 auto;
-//               // border: 1px solid yellow;
-//             }
-//             .right{
-//               width: 60%;
-//               margin: 30px auto 0 auto;
-//             }
-//           }
-//           #tab-3{
-//             margin: 0 auto;
-//             .left{
-//               width: 60%;
-//               margin: 0 auto;
-//               border: 1px solid rgb(255, 47, 210);
+@include respond(medium) {
+    // 平板都寫在裡面
+    .createAdventure{
+      .section_wrapper{
+        .wrapper{
+          //???
+          width: 95%;
+          // background-color: greenyellow;
+          #tab-1 {
+            border: 1px solid white;
+            padding: 0;
+            max-width: 90%;
+            justify-content: center;
+            .left{
+              width: 60%;
+              margin: 0 auto;
+              // border: 1px solid yellow;
+            }
+            .right{
+              width: 60%;
+              margin: 30px auto 0 auto;
+            }
+          }
+          #tab-3{
+            margin: 0 auto;
+            .left{
+              width: 60%;
+              margin: 0 auto;
+              border: 1px solid rgb(255, 47, 210);
 
-//             }
-//             .section {
-//               .left{
-//                 width: 60%;
-//                 margin: 0 auto;
-//                 border: 1px solid pink;
-//               }
-//               .right{
+            }
+            .section {
+              .left{
+                width: 60%;
+                margin: 0 auto;
+                border: 1px solid pink;
+              }
+              .right{
 
-//                 width: 60%;
-//                 margin: 30px auto 0 auto;
-//                 border: 1px solid yellowgreen;
-//               }
-//             }
+                width: 60%;
+                margin: 30px auto 0 auto;
+                border: 1px solid yellowgreen;
+              }
+            }
 
-//           }
-//         }
-//       }
-//     }
+          }
+        }
+      }
+    }
 
-// }
+}
