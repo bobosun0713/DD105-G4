@@ -10,17 +10,21 @@
             .forum_filter {
                 width: 90%;
                 flex-wrap: wrap;
-                // text-align: center;
-
                 .forum_filter_serch {
                     display: flex;
-                    // justify-content: center;
+                    justify-content: center;
                     input {
                         margin: 10px 10px 0 0;
-                        width: 54%;
+                        height: 40px;
+                        width: 60%;
                     }
                     label {
                         margin-top: 10px;
+                    }
+                    .btn-type4 {
+                        width: 120px;
+                        height: 40px;
+                        line-height: 25px;
                     }
                 }
             }
