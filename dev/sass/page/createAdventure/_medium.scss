@@ -2,9 +2,10 @@
     // 平板都寫在裡面
     .createAdventure{
       .section_wrapper{
+        // margin:0 auto;
         .wrapper{
           //???
-          width: 95%;
+          width: 98%;
           // background-color: greenyellow;
           #tab-1 {
             border: 1px solid white;
@@ -12,17 +13,18 @@
             max-width: 90%;
             justify-content: center;
             .left{
-              width: 60%;
+              width: 40%;
               margin: 0 auto;
               // border: 1px solid yellow;
             }
             .right{
-              width: 60%;
+              width: 40%;
               margin: 30px auto 0 auto;
             }
           }
           #tab-3{
-            margin: 0 auto;
+            margin: 25px auto 0 auto;
+            padding: 10px;
             .left{
               width: 60%;
               margin: 0 auto;
@@ -45,7 +47,11 @@
 
           }
         }
-      }
+        .button_block {
+            width: 100%;
+           
+        }
     }
 
+   }
 }
