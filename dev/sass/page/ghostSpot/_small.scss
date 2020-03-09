@@ -1,80 +1,142 @@
 @include respond(small) {
-    //手機都寫在裡面
-    #ghostSpotBG {
-      padding-top: 100px;
-    }
+  //手機都寫在裡面
+  #ghostSpotBG {
+    padding-top: 100px;
+  }
 
-    #ghostSpotSection1{
-      width: 100%;
-      margin-top: 0px;
+  #ghostSpotSection1 {
+    width: 100%;
+    margin-top: 0px;
 
-      .spotIntro{
-        flex-wrap: wrap;
+    .spotIntro {
+      flex-wrap: wrap;
 
-        .picZone{
-          width: 90%;
-          display: inline-flex;
-          justify-content: space-around;
-          flex-wrap: nowrap;
-          margin-bottom: 30px;
+      .picZone {
+        width: 90%;
+        display: inline-flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        margin-bottom: 30px;
 
-          .bigPic{
-            width: 75%;
+        .bigPic {
+          width: 75%;
+        }
+
+        .photobook {
+          width: 20%;
+
+          h2 {
+            display: none;
           }
 
-          .photobook{
-            width: 20%;
+          .smallPicZone {
+            flex-wrap: wrap;
+
+            img {
+              margin-top: 5px;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .txtZone {
+        width: 100%;
+
+        .spiderweb {
+          display: none;
+        }
+
+        .btn-outline {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  #ghostSpotSection2 {
+    .titleZone {
+      position: relative;
+      left: -150px;
+    }
+
+    .G2 {
+      right: -200px;
+    }
+
+    .ghostTalk {
+      right: 170px;
+    }
+  }
+
+  #ghostSpotSection3 {
+    #tabPage1 {
+      #officalTour {
+
+        .tourSpot {
+          justify-content: center;
+
+          .tourImg{
+            width:80%;
+          }
+          .tourSpotTxt{
+            width: 80%;
+
+              p{
+                margin-bottom: 0px;
+              }
             
 
-            h2{
-              display: none;
-            }
-
-            .smallPicZone{
-              flex-wrap: wrap;
-
-              img{
-                margin-top: 5px;
-                width: 100%;
-              }
+            .tourSpotInfoRwd{
+              display: block;
             }
           }
-        }
-
-        .txtZone{
-          width: 90%;
-
-          .spiderweb{
+          .btn-outline2 {
             display: none;
           }
         }
       }
-    }
+      .myTourGuide {
+        padding: 0px;
+        height: 100px;
 
-    #ghostSpotSection3{
-
-      #tabPage1{
-        #officalTour{
-          .tourSpot{
-            .btn-outline2{
-            display: none;
-          }
-          }
-          
-        }
-        .myTourGuide{
+        .G1 {
+          pointer-events: none;
+          width: 100%;
           padding: 0px;
-          .G1 {
-            pointer-events: none;
-            left: -180px;
-            top: -50px;
+          left: -180px;
+          display: none;
+
+          .ghostTalk {
+            display: none;
           }
-  
-          .newMyTour{
-            margin: 100px 20px;
-          }
+        }
+
+        .newMyTour {
+          position: relative;
+          top: 40%;
+          right: -20px;
         }
       }
     }
-  
+
+    #tabPage2{
+      .writeBtnWrap{
+        width: 100%;
+      }
+      .msgZone{
+        .spotMsg{
+          width: 100%;
+          // margin: 0px auto;
+          border-radius: 0px;
+        }
+      }
+    }
   }
+
+  .spotWroteMsgBG{
+    .spotWroteMsgContent{
+      width: 90%;
+    }
+  }
+}

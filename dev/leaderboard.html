@@ -8,9 +8,9 @@
         <!-- header -->
          @@include('layout/header.html')
         <!-- 霧氣 -->
-        @@include('layout/component/indexsmoke.html')
+        <!-- @@include('layout/component/indexsmoke.html') -->
         <!-- 有鬼箭頭元素 -->
-        @@include('layout/component/mouse_ghost.html') 
+        <!-- @@include('layout/component/mouse_ghost.html') -->
         <div id="leaderboard">
             <!-- 投給你內心 -->
             <div id="vote">
@@ -26,21 +26,21 @@
                 <img class="Haunted-house-i" src="./img/leaderboard/xinzhuang-hosp.jpg" alt="" />
                 <div class="Strip-background">
                     <h2 class="Haunted-house-t">01</h2>
-                    <p class="Haunted-house-p">【新莊廢棄醫院】 124票</p>
+                    <a class="Haunted-house-p" href="#">【新莊廢棄醫院】 124票</a> 
                 </div>
             </div>
             <div class="Haunted-house">
                 <img class="Haunted-house-i" src="./img/leaderboard/theme-park.jpg" alt="" />
                 <div class="Strip-background">
                     <h2 class="Haunted-house-t">02</h2>
-                    <p class="Haunted-house-p">【卡拉里多樂園】 104票</p>
+                    <a class="Haunted-house-p" href="#">【卡拉里多樂園】 104票</a> 
                 </div>
             </div>
             <div class="Haunted-house">
                 <img class="Haunted-house-i" src="./img/leaderboard/hosp.jpg" alt="" />
                 <div class="Strip-background">
                     <h2 class="Haunted-house-t">03</h2>
-                    <p class="Haunted-house-p">【台南杏林醫院】 99票</p>
+                    <a class="Haunted-house-p" href="#">【台南杏林醫院】 99票</a> 
                 </div>
             </div>
             <!--   來抓交替囉 -->
@@ -49,8 +49,6 @@
                 <p class="alternately-p">╲ 來抓交替囉！ ╱</p>
                 <img class="alternately-i" src="./img/leaderboard/ghost-1.png" alt="" />
             </div>
-
-
              <!--桌機板的幽靈 -->
                  <!-- <img id="ghost-2" src="./img/leaderboard/ghost-2.png" alt="" /> -->
              <!--手機板的幽靈 -->
@@ -66,65 +64,58 @@
                     </tr>
                     <tr class="Ranking">
                         <td>01</td>
-                        <td>【新莊廢棄醫院】</td>
+                        <td><a href="#">【新莊廢棄醫院】</a></td>
                         <td>124票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>02</td>
-                        <td>【卡拉里多樂園】</td>
+                        <td><a href="#">【卡拉里多樂園】 </a></td>
                         <td>104票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>03</td>
-                        <td>【台南杏林醫院】</td>
+                        <td><a href="#">【台南杏林醫院】 </a></td>
                         <td>99票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>04</td>
-                        <td>【嘉義民雄鬼屋】</td>
+                        <td><a href="#">【嘉義民雄鬼屋】</a></td>
                         <td>88票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>05</td>
-                        <td>【新莊廢棄醫院】</td>
+                        <td><a href="#">【新莊廢棄醫院】 </a></td>
                         <td>77票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>06</td>
-                        <td>【新莊廢棄醫院】</td>
+                        <td><a href="#">【新莊廢棄醫院】 </a></td>
                         <td>66票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>07</td>
-                        <td>【新莊廢棄醫院】</td>
+                        <td><a href="#">【新莊廢棄醫院】 </a></td>
                         <td>55票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>08</td>
-                        <td>【新莊廢棄醫院】</td>
+                        <td><a href="#">【新莊廢棄醫院】 </a></td>
                         <td>44票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>09</td>
-                        <td>【新莊廢棄醫院】</td>
+                        <td><a href="#">【新莊廢棄醫院】 </a></td>
                         <td>33票</td>
                     </tr>
                     <tr class="Ranking">
                         <td>10</td>
-                        <td>【新莊廢棄醫院】</td>
+                        <td><a href="#">【新莊廢棄醫院】 </a></td>
                         <td>22票</td>
                     </tr>
                 </table>
-
                 <img class="mouse" src="./img/leaderboard/ghost-3.png" alt="" />
             </div>
-            <div id="Vote-button" align="center" style="position:relative;top:-70px;">
-                <button
-                    class="Vote-btn"
-                    style="width: 200px;height: 50px;  color: rgb(218, 3, 3); font-size: 1.2rem; background-color: rgb(59, 58, 58);border-radius: 30px; border: red 1px solid;">
-                    參加投票
-                </button>
-            </div>
+            
         </div>
         @@include('layout/footer.html')
     </body>

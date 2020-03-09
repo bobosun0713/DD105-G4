@@ -1,5 +1,401 @@
 @include respond(small) {
-    //手機都寫在裡面
-   
+	//手機都寫在裡面
+}
+
+.wrapper_member {
+
+	@media screen and (max-width: 375px) {
+		.membertop {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.section1_member {
+				.menu {
+					margin-bottom: 50px;
+					form {
+						width: 200px;
+						margin: 0;
+						#preview {
+							width: 150px;
+							height: 150px;
+							border: 1px solid gray;
+              border-radius: 50%;
+              margin: 0 auto;
+            }
+					}
+				}
+			}
+			.section2_member {
+				width: 370px;
+				.bar-block {
+					width: 370px;
+					margin: 0 auto;
+					.title_btn {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						margin: 0 auto;
+						.button1 {
+							font-size: 1rem;
+							margin: 10px 5px;
+						}
+					}
+					#class1 {
+						width: 370px;
+						form {
+							width: 370px;
+							p {
+								display: block;
+								margin: 10px 10px 10px 0;
+							}
+							.mem_id,
+							.mem_account,
+							.mem_psw {
+								color: white;
+								margin-left: 0;
+							}
+							.mem_name {
+								margin-left: 0;
+							}
+							.mem_tel,
+							.mem_email {
+								margin-left: 0;
+							}
+							.mem_time {
+								margin-left: 0;
+								font-size: 0.6rem;
+							}
+							.span2 {
+								float: right;
+								cursor: pointer;
+							}
+							.hr2 {
+								width: 370px;
+							}
+						}
+					}
+					#class2,
+					#class3,
+					#class4,
+					#class5 {
+						width: 370px;
+						#tour_table,
+						#tour_table2 {
+              display: flex;
+              align-items: center;
+							width: 370px;
+							height: 450px;
+							.spot_cotent {
+                width: 230px;
+                padding-left: 5px;
+								.btn-type1 {
+									font-size: 0.8rem;
+									padding: 6px 12px;
+									margin: 20px 0 20px 100px;
+								}
+								#add_icon {
+									width: 15px;
+								}
+								#tour_msg {
+									#people_join {
+										.peoplenum {
+											width: 80px;
+										}
+									}
+									#people_join_img {
+										.progress {
+											width: 150px;
+										}
+									}
+                }
+                #icon_discuss2 {
+                  #espl_icon{
+                    width: 90px;
+                  }
+                  #love_icon{
+                    width: 10px;
+                  }
+                  #dis_icon{
+                    width: 10px;
+                  }
+                  #view_icon{
+                    width: 10px;
+                  }
+                }
+              
+							}
+						}
+						#tour_table h1,
+						#tour_table2 h1 {
+							font-size: 1rem;
+						}
+
+						#tour_table h2,
+						#tour_table2 h2 {
+							font-size: 0.9rem;
+						}
+
+						#tour_table span,
+						#tour_table2 span {
+							font-size: 0.8rem;
+						}
+						#spotimg {
+							width: 150px;
+							height: 150px;
+							align-items: center;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
   
-  }
+
+
+	@media screen and (min-width: 376px) and (max-width: 600px) {
+		.membertop {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.section1_member {
+				.menu {
+					margin-bottom: 50px;
+					form {
+						width: 200px;
+						margin: 0;
+						#preview {
+							width: 150px;
+							height: 150px;
+							border: 1px solid gray;
+              border-radius: 50%;
+              margin: 0 auto;
+            }
+					}
+				}
+			}
+			.section2_member {
+				width: 376px;
+				.bar-block {
+					width: 376px;
+					margin: 0 auto;
+					.title_btn {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						margin: 0 auto;
+						.button1 {
+							font-size: 1rem;
+							margin: 10px 5px;
+						}
+					}
+					#class1 {
+						width: 376px;
+						form {
+							width: 376px;
+							p {
+								display: block;
+								margin: 10px 10px 10px 0;
+							}
+							.mem_id,
+							.mem_account,
+							.mem_psw {
+								color: white;
+								margin-left: 0;
+							}
+							.mem_name {
+								margin-left: 0;
+							}
+							.mem_tel,
+							.mem_email {
+								margin-left: 0;
+							}
+							.mem_time {
+								margin-left: 0;
+								font-size: 0.6rem;
+							}
+							.span2 {
+								float: right;
+								cursor: pointer;
+							}
+							.hr2 {
+								width: 376px;
+							}
+						}
+					}
+					#class2,
+					#class3,
+					#class4,
+					#class5 {
+						width: 376px;
+						#tour_table,
+						#tour_table2 {
+              display: flex;
+              align-items: center;
+							width: 376px;
+							height: 450px;
+							.spot_cotent {
+                width: 230px;
+                padding-left: 5px;
+								.btn-type1 {
+									font-size: 0.8rem;
+									padding: 6px 12px;
+									margin: 20px 0 20px 100px;
+								}
+								#add_icon {
+									width: 15px;
+								}
+								#tour_msg {
+									#people_join {
+										.peoplenum {
+											width: 80px;
+										}
+									}
+									#people_join_img {
+										.progress {
+											width: 150px;
+										}
+									}
+                }
+                #icon_discuss2 {
+                  #espl_icon{
+                    width: 90px;
+                  }
+                  #love_icon{
+                    width: 10px;
+                  }
+                  #dis_icon{
+                    width: 10px;
+                  }
+                  #view_icon{
+                    width: 10px;
+                  }
+                }
+              
+							}
+						}
+						#tour_table h1,
+						#tour_table2 h1 {
+							font-size: 1rem;
+						}
+
+						#tour_table h2,
+						#tour_table2 h2 {
+							font-size: 0.9rem;
+						}
+
+						#tour_table span,
+						#tour_table2 span {
+							font-size: 0.8rem;
+						}
+						#spotimg {
+							width: 150px;
+							height: 150px;
+							align-items: center;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 601px) and (max-width: 768px) {
+		.membertop {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.section1_member {
+				.menu {
+					margin-bottom: 50px;
+					form {
+						width: 200px;
+						margin: 0;
+					}
+				}
+			}
+			.section2_member {
+				width: 500px;
+				.bar-block {
+					width: 500px;
+					margin: 0 auto;
+					.title_btn {
+						margin: 0 auto;
+						.button1 {
+							font-size: 1rem;
+							margin: 0 2px;
+						}
+					}
+					#class1 {
+						width: 500px;
+						form {
+							width: 500px;
+							.mem_id,
+							.mem_account,
+							.mem_psw,
+							.mem_name {
+								margin-left: 80px;
+								color: white;
+							}
+							.mem_tel,
+							.mem_email {
+								margin-left: 50px;
+							}
+							.mem_time {
+								margin-left: 20px;
+								font-size: 0.6rem;
+							}
+							.span2 {
+								float: right;
+								cursor: pointer;
+							}
+							.hr2 {
+								width: 500px;
+							}
+						}
+					}
+					#class2,
+					#class3,
+					#class4,
+					#class5 {
+						width: 500px;
+						#tour_table,
+						#tour_table2 {
+							display: flex;
+							width: 500px;
+							.spot_cotent {
+								width: 450px;
+								.btn-type1 {
+									font-size: 0.8rem;
+									padding: 6px 12px;
+									margin-left: 200px;
+								}
+								#add_icon {
+									width: 15px;
+								}
+							}
+						}
+						#tour_table h1,
+						#tour_table2 h1 {
+							font-size: 1rem;
+						}
+
+						#tour_table h2,
+						#tour_table2 h2 {
+							font-size: 0.9rem;
+						}
+
+						#tour_table span,
+						#tour_table2 span {
+							font-size: 0.8rem;
+						}
+						#spotimg {
+							width: 150px;
+							height: 150px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

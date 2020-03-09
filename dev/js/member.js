@@ -26,6 +26,7 @@ URL.revokeObjectURL(url)
 $('#preview').empty().append($img)
 }
 }
+
 function preview2(file) {
 var reader = new FileReader()
 reader.onload = function(e) {
@@ -34,10 +35,14 @@ $('#preview').empty().append($img)
 }
 reader.readAsDataURL(file)
 }
+
 $(function() {
 $('[type=file]').change(function(e) {
 var file = e.target.files[0]
 preview1(file)
 })
 })
+
+
+document.getElementById("mem_time").innerHTML = Date();
 

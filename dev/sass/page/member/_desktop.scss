@@ -7,16 +7,22 @@
 
 	.membertop {
 		display: flex;
-		justify-content: center;
-		padding-left: 97px;
+		justify-content:center;
 	}
-
-	.menu ul {
-		list-style-type: none;
+	#preview{
+		width:200px; 
+		height:200px;
+		border:1px solid gray; 
+		border-radius: 50%;
+	}
+	.section2_member{
+		width: 800px;
+		margin: 0 ;
 	}
 	.title_btn {
 		margin: 0 auto;
-		padding-left: 85px;
+		display: flex;
+		justify-content: center;
 		.button1 {
 			color: gray;
 			display: inline-block;
@@ -28,54 +34,46 @@
 
 	.red {
 		color: #fff !important;
+		border-bottom: 1px solid white;
 	}
 
-	#preview {
-		width: 300px;
-		height: 300px;
-		overflow: hidden;
-	}
-	#preview img {
-		width: 100%;
-		height: 100%;
-	}
 
 	#class1 {
 		width: 800px;
-		margin: 20px 200px 0 0 ;
+		margin: 20px 200px 0 0;
 		form {
 			margin: 26 0 0 30px;
 		}
+		span{
+			display: inline;
+		}
+		.mem_id,
+		.mem_account,
+		.mem_psw,
+		.mem_name {
+			margin-left: 200px;
+			color: white;
+		}
+		.mem_tel,
+		.mem_email {
+			margin-left: 170px;
+		}
+		.mem_time {
+			margin-left: 140px;
+		}
+		.span2 {
+			float: right;
+			cursor: pointer;
+		}
+
 		p {
 			color: white;
+			display: inline;
 			margin: 10px;
-
-			span.span1 {
-				margin-left: 10px;
-				font-size: 1.2rem;
-			}
-			span.mem_id,
-			span.mem_account,
-			span.mem_psw,
-			span.mem_name {
-				margin-left: 200px;
-				color: white;
-			}
-			span.mem_tel,
-			span.mem_email {
-				margin-left: 161px;
-			}
-			span.mem_time {
-				margin-left: 120px;
-			}
-			span.span2 {
-				float: right;
-				cursor: pointer;
-			}
 		}
 	}
 
-	#class4{
+	#class4 {
 		margin-top: 64px;
 	}
 	#class2 form,
@@ -105,10 +103,9 @@
 		box-sizing: border-box;
 	}
 
-	#tour_table2{
+	#tour_table2 {
 		height: 320px;
 	}
-
 
 	#tour_table h1,
 	#tour_table2 h1 {
@@ -145,7 +142,7 @@
 		height: 275px;
 	}
 
-	.spot_cotent{
+	.spot_cotent {
 		padding-left: 10px;
 	}
 	.btn-type1 {
@@ -163,7 +160,18 @@
 	}
 
 	#icon_discuss2 {
-		margin-left: 230px;
+		#espl_icon{
+			width: 110px;
+		}
+		#love_icon{
+			width: 20px;
+		}
+		#dis_icon{
+			width: 20px;
+		}
+		#view_icon{
+			width: 20px;
+		}
 	}
 	.peoplenum {
 		width: 70px;
@@ -171,4 +179,40 @@
 	.progress {
 		width: 300px;
 	}
+
+
+	@media screen and (min-width:1201px) and (max-width:1250px){
+		.membertop {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.section1_member{
+				.menu{
+					margin-bottom: 50px;
+					form{
+						width: 200px;
+						margin: 0;
+					}
+				}	
+			}
+			.section2_member{
+				.title_btn{
+					margin: 0 auto;
+					.button1{
+						font-size: 1rem;
+					}
+					
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width:1251px) and (max-width:1900px){
+		.membertop {
+			width: 100%;
+		}
+	}
+
+
 }
+

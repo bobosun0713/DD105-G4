@@ -1,343 +1,452 @@
 .forum_wrapper {
-    // border: 1px solid red;
-    // margin-top: 190px;
-    background-image: url('../img/banner/banner.png');
+    background-image: url('../img/forum/banner.png');
     background-size: contain;
     background-repeat: no-repeat;
-    // background-attachment: fixed;
+    overflow: hidden;
+    // border: 1px solid red;
     .forum_container {
         // border: 1px solid blue;
         padding-top: 300px;
         font-size: 24px;
-    }
-}
-//========================== 文章標題
-.article_title {
-    // border: 1px solid red;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    border-bottom: 2px solid grey;
-    padding: 5px 0;
-    height: 60px;
-    line-height: 45px;
-    width: 1200px;
-    margin: 10px auto;
-    font-size: 24px;
-    .art_title {
-        // border: 1px solid blue;
-        // box-sizing: border-box;
-        color: whitesmoke;
-        // height: 100%;
-        font-size: 24px;
 
-        span {
-            font-size: 16px;
-            color: rgb(192, 181, 181);
-            margin: 0 10px;
+        //========================== 文章標題
+        .article_title {
+            // border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            border-bottom: 2px solid grey;
+            padding: 5px 0;
+            height: 60px;
+            line-height: 45px;
+            width: 1200px;
+            margin: 10px auto;
+            font-size: 1.5rem;
+            .art_title {
+                // border: 1px solid blue;
+                // box-sizing: border-box;
+                color: whitesmoke;
+                // height: 100%;
+                font-size: 24px;
+
+                span {
+                    font-size: 16px;
+                    color: rgb(192, 181, 181);
+                    margin: 0 10px;
+                }
+            }
+
+            // 發文按鈕
+            > span {
+                // border: 1px solid red;
+                border-radius: 10px;
+                background: url('../img/icon/pencil.svg') no-repeat left;
+                background-size: 14px;
+                background-position-x: 16px;
+                align-self: flex-end;
+                text-align: center;
+                background-color: white;
+                color: grey;
+                font-size: 16px;
+                width: 100px;
+                height: 40px;
+                line-height: 40px;
+                cursor: pointer;
+            }
         }
-    }
+        //--------------------------
 
-    // 發文按鈕
-    > span {
-        // border: 1px solid red;
-        border-radius: 10px;
-        background: url('../img/icon/pencil.svg') no-repeat left;
-        background-size: 14px;
-        background-position-x: 16px;
-        align-self: flex-end;
-        text-align: center;
-        background-color: white;
-        color: grey;
-        font-size: 16px;
-        width: 100px;
-        height: 40px;
-        line-height: 40px;
-        cursor: pointer;
-    }
-}
-//--------------------------
+        //========================== 篩選
+        .forum_filter {
+            // border: 1px solid red;
+            width: 1200px;
+            margin: 0 auto;
+            // text-align: center;
 
-//========================== 篩選
-.forum_filter {
-    // border: 1px solid red;
-    width: 1200px;
-    margin: 0 auto;
-    // text-align: center;
-
-    select {
-        border: 1px solid white;
-        border-radius: 5px;
-        width: 170px;
-        height: 50px;
-        background-color: rgba(0, 0, 0, 0.3);
-        color: white;
-        -webkit-appearance: none;
-        outline: none;
-        background: url('../img/icon/downarrow.svg') no-repeat right center;
-        background-size: 13px;
-        background-position-x: 130px;
-        font-size: 20px;
-        // text-align: center;
-        text-align-last: center;
-        option {
-            -webkit-appearance: none;
-            background-color: black;
+            select {
+                border: 22 solid white;
+                border-radius: 5px;
+                width: 170px;
+                height: 50px;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: white;
+                -webkit-appearance: none;
+                outline: none;
+                background: url('../img/icon/downarrow.svg') no-repeat right center;
+                background-size: 13px;
+                background-position-x: 130px;
+                font-size: 20px;
+                // text-align: center;
+                text-align-last: center;
+                option {
+                    -webkit-appearance: none;
+                    background-color: black;
+                }
+            }
+            .forum_filter_serch {
+                display: inline-block;
+                input {
+                    vertical-align: top;
+                    border: 0px;
+                    outline: none;
+                    padding: 0px 15px;
+                    width: 495px;
+                    height: 50px;
+                    border-radius: 10px;
+                    color: black;
+                }
+            }
         }
-    }
+        //--------------------------
 
-    input {
-        vertical-align: top;
-        border: 0px;
-        outline: none;
-        padding: 0px 15px;
-        width: 495px;
-        height: 50px;
-        border-radius: 10px;
-        color: black;
-    }
-}
-//--------------------------
+        //========================== 文章
+        .forum_filter_articlec {
+            // border: 1px solid red;
+            border: 22 solid #888;
+            border-radius: 10px;
+            overflow: hidden;
+            box-sizing: border-box;
+            background-color: #090909;
+            // background-color: red;
+            color: whitesmoke;
+            display: flex;
+            margin: 25px auto;
+            width: 1200px;
+            cursor: pointer;
 
-//========================== 文章
-.forum_filter_articlec {
-    // border: 1px solid red;
-    box-sizing: border-box;
-    background-color: #090909;
-    color: whitesmoke;
-    display: flex;
-    margin: 25px auto;
-    width: 1200px;
-    height: 280px;
-    cursor: pointer;
+            .art_img {
+                font-size: 0;
+                > img {
+                    width: 350px;
+                    height: 280px;
+                    object-fit: cover;
+                }
+            }
 
-    .art_img {
-        > img {
-            width: 350px;
-            height: 280px;
-            object-fit: cover;
-        }
-    }
+            // 內文---
+            .art_title {
+                // border: 1px solid blue;
+                display: flex;
+                margin: 30px 25px;
 
-    // 內文---
-    .art_title {
-        // border: 1px solid blue;
-        display: flex;
-        margin: 30px 25px;
+                //-- 頭像
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
 
-        //-- 頭像
-        img {
-            width: 40px;
-            height: 40px;
-        }
+                h1 {
+                    // border: 1px solid green;
+                    margin-left: 10px;
+                    line-height: 40px;
+                    font-size: 24px;
 
-        h1 {
-            // border: 1px solid green;
-            margin-left: 10px;
-            line-height: 40px;
-            font-size: 24px;
+                    span {
+                        font-size: 18px;
+                        color: rgb(189, 183, 183);
+                        margin-left: 10px;
+                    }
+                }
+            }
 
-            span {
-                font-size: 18px;
-                color: rgb(189, 183, 183);
-                margin-left: 10px;
+            .art_p {
+                // border: 1px solid red;
+                margin: 0px 25px;
+
+                p {
+                    margin: 5px 0 20px;
+                    font-size: 18px;
+                    color: rgb(189, 183, 183);
+                }
+            }
+
+            //-- 地點 留言 收藏
+            .art_icon,
+            .art_path {
+                display: flex;
+                margin: 0 5px;
+            }
+
+            .art_info {
+                // border: 1px solid blue;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 25px;
+
+                .art_icon {
+                    img {
+                        align-self: center;
+                        width: 20px;
+                        height: 20px;
+                    }
+                    span {
+                        font-size: 14px;
+                        margin-left: 5px;
+                        align-self: center;
+                    }
+                }
             }
         }
     }
-
-    .art_p {
-        // border: 1px solid red;
-        margin: 0px 25px;
-
-        p {
-            margin: 5px 0 20px;
-            font-size: 18px;
-            color: rgb(189, 183, 183);
-        }
-    }
-
-    //-- 地點 留言 收藏
-    .art_icon,
-    .art_path {
-        display: flex;
-        margin: 0 5px;
-    }
-
-    .art_info {
-        // border: 1px solid blue;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 25px;
-
-        .art_icon {
-            img {
-                align-self: center;
-                width: 20px;
-                height: 20px;
-            }
-            span {
-                font-size: 14px;
-                margin-left: 5px;
-                align-self: center;
-            }
-        }
-    }
 }
-//--------------------------
 
 //========================== 發表燈箱
+#forum_chatbox {
+    background: rgba(0, 0, 0, 0.7);
+    // border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    z-index: 100;
 
-//--燈箱背景
-
-.article_ui {
-    .ui-widget-header {
-        background-color: #7d0022;
-        .ui-dialog-titlebar-close {
-            // display: none;
-            border-radius: 100%;
-            background-image: url('../img/icon/close2.svg');
-            height: 30px;
-            width: 30px;
-            position: relative;
-            top: 5px;
-            right: -30px;
-        }
-    }
-    .ui-button {
-        &:hover {
-            background: none;
-            background-image: url('../img/icon/close2.svg');
-        }
-    }
-}
-.ui-widget-overlay {
-    background-color: black !important;
-    opacity: 0.8 !important;
-}
-
-#post＿article {
-    background-color: black;
-    color: whitesmoke;
-    padding: 20px;
-
-    //-- -title
-    h1 {
-        text-align: center;
-        margin: 10px 0 15px;
-    }
-
-    form {
+    // 燈箱內容
+    .chatbox {
         // border: 1px solid red;
-        width: 495px;
-        // text-align: center;
-        margin: 0 auto;
+        border-radius: 5px;
+        background: rgb(255, 255, 255);
+        position: relative;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        padding: 40px;
+        width: 500px;
+        // height: 650px;
+        color: black;
 
-        #text_article {
-            width: 420px;
-            height: 40px;
-            outline: none;
-            border-radius: 5px;
-            padding: 0px 15px;
-            font-size: 16px;
-            color: black;
-            vertical-align: top;
-        }
-
-        .post_btn {
-            // border: 1px solid red;
-            vertical-align: top;
-            border-radius: 5px;
-            background-color: #7d0022;
-            color: whitesmoke;
-            width: 60px;
-            height: 40px;
-            line-height: 40px;
+        h2 {
             text-align: center;
-            font-size: 16px;
-        }
-        //--- select
-        p:nth-child(2) {
-            margin: 10px auto 15px;
-            // border: 1px solid red;
-            font-size: 16px;
+            font-size: 1.5rem;
         }
 
-        p:nth-child(3) {
-            margin: 10px auto 15px;
-            // border: 1px solid red;
-            font-size: 16px;
-            select {
-                // border: 1px solid blue;
-                width: 85px;
-                color: black;
+        // 使用者
+        .chatbox_user {
+            // border: 1px solid blue;
+            display: flex;
+
+            .user_path {
+                margin-right: 20px;
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .user_name {
+                // border: 1px solid red;
+                line-height: 50px;
+                font-size: 1.125rem;
             }
         }
 
-        //--- 發文輸入框
-        textarea {
-            // border: 1px solid red;
+        // 選擇地點 / 封面
+        .user_select {
+            margin: 10px 0 20px;
+            display: flex;
+            -webkit-appearance: none;
+
+            > select {
+                // border: 1px solid red;
+                margin-right: 40px;
+                width: 140px;
+                height: 35px;
+                font-size: 1.125rem;
+                font-weight: 500;
+                -webkit-appearance: none;
+                background: url('../img/forum/black_downarrow.svg') no-repeat right center;
+                background-size: 13px;
+                background-position-x: 110px;
+                text-align-last: center;
+                cursor: pointer;
+            }
+            > label {
+                // border: 1px solid blue;
+                background: url('../img/forum/upload.svg') no-repeat;
+                background-size: 20px;
+                background-position: 20px 9px;
+                border-radius: 8px;
+                padding-left: 45px;
+                height: 35px;
+                line-height: 35px;
+                width: 140px;
+                background-color: #700000;
+                color: white;
+                font-size: 1.125rem;
+                font-weight: 700;
+                transition: all 0.8s;
+                cursor: pointer;
+                &:hover {
+                    border: 0.7px solid #888;
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+        // 輸入標題
+        input[type='text'] {
+            width: 100%;
+            height: 45px;
+            padding: 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 0.7px solid #888;
+            outline: none;
+        }
+        // 文章內容
+        .chat_editor {
+            margin: 20px 0;
+            padding: 20px;
             resize: none;
+            outline: none;
             width: 100%;
             height: 300px;
-            padding: 20px;
-            font-size: 18px;
-            color: black;
+            border-radius: 5px;
+            border: 0.7px solid #888;
+            font-size: 1.125rem;
         }
-    }
-}
-//--------------------------
 
-//========================== 文章內容燈箱
-#forum_content {
-    // border: 3px solid blue;
-    // position: fixed;
-    transform: translate(0, 0);
-    background-color: black;
-    color: whitesmoke;
-    padding: 20px;
-    .user_content {
-        display: flex;
-        img {
-            height: 40px;
-            width: 40px;
-        }
-        h1 {
+        .forum_control {
             // border: 1px solid green;
-            margin-left: 10px;
-            line-height: 40px;
-            font-size: 24px;
-            span {
-                font-size: 18px;
-                color: rgb(189, 183, 183);
-                margin-left: 10px;
+            text-align: right;
+            vertical-align: top;
+
+            // 取消按鈕 / 發布按鈕
+            .cancechat {
+                font-size: 1rem;
+                // font-weight: 700;
+                border: 0.7px solid #888;
+                padding: 5px 15px;
+                border-radius: 5px;
+                outline: none;
+                transition: all 0.8s;
+                cursor: pointer;
+            }
+            .getchat {
+                font-size: 1rem;
+                font-weight: 700;
+                border: 0.7px solid #888;
+                background-color: #700000;
+                color: white;
+                padding: 5px 15px;
+                border-radius: 5px;
+                outline: none;
+                transition: all 0.8s;
+                cursor: pointer;
+                &:hover {
+                    border: 0.7px solid #888;
+                    background-color: white;
+                    color: black;
+                }
             }
         }
     }
+}
+//========================== 文章內容燈箱
+#forum_contentbox {
+    background: rgba(0, 0, 0, 0.7);
+    // border: 1px solid blue;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    z-index: 100;
 
-    //-- 標題 圖片
-    .title_content {
-        margin: 15px auto;
-        font-size: 24px;
-
-        .title_content_p {
-            font-size: 18px;
-        }
+    // 關閉燈箱用
+    .content_out {
+        // border: 1px solid red;
+        width: 100%;
+        height: 100%;
+        position: fixed;
     }
 
-    //-- 狀態 收藏 檢舉
-    .status_content {
-        border: 2px solid whitesmoke;
-        padding: 5px;
-        display: flex;
-        justify-content: space-between;
+    // 燈箱內容
+    .cotentbox {
+        border-radius: 5px;
+        background: rgb(255, 255, 255);
+        // margin: 0 auto;
+        position: relative;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        padding: 40px;
+        width: 50%;
+        height: 80%;
+        color: black;
+        overflow-x: hidden;
+        overflow-y: auto;
 
-        .art_icon,
-        .art_path {
-            display: flex;
-            margin: 0 5px;
+        // 標題
+        .user_loc {
+            text-align: center;
+            font-size: 1.5rem;
         }
 
-        .art_path {
+        // 使用者
+        .chatbox_user {
+            border-bottom: 1px solid #888;
+            padding: 15px 0;
+            display: flex;
+
+            // 使用者
+            .user_path {
+                margin-right: 20px;
+                font-size: 0;
+                img {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+            .user_name {
+                // border: 1px solid red;
+                line-height: 70px;
+                font-size: 1.2rem;
+
+                span {
+                    font-size: 0.5rem;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        // 封面-內文
+        .chatbox_content {
+            // border: 1px solid red;
+            margin: 20px 0;
+            display: flex;
+
+            .conten_img {
+                font-size: 0;
+                width: 50%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content_p {
+                width: 50%;
+                p {
+                    padding: 0px 20px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        // 狀態欄
+        .chatbox_status {
+            padding: 10px 0;
+            border: 1px solid #888;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+
+            // 次數
+            .art_icon,
+            .art_path {
+                // border: 1px solid red;
+                display: flex;
+                margin: 0 5px;
+            }
             .art_icon {
                 img {
                     align-self: center;
@@ -350,59 +459,153 @@
                     align-self: center;
                 }
             }
-        }
-    }
-    //-- 留言區
-    .forum_msg {
-        // border: 1px solid red;
-        margin: 15px auto;
-        color: black;
 
-        .msg_main {
-            border-radius: 5px;
-            padding: 10px 0;
-            background-color: whitesmoke;
-            display: flex;
-            margin: 10px 0px;
-
-            .msg_user {
-                // border: 1px solid green;
-                border-right: 1px solid grey;
-                width: 80px;
-                height: 100%;
-                text-align: center;
-                align-self: center;
+            // 檢舉留言
+            .art_report {
+                // border: 1px solid red;
+                margin: 0 10px;
+                cursor: pointer;
                 img {
-                    height: 40px;
-                    width: 40px;
+                    width: 20px;
+                    height: 20px;
                 }
             }
-            .msg_content {
-                margin-left: 10px;
-                // border: 1px solid yellow;
-            }
         }
     }
 
-    .replay_msg {
-        #replay_post {
-            border-radius: 5px;
-            width: 665px;
-            height: 40px;
-            padding: 0px 10px;
+    // 留言內容
+    .msg_space {
+        border: 0.5px solid #888;
+        margin: 10px 0;
+
+        .msg_user {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(125, 68, 68);
+            padding: 10px;
+
+            .msg_user_space {
+                display: flex;
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+                .msg_title_user {
+                    margin-left: 10px;
+                    color: white;
+                    .msg_title_name {
+                        font-size: 1rem;
+                    }
+                    .msg_title_time {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            .msg_report {
+                // border: 1px solid red;
+                align-self: center;
+                margin: 0 5px;
+                cursor: pointer;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
         }
-        .replay_btn {
-            // border: 1px solid red;
-            border-radius: 5px;
-            background-color: #7d0022;
-            color: whitesmoke;
-            width: 60px;
-            height: 40px;
-            // line-height: 40px;
-            text-align: center;
-            font-size: 16px;
+
+        .msg_p {
+            border-top: 0.5px solid #888;
+            padding: 10px;
+        }
+    }
+
+    // 留言
+    .chat_msg {
+        // border: 1px solid red;
+        position: absolute;
+        margin: 0 auto;
+        left: 25%;
+        bottom: 4%;
+        width: 50%;
+        form {
+            display: flex;
+            input[type='text'] {
+                border-radius: 5px;
+                width: 99%;
+                height: 50px;
+                padding: 15px;
+                border-radius: 5px;
+                outline: none;
+                font-size: 1.125rem;
+            }
+            input[type='submit'] {
+                margin-left: 1%;
+                border-radius: 5px;
+                height: 50px;
+                padding: 10px 15px;
+                background-color: #700000;
+                color: white;
+                font-size: 1.125rem;
+                font-weight: 700;
+                transition: all 0.8s;
+                cursor: pointer;
+                &:hover {
+                    border: 0.7px solid #888;
+                    background-color: white;
+                    color: black;
+                }
+            }
         }
     }
 }
-
-//--------------------------
+//========================== 檢舉燈箱燈箱
+#forum_report {
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    display: none;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    color: black;
+    z-index: 200;
+    h2 {
+        background-color: #700000;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    form {
+        p {
+            font-size: 1rem;
+            input[type='radio'] {
+                margin: 0 5px 0 15px;
+                width: 12px;
+                height: 16px;
+                vertical-align: middle;
+            }
+        }
+        .forum_report_control {
+            padding: 10px;
+            font-size: 0;
+            text-align: center;
+            background-color: #700000;
+            #forum_report_sub,
+            #forum_report_cance {
+                font-size: 1rem;
+                font-weight: 700;
+                border: 0.7px solid #888;
+                background-color: black;
+                color: white;
+                padding: 5px 15px;
+                border-radius: 5px;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

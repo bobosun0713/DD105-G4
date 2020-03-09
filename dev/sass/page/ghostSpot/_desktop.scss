@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-top: 250px;
+  overflow: hidden;
 }
 
 #ghostSpotSection1 {
@@ -163,6 +164,7 @@
         padding: 10px 0;
         text-align: center;
         font-size: 1.1rem;
+        // border: 1px solid greenyellow;
       }
 
       .spiderweb {
@@ -188,6 +190,7 @@
 
   .titleZone {
     border-bottom: 1px solid #cbcbcb;
+    // border: 1px solid green;
     width: 350px;
     text-align: right;
     padding: 20px 0;
@@ -316,7 +319,7 @@
   width: 1000px;
   margin: 10px auto;
   padding: 50px;
-  height: 1200px;
+  // height: 1200px;
 
   nav {
     display: inline-flex;
@@ -341,7 +344,6 @@
   }
 
 .allTabPage{
-  overflow: hidden;
   position: relative;
   // border: 1px solid darkcyan;
   width: 100%;
@@ -350,20 +352,15 @@
 
   #tabPage1 {
     width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0%;
-    // left: 0px;
     // border: 1px solid yellowgreen;
 
     #officalTour {
       // border: 1px solid yellowgreen;
-      height: 800px;
       margin: auto;
       padding: 50px 0px 0px 0px;
       // border: 1px solid darkcyan;
       background-image: url("../img/spot/shortPaper.png");
-      background-size: contain;
+      background-size: 100%;
       background-repeat: no-repeat;
 
       position: relative;
@@ -475,6 +472,33 @@
               }
             }
           }
+
+          .tourSpotInfoRwd{
+            // border: 1px solid green;
+            display: none;
+
+            .moreInfo{
+              
+              // border: 1px solid red;
+              width: 100%;
+              display: inline-flex;
+              justify-content: start;
+              align-items: flex-start;
+              margin-bottom: 10px;
+
+              img{
+                // border: 1px solid blue;
+                width:15px;
+                margin-right: 10px;
+              }
+
+              p{
+                margin: 0;
+                // border: 1px solid blue;
+              }
+            }
+          }
+
         }
       }
 
@@ -528,22 +552,23 @@
 
     .myTourGuide {
       // border: 1px solid goldenrod;
-      height: 200px;
       padding-right: 100px;
       position: relative;
+      height: 300px;
       // text-align: right;
 
       .G1 {
-        // width: 300px;
         margin: 0px 0px 0px 50px;
-
-        //   border: 1px solid greenyellow;
-        position: absolute;
-        top: -200px;
+        position: relative;
+        height: 300px;
+        // border: 1px solid palevioletred;
+        
 
         .G1img {
           transform: scaleX(-1);
           width: 350px;
+          position: absolute;
+          top: -50px;
           animation: G_swing 3s linear infinite;
         }
         @keyframes G_swing {
@@ -560,9 +585,9 @@
 
         .G1L {
           width: 160px;
-          position: relative;
-          right: 100px;
-          top: 20px;
+          position: absolute;
+         left: 260px;
+          bottom: -30px;
           transform-origin: top;
           animation: L_swing 3s linear infinite;
         }
@@ -590,8 +615,8 @@
         }
 
         .ghostTalk {
-          position: relative;
-          bottom: 280px;
+          position: absolute;
+          bottom: 200px;
           left: 300px;
           animation: GT_swing 3s linear infinite;
 
@@ -626,13 +651,14 @@
       }
 
       .newMyTour {
-        display: block;
-        // width: 200px;
+        position: absolute;
+        top: 150px;
+        right: 0px;
+        width: 300px;
 
         padding: 10px 40px;
         
         text-align: center;
-        float: right;
 
         font-size: 1.2rem;
 
@@ -656,19 +682,15 @@
   }
 
   #tabPage2 {
-    position: absolute;
     width: 100%;
-    top: 0px;
-    left: 0%;
-    // opacity: 0;
-    // display: none;
+
     // border: 1px solid red;
-    height: 1000px;
 
     .writeBtnWrap {
-      //   border: 1px solid red;
+        // border: 1px solid red;
       width: 90%;
       padding: 25px 10px;
+      margin-bottom: 30px;
 
       .btn-outline {
         float: right;
@@ -694,10 +716,11 @@
     }
 
     .msgZone {
-      margin-top: 30px;
+      margin: 0 auto;
 
       .spotMsg {
         width: 90%;
+        
         //   height: 150px;
         background: white;
         border-radius: 20px 200px 200px 20px;
