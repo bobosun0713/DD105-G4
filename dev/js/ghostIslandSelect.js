@@ -7,6 +7,11 @@ let MapNorth = document.getElementById('twMap01');
 let MapMid = document.getElementById('twMap02');
 let MapSouth = document.getElementById('twMap03');
 
+let windowWidth = window.innerWidth;
+let cardContainWidth = document.querySelector('.cardContain');
+let spotCard = document.querySelectorAll('.spotCard');
+console.log(spotCard.length);
+
 function doFirst() {
     MapNorth.style.opacity = 1;
     MapMid.style.opacity = 1;
@@ -16,8 +21,18 @@ function doFirst() {
     northAreaBtn.onclick = northAreaShow;
     midAreaBtn.onclick = midAreaShow;
     southAreaBtn.onclick = southAreaShow;
+
+    //抓取是否是rwd尺寸    
+    if( windowWidth <= 768 ){
+        let spotCardWidth = spotCard[0].clientWidth;
+        let spotCardNum = spotCard.length;
+        cardContainWidth.style.minWidth = (spotCardWidth + 30) * spotCardNum + "px";
+        console.log(cardContainWidth.style.minWidth);
+    }
 }
 
+
+//地圖地點定位
 function allAreaShow() {
     if (allAreaBtn.checked == true) {
 

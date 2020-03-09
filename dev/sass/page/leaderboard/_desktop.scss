@@ -2,28 +2,54 @@
   background-image: url(../img/leaderboard/Background-image.png);
   width: 1200px;
   width: 100%;
+  background-repeat: no-repeat;
   color: #cbcbcb;
   font-size: 1.2rem;
   font-weight: bold;
-  border-bottom:  #cbcbcb;
-
+  a{
+    color: rgb(199, 198, 196);
+  }        
+  a:hover {
+    color: rgb(110, 1, 1);
+  }
+//設定正在被點選的連結樣式
+a:active {
+  color: rgb(73, 57, 57);
+}
     // 投給你內心 
    #vote{
       display: flex;
-      justify-content: space-around;
-      max-height: 300px;
-      margin-bottom:110px;
+      justify-content: space-between;
+      max-height: 400px;
+      margin-bottom:-0px;
       margin-top: 150px;
           .vote-img{
-            display: inline-block;
-          
+            margin: -80px;
+            margin-left: 190px;
+            width: 300px;
+            max-height: 300px;
+            margin-top: 10px;
+            animation: vote-img 2.5s infinite;
+            animation-timing-function: ease-out ;
+
           }
+
+          @keyframes vote-img {
+          0% {
+            transform: translate3d(0, 0, 0) rotate(0deg);          }
+          50% {
+            transform: translate3d(0, 0, 0) rotate(-10deg);          }
+          100% {
+            transform: translate3d(0, 0, 0) rotate(0deg);
+          }
+        }
           .vote-text{
-            margin-top: 110px;
+            font-family: $googlefont;
+            margin-top: 140px;
             width: 400px;
-            margin-bottom: 0px;
+            margin-bottom: -72px;
             display: inline-block;
-            border-bottom: 5px solid ;
+            border-bottom: 1px solid ;
             white-space: nowrap;
             font-size: 2.4rem;
           }
@@ -38,26 +64,33 @@
   display: flex;
   justify-content: center;  
   font-size: 1rem;
-  height: 385px;
   background-repeat: no-repeat;
   margin-bottom: 100px;
   margin-top: 120px;
+  height: 400px;
+
         // 景點圖片 
         .Haunted-house-i{
-          width: 22%;
+          width: 21.5%;
           border-radius: 100%;
           display: flex;
           justify-content: flex-start ;
           filter:contrast(140%); //对比度滤镜，使图片色彩对比度更明显
          }
+         .Haunted-house-i:hover{//滑鼠滑過去圖片放大
+          width: 450px;
+          height:450px;
+          margin-top: -25px;
+         }
+
         .Strip-background{
           background-image: url(../img/leaderboard/ghost-4.png);//幽靈長條圖
           background-repeat: no-repeat;
-          margin-top: 180px;
+          margin-top: 150px;
           margin-left: -65px;
           display: inline-block;
           width: 800px;
-          max-height: 180px;
+          max-height: 200px;
           }
         //h2
         .Haunted-house-t{
@@ -69,23 +102,23 @@
           display: flex;
           justify-content: space-around  ;         
           color:  rgb(179, 177, 177) ;
-          border: rgb(139, 4, 4) ;
           filter:blur(1.5px);
           text-shadow: shadow1, shadow2, shadow3;
-          text-shadow: 1px 1px 0px rgb(228, 216, 216), 9px 8px 0px rgba(235, 173, 173, 0.15);
+          text-shadow: 2px 2px 0px rgb(230, 227, 227)  , 5px 6px 0px rgb(190, 189, 189);
           }
         //p
         .Haunted-house-p{
           width: 500px;
-          height: 50px;
-          line-height: 110px;
-          margin-top: -40px;
+          height: 150px;
+          line-height: 30px;
+          margin-top: 0px;
           display: flex;
           justify-content: flex-end;
-          margin-left: 50px;
+          margin-left: 90px;
           word-spacing:50px;//空白建間隔
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           }
+          
 
   
 }
@@ -97,17 +130,52 @@
   float: right;
   max-height: 800px;
   margin-top: -450px;
+  animation: alternately-i 2s infinite;
+  animation-timing-function: ease-out ;
+
         .alternately-p{
           width: 300px;
           max-height: 50px;
           font-size: 1.5rem;
           font-weight:bold;
+          animation: alternately-p 3.5s infinite;
+          animation-timing-function: ease-in-out ;
+
+        }
+        //來抓交替文字動態
+        @keyframes alternately-p {
+          0% {
+            transform: translateY(10px);
+
           }
+          30% {
+            transform: translateY(0px);
+
+          }
+          100% {
+            transform: translateY(10px);
+          }
+        }
+          
         .alternately-i{
           width: 400px;
           max-height: 400px;
-       
+
+        }
+        //來抓交替圖片動態
+        @keyframes alternately-i {
+          0% {
+            transform: translateY(50px);
+
           }
+          30% {
+            transform: translateY(0px);
+            filter: invert(75%);//負片
+          }
+          100% {
+            transform: translateY(80px);
+          }
+        }
 }
 
 //手機板的幽靈隱藏
@@ -122,6 +190,7 @@
   margin-bottom: 150px;
   margin-top: 200px;
       #leaderboard-form-1{//table-leaderboard-form-1
+        width: 500px;
         padding:30px;
         display: flex;
         justify-content: center;
@@ -136,39 +205,56 @@
                 text-align: center;
                 padding: 8px;
                 }
+
+                td.Form-name :hover {
+                  color: rgb(238, 65, 59);
+                   }
             }
             .Ranking{
                     width: 350px;
                     line-height: 80px;
-                    border-bottom:  1px solid;
+                    border-bottom:  1px solid;       
                     td{
                         padding: 8px;
                         width: 350px;
                         line-height: 50px;
                         text-align: center;
-
                         }
+
+  
                     }
-
-
+                    .Ranking:hover{
+                    background-color: rgba(255, 255, 255, 0.2) ;
+                    
+                    }
         }
 
   }
-
 
 
 // 老鼠
        .mouse{
         float: right;
         margin-top: -450px;
-       }
-       .Vote-btn{//按鈕
-        margin-bottom: 80px;
-        margin-top: -75px;
+        animation: mouse 3s infinite;
+        animation-timing-function: ease-in-out;
       }
-
+      //老鼠動態
+      @keyframes mouse {
+        0% {
+          transform: translateY(0px);
+          
+        }
+        30% {
+          transform: translateY(50px);
+          filter: hue-rotate(100deg);//色相改變
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+        
 }
-
 
 //  -------RWD---------1300px *1680px------------- 
  
@@ -176,36 +262,26 @@
   #leaderboard{
 width: 990px;
 width: 100%;
- //投給你內心 
-   #vote{
-      display: flex;
-      justify-content: space-around;
-      max-height: 300px;
-      margin-bottom:110px;
-          .vote-img{
-            display: inline-block;
-          
-          }
-          .vote-text{
-            margin-top: 110px;
-            width: 400px;
-            margin-bottom: 0px;
-            display: inline-block;
-            border-bottom: 5px solid ;
-            white-space: nowrap;
-          }
+  // 投給你內心 
+ #vote{
+      .vote-img{
+        margin-left: 40px;
       }
-
-
+  }
 //div.Haunted-house 排行TOP前三名 
 .Haunted-house{
   width: 990px;
   width: 100%;
-  max-height:280px;
+  max-height:350px;
         // 景點圖片 
         .Haunted-house-i{
-          width: 20%;
+          width:350px;
           margin-left: 50px;          
+         }
+         .Haunted-house-i:hover{//滑鼠滑過去圖片放大
+          width: 400px;
+          height:400px;
+          margin-top: -25px;
          }
          .Strip-background{//div
           background-image: url(../img/leaderboard/ghost-4.png);//幽靈長條圖
@@ -221,14 +297,14 @@ width: 100%;
           }
         //p
         .Haunted-house-p{
-          margin-top: -50px;
+          margin-top: -45px;
           }
   
 }
 // 來抓交替囉 
 #alternately{
   width: 250px;
-  margin-top: -505px;
+  margin-top: -645px;
         .alternately-p{
           width: 250px;
           max-height:30px;
@@ -249,7 +325,6 @@ width: 100%;
               line-height: 50px;
               td.Form-name{
                 width: 240px;
-                // line-height: 50px;
                 text-align: center;
                 padding: 5px;
             }
@@ -284,13 +359,14 @@ width: 100%;
       font-size: 1.1rem;
 //投給你內心 
 #vote{
+  margin-bottom: -100px;
       .vote-img{
         width: 250px;
-        height: 200px;
+        height: 250px;
+        margin-top:28px;
+        margin-left: 50px;
       }
       .vote-text{
-        margin-top: 50px;
-        width: 350px;
         margin-bottom: 50px;
         font-size: 2.2rem;
       }
@@ -303,11 +379,17 @@ width: 100%;
 .Haunted-house{
   width: 990px;
   width: 100%;
-  max-height:250px;
+  max-height:300px;
         //景點圖片 
         .Haunted-house-i{
-          width: 24%;
+          width: 300px;
           margin-left: 30px;
+         }
+         //滑鼠滑過去圖片放大
+         .Haunted-house-i:hover{
+          width: 350px;
+          height:350px;
+          margin-top: -25px;
          }
         .Strip-background{//div
           margin-top: 60px;
@@ -325,7 +407,7 @@ width: 100%;
           }
         //p
         .Haunted-house-p{
-          margin-left: -45px;
+          margin-left: -8px;
           margin-top: -45px;
           word-spacing:0px;//空白建間隔
           }
@@ -333,9 +415,8 @@ width: 100%;
 }
 // 來抓交替囉 
 #alternately{
-  width: 200px;
-  margin-top:-350px;
-
+  width: 100px;
+  margin-top:0px;
         .alternately-p{
           display: none;
           }

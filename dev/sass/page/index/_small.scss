@@ -14,18 +14,57 @@
     }
 
     .route1 {
+      width: 100px;
       display: none;
     }
   }
 
-  .indexTitleZone1{
-    position: relative;
-    left: -100px;
-    top: 150px;
-  }
+
 
   #indexSection2{
     margin: 150px 0;;
+
+    .indexTitleZone1{
+      left: -150px;
+      
+    }
+
+    .spotInfoZone{
+      // width: 100%;
+      // border: 1px solid red;
+      margin: 0px auto;
+      // margin-left: 20px;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar{
+        height: 10px;
+        background-color: rgba(255,255,255,0);
+      }
+      &::-webkit-scrollbar-track{
+        background-color: rgba(0, 0, 0, .6);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: rgba(255,255,255,.6);
+        border-radius: 10px;
+      }
+
+      #spotInfoWrap{
+        width: 1150px;
+
+      .spotInfo{
+        width: 350px;
+        margin-right: 30px;
+      }
+
+      }
+
+    }
+
+    button{
+      display: none;
+    }
+
   }
 
 
