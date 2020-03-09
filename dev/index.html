@@ -666,29 +666,46 @@
 
                             // 右按鈕
                             $id('right_btn').onclick = function() {
-                                let Width = 385
+                                let Width = 386
                                 card++
                                 card_slider.style.left = -Width * card + 'px'
                                 $id('left_btn').disabled = false
                                 left_btn.style.opacity = 1
 
-                                if (card >= 5) {
-                                    $id('right_btn').disabled = true
-                                    right_btn.style.opacity = 0.3
+                                if (window.innerWidth < 768) {
+                                    if (card >= 8) {
+                                        $id('right_btn').disabled = true
+                                        right_btn.style.opacity = 0.3
+                                        console.log(card)
+                                    }
+                                } else if (window.innerWidth >= 768) {
+                                    if (card >= 7) {
+                                        $id('right_btn').disabled = true
+                                        right_btn.style.opacity = 0.3
+                                    }
                                 }
                             }
 
                             // 左按鈕
                             $id('left_btn').onclick = function() {
-                                let Width = 385
+                                let Width = 386
+
                                 card--
                                 card_slider.style.left = -Width * card + 'px'
                                 $id('right_btn').disabled = false
                                 right_btn.style.opacity = 1
 
-                                if (card == 0) {
-                                    $id('left_btn').disabled = true
-                                    left_btn.style.opacity = 0.3
+                                if (window.innerWidth < 768) {
+                                    if (card == 0) {
+                                        $id('left_btn').disabled = true
+                                        left_btn.style.opacity = 0.3
+                                        console.log(card)
+                                    }
+                                } else if (window.innerWidth >= 768) {
+                                    if (card == 0) {
+                                        $id('left_btn').disabled = true
+                                        left_btn.style.opacity = 0.3
+                                    }
                                 }
                             }
                         })
