@@ -21,6 +21,7 @@
       .form-menu {
         display: flex;
         justify-content: center;
+        
         li{
           display: inline-block;
           padding: 0 10px;
@@ -37,16 +38,24 @@
             color: white;
             text-align: center;
             margin-right: 10px;
+            position: relative;
+            left: 20px;
           }
           .active {
             background-color: #7d0021;
           }
+          //步驟title
           .nav-label {
-            left: -45px;
+            left: -32px;
             position: relative;
             top: 35px;
+            width:130px;
+            text-align: center;
+            display: block;
+            // background-color: #7d0021;
           }
         }
+        //橫槓
         li .progressbar::after{
           content: "";
           bottom:18px;
@@ -54,11 +63,16 @@
           transform: translate(18px);
           height: 2px;
           width:90px;   
+          display: block;
+          left: 18px;
+          top:12px;
           position: absolute;
           background-color: white;
         }
+        
       }
     }
+
     .wrapper {
       width: 1080px;
       margin: 0 auto;
@@ -335,17 +349,20 @@
     } 
     .section {
       display: flex;
+      flex-wrap: wrap;
       margin-bottom: 50px;
-      // border: 1px solid blue;
+      border: 1px solid blue;
+      justify-content: space-between;
       .left{
         .temple_img {
           /* border: 1px solid red; */
           border-radius: 5px;
           overflow: hidden;
-          margin-right: 80px;
+          
         }
       }
       .right{
+
         label {
           font-size: 1.2rem;
           line-height: 45px;
@@ -381,6 +398,11 @@
   #tab-4.hide {
     display: none;
   }
+  // #tab-1.hide,
+  // #tab-2.hide,
+  // #tab-4.hide {
+  //   display: none;
+  // }
   .button_block {
     width: 1080px;
     margin: 30px auto;
