@@ -26,41 +26,6 @@
         }
     }
 
-    //================ 討論區
-
-    #section4 {
-        justify-content: center;
-        .title_forum {
-            width: 285px;
-            .title {
-                left: 15px;
-            }
-            .title2 {
-                right: -15px;
-            }
-            img {
-                width: 150px;
-                bottom: -20px;
-            }
-        }
-        .card_channel {
-            .card_warp {
-                width: 3500px;
-            }
-        }
-        .card_path_1 {
-            right: 0;
-            bottom: 260px;
-            width: 150px;
-            height: 150px;
-        }
-        .card_path_2 {
-            right: 0;
-            width: 150px;
-            height: 150px;
-        }
-    }
-
     #section3 {
         .adventure_main {
             width: 80%;
@@ -69,14 +34,47 @@
                 display: flex;
                 justify-content: space-between;
                 // .ghost_btn {
-                //     // .ghost_btn1 {
 
-                //     // }
+                //   .ghost_btn1 {
+
+                //   }
                 // }
             }
+            .card_channel {
+                .card_warp {
+                    width: 3500px;
+                }
+            }
+            .card_path_1 {
+                right: 0;
+                bottom: 260px;
+                width: 150px;
+                height: 150px;
+            }
+            .card_path_2 {
+                right: 0;
+                width: 150px;
+                height: 150px;
+            }
         }
-        .adventure_word {
-            padding: 25px 0 0 0;
+
+        #section3 {
+            .adventure_main {
+                width: 80%;
+                display: block;
+                .adventure_btn {
+                    display: flex;
+                    justify-content: space-between;
+                    // .ghost_btn {
+                    //     // .ghost_btn1 {
+
+                    //     // }
+                    // }
+                }
+            }
+            .adventure_word {
+                padding: 25px 0 0 0;
+            }
         }
     }
 }

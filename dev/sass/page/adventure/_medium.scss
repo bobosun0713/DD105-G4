@@ -29,10 +29,10 @@
             font-size: 40px;
             margin: 0;
           }
-          #add_number {
-          }
-          span {
-          }
+          // #add_number {
+          // }
+          // span {
+          // }
         }
       }
     }
@@ -47,8 +47,8 @@
           display: inline-block;
           background-color: white;
           margin-bottom: 10px;
-          > input {
-          }
+          // > input {
+          // }
         }
         .area {
           width: 40%;
@@ -59,8 +59,8 @@
           .area_filter {
             padding: 0 0 0 10px;
             color: rgb(124, 121, 121);
-            &:hover {
-            }
+            // &:hover {
+            // }
           }
           > i {
             position: absolute;
@@ -86,8 +86,8 @@
         }
         .search {
           width: 120px;
-          &:hover {
-          }
+          // &:hover {
+          // }
         }
       }
     }
@@ -127,9 +127,9 @@
       flex-wrap: wrap;
       justify-content: space-between;
       // border: $frame;
-      .search_list {
-        //搜尋結果如下....
-      }
+      // .search_list {
+      //   //搜尋結果如下....
+      // }
       .item_opacity {
         opacity: 0;
         position: relative;
