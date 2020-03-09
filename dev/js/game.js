@@ -2,6 +2,29 @@
 var startbtn = document.getElementById('startbtn')
 startbtn.onclick = startGame
 document.querySelector('.recommendcardground').style.display = 'none'
+document.querySelector('.test_score_title').style.display = 'none'
+//Mouseover /moustout 開始遊戲 /回到首頁 button
+document.querySelector(".startbtn").onmouseover = mouseoverGhost1;
+document.querySelector(".startbtn").onmouseout = mouseoutGhost1;
+function mouseoverGhost1() {
+    document.querySelector(".hoverghost").style.display = "block";
+    document.querySelector(".hoverghost").style.transition = "all 1.5s linear;";
+
+}
+function mouseoutGhost1() {
+    document.querySelector(".hoverghost").style.display = "none";
+
+}
+//Mouseover /moustout 開始遊戲 /回到首頁 button
+document.querySelector(".gotoindex").onmouseover = mouseoverGhost2;
+document.querySelector(".gotoindex").onmouseout = mouseoutGhost2;
+function mouseoverGhost2() {
+    document.querySelector(".hoverghost2").style.display = "block";
+    document.querySelector(".hoverghost2").style.transition = "all 1.5s linear;";
+}
+function mouseoutGhost2() {
+    document.querySelector(".hoverghost2").style.display = "none";
+}
 
 let shufflequestion, currentquestionIndex
 function startGame() {
@@ -12,7 +35,7 @@ function startGame() {
     document.querySelector('.outercontainer').style.display = 'none'
     document.querySelector('.outercontainer2').style.display = 'none'
 
-    // document.getElementsByClassName[0]("buttons").style.display="none";
+
     currentquestionIndex = 0
     var randomNum = Math.floor(Math.random() * questions.length)
     // var newQuestionArray=[];
@@ -68,8 +91,7 @@ function btnClick(e) {
         //  document.getElementsByClassName("innerimg")[0].src="";
         document.querySelector('.quizimg').style.display = 'none'
 
-        document.getElementById('test_score').innerHTML =
-            "<font size='50px'>膽量指數:</font>" + total + "<font size='50px'>/10</font>"
+        document.getElementById('test_score').innerHTML = total;
         document.querySelector('#resultheading').style.display = 'block'
         document.querySelector('#resultheading').innerHTML = '分析結果'
         document.querySelector('#playagain_btn').style.display = 'inline-block'
@@ -78,6 +100,7 @@ function btnClick(e) {
         document.querySelector('.recommendtitle').innerHTML = '為您推薦';
         document.querySelector('.recommendcardground').style.display = 'flex'
         document.querySelector('#dolphin_block').style.display = 'block'
+        document.querySelector('.test_score_title').style.display = 'inline-block'
         if (total < 3) {
             document.querySelector('#resulttitle').innerHTML = types[0].resulttitle
             document.querySelector('#resultinnertext').innerHTML = types[0].resultinnertext
@@ -100,7 +123,7 @@ var questions = [
     {
         title: '1.你喜歡看恐怖片麼？',
         choice: ['看得我神經衰弱，不喜歡', '超級喜歡', '一個人肯定不能承受的啦,需要個人一起看'],
-        quizimg: '../img/game/quiz1_img.jpg',
+        quizimg: './img/game/quiz1_img.jpg',
     },
 
     {
@@ -110,13 +133,13 @@ var questions = [
             '拚命暗示自己：別怕別怕，她不會從電視機裏爬出來的',
             '嚇到跑出門外！',
         ],
-        quizimg: '../img/game/quiz2_img.jpg',
+        quizimg: './img/game/quiz2_img.jpg',
     },
 
     {
         title: '3.晚上獨自在家，下列哪個東西令你感到最可怕',
         choice: ['鏡子出現人影', '電燈閃爍不停', '電視機出現雜訊'],
-        quizimg: '../img/game/quiz3_img.jpg',
+        quizimg: './img/game/quiz3_img.jpg',
     },
 ]
 //why
