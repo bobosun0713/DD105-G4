@@ -1,80 +1,412 @@
 @include respond(small) {
-    //手機都寫在裡面
-    #ghostSpotBG {
-      padding-top: 100px;
-    }
+  #StartGroupSpotBG {
+    padding-top: 100px;
+  }
 
-    #ghostSpotSection1{
-      width: 100%;
-      margin-top: 0px;
+  #StartGroup_Section1 {
+    width: 100%;
+    .spotIntro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .picZone {
+        display: flex;
+        width: 100%;
+        .bigPic {
+          width: 75%;
+          // width: 360px;
+          height: 360px;
 
-      .spotIntro{
-        flex-wrap: wrap;
-
-        .picZone{
-          width: 90%;
-          display: inline-flex;
-          justify-content: space-around;
-          flex-wrap: nowrap;
-          margin-bottom: 30px;
-
-          .bigPic{
-            width: 75%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .photobook {
+          width: 20%;
+          h2 {
+            display: none;
           }
 
-          .photobook{
-            width: 20%;
-            
-
-            h2{
-              display: none;
+          .smallPicZone {
+            flex-wrap: wrap;
+            img {
+              width: 100%;
+              margin: 0px 0px 5px 10px;
             }
+          }
+        }
+      }
+      .txtZone {
+        width: 100%;
+        margin-top: 10px;
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    .progress {
+    }
+  }
 
-            .smallPicZone{
-              flex-wrap: wrap;
-
-              img{
-                margin-top: 5px;
+  #StartGroup_Section2 {
+    width: 100%;
+    margin: 0 auto;
+    .allTabPage {
+      #tabPage1 {
+        #officalTour {
+          // width:1200px;
+          // margin-left: -150px;
+          .tourSpot {
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            .tourImg {
+              width: 100%;
+              img {
                 width: 100%;
               }
             }
+            .tourSpotTxt {
+              width: 100%;
+              text-align: center;
+              .tourSpotInfo {
+                flex-wrap: nowrap;
+                // justify-content: start;
+                margin-top: 0;
+                .btn-outline2 {
+                  width: 100px;
+                  border-radius: 20px;
+                  margin-bottom: 10px;
+                }
+              }
+            }
           }
-        }
-
-        .txtZone{
-          width: 90%;
-
-          .spiderweb{
+          .tourStatus {
             display: none;
           }
         }
-      }
-    }
-
-    #ghostSpotSection3{
-
-      #tabPage1{
-        #officalTour{
-          .tourSpot{
-            .btn-outline2{
-            display: none;
-          }
-          }
-          
-        }
-        .myTourGuide{
-          padding: 0px;
+        .myTourGuide {
           .G1 {
-            pointer-events: none;
+            // width: 300px;
+            margin: 0px 0px 0px 50px;
+            //   border: 1px solid greenyellow;
+            position: absolute;
+            top: -200px;
             left: -180px;
-            top: -50px;
+            .G1img {
+              transform: scaleX(-1);
+              width: 350px;
+              animation: G_swing 3s linear infinite;
+            }
+
+            .G1L {
+              width: 160px;
+              position: relative;
+              right: 100px;
+              top: 20px;
+              transform-origin: top;
+              animation: L_swing 3s linear infinite;
+            }
+
+            .ghostTalk {
+              position: relative;
+              bottom: 280px;
+              left: 300px;
+              animation: GT_swing 3s linear infinite;
+
+              p {
+                font-size: 1rem;
+              }
+
+              .line {
+                width: 100px;
+                border: 1px solid white;
+
+                &:first-child {
+                  transform: rotate(-10deg) translateY(-10px);
+                }
+
+                &:last-child {
+                  transform: rotate(10deg) translateY(10px);
+                }
+              }
+            }
           }
-  
-          .newMyTour{
-            margin: 100px 20px;
+
+          .newMyTour {
+            display: block;
+            // width: 200px;
+
+            padding: 10px 40px;
+            color: white;
+            text-align: center;
+            float: right;
+            font-size: 1.2rem;
+
+            margin: 0px 20px 50px 0px;
+
+            &:hover {
+              background: #700000;
+              border: #700000;
+              color: white;
+            }
           }
         }
       }
     }
-  
   }
+
+  #StartGroup_Section3 {
+    .titleZone {
+      border-bottom: 1px solid #cbcbcb;
+      width: 350px;
+      text-align: right;
+      margin-top: 300px;
+      position: relative;
+
+      h1 {
+        font-size: 2rem;
+        position: relative;
+        right: -20px;
+        color: #cbcbcb;
+      }
+
+      img {
+        width: 100%;
+        position: absolute;
+        bottom: -220px;
+        right: 0px;
+      }
+    }
+    .G2 {
+      bottom: -150px;
+    }
+    .ghostTalk {
+      bottom: -110px;
+    }
+  }
+  // #ghostSpotSection2 {
+  //   .cardContain {
+  //     width: 90%;
+  //     overflow-x: scroll;
+
+  //     button {
+  //       display: none;
+  //     }
+
+  //     &::-webkit-scrollbar {
+  //       height: 10px;
+  //       background-color: rgba(255, 255, 255, 0);
+  //     }
+  //     &::-webkit-scrollbar-track {
+  //       background-color: rgba(0, 0, 0, 0.6);
+  //       border-radius: 10px;
+  //     }
+  //     &::-webkit-scrollbar-thumb {
+  //       background-color: rgba(255, 255, 255, 0.6);
+  //       border-radius: 10px;
+  //     }
+  //   }
+  // }
+
+  // #ghostSpotSection3 {
+  //   width: 100%;
+  //   padding: 50px 0px;
+  //   height: 1100px;
+
+  //   nav {
+  //     padding: 0px 50px;
+  //   }
+
+  //   .allTabPage {
+  //     width: 100%;
+  //   }
+  //   #tabPage1 {
+  //     #officalTour {
+  //       background-size: cover;
+  //       background-position: center;
+  //       height: 700px;
+  //       padding: 0px auto;
+
+  //       .newOffTour{
+  //         margin: 0px 50px 50px 50px;
+  //       }
+
+  //       .tourSpot{
+  //         flex-wrap: wrap;
+  //         // justify-content: start;
+  //         width: 90%;
+  //         margin-bottom: 50px;
+
+  //         .tourImg {
+  //           width: 38%;
+  //         }
+
+  //         .tourSpotTxt{
+  //           width: 60%;
+
+  //         }
+  //       }
+
+  //       .tourStatus {
+  //         display: none;
+  //         width: 15px;
+  //         top: 200px;
+  //         left: 80%;
+  //       }
+  //     }
+
+  //     .myTourGuide{
+  //       .G1 {
+  //         pointer-events: none;
+  //         left: -100px;
+  //         top: -100px;
+  //       }
+
+  //       .newMyTour{
+  //         margin: 100px 0px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  #StartGroup_Section4 {
+    .adventure_main {
+      width: 500px;
+
+      // 這區是左邊按鈕
+      .adventure_btn {
+      display: block;
+        .ghost_btn {
+          margin: 50px;
+          width: 300px;
+          transition: all 0.8s;
+          //讓他變亮
+          &:hover {
+          }
+          //讓他飛起來
+          &:hover .ghost_btn1 > img {
+          }
+          //字變畫還在想
+          // &:hover .ghost_tape > span {
+          // }
+          //這是背景
+          .ghost_btn_img1 {
+          }
+          .ghost_btn1 {
+            > img {
+            }
+          }
+          //這是膠帶
+          .ghost_tape {
+            > span {
+            }
+          }
+        }
+        .ghost_btn2 {
+          //讓他變亮
+          &:hover {
+          }
+          //讓他飛起來
+          &:hover .ghost_btn2 > img {
+          }
+          //字變畫還在想
+          // &:hover .ghost_tape > span {
+          // }
+          //這是背景
+          .ghost_btn_img2 {
+          }
+          //鬼本身
+          .ghost_btn2 {
+            > img {
+            }
+          }
+          //這是膠帶
+          .ghost_tape {
+            > span {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//  //手機都寫在裡面
+//  #ghostSpotBG {
+//   padding-top: 100px;
+// }
+
+// #ghostSpotSection1{
+//   width: 100%;
+//   margin-top: 0px;
+
+//   .spotIntro{
+//     flex-wrap: wrap;
+
+//     .picZone{
+//       width: 90%;
+//       display: inline-flex;
+//       justify-content: space-around;
+//       flex-wrap: nowrap;
+//       margin-bottom: 30px;
+
+//       .bigPic{
+//         width: 75%;
+//       }
+
+//       .photobook{
+//         width: 20%;
+
+//         h2{
+//           display: none;
+//         }
+
+//         .smallPicZone{
+//           flex-wrap: wrap;
+
+//           img{
+//             margin-top: 5px;
+//             width: 100%;
+//           }
+//         }
+//       }
+//     }
+
+//     .txtZone{
+//       width: 90%;
+
+//       .spiderweb{
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// #ghostSpotSection3{
+
+//   #tabPage1{
+//     #officalTour{
+//       .tourSpot{
+//         .btn-outline2{
+//         display: none;
+//       }
+//       }
+
+//     }
+//     .myTourGuide{
+//       padding: 0px;
+//       .G1 {
+//         pointer-events: none;
+//         left: -180px;
+//         top: -50px;
+//       }
+
+//       .newMyTour{
+//         margin: 100px 20px;
+//       }
+//     }
+//   }
+// }
