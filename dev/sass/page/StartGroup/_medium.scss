@@ -1,97 +1,234 @@
 @include respond(medium) {
   //平板都寫在裡面
-  #ghostSpotBG {
+  #StartGroupSpotBG {
     background-size: 200%;
     background-position-x: center;
     background-attachment: fixed;
+    overflow-x: hidden;
   }
 
-  #ghostSpotSection1 {
-    width: 90%;
+  #StartGroup_Section1 {
+    width: 95%;
+    .spotIntro {
+      .picZone {
+        .bigPic {
+          // width: 100%;
+          width: 100%;
+          height: 360px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        // .photobook {
+        //   .smallPicZone {
+        //     img {
+        //     }
+        //   }
+        // }
+      }
+      .txtZone {
+        p {
+        }
+      }
+    }
+    // .progress {
+
+
+    // }
   }
 
-  #ghostSpotSection2 {
-    .cardContain {
-      width: 90%;
-      overflow-x: scroll;
+  
+#StartGroup_Section2{
 
-      button {
-        display: none;
-      }
-
-      &::-webkit-scrollbar {
-        height: 10px;
-        background-color: rgba(255, 255, 255, 0);
-      }
-      &::-webkit-scrollbar-track {
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 10px;
-      }
-      &::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 10px;
-      }
-    }
-  }
-
-  #ghostSpotSection3 {
-    width: 100%;
-    padding: 50px 0px;
-    height: 1100px;
-
-    nav {
-      padding: 0px 50px;
-    }
-
-    .allTabPage {
-      width: 100%;
-    }
+width:100%;
+margin: 0 auto;
+  .allTabPage {
     #tabPage1 {
-      #officalTour {
-        background-size: cover;
-        background-position: center;
-        height: 700px;
-        padding: 0px auto;
-
-        .newOffTour{
-          margin: 0px 50px 50px 50px;
-        }
-
+      #officalTour {  
         .tourSpot{
-          flex-wrap: wrap;
-          // justify-content: start;
-          width: 90%;
-          margin-bottom: 50px;
-
-
+          margin-bottom:40px;
+          width: 80%;
           .tourImg {
-            width: 38%;
+            width: 40%;
+
+            img {
+              width: 100%;
+            }
+          }
+          .tourSpotTxt {
+            .tourSpotInfo {
+              flex-wrap: wrap;
+              justify-content: start;
+              margin-top: 0;
+              .btn-outline2 {
+                border-radius: 20px;
+                margin-bottom: 10px;
+              }
+            }
           }
 
-          .tourSpotTxt{
-            width: 60%;
 
-          }
         }
-
-        .tourStatus {
+        .tourStatus{
           display: none;
-          width: 15px;
-          top: 200px;
-          left: 80%;
         }
       }
+    }
+  }
+}
 
-      .myTourGuide{
-        .G1 {
-          pointer-events: none;
-          left: -100px;
-          top: -100px;
-        }
+  // #ghostSpotSection2 {
+  //   .cardContain {
+  //     width: 90%;
+  //     overflow-x: scroll;
 
-        .newMyTour{
-          margin: 100px 0px;
+  //     button {
+  //       display: none;
+  //     }
+
+  //     &::-webkit-scrollbar {
+  //       height: 10px;
+  //       background-color: rgba(255, 255, 255, 0);
+  //     }
+  //     &::-webkit-scrollbar-track {
+  //       background-color: rgba(0, 0, 0, 0.6);
+  //       border-radius: 10px;
+  //     }
+  //     &::-webkit-scrollbar-thumb {
+  //       background-color: rgba(255, 255, 255, 0.6);
+  //       border-radius: 10px;
+  //     }
+  //   }
+  // }
+
+  // #ghostSpotSection3 {
+  //   width: 100%;
+  //   padding: 50px 0px;
+  //   height: 1100px;
+
+  //   nav {
+  //     padding: 0px 50px;
+  //   }
+
+  //   .allTabPage {
+  //     width: 100%;
+  //   }
+  //   #tabPage1 {
+  //     #officalTour {
+  //       background-size: cover;
+  //       background-position: center;
+  //       height: 700px;
+  //       padding: 0px auto;
+
+  //       .newOffTour{
+  //         margin: 0px 50px 50px 50px;
+  //       }
+
+  //       .tourSpot{
+  //         flex-wrap: wrap;
+  //         // justify-content: start;
+  //         width: 90%;
+  //         margin-bottom: 50px;
+
+  //         .tourImg {
+  //           width: 38%;
+  //         }
+
+  //         .tourSpotTxt{
+  //           width: 60%;
+
+  //         }
+  //       }
+
+  //       .tourStatus {
+  //         display: none;
+  //         width: 15px;
+  //         top: 200px;
+  //         left: 80%;
+  //       }
+  //     }
+
+  //     .myTourGuide{
+  //       .G1 {
+  //         pointer-events: none;
+  //         left: -100px;
+  //         top: -100px;
+  //       }
+
+  //       .newMyTour{
+  //         margin: 100px 0px;
+  //       }
+  //     }
+  //   }
+  // }
+
+
+
+  #StartGroup_Section4 {
+    .adventure_main {
+   width:800px;
+      // 這區是左邊按鈕
+      .adventure_btn {
+     
+        .ghost_btn {
+          margin: 20px;
+          width: 300px;
+          transition: all 0.8s;
+          //讓他變亮
+        
+          //讓他飛起來
+          // &:hover .ghost_btn1 > img {
+       
+          // }
+          //字變畫還在想
+          // &:hover .ghost_tape > span {
+          // }
+          //這是背景
+          // .ghost_btn_img1 {
+       
+          // }
+          // .ghost_btn1 {
+           
+            // > img {
+         
+            // }
+          // }
+          //這是膠帶
+          // .ghost_tape {
+           
+          //   > span {
+            
+          //   }
+          // }
         }
+        // .ghost_btn2 {
+     
+          //讓他變亮
+          // &:hover {
+         
+          // }
+          //讓他飛起來
+        
+          //字變畫還在想
+          // &:hover .ghost_tape > span {
+          // }
+          //這是背景
+          // .ghost_btn_img2 {
+          // }
+          //鬼本身
+          // .ghost_btn2 {
+          //   > img {
+          //   }
+          // }
+          //這是膠帶
+          // .ghost_tape {
+            // > span {
+            // }
+          // }
+        // }
       }
     }
   }

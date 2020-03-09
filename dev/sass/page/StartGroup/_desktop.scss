@@ -1,4 +1,6 @@
-#ghostSpotBG {
+
+
+#StartGroupSpotBG {
   //border: 1px solid blue;
   background-image: url("../img/spot/BG/spotBG.png");
   background-size: 100%;
@@ -26,7 +28,6 @@
     box-sizing: border-box;
     position: relative;
 
-    
     .picZone {
       width: 40%;
       // border: 1px solid green;
@@ -85,7 +86,6 @@
     }
 
     .txtZone {
-      // border: 1px solid green;
       width: 55%;
       position: relative;
 
@@ -185,6 +185,7 @@
     position: relative;
     border-radius: 10px;
     overflow: visible;
+    margin-top: 50px;
     margin-bottom: 50px;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
     background-color: rgb(201, 201, 201);
@@ -234,12 +235,22 @@
       height: 4px;
       animation: line2 5s infinite;
       @keyframes line2 {
-        0% { width: 0; }
-        25% { width: 20%; }
-        50% { width: 40%; }
-        75% { width: 60%; }
-        100% { width: 80%; }
-    }
+        0% {
+          width: 0;
+        }
+        25% {
+          width: 20%;
+        }
+        50% {
+          width: 40%;
+        }
+        75% {
+          width: 60%;
+        }
+        100% {
+          width: 80%;
+        }
+      }
       &::before {
         content: "";
         width: 15px;
@@ -292,8 +303,453 @@
 }
 
 #StartGroup_Section2 {
-  // border: 1px solid red;
-  padding: 50px 0;
+  // border: 1px solid darkcyan;
+  width: 1000px;
+  margin: 10px auto;
+  padding: 50px;
+  height: 1200px;
+
+  // .allTabPage {
+  //   position: relative;
+  // }
+
+  nav {
+    display: inline-flex;
+
+    .tablink {
+      font-size: 1.2rem;
+      color: #cbcbcb;
+      padding: 5px 0;
+      margin-right: 20px;
+      cursor: pointer;
+
+      // &:hover {
+      //   border-bottom: 1px solid;
+      //   color: #cbcbcb;
+      // }
+    }
+
+    // .selected {
+    //   border-bottom: 1px solid;
+    //   color: #cbcbcb;
+    // }
+  }
+
+  .allTabPage {
+    position: relative;
+    // overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    #tabPage1 {
+      width: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0%;
+   
+      // left: 0px;
+      // border: 1px solid yellowgreen;
+
+
+      //這裡重要，background-size: 100% 100%;讓背景隨著內容物跑出來
+      //然後給他padding下面鬼
+      #officalTour {  
+        // border: 1px solid yellowgreen;
+        // height:800px;
+        margin: auto;
+        padding: 100px 0px 150px 0px;
+        // border: 1px solid darkcyan;
+        background-image: url("../img/spot/shortPaper.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
+        color: #3b3b3b;
+        text-align: center;
+        vertical-align: middle;
+        .tourSpot {
+          width: 80%;
+          margin-bottom: 80px;
+          // border: 1px solid darkcyan;
+          display: inline-flex;
+          justify-content: space-between;
+
+          .tourImg {
+            min-width: 250px;
+            width: 35%;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .tourSpotTxt {
+            text-align: left;
+            width: 55%;
+            // border: 1px solid red;
+
+            .spotTitle {
+              font-size: 1.2rem;
+              color: #700000;
+            }
+
+            p {
+              margin-left: 10px;
+            }
+
+            .tourSpotInfo {
+              margin-top: 20px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .btn-outline2 {
+                margin-right: 5px;
+                position: relative;
+
+                &:hover {
+                  .moreInfo {
+                    display: block;
+                    z-index: 10;
+                  }
+
+                  .triangle {
+                    display: block;
+                  }
+                }
+
+                .moreInfo {
+                  display: none;
+                  width: 200%;
+                  padding: 5px 10px;
+                  background: #8c8a8a;
+                  border-radius: 5px;
+                  font-size: 0.7rem;
+                  position: absolute;
+                  bottom: -40px;
+                  left: 0px;
+                  color: white;
+                  text-align: center;
+                  z-index: 3;
+                }
+
+                .triangle {
+                  display: none;
+                  width: 10px;
+                  height: 10px;
+                  border-color: transparent transparent #8c8a8a transparent;
+                  border-style: solid solid solid solid;
+                  border-width: 10px;
+                  position: absolute;
+                  bottom: -14px;
+                }
+              }
+            }
+          }
+        }
+
+        .tourStatus {
+          // border: 1px solid red;
+          position: absolute;
+          top: 200px;
+          left: 370px;
+
+          ul {
+            li {
+              margin-bottom: 240px;
+            }
+
+            .statusCircle {
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: #8c8a8a;
+
+              .circle {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 1px solid #8c8a8a;
+                position: relative;
+                top: -4px;
+                right: 3.5px;
+              }
+
+              .line {
+                width: 1px;
+                height: 235px;
+                border: 2px dashed #8c8a8a;
+                position: relative;
+                top: -20px;
+                right: -9px;
+              }
+
+              .selected2 {
+                border: 1px solid #700000;
+              }
+            }
+
+            .selected {
+              background: #700000;
+            }
+          }
+        }
+      }
+
+      .myTourGuide {
+        // border: 1px solid goldenrod;
+        height: 200px;
+        top:50px;
+        position: relative;
+        // text-align: right;
+
+        .G1 {
+          // width: 300px;
+          margin: 0px 0px 0px 50px;
+
+          //   border: 1px solid greenyellow;
+          position: absolute;
+          top: -200px;
+
+          .G1img {
+            transform: scaleX(-1);
+            width: 350px;
+            animation: G_swing 3s linear infinite;
+          }
+          @keyframes G_swing {
+            0% {
+              transform: scaleX(-1) translateY(5px);
+            }
+            50% {
+              transform: scaleX(-1) translateY(0px);
+            }
+            100% {
+              transform: scaleX(-1) translateY(5px);
+            }
+          }
+
+          .G1L {
+            width: 160px;
+            position: relative;
+            right: 100px;
+            top: 20px;
+            transform-origin: top;
+            animation: L_swing 3s linear infinite;
+          }
+          @keyframes L_swing {
+            0% {
+              transform: rotate(0deg);
+              filter: brightness(1);
+            }
+            25% {
+              transform: rotate(-12deg);
+              filter: brightness(0.8);
+            }
+            50% {
+              transform: rotate(0deg);
+              filter: brightness(1);
+            }
+            75% {
+              transform: rotate(15deg);
+              filter: brightness(0.6);
+            }
+            100% {
+              transform: rotate(0deg);
+              filter: brightness(1);
+            }
+          }
+
+          .ghostTalk {
+            position: relative;
+            bottom: 280px;
+            left: 300px;
+            animation: GT_swing 3s linear infinite;
+
+            p {
+              font-size: 1rem;
+            }
+
+            .line {
+              width: 100px;
+              border: 1px solid white;
+
+              &:first-child {
+                transform: rotate(-10deg) translateY(-10px);
+              }
+
+              &:last-child {
+                transform: rotate(10deg) translateY(10px);
+              }
+            }
+          }
+          @keyframes GT_swing {
+            0% {
+              transform: translateY(5px);
+            }
+            50% {
+              transform: translateY(0px);
+            }
+            100% {
+              transform: translateY(5px);
+            }
+          }
+        }
+
+        .newMyTour {
+          display: block;
+          // width: 200px;
+
+          padding: 10px 40px;
+          color: white;
+          text-align: center;
+          float: right;
+
+          font-size: 1.2rem;
+
+          margin: 0px 80px 50px 0px;
+
+          &:hover {
+            background: #700000;
+            border: #700000;
+            color: white;
+          }
+        }
+      }
+    }
+
+    #tabPage2 {
+      position: absolute;
+      width: 100%;
+      top: 0px;
+      left: 0%;
+      // opacity: 0;
+      // display: none;
+      // border: 1px solid red;
+      height: 1000px;
+
+      .writeBtnWrap {
+        //   border: 1px solid red;
+        width: 90%;
+        padding: 25px 10px;
+
+        .btn-outline {
+          float: right;
+          padding: 10px 20px;
+          display: inline-flex;
+
+          &:before {
+            content: url("../img/icon/writeMsg.svg");
+            width: 20px;
+          }
+
+          &:hover {
+            &:before {
+              content: url("../img/icon/writeMsg_gray.svg");
+            }
+          }
+          &:active {
+            &:before {
+              content: url("../img/icon/writeMsg.svg");
+            }
+          }
+        }
+      }
+
+      .msgZone {
+        margin-top: 30px;
+
+        .spotMsg {
+          width: 90%;
+          //   height: 150px;
+          background: white;
+          border-radius: 20px 200px 200px 20px;
+          padding: 10px 20px;
+          margin-bottom: 20px;
+
+          display: inline-flex;
+          justify-content: space-between;
+
+          .msgWrap {
+            display: inline-flex;
+            justify-content: start;
+
+            .headIcon {
+              width: 40px;
+              margin-right: 20px;
+              // border: 1px solid red;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .txtZone {
+              width: 80%;
+              // border: 1px solid red;
+              color: #3b3b3b;
+
+              .msgInfo {
+                width: 100%;
+                display: inline-flex;
+                justify-content: start;
+
+                p {
+                  margin: 0px;
+                  font-size: 0.7rem;
+                  color: #8c8a8a;
+                  margin-right: 15px;
+                }
+              }
+
+              .msgContent {
+                width: 100%;
+                //   border: 1px solid greenyellow;
+
+                p {
+                  margin: 10px 0px 20px 0px;
+                }
+              }
+
+              .reportZone {
+                // border:  1px solid green;
+                display: inline-flex;
+                justify-content: end;
+                float: right;
+                cursor: pointer;
+
+                img {
+                  width: 12px;
+                  margin-right: 5px;
+                }
+
+                p {
+                  margin: 0;
+                  font-size: 0.7rem;
+                  color: #8c8a8a;
+                }
+              }
+            }
+          }
+
+          .ghostFace {
+            //   border: 1px solid green;
+            width: 60px;
+            margin: 5px;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .pageWrap {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+#StartGroup_Section3 {
   margin-bottom: 80px;
   position: relative;
   //   height: 500px;
@@ -423,468 +879,127 @@
   }
 }
 
-#StartGroup_Section3 {
-  // border: 1px solid darkcyan;
-  width: 1000px;
-  margin: 10px auto;
-  padding: 50px;
-  height: 1200px;
-
-  .allTabPage {
-    position: relative;
-  }
-
-  nav {
-    display: inline-flex;
-
-    .tablink {
-      font-size: 1.2rem;
-      color: #cbcbcb;
-      padding: 5px 0;
-      margin-right: 20px;
-      cursor: pointer;
-
-      &:hover {
-        border-bottom: 1px solid;
-        color: #cbcbcb;
-      }
-    }
-
-    .selected {
-      border-bottom: 1px solid;
-      color: #cbcbcb;
-    }
-  }
-
-  .allTabPage {
-    overflow: hidden;
-    // border: 1px solid darkcyan;
-    width: 100%;
-    height: 100%;
-  }
-
-  #tabPage1 {
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0%;
-    // left: 0px;
-    // border: 1px solid yellowgreen;
-
-    #officalTour {
-      // border: 1px solid yellowgreen;
-      height: 800px;
-      margin: auto;
-      padding: 50px 0px 0px 0px;
-      // border: 1px solid darkcyan;
-      background-image: url("../img/spot/shortPaper.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-
-      position: relative;
-
-      color: #3b3b3b;
-      text-align: center;
-      vertical-align: middle;
-
-      .newOffTour {
-        display: block;
-        width: 200px;
-        border: 2px solid #700000;
-        color: #700000;
-
-        font-size: 1.2rem;
-
-        float: right;
-        margin: 0px 80px 50px 0px;
-        cursor: pointer;
-        transition: all 0.5s linear;
-
+#StartGroup_Section4 {
+  .adventure_main {
+    padding: 150px 0;
+    display: flex;
+    justify-content: center;
+    // border: 1px solid rgb(97, 115, 97);
+    width: 1200px;
+    margin: 0 auto;
+    // 這區是左邊按鈕
+    .adventure_btn {
+      display: flex;
+      .ghost_btn {
+        margin: 50px;
+        position: relative;
+        width: 360px;
+        height: 250px;
+        filter: grayscale(0.8);
+        transition: all 0.8s;
+        //讓他變亮
         &:hover {
-          background: #700000;
-          color: white;
+          filter: grayscale(0);
         }
-      }
-
-      .tourSpot {
-        width: 80%;
-        margin-bottom: 80px;
-        // border: 1px solid darkcyan;
-
-        display: inline-flex;
-        justify-content: space-between;
-
-        .tourImg {
-          width: 35%;
-
-          img {
-            width: 100%;
+        //讓他飛起來
+        &:hover .ghost_btn1 > img {
+          transform: translateY(-40px);
+        }
+        //字變畫還在想
+        // &:hover .ghost_tape > span {
+        // }
+        //這是背景
+        .ghost_btn_img1 {
+          position: absolute;
+          top: 0;
+        }
+        .ghost_btn1 {
+          position: absolute;
+          top: -100px;
+          height: 355px;
+          overflow: hidden;
+          padding-top: 50px;
+          > img {
+            transition: transform 0.8s;
           }
         }
-
-        .tourSpotTxt {
-          text-align: left;
-          width: 55%;
-          // border: 1px solid red;
-
-          .spotTitle {
-            font-size: 1.2rem;
-            color: #700000;
-          }
-
-          p {
-            margin-left: 10px;
-          }
-
-          .tourSpotInfo {
-            margin-top: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .btn-outline2 {
-              margin-right: 5px;
-              position: relative;
-
-              &:hover {
-                .moreInfo {
-                  display: block;
-                  z-index: 10;
-                }
-
-                .triangle {
-                  display: block;
-                }
-              }
-
-              .moreInfo {
-                display: none;
-                width: 200%;
-                padding: 5px 10px;
-                background: #8c8a8a;
-                border-radius: 5px;
-                font-size: 0.7rem;
-                position: absolute;
-                bottom: -40px;
-                left: 0px;
-                color: white;
-                text-align: center;
-                z-index: 3;
-              }
-
-              .triangle {
-                display: none;
-                width: 10px;
-                height: 10px;
-                border-color: transparent transparent #8c8a8a transparent;
-                border-style: solid solid solid solid;
-                border-width: 10px;
-                position: absolute;
-                bottom: -14px;
-              }
-            }
+        //這是膠帶
+        .ghost_tape {
+          position: absolute;
+          bottom: -50px;
+          right: -50px;
+          > span {
+            display: block;
+            position: absolute;
+            z-index: 5;
+            font-size: 35px;
+            left: 50%;
+            top: 50%;
+            margin-left: -70px;
+            margin-top: -30px;
+            transform: rotate(-3deg);
+            font-weight: 700;
+            color: #2c0c0a;
           }
         }
       }
-
-      .tourStatus {
-        // border: 1px solid red;
-        position: absolute;
-        top: 200px;
-        left: 370px;
-
-        ul {
-          li {
-            margin-bottom: 240px;
-          }
-
-          .statusCircle {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #8c8a8a;
-
-            .circle {
-              width: 28px;
-              height: 28px;
-              border-radius: 50%;
-              border: 1px solid #8c8a8a;
-              position: relative;
-              top: -4px;
-              right: 3.5px;
-            }
-
-            .line {
-              width: 1px;
-              height: 235px;
-              border: 2px dashed #8c8a8a;
-              position: relative;
-              top: -20px;
-              right: -9px;
-            }
-
-            .selected2 {
-              border: 1px solid #700000;
-            }
-          }
-
-          .selected {
-            background: #700000;
-          }
-        }
-      }
-    }
-
-    .myTourGuide {
-      // border: 1px solid goldenrod;
-      height: 200px;
-      padding-right: 100px;
-      position: relative;
-      // text-align: right;
-
-      .G1 {
-        // width: 300px;
-        margin: 0px 0px 0px 50px;
-
-        //   border: 1px solid greenyellow;
-        position: absolute;
-        top: -200px;
-
-        .G1img {
-          transform: scaleX(-1);
-          width: 350px;
-          animation: G_swing 3s linear infinite;
-        }
-        @keyframes G_swing {
-          0% {
-            transform: scaleX(-1) translateY(5px);
-          }
-          50% {
-            transform: scaleX(-1) translateY(0px);
-          }
-          100% {
-            transform: scaleX(-1) translateY(5px);
-          }
-        }
-
-        .G1L {
-          width: 160px;
-          position: relative;
-          right: 100px;
-          top: 20px;
-          transform-origin: top;
-          animation: L_swing 3s linear infinite;
-        }
-        @keyframes L_swing {
-          0% {
-            transform: rotate(0deg);
-            filter: brightness(1);
-          }
-          25% {
-            transform: rotate(-12deg);
-            filter: brightness(0.8);
-          }
-          50% {
-            transform: rotate(0deg);
-            filter: brightness(1);
-          }
-          75% {
-            transform: rotate(15deg);
-            filter: brightness(0.6);
-          }
-          100% {
-            transform: rotate(0deg);
-            filter: brightness(1);
-          }
-        }
-
-        .ghostTalk {
-          position: relative;
-          bottom: 280px;
-          left: 300px;
-          animation: GT_swing 3s linear infinite;
-
-          p {
-            font-size: 1rem;
-          }
-
-          .line {
-            width: 100px;
-            border: 1px solid white;
-
-            &:first-child {
-              transform: rotate(-10deg) translateY(-10px);
-            }
-
-            &:last-child {
-              transform: rotate(10deg) translateY(10px);
-            }
-          }
-        }
-        @keyframes GT_swing {
-          0% {
-            transform: translateY(5px);
-          }
-          50% {
-            transform: translateY(0px);
-          }
-          100% {
-            transform: translateY(5px);
-          }
-        }
-      }
-
-      .newMyTour {
-        display: block;
-        // width: 200px;
-
-        padding: 10px 40px;
-        color: white;
-        text-align: center;
-        float: right;
-
-        font-size: 1.2rem;
-
-        margin: 0px 80px 50px 0px;
-
+      .ghost_btn2 {
+        // margin: 50px;
+        position: relative;
+        width: 360px;
+        height: 250px;
+        filter: grayscale(0.8);
+        transition: all 0.8s;
+        //讓他變亮
         &:hover {
-          background: #700000;
-          border: #700000;
-          color: white;
+          filter: grayscale(0);
         }
-      }
-    }
-  }
-
-  #tabPage2 {
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    left: 0%;
-    // opacity: 0;
-    // display: none;
-    // border: 1px solid red;
-    height: 1000px;
-
-    .writeBtnWrap {
-      //   border: 1px solid red;
-      width: 90%;
-      padding: 25px 10px;
-
-      .btn-outline {
-        float: right;
-        padding: 10px 20px;
-        display: inline-flex;
-
-        &:before {
-          content: url("../img/icon/writeMsg.svg");
-          width: 20px;
+        //讓他飛起來
+        &:hover .ghost_btn2 > img {
+          // transform: translateX(40px);
+          left: -170px;
         }
-
-        &:hover {
-          &:before {
-            content: url("../img/icon/writeMsg_gray.svg");
+        //字變畫還在想
+        // &:hover .ghost_tape > span {
+        // }
+        //這是背景
+        .ghost_btn_img2 {
+          position: absolute;
+          top: 0;
+        }
+        //鬼本身
+        .ghost_btn2 {
+          position: absolute;
+          top: 0px;
+          width: 370px;
+          height: 355px;
+          overflow: hidden;
+          > img {
+            position: absolute;
+            left: -350px;
+            transition: all 1.1s ease;
           }
         }
-        &:active {
-          &:before {
-            content: url("../img/icon/writeMsg.svg");
-          }
-        }
-      }
-    }
-
-    .msgZone {
-      margin-top: 30px;
-
-      .spotMsg {
-        width: 90%;
-        //   height: 150px;
-        background: white;
-        border-radius: 20px 200px 200px 20px;
-        padding: 10px 20px;
-        margin-bottom: 20px;
-
-        display: inline-flex;
-        justify-content: space-between;
-
-        .msgWrap {
-          display: inline-flex;
-          justify-content: start;
-
-          .headIcon {
-            width: 40px;
-            margin-right: 20px;
-            // border: 1px solid red;
-
-            img {
-              width: 100%;
-            }
-          }
-
-          .txtZone {
-            width: 80%;
-            // border: 1px solid red;
-            color: #3b3b3b;
-
-            .msgInfo {
-              width: 100%;
-              display: inline-flex;
-              justify-content: start;
-
-              p {
-                margin: 0px;
-                font-size: 0.7rem;
-                color: #8c8a8a;
-                margin-right: 15px;
-              }
-            }
-
-            .msgContent {
-              width: 100%;
-              //   border: 1px solid greenyellow;
-
-              p {
-                margin: 10px 0px 20px 0px;
-              }
-            }
-
-            .reportZone {
-              // border:  1px solid green;
-              display: inline-flex;
-              justify-content: end;
-              float: right;
-              cursor: pointer;
-
-              img {
-                width: 12px;
-                margin-right: 5px;
-              }
-
-              p {
-                margin: 0;
-                font-size: 0.7rem;
-                color: #8c8a8a;
-              }
-            }
-          }
-        }
-
-        .ghostFace {
-          //   border: 1px solid green;
-          width: 60px;
-          margin: 5px;
-
-          img {
-            width: 100%;
+        //這是膠帶
+        .ghost_tape {
+          position: absolute;
+          bottom: -50px;
+          right: -50px;
+          > span {
+            display: block;
+            position: absolute;
+            z-index: 5;
+            font-size: 35px;
+            left: 50%;
+            top: 50%;
+            margin-left: -70px;
+            margin-top: -30px;
+            transform: rotate(-3deg);
+            font-weight: 700;
+            color: #2c0c0a;
           }
         }
       }
-    }
-
-    .pageWrap {
-      text-align: center;
-      margin-top: 20px;
     }
   }
 }

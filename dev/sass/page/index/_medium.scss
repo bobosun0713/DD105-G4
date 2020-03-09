@@ -60,4 +60,23 @@
             height: 150px;
         }
     }
+
+    #section3 {
+        .adventure_main {
+            width: 80%;
+            display: block;
+            .adventure_btn {
+                display: flex;
+                justify-content: space-between;
+                // .ghost_btn {
+                //     // .ghost_btn1 {
+
+                //     // }
+                // }
+            }
+        }
+        .adventure_word {
+            padding: 25px 0 0 0;
+        }
+    }
 }

@@ -1,0 +1,599 @@
+
+
+
+
+.game{
+  background-image: url("../img/game/game_index_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  // border: 1px solid blue;
+  height:1300px;
+  // overflow: hidden;
+  overflow-y: hidden;
+  
+
+  .grid {
+    width: 430px; 
+    border: 2px solid #cbcbcb; 
+    border-radius: 10px;
+    text-align: center;
+    background-position: -30px;
+    margin: 80px auto 0px auto;
+    position: relative;
+    .allcandlesblock{
+      display: flex;
+      position: absolute;
+      top:50%;
+      right:-70%;
+      z-index: 1;
+      .outercontainer{
+        padding: 0px;
+        width: 500px;
+        height: 500px;
+        position: relative;
+        // border: 1px solid red; 
+        .container1{
+          position: absolute;
+          top: 23%;
+          left: 38%;
+          transform: translate(-50%, -50%);
+          animation-name: flame;
+          animation-duration: 1000ms;
+          animation-delay: 500ms;
+          animation-iteration-count: infinite;
+          transform-origin: center bottom;
+          animation-direction: alternate;
+          animation-timing-function: ease-in;
+          .light {
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 75%;
+            border-top-left-radius: 75%;
+            position: absolute;
+            transform: rotate(-45deg) scale(1.6, 1.6);
+            bottom: 0px;
+          }
+        
+          .red {
+            background: red;
+            height: 100px;
+            width: 100px;
+            box-shadow: 0px 0px 10px 10px red;
+            left: -7px;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 80%;
+            border-top-left-radius: 80%;
+            border-top-right-radius: 40%;
+            opacity: 0.1;
+          }
+          .orangered {
+            background: orangered;
+            height: 70px;
+            width: 70px;
+            box-shadow: 0px 0px 10px 10px orangered;
+            left: 5px;
+        
+            opacity: 0.2;
+          }
+          .orange {
+            background: orange;
+            height: 50px;
+            width: 50px;
+            box-shadow: 0px 0px 9px 6px orange;
+            left: 10px;
+            bottom: -5px;
+            opacity: 0.9;
+          }
+          .yellow {
+            background: yellow;
+            height: 34px;
+            width: 34px;
+            box-shadow: 0px 0px 9px 4px yellow;
+            left: 20px;
+            bottom: -6px;
+          }
+          .white {
+            background: white;
+            height: 30px;
+            width: 30px;
+            box-shadow: 0px 0px 9px 4px white;
+            left: 22px;
+            bottom: -10px;
+          }
+          
+        }
+        .candle{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          border-radius: 1px solid blue;;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .outercontainer2{
+        @extend .outercontainer;
+        // border: 1px solid red;
+        .container2{
+           @extend .container1;
+           .light {
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 75%;
+            border-top-left-radius: 75%;
+            position: absolute;
+            transform: rotate(-45deg) scale(1.6, 1.6);
+            bottom: 0px;
+          }
+           .red {
+            background: red;
+            height: 100px;
+            width: 100px;
+            box-shadow: 0px 0px 10px 10px red;
+            left: -7px;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 80%;
+            border-top-left-radius: 80%;
+            border-top-right-radius: 40%;
+            opacity: 0.1;
+          }
+          .orangered {
+            background: orangered;
+            height: 70px;
+            width: 70px;
+            box-shadow: 0px 0px 10px 10px orangered;
+            left: 5px;
+        
+            opacity: 0.2;
+          }
+          .orange {
+            background: orange;
+            height: 50px;
+            width: 50px;
+            box-shadow: 0px 0px 9px 6px orange;
+            left: 10px;
+            bottom: -5px;
+            opacity: 0.9;
+          }
+          .yellow {
+            background: yellow;
+            height: 34px;
+            width: 34px;
+            box-shadow: 0px 0px 9px 4px yellow;
+            left: 20px;
+            bottom: -6px;
+          }
+          .white {
+            background: white;
+            height: 30px;
+            width: 30px;
+            box-shadow: 0px 0px 9px 4px white;
+            left: 22px;
+            bottom: -10px;
+          }
+        
+        }
+        .candle2{
+          @extend .candle;
+         }
+        
+      }
+    }
+    #dolphin_block{
+      width: 20px;
+      position: relative;
+      animation:move 7s;
+      display: none;
+      .box{
+        margin-left:0px;
+        width:900px;
+        height:400px;
+        // background-color: blueviolet;
+        position: absolute;
+        box-sizing: border-box;
+        background-image: url("../img/game/L_ghost_big_sprite_1.png");
+        opacity: 0.7;
+        background-repeat: no-repeat;
+        //  right:-930px;
+        top:210px;
+        left:80px; 
+        // transform: translateX(-50%);
+        transform:scale(0.3);
+        /* background-size:cover; */
+        /* background-size: 100%; */
+        animation:right-direction 1s steps(7) infinite;
+        }
+
+    }
+
+
+    @keyframes right-direction {
+    0%{background-position:0px}    
+    100% { background-position:-6300px;} 
+    }
+    @keyframes move {
+    0%{ 
+      top:-180px;
+      left:180px;
+      transform:scale(0.1);
+      
+    //  transform: translateX(-1000px);
+      // transform: translateY(-700px); 
+    } 
+    100%{
+      top:0px;
+      left:80px; 
+      /* transform: translateX(1500px);  */
+      // transform: translateY(0px); 
+    } 
+    }
+    #camera1 {
+      transform: perspective(1500px);
+      perspective-origin: -1500px right;
+      .box1 {
+        transform-style: 3d;
+        #L_magicpaper {
+          background: url("../img/game/L_magic_paper.png");
+          background-repeat: no-repeat;
+          position: absolute;
+          top: -300px;
+          left: -100%;
+          z-index: 2;
+          width: 310px;
+          height: 658px;
+          animation: swing1 5s infinite ease-in-out alternate-reverse;
+          animation-delay: 1s;
+        }
+      }
+    }
+    #camera2 {
+      transform: perspective(1500px);
+      perspective-origin: 1500px left;
+      .box2 {
+        transform-style: 3d;
+        #R_magicpaper {
+          background: url("../img/game/R_magic_paper.png");
+          background-repeat: no-repeat;
+          position: absolute;
+          top: -300px;
+          left: 120%;
+          z-index: 2;
+          width: 214px;
+          height: 534px;
+          animation: swing2 5s infinite ease-in-out alternate-reverse;
+        }
+      }
+    }
+    
+    @keyframes swing1 {
+      0% {
+        transform: rotate3d(1, -1, 0, -40deg);
+      }
+      50% {
+        transform: rotate3d(1, -1, 0, -20deg);
+      }
+      100% {
+        transform: rotate3d(1, -1, 0, -40deg);
+      }
+    }
+    @keyframes swing2 {
+      0% {
+        transform: rotate3d(-1, -1, 0, -40deg);
+      }
+      50% {
+        transform: rotate3d(-1, -1, 0, -20deg);
+      }
+      100% {
+        transform: rotate3d(-1, -1, 0, -40deg);
+      }
+    }
+    
+  
+  
+    @keyframes flame {
+      0% {
+        transform: rotate(-1deg);
+      }
+      20% {
+        transform: rotate(3deg);
+      }
+      40% {
+        transform: rotate(-3deg);
+      }
+      60% {
+        transform: rotate(2deg) scale(1.01);
+      }
+      80% {
+        transform: rotate(-2deg) scale(1.02);
+      }
+      100% {
+        transform: rotate(1deg) scale(0.98);
+      }
+    }
+
+    #quiz{
+      padding:23px 20px 20px 20px;
+      /* background-color: violet; */
+      #logoimg{
+        img{
+          width:285px;
+          height:217px;
+        }
+      } 
+      h1{
+        color:white;
+        font-size: 38px;
+        margin-bottom: 18px;
+        }
+      .startbtn{
+      position: relative;
+      z-index: 99;
+      display: inline-block;
+      text-align: center;
+      width: 366px;
+      height: 110px;
+      margin-bottom: 8px;
+      background-image: url("../img/game/button_bg.png");
+      background-repeat: no-repeat;
+      
+        #startbtn{
+        color: white;
+        font-size: 1.6rem;
+        font-weight: bold;
+        /* background-color: red; */
+        background-color: transparent;
+        border: none;
+        font-family: Microsoft JhengHei;
+        line-height: 70px;
+        padding: 0 75px;
+        margin-top: 15px;
+        position: relative;
+        outline:none;
+        &:hover{
+          cursor: pointer;
+        }
+        }
+        .hoverghost{
+          display: none;
+          background: url("../img/game/L_ghost_small.png") no-repeat;
+          opacity: 0.8;
+          position: absolute;
+          top:-10px;
+          width: 89px;
+          height: 154px;
+          animation: updown 1.5s infinite ease-in-out alternate-reverse;
+        }
+        
+      }
+      .gotoindex{
+        @extend .startbtn;
+        #gotoindex{
+          @extend #startbtn;
+          
+        } 
+        .hoverghost2{
+          display: none;
+          background: url("../img/game/R_ghost_small.png") no-repeat;
+          opacity: 0.8;
+          position: absolute;
+          top:0px;
+          right:0px;
+          width: 55px;
+          height: 100px;
+          animation: updown 1.5s infinite ease-in-out alternate-reverse;
+        }
+      
+      }
+
+      @keyframes updown {
+        0% {
+          transform: translateY(1px);
+        }
+        20% {
+          transform: translateY(2px);
+        }
+        40% {
+          transform: translateY(3px);
+        }
+        60% {
+          transform: translateY(2px);
+        }
+        80% {
+          transform: translateY(1px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .quizimg{
+        /* background-color: teal; */
+        width: 95%;
+        border-radius: 10px;
+        // height: 230px;
+        margin:auto;
+        overflow: hidden;
+        position: relative;
+      } 
+      /* 血掌啦 */
+      .progressblock{
+        position: relative;
+        display:none;
+        &:before{
+          position: absolute;
+          content:"";
+          background-image: url("../img/game/bloodhand.png");
+          background-repeat: no-repeat;
+          top: -270px;
+          left:-80px;
+          width: 200px;
+          height:200px;
+        
+          /* background-color: turquoise; */
+        
+        }
+        #progress {
+          background-color:rgba(0,0,0,0.5);
+          line-height: 40px;
+          padding: 0 15px;
+          color: white;
+          border-radius: 10px;
+          font-size: 18px;
+          display: none;
+          position: absolute;
+          right: 20px;
+          transform:translateY(-70px);
+          
+        }
+        
+      }
+
+      #question {
+      
+        font-size: 24px;
+        font-weight:400;
+        color: white;
+      
+      }
+      #resultheading{
+        background-image: url("../img/game/result_title_bg.png");
+        background-repeat: no-repeat;
+        width:350px;
+        height:120px;
+        background-position: 10px -50px;
+        color: black;
+        font-size: 52px;
+        font-weight: 400;
+        position: absolute;
+        top:-8px;
+        left:-20px;
+        transform:rotateZ(-10deg);
+        display: none;
+
+      }
+      .test_score_title{
+        margin-top: 10px;
+        color: black;
+        font-size: 45px;
+        #test_score{
+         
+          font-size: 90px;
+          font-weight: 900;
+          display: inline-block;
+  
+        }
+      }
+      
+      #resulttitle{
+        font-size: 24px;
+        font-weight:600;
+        color: black;
+        float: left;
+        padding-left: 8px;
+       
+
+      }
+      #resultinnertext{
+        font-size: 17px;
+        font-weight:600;
+        color: black;
+        display: block;
+        clear: both;
+
+      }
+      .btnshowupagaingroup{
+        margin: 0 auto;
+        #playagain_btn{
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin:30px 5px;
+        display: none;
+        outline:none;
+        }
+        #gotoindex_btn{
+          @extend #playagain_btn;
+        }
+        #playagain_btn:hover{
+
+        cursor: pointer;
+        background-color: rgb(218,3,3);
+        color:white;
+        }
+        #gotoindex_btn:hover{
+          @extend #playagain_btn:hover;
+        }
+      }
+        
+      .buttons {
+        margin: 30px auto; 
+        display: none; 
+        .btn-outline{
+        
+          font-size: 1.2rem;
+          width: 95%;
+          height:auto;
+          margin: 10px auto;
+          padding: 12px 24px;
+          line-height:24px;
+          position: relative;
+          color:black;
+          outline:none;
+        
+        }
+        #btn0{
+          &:before {
+            content: "";
+            background: url("../img/game/L_ghost_small.png") no-repeat;
+            position: absolute;
+            top: -80px;
+            left: 380px;
+            z-index: 2;
+            width: 120px;
+            height: 184px;
+            animation: updown 1.5s infinite ease-in-out alternate-reverse;
+          }
+        }
+        
+      }
+
+      .recommendtitle{
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: black;
+        font-weight: 700;
+
+      }
+      .recommendcardground{
+        color: black;
+        display: flex;
+        justify-content:center;
+        /* border:1px solid green; */
+        // display: none;
+        .spotcard{
+          margin:0 5px;
+          padding: 5px;
+          text-align: left;
+          width:190px;
+          /* border:1px solid green; */
+          background-image: url("../img/game/spotcardbg.jpg");
+          img{
+            width:150px;
+          }
+          p{
+            /* border:1px solid blue; */
+            margin-top:5px;
+          }
+          h3{
+            font-size: 24px;
+            display: none;
+            color:black;
+            margin-bottom: 5px;
+            margin: 0;
+            padding:0;
+          }
+        }
+      }
+
+
+
+
+    }
+
+  }
+}  
