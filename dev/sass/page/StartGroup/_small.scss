@@ -13,9 +13,9 @@
         display: flex;
         width: 100%;
         .bigPic {
-          width: 75%;
-          // width: 360px;
-          height: 360px;
+          //大的照片
+          width: 80%;
+          height: 200px;
 
           img {
             width: 100%;
@@ -24,6 +24,7 @@
           }
         }
         .photobook {
+          //小的照片，區域
           width: 20%;
           h2 {
             display: none;
@@ -41,14 +42,18 @@
       .txtZone {
         width: 100%;
         margin-top: 10px;
-        p {
-          font-size: 16px;
-          line-height: 24px;
+        .introTxt {
+          // border: 1px solid greenyellow;
+          margin: 0px;
+          p {
+            color: #8c8a8a;
+            margin: 5px;
+          }
         }
       }
     }
-    .progress {
-    }
+    // .progress {
+    // }
   }
 
   #StartGroup_Section2 {
@@ -278,57 +283,57 @@
 
       // 這區是左邊按鈕
       .adventure_btn {
-      display: block;
+        display: block;
         .ghost_btn {
           margin: 50px;
           width: 300px;
           transition: all 0.8s;
           //讓他變亮
-          &:hover {
-          }
+          // &:hover {
+          // }
           //讓他飛起來
-          &:hover .ghost_btn1 > img {
-          }
+          // &:hover .ghost_btn1 > img {
+          // }
           //字變畫還在想
           // &:hover .ghost_tape > span {
           // }
           //這是背景
-          .ghost_btn_img1 {
-          }
-          .ghost_btn1 {
-            > img {
-            }
-          }
-          //這是膠帶
-          .ghost_tape {
-            > span {
-            }
-          }
-        }
-        .ghost_btn2 {
-          //讓他變亮
-          &:hover {
-          }
-          //讓他飛起來
-          &:hover .ghost_btn2 > img {
-          }
-          //字變畫還在想
-          // &:hover .ghost_tape > span {
+          // .ghost_btn_img1 {
           // }
-          //這是背景
-          .ghost_btn_img2 {
-          }
-          //鬼本身
-          .ghost_btn2 {
-            > img {
-            }
-          }
+          // .ghost_btn1 {
+          //   > img {
+          //   }
+          // }
           //這是膠帶
-          .ghost_tape {
-            > span {
-            }
-          }
+          // .ghost_tape {
+          //   > span {
+          //   }
+          // }
         }
+        // .ghost_btn2 {
+        //讓他變亮
+        // &:hover {
+        // }
+        //讓他飛起來
+        // &:hover .ghost_btn2 > img {
+        // }
+        //字變畫還在想
+        // &:hover .ghost_tape > span {
+        // }
+        //這是背景
+        // .ghost_btn_img2 {
+        // }
+        //鬼本身
+        // .ghost_btn2 {
+        //   > img {
+        //   }
+        // }
+        //這是膠帶
+        // .ghost_tape {
+        //   > span {
+        //   }
+        // }
+        // }
       }
     }
   }
