@@ -2,22 +2,22 @@
 	background-image: url("../img/member/mem_background_img.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: 50% 50%;
 	padding-top: 400px;
-	height: 1800px;
 
 	.membertop {
 		display: flex;
-		justify-content:center;
+		justify-content: center;
 	}
-	#preview{
-		width:200px; 
-		height:200px;
-		border:1px solid gray; 
+	#preview {
+		width: 200px;
+		height: 200px;
+		border: 1px solid gray;
 		border-radius: 50%;
 	}
-	.section2_member{
+	.section2_member {
 		width: 800px;
-		margin: 0 ;
+		margin: 0;
 	}
 	.title_btn {
 		margin: 0 auto;
@@ -37,14 +37,22 @@
 		border-bottom: 1px solid white;
 	}
 
-
 	#class1 {
 		width: 800px;
 		margin: 20px 200px 0 0;
 		form {
 			margin: 26 0 0 30px;
+			.mem_id_member,
+			.mem_account_member,
+			.mem_psw_member,
+			.mem_name_member,
+			.mem_tel_member,
+			.mem_email_member,
+			.mem_time_member{
+				line-height: 32px;
+			}
 		}
-		span{
+		span {
 			display: inline;
 		}
 		.mem_id,
@@ -73,16 +81,6 @@
 		}
 	}
 
-	#class4 {
-		margin-top: 64px;
-	}
-	#class2 form,
-	#class3 form,
-	#class5 form {
-		color: white;
-		font-size: 1rem;
-	}
-
 	.table1 {
 		padding-top: 20px;
 	}
@@ -98,13 +96,8 @@
 		border: 1px solid white;
 		display: flex;
 		background-color: black;
-		width: 829px;
-		height: 275px;
+		width: 800px;
 		box-sizing: border-box;
-	}
-
-	#tour_table2 {
-		height: 320px;
 	}
 
 	#tour_table h1,
@@ -137,40 +130,47 @@
 		background-color: #e62204;
 	}
 
-	#spotimg {
-		width: 275px;
-		height: 275px;
+	.spotimg_member {
+		width: 300px;
 	}
-
+	.spotimg_member2 {
+		width: 300px;
+		height: 100%;
+		object-fit: cover;
+	}
 	.spot_cotent {
-		padding-left: 10px;
-	}
-	.btn-type1 {
-		margin-left: 390px;
-		border: 1px solid red;
-		border-radius: 50px;
-		color: white;
-		font-size: 1.125rem;
-		padding: 10px 20px;
-		background-color: #d11c00;
-		cursor: pointer;
-		&:hover {
-			background-color: #e62204;
+		padding: 0 10px;
+
+		h1 {
+			padding: 10px 0;
+		}
+		h2 {
+			padding-bottom: 10px;
+		}
+		.spotimg1,
+		.spotimg2,
+		.spotimg3 {
+			padding-bottom: 5px;
 		}
 	}
-
+	#icon_discuss{
+		padding-top: 110px;
+	}
 	#icon_discuss2 {
-		#espl_icon{
+		#espl_icon {
 			width: 110px;
 		}
-		#love_icon{
-			width: 20px;
+		#icon_discuss3 {
+			padding-left: 220px;
 		}
-		#dis_icon{
-			width: 20px;
+		#love_icon {
+			width: 14px;
 		}
-		#view_icon{
-			width: 20px;
+		#dis_icon {
+			width: 14px;
+		}
+		#view_icon {
+			width: 14px;
 		}
 	}
 	.peoplenum {
@@ -180,39 +180,34 @@
 		width: 300px;
 	}
 
-
-	@media screen and (min-width:1201px) and (max-width:1250px){
+	@media screen and (min-width: 1201px) and (max-width: 1250px) {
 		.membertop {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			.section1_member{
-				.menu{
+			.section1_member {
+				.menu {
 					margin-bottom: 50px;
-					form{
+					form {
 						width: 200px;
 						margin: 0;
 					}
-				}	
+				}
 			}
-			.section2_member{
-				.title_btn{
+			.section2_member {
+				.title_btn {
 					margin: 0 auto;
-					.button1{
+					.button1 {
 						font-size: 1rem;
 					}
-					
 				}
 			}
 		}
 	}
 
-	@media screen and (min-width:1251px) and (max-width:1900px){
+	@media screen and (min-width: 1251px) and (max-width: 1900px) {
 		.membertop {
 			width: 100%;
 		}
 	}
-
-
 }
-
