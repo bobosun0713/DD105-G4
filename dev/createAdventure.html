@@ -9,19 +9,23 @@
 </head>
 
 <body>
-  @@include('layout/component/mouse_ghost.html')
+  <!-- @@include('layout/component/mouse_ghost.html') -->
   <div class="createAdventure">
-    @@include('layout/header.html')
+    @@include('layout/header.html',{
+      "link002" : "pageSelectEffect2"
+    })
     <section class="section_wrapper">
       <div class="form-tabs">
-        <div class="mainspot title">廢棄新莊醫院</div>
+        <div class="mainspot tourTitle">廢棄新莊醫院</div>
+
+        <!-- 導覽列 -->
         <ul class="form-menu">
           <li class="current">
             <span class="form-span progressbar">1</span>
             <span class="nav-label">選擇搭配景點</span>
           </li>
           <li>
-            <span class="form-span progressbar">2 </span>
+            <span class="form-span progressbar">2</span>
             <span class="nav-label">揪團資訊</span>
           </li>
           <li>
@@ -29,15 +33,18 @@
             <span class="nav-label">行程規劃</span>
           </li>
           <li>
-            <span class="form-span">4</span><span class="nav-label">預覽</span>
+            <span class="form-span">4</span>
+            <span class="nav-label">預覽</span>
           </li>
         </ul>
       </div>
       <div id="progressbar"></div>
       <div class="wrapper">
+
+        <!-- 步驟1 -->
         <div id="tab-1" class="hide tab">
           <div class="tab-1 left">
-            <div class="title">請從下方選擇想搭配的景點:</div>
+            <div class="tourTitle">請從下方選擇想搭配的景點:</div>
             <div class="templefoodbuttons">
               <button class="temple_btn">廟宇</button>
               <button class="food_btn">飲食</button>
@@ -95,9 +102,13 @@
             <div class="selected_spot">新增的地方</div>
           </div>
         </div>
+
+        <!-- 步驟2 -->
         <div id="tab-2" class="hide tab">
+
+          <!-- 撰寫基本資料 -->
           <div class="tab-2 left">
-            <div class="title">請從下方選擇想搭配的景點:</div>
+            <div class="tourTitle">請填寫基本揪團資訊:</div>
             <div class="leftblock">
               <label>人數限制</label>
               <input type="number" value="1" min="1" max="30" />
@@ -118,16 +129,26 @@
               <textarea name="" placeholder="限300字以內"></textarea>
             </div>
           </div>
-          <div class="tab-2 right">
+
+          <!-- 上傳揪團首圖 -->
+          <div class="tab-2 right2">
             <div class="heading">
-              <img src="img/createAdventure/addgroupimg_icon.png" />
+              <div class="tour_imagePreview" id="tour_imagePreview">
+                <img src="img/createAdventure/addgroupimg_icon.png" class="tour_imagePreview_default"/>
+                <div class="tour_imagePreview_text">
+                  <img src="" alt="">
+                  <p>添加封面照片</p>
+                </div>
+              </div>
+              <input type="file" name="uploadTourFile" id="uploadTourFile">
             </div>
-            <div class="selected_spot"></div>
           </div>
         </div>
+
+        <!-- 步驟3 -->
         <div id="tab-3" class="hide tab">
           <div class="spot1 left">
-            <div class="title">請從下方選擇想搭配的景點:</div>
+            <div class="tourTitle">請從下方選擇想搭配的景點:</div>
           </div>
           <br />
           <div class="section">

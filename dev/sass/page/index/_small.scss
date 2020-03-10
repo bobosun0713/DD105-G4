@@ -61,25 +61,53 @@
         }
     }
 
-    // =========================討論區
-    .card_channel {
-        overflow-x: scroll;
-        .card_warp {
-            width: 3500px;
-            overflow-x: scroll;
+    #section4 {
+        .title_forum {
+            width: 250px;
+            .title {
+                left: 5px;
+            }
+            .title2 {
+                font-size: -18px;
+            }
+            img {
+                width: 130px;
+                bottom: -20px;
+                left: 10px;
+            }
         }
 
-        #card_btn {
-            display: none;
+        .card_channel {
+            height: 535px;
+            overflow-x: scroll;
+            .card_warp {
+                width: 2800px;
+            }
+            &::-webkit-scrollbar {
+                height: 10px;
+                background-color: rgba(255, 255, 255, 0);
+            }
+            &::-webkit-scrollbar-track {
+                background-color: rgba(0, 0, 0, 0.6);
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.6);
+                border-radius: 10px;
+            }
+
+            #card_btn {
+                display: none;
+            }
         }
-    }
-    .card_path_1 {
-        right: 0;
-        bottom: 225px;
-        width: 200px;
-        height: 200px;
-    }
-    .card_path_2 {
-        display: none;
+        .card_path_1 {
+            bottom: 225px;
+        }
+        .card_path_2 {
+            // display: none;
+            width: 100px;
+            height: 100px;
+            top: 25px;
+        }
     }
 }

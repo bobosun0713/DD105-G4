@@ -29,6 +29,7 @@
               padding: 0 10px;
               font-size: 18px;
               color: white;
+
               .form-span{
                 display: inline-block;
                 width: 30px;
@@ -43,8 +44,10 @@
                 position: relative;
                 left: 50px;
               }
+              
               .active {
                 background-color: #7d0021;
+                border: 1px solid #7d0021;
               }
               //步驟title
               .nav-label {
@@ -92,7 +95,7 @@
               margin-right: 5%;
               flex:none;
               // background-color: rgb(199, 199, 235);
-              .title{
+              .tourTitle{
                 font-size: 20px;
                 display: inline-block;
                 line-height: 63px;
@@ -232,6 +235,7 @@
                 }
               }
             }
+
             .right{
               border:1px solid white; 
               color: #7d0022;
@@ -270,7 +274,7 @@
             width: 45%;
             margin-right: 5%;
             // background-color: rgb(199, 199, 235);
-            .title{
+            .tourTitle{
               font-size: 20px;
               display: inline-block;
               line-height: 63px;
@@ -319,13 +323,50 @@
               }
             }
           }
-          .right{
-            border:1px solid white; 
+          .right2{
+            // border:1px solid white; 
             color: #7d0022;
-            height:550px;
+            height:100%;
             width: 45%;
-            // background-color: rgb(19, 236, 103);
+            background-image: none;
             padding:15px;
+
+
+             .heading{
+              // border:1px solid white; 
+              width: 300px;
+              height: 300px;
+              margin: auto;
+              cursor: pointer;
+
+                .tour_imagePreview{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+
+                img{
+                  width: 100%;
+                  position: absolute;
+                  top: 0px;
+                  left: 0px;
+                }
+
+                .tour_imagePreview_text{
+                  width: 100%;
+                  background: linear-gradient( to top, rgba(0,0,0,.7), rgba(0,0,0,0));
+                  position: absolute;
+                  bottom: 0px;
+                  left: 0px;
+
+                  p{
+                    color: white;
+                    font-size: 1.2rem;
+                  }
+
+                }
+              }
+            }
           }
           }
           /* 步驟三 */
@@ -334,10 +375,10 @@
               padding: 5px 10px;
             .left{
                 clear: both;
-              .title {
+              .tourTitle {
                 margin-bottom: 50px;
               }
-              .title{
+              .tourTitle{
                 font-size: 20px;
                 display: inline-block;
                 line-height: 63px;
