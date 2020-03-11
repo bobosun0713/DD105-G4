@@ -61,6 +61,56 @@
         }
     }
 
+    #section3 {
+      margin-top: 0;
+      margin-bottom: 50px;
+      .title_forum {
+        left: -150px;
+        position: relative;
+        // .title{
+        // }
+        img {
+          width: 250px;
+          position: absolute;
+          bottom: 0px;
+          left: 280px;
+          pointer-events: none;
+        }
+      }
+      .adventure_main {
+        padding-top: 0px;
+        .adventure_btn {
+          display: none;
+        }
+        .adventure_tab {
+          padding-left: 0px;
+          padding-bottom:20px;
+          padding:30px 0px 20px 5px;
+        }
+        .adventure_word {
+          .adventure_content {
+            background-color: rgb(34, 33, 33);
+            border: 2px solid rgba(44, 44, 44, 0.842);
+            width: 100%;
+            thead {
+              background-color: rgba(44, 44, 44, 0.842);
+              width: 100%;
+              > td {
+                width: 150px;
+              }
+            }
+            tr {
+              width: 100%;
+              > td {
+                width: 100%;
+                margin: 10px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
     #section4 {
         .title_forum {
             width: 250px;

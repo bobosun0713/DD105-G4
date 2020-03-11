@@ -19,9 +19,9 @@
 				}
 			}
 			.section2_member {
-				width: 500px;
+				width: 520px;
 				.bar-block {
-					width: 500px;
+					width: 520px;
 					margin: 0 auto;
 					.title_btn {
 						margin: 0 auto;
@@ -31,9 +31,9 @@
 						}
 					}
 					#class1 {
-						width: 500px;
+						width: 520px;
 						form {
-							width: 500px;
+							width: 520px;
 								.mem_id,
 								.mem_account,
 								.mem_psw,
@@ -54,7 +54,7 @@
 									cursor: pointer;
 								}
 							.hr2 {
-								width: 500px;
+								width: 520px;
 							}
 						}
 					}
@@ -62,23 +62,14 @@
 					#class3,
 					#class4,
 					#class5 {
-						width: 500px;
+						width: 520px;
 						#tour_table,
 						#tour_table2 {
 							display: flex;
-							width: 500px;
-							.spot_cotent {
-								width: 450px;
-								.btn-type1 {
-									font-size: 0.8rem;
-									padding: 6px 12px;
-									margin-left: 200px;
-								}
-								#add_icon{
-									width: 15px;
-								}
-
-							}
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							width: 520px;
 						}
 						#tour_table h1,
 						#tour_table2 h1 {
@@ -94,12 +85,22 @@
 						#tour_table2 span {
 							font-size: 0.8rem;
 						}
-						#spotimg {
-							width: 150px;
-							height: 150px;
+						.spot_cotent {
+							width: 520px;
 						}
-						span#icon_discuss2 {
-							margin-left:30px;
+						.spotimg_member{
+							width: 520px;
+						}
+						.spotimg_member2{
+							width: 520px;
+							height: 250px;
+							object-fit: cover;
+						}
+						#icon_discuss{
+							padding: 40px 0 10px 0;
+							#icon_discuss3{
+								padding-left: 255px;
+							}
 						}
 					}
 				}
@@ -111,6 +112,7 @@
 		.membertop {
 			display: flex;
 			flex-direction: column;
+			justify-content: center;
 			align-items: center;
 			.section1_member {
 				.menu {
@@ -163,21 +165,12 @@
 					#class3,
 					#class4,
 					#class5 {
+						display: flex;
+						flex-direction: column;
 						width: 600px;
 						#tour_table,
 						#tour_table2 {
-							display: flex;
 							width: 600px;
-							.spot_cotent {
-								width: 450px;
-								.btn-type1 {
-									font-size: 1rem;
-									margin-left: 280px;
-								}
-								#add_icon{
-									width: 15px;
-								}
-							}
 						}
 						#tour_table h1,
 						#tour_table2 h1 {
@@ -193,9 +186,26 @@
 						#tour_table2 span {
 							font-size: 0.8rem;
 						}
-						#spotimg {
-							width: 150px;
-							height: 150px;
+						.spot_cotent{
+							width: 400px;
+						}
+						.spotimg_member{
+							width: 200px;
+						}
+						.spotimg_member2{
+							width: 200px;
+							object-fit: cover;
+						}					
+					}
+					#class4{
+						#icon_discuss {
+							padding-top: 50px;
+							
+							#icon_discuss2 {
+							#icon_discuss3 {
+								padding-left: 130px;
+							}
+							}
 						}
 					}
 				}

@@ -1,8 +1,26 @@
+//幽靈圖動效
 @include respond(small) {
- 
+  #ghost-2-s{
+    animation:ghost-2-s 2s infinite;
+    animation-timing-function: ease-in-out ;
+    }
+      @keyframes ghost-2-s {
+      0% {
+       transform:translate(0,-10px);
+        }
+      50% {
+       transform:translate(0,15px);   
+       filter: contrast(200%) brightness(150%) hue-rotate(170deg);
+       //  contrast圖片對比  /brightness變暗0%或變亮100% /hue-rotate色相旋轉
+   
+      }
+      100% {
+       transform:translate(0,-10px);
+      }
+    }
 }
 //手機都寫在裡面
-//桌機板幽靈隱藏
+
 //  -------RWD--------- 576px *767px------------- 
 
 @media screen and (min-width:576px) and (max-width:767px){
@@ -66,10 +84,10 @@ max-height:200px;
     .Haunted-house-p{
       font-size: 1rem;
       margin-left: 1px;
-      margin-top: -83px;
+      margin-top: -38px;
       line-height: 50px;
       text-align: right;
-      word-spacing:160px;//空白建間隔
+      word-spacing:0px;//空白建間隔
       width: 280px;
       word-wrap:break-word;//文字強迫換行
       color: rgb(173, 172, 172);
@@ -92,13 +110,12 @@ max-height:200px;
       }
 }
 
-//手機板的幽靈隱藏
+////幽靈圖動效
 #ghost-2-s{
-display: block;
 margin-top: 150px;
 margin-bottom: -80px;
-
 }
+
 // 排行榜表單
 
 #leaderboard-form{//div-leaderboard-form
@@ -212,7 +229,7 @@ max-height:150px;
         margin-bottom: 110px;
         line-height: 40px;
         text-align: right;
-        word-spacing:0px;//空白建間隔
+        word-spacing:170px;//空白建間隔
         width: 190px;
         font-size: 1rem;
         height: 40px;
@@ -229,9 +246,8 @@ max-height:150px;
         display: none;
         }
 }
-// 手機板的幽靈
+// 幽靈圖
 #ghost-2-s{
-  display: block;
   margin-bottom: -80px;
   width: 160px;
 }
@@ -240,7 +256,6 @@ max-height:150px;
 #leaderboard-form{//div-leaderboard-form
   margin-bottom: 250px;
   margin-top: 80px;
-  background-image: none;
   font-size: 1px;
   white-space:nowrap;//打死不換行
   #leaderboard-form-1{//table-leaderboard-form-1
@@ -350,7 +365,7 @@ margin-left:-20px;
         line-height: 50px;
         text-align: right;
         word-spacing:0px;//空白建間隔
-        width: 180px;
+        width: 155px;
         border-bottom: 1px solid rgb(231, 231, 231);
         font-size: 1rem;
         height: 45px;
@@ -367,9 +382,8 @@ margin-left:-20px;
         display: none;
         }
 }
-// 手機板的幽靈
+//幽靈圖
 #ghost-2-s{
-  display: block;
   margin-bottom: -80px;
   width: 100px;
 }
@@ -377,7 +391,6 @@ margin-left:-20px;
 #leaderboard-form{//div-leaderboard-form
 margin-bottom: 250px;
 margin-top: 80px;
-background-image: none;
 font-size: 14px;
 white-space:nowrap;//打死不換行
   #leaderboard-form-1{//table-leaderboard-form-1

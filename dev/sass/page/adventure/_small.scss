@@ -1,5 +1,9 @@
 @include respond(small) {
-  //手機都寫在裡面
+  .adventure_wrap {
+    background-size:200%;
+    background-position-x: center;
+
+  }
   .adventure_container {
     width: 100%;
     .people_Layout {
@@ -31,8 +35,8 @@
           #add_number {
             font-size: 40px;
           }
-          > span {
-          }
+          // > span {
+          // }
         }
       }
     }
@@ -61,8 +65,8 @@
           height: 34px;
           .area_filter {
             line-height: 34px;
-            &:hover {
-            }
+            // &:hover {
+            // }
           }
         }
         .attraction {
@@ -70,15 +74,15 @@
           height: 34px;
           .attraction_filter {
             line-height: 34px;
-            &:hover {
-            }
+            // &:hover {
+            // }
           }
         }
         .search {
           width: 20%;
           height: 34px;
-          &:hover {
-          }
+          // &:hover {
+          // }
         }
       }
     }

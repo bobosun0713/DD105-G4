@@ -12,14 +12,16 @@
 
 <body>
     <!-- 鬼箭頭 -->
+    @@include('layout/page/adventure/go_top.html')
+    @@include('layout/component/mouse_ghost.html')
 
-    <!-- @@include('layout/component/mouse_ghost.html') -->
-    <!-- @@include('layout/component/smoke.html') -->
     <div class="StartGroup_wrapper">
-
+        
 
         <div id="StartGroupSpotBG">
+
             @@include('layout/header.html')
+            @@include('layout/component/smoke.html')
 
 
             <section id="StartGroup_Section1">
@@ -226,6 +228,8 @@
                                 </div>
 
                             </div>
+
+
 
                             <nav class="tourStatus">
                                 <ul>
@@ -811,7 +815,7 @@
                 <div class="adventure_main">
                     <div class="adventure_btn">
                         <a href="adventrue.html">
-                            <div class="ghost_btn">
+                            <div class="ghost_btn_all">
                                 <div class="ghost_btn_img1">
                                     <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
                                 </div>
@@ -822,7 +826,7 @@
                             </div>
                         </a>
                         <a href="adventrue.html">
-                            <div class="ghost_btn2">
+                            <div class="ghost_btn2_all">
                                 <div class="ghost_btn_img2">
                                     <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
                                 </div>

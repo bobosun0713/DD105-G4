@@ -1,6 +1,27 @@
-@include respond(medium) { }
+//幽靈圖動效
+@include respond(medium) { 
+  #ghost-2-s{
+    max-width: 180px;
+    max-height: 180px;
+    animation:ghost-2-s 2s infinite;
+    animation-timing-function: ease-in-out ;    
+    }
+      @keyframes ghost-2-s {
+      0% {
+       transform:translate(0,-10px);        
+      }
+      50% {
+       transform:translate(0,15px);   
+       filter: contrast(200%) brightness(150%) hue-rotate(170deg);
+       //  contrast圖片對比  /brightness變暗0%或變亮100% /hue-rotate色相旋轉   
+        }
+      100% {
+       transform:translate(0,-10px);
+      }
+    }
+}
     //平板都寫在裡面
-//桌機板幽靈隱藏
+
   //  -------RWD---------768px *991px------------- 
   @media screen and (min-width:768px) and (max-width:991px){
     #leaderboard{
@@ -60,7 +81,7 @@
           //p
           .Haunted-house-p{
             margin-left: -105px;
-            margin-top: -63px;
+            margin-top: -25px;
             font-size: 1rem;
             word-spacing:0px;//空白建間隔
             }
@@ -75,9 +96,8 @@
             display: none;
             }
     }
-    //手機板的幽靈隱藏
+    //幽靈圖
     #ghost-2-s{
-      display: block;
       margin-top: 150px;
       margin-bottom: -180px;
     
@@ -85,7 +105,6 @@
     // 排行榜表單
     
     #leaderboard-form{//div-leaderboard-form
-      background-image: none;
       margin-bottom: 250px;
         #leaderboard-form-1{//table-leaderboard-form-1
             #Form-name{//名次的tr
