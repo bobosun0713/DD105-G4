@@ -8,28 +8,28 @@
         <script>
             $(document).ready(function() {
                 // 發表文章
-                $('#opener').click(function() {
-                    $('#forum_chatbox').fadeIn()
+                $("#opener").click(function() {
+                    $("#forum_chatbox").fadeIn()
                 })
-                $('.cancechat').click(function() {
-                    $('#forum_chatbox').fadeOut()
+                $(".cancechat").click(function() {
+                    $("#forum_chatbox").fadeOut()
                 })
 
                 // 文章內容
-                $('.content_btn').click(function() {
-                    $('#forum_contentbox').fadeIn()
+                $(".content_btn").click(function() {
+                    $("#forum_contentbox").fadeIn()
                 })
 
-                $('.content_out').click(function() {
-                    $('#forum_contentbox').fadeOut()
+                $(".content_out").click(function() {
+                    $("#forum_contentbox").fadeOut()
                 })
 
                 // 檢舉視窗
-                $('.report_btn').click(function() {
-                    $('#forum_report').css('display', 'block')
+                $(".report_btn").click(function() {
+                    $("#forum_report").css("display", "block")
                 })
-                $('#forum_report_cance').click(function() {
-                    $('#forum_report').css('display', 'none')
+                $("#forum_report_cance").click(function() {
+                    $("#forum_report").css("display", "none")
                 })
             })
         </script>
@@ -183,7 +183,7 @@
             <!-- 滑鼠 -->
             <!-- @@include('layout/component/mouse_ghost.html') -->
             <!-- 導覽列 -->
-            @@include('layout/header.html')
+            @@include('layout/header.html',{ "link005" : "pageSelectEffect2"})
             <div class="forum_container">
                 <!-- 文章標題 -->
                 <div class="article_title">
