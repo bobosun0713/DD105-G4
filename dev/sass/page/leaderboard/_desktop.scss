@@ -8,9 +8,11 @@
   font-weight: bold;
   a{
     color: rgb(199, 198, 196);
+    text-decoration: none;
   }        
   a:hover {
     color: rgb(110, 1, 1);
+    
   }
 //設定正在被點選的連結樣式
 a:active {
@@ -103,8 +105,7 @@ a:active {
           justify-content: space-around  ;         
           color:  rgb(179, 177, 177) ;
           filter:blur(1.5px);
-          text-shadow: shadow1, shadow2, shadow3;
-          text-shadow: 2px 2px 0px rgb(230, 227, 227)  , 5px 6px 0px rgb(190, 189, 189);
+          text-shadow: 0 0 20px rgb(141, 140, 137);
           }
         //p
         .Haunted-house-p{
@@ -178,13 +179,29 @@ a:active {
         }
 }
 
-//手機板的幽靈隱藏
+//幽靈圖
 #ghost-2-s{
-  display: none;
-}
+  margin-bottom: -100px;
+  width: 300px;
+  max-height: 300px;
+  animation:ghost-2-s 3.5s infinite;
+  animation-timing-function: ease-out ;
+  }
+    @keyframes ghost-2-s {
+    0% {
+     transform:translate(0,-25px) ;     
+    }
+    30% {
+     transform:translate(0,30px);
+     filter: contrast(200%) brightness(150%) hue-rotate(170deg);
+    //  contrast圖片對比  /brightness變暗0%或變亮100% /hue-rotate色相旋轉
+    }
+    100% {
+     transform:translate(0,-30px);
+    }
+  }
 // 排行榜表單
 #leaderboard-form{//div-leaderboard-form
-  background-image: url(../img/leaderboard/ghost-2.png);
   display: block;  
   background-repeat: no-repeat;
   margin-bottom: 150px;
@@ -225,7 +242,6 @@ a:active {
                     }
                     .Ranking:hover{
                     background-color: rgba(255, 255, 255, 0.2) ;
-                    
                     }
         }
 
@@ -247,16 +263,18 @@ a:active {
         }
         30% {
           transform: translateY(50px);
-          filter: hue-rotate(100deg);//色相改變
+          filter: hue-rotate(100deg);//色相旋轉/懷舊改變
         }
         100% {
-          transform: translateY(0px);
+          transform: translateY(0px) ;
         }
       }
         
 }
+// 
 
-//  -------RWD---------1300px *1680px------------- 
+
+//  -------RWD---------1300px *1700px------------- 
  
 @media screen and (min-width:1300px) and (max-width:1700px){
   #leaderboard{
@@ -297,7 +315,7 @@ width: 100%;
           }
         //p
         .Haunted-house-p{
-          margin-top: -45px;
+          margin-top: -10px;
           }
   
 }
@@ -318,22 +336,21 @@ width: 100%;
 // 排行榜表單
 
 #leaderboard-form{//div-leaderboard-form
-  background-image: url(../img/leaderboard/ghost-2.png);//幽靈圖
       #leaderboard-form-1{//table-leaderboard-form-1
           #Form-name{//名次的tr
-              width: 240px;
+              width: 280px;
               line-height: 50px;
               td.Form-name{
-                width: 240px;
+                width: 280px;
                 text-align: center;
                 padding: 5px;
             }
         }
             .Ranking{
-                    width: 240px;
+                    width: 280px;
                     td{
                         padding: 5px;
-                        width: 240px;
+                        width: 280px;
                         }
               }
 
@@ -408,7 +425,7 @@ width: 100%;
         //p
         .Haunted-house-p{
           margin-left: -8px;
-          margin-top: -45px;
+          margin-top: -15px;
           word-spacing:0px;//空白建間隔
           }
   
@@ -425,17 +442,15 @@ width: 100%;
           }
 }
 
-//手機板的幽靈隱藏
+//幽靈圖
 #ghost-2-s{
-  display:block;
-  width: 300px;
+  width: 200px;
   margin-top: 150px;
   margin-bottom: -180px;
 }
 // 排行榜表單
 
 #leaderboard-form{//div-leaderboard-form
-  background-image:none;
       #leaderboard-form-1{//table-leaderboard-form-1
           #Form-name{//名次的tr
               width: 230px;
