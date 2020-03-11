@@ -228,7 +228,10 @@ body {
         padding: 5px 50px;
         color: white;
         opacity: 0.8;
-        -webkit-appearance: none;
+        // background: url("../img/icon/downarrow.svg") no-repeat right center;
+        // background-size: 10px;
+        // background-position-x: 130px;
+        // -webkit-appearance: none;
         option {
           background-color: rgb(58, 57, 57);
         }
@@ -442,7 +445,7 @@ body {
         align-items: center;
         .main_people {
           display: flex;
-          flex-direction:column;
+          flex-direction: column;
           align-items: center;
           .main_people_img {
             width: 80px;
@@ -567,22 +570,30 @@ body {
 
 .go_top {
   position: fixed;
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   z-index: 10;
   // background-color: red;
-  right: 150px;
-  bottom: 50px;
-  border: 2px solid rgb(255, 255, 255);
+  right: 50px;
+  bottom: 130px;
+  animation: gotop 2.5s infinite;
+  animation-timing-function: ease;
 
-  i {
-    margin: 0 auto;
-    display: block;
-    line-height: 80px;
-    font-size: 40px;
-    width: 35px;
-    // border: 2px solid black;
+  // border: 2px solid rgb(255, 255, 255);
+  img {
+    width: 100%;
+  }
+}
+@keyframes gotop {
+  0% {
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(75px);
+  }
+  100% {
+    transform: translateY(50px);
   }
 }
 

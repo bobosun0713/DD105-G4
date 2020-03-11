@@ -6,6 +6,7 @@
   #StartGroup_Section1 {
     width: 100%;
     .spotIntro {
+      padding: 0px;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -15,7 +16,7 @@
         .bigPic {
           //大的照片
           width: 80%;
-          height: 200px;
+          height: 100%;
 
           img {
             width: 100%;
@@ -50,6 +51,11 @@
             margin: 5px;
           }
         }
+        .spiderweb {
+          z-index: 1;
+          top: 100px;
+          right: -150px;
+        }
       }
     }
     // .progress {
@@ -57,13 +63,19 @@
   }
 
   #StartGroup_Section2 {
-    width: 100%;
+ 
+    height: auto;
     margin: 0 auto;
+    padding: 20px;
     .allTabPage {
       #tabPage1 {
+        position: relative;
         #officalTour {
-          // width:1200px;
-          // margin-left: -150px;
+          background-color: rgb(255, 255, 255);
+         background-size: 0;
+         border-radius: 5px;
+         padding: 20px 0;
+
           .tourSpot {
             margin-bottom: 40px;
             flex-wrap: wrap;
@@ -77,13 +89,13 @@
               width: 100%;
               text-align: center;
               .tourSpotInfo {
-                flex-wrap: nowrap;
+                flex-direction: column;
                 // justify-content: start;
                 margin-top: 0;
                 .btn-outline2 {
-                  width: 100px;
+                  width:80%;
+                  margin:0 auto 5px auto;                  width: 180px;
                   border-radius: 20px;
-                  margin-bottom: 10px;
                 }
               }
             }
@@ -93,13 +105,15 @@
           }
         }
         .myTourGuide {
+          text-align: center;
           .G1 {
+            display: none;
             // width: 300px;
             margin: 0px 0px 0px 50px;
             //   border: 1px solid greenyellow;
             position: absolute;
-            top: -200px;
-            left: -180px;
+            top: 0px;
+            left: -200px;
             .G1img {
               transform: scaleX(-1);
               width: 350px;
@@ -108,16 +122,16 @@
 
             .G1L {
               width: 160px;
-              position: relative;
-              right: 100px;
-              top: 20px;
+              position: absolute;
+              right: -70px;
+              top: 200px;
               transform-origin: top;
               animation: L_swing 3s linear infinite;
             }
 
             .ghostTalk {
               position: relative;
-              bottom: 280px;
+              bottom: 250px;
               left: 300px;
               animation: GT_swing 3s linear infinite;
 
@@ -141,16 +155,14 @@
           }
 
           .newMyTour {
-            display: block;
+            display: inline-block;
             // width: 200px;
-
             padding: 10px 40px;
             color: white;
             text-align: center;
-            float: right;
             font-size: 1.2rem;
-
-            margin: 0px 20px 50px 0px;
+            margin: 0 auto;
+            float:none;
 
             &:hover {
               background: #700000;
@@ -160,6 +172,9 @@
           }
         }
       }
+      #tabPage2 {
+          position: relative;
+      }
     }
   }
 
@@ -168,8 +183,8 @@
       border-bottom: 1px solid #cbcbcb;
       width: 350px;
       text-align: right;
-      margin-top: 300px;
       position: relative;
+      left:-150px;
 
       h1 {
         font-size: 2rem;
@@ -186,10 +201,12 @@
       }
     }
     .G2 {
-      bottom: -150px;
+      // bottom: -150px;
+      display: none;
     }
     .ghostTalk {
-      bottom: -110px;
+      // bottom: -110px;
+      display: none;
     }
   }
   // #ghostSpotSection2 {
@@ -279,139 +296,25 @@
 
   #StartGroup_Section4 {
     .adventure_main {
-      width: 500px;
+      width: 100%;
+      padding:0px 0  50px 0;
 
       // 這區是左邊按鈕
       .adventure_btn {
         display: block;
-        .ghost_btn {
+        .ghost_btn_all {
+          right:0px;
           margin: 50px;
           width: 300px;
           transition: all 0.8s;
-          //讓他變亮
-          // &:hover {
-          // }
-          //讓他飛起來
-          // &:hover .ghost_btn1 > img {
-          // }
-          //字變畫還在想
-          // &:hover .ghost_tape > span {
-          // }
-          //這是背景
-          // .ghost_btn_img1 {
-          // }
-          // .ghost_btn1 {
-          //   > img {
-          //   }
-          // }
-          //這是膠帶
-          // .ghost_tape {
-          //   > span {
-          //   }
-          // }
+         
         }
-        // .ghost_btn2 {
-        //讓他變亮
-        // &:hover {
-        // }
-        //讓他飛起來
-        // &:hover .ghost_btn2 > img {
-        // }
-        //字變畫還在想
-        // &:hover .ghost_tape > span {
-        // }
-        //這是背景
-        // .ghost_btn_img2 {
-        // }
-        //鬼本身
-        // .ghost_btn2 {
-        //   > img {
-        //   }
-        // }
-        //這是膠帶
-        // .ghost_tape {
-        //   > span {
-        //   }
-        // }
-        // }
+        .ghost_btn2_all {
+          left:-30px
+          
+        }
+        
       }
     }
   }
 }
-
-//  //手機都寫在裡面
-//  #ghostSpotBG {
-//   padding-top: 100px;
-// }
-
-// #ghostSpotSection1{
-//   width: 100%;
-//   margin-top: 0px;
-
-//   .spotIntro{
-//     flex-wrap: wrap;
-
-//     .picZone{
-//       width: 90%;
-//       display: inline-flex;
-//       justify-content: space-around;
-//       flex-wrap: nowrap;
-//       margin-bottom: 30px;
-
-//       .bigPic{
-//         width: 75%;
-//       }
-
-//       .photobook{
-//         width: 20%;
-
-//         h2{
-//           display: none;
-//         }
-
-//         .smallPicZone{
-//           flex-wrap: wrap;
-
-//           img{
-//             margin-top: 5px;
-//             width: 100%;
-//           }
-//         }
-//       }
-//     }
-
-//     .txtZone{
-//       width: 90%;
-
-//       .spiderweb{
-//         display: none;
-//       }
-//     }
-//   }
-// }
-
-// #ghostSpotSection3{
-
-//   #tabPage1{
-//     #officalTour{
-//       .tourSpot{
-//         .btn-outline2{
-//         display: none;
-//       }
-//       }
-
-//     }
-//     .myTourGuide{
-//       padding: 0px;
-//       .G1 {
-//         pointer-events: none;
-//         left: -180px;
-//         top: -50px;
-//       }
-
-//       .newMyTour{
-//         margin: 100px 20px;
-//       }
-//     }
-//   }
-// }
