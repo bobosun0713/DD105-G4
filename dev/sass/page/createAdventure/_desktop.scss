@@ -97,14 +97,13 @@
         // align-items: center;
         padding: 5px 10px;
         flex-wrap: wrap;
-
-        .left {
+        
+        .left{
           width: 45%;
           margin-right: 5%;
-          flex: none;
+          flex:none;
           // background-color: rgb(199, 199, 235);
-          .tourTitle {
-            min-width: 300px;
+          .title{
             font-size: 20px;
             display: inline-block;
             line-height: 63px;
@@ -112,7 +111,7 @@
             background-color: #ffffff;
             border-radius: 10px 50px 50px 10px;
             position: relative;
-            color: black;
+            color:black;
             &:after {
               content: "";
               width: 30px;
@@ -125,23 +124,24 @@
               background-repeat: no-repeat;
             }
           }
-
+      
           .templefoodbuttons {
             button {
-              font-size: 22px;
-              border: none;
-              background-color: transparent;
-              margin: 30px 3px 10px 3px;
-              color: white;
-              &:after {
-                content: "11";
-                background-color: #ffffff;
-                width: 30px;
-                height: 3px;
-                // display: block;
+            font-size: 22px;
+            border: none;
+            background-color: transparent;
+            margin: 30px 3px 10px 3px;
+            color: white;
+            &:after{
+              content:"11";
+              background-color: #ffffff;
+              width:30px;
+              height:3px;
+              // display: block;
               }
               &:hover {
                 cursor: pointer;
+              
               }
             }
           }
@@ -157,9 +157,10 @@
               border-radius: 10px;
               padding: 8px;
               margin: 0 auto;
+              left:30%;
               display: none;
-              .cancelbtn {
-                float: right;
+              .cancelbtn{
+                float:right;
               }
               button {
                 // border: 1px solid tomato;
@@ -169,26 +170,29 @@
                 font-size: 17px;
                 padding: 3px 10px;
                 background-color: transparent;
-                &:hover {
+                &:hover{
                   cursor: pointer;
                   background-color: tomato;
                 }
+          
               }
-              .additinerarybtn {
+              .additinerarybtn{
                 margin-top: 18px;
                 float: right;
               }
               img {
                 width: 85%;
                 height: 40%;
+                
               }
-              span {
+              span{
                 font-size: 1.5rem;
                 margin-bottom: 12px;
               }
-              .detailstext {
+              .detailstext{
                 font-size: 1.2rem;
               }
+              
             }
             .selectionsframe {
               border: 2px solid white;
@@ -198,79 +202,102 @@
               padding: 20px 30px;
               .spotoptions {
                 position: relative;
-                .addbtn {
-                  img {
-                    color: blue;
+                .addbtn{
+                  img{
+                    color:blue;
                     position: absolute;
                     opacity: 0.8;
-                    width: 80px;
-                    height: 80px;
+                    width:80px;
+                    height:80px;
                     border-radius: 50%;
-                    transform: translate(70%, 50%);
+                    transform: translate(70%,50%);
                     &:hover {
                       cursor: pointer;
                       opacity: 1;
                     }
                   }
+        
                 }
-                .clonecontent {
-                  // background-color: blue;
-
-                  img {
+                .content{
+                    // background-color: blue;
+                  
+                    img {
                     width: 185px;
                     height: 137px;
-                    border-radius: 5px;
+                    border: 3px solid blue;
+                    border-radius:5px ;
                     margin-bottom: 5px;
+                 
                   }
                   span {
                     //title
                     position: absolute;
                     color: white;
-                    background-color: rgba(3, 3, 3, 0.5);
-                    padding: 3px;
+                    background-color:rgba(3,3,3,0.5);
+                    padding:3px;
                     border-radius: 8px;
                     line-height: 20px;
                     bottom: 13px;
-                    left: 10px;
+                    left:10px;
                   }
                 }
               }
             }
           }
         }
-
-        .right {
-          border: 1px solid white;
+        .right{
+          border:1px solid white; 
           color: #7d0022;
-          height: 550px;
+          height:550px;
           width: 45%;
           // background-color: rgb(19, 236, 103);
-          padding: 15px;
+          padding:15px;
           border-radius: 5px;
           background-image: url("../img/createAdventure/cardBg.png");
           background-repeat: no-repeat;
           background-size: 250%;
           background-position: -30px;
-          flex: none;
-
+          flex:none;
           .heading {
             line-height: 1.2rem;
             // border: 1px solid blue;
             margin-bottom: 30px;
             font-size: 1.2rem;
             padding-left: 10px;
-            img {
+            img{
               margin-right: 12px;
-              width: 20px;
-              height: 20px;
+              width:20px;
+              height:20px;
             }
           }
           .selected_spot {
+            height:90%;
             padding: 15px;
-            // border: 1px solid red;
+            border:3px solid red;
+            overflow-y: scroll;
+            div{
+              img{
+                width:100%;
+                height:120px;
+              }
+              .delete_btn{
+                font-size: 30px;
+                width:45px;
+                font-weight: 700;
+                border-radius: 30%;
+                background-color: rgb(43, 41, 41);
+                color:white;
+                border: none;
+                &:hover{
+                  cursor: pointer;
+                }
+              }
+            }
           }
         }
       }
+
+
       /* 步驟二 */
       #tab-2 {
         @extend #tab-1;
@@ -584,8 +611,15 @@
           .left {
             .temple_img {
               /* border: 1px solid red; */
+              width: 300px;
+              height: 300px;
               border-radius: 5px;
               overflow: hidden;
+
+              img{
+                width: 100%;
+                height: 100%;
+              }
             }
           }
 

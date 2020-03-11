@@ -1,33 +1,176 @@
+var storage = sessionStorage;
+
 window.addEventListener("load", function () {
-  // 挑選薯條
+
+  //=============建立sesseion storage===============
+  //日期storage建立
+  // if (storage['initialDate'] == null && storage['deadlineDate'] == null && storage['launchDate'] == null) {
+  //   storage['initialDate'] = '';
+  //   storage['deadlineDate'] = '';
+  //   storage['launchDate'] = '';
+  // }
+
+  // console.log(storage['initialDate']=='');
+
+  //人數storage建立
+  // if (storage['attendAmount'] == null) {
+  //   storage['attendAmount'] = '';
+  // }
+
+  //揪團行程storage建立
+  // if (storage['addSpotList'] == null) {
+  //   storage['addSpotList'] = '';
+  // }
+
+
+  // 挑選廟宇或美食點擊跑燈箱===========================================
   var addbtn = document.getElementsByClassName("addbtn");
-  var spotlightbox = document.querySelector(".spotlightbox");
+  let spotlightbox = document.querySelector(".spotlightbox");
   for (let m = 0; m < addbtn.length; m++) {
     addbtn[m].onclick = function (n) {
       var additinerarybtn = document.querySelector(".additinerarybtn");
-      var clonecontent = document.querySelector("clonecontent");
+      // var clonecontent = document.querySelector("clonecontent");
+
       spotlightbox.style.display = "block";
       // console.log(n.target.parentNode.nextElementSibling);
       let selectedspot = n.target.parentNode.nextElementSibling.cloneNode(true);
       spotlightbox.insertBefore(selectedspot, additinerarybtn);
       let details = selectedspot.getElementsByTagName("input")[0].value;
       let getdetails = details.split('|')[1];
-      console.log(getdetails)
-
-
+      // console.log(getdetails)
       spotlightbox.getElementsByClassName("detailstext")[0].innerText = getdetails;
-      // spotlightbox.querySelector(".detailstext").innerHTML=getdetails;
-
-
       spotlightbox.getElementsByTagName("button")[0].onclick = closelightbox;
     };
-    function closelightbox(p) {
-      p.target.parentNode.style.display = "none";
-      spotlightbox.removeChild(p.target.nextElementSibling);
+    function closelightbox() {
+      this.parentNode.style.display = "none";
+      spotlightbox.removeChild(this.nextElementSibling);
 
     }
   }
-  //上一步 下一步 btns controller
+
+  //點加入廟宇或美食按鈕後 clone到行程pandel 
+  //*************/
+
+  let additinerarybtn = document.querySelector(".additinerarybtn");
+  let selected_spot_panel = document.querySelector(".selected_spot");
+
+  //幫加入揪團行程按鈕建事件聆聽功能
+  additinerarybtn.onclick = function () {
+
+    //1.先clone到panel
+    let clone_panelcontent = this.previousSibling.cloneNode(true);
+    //把內文刪掉
+    clone_panelcontent.lastChild.previousSibling.innerText = "";
+    console.log(clone_panelcontent.lastChild.previousSibling.innerText = "")
+
+
+    //取得spotlightbox裡的input的id 與 value 內容
+    let temple_id = this.previousSibling.firstChild.nextElementSibling.nextElementSibling.nextElementSibling.id;
+    let temple_value = this.previousSibling.firstChild.nextElementSibling.nextElementSibling.nextElementSibling.value;
+    //***************存入session storage
+
+    // torage['addSpotList'] += `${temple_id}, `;
+    // storage[temple_id] = itemValue;
+
+
+    //把原本已加廟宇美食刪掉
+    let spot_inner = document.querySelectorAll(".spotoptions .content input");
+    for (let i = 0; i < spot_inner.length; i++) {
+      if (spot_inner[i].id == temple_id) {
+        var delete_spot_inner = spot_inner[i].parentNode.parentNode;
+        delete_spot_inner.style.display = "none";
+        // console.log()
+      }
+    }
+
+
+    //上下移動按鈕
+
+    //向上移動按鈕
+    let shift_up_btn = document.createElement("button");
+    shift_up_btn.innerText = "上移鈕";
+    shift_up_btn.classList.add("shift_up_btn");
+    shift_up_btn.addEventListener('click', shift_up_spot);
+    //向下移動按鈕
+    let shift_down_btn = document.createElement("button");
+    shift_down_btn.innerText = "下移鈕";
+    shift_down_btn.classList.add("shift_down_btn");
+    shift_down_btn.addEventListener('click', shift_down_spot);
+
+    let shiftbtns = document.createElement("div");
+    shiftbtns.classList.add("shiftbtns");
+    shiftbtns.appendChild(shift_up_btn);
+    shiftbtns.appendChild(shift_down_btn);
+
+
+    //刪除按鈕
+    let delete_btn = document.createElement("button");
+    delete_btn.innerText = "X";
+    delete_btn.classList.add("delete_btn");
+    delete_btn.addEventListener('click', deleteSpot);
+
+    let spot_block = document.createElement("div");
+    spot_block.appendChild(clone_panelcontent);
+    spot_block.appendChild(delete_btn);
+    spot_block.appendChild(shiftbtns);
+    selected_spot_panel.appendChild(spot_block);
+    //影藏第一個spot上移按鈕
+    if (selected_spot_panel.hasChildNodes()) {
+      let firstkid_up_btn = selected_spot_panel.firstChild;
+      // firstkid_up_btn.style.display="none";
+      console.log(firstkid_up_btn)
+    }
+    // console.log()
+    // 燈箱關掉
+    let spotlightbox = document.querySelector(".spotlightbox");
+    this.parentNode.style.display = "none";
+    // console.log(this.previousElementSibling, "??")
+    spotlightbox.removeChild(this.previousElementSibling);
+
+    //呼叫creatTourInfo();
+    creatTourInfo();
+  }
+  //點X按鈕刪除panel裡的spot
+  function deleteSpot() {
+    var mom = this.parentNode;
+
+    let get_pandel_spot_id = this.parentNode.firstChild.getElementsByTagName("input")[0].id
+    console.log(get_pandel_spot_id)
+    let spot_inner = document.querySelectorAll(".spotoptions .content input");
+    for (let i = 0; i < spot_inner.length; i++) {
+      if (spot_inner[i].id == get_pandel_spot_id) {
+        var delete_spot_inner = spot_inner[i].parentNode.parentNode;
+        delete_spot_inner.style.display = "block";
+        // console.log()
+      }
+    }
+    mom.parentNode.removeChild(this.parentNode);
+
+    creatTourInfo();
+
+  }
+  function shift_up_spot() {
+    let panelparentNode = this.parentNode.parentNode.parentNode;
+    //  console.log(panelparentNode,"上移")
+    //  console.log(this.parentNode.parentNode,"要移的")
+    panelparentNode.insertBefore(this.parentNode.parentNode, this.parentNode.parentNode.previousSibling);
+
+    creatTourInfo();
+  }
+  function shift_down_spot() {
+    let panelparentNode = this.parentNode.parentNode.parentNode;
+    // console.log(this.parentNode.parentNode,"要移的")
+    // console.log(this.parentNode.parentNode.nextSibling,"參考兄弟")
+    //再問老師為何insertAfter不行
+    // panelparentNode.insertAfter(this.parentNode.parentNode,this.parentNode.parentNode.nextSibling);
+    panelparentNode.insertBefore(this.parentNode.parentNode.nextSibling, this.parentNode.parentNode);
+
+    creatTourInfo();
+  }
+
+
+  //步驟一二三四的tab切換
+  //上一步 下一步 btns controller======================================
   let nextbtn = document.getElementById("next");
   let previousbtn = document.getElementById("previous");
   var currentindex = 0;
@@ -36,17 +179,55 @@ window.addEventListener("load", function () {
   function showtab(e) {
     var x = document.getElementsByClassName("tab");
     x[e].classList.remove("hide");
+    //第一步
     if (e == 0) {
       previousbtn.style.display = "none";
+      //判斷沒有選行程不能進行下一步
+
+
     } else {
       previousbtn.style.display = "inline-block";
     }
+
+    //第二步
+    if (e == 1) {
+      //建立景點清單web storage
+      if (storage['addSpotList'] == null) {
+        storage['addSpotList'] = '';
+      }
+
+      //抓景點清單
+      let spotList = document.querySelectorAll('.selected_spot > div');
+      // console.log(spotList.length);
+      for (let i = 0; i < spotList.length; i++) {
+        let spotId = spotList[i].firstChild.childNodes[5].id;
+        console.log(spotId);
+        let spotInfo = document.querySelector(`#${spotId}`).value;
+        addSpot(spotId, spotInfo);
+      }
+
+    }
+
+    //第三步
+    if (e == 2) {
+      // creatTourInfo();
+    }
+
     if (e == 3) {
       nextbtn.innerHTML = "確認送出揪團";
     }
 
     stepindicator(e);
   }
+
+  //儲存景點功能
+  function addSpot(spotId, spotValue) {
+    if (storage[spotId] == null) {
+      storage['addSpotList'] += `${spotId},`;
+      storage[spotId] = spotValue;
+    }
+  }
+
   nextbtn.onclick = function () {
     var k = 1;
     let x = document.getElementsByClassName("tab");
@@ -61,6 +242,7 @@ window.addEventListener("load", function () {
     //把新的index傳回去showtab
     showtab(currentindex);
   };
+
   previousbtn.onclick = function () {
     var k = -1;
     let x = document.getElementsByClassName("tab");
@@ -84,6 +266,99 @@ window.addEventListener("load", function () {
     currentstep[e].classList.add("active");
   }
 
+  //動態新增景點編輯
+  function creatTourInfo() {
+    let spotList = document.querySelectorAll('.selected_spot > div');
+    let spotListInfo = document.querySelectorAll('.selected_spot .content input');
+    let spotListImg = document.querySelectorAll('.selected_spot .content img');
+    let tourWrapper = document.querySelector('.tour_wrapper');
+
+    tourWrapper.innerHTML = "";
+
+    for (let i = 0; i < spotList.length; i++) {
+      //建立行程區塊
+      let section = document.createElement('div');
+      section.classList.add('section');
+
+      //建立圖片區塊
+      let spotLeft = document.createElement('div');
+      spotLeft.classList.add('left');
+      spotLeft.classList.add('spot1');
+      let templeImgWrapper = document.createElement('div');
+      templeImgWrapper.classList.add('temple_img');
+      let templeImg = document.createElement('img');
+      templeImg.src = spotListImg[i].src;
+      // templeImg.src = spotList[i].firstChild.children[1].src;
+      // console.log(children[1]);
+      // console.log(spotList[i].firstChild.childNodes[3]);
+
+      templeImgWrapper.appendChild(templeImg);
+      spotLeft.appendChild(templeImgWrapper);
+      section.appendChild(spotLeft);
+
+      //建立文字區塊
+      let spotRight = document.createElement('div');
+      spotRight.classList.add('right');
+      spotRight.classList.add('spot1');
+      let nextLine = document.createElement('br');
+
+
+      let tourName = document.createElement('label');
+      tourName.innerText = `行程 ${i + 1}`;
+      let tourNameInput = document.createElement('input');
+      tourNameInput.setAttribute("type", "text");
+      tourNameInput.value = spotListInfo[i].value.split("|")[0];
+      let spotLocation = document.createElement('label');
+      spotLocation.innerText = '景點地址';
+      let spotLocationInput = document.createElement('input');
+      spotLocationInput.setAttribute("type", "text");
+      spotLocationInput.value = spotListInfo[i].value.split("|")[1];
+      let spotIntro = document.createElement('label');
+      spotIntro.innerText = '景點簡介';
+      let spotIntroInput = document.createElement('input');
+      spotIntroInput.setAttribute("type", "text");
+      spotIntroInput.value = spotListInfo[i].value.split("|")[1];
+      let spotTool = document.createElement('label');
+      spotTool.innerText = '所需工具';
+      let spotToolInput = document.createElement('input');
+      spotToolInput.setAttribute("type", "text");
+      spotToolInput.placeholder = "請輸入需要工具";
+      let spotFee = document.createElement('label');
+      spotFee.innerText = '預估費用';
+      let spotFeeInput = document.createElement('input');
+      spotFeeInput.setAttribute("type", "number");
+      spotFeeInput.value = "0";
+      spotFeeInput.min = "0"
+
+
+      spotRight.appendChild(tourName);
+      spotRight.appendChild(tourNameInput);
+      spotRight.appendChild(document.createElement('br'));
+      spotRight.appendChild(spotLocation);
+      spotRight.appendChild(spotLocationInput);
+      spotRight.appendChild(document.createElement('br'));
+      spotRight.appendChild(spotIntro);
+      spotRight.appendChild(spotIntroInput);
+      spotRight.appendChild(document.createElement('br'));
+      spotRight.appendChild(spotTool);
+      spotRight.appendChild(spotToolInput);
+      spotRight.appendChild(document.createElement('br'));
+      spotRight.appendChild(spotFee);
+      spotRight.appendChild(spotFeeInput);
+      spotRight.appendChild(document.createElement('br'));
+      section.appendChild(spotRight);
+
+      tourWrapper.appendChild(section);
+    }
+
+
+  }
+
+
+
+
+
+  //============================================================================
 
 
 
@@ -501,6 +776,8 @@ window.addEventListener("load", function () {
     }
   }
 });
+
+
 
 
 //萬年曆function之一
