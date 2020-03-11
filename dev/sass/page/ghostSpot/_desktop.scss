@@ -383,6 +383,7 @@
 
         a{
           color: #700000;
+          text-decoration: none;
         }
 
         &:hover {
@@ -666,6 +667,7 @@
 
         a{
           color: white;
+          text-decoration: none;
         }
 
         &:hover {
@@ -726,6 +728,7 @@
         border-radius: 20px 200px 200px 20px;
         padding: 10px 20px;
         margin-bottom: 20px;
+        
 
         display: inline-flex;
         justify-content: space-between;
@@ -873,6 +876,7 @@
         padding: 10px;
         border: 1px solid #cecece;
         opacity: .7;
+        resize: none;
       }
 
       .btnWrap{

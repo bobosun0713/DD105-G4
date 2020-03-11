@@ -1,3 +1,4 @@
+//table選擇
 function openClass(evt, className) {
     var i, x, tablinks;
     x = document.getElementsByClassName("class");
@@ -17,7 +18,7 @@ function openClass(evt, className) {
 
 
 
-
+//圖片預覽
 function preview1(file) {
 var img = new Image(), url = img.src = URL.createObjectURL(file)
 var $img = $(img)
@@ -43,6 +44,8 @@ preview1(file)
 })
 })
 
-
-document.getElementById("mem_time").innerHTML = Date();
-
+//登入時間
+function nowtime(){
+   document.getElementById("mem_time").innerHTML = Date();
+}
+setInterval(nowtime,3000);

@@ -105,109 +105,13 @@ body {
   .filter {
     width: 100%;
     height: 44px;
-    border-radius: 0px 5px;
-    //   overflow: hidden;
-    margin-bottom: 30px;
-    box-sizing: border-box;
-    display: flex;
-
-    .input-group {
-      // background-color: #f3f3f3;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      border-radius: 2px;
-      overflow: hidden;
-      padding: 0px 15px;
-      box-sizing: border-box;
-
-      .ikeyword {
-        background-color: #f3f3f3;
-        width: 40%;
-        //   background-color: transparent;
-        height: 44px;
-        > input {
-          outline: none;
-          width: 100%;
-          box-sizing: border-box;
-          height: 44px;
-          border: 0;
-          font-size: 16px;
-          font-weight: 700;
-          padding: 0 0px 0 10px;
-          background-color: transparent;
-        }
-        .b-divide {
-          height: 15px;
-          width: 1px;
-          background: rgb(82, 82, 82);
-        }
-      }
-
-      .area {
-        background-color: #f3f3f3;
-        height: 44px;
-        width: 30%;
-        //   width: 100%;
-
-        .area_filter {
-          width: 100%;
-          line-height: 44px;
-          border: 0;
-          font-size: 16px;
-          font-weight: 700;
-          padding: 0 0px 0 20px;
-          background-color: transparent;
-          outline: none;
-          color: $subtitle;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        .b-divide {
-          height: 15px;
-          width: 1px;
-          background: rgb(82, 82, 82);
-        }
-      }
-      .attraction {
-        background-color: #f3f3f3;
-        height: 44px;
-        width: 30%;
-        .attraction_filter {
-          width: 100%;
-          line-height: 44px;
-          border: 0;
-          font-size: 16px;
-          font-weight: 700;
-          padding: 0 0px 0 20px;
-          background-color: transparent;
-          outline: none;
-          color: $subtitle;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        .b-divide {
-          height: 15px;
-          width: 1px;
-          background: rgb(82, 82, 82);
-        }
-      }
-      .search {
-        margin-left: 2%;
-        border: 1px solid red;
-        height: 44px;
-        width: 150px;
-        border-radius: 5px;
-        color: white;
-        background-color: #d11c00;
-        &:hover {
-          background-color: rgb(230, 34, 4);
-          cursor: pointer;
-        }
-      }
+    width: 150px;
+    border-radius: 5px;
+    color: white;
+    background-color: #d11c00;
+    &:hover {
+      background-color: rgb(230, 34, 4);
+      cursor: pointer;
     }
   }
 
@@ -228,10 +132,7 @@ body {
         padding: 5px 50px;
         color: white;
         opacity: 0.8;
-        // background: url("../img/icon/downarrow.svg") no-repeat right center;
-        // background-size: 10px;
-        // background-position-x: 130px;
-        // -webkit-appearance: none;
+        -webkit-appearance: none;
         option {
           background-color: rgb(58, 57, 57);
         }
@@ -351,89 +252,6 @@ body {
             }
           }
         }
-
-        .progress {
-          border-radius: 10px;
-          overflow: visible;
-          margin-bottom: 50px;
-          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
-          background-color: rgb(201, 201, 201);
-          padding: 1px;
-          .progress-bar {
-            background-color: rgb(255, 0, 0);
-            box-shadow: inset 0 1px 2px rgb(151, 5, 5), 0 1px rgba(255, 255, 255, 0.08);
-            position: relative;
-            border-radius: 4px;
-            width: 80%;
-            height: 4px;
-            animation: line2 5s infinite;
-            @keyframes line2 {
-              0% {
-                width: 0;
-              }
-              25% {
-                width: 20%;
-              }
-              50% {
-                width: 40%;
-              }
-              75% {
-                width: 60%;
-              }
-              100% {
-                width: 80%;
-              }
-            }
-
-            &::before {
-              content: " ";
-              width: 15px;
-              height: 15px;
-              background-color: rgb(70, 67, 67);
-              border-radius: 50%;
-              position: absolute;
-              top: -6px;
-              left: -10px;
-              border: 2px solid rgb(219, 219, 219);
-              box-sizing: border-box;
-            }
-            &::after {
-              content: " ";
-              width: 15px;
-              height: 15px;
-              background-color: #d11c00;
-              border-radius: 50%;
-              position: absolute;
-              right: 0;
-              top: -6px;
-              border: 2px solid rgb(219, 219, 219);
-              box-sizing: border-box;
-            }
-            > span {
-              position: absolute;
-              bottom: -55px;
-              font-size: 14px;
-              padding: 2px 4px 2px 5px;
-              right: -40px;
-              border-radius: 2px;
-              display: flex;
-              align-items: center;
-              .progress_image {
-                padding-right: 5px;
-                width: 25px;
-                height: 25px;
-                display: inline-block;
-                img {
-                  width: 100%;
-                }
-              }
-              > p {
-                display: inline-block;
-                color: $subtitle;
-              }
-            }
-          }
-        }
       }
 
       // .txt
@@ -454,26 +272,48 @@ body {
             img {
               width: 100%;
             }
-          }
-          .main_people_name {
-            color: $subtitle;
-            padding: 5px 0 15px 0;
-            font-size: 14px;
-          }
-        }
 
-        .last_time {
-          color: $subtitle;
-          font-size: 18px;
-          font-weight: 600;
-          &:hover {
-            color: $red;
-            cursor: pointer;
+            // .txt
+            .peple_number {
+              width: 25%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              .main_people {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .main_people_img {
+                  width: 80px;
+                  height: 80px;
+                  padding-bottom: 10px;
+                  img {
+                    width: 100%;
+                  }
+                }
+                .main_people_name {
+                  color: $subtitle;
+                  padding: 5px 0 15px 0;
+                  font-size: 14px;
+                }
+              }
+
+              .last_time {
+                color: $subtitle;
+                font-size: 18px;
+                font-weight: 600;
+                &:hover {
+                  color: $red;
+                  cursor: pointer;
+                }
+              }
+            }
           }
+          // .item
         }
       }
     }
-    // .item
   }
 }
 

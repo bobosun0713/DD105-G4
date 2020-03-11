@@ -1,34 +1,34 @@
 @include respond(small) {
-    //手機375px
+  //手機375px
 
- .game{
-   .grid{
-     width: 375px;
-    .allcandlesblock{
-      display: none;
-       
-     }
-    #quiz{
-      .startbtn{
-        background-size:90% ;
-        background-position: 5px;
-
-      }
-      .quizimg{
-        img{
-          width:97%;
-        }
-      }
-      .test_score_title{
-        font-size: 30px;
-        #test_score{
-          font-size: 75px;
-         
-        }
-      }
-    } 
+.game{
+ .grid{
+   width: 375px;
+  .allcandlesblock{
+    display: none;
+     
    }
+  #quiz{
+    .startbtn{
+      background-size:90% ;
+      background-position: 5px;
 
-  }
+    }
+    .quizimg{
+      img{
+        width:97%;
+      }
+    }
+    .test_score_title{
+      font-size: 30px;
+      #test_score{
+        font-size: 75px;
+       
+      }
+    }
+  } 
+ }
+
+}
 
 }

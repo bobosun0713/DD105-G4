@@ -41,6 +41,7 @@
         }
         .wrapper{
           width: 98%;
+          
           border: 1px solid goldenrod;
           #tab-1 {
             // border: 1px solid white;
@@ -55,10 +56,18 @@
                 font-size:17px ;
                 padding: 0 45px 0 10px;
               }
+              .leftblock{
+                textarea{
+                  width:200px;
+                  height:135px;
+                }
+
+              }
             }
             .right{
-              width: 93%;
-              margin: 30px auto 0 auto;
+              width:93%;
+              height:250px;
+              margin: 30px auto;
             }
           }
           #tab-3{
@@ -106,6 +115,17 @@
             }
           }
         }
+        .button_block {
+      
+          .btn-outline{
+            
+            width: 160px;
+            height:50px;
+            font-size: 20px;
+            background-color: transparent;
+            outline: none;
+          }
+      }
       }
     }
   

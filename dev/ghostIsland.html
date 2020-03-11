@@ -12,7 +12,9 @@
 
     <div id="ghostIslandWrapper">
         @@include('layout/component/indexsmoke.html')
-        @@include('layout/header.html')
+        @@include('layout/header.html',{
+            "link001" : "pageSelectEffect2"
+          })
 
         <section id="ghostIslandSection1">
 
@@ -24,17 +26,17 @@
                     </div>
 
                     <div class="checkBT">
-                        <input type="checkbox" name="northArea" id="northArea" />
+                        <input type="checkbox" name="northArea" id="northArea" checked/>
                         <label for="northArea" class="areaSelect">北部區域</label>
                     </div>
 
                     <div class="checkBT">
-                        <input type="checkbox" name="midArea" id="midArea" />
+                        <input type="checkbox" name="midArea" id="midArea" checked/>
                         <label for="midArea" class="areaSelect">中部區域</label>
                     </div>
 
                     <div class="checkBT">
-                        <input type="checkbox" name="southArea" id="southArea" />
+                        <input type="checkbox" name="southArea" id="southArea" checked/>
                         <label for="southArea" class="areaSelect">南部區域</label>
                     </div>
                 </form>
@@ -148,7 +150,8 @@
             <div class="cardDisplay">
                 <div class="cardContain" id="cardContain">
 
-                    <div class="spotCard">
+                    <!-- 北部 -->
+                    <div class="spotCard northCard">
                         <div class="spotImg">
                             <img src="./img/component/card/spotCard01.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
@@ -177,9 +180,9 @@
                         </div>
                     </div>
 
-                    <div class="spotCard">
+                    <div class="spotCard northCard">
                         <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
+                            <img src="./img/component/card/spotCard02.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png" />
@@ -187,7 +190,7 @@
                             </div>
                         </div>
                         <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <h2 class="spotTitle">【劉家昌廢墟】</h2>
                             <p class="spotIntro">
                                 <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
                             </p>
@@ -206,9 +209,9 @@
                         </div>
                     </div>
 
-                    <div class="spotCard">
+                    <div class="spotCard northCard">
                         <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
+                            <img src="./img/component/card/spotCard03.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png" />
@@ -216,7 +219,91 @@
                             </div>
                         </div>
                         <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <h2 class="spotTitle">【碧潭幸福樂園】</h2>
+                            <p class="spotIntro">
+                                <a href="./ghostSpot.html">全台猛鬼樂園之一的碧潭幸福樂園，相傳遊樂園的雲霄飛車曾發生意外，之後....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="./adventrue.html">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="spotStatus">
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg" />
+                                130
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="spotCard northCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard04.png" />
+                            <p class="rate">膽量指數:<span class="rateScale">5</span>/10</p>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【文化大學鬼電梯】</h2>
+                            <p class="spotIntro">
+                                <a href="./ghostSpot.html">傳說大仁館在文化大學的風水地理位置是在陰陽交界處，建館時設計師....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="./adventrue.html">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="spotStatus">
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg" />
+                                130
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="spotCard northCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard05.png" />
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                            <div id="rank">
+                                <img src="./img/component/card/rank.png" />
+                                <p>NO.1</p>
+                            </div>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【瑞芳廢棄醫院】</h2>
+                            <p class="spotIntro">
+                                <a href="./ghostSpot.html">破舊壯觀的空間，看得出當年風光，而如今這裡卻被人遺忘許久....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="./adventrue.html">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="spotStatus">
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg" />
+                                130
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 中部 -->
+                    <div class="spotCard midCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard05.png" />
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                            <div id="rank">
+                                <img src="./img/component/card/rank.png" />
+                                <p>NO.1</p>
+                            </div>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【東海碉堡】</h2>
                             <p class="spotIntro">
                                 <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
                             </p>
@@ -235,9 +322,9 @@
                         </div>
                     </div>
 
-                    <div class="spotCard">
+                    <div class="spotCard midCard">
                         <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
+                            <img src="./img/component/card/spotCard06.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png" />
@@ -245,7 +332,124 @@
                             </div>
                         </div>
                         <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <h2 class="spotTitle">【大坑鬼城】</h2>
+                            <p class="spotIntro">
+                                <a href="./ghostSpot.html">4萬多坪山坡地上，水泥灰色空屋112戶連成好幾排，每一棟至少3層樓....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="./adventrue.html">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="spotStatus">
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg" />
+                                130
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="spotCard midCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard07.png" />
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                            <div id="rank">
+                                <img src="./img/component/card/rank.png" />
+                                <p>NO.1</p>
+                            </div>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【卡多里樂園】</h2>
+                            <p class="spotIntro">
+                                <a href="./ghostSpot.html">卡多里樂園於1983年2月開園，曾經是台中最著名的遊樂場之一....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="./adventrue.html">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="spotStatus">
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg" />
+                                130
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="spotCard midCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard08.png" />
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                            <div id="rank">
+                                <img src="./img/component/card/rank.png" />
+                                <p>NO.1</p>
+                            </div>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【台中千越百貨】</h2>
+                            <p class="spotIntro">
+                                <a href="./ghostSpot.html">過去曾是熱鬧的複合式商業大廈，卻因歷經多場火災逐漸沒落....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="./adventrue.html">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="spotStatus">
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg" />
+                                130
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="spotCard midCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard10.png" />
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                            <div id="rank">
+                                <img src="./img/component/card/rank.png" />
+                                <p>NO.1</p>
+                            </div>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【民雄鬼屋】</h2>
+                            <p class="spotIntro">
+                                <a href="./ghostSpot.html">民雄鬼屋是一座古宅，又稱劉氏古厝。劉氏古厝為三層樓巴洛克式....(more)</a>
+                            </p>
+                            <p class="groupJoin">
+                                <a href="./adventrue.html">
+                                    查看景點相關揪團
+                                </a>
+                            </p>
+                        </div>
+                        <hr />
+                        <div class="spotStatus">
+                            <p class="vote">
+                                <img class="voteImg" src="./img/icon/vote-01.svg" />
+                                130
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 南部 -->
+                    <div class="spotCard southCard">
+                        <div class="spotImg">
+                            <img src="./img/component/card/spotCard09.png" />
+                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
+                            <div id="rank">
+                                <img src="./img/component/card/rank.png" />
+                                <p>NO.1</p>
+                            </div>
+                        </div>
+                        <div class="spotTxt">
+                            <h2 class="spotTitle">【臺灣電影文化城】</h2>
                             <p class="spotIntro">
                                 <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
                             </p>
@@ -264,9 +468,9 @@
                         </div>
                     </div>
 
-                    <div class="spotCard">
+                    <div class="spotCard southCard">
                         <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
+                            <img src="./img/component/card/spotCard11.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png" />
@@ -274,7 +478,7 @@
                             </div>
                         </div>
                         <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <h2 class="spotTitle">【醒村】</h2>
                             <p class="spotIntro">
                                 <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
                             </p>
@@ -293,10 +497,9 @@
                         </div>
                     </div>
 
-
-                    <div class="spotCard">
+                    <div class="spotCard southCard">
                         <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
+                            <img src="./img/component/card/spotCard12.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png" />
@@ -304,7 +507,7 @@
                             </div>
                         </div>
                         <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <h2 class="spotTitle">【臺南杏林醫院】</h2>
                             <p class="spotIntro">
                                 <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
                             </p>
@@ -323,9 +526,9 @@
                         </div>
                     </div>
 
-                    <div class="spotCard">
+                    <div class="spotCard southCard">
                         <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
+                            <img src="./img/component/card/spotCard13.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png" />
@@ -333,7 +536,7 @@
                             </div>
                         </div>
                         <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <h2 class="spotTitle">【東南水泥廠】</h2>
                             <p class="spotIntro">
                                 <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
                             </p>
@@ -352,9 +555,9 @@
                         </div>
                     </div>
 
-                    <div class="spotCard">
+                    <div class="spotCard southCard">
                         <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
+                            <img src="./img/component/card/spotCard14.png" />
                             <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
                             <div id="rank">
                                 <img src="./img/component/card/rank.png" />
@@ -362,210 +565,7 @@
                             </div>
                         </div>
                         <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                            <p class="spotIntro">
-                                <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                            </p>
-                            <p class="groupJoin">
-                                <a href="./adventrue.html">
-                                    查看景點相關揪團
-                                </a>
-                            </p>
-                        </div>
-                        <hr />
-                        <div class="spotStatus">
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg" />
-                                130
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png" />
-                                <p>NO.1</p>
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                            <p class="spotIntro">
-                                <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                            </p>
-                            <p class="groupJoin">
-                                <a href="./adventrue.html">
-                                    查看景點相關揪團
-                                </a>
-                            </p>
-                        </div>
-                        <hr />
-                        <div class="spotStatus">
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg" />
-                                130
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png" />
-                                <p>NO.1</p>
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                            <p class="spotIntro">
-                                <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                            </p>
-                            <p class="groupJoin">
-                                <a href="./adventrue.html">
-                                    查看景點相關揪團
-                                </a>
-                            </p>
-                        </div>
-                        <hr />
-                        <div class="spotStatus">
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg" />
-                                130
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png" />
-                                <p>NO.1</p>
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                            <p class="spotIntro">
-                                <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                            </p>
-                            <p class="groupJoin">
-                                <a href="./adventrue.html">
-                                    查看景點相關揪團
-                                </a>
-                            </p>
-                        </div>
-                        <hr />
-                        <div class="spotStatus">
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg" />
-                                130
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png" />
-                                <p>NO.1</p>
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                            <p class="spotIntro">
-                                <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                            </p>
-                            <p class="groupJoin">
-                                <a href="./adventrue.html">
-                                    查看景點相關揪團
-                                </a>
-                            </p>
-                        </div>
-                        <hr />
-                        <div class="spotStatus">
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg" />
-                                130
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png" />
-                                <p>NO.1</p>
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                            <p class="spotIntro">
-                                <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                            </p>
-                            <p class="groupJoin">
-                                <a href="./adventrue.html">
-                                    查看景點相關揪團
-                                </a>
-                            </p>
-                        </div>
-                        <hr />
-                        <div class="spotStatus">
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg" />
-                                130
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png" />
-                                <p>NO.1</p>
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
-                            <p class="spotIntro">
-                                <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
-                            </p>
-                            <p class="groupJoin">
-                                <a href="./adventrue.html">
-                                    查看景點相關揪團
-                                </a>
-                            </p>
-                        </div>
-                        <hr />
-                        <div class="spotStatus">
-                            <p class="vote">
-                                <img class="voteImg" src="./img/icon/vote-01.svg" />
-                                130
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="spotCard">
-                        <div class="spotImg">
-                            <img src="./img/component/card/spotCard01.png" />
-                            <p class="rate">膽量指數:<span class="rateScale">8.5</span>/10</p>
-                            <div id="rank">
-                                <img src="./img/component/card/rank.png" />
-                                <p>NO.1</p>
-                            </div>
-                        </div>
-                        <div class="spotTxt">
-                            <h2 class="spotTitle">【新莊廢棄醫院】</h2>
+                            <h2 class="spotTitle">【南山公墓】</h2>
                             <p class="spotIntro">
                                 <a href="./ghostSpot.html">日式建築風格的廢棄醫院，現已經荒廢無人，保留了完整的醫療設備....(more)</a>
                             </p>

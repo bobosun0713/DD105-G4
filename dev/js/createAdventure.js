@@ -83,4 +83,13 @@ window.addEventListener("load", function () {
     }
     currentstep[e].classList.add("active");
   }
+
+
+
+
+
+
+  //上傳揪團圖片
+  let uploadTourImg = document.getElementById('#uploadTourFile');
+  
 });

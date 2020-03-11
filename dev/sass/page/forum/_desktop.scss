@@ -61,7 +61,7 @@
             // border: 1px solid red;
             width: 1200px;
             margin: 0 auto;
-            // text-align: center;
+            text-align: center;
 
             select {
                 border: 22 solid white;
@@ -85,6 +85,7 @@
             }
             .forum_filter_serch {
                 display: inline-block;
+                // text-align: center;
                 input {
                     vertical-align: top;
                     border: 0px;

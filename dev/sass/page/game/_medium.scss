@@ -1,28 +1,29 @@
 @include respond(medium) {
     
-.game{    
-    .grid{    
-      #camera1{
-        .box1{        
-          #L_magicpaper{
-            background: none;
-          }    
-        }
-      }
-        #camera2{
-          .box2{
-            
-            #R_magicpaper{
+  .game{    
+      .grid{    
+        #camera1{
+          .box1{        
+            #L_magicpaper{
               background: none;
-            }
-           
+            }    
           }
         }
-    }
-}
-
-
-}
-
-
+          #camera2{
+            .box2{
+              
+              #R_magicpaper{
+                background: none;
+              }
+             
+            }
+          }
+      }
+  }
+  
+  
+  }
+  
+  
+    
   
