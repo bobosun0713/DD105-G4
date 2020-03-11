@@ -12,11 +12,12 @@
   <!-- @@include('layout/component/mouse_ghost.html') -->
   <div class="createAdventure">
     @@include('layout/header.html',{
-      "link002" : "pageSelectEffect2"
+    "link002" : "pageSelectEffect2",
+    "link001-2":"pageSelectEffect1"
     })
     <section class="section_wrapper">
       <div class="form-tabs">
-        <div class="mainspot tourTitle">廢棄新莊醫院</div>
+        <div class="mainspot tourTitle">【新莊廢棄醫院】</div>
 
         <!-- 導覽列 -->
         <ul class="form-menu">
@@ -39,6 +40,7 @@
         </ul>
       </div>
       <div id="progressbar"></div>
+
       <div class="wrapper">
 
         <!-- 步驟1 -->
@@ -113,14 +115,73 @@
               <label>人數限制</label>
               <input type="number" value="1" min="1" max="30" />
               <br />
+
               <label>發起日期</label>
-              <input type="date" value="" />
+              <!-- 萬年曆-發起日期 -->
+              <div class="dateCalender">
+                <div class="yy_mm_dd_container">
+                  <p id="yy_mm_dd">請選取日期</p>
+                  <img src="./img/createAdventure/arrow.png" class="arrow">
+                </div>
+                <table id="dateZone">
+                  <thead>
+                    <tr>
+                      <td class="selected preMonth">〈</td>
+                      <td colspan="5" id="yy_mm"></td>
+                      <td class="selected nextMonth">〉</td>
+                    </tr>
+                  </thead>
+                  <tbody id="dateTable">
+
+                  </tbody>
+                </table>
+              </div>
+
               <br />
+
               <label>截止日期</label>
-              <input type="date" value="" />
+              <!-- 萬年曆-截止日期 -->
+              <div class="dateCalender">
+                <div class="yy_mm_dd_container_2">
+                  <p id="yy_mm_dd_2">請選取日期</p>
+                  <img src="./img/createAdventure/arrow.png" class="arrow">
+                </div>
+                <table id="dateZone_2">
+                  <thead>
+                    <tr>
+                      <td class="selected preMonth_2">〈</td>
+                      <td colspan="5" id="yy_mm_2"></td>
+                      <td class="selected nextMonth_2">〉</td>
+                    </tr>
+                  </thead>
+                  <tbody id="dateTable_2">
+
+                  </tbody>
+                </table>
+              </div>
+
               <br />
               <label>出團日期</label>
-              <input type="date" value="" />
+              <!-- 萬年曆-出團日期 -->
+              <div class="dateCalender">
+                <div class="yy_mm_dd_container_3">
+                  <p id="yy_mm_dd_3">請選取日期</p>
+                  <img src="./img/createAdventure/arrow.png" class="arrow">
+                </div>
+                <table id="dateZone_3">
+                  <thead>
+                    <tr>
+                      <td class="selected preMonth_3">〈</td>
+                      <td colspan="5" id="yy_mm_3"></td>
+                      <td class="selected nextMonth_3">〉</td>
+                    </tr>
+                  </thead>
+                  <tbody id="dateTable_3">
+
+                  </tbody>
+                </table>
+              </div>
+
               <br />
               <label>揪團名稱</label>
               <input type="text" value="" maxlength="15" placeholder="限15字以內" />
@@ -133,14 +194,21 @@
           <!-- 上傳揪團首圖 -->
           <div class="tab-2 right2">
             <div class="heading">
+
+              <input type="file" name="uploadTourFile" id="uploadTourFile" accept="image/*">
               <div class="tour_imagePreview" id="tour_imagePreview">
-                <img src="img/createAdventure/addgroupimg_icon.png" class="tour_imagePreview_default"/>
+                <img src="img/createAdventure/addgroupimg_icon.png" class="tour_imagePreview_default" />
                 <div class="tour_imagePreview_text">
-                  <img src="" alt="">
+                  <img src="./img/createAdventure/addgroupimg_icon2.png" class="icon">
                   <p>添加封面照片</p>
                 </div>
               </div>
-              <input type="file" name="uploadTourFile" id="uploadTourFile">
+
+              <div class="decoration_hand">
+                <img src="./img/createAdventure/hand.png" class="hand1">
+                <img src="./img/createAdventure/hand2.png" class="hand2">
+              </div>
+
             </div>
           </div>
         </div>
@@ -148,55 +216,62 @@
         <!-- 步驟3 -->
         <div id="tab-3" class="hide tab">
           <div class="spot1 left">
-            <div class="tourTitle">請從下方選擇想搭配的景點:</div>
+            <div class="tourTitle">請填寫詳細行程規劃:</div>
           </div>
           <br />
-          <div class="section">
-            <div class="spot1 left">
-              <div class="temple_img"><img src="img/createAdventure/temple1.png" /></div>
+          <div class="tour_wrapper">
+
+            <!-- 以下動態新增區塊 -->
+            <div class="section">
+              <div class="spot1 left">
+                <div class="temple_img"><img src="img/createAdventure/temple1.png" /></div>
+              </div>
+
+              <div class="spot1 right">
+                <label>行程一</label>
+                <input type="text" value="平安宮" />
+                <br />
+                <label>景點地址</label>
+                <input type="text" value="平安宮地址地址地址" />
+                <br />
+                <label>景點簡介</label>
+                <textarea name=""></textarea>
+                <br />
+                <label>所需工具</label>
+                <input type="text" value="" />
+                <br />
+                <label>預估費用</label>
+                <input type="number" value="0" min="0" max="" />
+                <br />
+              </div>
+            </div>
+            <div class="section">
+              <div class="spot2 left">
+                <div class="temple_img"><img src="img/createAdventure/spot1.png" /></div>
+              </div>
+
+              <div class="spot2 right">
+                <label>行程二</label>
+                <input type="text" value="新莊廢棄醫院" />
+                <br />
+                <label>景點地址</label>
+                <input type="text" value="新莊廢棄醫院地址地址地址地址" />
+                <br />
+                <label>景點簡介</label>
+                <textarea name=""></textarea>
+                <br />
+                <label>所需工具</label>
+                <input type="text" value="" />
+                <br />
+                <label>預估費用</label>
+                <input type="number" value="0" min="0" max="" />
+                <br />
+              </div>
             </div>
 
-            <div class="spot1 right">
-              <label>行程一</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點地址</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點簡介</label>
-              <textarea name=""></textarea>
-              <br />
-              <label>所需工具</label>
-              <input type="text" value="" />
-              <br />
-              <label>預估費用</label>
-              <input type="number" value="0" min="0" max="" />
-              <br />
-            </div>
           </div>
-          <div class="section">
-            <div class="spot2 left">
-              <div class="temple_img"><img src="img/createAdventure/spot1.png" /></div>
-            </div>
 
-            <div class="spot2 right">
-              <label>行程二</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點地址</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點簡介</label>
-              <textarea name=""></textarea>
-              <br />
-              <label>所需工具</label>
-              <input type="text" value="" />
-              <br />
-              <label>預估費用</label>
-              <input type="number" value="0" min="0" max="" />
-              <br />
-            </div>
-          </div>
+
         </div>
       </div>
 

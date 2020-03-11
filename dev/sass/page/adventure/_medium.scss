@@ -1,7 +1,10 @@
 @include respond(medium) {
-  body {
-    display: block;
+  .adventure_wrap {
+    background-size:130%;
+    background-position-x: center;
+
   }
+
   .adventure_container {
     margin: 0 auto;
     width: 800px;

@@ -139,6 +139,10 @@ header {
       }
     }
 
+    .pageSelectEffect1{
+      transform: rotate(10deg);
+    }
+
 
 
     li:nth-child(4) {
@@ -207,6 +211,10 @@ header {
       flex-wrap: wrap;
       width: 400px;
 
+      a{
+        text-decoration: none;
+      }
+
       li {
         // border: 1px solid red;
         width: 150px;
@@ -236,6 +244,8 @@ header {
             opacity: 1;
           }
         }
+
+        
       }
 
       #hamburgerSound {

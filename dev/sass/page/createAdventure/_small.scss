@@ -1,132 +1,147 @@
 @include respond(small) {
-    //手機都寫在裡面
-    .createAdventure{
-      .section_wrapper{
-        width: 100%;
-        .form-tabs {
-          width: 95%;
-          margin:0 auto 0 auto;
-          .mainspot{ 
-            font-size: 1.2rem;
-            margin: 0 auto 25px auto;
-            // border: 1px solid red;
-          }
-          .form-menu {
-            display: flex;
-            justify-content: center;
-            li{
-
-              .nav-label {
-                display: block;
-                height: 45px;
-                width: 75px;
-                margin: 0 autos;
-                // background-color: royalblue;
-                font-size: 16px;
-                left:0px;
-                position: relative;
-                top: 15px;
-                // line-height: 20px;
-                
-              }
-            }
-            li .progressbar::after{
-              bottom:63px;
-              // left:8px;
-              transform: translate(20px);
-              width:40px;   
-            }
- 
-          }
+  //手機都寫在裡面
+  .createAdventure {
+    overflow: hidden;
+    
+    .section_wrapper {
+      width: 100%;
+      .form-tabs {
+        width: 95%;
+        margin: 0 auto 0 auto;
+        .mainspot {
+          font-size: 1.5rem;
+          margin: 0 auto 25px auto;
+          // border: 1px solid red;
         }
-        .wrapper{
-          width: 98%;
-          
-          border: 1px solid goldenrod;
-          #tab-1 {
-            // border: 1px solid white;
-            padding: 0;
-            max-width: 95%;
-            justify-content: center;
-            .left{
-              width: 93%;
+        .form-menu {
+          display: flex;
+          justify-content: center;
+          transform: translateX(-30px);
+          li {
+            .nav-label {
+              display: block;
+              height: 45px;
+              width: 75px;
               margin: 0 auto;
-              // border: 1px solid yellow;
-              .title{
-                font-size:17px ;
-                padding: 0 45px 0 10px;
-              }
-              .leftblock{
-                textarea{
-                  width:200px;
-                  height:135px;
-                }
-
-              }
-            }
-            .right{
-              width:93%;
-              height:250px;
-              margin: 30px auto;
+              // background-color: royalblue;
+              font-size: 16px;
+              left: 30px;
+              position: relative;
+              top: 15px;
+              // line-height: 20px;
             }
           }
-          #tab-3{
+          li .progressbar::after {
+            bottom: 63px;
+            // left:8px;
+            transform: translate(20px);
+            width: 40px;
+          }
+        }
+      }
+      .wrapper {
+        width: 98%;
+
+        // border: 1px solid goldenrod;
+        #tab-1 {
+          // border: 1px solid white;
+          padding: 0;
+          max-width: 95%;
+          justify-content: center;
+          .left {
+            width: 93%;
             margin: 0 auto;
-            .left{
-              width: 100%;
-              // ???
-              // margin-left:auto;
-              height: 65px;
-              border: 1px solid rgb(47, 113, 255);
-              .title{
-                font-size:17px ;
-                padding: 0 45px 0 10px;
+            // border: 1px solid yellow;
+            .title {
+              font-size: 17px;
+              padding: 0 45px 0 10px;
+            }
+            .leftblock {
+              textarea {
+                width: 200px;
+                height: 135px;
               }
             }
-            .section {
-              justify-content:flex-end;
-              .left{
-                width:250px;
-                height:250px;
-                margin-left:80px;
-                // float:right;
-                border: 1px solid pink;
-                img{
-                  width:250px;
-                  height:250px;
-                }
-                
+          }
+          .right {
+            width: 93%;
+            height: 250px;
+            margin: 30px auto;
+          }
+        }
+
+        #tab-2 {
+          .left{
+            width: 65%;
+          }
+          .right2 {
+            .heading {
+              .tour_imagePreview{
+                right: 15%;
               }
-              .right{
-                width:93%;
-                margin: 30px auto 0 auto;
-                border: 1px solid yellowgreen;
-                input {
-                  width:60%;
-                  height: 45px;
-                  margin-bottom: 20px;
-                }
-                textarea {
-                  width:60%;
-                  height: 110px;
-                  padding: 10px;
-                }
+              .decoration_hand {
+                top: -400px;
+                right: -20px;
               }
             }
           }
         }
-        .button_block {
-      
-          .btn-outline{
-            
-            width: 160px;
-            height:50px;
-            font-size: 20px;
-            background-color: transparent;
-            outline: none;
+
+        #tab-3 {
+          margin: 0 auto;
+
+          .left {
+            .tourTitle{
+              margin: 50px 0;
+              min-width: 300px;
+              position: relative;
+              left: -50px;
+            }
           }
+
+          .section {
+            justify-content: flex-end;
+
+            .left {
+              width: 250px;
+              height: 250px;
+              // border: 1px solid pink;
+
+
+
+              img {
+                width: 250px;
+                height: 250px;
+              }
+            }
+
+            .right {
+              width: 93%;
+              margin: 30px auto 0 auto;
+              // border: 1px solid yellowgreen;
+              input {
+                width: 60%;
+                height: 45px;
+                margin-bottom: 20px;
+              }
+              textarea {
+                width: 60%;
+                height: 110px;
+                padding: 10px;
+              }
+            }
+          }
+        }
       }
+      .button_block {
+        .btn-outline {
+          width: 160px;
+          height: 50px;
+          font-size: 20px;
+          background-color: transparent;
+          outline: none;
+        }
       }
     }
-  
   }
+}

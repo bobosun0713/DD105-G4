@@ -1,8 +1,11 @@
+body{
+  overflow-x: hidden;
+}
 
 
 #StartGroupSpotBG {
   //border: 1px solid blue;
-  background-image: url("../img/spot/BG/spotBG.png");
+  background-image: url("../img/adventrue/尋鬼探險.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -301,11 +304,10 @@
 }
 
 #StartGroup_Section2 {
-  // border: 1px solid darkcyan;
   width: 1000px;
   margin: 10px auto;
   padding: 50px;
-  height: 1200px;
+  // height: 1200px;
 
   // .allTabPage {
   //   position: relative;
@@ -341,23 +343,22 @@
 
     #tabPage1 {
       width: 100%;
-      position: absolute;
+      position: relative;;
       top: 0px;
       left: 0%;
-   
+
       // left: 0px;
       // border: 1px solid yellowgreen;
 
-
       //這裡重要，background-size: 100% 100%;讓背景隨著內容物跑出來
       //然後給他padding下面鬼
-      #officalTour {  
+      #officalTour {
         // border: 1px solid yellowgreen;
         // height:800px;
         margin: auto;
         padding: 100px 0px 150px 0px;
         // border: 1px solid darkcyan;
-        background-image: url("../img/spot/shortPaper.png");
+        background-image: url("../img/StartGroup/shortPaper.png");
         background-size: 100% 100%;
         background-repeat: no-repeat;
         position: relative;
@@ -496,7 +497,7 @@
       .myTourGuide {
         // border: 1px solid goldenrod;
         height: 200px;
-        top:50px;
+        top: 50px;
         position: relative;
         // text-align: right;
 
@@ -615,14 +616,15 @@
     }
 
     #tabPage2 {
-      position: absolute;
+      position: relative;
       width: 100%;
+      height: 100%;
       top: 0px;
       left: 0%;
       // opacity: 0;
       // display: none;
       // border: 1px solid red;
-      height: 1000px;
+      // height: 1000px;
 
       .writeBtnWrap {
         //   border: 1px solid red;
@@ -888,7 +890,7 @@
     // 這區是左邊按鈕
     .adventure_btn {
       display: flex;
-      .ghost_btn {
+      .ghost_btn_all {
         margin: 50px;
         position: relative;
         width: 360px;
@@ -903,9 +905,6 @@
         &:hover .ghost_btn1 > img {
           transform: translateY(-40px);
         }
-        //字變畫還在想
-        // &:hover .ghost_tape > span {
-        // }
         //這是背景
         .ghost_btn_img1 {
           position: absolute;
@@ -941,7 +940,7 @@
           }
         }
       }
-      .ghost_btn2 {
+      .ghost_btn2_all {
         // margin: 50px;
         position: relative;
         width: 360px;
