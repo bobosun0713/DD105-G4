@@ -1,20 +1,31 @@
 .createAdventure {
-  padding-top: 20%;
+  padding-top: 15%;
   // background-color: aquamarine;
+  background-image: url("../../../img/spot/BG/spotBG.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
   .section_wrapper {
+    width: 90%;
+    margin: 0px auto;
     //   background-color: goldenrod;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px 0;
 
     .form-tabs {
       margin: 0 auto;
       padding: 5px 10px;
       position: relative;
-      margin-bottom: 80px;
+      margin-bottom: 130px;
       // width: 750px;
       z-index: 10;
       // border: 1px solid blue;
       .mainspot {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
         margin: 0 auto 50px auto;
         // border:1px solid white;
         text-align: center;
@@ -62,13 +73,11 @@
         //橫槓
         li .progressbar::after {
           content: "";
-          bottom: 18px;
-          // left:8px;
           transform: translate(18px);
           height: 2px;
           width: 90px;
           display: block;
-          left: 18px;
+          left: 25px;
           top: 12px;
           position: absolute;
           background-color: white;
@@ -79,6 +88,7 @@
     .wrapper {
       width: 1180px;
       margin: 0 auto;
+
       // background-color: aqua;
       /* 步驟一 廟宇 美食切換按鈕 */
       #tab-1 {
@@ -94,6 +104,7 @@
           flex: none;
           // background-color: rgb(199, 199, 235);
           .tourTitle {
+            min-width: 300px;
             font-size: 20px;
             display: inline-block;
             line-height: 63px;
@@ -256,7 +267,7 @@
           }
           .selected_spot {
             padding: 15px;
-            border: 1px solid red;
+            // border: 1px solid red;
           }
         }
       }
@@ -266,8 +277,10 @@
         .left {
           width: 45%;
           margin-right: 5%;
+          // border: 1px solid red;
           // background-color: rgb(199, 199, 235);
           .tourTitle {
+            min-width: 300px;
             font-size: 20px;
             display: inline-block;
             line-height: 63px;
@@ -320,8 +333,8 @@
               // margin-bottom: 50px;
               position: relative;
               display: inline;
-            
-              %yy_mm_dd_container{
+
+              %yy_mm_dd_container {
                 border: 1px solid #ccc;
                 border-radius: 10px;
                 width: 200px;
@@ -330,52 +343,51 @@
                 display: inline-flex;
                 justify-content: space-between;
                 align-items: center;
-            
-                p{
+
+                p {
                   margin: 0px;
-                  padding: 0px; 
+                  padding: 0px;
                 }
-            
-                img{
+
+                img {
                   width: 15px;
-                  transform:rotate(0deg);
-                  transition: transform .1s linear;
+                  transform: rotate(0deg);
+                  transition: transform 0.1s linear;
                 }
               }
-            
-              %dateZone{
+
+              %dateZone {
                 display: none;
                 position: absolute;
                 top: 25px;
                 left: 0px;
                 z-index: 88;
               }
-            
-              .yy_mm_dd_container{
-                @extend %yy_mm_dd_container;
-                
-              }
-            
-              #dateZone{
-                @extend %dateZone;
-              }
-            
-              .yy_mm_dd_container_2{
+
+              .yy_mm_dd_container {
                 @extend %yy_mm_dd_container;
               }
-            
-              #dateZone_2{
+
+              #dateZone {
                 @extend %dateZone;
               }
-            
-              .yy_mm_dd_container_3{
+
+              .yy_mm_dd_container_2 {
                 @extend %yy_mm_dd_container;
               }
-            
-              #dateZone_3{
+
+              #dateZone_2 {
                 @extend %dateZone;
               }
-            
+
+              .yy_mm_dd_container_3 {
+                @extend %yy_mm_dd_container;
+              }
+
+              #dateZone_3 {
+                @extend %dateZone;
+              }
+
               table,
               tr,
               td {
@@ -383,20 +395,20 @@
                 border: 0.5px solid #ccc;
                 border-collapse: collapse;
               }
-            
+
               td {
                 padding: 5px 10px;
                 text-align: center;
                 color: white;
               }
-            
+
               .selected {
                 cursor: pointer;
                 &:hover {
                   background: rgba(255, 255, 255, 0.2);
                 }
               }
-            
+
               tbody {
                 td {
                   cursor: pointer;
@@ -404,14 +416,12 @@
                     background: rgba(255, 255, 255, 0.2);
                   }
                 }
-            
-                .selected{
+
+                .selected {
                   background: rgba(255, 255, 255, 0.4);
                 }
               }
             }
-
-
           }
         }
         .right2 {
@@ -427,9 +437,8 @@
             width: 300px;
             height: 300px;
             margin: auto;
-            
 
-            #uploadTourFile{
+            #uploadTourFile {
               display: none;
             }
 
@@ -458,7 +467,7 @@
                 // border: 1px solid green;
                 width: 100%;
                 height: 20%;
-                background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
                 position: absolute;
                 bottom: 0px;
                 left: 0px;
@@ -483,7 +492,7 @@
               }
             }
 
-            .decoration_hand{
+            .decoration_hand {
               position: relative;
               top: -30px;
               right: -50px;
@@ -491,30 +500,53 @@
 
               // border: 1px solid red;
 
-              .hand1{
+              .hand1 {
                 width: 120px;
                 position: absolute;
                 right: 0;
+                opacity: 0;
+                transform: translateY(0px);
+                animation: slapHand 6s linear infinite;
+                animation-delay: 1s;
+              }
+              @keyframes slapHand {
+                0% {
+                  opacity: 1;
+                  transform: translateY(0px);
+                }
+                100% {
+                  opacity: 0;
+                  transform: translateY(50px);
+                }
               }
 
-              .hand2{
+              .hand2 {
                 width: 80px;
                 position: absolute;
                 right: 100px;
                 bottom: -250px;
+                transform: translateY(0px);
+                opacity: 0;
+                animation: slapHand 6s linear infinite;
+                animation-delay: 3s;
               }
             }
           }
         }
       }
+
       /* 步驟三 */
       #tab-3 {
         margin-top: 50px;
         padding: 5px 10px;
+
         .left {
+          // border: 1px solid red;
           clear: both;
+
           .tourTitle {
             margin-bottom: 50px;
+            min-width: 300px;
           }
           .tourTitle {
             font-size: 20px;
@@ -538,12 +570,17 @@
             }
           }
         }
+
+        .tour_wrapper {
+        }
+
         .section {
           display: flex;
           flex-wrap: wrap;
-          margin-bottom: 50px;
-          border: 1px solid blue;
-          justify-content: space-between;
+          margin-bottom: 100px;
+          // border: 1px solid blue;
+          justify-content: space-around;
+
           .left {
             .temple_img {
               /* border: 1px solid red; */
@@ -551,7 +588,10 @@
               overflow: hidden;
             }
           }
+
           .right {
+            // border: 1px solid green;
+
             label {
               font-size: 1.2rem;
               line-height: 45px;

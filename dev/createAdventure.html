@@ -17,7 +17,7 @@
     })
     <section class="section_wrapper">
       <div class="form-tabs">
-        <div class="mainspot tourTitle">廢棄新莊醫院</div>
+        <div class="mainspot tourTitle">【新莊廢棄醫院】</div>
 
         <!-- 導覽列 -->
         <ul class="form-menu">
@@ -40,6 +40,7 @@
         </ul>
       </div>
       <div id="progressbar"></div>
+
       <div class="wrapper">
 
         <!-- 步驟1 -->
@@ -164,22 +165,22 @@
               <!-- 萬年曆-出團日期 -->
               <div class="dateCalender">
                 <div class="yy_mm_dd_container_3">
-                    <p id="yy_mm_dd_3">請選取日期</p>
-                    <img src="./img/createAdventure/arrow.png" class="arrow">
+                  <p id="yy_mm_dd_3">請選取日期</p>
+                  <img src="./img/createAdventure/arrow.png" class="arrow">
                 </div>
                 <table id="dateZone_3">
-                    <thead>
-                        <tr>
-                            <td class="selected preMonth_3">〈</td>
-                            <td colspan="5" id="yy_mm_3"></td>
-                            <td class="selected nextMonth_3">〉</td>
-                        </tr>
-                    </thead>
-                    <tbody id="dateTable_3">
-                        
-                    </tbody>
+                  <thead>
+                    <tr>
+                      <td class="selected preMonth_3">〈</td>
+                      <td colspan="5" id="yy_mm_3"></td>
+                      <td class="selected nextMonth_3">〉</td>
+                    </tr>
+                  </thead>
+                  <tbody id="dateTable_3">
+
+                  </tbody>
                 </table>
-            </div>
+              </div>
 
               <br />
               <label>揪團名稱</label>
@@ -215,55 +216,62 @@
         <!-- 步驟3 -->
         <div id="tab-3" class="hide tab">
           <div class="spot1 left">
-            <div class="tourTitle">請從下方選擇想搭配的景點:</div>
+            <div class="tourTitle">請填寫詳細行程規劃:</div>
           </div>
           <br />
-          <div class="section">
-            <div class="spot1 left">
-              <div class="temple_img"><img src="img/createAdventure/temple1.png" /></div>
+          <div class="tour_wrapper">
+
+            <!-- 以下動態新增區塊 -->
+            <div class="section">
+              <div class="spot1 left">
+                <div class="temple_img"><img src="img/createAdventure/temple1.png" /></div>
+              </div>
+
+              <div class="spot1 right">
+                <label>行程一</label>
+                <input type="text" value="平安宮" />
+                <br />
+                <label>景點地址</label>
+                <input type="text" value="平安宮地址地址地址" />
+                <br />
+                <label>景點簡介</label>
+                <textarea name=""></textarea>
+                <br />
+                <label>所需工具</label>
+                <input type="text" value="" />
+                <br />
+                <label>預估費用</label>
+                <input type="number" value="0" min="0" max="" />
+                <br />
+              </div>
+            </div>
+            <div class="section">
+              <div class="spot2 left">
+                <div class="temple_img"><img src="img/createAdventure/spot1.png" /></div>
+              </div>
+
+              <div class="spot2 right">
+                <label>行程二</label>
+                <input type="text" value="新莊廢棄醫院" />
+                <br />
+                <label>景點地址</label>
+                <input type="text" value="新莊廢棄醫院地址地址地址地址" />
+                <br />
+                <label>景點簡介</label>
+                <textarea name=""></textarea>
+                <br />
+                <label>所需工具</label>
+                <input type="text" value="" />
+                <br />
+                <label>預估費用</label>
+                <input type="number" value="0" min="0" max="" />
+                <br />
+              </div>
             </div>
 
-            <div class="spot1 right">
-              <label>行程一</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點地址</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點簡介</label>
-              <textarea name=""></textarea>
-              <br />
-              <label>所需工具</label>
-              <input type="text" value="" />
-              <br />
-              <label>預估費用</label>
-              <input type="number" value="0" min="0" max="" />
-              <br />
-            </div>
           </div>
-          <div class="section">
-            <div class="spot2 left">
-              <div class="temple_img"><img src="img/createAdventure/spot1.png" /></div>
-            </div>
 
-            <div class="spot2 right">
-              <label>行程二</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點地址</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點簡介</label>
-              <textarea name=""></textarea>
-              <br />
-              <label>所需工具</label>
-              <input type="text" value="" />
-              <br />
-              <label>預估費用</label>
-              <input type="number" value="0" min="0" max="" />
-              <br />
-            </div>
-          </div>
+
         </div>
       </div>
 
