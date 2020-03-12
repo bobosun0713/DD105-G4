@@ -114,13 +114,11 @@ window.addEventListener("load", function () {
     spot_block.appendChild(delete_btn);
     spot_block.appendChild(shiftbtns);
     selected_spot_panel.appendChild(spot_block);
-    //影藏第一個spot上移按鈕
-    if (selected_spot_panel.hasChildNodes()) {
-      let firstkid_up_btn = selected_spot_panel.firstChild;
-      // firstkid_up_btn.style.display="none";
-      console.log(firstkid_up_btn)
-    }
+
     // console.log()
+    //hide panel 上下移btn
+    hideshift_btn()
+
     // 燈箱關掉
     let spotlightbox = document.querySelector(".spotlightbox");
     this.parentNode.style.display = "none";
@@ -154,6 +152,7 @@ window.addEventListener("load", function () {
     //  console.log(panelparentNode,"上移")
     //  console.log(this.parentNode.parentNode,"要移的")
     panelparentNode.insertBefore(this.parentNode.parentNode, this.parentNode.parentNode.previousSibling);
+    hideshift_btn();
 
     creatTourInfo();
   }
@@ -164,8 +163,41 @@ window.addEventListener("load", function () {
     //再問老師為何insertAfter不行
     // panelparentNode.insertAfter(this.parentNode.parentNode,this.parentNode.parentNode.nextSibling);
     panelparentNode.insertBefore(this.parentNode.parentNode.nextSibling, this.parentNode.parentNode);
+    hideshift_btn();
 
     creatTourInfo();
+  }
+
+
+  //影藏第一個selected_spot上的移動按鈕
+  function hideshift_btn() {
+    if (selected_spot_panel.hasChildNodes()) {
+      // // 為何while鎖死
+      let countnodes = selected_spot_panel.children;
+      let updown_btn = selected_spot_panel.firstElementChild.lastElementChild;
+      let clearwholebtns = document.querySelectorAll(".shiftbtns button")
+      for (let w = 0; w < clearwholebtns.length; w++) {
+        clearwholebtns[w].style.display = "block";
+      }
+
+      if (countnodes.length <= 1) {
+        updown_btn.style.display = "none";
+
+      } else {
+        //?????????
+        let SSSS = document.querySelectorAll(".shiftbtns")
+        for (let u = 0; u < SSSS.length; u++) {
+          SSSS[u].style.display = "block";
+        }
+        let firstkid_up_btn = selected_spot_panel.firstElementChild.lastElementChild.firstElementChild;
+        let lastkid_down_btn = selected_spot_panel.lastElementChild.lastElementChild.lastElementChild;
+        console.log(lastkid_down_btn, "ff")
+        firstkid_up_btn.style.display = "none";
+        lastkid_down_btn.style.display = "none";
+
+      }
+    }
+
   }
 
 
@@ -191,44 +223,66 @@ window.addEventListener("load", function () {
 
     //第二步
     if (e == 1) {
-      //建立景點清單web storage
-      if (storage['addSpotList'] == null) {
-        storage['addSpotList'] = '';
-      }
-
-      //抓景點清單
-      let spotList = document.querySelectorAll('.selected_spot > div');
-      // console.log(spotList.length);
-      for (let i = 0; i < spotList.length; i++) {
-        let spotId = spotList[i].firstChild.childNodes[5].id;
-        console.log(spotId);
-        let spotInfo = document.querySelector(`#${spotId}`).value;
-        addSpot(spotId, spotInfo);
-      }
 
     }
 
     //第三步
     if (e == 2) {
-      // creatTourInfo();
+
     }
 
     if (e == 3) {
+      creatPreviewPage();
+      // previousbtn.style.display = "none";
       nextbtn.innerHTML = "確認送出揪團";
     }
 
     stepindicator(e);
   }
 
-  //儲存景點功能
-  function addSpot(spotId, spotValue) {
-    if (storage[spotId] == null) {
-      storage['addSpotList'] += `${spotId},`;
-      storage[spotId] = spotValue;
-    }
-  }
 
   nextbtn.onclick = function () {
+    //判斷如果在第一步時沒有選行程，則不能跳轉下一步
+    let selected_spot = document.querySelectorAll('#tab-1 .selected_spot > div');
+    let selected_date_1 = document.querySelector('#yy_mm_dd').innerText;
+    let selected_date_2 = document.querySelector('#yy_mm_dd_2').innerText;
+    let selected_date_3 = document.querySelector('#yy_mm_dd_3').innerText;
+    let noneDate = "請選取日期";
+    let myTourTitle = document.querySelectorAll('#tab-2 input')[1].value;
+    let myTourIntro = document.querySelector('#tab-2 textarea').value;
+
+    if (currentindex == 0) {
+      if (selected_spot.length == 0) {
+        alert("尚未選擇任何行程");
+      } else {
+        nextPage();
+      }
+    } else if (currentindex == 1) {
+      if (selected_date_1 == noneDate | selected_date_2 == noneDate  | selected_date_3 == noneDate | myTourTitle == "" | myTourIntro == "") {
+        alert("尚未完整填寫基本資料");
+      } else {
+        nextPage();
+      }
+    } else {
+      nextPage();
+    }
+
+    
+    // var k = 1;
+    // let x = document.getElementsByClassName("tab");
+    // console.log(currentindex + "A");
+
+    // //驗證!!???
+    // x[currentindex].classList.add("hide");
+
+    // currentindex = currentindex + k;
+    // x[currentindex].classList.remove("hide");
+    // // console.log(currentindex + "B");
+    // //把新的index傳回去showtab
+    // showtab(currentindex);
+  };
+
+  function nextPage() {
     var k = 1;
     let x = document.getElementsByClassName("tab");
     console.log(currentindex + "A");
@@ -238,10 +292,10 @@ window.addEventListener("load", function () {
 
     currentindex = currentindex + k;
     x[currentindex].classList.remove("hide");
-    console.log(currentindex + "B");
+    // console.log(currentindex + "B");
     //把新的index傳回去showtab
     showtab(currentindex);
-  };
+  }
 
   previousbtn.onclick = function () {
     var k = -1;
@@ -288,9 +342,6 @@ window.addEventListener("load", function () {
       templeImgWrapper.classList.add('temple_img');
       let templeImg = document.createElement('img');
       templeImg.src = spotListImg[i].src;
-      // templeImg.src = spotList[i].firstChild.children[1].src;
-      // console.log(children[1]);
-      // console.log(spotList[i].firstChild.childNodes[3]);
 
       templeImgWrapper.appendChild(templeImg);
       spotLeft.appendChild(templeImgWrapper);
@@ -300,8 +351,6 @@ window.addEventListener("load", function () {
       let spotRight = document.createElement('div');
       spotRight.classList.add('right');
       spotRight.classList.add('spot1');
-      let nextLine = document.createElement('br');
-
 
       let tourName = document.createElement('label');
       tourName.innerText = `行程 ${i + 1}`;
@@ -315,8 +364,7 @@ window.addEventListener("load", function () {
       spotLocationInput.value = spotListInfo[i].value.split("|")[1];
       let spotIntro = document.createElement('label');
       spotIntro.innerText = '景點簡介';
-      let spotIntroInput = document.createElement('input');
-      spotIntroInput.setAttribute("type", "text");
+      let spotIntroInput = document.createElement('textarea');
       spotIntroInput.value = spotListInfo[i].value.split("|")[1];
       let spotTool = document.createElement('label');
       spotTool.innerText = '所需工具';
@@ -349,6 +397,204 @@ window.addEventListener("load", function () {
       section.appendChild(spotRight);
 
       tourWrapper.appendChild(section);
+    }
+
+    creatPreviewPage();
+  }
+
+  //動態改變預覽畫面
+  function creatPreviewPage() {
+
+    //新增首圖
+    let myTourPic = document.querySelector('#tourPreview_Section1 .bigPic img');
+    let selectedTourPic = document.querySelectorAll('#tour_imagePreview img')[0];
+    myTourPic.src = selectedTourPic.src;
+
+    //新增標題跟簡介
+    let myTourTitle = document.querySelector('#tourPreview_Section1 .txtZone h1');
+    let wroteTourTitle = document.querySelectorAll('#tab-2 .leftblock input')[1].value;
+    myTourTitle.innerText = wroteTourTitle;
+
+    let introTxt = document.querySelector('#tourPreview_Section1 .txtZone .introTxt p');
+    let wroteIntroTxt = document.querySelector('#tab-2 .leftblock textarea').value;
+    introTxt.innerText = wroteIntroTxt;
+
+
+    //新增選擇的日期
+    let myTourLaunchDate = document.getElementById('myTourLaunchDate');
+    let myTourStartDate = document.getElementById('myTourStartDate');
+    let myTourStopDate = document.getElementById('myTourStopDate');
+    let myTourStopDate2 = document.getElementById('myTourStopDate2');
+    let selectedLaunchDate = document.getElementById('yy_mm_dd');
+    let selectedStartDate = document.getElementById('yy_mm_dd_2');
+    let selectedStopDate = document.getElementById('yy_mm_dd_3');
+    myTourLaunchDate.innerText = selectedLaunchDate.innerText;
+    myTourStartDate.innerText = selectedStartDate.innerText;
+    myTourStopDate.innerText = selectedStopDate.innerText;
+    myTourStopDate2.innerText = selectedStopDate.innerText;
+
+    //新增選擇的人數
+    let selectedtourJoinNum = document.querySelectorAll('#tab-2 .leftblock input')[0];
+    let myTourJoinNum = document.getElementById('myTourJoinNum');
+    myTourJoinNum.innerText = selectedtourJoinNum.value;
+
+    //新增預算
+    let myTourspots = document.querySelectorAll('.tour_wrapper .section');
+    let myTourBudget = document.getElementById('myTourBudget');
+    let totalBudget = 0;
+
+    for (var i = 0; i < myTourspots.length; i++) {
+      let eachTourInfo = document.querySelectorAll('.tour_wrapper input');
+      let eachTourBudget = eachTourInfo[`${eachTourInfo.length - 4 * i - 1}`].value;
+
+      // console.log(myTourspots.length, eachTourInfo.length, eachTourBudget);
+      totalBudget += parseInt(eachTourBudget);
+    }
+    myTourBudget.innerText = totalBudget;
+
+    //新增行程
+    let customeTour = document.getElementById('customeTour');
+    let customeTourImg = document.querySelectorAll('.tour_wrapper .section .spot1 .temple_img img');
+    let eachTourInfo = document.querySelectorAll('.tour_wrapper input');
+    let eachTourTextarea = document.querySelectorAll('.tour_wrapper textarea');
+
+    // console.log(customeTourImg.length);
+    customeTour.innerHTML = "";
+
+    //建立小點點
+    let tourStatus = document.createElement('nav');
+    tourStatus.classList.add('tourStatus');
+    let tourStatus_ul = document.createElement('ul');
+    tourStatus.appendChild(tourStatus_ul);
+    //迴圈跑完再放進customeTour
+
+    for (var i = 0; i < myTourspots.length; i++) {
+      //建立行程區塊
+      let tourSpot = document.createElement('div');
+      tourSpot.classList.add('tourSpot');
+
+      //建立圖片區域
+      let tourImg = document.createElement('div');
+      tourImg.classList.add('tourImg');
+      let tourImg_img = document.createElement('img');
+      tourImg_img.src = customeTourImg[i].src;
+
+      //建立行程文字區域
+      let tourSpotTxt = document.createElement('div');
+      tourSpotTxt.classList.add('tourSpotTxt');
+      let spotTitle = document.createElement('h2');
+      spotTitle.classList.add('spotTitle');
+      spotTitle.innerText = `【行程${i + 1}】`;
+      let spotTitleName = document.createElement('span');
+      let eachTourName = eachTourInfo[`${eachTourInfo.length - 4 * i - 4}`].value;
+      spotTitleName.innerText = eachTourName;
+      let spotIntro = document.createElement('p');
+      spotIntro.innerText = eachTourTextarea[i].value;
+
+      //新增資訊按鈕區塊
+      let tourSpotInfo = document.createElement('div');
+      tourSpotInfo.classList.add('tourSpotInfo');
+      //地址
+      let locationBtn = document.createElement('div');
+      locationBtn.classList.add('btn-outline2');
+      let locationBtn_icon = document.createElement('img');
+      locationBtn_icon.src = "./img/icon/location.png";
+      let locationBtn_txt = document.createElement('p');
+      locationBtn_txt.innerText = "地理位置";
+      let locationBtn_infoBox = document.createElement('div');
+      locationBtn_infoBox.classList.add('moreInfo');
+      let eachTourLocation = eachTourInfo[`${eachTourInfo.length - 4 * i - 3}`].value;
+      locationBtn_infoBox.innerText = eachTourLocation;
+      let locationBtn_triangle = document.createElement('div');
+      locationBtn_triangle.classList.add('triangle');
+
+      //所需工具
+      let toolBtn = document.createElement('div');
+      toolBtn.classList.add('btn-outline2');
+      let toolBtn_icon = document.createElement('img');
+      toolBtn_icon.src = "./img/icon/tool.png";
+      let toolBtn_txt = document.createElement('p');
+      toolBtn_txt.innerText = "所需工具";
+      let toolBtn_infoBox = document.createElement('div');
+      toolBtn_infoBox.classList.add('moreInfo');
+      let eachTourTool = eachTourInfo[`${eachTourInfo.length - 4 * i - 2}`].value;
+      if (eachTourTool == "") {
+        eachTourTool = "無";
+      }
+      toolBtn_infoBox.innerText = eachTourTool;
+      let toolBtn_triangle = document.createElement('div');
+      toolBtn_triangle.classList.add('triangle');
+
+      //費用
+      let feeBtn = document.createElement('div');
+      feeBtn.classList.add('btn-outline2');
+      let feeBtn_icon = document.createElement('img');
+      feeBtn_icon.src = "./img/icon/tool.png";
+      let feeBtn_txt = document.createElement('p');
+      feeBtn_txt.innerText = "所需工具";
+      let feeBtn_infoBox = document.createElement('div');
+      feeBtn_infoBox.classList.add('moreInfo');
+      let eachTourFee = eachTourInfo[`${eachTourInfo.length - 4 * i - 1}`].value;
+      feeBtn_infoBox.innerText = eachTourFee;
+      let feeBtn_triangle = document.createElement('div');
+      feeBtn_triangle.classList.add('triangle');
+
+      //建立小點點
+      if (i == 0) {
+        let statusCircle = document.createElement('li');
+        statusCircle.classList.add('statusCircle');
+        statusCircle.classList.add('selected');
+        let Circle = document.createElement('p');
+        Circle.classList.add('circle');
+        Circle.classList.add('selected2');
+
+        statusCircle.appendChild(Circle);
+        tourStatus_ul.appendChild(statusCircle);
+      } else {
+        let statusCircle = document.createElement('li');
+        statusCircle.classList.add('statusCircle');
+        let line = document.createElement('p');
+        line.classList.add('line');
+        let Circle = document.createElement('p');
+        Circle.classList.add('circle');
+
+        statusCircle.appendChild(line);
+        statusCircle.appendChild(Circle);
+        tourStatus_ul.appendChild(statusCircle);
+
+      }
+
+
+      tourImg.appendChild(tourImg_img);
+      tourSpot.appendChild(tourImg);
+
+      spotTitle.appendChild(spotTitleName);
+      tourSpotTxt.appendChild(spotTitle);
+      tourSpotTxt.appendChild(spotIntro);
+      //地點
+      locationBtn.appendChild(locationBtn_icon);
+      locationBtn.appendChild(locationBtn_txt);
+      locationBtn.appendChild(locationBtn_infoBox);
+      locationBtn.appendChild(locationBtn_triangle);
+      tourSpotInfo.appendChild(locationBtn);
+      //工具
+      toolBtn.appendChild(toolBtn_icon);
+      toolBtn.appendChild(toolBtn_txt);
+      toolBtn.appendChild(toolBtn_infoBox);
+      toolBtn.appendChild(toolBtn_triangle);
+      tourSpotInfo.appendChild(toolBtn);
+      //費用
+      feeBtn.appendChild(feeBtn_icon);
+      feeBtn.appendChild(feeBtn_txt);
+      feeBtn.appendChild(feeBtn_infoBox);
+      feeBtn.appendChild(feeBtn_triangle);
+      tourSpotInfo.appendChild(feeBtn);
+
+      tourSpotTxt.appendChild(tourSpotInfo);
+
+      tourSpot.appendChild(tourSpotTxt);
+      customeTour.appendChild(tourSpot);
+      customeTour.appendChild(tourStatus);
     }
 
 
@@ -776,8 +1022,6 @@ window.addEventListener("load", function () {
     }
   }
 });
-
-
 
 
 //萬年曆function之一

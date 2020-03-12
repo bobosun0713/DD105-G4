@@ -97,13 +97,13 @@
         // align-items: center;
         padding: 5px 10px;
         flex-wrap: wrap;
-        
-        .left{
+
+        .left {
           width: 45%;
           margin-right: 5%;
-          flex:none;
+          flex: none;
           // background-color: rgb(199, 199, 235);
-          .title{
+          .title {
             font-size: 20px;
             display: inline-block;
             line-height: 63px;
@@ -111,7 +111,7 @@
             background-color: #ffffff;
             border-radius: 10px 50px 50px 10px;
             position: relative;
-            color:black;
+            color: black;
             &:after {
               content: "";
               width: 30px;
@@ -124,24 +124,23 @@
               background-repeat: no-repeat;
             }
           }
-      
+
           .templefoodbuttons {
             button {
-            font-size: 22px;
-            border: none;
-            background-color: transparent;
-            margin: 30px 3px 10px 3px;
-            color: white;
-            &:after{
-              content:"11";
-              background-color: #ffffff;
-              width:30px;
-              height:3px;
-              // display: block;
+              font-size: 22px;
+              border: none;
+              background-color: transparent;
+              margin: 30px 3px 10px 3px;
+              color: white;
+              &:after {
+                content: "11";
+                background-color: #ffffff;
+                width: 30px;
+                height: 3px;
+                // display: block;
               }
               &:hover {
                 cursor: pointer;
-              
               }
             }
           }
@@ -157,10 +156,10 @@
               border-radius: 10px;
               padding: 8px;
               margin: 0 auto;
-              left:30%;
+              left: 30%;
               display: none;
-              .cancelbtn{
-                float:right;
+              .cancelbtn {
+                float: right;
               }
               button {
                 // border: 1px solid tomato;
@@ -170,29 +169,26 @@
                 font-size: 17px;
                 padding: 3px 10px;
                 background-color: transparent;
-                &:hover{
+                &:hover {
                   cursor: pointer;
                   background-color: tomato;
                 }
-          
               }
-              .additinerarybtn{
+              .additinerarybtn {
                 margin-top: 18px;
                 float: right;
               }
               img {
                 width: 85%;
                 height: 40%;
-                
               }
-              span{
+              span {
                 font-size: 1.5rem;
                 margin-bottom: 12px;
               }
-              .detailstext{
+              .detailstext {
                 font-size: 1.2rem;
               }
-              
             }
             .selectionsframe {
               border: 2px solid white;
@@ -202,93 +198,91 @@
               padding: 20px 30px;
               .spotoptions {
                 position: relative;
-                .addbtn{
-                  img{
-                    color:blue;
+                .addbtn {
+                  img {
+                    color: blue;
                     position: absolute;
                     opacity: 0.8;
-                    width:80px;
-                    height:80px;
+                    width: 80px;
+                    height: 80px;
                     border-radius: 50%;
-                    transform: translate(70%,50%);
+                    transform: translate(70%, 50%);
                     &:hover {
                       cursor: pointer;
                       opacity: 1;
                     }
                   }
-        
                 }
-                .content{
-                    // background-color: blue;
-                  
-                    img {
+                .content {
+                  // background-color: blue;
+
+                  img {
                     width: 185px;
                     height: 137px;
                     border: 3px solid blue;
-                    border-radius:5px ;
+                    border-radius: 5px;
                     margin-bottom: 5px;
-                 
                   }
                   span {
                     //title
                     position: absolute;
                     color: white;
-                    background-color:rgba(3,3,3,0.5);
-                    padding:3px;
+                    background-color: rgba(3, 3, 3, 0.5);
+                    padding: 3px;
                     border-radius: 8px;
                     line-height: 20px;
                     bottom: 13px;
-                    left:10px;
+                    left: 10px;
                   }
                 }
               }
             }
           }
         }
-        .right{
-          border:1px solid white; 
+        .right {
+          border: 1px solid white;
           color: #7d0022;
-          height:550px;
+          height: 550px;
           width: 45%;
           // background-color: rgb(19, 236, 103);
-          padding:15px;
+          padding: 15px;
           border-radius: 5px;
           background-image: url("../img/createAdventure/cardBg.png");
           background-repeat: no-repeat;
           background-size: 250%;
           background-position: -30px;
-          flex:none;
+          flex: none;
           .heading {
             line-height: 1.2rem;
             // border: 1px solid blue;
             margin-bottom: 30px;
             font-size: 1.2rem;
             padding-left: 10px;
-            img{
+            img {
               margin-right: 12px;
-              width:20px;
-              height:20px;
+              width: 20px;
+              height: 20px;
             }
           }
           .selected_spot {
-            height:90%;
+            height: 90%;
             padding: 15px;
-            border:3px solid red;
+            border: 3px solid red;
             overflow-y: scroll;
-            div{
-              img{
-                width:100%;
-                height:120px;
+            div {
+              img {
+                width: 100%;
+                height: 120px;
               }
-              .delete_btn{
+              .delete_btn {
                 font-size: 30px;
-                width:45px;
+                width: 45px;
                 font-weight: 700;
                 border-radius: 30%;
                 background-color: rgb(43, 41, 41);
-                color:white;
+                color: white;
                 border: none;
-                &:hover{
+                &:hover {
                   cursor: pointer;
                 }
               }
@@ -296,7 +290,6 @@
           }
         }
       }
-
 
       /* 步驟二 */
       #tab-2 {
@@ -616,7 +609,7 @@
               border-radius: 5px;
               overflow: hidden;
 
-              img{
+              img {
                 width: 100%;
                 height: 100%;
               }
@@ -655,6 +648,404 @@
       }
       #tab-4 {
         @extend #tab-1;
+
+        // 揪團簡介
+        #tourPreview_Section1 {
+          //border: 1px solid red;
+          width: 1000px;
+          margin: 20px auto;
+          padding: 20px;
+          // margin-top: 200px;
+          border-radius: 5px;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
+          // overflow: hidden;
+
+          .spotIntro {
+            // border: 1px solid red;
+            padding: 20px;
+            display: inline-flex;
+            justify-content: space-around;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+
+            .picZone {
+              width: 40%;
+              // border: 1px solid green;
+
+              .bigPic {
+                // width: 100%;
+                width: 360px;
+                height: 360px;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+            }
+
+            .txtZone {
+              width: 55%;
+              position: relative;
+              h1 {
+                font-size: 2rem;
+              }
+              .introTxt {
+                // border: 1px solid greenyellow;
+                margin: 20px;
+                p {
+                  color: #8c8a8a;
+                  margin: 5px;
+                }
+              }
+
+              .StartGroup_spotInform {
+                // border: 1px solid greenyellow;
+                margin: 30px 20px;
+
+                ul {
+                  li {
+                    margin: 5px 0;
+                    color: #8c8a8a;
+                    // border: 1px solid red;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    padding: auto 0;
+                    transition: all 0.5s ease;
+                    > div {
+                      margin-left: 25px;
+                    }
+                    span {
+                      font-size: 1rem;
+                      font-weight: 800;
+                      // border: 1px solid greenyellow;
+                    }
+                    // 日期icon
+                    i {
+                      margin-right: 10px;
+                      font-size: 16px;
+                    }
+                    img {
+                      margin-right: 10px;
+                    }
+                    // 揪團者名稱照片
+                    .StartGroup_people_img {
+                      width: 50px;
+                      height: 50px;
+                      margin: 0 10px 10px 0;
+                      overflow: hidden;
+                      border-radius: 50%;
+
+                      img {
+                        transition: all 0.5s;
+                        width: 100%;
+                        &:hover {
+                          cursor: pointer;
+                          transform: scale(1.2);
+                        }
+                      }
+                    }
+                    //讓碰到的物件顏色改變
+                    &:hover {
+                      box-sizing: border-box;
+                      color: white;
+                      text-shadow: 0 0 5px red;
+                      cursor: pointer;
+                      // align-items: baseline;
+                    }
+                  }
+                }
+              }
+
+              .spiderweb {
+                width: 400px;
+                position: absolute;
+                top: 150px;
+                right: -150px;
+
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .progress {
+            position: relative;
+            border-radius: 10px;
+            overflow: visible;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+            background-color: rgb(201, 201, 201);
+            padding: 1px;
+
+            &::after {
+              content: " ";
+              width: 15px;
+              height: 15px;
+              background-color: #d11c00;
+              border-radius: 50%;
+              position: absolute;
+              right: 0;
+              top: -6px;
+              border: 2px solid rgb(219, 219, 219);
+              box-sizing: border-box;
+            }
+            > span {
+              position: absolute;
+              bottom: -55px;
+              font-size: 14px;
+              padding: 2px 4px 2px 5px;
+              right: -40px;
+              border-radius: 2px;
+              display: flex;
+              align-items: center;
+              .progress_image {
+                padding-right: 5px;
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                img {
+                  width: 100%;
+                }
+              }
+              > p {
+                display: inline-block;
+                color: white;
+              }
+            }
+            .progress-bar {
+              background-color: rgb(255, 0, 0);
+              box-shadow: inset 0 1px 2px rgb(151, 5, 5), 0 1px rgba(255, 255, 255, 0.08);
+              position: relative;
+              border-radius: 4px;
+              width: 80%;
+              height: 4px;
+              animation: line2 5s infinite;
+              @keyframes line2 {
+                0% {
+                  width: 0;
+                }
+                25% {
+                  width: 20%;
+                }
+                50% {
+                  width: 40%;
+                }
+                75% {
+                  width: 60%;
+                }
+                100% {
+                  width: 80%;
+                }
+              }
+              &::before {
+                content: "";
+                width: 15px;
+                height: 15px;
+                background-color: white;
+                border-radius: 50%;
+                position: absolute;
+                top: -6px;
+                left: -10px;
+                border: 2px solid #d11c00;
+                box-sizing: border-box;
+              }
+              &::after {
+                content: " ";
+                width: 15px;
+                height: 15px;
+                background-color: #d11c00;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+                top: -6px;
+                border: 2px solid rgb(219, 219, 219);
+                box-sizing: border-box;
+              }
+              > span {
+                position: absolute;
+                bottom: -55px;
+                font-size: 14px;
+                padding: 2px 4px 2px 5px;
+                right: -40px;
+                border-radius: 2px;
+                display: flex;
+                align-items: center;
+                .progress_image {
+                  padding-right: 5px;
+                  width: 25px;
+                  height: 25px;
+                  display: inline-block;
+                  img {
+                    width: 100%;
+                  }
+                }
+                > p {
+                  display: inline-block;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+
+        #tourPreview_Section2 {
+          width: 1000px;
+          margin: 10px auto;
+          // padding: 50px;
+          // border: 1px solid yellowgreen;
+
+          //這裡重要，background-size: 100% 100%;讓背景隨著內容物跑出來
+          //然後給他padding下面鬼
+
+          #customeTour {
+            // border: 1px solid yellowgreen;
+            // height:800px;
+            margin: auto;
+            padding: 100px 10px;
+            // border: 1px solid darkcyan;
+            background-image: url("../img/spot/shortPaper.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: relative;
+            color: #3b3b3b;
+            text-align: center;
+            vertical-align: middle;
+
+            .tourSpot {
+              width: 80%;
+              margin-bottom: 80px;
+              // border: 1px solid darkcyan;
+              display: inline-flex;
+              justify-content: space-between;
+
+              .tourImg {
+                min-width: 250px;
+                width: 35%;
+
+                img {
+                  width: 100%;
+                }
+              }
+
+              .tourSpotTxt {
+                text-align: left;
+                width: 55%;
+                // border: 1px solid red;
+
+                .spotTitle {
+                  font-size: 1.2rem;
+                  color: #700000;
+                }
+
+                p {
+                  margin-left: 10px;
+                }
+
+                .tourSpotInfo {
+                  margin-top: 20px;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: space-between;
+
+                  .btn-outline2 {
+                    margin-right: 5px;
+                    position: relative;
+
+                    &:hover {
+                      .moreInfo {
+                        display: block;
+                        z-index: 10;
+                      }
+
+                      .triangle {
+                        display: block;
+                      }
+                    }
+
+                    .moreInfo {
+                      display: none;
+                      width: 200%;
+                      padding: 5px 10px;
+                      background: #8c8a8a;
+                      border-radius: 5px;
+                      font-size: 0.7rem;
+                      position: absolute;
+                      bottom: -40px;
+                      left: 0px;
+                      color: white;
+                      text-align: center;
+                      z-index: 3;
+                    }
+
+                    .triangle {
+                      display: none;
+                      width: 10px;
+                      height: 10px;
+                      border-color: transparent transparent #8c8a8a transparent;
+                      border-style: solid solid solid solid;
+                      border-width: 10px;
+                      position: absolute;
+                      bottom: -14px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .tourStatus {
+              // border: 1px solid red;
+              position: absolute;
+              top: 200px;
+              left: 410px;
+
+              ul {
+                li {
+                  margin-bottom: 240px;
+                }
+
+                .statusCircle {
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50%;
+                  background: #8c8a8a;
+                  position: relative;
+
+                  .circle {
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    border: 1px solid #8c8a8a;
+                    position: absolute;
+                    top: -18.5px;
+                    right: -4px;
+                  }
+
+                  .line {
+                    width: 1px;
+                    height: 235px;
+                    border: 2px dashed #8c8a8a;
+                    position: relative;
+                    top: -240px;
+                    right: -9px;
+                  }
+
+                  .selected2 {
+                    border: 1px solid #700000;
+                  }
+                }
+
+                .selected {
+                  background: #700000;
+                }
+              }
+            }
+          }
+        }
       }
       #tab-1.hide,
       #tab-2.hide,
