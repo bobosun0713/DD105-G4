@@ -215,6 +215,7 @@ window.addEventListener("load", function () {
     if (e == 0) {
       previousbtn.style.display = "none";
       //判斷沒有選行程不能進行下一步
+      nextbtn.innerHTML = "下一步";
 
 
     } else {
@@ -223,12 +224,12 @@ window.addEventListener("load", function () {
 
     //第二步
     if (e == 1) {
-
+      nextbtn.innerHTML = "下一步";
     }
 
     //第三步
     if (e == 2) {
-
+      nextbtn.innerHTML = "下一步";
     }
 
     if (e == 3) {
