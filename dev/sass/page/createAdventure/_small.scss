@@ -48,6 +48,8 @@
           padding: 0;
           max-width: 95%;
           justify-content: center;
+          margin: auto;
+          margin-top: 80px;
           .left {
             width: 93%;
             margin: 0 auto;
@@ -65,7 +67,7 @@
           }
           .right {
             width: 93%;
-            height: 250px;
+            height: 300px;
             margin: 30px auto;
           }
         }
@@ -107,6 +109,11 @@
               height: 250px;
               // border: 1px solid pink;
 
+              .temple_img{
+                width: 100%;
+                height: 100%;
+              }
+
 
 
               img {
@@ -130,6 +137,96 @@
                 padding: 10px;
               }
             }
+          }
+        }
+
+        #tab-4{
+
+          #tourPreview_Section1 {
+            width: 100%;
+            .spotIntro {
+              padding: 0px;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: flex-start;
+              .picZone {
+                display: flex;
+                width: 100%;
+                .bigPic {
+                  //大的照片
+                  width: 80%;
+                  height: 100%;
+        
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+              }
+              .txtZone {
+                width: 100%;
+                margin-top: 10px;
+                .introTxt {
+                  // border: 1px solid greenyellow;
+                  margin: 0px;
+                  p {
+                    color: #8c8a8a;
+                    margin: 5px;
+                  }
+                }
+                .spiderweb {
+                  z-index: 1;
+                  top: 100px;
+                  right: -150px;
+                }
+              }
+            }
+
+          }
+
+          #tourPreview_Section2 {
+ 
+            height: auto;
+            margin: 0 auto;
+            padding: 20px;
+            
+                #customeTour {
+                  background-color: rgb(255, 255, 255);
+                 background-size: 0;
+                 border-radius: 5px;
+                 padding: 20px 0;
+        
+                  .tourSpot {
+                    margin-bottom: 40px;
+                    flex-wrap: wrap;
+                    .tourImg {
+                      width: 100%;
+                      img {
+                        width: 100%;
+                      }
+                    }
+                    .tourSpotTxt {
+                      width: 100%;
+                      text-align: center;
+                      .tourSpotInfo {
+                        flex-direction: column;
+                        // justify-content: start;
+                        margin-top: 0;
+                        .btn-outline2 {
+                          width:80%;
+                          margin:0 auto 5px auto;                  width: 180px;
+                          border-radius: 20px;
+                        }
+                      }
+                    }
+                  }
+                  .tourStatus {
+                    display: none;
+                  }
+                }
+              
+            
           }
         }
       }

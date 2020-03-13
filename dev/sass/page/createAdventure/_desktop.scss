@@ -103,7 +103,8 @@
           margin-right: 5%;
           flex: none;
           // background-color: rgb(199, 199, 235);
-          .title {
+          .tourTitle {
+            min-width: 360px;
             font-size: 20px;
             display: inline-block;
             line-height: 63px;
@@ -132,15 +133,29 @@
               background-color: transparent;
               margin: 30px 3px 10px 3px;
               color: white;
-              &:after {
-                content: "11";
+
+              &:active {
+                content: " ";
                 background-color: #ffffff;
-                width: 30px;
-                height: 3px;
-                // display: block;
+                width: 50px;
+                height: 1px;
+                position: relative;
+                display: block;
               }
+
               &:hover {
                 cursor: pointer;
+              }
+            }
+
+            .selected{
+              &:after {
+                content: " ";
+                background-color: #ffffff;
+                width: 50px;
+                height: 1px;
+                position: relative;
+                display: block;
               }
             }
           }
@@ -149,45 +164,58 @@
             // background-color: grey;
             .spotlightbox {
               position: absolute;
-              background-color: grey;
+              background-color: rgba(0, 0, 0, 0.9);
               width: 340px;
-              height: 450px;
+              // height: 100%;
               z-index: 99;
-              border-radius: 10px;
-              padding: 8px;
+              border-radius: 5px;
+              padding: 10px 20px;
               margin: 0 auto;
               left: 30%;
               display: none;
+
+              .content{
+                margin: auto;
+              }
+
               .cancelbtn {
                 float: right;
               }
+
               button {
                 // border: 1px solid tomato;
-                border-radius: 15px;
-                line-height: 24px;
+                border-radius: 40px;
+                line-height: 22px;
                 color: white;
-                font-size: 17px;
-                padding: 3px 10px;
+                font-size: 13px;
+                padding: 5px 11px;
                 background-color: transparent;
+
                 &:hover {
                   cursor: pointer;
-                  background-color: tomato;
+                  background-color: rgba(255, 255, 255, 0.2);
                 }
               }
               .additinerarybtn {
                 margin-top: 18px;
                 float: right;
+                &:after{
+                  content: " ";
+                  clear: both;
+                }
               }
               img {
-                width: 85%;
+                width: 90%;
                 height: 40%;
+                margin: 10px;
               }
               span {
                 font-size: 1.5rem;
-                margin-bottom: 12px;
+                
               }
               .detailstext {
-                font-size: 1.2rem;
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.7);
               }
             }
             .selectionsframe {
@@ -265,25 +293,56 @@
             }
           }
           .selected_spot {
-            height: 90%;
+            height: 82%;
             padding: 15px;
             border: 3px solid red;
             overflow-y: scroll;
             div {
+              span{
+                font-size: 1.2rem;
+                font-weight: 800;
+                width: 100%;
+                float: right;
+              }
+
               img {
                 width: 100%;
                 height: 120px;
               }
               .delete_btn {
-                font-size: 30px;
-                width: 45px;
+                font-size: 1rem;
+
                 font-weight: 700;
-                border-radius: 30%;
-                background-color: rgb(43, 41, 41);
+                border-radius: 55%;
+                border: 1px solid white;
+                background: transparent;
                 color: white;
-                border: none;
+                position: relative;
+                bottom: 117px;
+                right:10px;
+                float: right;
+                
+
                 &:hover {
                   cursor: pointer;
+                  background: rgba(255, 255, 255, 0.3);
+                }
+              }
+
+              .shift_up_btn, .shift_down_btn{
+                position: relative;
+                bottom: 36px;
+                background: black;
+                border: 1px solid transparent;
+                color: white;
+                opacity: .6;
+                padding: 5px 10px;
+                transition: opacity .2s linear;
+                // display: inline;
+                float: left;
+
+                &:hover{
+                  opacity: .8;
                 }
               }
             }
