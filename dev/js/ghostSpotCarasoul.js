@@ -2,6 +2,27 @@ function $id(id){
     return document.getElementById(id);
     }
 
+//投票給該景點
+function voteThisSpot(){
+let xhr = new XMLHttpRequest();
+
+    xhr.onload = function(){
+        if( xhr.status == 200){
+        $id("voteThisSpot").value = xhr.responseText;
+        $id("voteThisSpot").disabled = true;
+        }else{
+        alert(xhr.status);
+    }
+  }
+  let url = "spot_vote.php";
+  xhr.open("post", url, true);
+  xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+  
+  let data_info = "spot_no=" + document.getElementById("voteSpotNo").value;
+  xhr.send(data_info);
+}
+//投票給該景點結束
+
 window.addEventListener('load', function(){
     let curIndex = 0;
     let cardDisplay = document.querySelector("#cardDisplay");
@@ -23,4 +44,8 @@ window.addEventListener('load', function(){
             $id("rightScroll").disabled = true;
         }
     }
-});
+
+    // 投票改該景點功能
+    console.log($id("voteThisSpot").value);
+    $id("voteThisSpot").addEventListener('click', voteThisSpot, false);
+},false);

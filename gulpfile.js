@@ -15,6 +15,7 @@ var web = {
     js: ['dev/js/*.js', 'dev/js/**/*.*'],
     img: ['dev/img/*.*', 'dev/img/**/*.*'],
     font: ['dev/font/*.*', 'dev/font/**/*.*'],
+    php: ['dev/*.php','dev/php/*.*']
 }
 
 //流程
@@ -31,6 +32,12 @@ gulp.task('font', function() {
 })
 gulp.task('music', function() {
     gulp.src('dev/music/*.*').pipe(gulp.dest('dest/music'))
+})
+gulp.task('php', function() {
+    gulp.src(web.php).pipe(gulp.dest('dest/'))
+})
+gulp.task('phpfolder', function() {
+    gulp.src('dev/php/*.*').pipe(gulp.dest('dest/php'))
 })
 
 //任務串連
