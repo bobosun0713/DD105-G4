@@ -12,6 +12,11 @@ try{
     $spots ->bindValue(":spot_no", $spot_no);    
     $spots ->execute();
 
+    // $sql = "select * from tour where spot_no = :spot_no order by tour_datetime desc limit 6";
+    // $tour = $pdo->prepare($sql);
+    // $tour ->bindValue(":spot_no", $spot_no);    
+    // $tour ->execute();
+
 
 }catch(PDOException $e){
     $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
@@ -58,6 +63,7 @@ if( $errMsg != ""){ //例外
   alert($errMsg);
 }else{
     $spotRow = $spots->fetchObject();
+    // $tourRow = $tour->fetchObject();
 ?>
 <!-- title PHP 有改 -->
     <title>前進鬼島-<?php echo $spotRow->spot_name; ?></title>
@@ -287,7 +293,7 @@ if( $errMsg != ""){ //例外
                 <div class="spotIntro">
 
                     <!-- 是前三名的話顯示名次 start -->
-                    <?php if($order_no != null){?>
+                    <?php if($order_no < 4){?>
                     <div id="rank">
                         <img src="./img/component/card/rank.png">
                         <p>NO.<?php echo $order_no?></p>
@@ -351,7 +357,7 @@ if( $errMsg != ""){ //例外
                             <!-- 改變投票btn start -->
                             <form method="post">
                                 <input type="hidden" id="voteSpotNo" value="<?php echo $spotRow->spot_no; ?>">
-                                <input type="button" class="btn-outline" id="voteThisSpot" value="投給【<?php echo $spotRow->spot_name; ?>】">
+                                <input type="button" class="btn-outline" id="voteThisSpot" value="投給【<?php echo $spotRow->spot_name; ?>">
                             </form>
                             <!-- 改變投票btn end -->
                         </div>
@@ -382,7 +388,7 @@ if( $errMsg != ""){ //例外
                 <div class="cardContain">
 
                     <div id="cardDisplay">
-
+                        
                         <div class="tourCard ">
                             <a href="">
                                 <div class="tourImg">
@@ -436,7 +442,7 @@ if( $errMsg != ""){ //例外
 
                         </div>
 
-                        <div class="tourCard">
+                        <!-- <div class="tourCard">
                             <a href="">
                                 <div class="tourImg">
                                     <img src="./img/component/card/spotCard01.png">
@@ -678,7 +684,7 @@ if( $errMsg != ""){ //例外
                                     </p>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
 
                     </div>
 

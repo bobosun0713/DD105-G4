@@ -161,10 +161,19 @@
       .btn-outline {
         width: 90%;
         margin: 0 auto;
+        border: 1px solid #fff;
         padding: 10px 0;
         text-align: center;
         font-size: 1.1rem;
+        color: #fff;
+        background: transparent;
+
         // border: 1px solid greenyellow;
+        &:hover {
+          color: #fff;
+          background: #700000;
+          border: 1px solid #700000;
+        }
       }
 
       .spiderweb {
@@ -343,12 +352,12 @@
     }
   }
 
-.allTabPage{
-  position: relative;
-  // border: 1px solid darkcyan;
-  width: 100%;
-  height: 100%;
-}
+  .allTabPage {
+    position: relative;
+    // border: 1px solid darkcyan;
+    width: 100%;
+    height: 100%;
+  }
 
   #tabPage1 {
     width: 100%;
@@ -381,7 +390,7 @@
         cursor: pointer;
         transition: all 0.5s linear;
 
-        a{
+        a {
           color: #700000;
           text-decoration: none;
         }
@@ -389,7 +398,7 @@
         &:hover {
           background: #700000;
           color: white;
-          a{
+          a {
             color: white;
           }
         }
@@ -398,7 +407,7 @@
       .tourSpot {
         width: 80%;
         margin-bottom: 80px;
-          // border: 1px solid darkcyan;
+        // border: 1px solid darkcyan;
 
         display: inline-flex;
         justify-content: space-between;
@@ -474,12 +483,11 @@
             }
           }
 
-          .tourSpotInfoRwd{
+          .tourSpotInfoRwd {
             // border: 1px solid green;
             display: none;
 
-            .moreInfo{
-              
+            .moreInfo {
               // border: 1px solid red;
               width: 100%;
               display: inline-flex;
@@ -487,19 +495,18 @@
               align-items: flex-start;
               margin-bottom: 10px;
 
-              img{
+              img {
                 // border: 1px solid blue;
-                width:15px;
+                width: 15px;
                 margin-right: 10px;
               }
 
-              p{
+              p {
                 margin: 0;
                 // border: 1px solid blue;
               }
             }
           }
-
         }
       }
 
@@ -563,7 +570,6 @@
         position: relative;
         height: 300px;
         // border: 1px solid palevioletred;
-        
 
         .G1img {
           transform: scaleX(-1);
@@ -587,7 +593,7 @@
         .G1L {
           width: 160px;
           position: absolute;
-         left: 260px;
+          left: 260px;
           bottom: -30px;
           transform-origin: top;
           animation: L_swing 3s linear infinite;
@@ -658,14 +664,14 @@
         width: 300px;
 
         padding: 10px 40px;
-        
+
         text-align: center;
 
         font-size: 1.2rem;
 
         margin: 0px 80px 50px 0px;
 
-        a{
+        a {
           color: white;
           text-decoration: none;
         }
@@ -675,7 +681,7 @@
           border: #700000;
           color: white;
 
-          a{
+          a {
             color: white;
           }
         }
@@ -689,7 +695,7 @@
     // border: 1px solid red;
 
     .writeBtnWrap {
-        // border: 1px solid red;
+      // border: 1px solid red;
       width: 90%;
       padding: 25px 10px;
       margin-bottom: 30px;
@@ -722,13 +728,12 @@
 
       .spotMsg {
         width: 90%;
-        
+
         //   height: 150px;
         background: white;
         border-radius: 20px 200px 200px 20px;
         padding: 10px 20px;
         margin-bottom: 20px;
-        
 
         display: inline-flex;
         justify-content: space-between;
@@ -815,7 +820,7 @@
 }
 
 // 撰寫留言燈箱
-.spotWroteMsgBG{
+.spotWroteMsgBG {
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
@@ -823,7 +828,7 @@
   position: fixed;
   z-index: 1000;
 
-  .spotWroteMsgContent{
+  .spotWroteMsgContent {
     background: rgb(255, 255, 255);
     width: 500px;
     // height: 600px;
@@ -831,43 +836,43 @@
     border-radius: 5px;
     padding: 30px;
 
-    h2{
+    h2 {
       color: #3b3b3b;
       font-size: 1.5rem;
       font-weight: 500;
     }
 
-    .writeMsgZone{
+    .writeMsgZone {
       // border: 1px solid red;
       margin: 10px 10px;
       width: 95%;
 
-      .personalMsg{
+      .personalMsg {
         display: inline-flex;
         justify-content: start;
         align-items: center;
         margin-bottom: 10px;
         // border: 1px solid red;
 
-        .headIcon{
+        .headIcon {
           // border: 1px solid red;
           width: 40px;
-          img{
+          img {
             width: 100%;
           }
         }
 
-        .neme{
+        .neme {
           // border: 1px solid red;
           margin-left: 10px;
-          p{
+          p {
             color: #3b3b3b;
             margin: 0px;
           }
         }
       }
 
-      textarea{
+      textarea {
         text-align: left;
         width: 100%;
         height: 300px;
@@ -875,35 +880,30 @@
         border-radius: 5px;
         padding: 10px;
         border: 1px solid #cecece;
-        opacity: .7;
+        opacity: 0.7;
         resize: none;
       }
 
-      .btnWrap{
+      .btnWrap {
         text-align: right;
 
-        .btn-outline{
+        .btn-outline {
           // border: 1px solid #8c8a8a;
           font-size: 1rem;
           padding: 5px 15px;
           border-radius: 5px;
         }
 
-        .sendMsg{
+        .sendMsg {
           background: #700000;
           color: rgb(255, 255, 255);
         }
 
-        .cancelMsg{
+        .cancelMsg {
           color: #8c8a8a;
           border: 1px solid #8c8a8a;
         }
       }
     }
-
-
-
   }
-
-
 }

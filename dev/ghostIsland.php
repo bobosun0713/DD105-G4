@@ -479,7 +479,7 @@ try{
                                     <div class="spotTxt">
                                         <h2 class="spotTitle">【<?= $spotRow["spot_name"]?>】</h2>
                                         <p class="spotIntro">
-                                            <a href=" ghostSpot.php?spot_no= <?=$spotRow["spot_no"]?> "><?= $spotRow["spot_intro"]?>....(more)</a>
+                                            <a href=" ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                         </p>
                                         <p class="groupJoin">
                                             <a href="./adventrue.html">
@@ -504,7 +504,7 @@ try{
                                             <div class="spotTxt">
                                                 <h2 class="spotTitle">【<?= $spotRow["spot_name"]?>】</h2>
                                                 <p class="spotIntro">
-                                                    <a href="ghostSpot.php?spot_no= <?=$spotRow["spot_no"]?>"><?= $spotRow["spot_intro"]?>....(more)</a>
+                                                    <a href="ghostSpot.php?spot_no= <?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                                 </p>
                                                 <p class="groupJoin">
                                                     <a href="./adventrue.html">
@@ -529,7 +529,7 @@ try{
                                 <div class="spotTxt">
                                     <h2 class="spotTitle">【<?= $spotRow["spot_name"]?>】</h2>
                                     <p class="spotIntro">
-                                        <a href="ghostSpot.php?spot_no= <?=$spotRow["spot_no"]?>"><?= $spotRow["spot_intro"]?>....(more)</a>
+                                        <a href="ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                     </p>
                                     <p class="groupJoin">
                                         <a href="./adventrue.html">
