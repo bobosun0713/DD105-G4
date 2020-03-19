@@ -355,14 +355,12 @@ window.addEventListener("load", function () {
 
       let tourName = document.createElement('label');
       tourName.innerText = `行程 ${i + 1}`;
-      let tourNameInput = document.createElement('input');
-      tourNameInput.setAttribute("type", "text");
-      tourNameInput.value = spotListInfo[i].value.split("|")[0];
+      let tourNameInput = document.createElement('p');
+      tourNameInput.innerText = spotListInfo[i].value.split("|")[0];
       let spotLocation = document.createElement('label');
       spotLocation.innerText = '景點地址';
-      let spotLocationInput = document.createElement('input');
-      spotLocationInput.setAttribute("type", "text");
-      spotLocationInput.value = spotListInfo[i].value.split("|")[1];
+      let spotLocationInput = document.createElement('p');
+      spotLocationInput.innerText = spotListInfo[i].value.split("|")[1];
       let spotIntro = document.createElement('label');
       spotIntro.innerText = '景點簡介';
       let spotIntroInput = document.createElement('textarea');
@@ -446,7 +444,7 @@ window.addEventListener("load", function () {
 
     for (var i = 0; i < myTourspots.length; i++) {
       let eachTourInfo = document.querySelectorAll('.tour_wrapper input');
-      let eachTourBudget = eachTourInfo[`${eachTourInfo.length - 4 * i - 1}`].value;
+      let eachTourBudget = eachTourInfo[`${eachTourInfo.length - 2 * i - 1}`].value;
 
       // console.log(myTourspots.length, eachTourInfo.length, eachTourBudget);
       totalBudget += parseInt(eachTourBudget);
@@ -456,6 +454,7 @@ window.addEventListener("load", function () {
     //新增行程
     let customeTour = document.getElementById('customeTour');
     let customeTourImg = document.querySelectorAll('.tour_wrapper .section .spot1 .temple_img img');
+    let eachTourFixedInfo = document.querySelectorAll('#tab-3 .tour_wrapper p');
     let eachTourInfo = document.querySelectorAll('.tour_wrapper input');
     let eachTourTextarea = document.querySelectorAll('.tour_wrapper textarea');
 
@@ -487,7 +486,7 @@ window.addEventListener("load", function () {
       spotTitle.classList.add('spotTitle');
       spotTitle.innerText = `【行程${i + 1}】`;
       let spotTitleName = document.createElement('span');
-      let eachTourName = eachTourInfo[`${eachTourInfo.length - 4 * i - 4}`].value;
+      let eachTourName = eachTourFixedInfo[`${eachTourFixedInfo.length - 2 * i - 2}`].innerText;
       spotTitleName.innerText = eachTourName;
       let spotIntro = document.createElement('p');
       spotIntro.innerText = eachTourTextarea[i].value;
@@ -504,7 +503,7 @@ window.addEventListener("load", function () {
       locationBtn_txt.innerText = "地理位置";
       let locationBtn_infoBox = document.createElement('div');
       locationBtn_infoBox.classList.add('moreInfo');
-      let eachTourLocation = eachTourInfo[`${eachTourInfo.length - 4 * i - 3}`].value;
+      let eachTourLocation = eachTourFixedInfo[`${eachTourFixedInfo.length - 2 * i - 1}`].innerText;
       locationBtn_infoBox.innerText = eachTourLocation;
       let locationBtn_triangle = document.createElement('div');
       locationBtn_triangle.classList.add('triangle');
@@ -518,7 +517,7 @@ window.addEventListener("load", function () {
       toolBtn_txt.innerText = "所需工具";
       let toolBtn_infoBox = document.createElement('div');
       toolBtn_infoBox.classList.add('moreInfo');
-      let eachTourTool = eachTourInfo[`${eachTourInfo.length - 4 * i - 2}`].value;
+      let eachTourTool = eachTourInfo[`${eachTourInfo.length - 2 * i - 2}`].value;
       if (eachTourTool == "") {
         eachTourTool = "無";
       }
@@ -535,7 +534,7 @@ window.addEventListener("load", function () {
       feeBtn_txt.innerText = "所需工具";
       let feeBtn_infoBox = document.createElement('div');
       feeBtn_infoBox.classList.add('moreInfo');
-      let eachTourFee = eachTourInfo[`${eachTourInfo.length - 4 * i - 1}`].value;
+      let eachTourFee = eachTourInfo[`${eachTourInfo.length - 2 * i - 1 }`].value;
       feeBtn_infoBox.innerText = eachTourFee;
       let feeBtn_triangle = document.createElement('div');
       feeBtn_triangle.classList.add('triangle');

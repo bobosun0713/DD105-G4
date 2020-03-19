@@ -23,6 +23,9 @@ let xhr = new XMLHttpRequest();
 }
 //投票給該景點結束
 
+
+
+
 window.addEventListener('load', function(){
     let curIndex = 0;
     let cardDisplay = document.querySelector("#cardDisplay");
