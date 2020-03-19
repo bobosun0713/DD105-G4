@@ -13,7 +13,7 @@
     <div class="wrapper">
         <div id="ghostIndexBG">
             <!-- 霧氣 -->
-            @@include('layout/component/indexsmoke.html')
+            <!-- @@include('layout/component/indexsmoke.html') -->
             @@include('layout/header.html')
 
             <section id="indexSection1">
@@ -242,7 +242,6 @@
                                     </div>
                                 </a>
                             </div>
-
                             <div class="txtZone">
                                 <div class="locInfo">
                                     <img src="./img/icon/location.png" />
@@ -289,35 +288,26 @@
                             </div>
                         </div>
                     </div>
-
                     <button id="rightScroll" class="scrollBtn" disabled>
                         <span>〈</span>
                     </button>
-
-                    <button id="rightScroll" class="scrollBtn" disabled>
-                        <span>〈</span>
-                    </button>
-
                     <button id="leftScroll" class="scrollBtn">
                         <span>〉</span>
                     </button>
-
                 </div>
             </section>
-
-
             <!-- 第三頻 -->
             <section id="section3">
-                <!-- 標題 -->
+
                 <div class="title_forum">
                     <h1 class="title">驚悚</h1>
                     <h1 class="title2">尋鬼探險</h1>
                     <img src="./img/index/forum_hand-2.png" alt="" />
                 </div>
-                <div class="adventure_main">
+                <div class="adventure_all">
                     <div class="adventure_btn">
                         <a href="adventrue.html">
-                            <div class="ghost_btn_all">
+                            <div class="ghost_btn">
                                 <div class="ghost_btn_img1">
                                     <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
                                 </div>
@@ -328,406 +318,376 @@
                             </div>
                         </a>
                         <a href="adventrue.html">
-                            <div class="ghost_btn2_all">
-                                <div class="ghost_btn_img2">
-                                    <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
-                                </div>
-                        </a>
-                        <a href="adventrue.html">
                             <div class="ghost_btn2">
                                 <div class="ghost_btn_img2">
                                     <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
                                 </div>
-                                <div class="ghost_btn2"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
+                                <div class="ghost_btn2_ghost"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
                                 <div class="ghost_tape">
                                     <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- 之後要刪除提報demo a標籤 -->
-                    <a href="StartGroup.html">
-                        <table class="adventure_content">
-                            <thead>
-                                <td> <i class="far fa-calendar-alt"></i>探險日期</td>
-                                <td><i class="fas fa-skull"></i> 探險主題</td>
-                                <td><i class="fas fa-user"></i>揪團團組</td>
-                                <td>探險日期</td>
-                            </thead>
+                    <div class="index_adventrue">
+                        <div class="adventrue_left">
+                            <div class="adventrue_left_ghost">
+                                <img src="img/index/index_section3.png" alt="">
+                            </div>
+                            <div class="dorp_down_title">
+                                熱門揪團
+                            </div>
+                            <!-- adventrue_left_ghost -->
+                            <div class="dorp_down_menu">
+                                <a class="tab_display">熱門揪團</a>
+                                <a>最新揪團</a>
+                                <a>最多收藏</a>
+                            </div>
+                            <span>更多</span>
 
-                            <tr>
-                                <td>01/31</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>董董老師</td>
-                                <td>某某</td>
-                            </tr>
+                        </div>
+                        <!-- adventrue_left -->
+                        <div class="adventrue_right">
+                            <div class="adventrue_right_itemall">
+                                <div class="adventrue_right_item">
+                                    <div class="adv_r_item_img">
+                                        <img src="img/index/top1Img_1.png" alt="">
+                                    </div>
+                                    <!-- adv_r_item_img 右邊照片-->
+                                    <div class="adv_r_item_txt">
+                                        <h1>【台南廢棄醫院之旅】</h1>
+                                        <p>真的快嚇死我了！！！大家都知道前幾年
+                                            有個女教師在新埔站廁所上吊的新聞嗎？
+                                            聽說從那之後捷運站女廁常常會發生突然
+                                            被拍肩的.....
+                                        </p>
+                                        <ul>
+                                            <li><i class="fas fa-user-alt"></i>董董老師</li>
+                                            <li><i class="far fa-calendar-alt"></i>01/06號</li>
+                                            <li><i class="fas fa-user-plus"></i> 1/6人</li>
+                                        </ul>
 
-                            <tr>
-                                <a href="StartGroup.html">
-                                    <td>01/31</td>
-                                    <td>台南廢棄醫院之旅</td>
-                                    <td>董董老師</td>
-                                    <td>某某</td>
-                            </tr>
+                                    </div>
+                                    <!-- adv_r_item_txt -->
+                                </div>
+                                <!-- adventrue_right_item 右邊每一攔-->
 
-                            <tr>
-                                <a href="StartGroup.html">
-                                    <td>01/31</td>
-                                    <td>台南廢棄醫院之旅</td>
-                                    <td>董董老師</td>
-                                    <td>某某</td>
-                                </a>
-                            </tr>
-                            <tr>
-                                <a href="StartGroup.html">
-                                    <td>01/31</td>
-                                    <td>台南廢棄醫院之旅</td>
-                                    <td>董董老師</td>
-                                    <td>某某</td>
-                                </a>
-                            </tr>
-                            <tr>
-                                <td>01/31</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>董董老師</td>
-                                <td>某某</td>
-                            </tr>
-                            <tr>
-                                <td>01/31</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>董董老師</td>
-                                <td>某某</td>
-                            </tr>
-                            <tr>
-                                <td>01/31</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>董董老師</td>
-                                <td>某某</td>
-                            </tr>
-                        </table>
-                    </a>
-                    <!-- 之後要刪除提報demo a標籤 -->
-                    <a href="StartGroup.html">
-                        <table class="adventure_content">
-                            <thead>
-                                <td>探險日期</td>
-                                <td>探險主題</td>
-                                <td>揪團團組</td>
-                                <td>探險日期</td>
-                            </thead>
-                            <tr>
-                                <td>01/21</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>漢廷老師</td>
-                                <td>某某</td>
-                            </tr>
-                            <tr>
-                                <td>02/24</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>漢廷老師</td>
-                                <td>某某</td>
-                            </tr>
-                            <tr>
-                                <td>02/24</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>漢廷老師</td>
-                                <td>某某</td>
-                            </tr>
-                            <tr>
-                                <td>02/24</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>漢廷老師</td>
-                                <td>某某</td>
-                            </tr>
-                            <tr>
-                                <td>02/24</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>漢廷老師</td>
-                                <td>某某</td>
-                            </tr>
-                            <tr>
-                                <td>02/24</td>
-                                <td>台南廢棄醫院之旅</td>
-                                <td>漢廷老師</td>
-                                <td>某某</td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-       
-        </section>
+                            </div>
 
-        <section id="section4">
-            <!-- 標題 -->
-            <div class="title_forum">
-                <h1 class="title">熱門</h1>
-                <h1 class="title2">靈異討論</h1>
-                <img src="./img/index/forum_hand-2.png" alt="" />
-            </div>
-            <div class="card_channel">
-                <div class="card_warp" id="card_slider">
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
-                            </div>
+
+                            <!-- adventrue_right_itemall 右邊全部攔 -->
                         </div>
-                        <p class="card_content">
-                            3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
-                            </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
+                        <!-- adventrue_right -->
                     </div>
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
+                    <!-- index_adventrue -->
+
+                    <div class="adventure_btn2">
+                        <a href="adventrue.html">
+                            <div class="ghost_btn">
+                                <div class="ghost_btn_img1">
+                                    <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
+                                </div>
+                                <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
+                                <div class="ghost_tape">
+                                    <span>來去參團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                                </div>
                             </div>
-                        </div>
-                        <p class="card_content">
-                            真的快嚇死我了！！！大家都知道前幾年有個女教師在新埔站廁所上吊的新聞嗎？聽說從那之後捷運站女廁常常會發生突然被拍肩的.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
+                        </a>
+                        <a href="adventrue.html">
+                            <div class="ghost_btn2">
+                                <div class="ghost_btn_img2">
+                                    <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
+                                </div>
+                                <div class="ghost_btn2_ghost"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
+                                <div class="ghost_tape">
+                                    <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                                </div>
                             </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
+                        </a>
                     </div>
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
-                            </div>
-                        </div>
-                        <p class="card_content">
-                            真的快嚇死我了！！！大家都知道前幾年有個女教師在新埔站廁所上吊的新聞嗎？聽說從那之後捷運站女廁常常會發生突然被拍肩的.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
-                            </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
-                    </div>
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
-                            </div>
-                        </div>
-                        <p class="card_content">
-                            3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
-                            </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
-                    </div>
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
-                            </div>
-                        </div>
-                        <p class="card_content">
-                            真的快嚇死我了！！！大家都知道前幾年有個女教師在新埔站廁所上吊的新聞嗎？聽說從那之後捷運站女廁常常會發生突然被拍肩的.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
-                            </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
-                    </div>
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
-                            </div>
-                        </div>
-                        <p class="card_content">
-                            3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
-                            </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
-                    </div>
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
-                            </div>
-                        </div>
-                        <p class="card_content">
-                            3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
-                            </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
-                    </div>
-                    <div class="card_border">
-                        <div class="card_user">
-                            <img src="./img/icon/header1.png" alt="" />
-                            <div class="card_title_user">
-                                <div class="title_name">大體室的女人</div>
-                                <div class="title_time">刊登時間</div>
-                            </div>
-                        </div>
-                        <p class="card_content">
-                            3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
-                            (more)
-                        </p>
-                        <div class="card_status">
-                            <div class="card_icon">
-                                <img src="./img/icon/heart.png" alt="" />
-                                <span class="">11</span>
-                            </div>
-                            <div class="card_icon">
-                                <img src="./img/icon/chat.svg" alt="" />
-                                <span class="">11</span>
-                            </div>
-                        </div>
-                        <div class="card_arrow"></div>
+                    <div class="adventure_btn3">
+                        <a>來去參團</a>
+                        <a>來去揪團</a>
+
                     </div>
                 </div>
-                <!-- 左右按鈕 -->
-                <div id="card_btn">
-                    <input type="button" id="left_btn" style="opacity: 0.3;" disabled />
-                    <input type="button" id="right_btn" />
+
+
+                <script src="js/index_section3.js"></script>
+            </section>
+
+
+            <section id="section4">
+                <!-- 標題 -->
+                <div class="title_forum">
+                    <h1 class="title">熱門</h1>
+                    <h1 class="title2">靈異討論</h1>
+                    <img src="./img/index/forum_hand-2.png" alt="" />
                 </div>
-            </div>
-            <!-- 圖片 -->
-            <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
-            <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
+                <div class="card_channel">
+                    <div class="card_warp" id="card_slider">
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                真的快嚇死我了！！！大家都知道前幾年有個女教師在新埔站廁所上吊的新聞嗎？聽說從那之後捷運站女廁常常會發生突然被拍肩的.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                真的快嚇死我了！！！大家都知道前幾年有個女教師在新埔站廁所上吊的新聞嗎？聽說從那之後捷運站女廁常常會發生突然被拍肩的.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                真的快嚇死我了！！！大家都知道前幾年有個女教師在新埔站廁所上吊的新聞嗎？聽說從那之後捷運站女廁常常會發生突然被拍肩的.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                        <div class="card_border">
+                            <div class="card_user">
+                                <img src="./img/icon/header1.png" alt="" />
+                                <div class="card_title_user">
+                                    <div class="title_name">大體室的女人</div>
+                                    <div class="title_time">刊登時間</div>
+                                </div>
+                            </div>
+                            <p class="card_content">
+                                3/10參加了鬼島開團的靈異冒險，準備和夥伴們試試看夜晚的膽量。原本帶著好玩的心態，沒想到真的在地下室的大體室見到了鬼影.....
+                                (more)
+                            </p>
+                            <div class="card_status">
+                                <div class="card_icon">
+                                    <img src="./img/icon/heart.png" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                                <div class="card_icon">
+                                    <img src="./img/icon/chat.svg" alt="" />
+                                    <span class="">11</span>
+                                </div>
+                            </div>
+                            <div class="card_arrow"></div>
+                        </div>
+                    </div>
+                    <!-- 左右按鈕 -->
+                    <div id="card_btn">
+                        <input type="button" id="left_btn" style="opacity: 0.3;" disabled />
+                        <input type="button" id="right_btn" />
+                    </div>
+                </div>
+                <!-- 圖片 -->
+                <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
+                <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
 
-            <script>
-                function $id(id) {
-                    return document.getElementById(id)
-                }
-                window.addEventListener('load', function () {
-                    let card = 0
-                    let slider = document.getElementById('card_slider')
-                    let left_btn = document.getElementById('left_btn')
-                    let right_btn = document.getElementById('right_btn')
+                <script>
+                    function $id(id) {
+                        return document.getElementById(id)
+                    }
+                    window.addEventListener('load', function () {
+                        let card = 0
+                        let slider = document.getElementById('card_slider')
+                        let left_btn = document.getElementById('left_btn')
+                        let right_btn = document.getElementById('right_btn')
 
-                    // 右按鈕
-                    $id('right_btn').onclick = function () {
-                        let Width = 386
-                        card++
-                        card_slider.style.left = -Width * card + 'px'
-                        $id('left_btn').disabled = false
-                        left_btn.style.opacity = 1
+                        // 右按鈕
+                        $id('right_btn').onclick = function () {
+                            let Width = 386
+                            card++
+                            card_slider.style.left = -Width * card + 'px'
+                            $id('left_btn').disabled = false
+                            left_btn.style.opacity = 1
 
-                        if (window.innerWidth < 768) {
-                            if (card >= 8) {
-                                $id('right_btn').disabled = true
-                                right_btn.style.opacity = 0.3
-                                console.log(card)
-                            }
-                        } else if (window.innerWidth >= 768) {
-                            if (card >= 7) {
-                                $id('right_btn').disabled = true
-                                right_btn.style.opacity = 0.3
+                            if (window.innerWidth < 768) {
+                                if (card >= 8) {
+                                    $id('right_btn').disabled = true
+                                    right_btn.style.opacity = 0.3
+                                    console.log(card)
+                                }
+                            } else if (window.innerWidth >= 768) {
+                                if (card >= 7) {
+                                    $id('right_btn').disabled = true
+                                    right_btn.style.opacity = 0.3
+                                }
                             }
                         }
-                    }
 
-                    // 左按鈕
-                    $id('left_btn').onclick = function () {
-                        let Width = 386
+                        // 左按鈕
+                        $id('left_btn').onclick = function () {
+                            let Width = 386
 
-                        card--
-                        card_slider.style.left = -Width * card + 'px'
-                        $id('right_btn').disabled = false
-                        right_btn.style.opacity = 1
+                            card--
+                            card_slider.style.left = -Width * card + 'px'
+                            $id('right_btn').disabled = false
+                            right_btn.style.opacity = 1
 
-                        if (window.innerWidth < 768) {
-                            if (card == 0) {
-                                $id('left_btn').disabled = true
-                                left_btn.style.opacity = 0.3
-                                console.log(card)
-                            }
-                        } else if (window.innerWidth >= 768) {
-                            if (card == 0) {
-                                $id('left_btn').disabled = true
-                                left_btn.style.opacity = 0.3
+                            if (window.innerWidth < 768) {
+                                if (card == 0) {
+                                    $id('left_btn').disabled = true
+                                    left_btn.style.opacity = 0.3
+                                    console.log(card)
+                                }
+                            } else if (window.innerWidth >= 768) {
+                                if (card == 0) {
+                                    $id('left_btn').disabled = true
+                                    left_btn.style.opacity = 0.3
+                                }
                             }
                         }
-                    }
-                })
-            </script>
-        </section>
-        @@include('layout/footer.html')
-    </div>
+                    })
+                </script>
+            </section>
+            @@include('layout/footer.html')
+        </div>
     </div>
 
     <!-- 視差滑動 -->

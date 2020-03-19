@@ -11,12 +11,28 @@
 </head>
 
 <body>
+    <script>
+        function getMember() {
+            var xhr = new XMLHttpRequest();
+            xhr.load = function () {
+                alert('pig');
+
+            }
+            //// 擷取資料的同時，卻 不需 進行 頁面重載 (page reload)！
+            // 反正就是建議一個物件與server端做連結
+            xhr.open("Post", "StartGroup.php")
+            // 用post 要加 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+            // let data_info = ``
+            xhr.send();
+            //    git才用null
+        }
+    </script>
     <!-- 鬼箭頭 -->
     @@include('layout/page/adventure/go_top.html')
     @@include('layout/component/mouse_ghost.html')
 
     <div class="StartGroup_wrapper">
-        
+
 
         <div id="StartGroupSpotBG">
 
@@ -857,6 +873,7 @@
 
 
 
+
     <!-- 功能 -->
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <!-- TAB 標籤 -->
@@ -864,6 +881,7 @@
     <script src="./js/ghostSpotTab.js"></script>
     <script src="./js/ghostSpotCarasoul.js"></script>
     <script src="./js/ghostSpotSwitchImg.js"></script>
+    <script src="js/index._section3_tab.js"></script>
 
 </body>
 

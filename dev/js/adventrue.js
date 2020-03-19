@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // $(window).on("mousemove", function (e) {
     //     TweenMax.to("#mouse", 0.5, {
     //         top: e.pageY + 10 + "px",
@@ -6,9 +6,9 @@ $(document).ready(function() {
     //     })
     // })
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         /* Check the location of each desired element */
-        $('.item').each(function(i) {
+        $('.item').each(function (i) {
             //  each是幹嘛的?
             var bottom_of_object = $(this).offset().top + $(this).outerHeight()
             //頁面最頂到物件頂+物件高度
@@ -52,7 +52,7 @@ $(document).ready(function() {
 // })
 
 var infScroll = new InfiniteScroll('.item_all', {
-    path: function() {
+    path: function () {
         // 頁面路徑
 
         if (this.loadCount < 2) {
@@ -72,13 +72,13 @@ var infScroll = new InfiniteScroll('.item_all', {
 })
 
 /* 按下GoTop按鈕時的事件 */
-$('.go_top').click(function() {
+$('.go_top').click(function () {
     $('html,body').animate({ scrollTop: 0 }, 'slow') /* 返回到最頂上 */
     return false
 })
 
 /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
-$(window).scroll(function() {
+$(window).scroll(function () {
     if ($(this).scrollTop() > 400) {
         $('.go_top').fadeIn()
     } else {
@@ -120,7 +120,7 @@ function NumAutoPlusAnimation(targetEle, options) {
         count = 0, //计数器
         initial = 0
 
-    var timer = setInterval(function() {
+    var timer = setInterval(function () {
         count = count + step
 
         if (count >= finalNum) {
@@ -143,7 +143,7 @@ NumAutoPlusAnimation('add_number', {
     num: 213,
     regulator: 50,
 })
-
+// ----------------------------------------------------
 function $element(element) {
     return document.querySelector(element)
 }
@@ -161,7 +161,7 @@ open_filter('.main_people_img', '.people_message_background')
 function open_filter(click_object, open_object) {
     var click_object = $element(click_object)
     var open_object = $element(open_object)
-    click_object.onclick = function() {
+    click_object.onclick = function () {
         open_object.style.display = 'block'
     }
 }
@@ -173,7 +173,7 @@ close('.people_message_shut_down', '.people_message_background')
 function close(out, hide_odject) {
     var out = document.querySelector(out)
     var filter_background = document.querySelector(hide_odject)
-    out.onclick = function() {
+    out.onclick = function () {
         filter_background.style.display = 'none'
     }
 }
@@ -298,3 +298,25 @@ function choose_area_name(e) {
     filter_spans[0].style.color = 'white'
 }
 window.onload = doFirst
+
+
+
+
+// ----------左邊篩選欄位--------------------------+--------------------------
+
+
+
+
+function clickfilter() {
+    var lab1s =$elements(".list_check1")
+    console.log(lab1s);
+    for (var i = 0;i<lab1s.length;i++) {
+        lab1s[i].onclick = function () {
+          
+        }
+    }
+}
+
+ clickfilter();
+
+
