@@ -1,57 +1,127 @@
 @include respond(medium) {
-    // 平板都寫在裡面
-    .createAdventure{
-      .section_wrapper{
-        // margin:0 auto;
-        .wrapper{
-          //???
-          width: 98%;
-          // background-color: greenyellow;
-          #tab-1 {
-            border: 1px solid white;
-            padding: 0;
-            max-width: 90%;
-            justify-content: center;
-            .left{
-              width: 40%;
-              margin: 0 auto;
-              // border: 1px solid yellow;
-            }
-            .right{
-              width: 40%;
-              margin: 30px auto 0 auto;
+  // 平板都寫在裡面
+  .createAdventure {
+    background-size: 200%;
+    background-position-x: center;
+
+    .section_wrapper {
+      // margin:0 auto;
+      .wrapper {
+        //???
+        width: 98%;
+        // background-color: greenyellow;
+        #tab-1 {
+          // border: 1px solid white;
+          padding: 0;
+          max-width: 100%;
+          justify-content: center;
+
+          .left {
+            width: 40%;
+            margin: 0 auto;
+            // border: 1px solid yellow;
+          }
+          .right {
+            width: 40%;
+            margin: 30px auto 0 auto;
+          }
+        }
+
+        #tab-2 {
+          // border: 1px solid red;
+
+          .left {
+            // border: 1px solid red;
+            .tourTitle {
             }
           }
-          #tab-3{
-            margin: 25px auto 0 auto;
-            padding: 10px;
-            .left{
+        }
+
+        #tab-3 {
+          margin: 25px auto 0 auto;
+          padding: 10px;
+
+          .left {
+            width: 60%;
+            margin: 0 auto;
+            // border: 1px solid rgb(255, 47, 210);
+          }
+          .section {
+            .left {
               width: 60%;
               margin: 0 auto;
-              border: 1px solid rgb(255, 47, 210);
-
+              // border: 1px solid pink;
             }
-            .section {
-              .left{
-                width: 60%;
-                margin: 0 auto;
-                border: 1px solid pink;
-              }
-              .right{
-
-                width: 60%;
-                margin: 30px auto 0 auto;
-                border: 1px solid yellowgreen;
-              }
+            .right {
+              width: 60%;
+              margin: 30px auto 0 auto;
+              // border: 1px solid yellowgreen;
             }
-
           }
         }
-        .button_block {
-            width: 100%;
-           
-        }
-    }
 
-   }
+        #tab-4 {
+          #tourPreview_Section1 {
+            width: 95%;
+            .spotIntro {
+              .picZone {
+                .bigPic {
+                  // width: 100%;
+                  width: 100%;
+                  height: 360px;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+              }
+            }
+          }
+
+          #tourPreview_Section2{
+
+            width:100%;
+            margin: 0 auto;
+              
+                  #customeTour {  
+                    .tourSpot{
+                      margin-bottom:40px;
+                      width: 80%;
+                      .tourImg {
+                        width: 40%;
+            
+                        img {
+                          width: 100%;
+                        }
+                      }
+                      .tourSpotTxt {
+                        .tourSpotInfo {
+                          flex-wrap: wrap;
+                          justify-content: start;
+                          margin-top: 0;
+                          .btn-outline2 {
+                            border-radius: 20px;
+                            margin-bottom: 10px;
+                          }
+                        }
+                      }
+            
+            
+                    }
+                    .tourStatus{
+                      display: none;
+                    }
+                  }
+                
+              
+            }
+        }
+      }
+      .button_block {
+        width: 100%;
+      }
+    }
+  }
 }

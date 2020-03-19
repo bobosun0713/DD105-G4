@@ -1,10 +1,66 @@
+<?php
+$spot_no = $_REQUEST["spot_no"];
+$order_no = $_REQUEST["order_no"];
+$errMsg = "";
+
+//連線資料庫
+try{
+    require_once("./php/connect.php");
+
+    $sql = "select * from spot where spot_no = :spot_no";
+    $spots = $pdo->prepare($sql);
+    $spots ->bindValue(":spot_no", $spot_no);    
+    $spots ->execute();
+
+
+}catch(PDOException $e){
+    $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+    $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    @@include('layout/head.html')
-    <title>前進鬼島-新莊廢棄醫院</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<!-- ---------------------共用區---------------------- -->
+<!-- hamberger -->
+<script src="./js/hamburger.js"></script>
+<!-- headerScroll 效果 -->
+<script src="./js/headerScroll.js"></script>
+<!-- 音樂效果 -->
+<script src="./js/soundSwitch.js"></script>
+<!--all css -->
+<link rel="stylesheet" href="./css/main.css" />
+<!-- 鬼島logo小圖示 -->
+<link rel="shortcut icon" href="../img/icon/logo-icon.png" />
+<!-- jquery-3.4.1 -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- 登入登出 -->
+<script src="./js/login.js"></script>
+<!-- TweenMax.min外掛 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<!-- awesome icon外掛包 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+<script src="js/mouse_ghost.js"></script>
+
+<!-- 阿禎scorll外掛 -->
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+<script src="js/tab.js"></script>
+<?php 
+if( $errMsg != ""){ //例外
+  alert($errMsg);
+}else{
+    $spotRow = $spots->fetchObject();
+?>
+<!-- title PHP 有改 -->
+    <title>前進鬼島-<?php echo $spotRow->spot_name; ?></title>
 
     </body>
 
@@ -12,14 +68,16 @@
 
 <body>
 
+
     <!-- 鬼箭頭 -->
-    <!-- @@include('layout/component/mouse_ghost.html') -->
+    
 
     <!-- 撰寫留言視窗 -->
         <!-- 跳出留言視窗 -->
+        <!-- 跳出留言視窗 PHP 有改 -->
         <div class="spotWroteMsgBG">
             <div class="spotWroteMsgContent">
-                <h2>【新莊廢棄醫院】</h2>
+                <h2>【<?php echo $spotRow->spot_name; ?>】</h2>
                 <div class="writeMsgZone">
                     <div class="personalMsg">
                         <div class="headIcon">
@@ -43,31 +101,203 @@
 
     <div class="wrapper">
 
-        <!-- @@include('layout/component/smoke.html') -->
+        
         <div id="ghostSpotBG">
-            @@include('layout/header.html')
+            <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
 
+<header id="topHeader">
+    <div id="navStatus">
+        <div id="soundStatus">
+            <img src="./img/icon/music_btn_off.svg" id="soundClick" />
+            <p id="soundTxt">Sound On</p>
+        </div>
+        <div id="memStatus">
+            <a href="">
+                <img src="./img/icon/default_header.svg" />
+            </a>
+            <p><span class="login_btn">登入</span></p>
+            <p><span class="creat_btn">註冊</span></p>
+        </div>
+    </div>
+    <nav class="desktopHeader">
+        <ul>
+            <li class="pageSelectEffect1">
+                <a href="ghostIsland.html" class="title pageSelectEffect2">
+                    前進鬼島
+                </a>
+            </li>
+            <li class="pageSelectEffect2-2">
+                <a href="adventrue.html" class="title @@link002">
+                    尋鬼探險
+                </a>
+            </li>
+            <li class="pageSelectEffect2-3">
+                <a href="leaderboard.html" class="title @@link003">
+                    靈異票選
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <img id="topLogo" src="./img/logo/LOGO_white.png" />
+                </a>
+            </li>
+            <li class="pageSelectEffect2-4">
+                <a href="game.html" class="title @@link004">
+                    試膽測驗
+                </a>
+            </li>
+            <li class="pageSelectEffect2-5">
+                <a href="forum.html" class="title @@link005">
+                    靈異討論
+                </a>
+            </li>
+            <li class="pageSelectEffect2-6">
+                <a href="member.html" class="title @@link006">
+                    會員中心
+                </a>
+            </li>
+        </ul>
+    </nav>
 
+    <nav class="rwdHeader">
+        <div class="rwdHeaderWrap">
+            <a href="../index.html">
+                <img id="topLogo2" src="./img/logo/LOGO_white.png" />
+            </a>
+
+            <button class="hamburger hamburger--elastic" id="hamburger" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="rwdHamburgerMenu">
+        <nav>
+            <ul>
+                <a href="../ghostIsland.html">
+                    <li class="title">前進鬼島</li>
+                </a>
+                <a href="../adventrue.html">
+                    <li class="title">尋鬼探險</li>
+                </a>
+                <a href="../leaderboard.html">
+                    <li class="title">靈異票選</li>
+                </a>
+                <a href="../game.html">
+                    <li class="title">試膽測驗</li>
+                </a>
+                <a href="../forum.html">
+                    <li class="title">靈異討論</li>
+                </a>
+                <a href="../member.html">
+                    <li class="title">會員中心</li>
+                </a>
+                <a>
+                    <li class="title login_btn">登入/註冊</li>
+                </a>
+
+                <li id="hamburgerSound" class="title">Sound Off</li>
+            </ul>
+        </nav>
+    </div>
+    <div id="indexLogin">
+        <section class="login_page1" style="display: none;">
+            <div class="logincancel"></div>
+            <div class="login_cover">
+                <img src="./img/logo/LOGO_black.png" alt="" />
+            </div>
+            <form action="" method="POST">
+                <p>
+                    <input type="text" id="memid" placeholder="帳號" />
+                </p>
+                <p>
+                    <input type="text" id="mempwd" placeholder="密碼" />
+                </p>
+            </form>
+            <div id="loginbutton">登入</div>
+            <div class="next_login">註冊會員</div>
+        </section>
+
+        <section class="login_page2" style="display: none;">
+            <div class="logincancel"></div>
+            <div class="login_cover">
+                <img src="./img/login/registered-01 (1).png" alt="" />
+            </div>
+            <form action="" method="POST">
+                <p>
+                    <label for="memid">會員帳號</label>
+                    <input type="text" id="memid" placeholder="4~12英文字母、數字" />
+                </p>
+                <p>
+                    <label for="mempwd">會員密碼</label>
+                    <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
+                </p>
+                <p>
+                    <label for="mempwdcheck">確認密碼</label>
+                    <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
+                </p>
+                <p>
+                    <label for="memname">會員姓名</label>
+                    <input type="text" id="memname" placeholder="姓名" />
+                </p>
+                <p>
+                    <label for="memcell">手機號碼</label>
+                    <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
+                </p>
+                <p>
+                    <label for="memail">電子信箱</label>
+                    <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
+                </p>
+            </form>
+            <div id="sure_btn">註冊會員</div>
+        </section>
+        <!-- <script>
+            $(document).ready(function() {
+                $(".login_btn").click(function() {
+                    $("#indexLogin, .login_page1").css("display", "block")
+                })
+                $(".creat_btn").click(function() {
+                    $("#indexLogin, .login_page2").css("display", "block")
+                })
+                $(".next_login").click(function() {
+                    $(".login_page2").css("display", "block")
+                    $(".login_page1").css("display", "none")
+                })
+                $(".logincancel").click(function() {
+                    $(".login_page1 , .login_page2").css("display", "none")
+                    $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
+                })
+            })
+        </script> -->
+    </div>
+</header>
+            <!-- section1 PHP 有改 -->
             <section id="ghostSpotSection1">
 
                 <div class="breadcrumb">
                     <ul>
                         <li><a href="">首頁</a></li>
                         <li><a href="">前進鬼島</a></li>
-                        <li><a href="">新莊廢棄醫院</a></li>
+                        <li><a href=""><?php echo $spotRow->spot_name; ?></a></li>
                     </ul>
                 </div>
 
                 <div class="spotIntro">
 
+                    <!-- 是前三名的話顯示名次 start -->
+                    <?php if($order_no != null){?>
                     <div id="rank">
                         <img src="./img/component/card/rank.png">
-                        <p>NO.1</p>
+                        <p>NO.<?php echo $order_no?></p>
                     </div>
+                    <?php } ?>
+                    <!-- 是前三名的話顯示名次 end -->
 
                     <div class="picZone">
                         <div class="bigPic">
-                            <img src="./img/spot/spot1/SP_big_1.png">
+                            <img src="<?php echo $spotRow->spot_image_1; ?>">
                         </div>
                         <div class="photobook">
                             <h2>
@@ -76,25 +306,26 @@
                             </h2>
                             <div class="smallPicZone">
 
-                                <img src="./img/spot/spot1/SP_big_1.png" class="smallPic ">
+                                <img src="<?php echo $spotRow->spot_image_1; ?>" class="smallPic ">
 
 
-                                <img src="./img/spot/spot1/SP_big_2.png" class="smallPic">
+                                <img src="<?php echo $spotRow->spot_image_2; ?>" class="smallPic">
 
 
-                                <img src="./img/spot/spot1/SP_big_3.png" class="smallPic">
+                                <img src="<?php echo $spotRow->spot_image_3; ?>" class="smallPic">
 
                             </div>
                         </div>
 
                     </div>
-
+                    
+                    
                     <div class="txtZone">
-                        <h1>【新莊廢棄醫院】</h1>
+                        <h1>【<?php echo $spotRow->spot_name; ?>】</h1>
                         <div class="introTxt">
-                            <h3>令人毛骨悚然的郊區醫院</h3>
+                            <h3><?php echo $spotRow->spot_intro; ?></h3>
                             <p>
-                                日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到手術台、診療台，甚連夜晚的手術室與大體室都還健在，驚悚指數超高！
+                            <?php echo $spotRow->spot_content; ?>
                             </p>
                         </div>
 
@@ -102,23 +333,27 @@
                             <ul>
                                 <li>
                                     <img src="./img/icon/location.png">
-                                    新北市新莊區雙鳳里及桃園市龜山區迴龍里
+                                    <?php echo $spotRow->spot_address; ?>
                                 </li>
                                 <li>
                                     <img src="./img/icon/pulse.png">
-                                    膽量指數：<span> 8.5</span> /10
+                                    膽量指數：<span> <?php echo $spotRow->spot_scary_rate; ?> </span> /10
                                 </li>
                                 <li>
                                     <img src="./img/icon/vote-03.png">
-                                    靈異票選 204 票
+                                    靈異票選 <?php echo $spotRow->spot_vote_count; ?> 票
                                 </li>
                             </ul>
                         </div>
 
                         <div class="spotInform">
-                            <p class="btn-outline">
-                                投給【新莊廢棄醫院】
-                            </p>
+
+                            <!-- 改變投票btn start -->
+                            <form method="post">
+                                <input type="hidden" id="voteSpotNo" value="<?php echo $spotRow->spot_no; ?>">
+                                <input type="button" class="btn-outline" id="voteThisSpot" value="投給【<?php echo $spotRow->spot_name; ?>】">
+                            </form>
+                            <!-- 改變投票btn end -->
                         </div>
 
                         <div class="spiderweb">
@@ -132,6 +367,10 @@
 
                 </div>
             </section>
+
+<?php 
+}
+?>
 
             <section id="ghostSpotSection2">
 
@@ -837,13 +1076,22 @@
                         </div>
 
                         <div class="pageWrap">
-                            @@include('layout/component/pagination.html')
-                        </div>
+                            <div class="pagination">
+                <div class="pageBtn"><span class="toLeft">〈 </span></div>
+                <p class="PageSelected">1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+                <div class="pageBtn"><span class="toRight"> 〉</span></div>
+            </div>
+                                    </div>
 
 
-                    </div>
+                                </div>
 
-                </div>
+                            </div>
 
 
 
@@ -851,7 +1099,100 @@
 
 
 
-            @@include('layout/footer.html')
+            <footer>
+    <div id="warn">
+        <p id="warnTitle" class="title">
+            <span class="title">鬼島探險</span>
+            注意事項</p>
+        <ol>
+            <li>美食壯膽，再出發探險</li>
+            <li>不要半夜吹口哨、不要嬉笑打鬧</li>
+            <li>有人拍肩，不要回頭看</li>
+            <li>尋鬼探險事後三炷香</li>
+            <li>探險完畢若有不適，本站既不負責</li>
+        </ol>
+    </div>
+    <div id="spell" class="cameraSpell">
+        <div class="papper">
+            <img src="./img/footer/spell_1.png">
+        </div>
+        
+    </div>
+    <div id="footLink">
+        <a href="">
+            <img src="./img/logo/LOGO_black.png" id="BottomLogo">
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <p>
+                        <a href="../ghostIsland.html">
+                            前進鬼島
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="../index.html">
+                            尋鬼探險
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="../leaderboard.html">
+                            靈異票選
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="../game.html">
+                            試膽測驗
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="../forum.html">
+                            靈異討論
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="../forum.html">
+                            文章投稿
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="../member.html">
+                            會員中心
+                        </a>
+
+                    </p>
+                    <p>
+                        <span class="subLink">
+                            <a href="../member.html">
+                                會員資料
+                            </a>
+                            <a href="../member.html">
+                                揪團紀錄
+                            </a>
+                        </span>
+                        <span class="subLink">
+                            <a href="../member.html">
+                                我的收藏
+                            </a>
+                            <a href="../member.html">
+                                投稿紀錄
+                            </a>
+                        </span>
+                    </p>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
         </div>
     </div>
 

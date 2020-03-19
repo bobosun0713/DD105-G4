@@ -1,481 +1,1149 @@
+.createAdventure {
+  padding-top: 15%;
+  // background-color: aquamarine;
+  background-image: url("../../../img/spot/BG/spotBG.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
 
-.createAdventure{
-    padding-top:20%;
-    // background-color: aquamarine;
-  .section_wrapper{
+  .section_wrapper {
+    width: 90%;
+    margin: 0px auto;
     //   background-color: goldenrod;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px 0;
 
-        .form-tabs {
-          margin: 0 auto;
-          padding: 5px 10px;
-          position: relative;
-          margin-bottom: 80px;
-          // width: 750px;
-          z-index: 10;
-          // border: 1px solid blue;
-          .mainspot{ 
-            color:white;
-            font-size: 1.5rem;
-            margin: 0 auto 50px auto;
-            // border:1px solid white;
+    .form-tabs {
+      margin: 0 auto;
+      padding: 5px 10px;
+      position: relative;
+      margin-bottom: 130px;
+      // width: 750px;
+      z-index: 10;
+      // border: 1px solid blue;
+      .mainspot {
+        color: white;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        margin: 0 auto 50px auto;
+        // border:1px solid white;
+        text-align: center;
+      }
+      .form-menu {
+        display: flex;
+        justify-content: center;
+
+        li {
+          display: inline-block;
+          padding: 0 10px;
+          font-size: 18px;
+          color: white;
+
+          .form-span {
+            display: inline-block;
+            width: 30px;
+            line-height: 28px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            background-color: #333;
+            border: 1px solid white;
+            color: white;
             text-align: center;
+            margin-right: 10px;
+            position: relative;
+            left: 50px;
           }
-          .form-menu {
-            display: flex;
-            justify-content: center;
-            
-            li{
-              display: inline-block;
-              padding: 0 10px;
-              font-size: 18px;
+
+          .active {
+            background-color: #7d0021;
+            border: 1px solid #7d0021;
+          }
+          //步驟title
+          .nav-label {
+            left: 0px;
+            position: relative;
+            top: 35px;
+            width: 130px;
+            text-align: center;
+            display: block;
+            // background-color: #7d0021;
+          }
+        }
+        //橫槓
+        li .progressbar::after {
+          content: "";
+          transform: translate(18px);
+          height: 2px;
+          width: 90px;
+          display: block;
+          left: 25px;
+          top: 12px;
+          position: absolute;
+          background-color: white;
+        }
+      }
+    }
+
+    .wrapper {
+      width: 1180px;
+      margin: 0 auto;
+
+      // background-color: aqua;
+      /* 步驟一 廟宇 美食切換按鈕 */
+      #tab-1 {
+        margin-top: 50px;
+        display: flex;
+        // align-items: center;
+        padding: 5px 10px;
+        flex-wrap: wrap;
+
+        .left {
+          width: 45%;
+          margin-right: 5%;
+          flex: none;
+          // background-color: rgb(199, 199, 235);
+          .tourTitle {
+            min-width: 360px;
+            font-size: 20px;
+            display: inline-block;
+            line-height: 63px;
+            padding: 0 60px 0 40px;
+            background-color: #ffffff;
+            border-radius: 10px 50px 50px 10px;
+            position: relative;
+            color: black;
+            &:after {
+              content: "";
+              width: 30px;
+              height: 30px;
+              /* background-color: crimson; */
+              top: 20px;
+              right: 8px;
+              position: absolute;
+              background-image: url(../img/createAdventure/trainhead.png);
+              background-repeat: no-repeat;
+            }
+          }
+
+          .templefoodbuttons {
+            button {
+              font-size: 22px;
+              border: none;
+              background-color: transparent;
+              margin: 30px 3px 10px 3px;
               color: white;
 
-              .form-span{
-                display: inline-block;
-                width: 30px;
-                line-height: 28px;
-                -moz-border-radius: 20px;
-                border-radius: 20px;
-                background-color: #333;
-                border: 1px solid white;
-                color: white;
-                text-align: center;
-                margin-right: 10px;
+              &:active {
+                content: " ";
+                background-color: #ffffff;
+                width: 50px;
+                height: 1px;
                 position: relative;
-                left: 50px;
-              }
-              
-              .active {
-                background-color: #7d0021;
-                border: 1px solid #7d0021;
-              }
-              //步驟title
-              .nav-label {
-                left:0px;
-                position: relative;
-                top: 35px;
-                width:130px;
-                text-align: center;
                 display: block;
-                // background-color: #7d0021;
+              }
+
+              &:hover {
+                cursor: pointer;
               }
             }
-            //橫槓
-            li .progressbar::after{
-              content: "";
-              bottom:18px;
-              // left:8px;
-              transform: translate(18px);
-              height: 2px;
-              width:90px;   
-              display: block;
-              left: 18px;
-              top:12px;
-              position: absolute;
-              background-color: white;
+
+            .selected{
+              &:after {
+                content: " ";
+                background-color: #ffffff;
+                width: 50px;
+                height: 1px;
+                position: relative;
+                display: block;
+              }
             }
-            
+          }
+          .spotselections {
+            position: relative;
+            // background-color: grey;
+            .spotlightbox {
+              position: absolute;
+              background-color: rgba(0, 0, 0, 0.9);
+              width: 340px;
+              // height: 100%;
+              z-index: 99;
+              border-radius: 5px;
+              padding: 10px 20px;
+              margin: 0 auto;
+              left: 30%;
+              display: none;
+
+              .content{
+                margin: auto;
+              }
+
+              .cancelbtn {
+                float: right;
+              }
+
+              button {
+                // border: 1px solid tomato;
+                border-radius: 40px;
+                line-height: 22px;
+                color: white;
+                font-size: 13px;
+                padding: 5px 11px;
+                background-color: transparent;
+
+                &:hover {
+                  cursor: pointer;
+                  background-color: rgba(255, 255, 255, 0.2);
+                }
+              }
+              .additinerarybtn {
+                margin-top: 18px;
+                float: right;
+                &:after{
+                  content: " ";
+                  clear: both;
+                }
+              }
+              img {
+                width: 90%;
+                height: 40%;
+                margin: 10px;
+              }
+              span {
+                font-size: 1.5rem;
+                
+              }
+              .detailstext {
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.7);
+              }
+            }
+            .selectionsframe {
+              border: 2px solid white;
+              border-radius: 5px;
+              height: 420px;
+              overflow-y: scroll;
+              padding: 20px 30px;
+              .spotoptions {
+                position: relative;
+                .addbtn {
+                  img {
+                    color: blue;
+                    position: absolute;
+                    opacity: 0.8;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    transform: translate(70%, 50%);
+                    &:hover {
+                      cursor: pointer;
+                      opacity: 1;
+                    }
+                  }
+                }
+                .content {
+                  // background-color: blue;
+
+                  img {
+                    width: 185px;
+                    height: 137px;
+                    border: 3px solid blue;
+                    border-radius: 5px;
+                    margin-bottom: 5px;
+                  }
+                  span {
+                    //title
+                    position: absolute;
+                    color: white;
+                    background-color: rgba(3, 3, 3, 0.5);
+                    padding: 3px;
+                    border-radius: 8px;
+                    line-height: 20px;
+                    bottom: 13px;
+                    left: 10px;
+                  }
+                }
+              }
+            }
           }
         }
-
-        .wrapper {
-          width: 1180px;
-          margin: 0 auto;
-          // background-color: aqua;
-          /* 步驟一 廟宇 美食切換按鈕 */
-          #tab-1 {
-            margin-top: 50px;
-            display: flex;
-            // align-items: center;
-            padding: 5px 10px;
-            flex-wrap: wrap;
-            
-            .left{
-              width: 45%;
-              margin-right: 5%;
-              flex:none;
-              // background-color: rgb(199, 199, 235);
-              .tourTitle{
-                font-size: 20px;
-                display: inline-block;
-                line-height: 63px;
-                padding: 0 60px 0 40px;
-                background-color: #ffffff;
-                border-radius: 10px 50px 50px 10px;
-                position: relative;
-                color:black;
-                &:after {
-                  content: "";
-                  width: 30px;
-                  height: 30px;
-                  /* background-color: crimson; */
-                  top: 20px;
-                  right: 8px;
-                  position: absolute;
-                  background-image: url(../img/createAdventure/trainhead.png);
-                  background-repeat: no-repeat;
-                }
-              }
-          
-              .templefoodbuttons {
-                button {
-                font-size: 22px;
-                border: none;
-                background-color: transparent;
-                margin: 30px 3px 10px 3px;
-                color: white;
-                &:after{
-                  content:"11";
-                  background-color: #ffffff;
-                  width:30px;
-                  height:3px;
-                  // display: block;
-                  }
-                  &:hover {
-                    cursor: pointer;
-                  
-                  }
-                }
-              }
-              .spotselections {
-                position: relative;
-                // background-color: grey;
-                .spotlightbox {
-                  position: absolute;
-                  background-color: grey;
-                  width: 340px;
-                  height: 450px;
-                  z-index: 99;
-                  border-radius: 10px;
-                  padding: 8px;
-                  margin: 0 auto;
-                  display: none;
-                  .cancelbtn{
-                    float:right;
-                  }
-                  button {
-                    // border: 1px solid tomato;
-                    border-radius: 15px;
-                    line-height: 24px;
-                    color: white;
-                    font-size: 17px;
-                    padding: 3px 10px;
-                    background-color: transparent;
-                    &:hover{
-                      cursor: pointer;
-                      background-color: tomato;
-                    }
-              
-                  }
-                  .additinerarybtn{
-                    margin-top: 18px;
-                    float: right;
-                  }
-                  img {
-                    width: 85%;
-                    height: 40%;
-                    
-                  }
-                  span{
-                    font-size: 1.5rem;
-                    margin-bottom: 12px;
-                  }
-                  .detailstext{
-                    font-size: 1.2rem;
-                  }
-                  
-                }
-                .selectionsframe {
-                  border: 2px solid white;
-                  border-radius: 5px;
-                  height: 420px;
-                  overflow-y: scroll;
-                  padding: 20px 30px;
-                  .spotoptions {
-                    position: relative;
-                    .addbtn{
-                      img{
-                        color:blue;
-                        position: absolute;
-                        opacity: 0.8;
-                        width:80px;
-                        height:80px;
-                        border-radius: 50%;
-                        transform: translate(70%,50%);
-                        &:hover {
-                          cursor: pointer;
-                          opacity: 1;
-                        }
-                      }
-            
-                    }
-                    .clonecontent{
-                        // background-color: blue;
-                      
-                        img {
-                        width: 185px;
-                        height: 137px;
-                        border-radius:5px ;
-                        margin-bottom: 5px;
-                     
-                      }
-                      span {
-                        //title
-                        position: absolute;
-                        color: white;
-                        background-color:rgba(3,3,3,0.5);
-                        padding:3px;
-                        border-radius: 8px;
-                        line-height: 20px;
-                        bottom: 13px;
-                        left:10px;
-                      }
-                    }
-                  }
-                }
-              }
+        .right {
+          border: 1px solid white;
+          color: #7d0022;
+          height: 550px;
+          width: 45%;
+          // background-color: rgb(19, 236, 103);
+          padding: 15px;
+          border-radius: 5px;
+          background-image: url("../img/createAdventure/cardBg.png");
+          background-repeat: no-repeat;
+          background-size: 250%;
+          background-position: -30px;
+          flex: none;
+          .heading {
+            line-height: 1.2rem;
+            // border: 1px solid blue;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            padding-left: 10px;
+            img {
+              margin-right: 12px;
+              width: 20px;
+              height: 20px;
             }
-
-            .right{
-              border:1px solid white; 
-              color: #7d0022;
-              height:550px;
-              width: 45%;
-              // background-color: rgb(19, 236, 103);
-              padding:15px;
-              border-radius: 5px;
-              background-image: url("../img/createAdventure/cardBg.png");
-              background-repeat: no-repeat;
-              background-size: 250%;
-              background-position: -30px;
-              flex:none;
-              .heading {
-                line-height: 1.2rem;
-                // border: 1px solid blue;
-                margin-bottom: 30px;
+          }
+          .selected_spot {
+            height: 82%;
+            padding: 15px;
+            border: 3px solid red;
+            overflow-y: scroll;
+            div {
+              span{
                 font-size: 1.2rem;
-                padding-left: 10px;
-                img{
-                  margin-right: 12px;
-                  width:20px;
-                  height:20px;
+                font-weight: 800;
+                width: 100%;
+                float: right;
+              }
+
+              img {
+                width: 100%;
+                height: 120px;
+              }
+              .delete_btn {
+                font-size: 1rem;
+
+                font-weight: 700;
+                border-radius: 55%;
+                border: 1px solid white;
+                background: transparent;
+                color: white;
+                position: relative;
+                bottom: 117px;
+                right:10px;
+                float: right;
+                
+
+                &:hover {
+                  cursor: pointer;
+                  background: rgba(255, 255, 255, 0.3);
                 }
               }
-              .selected_spot {
-                padding: 15px;
-                border:1px solid red;
+
+              .shift_up_btn, .shift_down_btn{
+                position: relative;
+                bottom: 36px;
+                background: black;
+                border: 1px solid transparent;
+                color: white;
+                opacity: .6;
+                padding: 5px 10px;
+                transition: opacity .2s linear;
+                // display: inline;
+                float: left;
+
+                &:hover{
+                  opacity: .8;
+                }
               }
             }
           }
-          /* 步驟二 */
-          #tab-2{
-            @extend #tab-1;
-          .left {
-            width: 45%;
-            margin-right: 5%;
-            // background-color: rgb(199, 199, 235);
-            .tourTitle{
-              font-size: 20px;
+        }
+      }
+
+      /* 步驟二 */
+      #tab-2 {
+        @extend #tab-1;
+        .left {
+          width: 45%;
+          margin-right: 5%;
+          // border: 1px solid red;
+          // background-color: rgb(199, 199, 235);
+          .tourTitle {
+            min-width: 300px;
+            font-size: 20px;
+            display: inline-block;
+            line-height: 63px;
+            padding: 0 60px 0 40px;
+            background-color: #ffffff;
+            border-radius: 10px 50px 50px 10px;
+            position: relative;
+            color: black;
+            &:after {
+              content: "";
+              width: 30px;
+              height: 30px;
+              /* background-color: crimson; */
+              top: 20px;
+              right: 8px;
+              position: absolute;
+              background-image: url(../img/createAdventure/trainhead.png);
+              background-repeat: no-repeat;
+            }
+          }
+          .leftblock {
+            margin-top: 30px;
+            label {
               display: inline-block;
-              line-height: 63px;
-              padding: 0 60px 0 40px;
-              background-color: #ffffff;
-              border-radius: 10px 50px 50px 10px;
-              position: relative;
-              color:black;
-              &:after {
-                content: "";
-                width: 30px;
-                height: 30px;
-                /* background-color: crimson; */
-                top: 20px;
-                right: 8px;
-                position: absolute;
-                background-image: url(../img/createAdventure/trainhead.png);
-                background-repeat: no-repeat;
-              }
+              // border: 1px solid red;
+              margin: 0 20px 20px 0;
+              width: 80px;
+              line-height: 45px;
+              text-align: center;
+              vertical-align: top;
             }
-            .leftblock {
-              margin-top: 30px;
-              label {
-                display:inline-block;
-                // border: 1px solid red;
-                margin: 0 20px 20px 0;
-                width: 80px;
-                line-height: 45px;
-                text-align: center;
-                vertical-align: top;
-              }
-              input {
-                padding-left: 15px;
+            input {
+              padding-left: 15px;
+              width: 200px;
+              border-radius: 5px;
+              border: none;
+              line-height: 45px;
+            }
+            textarea {
+              resize: none;
+              border: none;
+              width: 350px;
+              height: 135px;
+              border-radius: 5px;
+              padding: 10px;
+            }
+
+            //萬年曆scss
+            .dateCalender {
+              // margin-bottom: 50px;
+              position: relative;
+              display: inline;
+
+              %yy_mm_dd_container {
+                border: 1px solid #ccc;
+                border-radius: 10px;
                 width: 200px;
-                border-radius: 5px;
-                border: none;
-                line-height: 45px;
+                color: white;
+                padding: 10px 20px;
+                display: inline-flex;
+                justify-content: space-between;
+                align-items: center;
+
+                p {
+                  margin: 0px;
+                  padding: 0px;
+                }
+
+                img {
+                  width: 15px;
+                  transform: rotate(0deg);
+                  transition: transform 0.1s linear;
+                }
               }
-              textarea{
-                resize:none;
-                border:none;
-                width:350px;
-                height:135px;
-                border-radius: 5px;
-                padding: 10px;
+
+              %dateZone {
+                display: none;
+                position: absolute;
+                top: 25px;
+                left: 0px;
+                z-index: 88;
+              }
+
+              .yy_mm_dd_container {
+                @extend %yy_mm_dd_container;
+              }
+
+              #dateZone {
+                @extend %dateZone;
+              }
+
+              .yy_mm_dd_container_2 {
+                @extend %yy_mm_dd_container;
+              }
+
+              #dateZone_2 {
+                @extend %dateZone;
+              }
+
+              .yy_mm_dd_container_3 {
+                @extend %yy_mm_dd_container;
+              }
+
+              #dateZone_3 {
+                @extend %dateZone;
+              }
+
+              table,
+              tr,
+              td {
+                background: rgb(97, 97, 97);
+                border: 0.5px solid #ccc;
+                border-collapse: collapse;
+              }
+
+              td {
+                padding: 5px 10px;
+                text-align: center;
+                color: white;
+              }
+
+              .selected {
+                cursor: pointer;
+                &:hover {
+                  background: rgba(255, 255, 255, 0.2);
+                }
+              }
+
+              tbody {
+                td {
+                  cursor: pointer;
+                  &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                  }
+                }
+
+                .selected {
+                  background: rgba(255, 255, 255, 0.4);
+                }
               }
             }
           }
-          .right2{
-            // border:1px solid white; 
-            color: #7d0022;
-            height:100%;
-            width: 45%;
-            background-image: none;
-            padding:15px;
+        }
+        .right2 {
+          // border:1px solid white;
+          color: #7d0022;
+          height: 100%;
+          width: 45%;
+          background-image: none;
+          padding-top: 50px;
 
+          .heading {
+            // border:1px solid white;
+            width: 300px;
+            height: 300px;
+            margin: auto;
 
-             .heading{
-              // border:1px solid white; 
-              width: 300px;
-              height: 300px;
-              margin: auto;
+            #uploadTourFile {
+              display: none;
+            }
+
+            .tour_imagePreview {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+              position: relative;
               cursor: pointer;
 
-                .tour_imagePreview{
+              &:hover {
+                .tour_imagePreview_text {
+                  height: 30%;
+                }
+              }
+
+              .tour_imagePreview_default {
                 width: 100%;
-                height: 100%;
-                overflow: hidden;
-                position: relative;
-
-                img{
-                  width: 100%;
-                  position: absolute;
-                  top: 0px;
-                  left: 0px;
-                }
-
-                .tour_imagePreview_text{
-                  width: 100%;
-                  background: linear-gradient( to top, rgba(0,0,0,.7), rgba(0,0,0,0));
-                  position: absolute;
-                  bottom: 0px;
-                  left: 0px;
-
-                  p{
-                    color: white;
-                    font-size: 1.2rem;
-                  }
-
-                }
+                object-fit: cover;
+                position: absolute;
+                top: 0px;
+                left: 0px;
               }
-            }
-          }
-          }
-          /* 步驟三 */
-          #tab-3{
-              margin-top: 50px;
-              padding: 5px 10px;
-            .left{
-                clear: both;
-              .tourTitle {
-                margin-bottom: 50px;
-              }
-              .tourTitle{
-                font-size: 20px;
-                display: inline-block;
-                line-height: 63px;
-                padding: 0 60px 0 40px;
-                background-color: #ffffff;
-                border-radius: 10px 50px 50px 10px;
-                position: relative;
-                color:black;
-                &:after {
-                  content: "";
+
+              .tour_imagePreview_text {
+                // border: 1px solid green;
+                width: 100%;
+                height: 20%;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                padding: 20px auto;
+                transition: all 0.3s linear;
+
+                .icon {
+                  // border: 1px solid green;
+                  margin-right: 10px;
                   width: 30px;
-                  height: 30px;
-                  /* background-color: crimson; */
-                  top: 20px;
-                  right: 8px;
-                  position: absolute;
-                  background-image: url(../img/createAdventure/trainhead.png);
-                  background-repeat: no-repeat;
                 }
-              }
-            } 
-            .section {
-              display: flex;
-              flex-wrap: wrap;
-              margin-bottom: 50px;
-              border: 1px solid blue;
-              justify-content: space-between;
-              .left{
-                .temple_img {
-                  /* border: 1px solid red; */
-                  border-radius: 5px;
-                  overflow: hidden;
-                }
-              }
-              .right{
-          
-                label {
+
+                p {
+                  // border: 1px solid green;
+                  color: white;
                   font-size: 1.2rem;
-                  line-height: 45px;
-                  display: inline-block;
-                  width: 110px;
-                  // border: 1px solid rgb(214, 127, 45);
-                  vertical-align: top;
                 }
-                input {
-                  border-radius: 10px;
-                  width: 330px;
-                  height: 45px;
-                  margin-bottom: 20px;
-                  border: none;
-                }
-                textarea {
-                  width: 330px;
-                  height: 110px;
-                  border-radius: 10px;
-                  padding: 10px;
-                  margin-bottom: 20px;
-                  border: none;
-                  resize: none;
-                }
-              } 
+              }
             }
-          }
-          #tab-4 {
-            @extend #tab-1;
-          }
-          #tab-1.hide,
-          #tab-2.hide,
-          #tab-3.hide,
-          #tab-4.hide {
-            display: none;
+
+            .decoration_hand {
+              position: relative;
+              top: -30px;
+              right: -50px;
+              pointer-events: none;
+
+              // border: 1px solid red;
+
+              .hand1 {
+                width: 120px;
+                position: absolute;
+                right: 0;
+                opacity: 0;
+                transform: translateY(0px);
+                animation: slapHand 6s linear infinite;
+                animation-delay: 1s;
+              }
+              @keyframes slapHand {
+                0% {
+                  opacity: 1;
+                  transform: translateY(0px);
+                }
+                100% {
+                  opacity: 0;
+                  transform: translateY(50px);
+                }
+              }
+
+              .hand2 {
+                width: 80px;
+                position: absolute;
+                right: 100px;
+                bottom: -250px;
+                transform: translateY(0px);
+                opacity: 0;
+                animation: slapHand 6s linear infinite;
+                animation-delay: 3s;
+              }
+            }
           }
         }
-        .button_block {
-            width: 1080px;
-            margin: 30px auto;
-            text-align: center;
-          //   background-color: yellowgreen;
-            button{
-              &:hover{
-                  border: none; 
-                  background-color:rgb(196,16,37);
-                }
-            }
-            .btn-outline{
-              border: 2px solid white;
-              color:white;
-              width: 220px;
-              height:60px;
-              font-size: 25px;
-              background-color: transparent;
-              outline: none;
-            }
-            #previous {
-              margin-top: 10px;
+      }
+
+      /* 步驟三 */
+      #tab-3 {
+        margin-top: 50px;
+        padding: 5px 10px;
+
+        .left {
+          // border: 1px solid red;
+          clear: both;
+
+          .tourTitle {
+            margin-bottom: 50px;
+            min-width: 300px;
+          }
+          .tourTitle {
+            font-size: 20px;
+            display: inline-block;
+            line-height: 63px;
+            padding: 0 60px 0 40px;
+            background-color: #ffffff;
+            border-radius: 10px 50px 50px 10px;
+            position: relative;
+            color: black;
+            &:after {
+              content: "";
+              width: 30px;
+              height: 30px;
+              /* background-color: crimson; */
+              top: 20px;
+              right: 8px;
+              position: absolute;
+              background-image: url(../img/createAdventure/trainhead.png);
+              background-repeat: no-repeat;
             }
           }
+        }
+
+        .tour_wrapper {
+        }
+
+        .section {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 100px;
+          // border: 1px solid blue;
+          justify-content: space-around;
+
+          .left {
+            .temple_img {
+              /* border: 1px solid red; */
+              width: 300px;
+              height: 300px;
+              border-radius: 5px;
+              overflow: hidden;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+
+          .right {
+            // border: 1px solid green;
+
+            label {
+              font-size: 1.2rem;
+              line-height: 45px;
+              display: inline-block;
+              width: 110px;
+              // border: 1px solid rgb(214, 127, 45);
+              vertical-align: top;
+            }
+            input {
+              border-radius: 10px;
+              width: 330px;
+              height: 45px;
+              margin-bottom: 20px;
+              border: none;
+            }
+
+            p{
+              width: 330px;
+              height: 45px;
+              display: inline-block;
+              margin: 10px 0px 20px 0px
+            }
+
+            textarea {
+              width: 330px;
+              height: 110px;
+              border-radius: 10px;
+              padding: 10px;
+              margin-bottom: 20px;
+              border: none;
+              resize: none;
+            }
+          }
+        }
+      }
+      #tab-4 {
+        @extend #tab-1;
+
+        // 揪團簡介
+        #tourPreview_Section1 {
+          //border: 1px solid red;
+          width: 1000px;
+          margin: 20px auto;
+          padding: 20px;
+          // margin-top: 200px;
+          border-radius: 5px;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
+          // overflow: hidden;
+
+          .spotIntro {
+            // border: 1px solid red;
+            padding: 20px;
+            display: inline-flex;
+            justify-content: space-around;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+
+            .picZone {
+              width: 40%;
+              // border: 1px solid green;
+
+              .bigPic {
+                // width: 100%;
+                width: 360px;
+                height: 360px;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+            }
+
+            .txtZone {
+              width: 55%;
+              position: relative;
+              h1 {
+                font-size: 2rem;
+              }
+              .introTxt {
+                // border: 1px solid greenyellow;
+                margin: 20px;
+                p {
+                  color: #8c8a8a;
+                  margin: 5px;
+                }
+              }
+
+              .StartGroup_spotInform {
+                // border: 1px solid greenyellow;
+                margin: 30px 20px;
+
+                ul {
+                  li {
+                    margin: 5px 0;
+                    color: #8c8a8a;
+                    // border: 1px solid red;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    padding: auto 0;
+                    transition: all 0.5s ease;
+                    > div {
+                      margin-left: 25px;
+                    }
+                    span {
+                      font-size: 1rem;
+                      font-weight: 800;
+                      // border: 1px solid greenyellow;
+                    }
+                    // 日期icon
+                    i {
+                      margin-right: 10px;
+                      font-size: 16px;
+                    }
+                    img {
+                      margin-right: 10px;
+                    }
+                    // 揪團者名稱照片
+                    .StartGroup_people_img {
+                      width: 50px;
+                      height: 50px;
+                      margin: 0 10px 10px 0;
+                      overflow: hidden;
+                      border-radius: 50%;
+
+                      img {
+                        transition: all 0.5s;
+                        width: 100%;
+                        &:hover {
+                          cursor: pointer;
+                          transform: scale(1.2);
+                        }
+                      }
+                    }
+                    //讓碰到的物件顏色改變
+                    &:hover {
+                      box-sizing: border-box;
+                      color: white;
+                      text-shadow: 0 0 5px red;
+                      cursor: pointer;
+                      // align-items: baseline;
+                    }
+                  }
+                }
+              }
+
+              .spiderweb {
+                width: 400px;
+                position: absolute;
+                top: 150px;
+                right: -150px;
+
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .progress {
+            position: relative;
+            border-radius: 10px;
+            overflow: visible;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+            background-color: rgb(201, 201, 201);
+            padding: 1px;
+
+            &::after {
+              content: " ";
+              width: 15px;
+              height: 15px;
+              background-color: #d11c00;
+              border-radius: 50%;
+              position: absolute;
+              right: 0;
+              top: -6px;
+              border: 2px solid rgb(219, 219, 219);
+              box-sizing: border-box;
+            }
+            > span {
+              position: absolute;
+              bottom: -55px;
+              font-size: 14px;
+              padding: 2px 4px 2px 5px;
+              right: -40px;
+              border-radius: 2px;
+              display: flex;
+              align-items: center;
+              .progress_image {
+                padding-right: 5px;
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                img {
+                  width: 100%;
+                }
+              }
+              > p {
+                display: inline-block;
+                color: white;
+              }
+            }
+            .progress-bar {
+              background-color: rgb(255, 0, 0);
+              box-shadow: inset 0 1px 2px rgb(151, 5, 5), 0 1px rgba(255, 255, 255, 0.08);
+              position: relative;
+              border-radius: 4px;
+              width: 80%;
+              height: 4px;
+              animation: line2 5s infinite;
+              @keyframes line2 {
+                0% {
+                  width: 0;
+                }
+                25% {
+                  width: 20%;
+                }
+                50% {
+                  width: 40%;
+                }
+                75% {
+                  width: 60%;
+                }
+                100% {
+                  width: 80%;
+                }
+              }
+              &::before {
+                content: "";
+                width: 15px;
+                height: 15px;
+                background-color: white;
+                border-radius: 50%;
+                position: absolute;
+                top: -6px;
+                left: -10px;
+                border: 2px solid #d11c00;
+                box-sizing: border-box;
+              }
+              &::after {
+                content: " ";
+                width: 15px;
+                height: 15px;
+                background-color: #d11c00;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+                top: -6px;
+                border: 2px solid rgb(219, 219, 219);
+                box-sizing: border-box;
+              }
+              > span {
+                position: absolute;
+                bottom: -55px;
+                font-size: 14px;
+                padding: 2px 4px 2px 5px;
+                right: -40px;
+                border-radius: 2px;
+                display: flex;
+                align-items: center;
+                .progress_image {
+                  padding-right: 5px;
+                  width: 25px;
+                  height: 25px;
+                  display: inline-block;
+                  img {
+                    width: 100%;
+                  }
+                }
+                > p {
+                  display: inline-block;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+
+        #tourPreview_Section2 {
+          width: 1000px;
+          margin: 10px auto;
+          // padding: 50px;
+          // border: 1px solid yellowgreen;
+
+          //這裡重要，background-size: 100% 100%;讓背景隨著內容物跑出來
+          //然後給他padding下面鬼
+
+          #customeTour {
+            // border: 1px solid yellowgreen;
+            // height:800px;
+            margin: auto;
+            padding: 100px 10px;
+            // border: 1px solid darkcyan;
+            background-image: url("../img/spot/shortPaper.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: relative;
+            color: #3b3b3b;
+            text-align: center;
+            vertical-align: middle;
+
+            .tourSpot {
+              width: 80%;
+              margin-bottom: 80px;
+              // border: 1px solid darkcyan;
+              display: inline-flex;
+              justify-content: space-between;
+
+              .tourImg {
+                min-width: 250px;
+                width: 35%;
+
+                img {
+                  width: 100%;
+                }
+              }
+
+              .tourSpotTxt {
+                text-align: left;
+                width: 55%;
+                // border: 1px solid red;
+
+                .spotTitle {
+                  font-size: 1.2rem;
+                  color: #700000;
+                }
+
+                p {
+                  margin-left: 10px;
+                }
+
+                .tourSpotInfo {
+                  margin-top: 20px;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: space-between;
+
+                  .btn-outline2 {
+                    margin-right: 5px;
+                    position: relative;
+
+                    &:hover {
+                      .moreInfo {
+                        display: block;
+                        z-index: 10;
+                      }
+
+                      .triangle {
+                        display: block;
+                      }
+                    }
+
+                    .moreInfo {
+                      display: none;
+                      width: 200%;
+                      padding: 5px 10px;
+                      background: #8c8a8a;
+                      border-radius: 5px;
+                      font-size: 0.7rem;
+                      position: absolute;
+                      bottom: -40px;
+                      left: 0px;
+                      color: white;
+                      text-align: center;
+                      z-index: 3;
+                    }
+
+                    .triangle {
+                      display: none;
+                      width: 10px;
+                      height: 10px;
+                      border-color: transparent transparent #8c8a8a transparent;
+                      border-style: solid solid solid solid;
+                      border-width: 10px;
+                      position: absolute;
+                      bottom: -14px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .tourStatus {
+              // border: 1px solid red;
+              position: absolute;
+              top: 200px;
+              left: 410px;
+
+              ul {
+                li {
+                  margin-bottom: 240px;
+                }
+
+                .statusCircle {
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50%;
+                  background: #8c8a8a;
+                  position: relative;
+
+                  .circle {
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    border: 1px solid #8c8a8a;
+                    position: absolute;
+                    top: -18.5px;
+                    right: -4px;
+                  }
+
+                  .line {
+                    width: 1px;
+                    height: 235px;
+                    border: 2px dashed #8c8a8a;
+                    position: relative;
+                    top: -240px;
+                    right: -9px;
+                  }
+
+                  .selected2 {
+                    border: 1px solid #700000;
+                  }
+                }
+
+                .selected {
+                  background: #700000;
+                }
+              }
+            }
+          }
+        }
+      }
+      #tab-1.hide,
+      #tab-2.hide,
+      #tab-3.hide,
+      #tab-4.hide {
+        display: none;
+      }
+    }
+    .button_block {
+      width: 1080px;
+      margin: 30px auto;
+      text-align: center;
+      //   background-color: yellowgreen;
+      button {
+        &:hover {
+          border: none;
+          background-color: rgb(196, 16, 37);
+        }
+      }
+      .btn-outline {
+        border: 2px solid white;
+        color: white;
+        width: 220px;
+        height: 60px;
+        font-size: 25px;
+        background-color: transparent;
+        outline: none;
+      }
+      #previous {
+        margin-top: 10px;
+      }
+    }
   }
-  
 }

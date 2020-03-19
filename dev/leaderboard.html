@@ -6,11 +6,11 @@
     </head>
     <body>
         <!-- header -->
-         @@include('layout/header.html')
+        @@include('layout/header.html',{"link003":"pageSelectEffect2"})
         <!-- 霧氣 -->
         <!-- @@include('layout/component/indexsmoke.html') -->
         <!-- 有鬼箭頭元素 -->
-        <!-- @@include('layout/component/mouse_ghost.html') -->
+        @@include('layout/component/mouse_ghost.html')
         <div id="leaderboard">
             <!-- 投給你內心 -->
             <div id="vote">
@@ -49,9 +49,7 @@
                 <p class="alternately-p">╲ 來抓交替囉！ ╱</p>
                 <img class="alternately-i" src="./img/leaderboard/ghost-1.png" alt="" />
             </div>
-             <!--桌機板的幽靈 -->
-                 <!-- <img id="ghost-2" src="./img/leaderboard/ghost-2.png" alt="" /> -->
-             <!--手機板的幽靈 -->
+             <!--幽靈圖 -->
              <img id="ghost-2-s" src="./img/leaderboard/ghost-2-s.png" alt="" />
 
             <!-- 排行榜表單 -->

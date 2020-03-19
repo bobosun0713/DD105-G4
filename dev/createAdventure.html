@@ -12,11 +12,12 @@
   <!-- @@include('layout/component/mouse_ghost.html') -->
   <div class="createAdventure">
     @@include('layout/header.html',{
-      "link002" : "pageSelectEffect2"
+    "link002" : "pageSelectEffect2",
+    "link001-2":"pageSelectEffect1"
     })
     <section class="section_wrapper">
       <div class="form-tabs">
-        <div class="mainspot tourTitle">廢棄新莊醫院</div>
+        <div class="mainspot tourTitle">【新莊廢棄醫院】</div>
 
         <!-- 導覽列 -->
         <ul class="form-menu">
@@ -39,6 +40,7 @@
         </ul>
       </div>
       <div id="progressbar"></div>
+
       <div class="wrapper">
 
         <!-- 步驟1 -->
@@ -46,8 +48,9 @@
           <div class="tab-1 left">
             <div class="tourTitle">請從下方選擇想搭配的景點:</div>
             <div class="templefoodbuttons">
-              <button class="temple_btn">廟宇</button>
+              <button class="temple_btn selected">廟宇</button>
               <button class="food_btn">飲食</button>
+              <!-- <button class="TEMPBTN">臨時按鈕</button> -->
             </div>
 
             <div class="spotselections">
@@ -60,11 +63,11 @@
                   <div class="addbtn">
                     <img src="img/createAdventure/zoom_up_icon.png" />
                   </div>
-                  <div class="clonecontent">
+                  <div class="content">
                     <span>合興宮</span>
                     <img src="img/createAdventure/spot1_temple1.png" alt="廟照片" />
-                    <input id="details" type="hidden"
-                      value="合興宮|新莊「合興宮」，創立於乾隆年間且頗具規模的老牌土地公廟，廟內神案中央供奉一塊「福德正神」石碑，前面擺置一個石製古香爐，爐身則刻有「乾隆甲辰花月；埤角庄戶仝立」，見證了此廟悠久的歷史風華。" />
+                    <input id="temple001" type="hidden"
+                      value="合興宮|新莊「合興宮」，創立於乾隆年間且頗具規模的老牌土地公廟見證了此廟悠久的歷史風華。" />
                     <div class="detailstext"></div>
                   </div>
                 </div>
@@ -72,11 +75,11 @@
                   <div class="addbtn">
                     <img src="img/createAdventure/zoom_up_icon.png" />
                   </div>
-                  <div class="clonecontent">
+                  <div class="content">
                     <span>後港昭德宮</span>
                     <img src="img/createAdventure/spot1_temple2.png" alt="廟照片" />
-                    <input id="details" type="hidden"
-                      value="後港昭德宮|新莊後港昭德宮建於清乾隆三十年間，建立原因是因信徒有感天上聖母神威顯赫，鄉梓皆前來祈求膜拜，逐由信徒開會決議籌建廟宇以供信徒前來參拜。" />
+                    <input id="temple002" type="hidden"
+                      value="後港昭德宮|新莊後港昭德宮建於清乾隆三十年間，由信徒開會決議籌建廟宇以供信徒前來參拜。" />
                     <div class="detailstext"></div>
                   </div>
                 </div>
@@ -84,10 +87,10 @@
                   <div class="addbtn">
                     <img src="img/createAdventure/zoom_up_icon.png" />
                   </div>
-                  <div class="clonecontent">
+                  <div class="content">
                     <span>斂財宮</span>
                     <img src="img/createAdventure/spot1_temple3.png" alt="廟照片" />
-                    <input id="details" type="hidden" value="斂財宮|哈哈哈哈哈哈哈" />
+                    <input id="temple003" type="hidden" value="斂財宮|哈哈哈哈哈哈哈" />
                     <div class="detailstext"></div>
                   </div>
                 </div>
@@ -99,7 +102,9 @@
               <img src="img/createAdventure/selectedspotheading_icon.png" />
               專屬行程規劃
             </div>
-            <div class="selected_spot">新增的地方</div>
+            <div class="selected_spot">
+
+            </div>
           </div>
         </div>
 
@@ -113,14 +118,73 @@
               <label>人數限制</label>
               <input type="number" value="1" min="1" max="30" />
               <br />
+
               <label>發起日期</label>
-              <input type="date" value="" />
+              <!-- 萬年曆-發起日期 -->
+              <div class="dateCalender">
+                <div class="yy_mm_dd_container">
+                  <p id="yy_mm_dd">請選取日期</p>
+                  <img src="./img/createAdventure/arrow.png" class="arrow">
+                </div>
+                <table id="dateZone">
+                  <thead>
+                    <tr>
+                      <td class="selected preMonth">〈</td>
+                      <td colspan="5" id="yy_mm"></td>
+                      <td class="selected nextMonth">〉</td>
+                    </tr>
+                  </thead>
+                  <tbody id="dateTable">
+
+                  </tbody>
+                </table>
+              </div>
+
               <br />
+
               <label>截止日期</label>
-              <input type="date" value="" />
+              <!-- 萬年曆-截止日期 -->
+              <div class="dateCalender">
+                <div class="yy_mm_dd_container_2">
+                  <p id="yy_mm_dd_2">請選取日期</p>
+                  <img src="./img/createAdventure/arrow.png" class="arrow">
+                </div>
+                <table id="dateZone_2">
+                  <thead>
+                    <tr>
+                      <td class="selected preMonth_2">〈</td>
+                      <td colspan="5" id="yy_mm_2"></td>
+                      <td class="selected nextMonth_2">〉</td>
+                    </tr>
+                  </thead>
+                  <tbody id="dateTable_2">
+
+                  </tbody>
+                </table>
+              </div>
+
               <br />
               <label>出團日期</label>
-              <input type="date" value="" />
+              <!-- 萬年曆-出團日期 -->
+              <div class="dateCalender">
+                <div class="yy_mm_dd_container_3">
+                  <p id="yy_mm_dd_3">請選取日期</p>
+                  <img src="./img/createAdventure/arrow.png" class="arrow">
+                </div>
+                <table id="dateZone_3">
+                  <thead>
+                    <tr>
+                      <td class="selected preMonth_3">〈</td>
+                      <td colspan="5" id="yy_mm_3"></td>
+                      <td class="selected nextMonth_3">〉</td>
+                    </tr>
+                  </thead>
+                  <tbody id="dateTable_3">
+
+                  </tbody>
+                </table>
+              </div>
+
               <br />
               <label>揪團名稱</label>
               <input type="text" value="" maxlength="15" placeholder="限15字以內" />
@@ -133,14 +197,21 @@
           <!-- 上傳揪團首圖 -->
           <div class="tab-2 right2">
             <div class="heading">
+
+              <input type="file" name="uploadTourFile" id="uploadTourFile" accept="image/*">
               <div class="tour_imagePreview" id="tour_imagePreview">
-                <img src="img/createAdventure/addgroupimg_icon.png" class="tour_imagePreview_default"/>
+                <img src="img/createAdventure/addgroupimg_icon.png" class="tour_imagePreview_default" />
                 <div class="tour_imagePreview_text">
-                  <img src="" alt="">
+                  <img src="./img/createAdventure/addgroupimg_icon2.png" class="icon">
                   <p>添加封面照片</p>
                 </div>
               </div>
-              <input type="file" name="uploadTourFile" id="uploadTourFile">
+
+              <div class="decoration_hand">
+                <img src="./img/createAdventure/hand.png" class="hand1">
+                <img src="./img/createAdventure/hand2.png" class="hand2">
+              </div>
+
             </div>
           </div>
         </div>
@@ -148,55 +219,255 @@
         <!-- 步驟3 -->
         <div id="tab-3" class="hide tab">
           <div class="spot1 left">
-            <div class="tourTitle">請從下方選擇想搭配的景點:</div>
+            <div class="tourTitle">請填寫詳細行程規劃:</div>
           </div>
           <br />
-          <div class="section">
-            <div class="spot1 left">
-              <div class="temple_img"><img src="img/createAdventure/temple1.png" /></div>
+          <div class="tour_wrapper">
+
+            <!-- 以下動態新增區塊 -->
+            <div class="section">
+              <div class="spot1 left">
+                <div class="temple_img">
+                  <img src="img/createAdventure/temple1.png" />
+                </div>
+              </div>
+
+              <div class="spot1 right">
+                <label>行程一</label>
+                <p></p>
+                <br />
+                <label>景點地址</label>
+                <p></p>
+                <br />
+                <label>景點簡介</label>
+                <textarea name=""></textarea>
+                <br />
+                <label>所需工具</label>
+                <input type="text" value="" />
+                <br />
+                <label>預估費用</label>
+                <input type="number" value="0" min="0" max="" />
+                <br />
+              </div>
             </div>
 
-            <div class="spot1 right">
-              <label>行程一</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點地址</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點簡介</label>
-              <textarea name=""></textarea>
-              <br />
-              <label>所需工具</label>
-              <input type="text" value="" />
-              <br />
-              <label>預估費用</label>
-              <input type="number" value="0" min="0" max="" />
-              <br />
-            </div>
-          </div>
-          <div class="section">
-            <div class="spot2 left">
-              <div class="temple_img"><img src="img/createAdventure/spot1.png" /></div>
+            <div class="section">
+              <div class="spot2 left">
+                <div class="temple_img"><img src="img/createAdventure/spot1.png" /></div>
+              </div>
+
+              <div class="spot2 right">
+                <label>行程二</label>
+                <input type="text" value="新莊廢棄醫院" />
+                <br />
+                <label>景點地址</label>
+                <input type="text" value="新莊廢棄醫院地址地址地址地址" />
+                <br />
+                <label>景點簡介</label>
+                <textarea name=""></textarea>
+                <br />
+                <label>所需工具</label>
+                <input type="text" value="" />
+                <br />
+                <label>預估費用</label>
+                <input type="number" value="0" min="0" max="" />
+                <br />
+              </div>
             </div>
 
-            <div class="spot2 right">
-              <label>行程二</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點地址</label>
-              <input type="text" value="" />
-              <br />
-              <label>景點簡介</label>
-              <textarea name=""></textarea>
-              <br />
-              <label>所需工具</label>
-              <input type="text" value="" />
-              <br />
-              <label>預估費用</label>
-              <input type="number" value="0" min="0" max="" />
-              <br />
-            </div>
           </div>
+
+
+        </div>
+
+        <!-- 步驟4 -->
+        <div id="tab-4" class="hide tab">
+          <!-- 簡介 -->
+          <section id="tourPreview_Section1">
+
+            <div class="spotIntro">
+
+              <div class="picZone">
+                <div class="bigPic">
+                  <img src="https://i2.wp.com/5b0988e595225.cdn.sohucs.com/images/20180123/beeb78cff3234b0693c3aef89b1beace.gif?w">
+                </div>
+              </div>
+
+              <div class="txtZone">
+                <h1></h1>
+                <div class="introTxt">
+                  <p>
+                    
+                  </p>
+                </div>
+
+                <div class="StartGroup_spotInform">
+                  <ul>
+                    <li>
+                      <div class="StartGroup_people_img">
+                        <img src="img/StartGroup/揪團團組.png" alt="">
+                      </div>
+                      揪團者by <span id="tourHost">富江我老婆</span> 
+                    </li>
+                    <li>
+                      <img src="./img/icon/location.png">
+                      <span id="myTourLocation"></span> 
+                    </li>
+                    <li>
+                      <i class="far fa-calendar-alt"></i>
+                      出團日期：<span id="myTourLaunchDate"></span>
+                    </li>
+                    <li>
+                      <div>發起日期：</div><span id="myTourStartDate"></span>
+                    </li>
+                    <li>
+                      <div>截止日期：</div><span id="myTourStopDate"></span>
+                    </li>
+
+                    <li>
+                      <i class="fas fa-dollar-sign"></i>
+                      總預算約<span id="myTourBudget"></span>元
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="spiderweb">
+                  <img src="./img/spot/spiderweb.png">
+                </div>
+              </div>
+
+            </div>
+            <div class="progress">
+              <span>
+                報名截止<p id="myTourStopDate2"></p>
+              </span>
+              <div class="progress-bar">
+                <span>
+                  <div class="progress_image">
+                    <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
+                  </div>
+                  <p>目前0/ <span id="myTourJoinNum">7</span> 人</p>
+                </span>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- 行程位置 -->
+          <section id="tourPreview_Section2">
+
+              <div id="customeTour">
+
+                <!-- <div class="tourSpot">
+                  <div class="tourImg">
+                    <img src="./img/spot/spot1/tour1_spot1.png">
+                  </div>
+                  <div class="tourSpotTxt">
+                    <h2 class="spotTitle">【行程一】<span>平安宮拜拜</span></h2>
+                    <p>日式風格建築現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等 還可以清楚看到手術台、診療台，更加有恐怖氣氛。</p>
+
+                    <div class="tourSpotInfo">
+
+                      <div class="btn-outline2">
+                        <img src="./img/icon/location.png">
+                        <p>地理位置</p>
+                        <div class="moreInfo">
+                          台北市新莊區思源路177巷32號
+                        </div>
+                        <div class="triangle"></div>
+
+
+                      </div>
+
+                      <div class="btn-outline2">
+                        <img src="./img/icon/tool.png">
+                        <p>所需工具</p>
+                        <div class="moreInfo">
+                          一顆虔誠的心
+                        </div>
+                        <div class="triangle"></div>
+                      </div>
+
+                      <div class="btn-outline2">
+                        <img src="./img/icon/fee.png">
+                        <p>參加費用</p>
+                        <div class="moreInfo">
+                          150
+                        </div>
+                        <div class="triangle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+                <!-- <div class="tourSpot">
+                  <div class="tourImg">
+                    <img src="./img/spot/spot1/tour1_spot2.png">
+                  </div>
+                  <div class="tourSpotTxt">
+                    <h2 class="spotTitle">【行程二】<span>新莊廢棄醫院</span></h2>
+                    <p>日式風格建築現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等 還可以清楚看到手術台、診療台，更加有恐怖氣氛。</p>
+
+                    <div class="tourSpotInfo">
+
+                      <div class="btn-outline2">
+                        <img src="./img/icon/location.png">
+                        <p>地理位置</p>
+                        <div class="moreInfo">
+                          台北市新莊區思源路177巷32號
+                        </div>
+                        <div class="triangle"></div>
+                      </div>
+
+                      <div class="btn-outline2">
+                        <img src="./img/icon/tool.png">
+                        <p>所需工具</p>
+                        <div class="moreInfo">
+                          手電筒
+                        </div>
+                        <div class="triangle"></div>
+                      </div>
+
+                      <div class="btn-outline2">
+                        <img src="./img/icon/fee.png">
+                        <p>參加費用</p>
+                        <div class="moreInfo">
+                          0圓
+                        </div>
+                        <div class="triangle"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div> -->
+
+
+
+                <nav class="tourStatus">
+                  <ul>
+                    <li class="statusCircle selected">
+                      <p class=" circle selected2"></p>
+                    </li>
+                    <li class="statusCircle">
+                      <p class="line"></p>
+                      <p class="circle"></p>
+                    </li>
+                  </ul>
+
+                </nav>
+
+              </div>
+
+            
+
+
+
+
+
+          </section>
+
         </div>
       </div>
 
