@@ -1,163 +1,207 @@
 @include respond(small) {
-    //手機都寫在裡面
+  //手機都寫在裡面
 
-    #indexSection1 {
-        padding-top: 50px;
+  #indexSection1 {
+    padding-top: 50px;
 
-        .parallaxContainer {
-            width: 100%;
-            margin-top: 100px;
+    .parallaxContainer {
+      width: 100%;
+      margin-top: 100px;
 
-            img {
-                width: 100%;
-            }
-        }
-
-        .route1 {
-            width: 100px;
-            display: none;
-        }
+      img {
+        width: 100%;
+      }
     }
 
-    #indexSection2 {
-        margin: 150px 0;
+    .route1 {
+      width: 100px;
+      display: none;
+    }
+  }
 
-        .indexTitleZone1 {
-            left: -150px;
-        }
+  #indexSection2 {
+    margin: 150px 0;
 
-        .spotInfoZone {
-            // width: 100%;
-            // border: 1px solid red;
-            margin: 0px auto;
-            // margin-left: 20px;
-            overflow-x: scroll;
-
-            &::-webkit-scrollbar {
-                height: 10px;
-                background-color: rgba(255, 255, 255, 0);
-            }
-            &::-webkit-scrollbar-track {
-                background-color: rgba(0, 0, 0, 0.6);
-                border-radius: 10px;
-            }
-            &::-webkit-scrollbar-thumb {
-                background-color: rgba(255, 255, 255, 0.6);
-                border-radius: 10px;
-            }
-
-            #spotInfoWrap {
-                width: 1150px;
-
-                .spotInfo {
-                    width: 350px;
-                    margin-right: 30px;
-                }
-            }
-        }
-
-        button {
-            display: none;
-        }
+    .indexTitleZone1 {
+      left: -150px;
     }
 
-    #section3 {
-      margin-top: 0;
-      margin-bottom: 50px;
-      .title_forum {
-        left: -150px;
-        position: relative;
-        // .title{
-        // }
-        img {
-          width: 250px;
-          position: absolute;
-          bottom: 0px;
-          left: 280px;
-          pointer-events: none;
+    .spotInfoZone {
+      // width: 100%;
+      // border: 1px solid red;
+      margin: 0px auto;
+      // margin-left: 20px;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+      }
+
+      #spotInfoWrap {
+        width: 1150px;
+
+        .spotInfo {
+          width: 350px;
+          margin-right: 30px;
         }
       }
-      .adventure_main {
-        padding-top: 0px;
-        .adventure_btn {
-          display: none;
-        }
-        .adventure_tab {
-          padding-left: 0px;
-          padding-bottom:20px;
-          padding:30px 0px 20px 5px;
-        }
-        .adventure_word {
-          .adventure_content {
-            background-color: rgb(34, 33, 33);
-            border: 2px solid rgba(44, 44, 44, 0.842);
-            width: 100%;
-            thead {
-              background-color: rgba(44, 44, 44, 0.842);
-              width: 100%;
-              > td {
-                width: 150px;
-              }
-            }
-            tr {
-              width: 100%;
-              > td {
-                width: 100%;
-                margin: 10px 0;
-              }
+    }
+
+    button {
+      display: none;
+    }
+  }
+
+  #section3 {
+    .adventure_all {
+      width: 90%;
+      .index_adventrue {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+
+        .adventrue_left {
+          text-align: center;
+          padding: 20px 0;
+          width: 100%;
+          background-color: rgb(29, 15, 8);
+          position: relative;
+
+          .adventrue_left_ghost {
+            display: none;
+          }
+          .dorp_down_title {
+            display: block;
+            cursor: pointer;
+            // padding: 10px 0 0 0;
+            // border: 5px solid rgb(62, 155, 39);
+          }
+          .dorp_down_menu {
+            opacity: 0.9;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -350px;
+            width: 700px;
+            top: 60px;
+            display: none;
+            animation: dorp .5s ease;
+            transition: 0.3s ease;
+            transform-origin: top;
+            // border: 5px solid rgb(62, 155, 39);
+
+            > a {
+              display: block;
+              background-color: black;
+              border-radius: 0;
             }
           }
+          > span {
+            display: none;
+          }
         }
+        @keyframes dorp {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 100%;
+          }
+        }
+        .adventrue_right {
+          width: 100%;
+          display: block;
+        }
+      }
+      .adventure_btn2 {
+        display: none;
+      }
+      .adventure_btn3 {
+        width: 82%;
+        display: block;
+        margin-top: 5%;
+        > a {
+          padding: 15px 0;
+          display: block;
+          color: white;
+          box-sizing: border-box;
+          width: 100%;
+          border: 1px solid white;
+          border-radius: 20px;
+          margin: 5px 5px 15px 0;
+          cursor: pointer;
+          transition: all 0.7s;
+          font-weight: 600;
+          &:hover {
+            color: rgb(41, 40, 40);
+            background-color: white;
+          }
+        }
+        
+      }
+    }
+  }
+
+  #section4 {
+    .title_forum {
+      width: 250px;
+      .title {
+        left: 5px;
+      }
+      .title2 {
+        font-size: -18px;
+      }
+      img {
+        width: 130px;
+        bottom: -20px;
+        left: 10px;
       }
     }
 
-    #section4 {
-        .title_forum {
-            width: 250px;
-            .title {
-                left: 5px;
-            }
-            .title2 {
-                font-size: -18px;
-            }
-            img {
-                width: 130px;
-                bottom: -20px;
-                left: 10px;
-            }
-        }
+    .card_channel {
+      height: 535px;
+      overflow-x: scroll;
+      .card_warp {
+        width: 2800px;
+      }
+      &::-webkit-scrollbar {
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+      }
 
-        .card_channel {
-            height: 535px;
-            overflow-x: scroll;
-            .card_warp {
-                width: 2800px;
-            }
-            &::-webkit-scrollbar {
-                height: 10px;
-                background-color: rgba(255, 255, 255, 0);
-            }
-            &::-webkit-scrollbar-track {
-                background-color: rgba(0, 0, 0, 0.6);
-                border-radius: 10px;
-            }
-            &::-webkit-scrollbar-thumb {
-                background-color: rgba(255, 255, 255, 0.6);
-                border-radius: 10px;
-            }
-
-            #card_btn {
-                display: none;
-            }
-        }
-        .card_path_1 {
-            bottom: 225px;
-        }
-        .card_path_2 {
-            // display: none;
-            width: 100px;
-            height: 100px;
-            top: 25px;
-        }
+      #card_btn {
+        display: none;
+      }
     }
+    .card_path_1 {
+      bottom: 225px;
+    }
+    .card_path_2 {
+      // display: none;
+      width: 100px;
+      height: 100px;
+      top: 25px;
+    }
+  }
+}
+
+.tab_display{
+ background-color: white;
 }

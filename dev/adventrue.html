@@ -6,6 +6,7 @@
     @@include('layout/head.html')
 </head>
 
+
 <body>
     <!-- 滑鼠鬼 -->
     @@include('layout/component/mouse_ghost.html')
@@ -19,12 +20,9 @@
     <div class="adventure_wrap">
         @@include('layout/component/smoke.html')
         <!-- 霧氣 -->
-
         @@include('layout/header.html')
-
-
+        <!-- header-->
         <div class="adventure_container">
-
             <!-- 目前開團人數 -->
             <div class="people_Layout">
                 <!-- 包住開團人數納區 -->
@@ -61,7 +59,6 @@
 
                 </div>
             </form>
-
             <div class="down_filter_all">
                 <div class="down_filter">
                     <label for="">行程花費</label>
@@ -103,162 +100,217 @@
                     清空條件</div>
             </div>
             <!--上方篩選欄位 -->
-            <div class="item_all">
-                <!-- <div class="search_list">搜尋結果如下</div> -->
+            <div class="item_all_left_filter">
+                <div class="left_filter">
+                    <h2><i class="fas fa-filter"></i>
+                        自訂篩選</h2>
+                    <div class="group_filter">
+                        <div class="filter_list">
+                            <h2><i class="fab fa-hotjar"></i>
 
-                <div class="item">
-                    <div class="pic">
-                        <img src="http://i1.wp.com/inews.gtimg.com/newsapp_match/0/287578922/0" alt="">
-                    </div>
-                    <div class="txt">
-                        <div class="txt_header">
-                            <h1>【民雄鬼屋之鬼屋咖啡廳】</h1>
+                                熱門篩選</h2>
+                            <div class="filter_list_group">
+                                <input type="radio" class="list_check" id="lab1" name="lab1" checked>
+                                <label for="lab1" class="list_check1">不限</label>
+                                <input type="radio" class="list_check" id="lab2" name="lab1">
+                                <label for="lab2" class="list_check1">熱門</label>
+                                <input type="radio" class="list_check" id="lab3" name="lab1">
+                                <label for="lab3" class="list_check1">最多點擊</label>
+                                <input type="radio" class="list_check" id="lab4" name="lab1">
+                                <label for="lab4" class="list_check1">最多收藏</label>
+                            </div>
                         </div>
-                        <span><i class="fas fa-map-marker-alt"></i>名雄鬼屋、砂鍋魚頭、嘉義孔廟</span>
-                        <span><i class="far fa-calendar-alt"></i>2020-04-06出團</span>
+                        <div class="filter_list">
+                            <h2><i class="fas fa-user-friends"></i>
 
-                        <div class="people_head">
-
-
+                                參加人數</h2>
+                            <div class="filter_list_group">
+                                <input type="radio" class="list_check" id="lab5" name="lab2" checked>
+                                <label for="lab5">不限</label>
+                                <input type="radio" class="list_check" id="lab6" name="lab2">
+                                <label for="lab6">熱門</label>
+                                <input type="radio" class="list_check" id="lab7" name="lab2">
+                                <label for="lab7">最多點擊</label>
+                                <input type="radio" class="list_check" id="lab8" name="lab2">
+                                <label for="lab8">最多收藏</label>
+                            </div>
                         </div>
-                        <p>日式風格建築現在已經荒廢無人，保留了完整的
-                            醫療器材如白醫師袍、聽診器、病床、藥罐等，
-                            還可以清楚看到手術台 ...
-                            <a href="StartGroup.html">詳全文</a>
-                        </p>
+                        <div class="filter_list">
+                            <h2><i class="far fa-calendar-alt"></i>
 
-                        <div class="progress">
-                            <div class="progress-bar">
-                                <span>
-                                    <div class="progress_image">
-                                        <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
-                                    </div>
-                                    <p>目前2/7人</p>
-                                </span>
+                                更新日期</h2>
+                            <div class="filter_list_group">
+                                <input type="radio" class="list_check" id="lab9" name="lab3" checked>
+                                <label for="lab9">不限</label>
+                                <input type="radio" class="list_check" id="lab10" name="lab3">
+                                <label for="lab10">熱門</label>
+                                <input type="radio" class="list_check" id="lab11" name="lab3">
+                                <label for="lab11">最多點擊</label>
+                                <input type="radio" class="list_check" id="lab12" name="lab3">
+                                <label for="lab12">最多收藏</label>
+                            </div>
+                        </div>
+                        <div class="filter_list">
+                            <h2><i class="fas fa-dollar-sign"></i>
+
+                                行程花費</h2>
+                            <div class="filter_list_group">
+                                <input type="radio" class="list_check" id="lab13" name="lab4" checked>
+                                <label for="lab13">不限</label>
+                                <input type="radio" class="list_check" id="lab14" name="lab4">
+                                <label for="lab14">熱門</label>
+                                <input type="radio" class="list_check" id="lab15" name="lab4">
+                                <label for="lab15">最多點擊</label>
+                                <input type="radio" class="list_check" id="lab16" name="lab4">
+                                <label for="lab16">最多收藏</label>
                             </div>
                         </div>
                     </div>
-                    <!-- txt -->
-                    <div class="peple_number">
-                        <div class="main_people">
+
+
+
+                </div>
+                <div class="item_all">
+                    <!-- <div class="search_list">共找到7個揪團</div> -->
+                    <div class="item">
+                        <div class="pic">
+                            <img src="http://i1.wp.com/inews.gtimg.com/newsapp_match/0/287578922/0" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="txt_header">
+                                <h1>【民雄鬼屋之鬼屋咖啡廳】</h1>
+                            </div>
+                            <span><i class="fas fa-map-marker-alt"></i>名雄鬼屋、砂鍋魚頭、嘉義孔廟</span>
+                            <span><i class="far fa-calendar-alt"></i>2020-04-06出團</span>
+
+                            <div class="people_head">
+
+
+                            </div>
+                            <p>日式風格建築現在已經荒廢無人，保留了完整的
+                                醫療器材如白醫師袍、聽診器、病床、藥罐等，
+                                還可以清楚看到手術台 ...
+                                <a href="StartGroup.html">詳全文</a>
+                            </p>
+
+                            <div class="progress">
+                                <div class="progress-bar">
+                                    <span>
+                                        <div class="progress_image">
+                                            <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
+                                        </div>
+                                        <p>目前2/7人</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- txt -->
+                        <div class="peple_number">
+                            <div class="main_people">
+                                <div class="main_people_img">
+                                    <img src="img/adventrue/揪團團組.png" alt="">
+                                </div>
+                                <div class="main_people_name">揪團者by富江我老婆</div>
+                            </div>
+
+                            <a href="StartGroup.html" class="btn_fill_red">立即加入></a>
+                            <div class="last_time">剩餘時間:5天</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pic">
+                            <img src="http://i1.wp.com/inews.gtimg.com/newsapp_match/0/287578922/0" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="txt_header">
+                                <h1>【民雄鬼屋之鬼屋咖啡廳】</h1>
+                            </div>
+                            <span><i class="fas fa-map-marker-alt"></i>名雄鬼屋、砂鍋魚頭、嘉義孔廟</span>
+                            <span><i class="far fa-calendar-alt"></i>2020-04-06出團</span>
+
+                            <div class="people_head">
+
+
+                            </div>
+                            <p>日式風格建築現在已經荒廢無人，保留了完整的
+                                醫療器材如白醫師袍、聽診器、病床、藥罐等，
+                                還可以清楚看到手術台 ...
+                                <a href="StartGroup.html">詳全文</a>
+                            </p>
+
+                            <div class="progress">
+                                <div class="progress-bar">
+                                    <span>
+                                        <div class="progress_image">
+                                            <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
+                                        </div>
+                                        <p>目前2/7人</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- txt -->
+                        <div class="peple_number">
+                            <div class="main_people">
+                                <div class="main_people_img">
+                                    <img src="img/adventrue/揪團團組.png" alt="">
+                                </div>
+                                <div class="main_people_name">揪團者by富江我老婆</div>
+                            </div>
+
+                            <a href="StartGroup.html" class="btn_fill_red">立即加入></a>
+                            <div class="last_time">剩餘時間:5天</div>
+                        </div>
+                    </div>
+                    <div class="item item_opacity">
+                        <div class="pic">
+                            <img src="https://cdn2.ettoday.net/images/1258/d1258100.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="txt_header">
+                                <h1>【來來超市之旅】</h1>
+                            </div>
+                            <span><i class="fas fa-map-marker-alt"></i>名雄鬼屋、砂鍋魚頭、嘉義孔廟</span>
+                            <span><i class="far fa-calendar-alt"></i>2020-04-06出團</span>
+
+                            <div class="people_head">
+
+
+                            </div>
+                            <p>日式風格建築現在已經荒廢無人，保留了完整的
+                                醫療器材如白醫師袍、聽診器、病床、藥罐等，
+                                還可以清楚看到手術台 ...
+                                <a href="StartGroup.html">詳全文</a>
+                            </p>
+
+                            <div class="progress">
+                                <div class="progress-bar">
+
+                                    <span>
+                                        <div class="progress_image">
+                                            <img src="img/adventrueimg/adventrue/個人頭像_無_工作區域 1.png" alt="">
+                                        </div>
+                                        <p>目前2/7人</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- txt -->
+                        <div class="peple_number">
                             <div class="main_people_img">
                                 <img src="img/adventrue/揪團團組.png" alt="">
                             </div>
-                            <div class="main_people_name">揪團者by富江我老婆</div>
+                            <div class="main_people_name">揪團者by張馨</div>
+                            <a href="StartGroup.html" class="btn_fill_red">立即加入></a>
+                            <div class="last_time">剩餘時間:5天</div>
                         </div>
-
-                        <a href="StartGroup.html" class="btn_fill_red">立即加入></a>
-                        <div class="last_time">剩餘時間:5天</div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="pic">
-                        <img src="http://i1.wp.com/inews.gtimg.com/newsapp_match/0/287578922/0" alt="">
-                    </div>
-                    <div class="txt">
-                        <div class="txt_header">
-                            <h1>【民雄鬼屋之鬼屋咖啡廳】</h1>
-                        </div>
-                        <span><i class="fas fa-map-marker-alt"></i>名雄鬼屋、砂鍋魚頭、嘉義孔廟</span>
-                        <span><i class="far fa-calendar-alt"></i>2020-04-06出團</span>
-
-                        <div class="people_head">
-
-
-                        </div>
-                        <p>日式風格建築現在已經荒廢無人，保留了完整的
-                            醫療器材如白醫師袍、聽診器、病床、藥罐等，
-                            還可以清楚看到手術台 ...
-                            <a href="StartGroup.html">詳全文</a>
-                        </p>
-
-                        <div class="progress">
-                            <div class="progress-bar">
-                                <span>
-                                    <div class="progress_image">
-                                        <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
-                                    </div>
-                                    <p>目前2/7人</p>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- txt -->
-                    <div class="peple_number">
-                        <div class="main_people">
-                            <div class="main_people_img">
-                                <img src="img/adventrue/揪團團組.png" alt="">
-                            </div>
-                            <div class="main_people_name">揪團者by富江我老婆</div>
-                        </div>
-
-                        <a href="StartGroup.html" class="btn_fill_red">立即加入></a>
-                        <div class="last_time">剩餘時間:5天</div>
-                    </div>
-                </div>
-                <div class="item item_opacity">
-                    <div class="pic">
-                        <img src="https://cdn2.ettoday.net/images/1258/d1258100.jpg" alt="">
-                    </div>
-                    <div class="txt">
-                        <div class="txt_header">
-                            <h1>【來來超市之旅】</h1>
-                        </div>
-                        <span><i class="fas fa-map-marker-alt"></i>名雄鬼屋、砂鍋魚頭、嘉義孔廟</span>
-                        <span><i class="far fa-calendar-alt"></i>2020-04-06出團</span>
-
-                        <div class="people_head">
-
-
-                        </div>
-                        <p>日式風格建築現在已經荒廢無人，保留了完整的
-                            醫療器材如白醫師袍、聽診器、病床、藥罐等，
-                            還可以清楚看到手術台 ...
-                            <a href="StartGroup.html">詳全文</a>
-                        </p>
-
-                        <div class="progress">
-                            <div class="progress-bar">
-
-                                <span>
-                                    <div class="progress_image">
-                                        <img src="img/adventrueimg/adventrue/個人頭像_無_工作區域 1.png" alt="">
-                                    </div>
-                                    <p>目前2/7人</p>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- txt -->
-                    <div class="peple_number">
-                        <div class="main_people_img">
-                            <img src="img/adventrue/揪團團組.png" alt="">
-                        </div>
-                        <div class="main_people_name">揪團者by張馨</div>
-                        <a href="StartGroup.html" class="btn_fill_red">立即加入></a>
-                        <div class="last_time">剩餘時間:5天</div>
-                    </div>
-                </div>
-
-
+                <!-- <a class="btn2">點這裡看更多 <i class="fas fa-chevron-down" style="color: rgb(255, 255, 255);"></i></a> -->
             </div>
-            <!-- <a class="btn2">點這裡看更多 <i class="fas fa-chevron-down" style="color: rgb(255, 255, 255);"></i></a> -->
-
+            <!-- item_all_left_filter -->
         </div>
         <!-- container -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         @@include('layout/footer.html')

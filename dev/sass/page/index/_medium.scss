@@ -1,76 +1,89 @@
 @include respond(medium) {
-    //平板都寫在裡面
-    #ghostIndexBG {
-        background-size: 200%;
-        background-position-x: center;
-        background-attachment: fixed;
+  //平板都寫在裡面
+  #ghostIndexBG {
+    background-size: 200%;
+    background-position-x: center;
+    background-attachment: fixed;
 
-        #indexSection1 {
-            .route1 {
-                width: 200px;
-                right: 200px;
-                bottom: -350px;
+    #indexSection1 {
+      .route1 {
+        width: 200px;
+        right: 200px;
+        bottom: -350px;
 
-                img {
-                    width: 100%;
-                }
-            }
+        img {
+          width: 100%;
         }
-
-        #indexSection2 {
-            margin: 200px 0;
-
-            .mapZone {
-                display: none;
-            }
-        }
+      }
     }
+
     #indexSection2 {
       margin: 200px 0;
+
       .mapZone {
         display: none;
       }
     }
-    #section3{
-      .adventure_main {
-        width:90%;
-        display: block;
-        .adventure_btn {
-          display: flex;
-          justify-content:center;
-          .ghost_btn_all{
-            margin: 20px;
+  }
+  #indexSection2 {
+    margin: 200px 0;
+    .mapZone {
+      display: none;
+    }
+  }
+  #section3 {
+
+    .adventure_all {
+      flex-direction: column;
+      width:800px;
+      margin: 0 auto;
+      .index_adventrue {
+        height:400px;
+        .adventrue_left {
+          > span {
+            margin-top: 10px;
           }
-          .ghost_btn2_all{
-            margin: 20px;
-          }
-        
         }
       }
-      .adventure_word {
-        padding: 25px 0 0 0;
-      
+
+      .adventure_btn {
+        display: none;
       }
-
-
+      .adventure_btn2 {
+        margin-top: 20px;
+        width:100%;
+        display:flex;
+        flex-direction: row;
+        .ghost_btn {
+          margin: 0 25px;
+        }
+        .ghost_btn2{
+          margin: 50px 25px;
+        }
+      }
     }
 
-    #section4 {
-        .card_channel {
-            .card_warp {
-                width: 3500px;
-            }
-        }
-        .card_path_1 {
-            right: 0;
-            bottom: 260px;
-            width: 150px;
-            height: 150px;
-        }
-        .card_path_2 {
-            right: 0;
-            width: 150px;
-            height: 150px;
-        }
+
+
+
+  }
+
+  #section4 {
+    .card_channel {
+      .card_warp {
+        width: 3500px;
+      }
     }
+    .card_path_1 {
+      right: 0;
+      bottom: 260px;
+      width: 150px;
+      height: 150px;
+    }
+    .card_path_2 {
+      right: 0;
+      width: 150px;
+      height: 150px;
+    }
+  }
 }
