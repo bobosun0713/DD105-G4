@@ -1,35 +1,54 @@
-
 function $element(element) {
     return document.querySelector(element)
 };
-
 function $elements(elements) {
     return document.querySelectorAll(elements)
 };
 
-
 var index_se3_tab;
 var adventrue_right_itemall = $element('.adventrue_right_itemall');
 function doFirst1() {
+    window.onresize = function () {
+        if (document.body.offsetWidth >= 768) {
+            dorp_down_menu.style.display = "block";
+        }
+    }
     index_se3_tab = $elements('.adventrue_left a');
     for (var i = 0; i < index_se3_tab.length; i++) {
-        index_se3_tab[i].onclick = choose;
-    }
+        if (document.body.offsetWidth <= 768) {
+            index_se3_tab[i].classList.remove("tab_display");
+        }
+        // index_se3_tab[i].onclick = choose;
 
+        index_se3_tab[i].addEventListener('click', choose, false);
+       
+    }
 };
 
 function choose() {
+    for (var i = 0; i < index_se3_tab.length; i++) {
+        index_se3_tab[i].classList.remove("tab_display");
+    }
+    //拔掉所有樣式
+
+    this.classList.add("tab_display");
+    if (document.body.offsetWidth <= 768) {
+        dorp_down_menu.style.display = "none";
+        dorp_down_title.innerHTML = this.innerHTML;
+    }
+    //再新增所有樣式
+
     if (this == index_se3_tab[0]) {
         
     } else if (this == index_se3_tab[1]) {
-        alert('1');
-
+        // alert('1');
     } else if (this == index_se3_tab[2]) {
-        alert('2');
+        // alert('2');
     }
-    adventrue_right_itemall.innerHTML = "1";
-    for (let i = 0; i <= 3; i++) {
 
+
+    adventrue_right_itemall.innerHTML="";
+    for (let i = 0; i <= 3; i++) {
         var adventrue_right_item = document.createElement('div');
         adventrue_right_item.setAttribute('class', 'adventrue_right_item');
         adventrue_right_itemall.appendChild(adventrue_right_item);
@@ -70,12 +89,22 @@ function choose() {
 }
 
 
-
-function  drop_down(){
-    var drop_title=$elements(".adventrue_left a")[0];
-    drop_title.onclick=function(){
-        alert('aa');
+var dorp_down_menu;
+var dorp_down_title;
+function drop_down() {
+    //首頁-熱門最新tab;
+    dorp_down_title = $element(".dorp_down_title");
+    dorp_down_menu = $element(".dorp_down_menu");
+    dorp_down_title.onclick = function () {
+        if (document.body.offsetWidth <= 768) {
+            if (dorp_down_menu.style.display == "none") {
+                dorp_down_menu.style.display = "block";
+            } else {
+                dorp_down_menu.style.display = "none";
+            }
+        }
     }
+
 }
 
 

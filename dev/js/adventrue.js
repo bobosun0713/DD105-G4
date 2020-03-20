@@ -28,29 +28,6 @@ $(document).ready(function () {
         })
     })
 })
-
-// var infScroll = new infinitescroll('.item_all', {
-//     path: function () {
-//         var maxPage = 10; //最大頁數
-//         if (this.loadCount < maxPage) {
-//             var pageNumber = this.loadCount + 1;
-//             return 'page' + pageNumber;
-//         }
-//     },
-
-// })
-
-// var infScroll = new InfiniteScroll( ".item_all", {
-//     path: function() {
-//         // 頁面路徑
-//         if ( this.loadCount < 1 ) {
-//             return "item.html"; // 讀取此頁面
-//         }
-//     },
-//     append: false, // 匯入物件類別
-//     status: ".scroller-status" // 捲軸狀態類別
-// })
-
 var infScroll = new InfiniteScroll('.item_all', {
     path: function () {
         // 頁面路徑
@@ -70,13 +47,11 @@ var infScroll = new InfiniteScroll('.item_all', {
     history: false, //更改瀏覽器歷史記錄和URL。
     scrollThreshold: 40, //設定滾動條與滾動區域之間的距離，預設是40
 })
-
 /* 按下GoTop按鈕時的事件 */
 $('.go_top').click(function () {
     $('html,body').animate({ scrollTop: 0 }, 'slow') /* 返回到最頂上 */
     return false
 })
-
 /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
 $(window).scroll(function () {
     if ($(this).scrollTop() > 400) {
@@ -86,32 +61,12 @@ $(window).scroll(function () {
     }
 })
 
-//  var tab_heads = document.querySelectorAll('tab-head')[0].getElementsByTagName('a'),
-//  tab_contents= document.querySelectorAll('tab_content')[0].getElementsByTagName('div');
-//     (function changeTab(tab) {
-//         for (var i = 0, len = tabs.length; i < len; i) {
-//             tabs[i].onmouseover = showTab;
-//         }
-//     })();
-//     function showTab() {
-//         for (var i = 0, len = tabs.length; i < len; i) {
-//             if (tabs[i] === this) {
-//                 tabs[i].className = 'selected';
-//                 contents[i].className = 'show';
-//             } else {
-//                 tabs[i].className = '';
-//                 contents[i].className = '';
-//             }
-//         }
-//     }
-
 // 數字增加
 //数字自增到某一值动画参数（目标元素,自定义配置）
 function NumAutoPlusAnimation(targetEle, options) {
     /*可以自己改造下传入的参数，按照自己的需求和喜好封装该函数*/
     //不传配置就把它绑定在相应html元素的data-xxxx属性上吧
     options = options || {}
-
     var $this = document.getElementById(targetEle),
         time = options.time || $this.data('time'), //总时间--毫秒为单位
         finalNum = options.num || $this.data('value'), //要显示的真实数值
@@ -137,7 +92,6 @@ function NumAutoPlusAnimation(targetEle, options) {
         $this.innerHTML = initial
     }, 30)
 }
-
 NumAutoPlusAnimation('add_number', {
     time: 3000,
     num: 213,
@@ -147,17 +101,14 @@ NumAutoPlusAnimation('add_number', {
 function $element(element) {
     return document.querySelector(element)
 }
-
 function $elements(elements) {
     return document.querySelectorAll(elements)
 }
-
 // ---------------------燈箱類-------------------------
 
 // 開啟篩選 放入要開啟的按鈕跟打開的元素
 open_filter('.area', '.filter_background')
 open_filter('.main_people_img', '.people_message_background')
-
 function open_filter(click_object, open_object) {
     var click_object = $element(click_object)
     var open_object = $element(open_object)
@@ -169,7 +120,6 @@ function open_filter(click_object, open_object) {
 // 按掉叉叉組件(輸入叉叉元素跟關閉元素)
 close('.shut_down', '.filter_background')
 close('.people_message_shut_down', '.people_message_background')
-
 function close(out, hide_odject) {
     var out = document.querySelector(out)
     var filter_background = document.querySelector(hide_odject)
@@ -178,7 +128,6 @@ function close(out, hide_odject) {
     }
 }
 // -------------------------------------------------------------
-
 tab_contents = $elements('.tab_content')
 //顯示的大區域
 var pmbs = $element('.people_message_background')
@@ -193,7 +142,6 @@ for (var i = 0; i < tab_heads.length; i++) {
 }
 tab_contents[0].className = 'tab_content'
 tab_heads[0].className = 'show_tab'
-
 function tabChange() {
     for (let i = 0; i < tab_heads.length; i++) {
         if (tab_heads[i] === this) {
@@ -206,7 +154,6 @@ function tabChange() {
         }
     }
 }
-
 // ----------------------------------------------------------------------
 
 // 景點篩選
@@ -292,31 +239,106 @@ function choose_area(e) {
             break
     }
 }
-
 function choose_area_name(e) {
     this.style.filter = 'grayscale(0)'
     filter_spans[0].style.color = 'white'
 }
 window.onload = doFirst
 
-
-
-
 // ----------左邊篩選欄位--------------------------+--------------------------
-
-
-
-
 function clickfilter() {
-    var lab1s =$elements(".list_check1")
+    var lab1s = $elements(".list_check1")
     console.log(lab1s);
-    for (var i = 0;i<lab1s.length;i++) {
+    for (var i = 0; i < lab1s.length; i++) {
         lab1s[i].onclick = function () {
-          
+
         }
     }
 }
+clickfilter();
 
- clickfilter();
 
+// -------AjaxAjaxAjax--------------------------+--------------------------
+function ajax_take_odject() {
+    var xhr = new XMLHttpRequest();
+    //聯繫伺服器物件
+    xhr.open('get', 'php/adventrue_Ajax.php');
+    xhr.onload = function () {
+        var data = this.responseText;
+        Array_data = JSON.parse(data);
+        var item_all = $element('.item_all');
+        let html = ""
+
+        for (let i = 0; i <20; i++) {
+            html += `<div class="item">
+<div class="pic">
+    <img src="http://i1.wp.com/inews.gtimg.com/newsapp_match/0/287578922/0" alt="">
+</div>
+<div class="txt">
+    <div class="txt_header">
+        <h1>${Array_data[0].tour_title}</h1>
+    </div>
+    <span><i class="fas fa-map-marker-alt"></i>名雄鬼屋、${Array_data[0].temple_tool}、嘉義孔廟</span>
+    <span><i class="far fa-calendar-alt"></i>${Array_data[0].tour_datetime}</span>
+
+    <div class="people_head">
+
+
+    </div>
+    <p>${Array_data[0].tour_content} ...
+        <a href="StartGroup.html">詳全文</a>
+    </p>
+
+    <div class="progress">
+        <div class="progress-bar">
+            <span>
+                <div class="progress_image">
+                    <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
+                </div>
+                <p>目前2/${Array_data[0].max_of_participants}人</p>
+            </span>
+        </div>
+    </div>
+</div>
+<!-- txt -->
+<div class="peple_number">
+    <div class="main_people">
+        <div class="main_people_img">
+            <img src="img/adventrue/揪團團組.png" alt="">
+        </div>
+        <div class="main_people_name">揪團者by富江我老婆</div>
+    </div>
+
+    <a href="StartGroup.html" class="btn_fill_red">立即加入></a>
+    <div class="last_time">剩餘時間:5天</div>
+</div>
+</div>`
+        }
+        item_all.innerHTML = html;
+
+
+
+
+
+
+
+
+
+
+
+    }
+    xhr.send(null);
+
+
+
+
+}
+
+
+
+
+
+
+
+ajax_take_odject();
 
