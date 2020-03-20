@@ -12,10 +12,10 @@ try{
     $spots ->bindValue(":spot_no", $spot_no);    
     $spots ->execute();
 
-    // $sql = "select * from tour where spot_no = :spot_no order by tour_datetime desc limit 6";
-    // $tour = $pdo->prepare($sql);
-    // $tour ->bindValue(":spot_no", $spot_no);    
-    // $tour ->execute();
+    $sql = "select tr.tour_title, tr.tour_image, m.mem_name, date(tr.tour_datetime) AS datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants from tour tr join spot s on (tr.spot_no = s.spot_no) join member m on (tr.mem_no = m.mem_no) join food f on (tr.food_no = f.food_no) join temple tm on (tr.temple_no = tm.temple_no) where tr.spot_no = :spot_no order by tour_datetime desc limit 6";
+    $tour = $pdo->prepare($sql);
+    $tour ->bindValue(":spot_no", $spot_no);    
+    $tour ->execute();
 
 
 }catch(PDOException $e){
@@ -293,12 +293,13 @@ if( $errMsg != ""){ //例外
                 <div class="spotIntro">
 
                     <!-- 是前三名的話顯示名次 start -->
-                    <?php if($order_no < 4){?>
+                    <?php if($order_no < 4 && $order_no != ""){?>
                     <div id="rank">
                         <img src="./img/component/card/rank.png">
                         <p>NO.<?php echo $order_no?></p>
                     </div>
-                    <?php } ?>
+                    <?php }else{
+                    } ?>
                     <!-- 是前三名的話顯示名次 end -->
 
                     <div class="picZone">
@@ -357,7 +358,7 @@ if( $errMsg != ""){ //例外
                             <!-- 改變投票btn start -->
                             <form method="post">
                                 <input type="hidden" id="voteSpotNo" value="<?php echo $spotRow->spot_no; ?>">
-                                <input type="button" class="btn-outline" id="voteThisSpot" value="投給【<?php echo $spotRow->spot_name; ?>">
+                                <input type="button" class="btn-outline" id="voteThisSpot" value="投給【<?php echo $spotRow->spot_name; ?>】">
                             </form>
                             <!-- 改變投票btn end -->
                         </div>
@@ -378,6 +379,13 @@ if( $errMsg != ""){ //例外
 }
 ?>
 
+            <?php 
+            if( $errMsg != ""){
+            alert($errMsg);
+            }else{
+                $tourRows = $tour->fetchAll(PDO::FETCH_ASSOC);
+            ?>
+
             <section id="ghostSpotSection2">
 
                 <div class="titleZone">
@@ -388,19 +396,21 @@ if( $errMsg != ""){ //例外
                 <div class="cardContain">
 
                     <div id="cardDisplay">
+
+                        <?php foreach($tourRows as $i => $tourRow){?>
                         
                         <div class="tourCard ">
                             <a href="">
                                 <div class="tourImg">
-                                    <img src="./img/component/card/spotCard01.png">
+                                    <img src="<?=$tourRow['tour_image']?>">
                                 </div>
                                 <div class="tourTxt">
-                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
+                                    <h2 class="tourTitle">【<?=$tourRow['tour_title']?>】</h2>
 
                                     <div class="tourHost">
 
                                         <img src="./img/icon/header1.png" class="header">
-                                        <p class="name">富江我老婆</p>
+                                        <p class="name"><?=$tourRow['mem_name']?></p>
 
                                     </div>
 
@@ -410,7 +420,7 @@ if( $errMsg != ""){ //例外
                                         <div class="date">
                                             <img src="./img/icon/date.svg">
                                             <p>
-                                                出團日期：2020/01/29
+                                                出團日期：<?=$tourRow['datetime']?>
                                             </p>
 
                                         </div>
@@ -418,14 +428,14 @@ if( $errMsg != ""){ //例外
                                         <div class="tourSpot">
                                             <img src="./img/icon/location_red.png">
                                             <p>
-                                                新莊廢棄醫院、天后宮、酸辣粉
+                                                <?=$tourRow['spot_name']?>、<?=$tourRow['temple_name']?>、<?=$tourRow['food_name']?>
                                             </p>
                                         </div>
 
                                         <div class="tourJoin">
                                             <img src="./img/icon/tourCount.svg">
                                             <p>
-                                                參加人數：6/10 人
+                                                參加人數：<?=$tourRow['number_of_participants']?>/ <?=$tourRow['max_of_participants']?>人
                                             </p>
                                         </div>
                                     </div>
@@ -441,6 +451,8 @@ if( $errMsg != ""){ //例外
 
 
                         </div>
+
+                        <?php } ?>
 
                         <!-- <div class="tourCard">
                             <a href="">
@@ -706,6 +718,8 @@ if( $errMsg != ""){ //例外
                 </div>
 
             </section>
+
+            <?php }?>
 
 
             <section id="ghostSpotSection3">

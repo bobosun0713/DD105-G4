@@ -6,7 +6,6 @@ try{
     $sql = "select spot_no, spot_name, spot_image_card, spot_scary_rate, spot_vote_count, spot_area_no, substr(spot_content,1,30) spot_intro from spot order by spot_vote_count desc";
     $spots = $pdo->query($sql);
     $spotRows = $spots->fetchAll(PDO::FETCH_ASSOC);
-    // echo json_encode($spotRows);
 
 
 }catch (PDOException $e) {
@@ -278,27 +277,27 @@ try{
                     <img class="mapImg" src="./img/map/twMap.png" />
                     <div class="twMapWidth" id="twMap01">
                         <div class="locationWrap">
-                            <a href="ghostSpot.php?spot_no=%201" id="loc3">
+                            <a href="ghostSpot.php?spot_no=%201&order_no=" id="loc3">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell1.png" id="spell3" class="spellSize" />
 
-                            <a href="ghostSpot.php?spot_no=%203" id="loc4">
+                            <a href="ghostSpot.php?spot_no=%203&order_no=" id="loc4">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell15.png" id="spell4" class="spellSize" />
 
-                            <a href="ghostSpot.php?spot_no=%202" id="loc5">
+                            <a href="ghostSpot.php?spot_no=%202&order_no=" id="loc5">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell3.png" id="spell5" class="spellSize" />
 
-                            <a href="./ghostSpot.php?spot_no=%204" id="loc1">
+                            <a href="./ghostSpot.php?spot_no=%204&order_no=" id="loc1">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell4.png" id="spell1" class="spellSize" />
 
-                            <a href="ghostSpot.php?spot_no=%205" id="loc2">
+                            <a href="ghostSpot.php?spot_no=%205&order_no=" id="loc2">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell2.png" id="spell2" class="spellSize" />
@@ -307,23 +306,23 @@ try{
 
                     <div class="twMapWidth" id="twMap02">
                         <div class="locationWrap">
-                            <a href="ghostSpot.php?spot_no=%209" id="loc6">
+                            <a href="ghostSpot.php?spot_no=%209&order_no=" id="loc6">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell9.png" id="spell6" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%206" id="loc7">
+                            <a href="ghostSpot.php?spot_no=%206&order_no=" id="loc7">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell6.png" id="spell7" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%2010" id="loc8">
+                            <a href="ghostSpot.php?spot_no=%2010&order_no=" id="loc8">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell5.png" id="spell8" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%207" id="loc9">
+                            <a href="ghostSpot.php?spot_no=%207&order_no=" id="loc9">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell7.png" id="spell9" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%208" id="loc10">
+                            <a href="ghostSpot.php?spot_no=%208&order_no=" id="loc10">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell8.png" id="spell10" class="spellSize" />
@@ -331,23 +330,23 @@ try{
                     </div>
                     <div class="twMapWidth" id="twMap03">
                         <div class="locationWrap">
-                            <a href="ghostSpot.php?spot_no=%2013" id="loc11">
+                            <a href="ghostSpot.php?spot_no=%2013&order_no=" id="loc11">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell12.png" id="spell11" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%2011" id="loc12">
+                            <a href="ghostSpot.php?spot_no=%2011&order_no=" id="loc12">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell10.png" id="spell12" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%2014" id="loc13">
+                            <a href="ghostSpot.php?spot_no=%2014&order_no=" id="loc13">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell13.png" id="spell13" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%2015" id="loc14">
+                            <a href="ghostSpot.php?spot_no=%2015&order_no=" id="loc14">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell11.png" id="spell14" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%2012" id="loc15">
+                            <a href="ghostSpot.php?spot_no=%2012&order_no=" id="loc15">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell14.png" id="spell15" class="spellSize" />
@@ -423,7 +422,7 @@ try{
                                             <div class="spotTxt">
                                                 <h2 class="spotTitle">【<?= $spotRow["spot_name"]?>】</h2>
                                                 <p class="spotIntro">
-                                                    <a href="ghostSpot.php?spot_no= <?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
+                                                    <a href="ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                                 </p>
                                                 <p class="groupJoin">
                                                     <a href="./adventrue.html">
