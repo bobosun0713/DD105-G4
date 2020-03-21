@@ -1,24 +1,30 @@
+// 加入收藏、輪播、投票功能ajax檔都寫在這裡面
+
 function $id(id){
     return document.getElementById(id);
     }
 
 //投票給該景點
 function voteThisSpot(){
+
 let xhr = new XMLHttpRequest();
 
     xhr.onload = function(){
         if( xhr.status == 200){
         $id("voteThisSpot").value = xhr.responseText;
         $id("voteThisSpot").disabled = true;
+        let vote_count = document.querySelector('.vote_count');
+        vote_count.innerText = parseInt(vote_count.innerText) +1;
         }else{
         alert(xhr.status);
     }
   }
-  let url = "spot_vote.php";
+  let url = "../php/spot_vote.php";
+  
   xhr.open("post", url, true);
   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-  
   let data_info = "spot_no=" + document.getElementById("voteSpotNo").value;
+
   xhr.send(data_info);
 }
 //投票給該景點結束
