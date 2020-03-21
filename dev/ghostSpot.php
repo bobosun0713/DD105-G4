@@ -12,10 +12,36 @@ try{
     $spots ->bindValue(":spot_no", $spot_no);    
     $spots ->execute();
 
-    $sql = "select tr.tour_title, tr.tour_image, m.mem_name, date(tr.tour_datetime) AS datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants from tour tr join spot s on (tr.spot_no = s.spot_no) join member m on (tr.mem_no = m.mem_no) join food f on (tr.food_no = f.food_no) join temple tm on (tr.temple_no = tm.temple_no) where tr.spot_no = :spot_no order by tour_datetime desc limit 6";
+    //景點相關揪團
+    $sql = "
+    select tr.tour_title, tr.tour_image, m.mem_name, m.mem_img, date(tr.tour_datetime) AS datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
+    from tour tr join spot s on (tr.spot_no = s.spot_no) 
+                join member m on (tr.mem_no = m.mem_no) 
+                left join food f on (tr.food_no = f.food_no) 
+                left join temple tm on (tr.temple_no = tm.temple_no)
+    where tr.spot_no =:spot_no
+    order by tour_datetime desc 
+    limit 1, 6";
     $tour = $pdo->prepare($sql);
     $tour ->bindValue(":spot_no", $spot_no);    
     $tour ->execute();
+
+
+    //抓該景點推薦行程
+    $sql = "
+    select tr.spot_budget, tr.spot_tool, tr.food_budget, tr.food_tool, tr.temple_budget, tr.temple_tool, tr.tour_order,
+            s.spot_name, s.spot_content, s.spot_address, s.spot_image_card,
+            f.food_name, f.food_location, f.food_content, f.food_img,
+            tm.temple_name, tm.temple_location, tm.temple_content, tm.temple_img
+    from tour tr join spot s on (tr.spot_no = s.spot_no) 
+                left join food f on (tr.food_no = f.food_no) 
+                left join temple tm on (tr.temple_no = tm.temple_no)
+    where tr.spot_no =:spot_no
+    order by tour_no 
+    limit 1";
+    $OfficialTour = $pdo->prepare($sql);
+    $OfficialTour ->bindValue(":spot_no", $spot_no);    
+    $OfficialTour ->execute();
 
 
 }catch(PDOException $e){
@@ -63,7 +89,6 @@ if( $errMsg != ""){ //例外
   alert($errMsg);
 }else{
     $spotRow = $spots->fetchObject();
-    // $tourRow = $tour->fetchObject();
 ?>
 <!-- title PHP 有改 -->
     <title>前進鬼島-<?php echo $spotRow->spot_name; ?></title>
@@ -111,182 +136,183 @@ if( $errMsg != ""){ //例外
         <div id="ghostSpotBG">
             <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
 
-<header id="topHeader">
-    <div id="navStatus">
-        <div id="soundStatus">
-            <img src="./img/icon/music_btn_off.svg" id="soundClick" />
-            <p id="soundTxt">Sound On</p>
-        </div>
-        <div id="memStatus">
-            <a href="">
-                <img src="./img/icon/default_header.svg" />
-            </a>
-            <p><span class="login_btn">登入</span></p>
-            <p><span class="creat_btn">註冊</span></p>
-        </div>
-    </div>
-    <nav class="desktopHeader">
-        <ul>
-            <li class="pageSelectEffect1">
-                <a href="ghostIsland.html" class="title pageSelectEffect2">
-                    前進鬼島
-                </a>
-            </li>
-            <li class="pageSelectEffect2-2">
-                <a href="adventrue.html" class="title @@link002">
-                    尋鬼探險
-                </a>
-            </li>
-            <li class="pageSelectEffect2-3">
-                <a href="leaderboard.html" class="title @@link003">
-                    靈異票選
-                </a>
-            </li>
-            <li>
-                <a href="index.html">
-                    <img id="topLogo" src="./img/logo/LOGO_white.png" />
-                </a>
-            </li>
-            <li class="pageSelectEffect2-4">
-                <a href="game.html" class="title @@link004">
-                    試膽測驗
-                </a>
-            </li>
-            <li class="pageSelectEffect2-5">
-                <a href="forum.html" class="title @@link005">
-                    靈異討論
-                </a>
-            </li>
-            <li class="pageSelectEffect2-6">
-                <a href="member.html" class="title @@link006">
-                    會員中心
-                </a>
-            </li>
-        </ul>
-    </nav>
+            <header id="topHeader">
+                <div id="navStatus">
+                    <div id="soundStatus">
+                        <img src="./img/icon/music_btn_off.svg" id="soundClick" />
+                        <p id="soundTxt">Sound On</p>
+                    </div>
+                    <div id="memStatus">
+                        <a href="">
+                            <img src="./img/icon/default_header.svg" />
+                        </a>
+                        <p><span class="login_btn">登入</span></p>
+                        <p><span class="creat_btn">註冊</span></p>
+                    </div>
+                </div>
+                <nav class="desktopHeader">
+                    <ul>
+                        <li class="pageSelectEffect1">
+                            <a href="ghostIsland.php" class="title pageSelectEffect2">
+                                前進鬼島
+                            </a>
+                        </li>
+                        <li class="pageSelectEffect2-2">
+                            <a href="adventrue.html" class="title @@link002">
+                                尋鬼探險
+                            </a>
+                        </li>
+                        <li class="pageSelectEffect2-3">
+                            <a href="leaderboard.html" class="title @@link003">
+                                靈異票選
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <img id="topLogo" src="./img/logo/LOGO_white.png" />
+                            </a>
+                        </li>
+                        <li class="pageSelectEffect2-4">
+                            <a href="game.html" class="title @@link004">
+                                試膽測驗
+                            </a>
+                        </li>
+                        <li class="pageSelectEffect2-5">
+                            <a href="forum.html" class="title @@link005">
+                                靈異討論
+                            </a>
+                        </li>
+                        <li class="pageSelectEffect2-6">
+                            <a href="member.html" class="title @@link006">
+                                會員中心
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-    <nav class="rwdHeader">
-        <div class="rwdHeaderWrap">
-            <a href="../index.html">
-                <img id="topLogo2" src="./img/logo/LOGO_white.png" />
-            </a>
+                <nav class="rwdHeader">
+                    <div class="rwdHeaderWrap">
+                        <a href="../index.html">
+                            <img id="topLogo2" src="./img/logo/LOGO_white.png" />
+                        </a>
 
-            <button class="hamburger hamburger--elastic" id="hamburger" type="button">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </div>
-    </nav>
+                        <button class="hamburger hamburger--elastic" id="hamburger" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </nav>
 
-    <div id="rwdHamburgerMenu">
-        <nav>
-            <ul>
-                <a href="../ghostIsland.html">
-                    <li class="title">前進鬼島</li>
-                </a>
-                <a href="../adventrue.html">
-                    <li class="title">尋鬼探險</li>
-                </a>
-                <a href="../leaderboard.html">
-                    <li class="title">靈異票選</li>
-                </a>
-                <a href="../game.html">
-                    <li class="title">試膽測驗</li>
-                </a>
-                <a href="../forum.html">
-                    <li class="title">靈異討論</li>
-                </a>
-                <a href="../member.html">
-                    <li class="title">會員中心</li>
-                </a>
-                <a>
-                    <li class="title login_btn">登入/註冊</li>
-                </a>
+                <div id="rwdHamburgerMenu">
+                    <nav>
+                        <ul>
+                            <a href="../ghostIsland.html">
+                                <li class="title">前進鬼島</li>
+                            </a>
+                            <a href="../adventrue.html">
+                                <li class="title">尋鬼探險</li>
+                            </a>
+                            <a href="../leaderboard.html">
+                                <li class="title">靈異票選</li>
+                            </a>
+                            <a href="../game.html">
+                                <li class="title">試膽測驗</li>
+                            </a>
+                            <a href="../forum.html">
+                                <li class="title">靈異討論</li>
+                            </a>
+                            <a href="../member.html">
+                                <li class="title">會員中心</li>
+                            </a>
+                            <a>
+                                <li class="title login_btn">登入/註冊</li>
+                            </a>
 
-                <li id="hamburgerSound" class="title">Sound Off</li>
-            </ul>
-        </nav>
-    </div>
-    <div id="indexLogin">
-        <section class="login_page1" style="display: none;">
-            <div class="logincancel"></div>
-            <div class="login_cover">
-                <img src="./img/logo/LOGO_black.png" alt="" />
-            </div>
-            <form action="" method="POST">
-                <p>
-                    <input type="text" id="memid" placeholder="帳號" />
-                </p>
-                <p>
-                    <input type="text" id="mempwd" placeholder="密碼" />
-                </p>
-            </form>
-            <div id="loginbutton">登入</div>
-            <div class="next_login">註冊會員</div>
-        </section>
+                            <li id="hamburgerSound" class="title">Sound Off</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="indexLogin">
+                    <section class="login_page1" style="display: none;">
+                        <div class="logincancel"></div>
+                        <div class="login_cover">
+                            <img src="./img/logo/LOGO_black.png" alt="" />
+                        </div>
+                        <form action="" method="POST">
+                            <p>
+                                <input type="text" id="memid" placeholder="帳號" />
+                            </p>
+                            <p>
+                                <input type="text" id="mempwd" placeholder="密碼" />
+                            </p>
+                        </form>
+                        <div id="loginbutton">登入</div>
+                        <div class="next_login">註冊會員</div>
+                    </section>
 
-        <section class="login_page2" style="display: none;">
-            <div class="logincancel"></div>
-            <div class="login_cover">
-                <img src="./img/login/registered-01 (1).png" alt="" />
-            </div>
-            <form action="" method="POST">
-                <p>
-                    <label for="memid">會員帳號</label>
-                    <input type="text" id="memid" placeholder="4~12英文字母、數字" />
-                </p>
-                <p>
-                    <label for="mempwd">會員密碼</label>
-                    <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
-                </p>
-                <p>
-                    <label for="mempwdcheck">確認密碼</label>
-                    <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
-                </p>
-                <p>
-                    <label for="memname">會員姓名</label>
-                    <input type="text" id="memname" placeholder="姓名" />
-                </p>
-                <p>
-                    <label for="memcell">手機號碼</label>
-                    <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
-                </p>
-                <p>
-                    <label for="memail">電子信箱</label>
-                    <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
-                </p>
-            </form>
-            <div id="sure_btn">註冊會員</div>
-        </section>
-        <!-- <script>
-            $(document).ready(function() {
-                $(".login_btn").click(function() {
-                    $("#indexLogin, .login_page1").css("display", "block")
-                })
-                $(".creat_btn").click(function() {
-                    $("#indexLogin, .login_page2").css("display", "block")
-                })
-                $(".next_login").click(function() {
-                    $(".login_page2").css("display", "block")
-                    $(".login_page1").css("display", "none")
-                })
-                $(".logincancel").click(function() {
-                    $(".login_page1 , .login_page2").css("display", "none")
-                    $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
-                })
-            })
-        </script> -->
-    </div>
-</header>
+                    <section class="login_page2" style="display: none;">
+                        <div class="logincancel"></div>
+                        <div class="login_cover">
+                            <img src="./img/login/registered-01 (1).png" alt="" />
+                        </div>
+                        <form action="" method="POST">
+                            <p>
+                                <label for="memid">會員帳號</label>
+                                <input type="text" id="memid" placeholder="4~12英文字母、數字" />
+                            </p>
+                            <p>
+                                <label for="mempwd">會員密碼</label>
+                                <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
+                            </p>
+                            <p>
+                                <label for="mempwdcheck">確認密碼</label>
+                                <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
+                            </p>
+                            <p>
+                                <label for="memname">會員姓名</label>
+                                <input type="text" id="memname" placeholder="姓名" />
+                            </p>
+                            <p>
+                                <label for="memcell">手機號碼</label>
+                                <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
+                            </p>
+                            <p>
+                                <label for="memail">電子信箱</label>
+                                <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
+                            </p>
+                        </form>
+                        <div id="sure_btn">註冊會員</div>
+                    </section>
+                    <!-- <script>
+                        $(document).ready(function() {
+                            $(".login_btn").click(function() {
+                                $("#indexLogin, .login_page1").css("display", "block")
+                            })
+                            $(".creat_btn").click(function() {
+                                $("#indexLogin, .login_page2").css("display", "block")
+                            })
+                            $(".next_login").click(function() {
+                                $(".login_page2").css("display", "block")
+                                $(".login_page1").css("display", "none")
+                            })
+                            $(".logincancel").click(function() {
+                                $(".login_page1 , .login_page2").css("display", "none")
+                                $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
+                            })
+                        })
+                    </script> -->
+                </div>
+            </header>
+
             <!-- section1 PHP 有改 -->
             <section id="ghostSpotSection1">
 
                 <div class="breadcrumb">
                     <ul>
-                        <li><a href="">首頁</a></li>
-                        <li><a href="">前進鬼島</a></li>
-                        <li><a href=""><?php echo $spotRow->spot_name; ?></a></li>
+                        <li><a href="./index.html">首頁</a></li>
+                        <li><a href="./ghostIsland.php">前進鬼島</a></li>
+                        <li><a href=""><?php echo $spotRow->spot_name;?></a></li>
                     </ul>
                 </div>
 
@@ -348,7 +374,7 @@ if( $errMsg != ""){ //例外
                                 </li>
                                 <li>
                                     <img src="./img/icon/vote-03.png">
-                                    靈異票選 <?php echo $spotRow->spot_vote_count; ?> 票
+                                     靈異票選 <p class="vote_count"> <?php echo $spotRow->spot_vote_count;?> </p> 票
                                 </li>
                             </ul>
                         </div>
@@ -357,7 +383,7 @@ if( $errMsg != ""){ //例外
 
                             <!-- 改變投票btn start -->
                             <form method="post">
-                                <input type="hidden" id="voteSpotNo" value="<?php echo $spotRow->spot_no; ?>">
+                                <input type="hidden" id="voteSpotNo" value="<?php echo $spotRow->spot_no;?>">
                                 <input type="button" class="btn-outline" id="voteThisSpot" value="投給【<?php echo $spotRow->spot_name; ?>】">
                             </form>
                             <!-- 改變投票btn end -->
@@ -378,7 +404,7 @@ if( $errMsg != ""){ //例外
 <?php 
 }
 ?>
-
+            <!-- section2 PHP 有改 -->
             <?php 
             if( $errMsg != ""){
             alert($errMsg);
@@ -399,17 +425,23 @@ if( $errMsg != ""){ //例外
 
                         <?php foreach($tourRows as $i => $tourRow){?>
                         
-                        <div class="tourCard ">
-                            <a href="">
+                        <div class="tourCard">
+                            <a href="./StartGroup.php?spot_no=<?=$tourRow["tour_no"]?>">
                                 <div class="tourImg">
                                     <img src="<?=$tourRow['tour_image']?>">
                                 </div>
                                 <div class="tourTxt">
-                                    <h2 class="tourTitle">【<?=$tourRow['tour_title']?>】</h2>
+                                    <h2 class="tourTitle">【<?php echo $tourRow['tour_title']?>】</h2>
 
                                     <div class="tourHost">
-
-                                        <img src="./img/icon/header1.png" class="header">
+                                        
+                                        <img src="
+                                        <?php if( $tourRow['mem_img'] == null ){?>
+                                            ./img/icon/default_header.svg
+                                        <?php }else{  
+                                            echo $tourRow['mem_img']
+                                        ;}?>
+                                        " class="header">
                                         <p class="name"><?=$tourRow['mem_name']?></p>
 
                                     </div>
@@ -428,14 +460,18 @@ if( $errMsg != ""){ //例外
                                         <div class="tourSpot">
                                             <img src="./img/icon/location_red.png">
                                             <p>
-                                                <?=$tourRow['spot_name']?>、<?=$tourRow['temple_name']?>、<?=$tourRow['food_name']?>
+                                                <?=$tourRow['spot_name']?><?php if($tourRow['temple_name'] != null){
+                                                    echo"、",$tourRow['temple_name']
+                                                ;}?><?php if($tourRow['food_name'] != null){
+                                                    echo"、",$tourRow['food_name']
+                                                ;}?>
                                             </p>
                                         </div>
 
                                         <div class="tourJoin">
                                             <img src="./img/icon/tourCount.svg">
                                             <p>
-                                                參加人數：<?=$tourRow['number_of_participants']?>/ <?=$tourRow['max_of_participants']?>人
+                                                參加人數：<?=$tourRow['number_of_participants']?>/<?=$tourRow['max_of_participants']?>人
                                             </p>
                                         </div>
                                     </div>
@@ -454,249 +490,6 @@ if( $errMsg != ""){ //例外
 
                         <?php } ?>
 
-                        <!-- <div class="tourCard">
-                            <a href="">
-                                <div class="tourImg">
-                                    <img src="./img/component/card/spotCard01.png">
-                                </div>
-                                <div class="tourTxt">
-                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                    <div class="tourHost">
-
-                                        <img src="./img/icon/header1.png" class="header">
-                                        <p class="name">富江我老婆</p>
-
-                                    </div>
-
-                                    <div class="tourInfo">
-
-
-                                        <div class="date">
-                                            <img src="./img/icon/date.svg">
-                                            <p>
-                                                出團日期：2020/01/29
-                                            </p>
-
-                                        </div>
-
-                                        <div class="tourSpot">
-                                            <img src="./img/icon/location_red.png">
-                                            <p>
-                                                新莊廢棄醫院、天后宮、酸辣粉
-                                            </p>
-                                        </div>
-
-                                        <div class="tourJoin">
-                                            <img src="./img/icon/tourCount.svg">
-                                            <p>
-                                                參加人數：6/10 人
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tourFavorite">
-                                    <p class="like">
-                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                        10
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="tourCard">
-                            <a href="">
-                                <div class="tourImg">
-                                    <img src="./img/component/card/spotCard01.png">
-                                </div>
-                                <div class="tourTxt">
-                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                    <div class="tourHost">
-
-                                        <img src="./img/icon/header1.png" class="header">
-                                        <p class="name">富江我老婆</p>
-
-                                    </div>
-
-                                    <div class="tourInfo">
-
-
-                                        <div class="date">
-                                            <img src="./img/icon/date.svg">
-                                            <p>
-                                                出團日期：2020/01/29
-                                            </p>
-
-                                        </div>
-
-                                        <div class="tourSpot">
-                                            <img src="./img/icon/location_red.png">
-                                            <p>
-                                                新莊廢棄醫院、天后宮、酸辣粉
-                                            </p>
-                                        </div>
-
-                                        <div class="tourJoin">
-                                            <img src="./img/icon/tourCount.svg">
-                                            <p>
-                                                參加人數：6/10 人
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tourFavorite">
-                                    <p class="like">
-                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                        10
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="tourCard">
-                            <a href="">
-                                <div class="tourImg">
-                                    <img src="./img/component/card/spotCard01.png">
-                                </div>
-                                <div class="tourTxt">
-                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                    <div class="tourHost">
-                                        <img src="./img/icon/header1.png" class="header">
-                                        <p class="name">富江我老婆</p>
-                                    </div>
-
-                                    <div class="tourInfo">
-
-                                        <div class="date">
-                                            <img src="./img/icon/date.svg">
-                                            <p>
-                                                出團日期：2020/01/29
-                                            </p>
-                                        </div>
-
-                                        <div class="tourSpot">
-                                            <img src="./img/icon/location_red.png">
-                                            <p>
-                                                新莊廢棄醫院、天后宮、酸辣粉
-                                            </p>
-                                        </div>
-
-                                        <div class="tourJoin">
-                                            <img src="./img/icon/tourCount.svg">
-                                            <p>
-                                                參加人數：6/10 人
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="tourFavorite">
-                                    <p class="like">
-                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                        10
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="tourCard">
-                            <a href="">
-                                <div class="tourImg">
-                                    <img src="./img/component/card/spotCard01.png">
-                                </div>
-                                <div class="tourTxt">
-                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                    <div class="tourHost">
-                                        <img src="./img/icon/header1.png" class="header">
-                                        <p class="name">富江我老婆</p>
-                                    </div>
-
-                                    <div class="tourInfo">
-
-                                        <div class="date">
-                                            <img src="./img/icon/date.svg">
-                                            <p>
-                                                出團日期：2020/01/29
-                                            </p>
-                                        </div>
-
-                                        <div class="tourSpot">
-                                            <img src="./img/icon/location_red.png">
-                                            <p>
-                                                新莊廢棄醫院、天后宮、酸辣粉
-                                            </p>
-                                        </div>
-
-                                        <div class="tourJoin">
-                                            <img src="./img/icon/tourCount.svg">
-                                            <p>
-                                                參加人數：6/10 人
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="tourFavorite">
-                                    <p class="like">
-                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                        10
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="tourCard">
-                            <a href="">
-                                <div class="tourImg">
-                                    <img src="./img/component/card/spotCard01.png">
-                                </div>
-                                <div class="tourTxt">
-                                    <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                    <div class="tourHost">
-                                        <img src="./img/icon/header1.png" class="header">
-                                        <p class="name">富江我老婆</p>
-                                    </div>
-
-                                    <div class="tourInfo">
-
-                                        <div class="date">
-                                            <img src="./img/icon/date.svg">
-                                            <p>
-                                                出團日期：2020/01/29
-                                            </p>
-                                        </div>
-
-                                        <div class="tourSpot">
-                                            <img src="./img/icon/location_red.png">
-                                            <p>
-                                                新莊廢棄醫院、天后宮、酸辣粉
-                                            </p>
-                                        </div>
-
-                                        <div class="tourJoin">
-                                            <img src="./img/icon/tourCount.svg">
-                                            <p>
-                                                參加人數：6/10 人
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="tourFavorite">
-                                    <p class="like">
-                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                        10
-                                    </p>
-                                </div>
-                            </a>
-                        </div> -->
 
                     </div>
 
@@ -721,7 +514,13 @@ if( $errMsg != ""){ //例外
 
             <?php }?>
 
-
+            <!-- section3 PHP 有改 -->
+            <?php 
+            if( $errMsg != ""){
+            alert($errMsg);
+            }else{
+                $OfficialTourRows = $OfficialTour->fetchObject();
+            ?>
             <section id="ghostSpotSection3">
                 <nav>
                     <h3 class="tablink selected" id="tab1">推薦行程</h3>
@@ -740,11 +539,11 @@ if( $errMsg != ""){ //例外
 
                             <div class="tourSpot">
                                 <div class="tourImg">
-                                    <img src="./img/spot/spot1/tour1_spot1.png">
+                                    <img src="<?=$OfficialTourRows->temple_img;?>">
                                 </div>
                                 <div class="tourSpotTxt">
-                                    <h2 class="spotTitle">【行程一】<span>平安宮拜拜</span></h2>
-                                    <p>日式風格建築現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等 還可以清楚看到手術台、診療台，更加有恐怖氣氛。</p>
+                                    <h2 class="spotTitle">【行程一】<span><?=$OfficialTourRows->temple_name;?></span></h2>
+                                    <p><?=$OfficialTourRows->temple_content;?></p>
 
                                     <div class="tourSpotInfo">
 
@@ -752,7 +551,7 @@ if( $errMsg != ""){ //例外
                                             <img src="./img/icon/location.png">
                                             <p>地理位置</p>
                                             <div class="moreInfo">
-                                                台北市新莊區思源路177巷32號
+                                                <?=$OfficialTourRows->temple_location;?>
                                             </div>
                                             <div class="triangle"></div>
 
@@ -763,7 +562,7 @@ if( $errMsg != ""){ //例外
                                             <img src="./img/icon/tool.png">
                                             <p>所需工具</p>
                                             <div class="moreInfo">
-                                                一顆虔誠的心
+                                                <?=$OfficialTourRows->temple_tool;?>
                                             </div>
                                             <div class="triangle"></div>
                                         </div>
@@ -772,7 +571,7 @@ if( $errMsg != ""){ //例外
                                             <img src="./img/icon/fee.png">
                                             <p>參加費用</p>
                                             <div class="moreInfo">
-                                                香油錢150圓
+                                                <?=$OfficialTourRows->temple_budget;?>圓
                                             </div>
                                             <div class="triangle"></div>
                                         </div>
@@ -782,17 +581,17 @@ if( $errMsg != ""){ //例外
 
                                         <div class="moreInfo">
                                             <img src="./img/icon/location.png">
-                                            <p>地理位置：<span>台北市新莊區思源路177巷32號</span> </p>
+                                            <p>地理位置：<span><?=$OfficialTourRows->temple_location;?></span> </p>
                                         </div>
 
                                         <div class="moreInfo">
                                             <img src="./img/icon/tool.png">
-                                            <p>所需工具：<span>一顆虔誠的心</span> </p>
+                                            <p>所需工具：<span><?=$OfficialTourRows->temple_tool;?></span> </p>
                                         </div>
 
                                         <div class="moreInfo">
                                             <img src="./img/icon/fee.png">
-                                            <p>參加費用：<span>150</span>圓</p>
+                                            <p>參加費用：<span><?=$OfficialTourRows->temple_budget;?></span>圓</p>
                                         </div>
 
                                     </div>
@@ -802,11 +601,11 @@ if( $errMsg != ""){ //例外
 
                             <div class="tourSpot">
                                 <div class="tourImg">
-                                    <img src="./img/spot/spot1/tour1_spot2.png">
+                                    <img src="<?=$OfficialTourRows->spot_image_card;?>">
                                 </div>
                                 <div class="tourSpotTxt">
-                                    <h2 class="spotTitle">【行程二】<span>新莊廢棄醫院</span></h2>
-                                    <p>日式風格建築現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等 還可以清楚看到手術台、診療台，更加有恐怖氣氛。</p>
+                                    <h2 class="spotTitle">【行程二】<span><?=$OfficialTourRows->spot_name;?></span></h2>
+                                    <p><?=$OfficialTourRows->spot_content;?></p>
 
                                     <div class="tourSpotInfo">
 
@@ -814,7 +613,7 @@ if( $errMsg != ""){ //例外
                                             <img src="./img/icon/location.png">
                                             <p>地理位置</p>
                                             <div class="moreInfo">
-                                                台北市新莊區思源路177巷32號
+                                                <?=$OfficialTourRows->spot_address;?>
                                             </div>
                                             <div class="triangle"></div>
                                         </div>
@@ -823,7 +622,7 @@ if( $errMsg != ""){ //例外
                                             <img src="./img/icon/tool.png">
                                             <p>所需工具</p>
                                             <div class="moreInfo">
-                                                手電筒
+                                                <?=$OfficialTourRows->spot_tool;?>
                                             </div>
                                             <div class="triangle"></div>
                                         </div>
@@ -832,7 +631,7 @@ if( $errMsg != ""){ //例外
                                             <img src="./img/icon/fee.png">
                                             <p>參加費用</p>
                                             <div class="moreInfo">
-                                                0圓
+                                                <?=$OfficialTourRows->spot_budget;?>圓
                                             </div>
                                             <div class="triangle"></div>
                                         </div>
@@ -843,17 +642,17 @@ if( $errMsg != ""){ //例外
 
                                         <div class="moreInfo">
                                             <img src="./img/icon/location.png">
-                                            <p>地理位置：<span>台北市新莊區思源路177巷32號</span> </p>
+                                            <p>地理位置：<span><?=$OfficialTourRows->spot_address;?></span> </p>
                                         </div>
 
                                         <div class="moreInfo">
                                             <img src="./img/icon/tool.png">
-                                            <p>所需工具：<span>一顆虔誠的心</span> </p>
+                                            <p>所需工具：<span><?=$OfficialTourRows->spot_tool;?></span> </p>
                                         </div>
 
                                         <div class="moreInfo">
                                             <img src="./img/icon/fee.png">
-                                            <p>參加費用：<span>150</span>圓</p>
+                                            <p>參加費用：<span><?=$OfficialTourRows->spot_budget;?></span>圓</p>
                                         </div>
 
                                     </div>
@@ -1106,6 +905,7 @@ if( $errMsg != ""){ //例外
                 <p>6</p>
                 <div class="pageBtn"><span class="toRight"> 〉</span></div>
             </div>
+            <?php }?>
                                     </div>
 
 

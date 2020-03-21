@@ -1,3 +1,5 @@
+
+
 <?php
 try{
   require_once("./connect.php");
@@ -10,6 +12,8 @@ try{
   echo "已投給內心的恐懼一票";
 
 }catch(PDOException $e){
-  echo "error";
+  $errMsg = "";
+  $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+  $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
 }
 ?>

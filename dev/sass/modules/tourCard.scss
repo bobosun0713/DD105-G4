@@ -1,6 +1,5 @@
 .tourCard {
   width: 280px;
-//   height: 420px;
   // border: 1px solid green;
   box-shadow: 1px 1px 2px rgba(#575757, 0.3);
   border-radius: 5px;
@@ -41,6 +40,7 @@
     margin: 8px auto;
     // border: 1px solid blue;
     width: 90%;
+    height: 180px;
     position: relative;
 
     .tourTitle {
