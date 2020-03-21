@@ -11,12 +11,12 @@ let xhr = new XMLHttpRequest();
 
     xhr.onload = function(){
         if( xhr.status == 200){
-        $id("voteThisSpot").value = xhr.responseText;
-        $id("voteThisSpot").disabled = true;
-        let vote_count = document.querySelector('.vote_count');
-        vote_count.innerText = parseInt(vote_count.innerText) +1;
+            $id("voteThisSpot").value = xhr.responseText;
+            $id("voteThisSpot").disabled = true;
+            let vote_count = document.querySelector('.vote_count');
+            vote_count.innerText = parseInt(vote_count.innerText) +1;
         }else{
-        alert(xhr.status);
+            alert(xhr.status);
     }
   }
   let url = "../php/spot_vote.php";
