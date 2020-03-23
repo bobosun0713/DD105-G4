@@ -10,7 +10,7 @@
         <table class="table table-responsive-sm table-sm">
           <thead>
             <tr>
-              <th>測驗題目編號</th>
+              <th>編號</th>
               <th>題目圖片</th>
               <th>選項一</th>
               <th>選項二</th>
@@ -18,7 +18,7 @@
               <th>選項一分數</th>
               <th>選項二分數</th>
               <th>選項三分數</th>
-              <th>上下架狀態</th>
+              <th>上下架</th>
               <th>修改答案</th>
               <th>刪除題目</th>
             </tr>
@@ -27,16 +27,17 @@
             <tr>
               <td>1</td>
               <td>
-                <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlFile1">請上傳題目圖片一張</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                  </div>
-                </form>
+                <div><img src=""></div>
               </td>
-              <td>看得我神經衰弱，不喜歡</td>
-              <td>超級喜歡</td>
-              <td>一個人肯定不能承受的啦,需要個人一起看</td>
+              <td>
+                <input type="text" class="form-control" placeholder="" >
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="" >
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="" >
+              </td>
               <td>
                 <select class="custom-select custom-select-sm">
                   <option selected>點選輸入分數</option>
@@ -68,13 +69,10 @@
                 </div>
               </td>
               <td>
-              <td><button class="btn btn-primary active questionModifyStart" type="button">修改</button>
-                <button class="btn btn-outline-success active questionModifyConfirm d-none" type="button"
-                  aria-pressed="true" data-toggle="modal" data-whatever="@modify" data-target="#alertModal">確認</button>
-              </td>
+                <button type="button" class="btn btn-danger">刪除</button>
               </td>
               <td>
-                <button type="button" class="btn btn-danger">刪除題目</button>
+                <button type="button" class="btn btn-dark">儲存</button>
               </td>
             </tr>
 
@@ -92,7 +90,7 @@
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <form action="" method="post" enctype="multipart/form-data" id="questionAddForm">
+      <form action="insert_game_quiz.php" method="post" enctype="multipart/form-data" id="questionAddForm">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">新增題庫資料</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
