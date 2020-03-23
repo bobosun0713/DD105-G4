@@ -10,11 +10,13 @@
 
 <body>
   <!-- @@include('layout/component/mouse_ghost.html') -->
+  <!-- <form> -->
   <div class="createAdventure">
     @@include('layout/header.html',{
     "link002" : "pageSelectEffect2",
     "link001-2":"pageSelectEffect1"
     })
+
     <section class="section_wrapper">
       <div class="form-tabs">
         <div class="mainspot tourTitle">【新莊廢棄醫院】</div>
@@ -59,38 +61,45 @@
                 <button class="additinerarybtn">加入揪團行程</button>
               </div>
               <div class="selectionsframe">
-                <div class="spotoptions">
+                <div class="spotoptions templeopt">
                   <div class="addbtn">
                     <img src="img/createAdventure/zoom_up_icon.png" />
                   </div>
-                  <div class="content">
+                  <div class="content temple_cls">
                     <span>合興宮</span>
-                    <img src="img/createAdventure/spot1_temple1.png" alt="廟照片" />
-                    <input id="temple001" type="hidden"
-                      value="合興宮|新莊「合興宮」，創立於乾隆年間且頗具規模的老牌土地公廟見證了此廟悠久的歷史風華。" />
+                    <div class="imgframe">
+                      <img src="img/createAdventure/spot1_temple1.png" alt="廟照片" />
+                    </div>
+                    <input id="temple001" type="hidden" name="temple_no"
+                      value="合興宮|新莊「合興宮」，創立於乾隆年間且頗具規模的老牌土地公廟見證了此廟悠久的歷史風華。|地址1111" />
                     <div class="detailstext"></div>
                   </div>
                 </div>
-                <div class="spotoptions">
+                <div class="spotoptions templeopt">
                   <div class="addbtn">
                     <img src="img/createAdventure/zoom_up_icon.png" />
                   </div>
-                  <div class="content">
+                  <div class="content temple_cls">
                     <span>後港昭德宮</span>
-                    <img src="img/createAdventure/spot1_temple2.png" alt="廟照片" />
-                    <input id="temple002" type="hidden"
-                      value="後港昭德宮|新莊後港昭德宮建於清乾隆三十年間，由信徒開會決議籌建廟宇以供信徒前來參拜。" />
+                    <div class="imgframe">
+                      <img src="img/createAdventure/spot1_temple2.png" alt="廟照片" />
+                    </div>
+                    <input id="temple002" type="hidden" name="temple_no"
+                      value="後港昭德宮|新莊後港昭德宮建於清乾隆三十年間，由信徒開會決議籌建廟宇以供信徒前來參拜。|地址" />
                     <div class="detailstext"></div>
                   </div>
                 </div>
-                <div class="spotoptions">
+                <div class="spotoptions foodopt optionhide">
                   <div class="addbtn">
                     <img src="img/createAdventure/zoom_up_icon.png" />
                   </div>
-                  <div class="content">
-                    <span>斂財宮</span>
-                    <img src="img/createAdventure/spot1_temple3.png" alt="廟照片" />
-                    <input id="temple003" type="hidden" value="斂財宮|哈哈哈哈哈哈哈" />
+                  <div class="content food_cls">
+                    <span>日本料理好好吃</span>
+                    <div class="imgframe">
+                      <img src="img/createAdventure/food001.jpg" alt="廟照片" />
+                    </div>
+                    <input id="food001" type="hidden" name="food_no"
+                      value="日本料理好好吃|店內裝潢打破傳統日式居酒屋的空間氛圍，設計以極簡具現代感為主，並採半開放式空間規劃，從4至8人的包廂，到2至50人的大型聚餐的雅座都有|台南市中山區中山北路二段39巷16-2號" />
                     <div class="detailstext"></div>
                   </div>
                 </div>
@@ -102,8 +111,24 @@
               <img src="img/createAdventure/selectedspotheading_icon.png" />
               專屬行程規劃
             </div>
-            <div class="selected_spot">
 
+            <div class="selected_spot">
+              <div class="majorspot">
+                <div class="content">
+                  <span>主要行程</span>
+                  <div class="imgframe">
+                    <img src="img/createAdventure/majorspot001.jpg" alt="景點照片">
+                  </div>
+                  <input id="majorspot001" type="hidden" name="spot_no"
+                    value="majorspot001|建築大師高第傑作「聖家堂」2026年完工！相隔137年屬於上帝的建築取得施工執照|Carrer de Mallorca, 401, Barcelona,">
+                  <div class="detailstext"></div>
+                </div>
+                <!-- <button class="delete_btn"></button> -->
+                <div class="shiftbtns">
+                  <button class="shift_up_btn" style="display:none;">上移鈕</button>
+                  <button class="shift_down_btn" style="display:none;">下移鈕</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -116,14 +141,14 @@
             <div class="tourTitle">請填寫基本揪團資訊:</div>
             <div class="leftblock">
               <label>人數限制</label>
-              <input type="number" value="1" min="1" max="30" />
+              <input type="number" name="max_of_participants" value="1" min="1" max="30" />
               <br />
 
               <label>發起日期</label>
               <!-- 萬年曆-發起日期 -->
               <div class="dateCalender">
                 <div class="yy_mm_dd_container">
-                  <p id="yy_mm_dd">請選取日期</p>
+                  <p id="yy_mm_dd" name="tour_settime">請選取日期</p>
                   <img src="./img/createAdventure/arrow.png" class="arrow">
                 </div>
                 <table id="dateZone">
@@ -146,7 +171,7 @@
               <!-- 萬年曆-截止日期 -->
               <div class="dateCalender">
                 <div class="yy_mm_dd_container_2">
-                  <p id="yy_mm_dd_2">請選取日期</p>
+                  <p id="yy_mm_dd_2" name="tour_endtime">請選取日期</p>
                   <img src="./img/createAdventure/arrow.png" class="arrow">
                 </div>
                 <table id="dateZone_2">
@@ -168,7 +193,7 @@
               <!-- 萬年曆-出團日期 -->
               <div class="dateCalender">
                 <div class="yy_mm_dd_container_3">
-                  <p id="yy_mm_dd_3">請選取日期</p>
+                  <p id="yy_mm_dd_3" name="tour_datetime">請選取日期</p>
                   <img src="./img/createAdventure/arrow.png" class="arrow">
                 </div>
                 <table id="dateZone_3">
@@ -187,10 +212,10 @@
 
               <br />
               <label>揪團名稱</label>
-              <input type="text" value="" maxlength="15" placeholder="限15字以內" />
+              <input type="text" name="tour_title" value="" maxlength="15" placeholder="限15字以內" />
               <br />
               <label>揪團簡介</label>
-              <textarea name="" placeholder="限300字以內"></textarea>
+              <textarea name="tour_content" placeholder="限300字以內"></textarea>
             </div>
           </div>
 
@@ -198,7 +223,7 @@
           <div class="tab-2 right2">
             <div class="heading">
 
-              <input type="file" name="uploadTourFile" id="uploadTourFile" accept="image/*">
+              <input type="file" name="tour_image" id="uploadTourFile" accept="image/*">
               <div class="tour_imagePreview" id="tour_imagePreview">
                 <img src="img/createAdventure/addgroupimg_icon.png" class="tour_imagePreview_default" />
                 <div class="tour_imagePreview_text">
@@ -240,13 +265,13 @@
                 <p></p>
                 <br />
                 <label>景點簡介</label>
-                <textarea name=""></textarea>
+                <textarea name="spot_content"></textarea>
                 <br />
                 <label>所需工具</label>
-                <input type="text" value="" />
+                <input type="text" name="spot_tool" value="" />
                 <br />
                 <label>預估費用</label>
-                <input type="number" value="0" min="0" max="" />
+                <input type="number" name="spot_budget" value="0" min="0" max="" />
                 <br />
               </div>
             </div>
@@ -280,6 +305,8 @@
 
         </div>
 
+
+
         <!-- 步驟4 -->
         <div id="tab-4" class="hide tab">
           <!-- 簡介 -->
@@ -289,7 +316,8 @@
 
               <div class="picZone">
                 <div class="bigPic">
-                  <img src="https://i2.wp.com/5b0988e595225.cdn.sohucs.com/images/20180123/beeb78cff3234b0693c3aef89b1beace.gif?w">
+                  <img
+                    src="https://i2.wp.com/5b0988e595225.cdn.sohucs.com/images/20180123/beeb78cff3234b0693c3aef89b1beace.gif?w">
                 </div>
               </div>
 
@@ -297,7 +325,7 @@
                 <h1></h1>
                 <div class="introTxt">
                   <p>
-                    
+
                   </p>
                 </div>
 
@@ -307,11 +335,11 @@
                       <div class="StartGroup_people_img">
                         <img src="img/StartGroup/揪團團組.png" alt="">
                       </div>
-                      揪團者by <span id="tourHost">富江我老婆</span> 
+                      揪團者by <span id="tourHost">富江我老婆</span>
                     </li>
                     <li>
                       <img src="./img/icon/location.png">
-                      <span id="myTourLocation"></span> 
+                      <span id="myTourLocation"></span>
                     </li>
                     <li>
                       <i class="far fa-calendar-alt"></i>
@@ -356,9 +384,9 @@
           <!-- 行程位置 -->
           <section id="tourPreview_Section2">
 
-              <div id="customeTour">
+            <div id="customeTour">
 
-                <!-- <div class="tourSpot">
+              <!-- <div class="tourSpot">
                   <div class="tourImg">
                     <img src="./img/spot/spot1/tour1_spot1.png">
                   </div>
@@ -400,7 +428,7 @@
                   </div>
                 </div> -->
 
-                <!-- <div class="tourSpot">
+              <!-- <div class="tourSpot">
                   <div class="tourImg">
                     <img src="./img/spot/spot1/tour1_spot2.png">
                   </div>
@@ -445,22 +473,22 @@
 
 
 
-                <nav class="tourStatus">
-                  <ul>
-                    <li class="statusCircle selected">
-                      <p class=" circle selected2"></p>
-                    </li>
-                    <li class="statusCircle">
-                      <p class="line"></p>
-                      <p class="circle"></p>
-                    </li>
-                  </ul>
+              <nav class="tourStatus">
+                <ul>
+                  <li class="statusCircle selected">
+                    <p class=" circle selected2"></p>
+                  </li>
+                  <li class="statusCircle">
+                    <p class="line"></p>
+                    <p class="circle"></p>
+                  </li>
+                </ul>
 
-                </nav>
+              </nav>
 
-              </div>
+            </div>
 
-            
+
 
 
 
@@ -473,11 +501,14 @@
 
       <div class="button_block">
         <button class="btn-outline" id="previous">上一步</button>
-        <button class="btn-outline" id="next">下一步</button>
+        <button class="btn-outline" id="next" type="">下一步</button>
       </div>
+
     </section>
+
     @@include('layout/footer.html')
   </div>
+  <!-- </form> -->
 </body>
 
 </html>
