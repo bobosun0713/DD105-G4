@@ -1,15 +1,10 @@
 @mixin theme_brand($brand) {
-    ##{$brand}-wrapper {
-        @content
-    }
+  ##{$brand}-wrapper {
+    @content;
+  }
 }
 
-;
-
-
-
-
-// margin auto 
+// margin auto
 //==========使用方式=========
 
 //   @include margin-auto(10px, 20px)
@@ -23,208 +18,198 @@
 //==========================
 
 @mixin margin-auto($updown...) {
-    @if length($updown)==0 {
-        margin: 0 auto;
-    }
-
-    @else if length($updown)==1 {
-        margin: $updown auto
-    }
-
-    @else {
-        margin: nth($updown, 1) auto nth($updown, 2)
-    }
+  @if length($updown) ==0 {
+    margin: 0 auto;
+  } @else if length($updown) ==1 {
+    margin: $updown auto;
+  } @else {
+    margin: nth($updown, 1) auto nth($updown, 2);
+  }
 }
 
 // rect 長寬
 @mixin rect($w, $h) {
-    width: $w;
-    height: $h;
+  width: $w;
+  height: $h;
 }
-
 
 // 清除浮動 Clearfix
 
 @mixin clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: " ";
+  }
 
-    &::before,
-    &::after {
-        display: table;
-        content: ' ';
-    }
-
-    &::after {
-        clear: both;
-    }
+  &::after {
+    clear: both;
+  }
 }
 
 // 變形
 // 實作 https://jsfiddle.net/sexfat/Lo6p5byf/16/
 
-
 @mixin transform($transforms) {
-    -webkit-transform: $transforms;
-    -moz-transform: $transforms;
-    -ms-transform: $transforms;
-    transform: $transforms;
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
 }
 
-@mixin transform-origin ($origin) {
-    -webkit-transform-origin: $origin;
-    -moz-transform-origin: $origin;
-    -ms-transform-origin: $origin;
-    transform-origin: $origin;
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  transform-origin: $origin;
 }
 
-
-@mixin rotate ($deg) {
-    @include transform(rotate(#{$deg}deg));
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
 }
 
 // Scale
 @mixin scale($scale) {
-    @include transform(scale($scale));
+  @include transform(scale($scale));
 }
 
 // Translate
-@mixin translate ($x, $y) {
-    @include transform(translate($x, $y));
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
 }
 
 // Skew
-@mixin skew ($x, $y) {
-    @include transform(skew(#{$x}deg, #{$y}deg));
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
 }
-
 
 // css3 animation mixin
 
 // 1.定義 keyframe
-@mixin keyframe ($animation_name) {
-    @-webkit-keyframes #{$animation_name} {
-        @content;
-    }
+@mixin keyframe($animation_name) {
+  @-webkit-keyframes #{$animation_name} {
+    @content;
+  }
 
-    @-moz-keyframes #{$animation_name} {
-        @content;
-    }
+  @-moz-keyframes #{$animation_name} {
+    @content;
+  }
 
-    @keyframes #{$animation_name} {
-        @content;
-    }
+  @keyframes #{$animation_name} {
+    @content;
+  }
 }
-
 
 // 2. 規範 animation
 
-@mixin animation ($delay, $duration, $animation, $timing: linear, $direction: forward, $fillmode: forwards) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-name: $animation;
-    -webkit-animation-timing-function: $timing;
-    -webkit-animation-fill-mode: $fillmode;
-    -webkit-animation-direction: $direction;
+@mixin animation($delay, $duration, $animation, $timing: linear, $direction: forward, $fillmode: forwards) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-timing-function: $timing;
+  -webkit-animation-fill-mode: $fillmode;
+  -webkit-animation-direction: $direction;
 
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
-    -moz-animation-name: $animation;
-    -moz-animation-timing-function: $timing;
-    -moz-animation-fill-mode: $fillmode;
-    -moz-animation-direction: $direction;
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-timing-function: $timing;
+  -moz-animation-fill-mode: $fillmode;
+  -moz-animation-direction: $direction;
 
-    animation-delay: $delay;
-    animation-duration: $duration;
-    animation-name: $animation;
-    animation-timing-function: $timing;
-    animation-fill-mode: $fillmode;
-    animation-direction: $direction;
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-timing-function: $timing;
+  animation-fill-mode: $fillmode;
+  animation-direction: $direction;
 }
 
 //使用範例
 // demo  https://jsfiddle.net/sexfat/fgpecsb1/55/
 
-
 // 3. animations name
 @include keyframe(animation-move) {
-    0% {
-        @include translate(0px, 100px)
-    }
+  0% {
+    @include translate(0px, 100px);
+  }
 
-    100% {
-        @include translate(100px, 200px)
-    }
+  100% {
+    @include translate(100px, 200px);
+  }
 }
 
 .animation-move {
-    @include animation(0, 0.5s, animation-move, ease);
+  @include animation(0, 0.5s, animation-move, ease);
 }
 
 //透明度
 
 @mixin opacity($opacity) {
-    $opacity-ie: ($opacity * 100); // IE8 filter
-    filter: alpha(opacity=$opacity-ie);
-    opacity: $opacity;
+  $opacity-ie: ($opacity * 100); // IE8 filter
+  filter: alpha(opacity=$opacity-ie);
+  opacity: $opacity;
 }
 
-
 //gogole font
-@mixin fontFamily($status , $urls:'') {
-    @if $status {
-        @import url(unquote($urls));
-    }@else {
-        body {
-            font-family: $font_basic;
-        }
+@mixin fontFamily($status, $urls: "") {
+  @if $status {
+    @import url(unquote($urls));
+  } @else {
+    body {
+      font-family: $font_basic;
     }
+  }
 }
 
 // ===========
 // body base font
 // ===========
 @mixin body-setting($bodysettings) {
-
-    body {
-        @each $kind,
-        $value in $bodysettings {
-            #{$kind}: $value;
-        }
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+  body {
+    @each $kind, $value in $bodysettings {
+      #{$kind}: $value;
     }
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
-
-
-
-
-
-
-
-
 
 //box-sizing
 @mixin boxsizing($value) {
-    -webkit-box-sizing: $value;
-    box-sizing: $value;
+  -webkit-box-sizing: $value;
+  box-sizing: $value;
 }
-
 
 //Rwd respond system
 //桌機 > 平板 >手機
 @mixin respond($res) {
-
-    @each $viewpoint,
-    $num in $breakpoint {
-        @if $res == $viewpoint {
-            @media all and (max-width: $num) {
-                @content
-            }
-        }
+  @each $viewpoint, $num in $breakpoint {
+    @if $res == $viewpoint {
+      @media all and (max-width: $num) {
+        @content;
+      }
     }
-};
+  }
+}
 
-
-
-
-
+/* =============================    浮出動畫	 ========================= */
+@mixin anim-filter($filter, $value) {
+  -webkit-filter: #{$filter}unquote("(#{$value})");
+  -moz-filter: #{$filter}unquote("(#{$value})");
+  -ms-filter: #{$filter}unquote("(#{$value})");
+  filter: #{$filter}unquote("(#{$value})");
+}
+@mixin anim-transition($property, $value) {
+  -webkit-transition: $property, $value;
+  -moz-transition: $property, $value;
+  -ms-transition: $property, $value;
+  transition: $property, $value;
+}
+@mixin anim-transform($property, $value) {
+  -webkit-transform: #{$property}unquote("(#{$value})");
+  -moz-transform: #{$property}unquote("(#{$value})");
+  -ms-transform: #{$property}unquote("(#{$value})");
+  transform: #{$property}unquote("(#{$value})");
+}

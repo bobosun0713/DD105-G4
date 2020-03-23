@@ -19,8 +19,8 @@ let xhr = new XMLHttpRequest();
             alert(xhr.status);
     }
   }
-  let url = "../php/spot_vote.php";
-  
+  //要以html/php位置為主
+  let url = "./php/spot_vote.php";
   xhr.open("post", url, true);
   xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
   let data_info = "spot_no=" + document.getElementById("voteSpotNo").value;
@@ -28,6 +28,43 @@ let xhr = new XMLHttpRequest();
   xhr.send(data_info);
 }
 //投票給該景點結束
+
+
+//留言給該景點
+function sendSpotMsg(){
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onload = function(){
+        if(xhr.status == 200){
+            alert(xhr.responseText);
+            console.log(data_info)
+        }else{
+            alert(xhr.status);
+        }
+    }
+    
+    let url = "./php/spot_write_msg.php";
+    xhr.open("post", url, true);
+    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    let data_info = "spot_no=" + document.getElementById("SpotMsgNo").value+ "&spot_msg_content=" + document.getElementById("spotMsg").value ;
+    // console.log(document.getElementById("SpotMsgNo").value, document.getElementById("spotMsg").value)
+    xhr.send(data_info);
+    
+}
+
+// function showSpotMsg(jsonStr){
+//     let spot_msg = JSON.parse(jsonStr);
+//     let spotNO = document.getElementById('SpotMsgNo').value;
+//     let html;
+    
+//     foreach( ){
+//         html = ``
+//     }
+
+//     document.querySelector('.msgZone').innerHTML = html;
+
+// }
 
 
 
@@ -57,4 +94,5 @@ window.addEventListener('load', function(){
     // 投票改該景點功能
     console.log($id("voteThisSpot").value);
     $id("voteThisSpot").addEventListener('click', voteThisSpot, false);
+    $id("sendSpotMsg").addEventListener('click', sendSpotMsg, false);
 },false);

@@ -3,12 +3,8 @@ $(document).ready(function () {
  
     $(window).on("mousemove", function (e) {
         // console.log(window.scrollWidth);
-<<<<<<< HEAD
-
-=======
         // console.log(document.documentElement.clientWidth );
         // console.log(window.screen.width);
->>>>>>> 5f9098baa94e775ee45f546dec7112bd31c418a8
         // console.log(window.offsetWidth );
     
        var objectWidth= $("#ghostIslandWrapper").width();

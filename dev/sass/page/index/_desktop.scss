@@ -14,10 +14,13 @@
   // border: 1px solid green;
   width: 100%;
   position: relative;
-  padding-top: 150px;
+  padding: 150px 0px 150px 0px;
+  margin-bottom: 100px;
 
   .parallaxContainer {
     // border: 1px solid green;
+    position: relative;
+    right: 30px;
     width: 800px;
     margin: 50px auto;
     background-attachment: fixed;
@@ -25,6 +28,64 @@
     #scene {
       li {
         filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.4));
+      }
+
+      //文字淡入淡出
+      .text-anim {
+        position: relative;
+        right: 20%;
+        top:50px;
+        width: 300px;
+        color: #ffffff;
+        font-size: 28px;
+        text-align: center;
+        font-weight: 600;
+        opacity: 0.7;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          // border: 1px solid red;
+          font-family: "Noto Serif TC", serif;
+          opacity: 0;
+          @include anim-transition(opacity, 1000ms);
+          @include anim-filter(blur, 25px);
+          @include anim-transform(translateZ, 0);
+
+          &:nth-child(9) {
+            position: relative;
+            left: 10px;
+            font-size: 70px;
+            text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 20px, rgba(255, 255, 255, 0.5) 0px 0px 10px;
+          }
+          &:nth-child(10) {
+            position: relative;
+            left: 0px;
+            top: -20px;
+            font-size: 70px;
+            text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 20px, rgba(255, 255, 255, 0.5) 0px 0px 10px;
+          }
+        }
+
+        $letters: 10; //Define number of letters in animation - including spaces
+        $timing: 100ms; //Delay between letters
+
+        //Sets timing differntly for each letter
+        @while $letters > 0 {
+          span:nth-child(#{$letters}) {
+            -webkit-transition-delay: $timing * $letters;
+            -moz-transition-delay: $timing * $letters;
+            -ms-transition-delay: $timing * $letters;
+            transition-delay: $timing * $letters;
+          }
+          $letters: $letters - 1;
+        }
+      }
+
+      //Class added that animates
+      .text-anim.animate span {
+        opacity: 1;
+        @include anim-filter(blur, 0px);
       }
 
       .G8 {
@@ -91,8 +152,8 @@
   .route1 {
     width: 220px;
     position: absolute;
-    right: 450px;
-    bottom: -350px;
+    right: 35%;
+    bottom: -50%;
 
     img {
       width: 100%;
@@ -168,6 +229,7 @@
 
       .spellSize {
         width: 80px;
+        z-index: 5;
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s linear;
@@ -659,7 +721,7 @@
             }
           }
           .tab_display {
-            color:  rgb(29, 15, 8);
+            color: rgb(29, 15, 8);
             background: white;
             &:hover {
               background-color: white;
@@ -673,11 +735,11 @@
             }
             &:before {
               content: ">";
-              color:white;
+              color: white;
               margin-right: 10px;
               line-height: 15px;
               display: inline-block;
-              border: 1px solid  rgb(29, 15, 8);
+              border: 1px solid rgb(29, 15, 8);
               width: 15px;
               height: 15px;
               border-radius: 50%;

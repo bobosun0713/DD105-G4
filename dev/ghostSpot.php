@@ -49,7 +49,7 @@ try{
     $sql = "
     select msg.spot_no, mem.mem_name, mem.mem_img, msg.spot_msg_datetime msg_time, msg.spot_msg_content
     from spot_msg msg join spot s on (msg.spot_no = s.spot_no) 
-                      join member mem on (msg.mem_no = mem.mem_no) 
+                      left join member mem on (msg.mem_no = mem.mem_no) 
     where msg.spot_no =:spot_no
     order by msg_time desc 
     ";
@@ -123,7 +123,7 @@ if( $errMsg != ""){ //例外
         <!-- 跳出留言視窗 PHP 有改 -->
         <div class="spotWroteMsgBG">
             <div class="spotWroteMsgContent">
-                <h2>【<?php echo $spotRow->spot_name; ?>】</h2>
+                <h2>【<?php echo $spotRow->spot_name;?>】</h2>
                 <div class="writeMsgZone">
                     <div class="personalMsg">
                         <div class="headIcon">
@@ -133,11 +133,13 @@ if( $errMsg != ""){ //例外
                             <p>黃冠禎</p>
                         </div>
                     </div>
-                    <form action="">
-                        <textarea name="" id="spotMsg" cols="30" rows="10"  placeholder="詳細說明你的靈異體驗...."></textarea>
+                    <form method="post">
+                        <input type="hidden" name="spot_no" id="SpotMsgNo" value="<?php echo $spotRow->spot_no;?>">
+                        <input type="hidden" name="mem_no" value="3">
+                        <textarea name="spot_msg_content" id="spotMsg" cols="30" rows="10"  placeholder="詳細說明你的靈異體驗...."></textarea>
                         <div class="btnWrap">
                             <input type="reset" value="取消" id="cancelMsgBtn" class="btn-outline cancelMsg">
-                            <input type="submit" value="發佈" class="btn-outline sendMsg">
+                            <input type="submit" value="發佈" id="sendSpotMsg" class="btn-outline sendMsg">
                         </div>
                     </form>
                 </div>

@@ -4,7 +4,7 @@
 try{
   require_once("./connect.php");
 
-  $sql = "update spot set spot_vote_count=spot_vote_count+1 where spot_no=:spot_no";
+  $sql = "update spot set spot_vote_count = spot_vote_count+1 where spot_no=:spot_no";
   $spot = $pdo->prepare($sql);
   $spot->bindValue(":spot_no", $_POST["spot_no"]);
   $spot->execute();
