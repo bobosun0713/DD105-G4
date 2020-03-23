@@ -5,13 +5,15 @@ try{
 
   //還沒加會員的情況
   $sql = "
-  insert into spot_msg(spot_no, spot_msg_content, spot_msg_datetime)
-  value (:spot_no, ':spot_msg_content', now()) 
+  insert into spot_msg(spot_no, mem_no, spot_msg_content)
+  value (:spot_no, :mem_no, :spot_msg_content) 
   ";
-  $spotMsg = $pdo->prepare($sql);
-  $spotMsg->bindValue(":spot_no", $_POST["spot_no"]);
-  $spotMsg->bindValue(":spot_msg_content", $_POST["spot_msg_content"]);
-  $spotMsg->execute();
+  $spot_msg = $pdo->prepare($sql);
+  $spot_msg->bindValue(":spot_no", $_POST["spot_no"]);
+  $spot_msg->bindValue(":mem_no", $_POST["mem_no"]);
+  $spot_msg->bindValue(":spot_msg_content", $_POST["spot_msg_content"]);
+  $spot_msg->execute();
+
 
   echo "你已成功留言";
 
@@ -21,4 +23,6 @@ try{
   $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
   $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
 }
+
+
 ?>

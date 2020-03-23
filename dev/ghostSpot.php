@@ -123,7 +123,7 @@ if( $errMsg != ""){ //例外
         <!-- 跳出留言視窗 PHP 有改 -->
         <div class="spotWroteMsgBG">
             <div class="spotWroteMsgContent">
-                <h2>【<?php echo $spotRow->spot_name;?>】</h2>
+                <h2>【<?php echo $spotRow->spot_name;?></h2>
                 <div class="writeMsgZone">
                     <div class="personalMsg">
                         <div class="headIcon">
@@ -133,9 +133,9 @@ if( $errMsg != ""){ //例外
                             <p>黃冠禎</p>
                         </div>
                     </div>
-                    <form method="post">
+                    <form method="post" >
                         <input type="hidden" name="spot_no" id="SpotMsgNo" value="<?php echo $spotRow->spot_no;?>">
-                        <input type="hidden" name="mem_no" value="3">
+                        <input type="hidden" name="mem_no" id="SpotMsgMemNo" value="3">
                         <textarea name="spot_msg_content" id="spotMsg" cols="30" rows="10"  placeholder="詳細說明你的靈異體驗...."></textarea>
                         <div class="btnWrap">
                             <input type="reset" value="取消" id="cancelMsgBtn" class="btn-outline cancelMsg">

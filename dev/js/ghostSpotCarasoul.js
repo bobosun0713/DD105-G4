@@ -46,25 +46,12 @@ function sendSpotMsg(){
     
     let url = "./php/spot_write_msg.php";
     xhr.open("post", url, true);
+    
     xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-    let data_info = "spot_no=" + document.getElementById("SpotMsgNo").value+ "&spot_msg_content=" + document.getElementById("spotMsg").value ;
+    let data_info = "spot_no=" + document.getElementById("SpotMsgNo").value+ "&spot_msg_content=" + document.getElementById("spotMsg").value+ "&mem_no=" + document.getElementById("SpotMsgMemNo").value;
     // console.log(document.getElementById("SpotMsgNo").value, document.getElementById("spotMsg").value)
     xhr.send(data_info);
-    
 }
-
-// function showSpotMsg(jsonStr){
-//     let spot_msg = JSON.parse(jsonStr);
-//     let spotNO = document.getElementById('SpotMsgNo').value;
-//     let html;
-    
-//     foreach( ){
-//         html = ``
-//     }
-
-//     document.querySelector('.msgZone').innerHTML = html;
-
-// }
 
 
 
