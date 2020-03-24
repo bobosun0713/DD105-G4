@@ -6,14 +6,14 @@ try {
 	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
 
 	$pdo = new PDO($dsn, $user, $password, $options);
-	$sqltop1 = "select * from leaderboard Order By spot_no,spot_name  desc limit 1";//1名
-	$leaderboard1 = $pdo->query($sqltop1);//第1名下面就用$leaderboard1套用
+	$sql =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 1";//第1名
+	$sopt1 = $pdo->query($sql);
 
-	$sqltop2 = "select * from leaderboard Order By spot_no,spot_name  desc limit 1,1";//2名
-	$leaderboard2 = $pdo->query($sqltop2);//第2名下面就用$leaderboard2套用
+	$sql2 =  "select * from dd105g4.spot  Order By  spot_vote_count desc limit 1,1";//第2名
+	$sopt2 = $pdo->query($sql2);//第2名下面就用$sopt2套用
 
-	$sqltop3 = "select * from leaderboard Order By spot_no,spot_name  desc limit 2,1";//3名
-	$leaderboard3 = $pdo->query($sqltop3);//第3名下面就用$leaderboard3套用
+	$sql3 =  "select * from dd105g4.spot  Order By  spot_vote_count desc limit 2,1";//第2名
+	$sopt3 = $pdo->query($sql3);//第2名下面就用$sopt2套用
 
 } catch (PDOException $e) {
 	echo "錯誤行號 : " . $e->getLine() . "<br>";
@@ -21,6 +21,7 @@ try {
 	// echo "系統暫時連不上請聯絡維護人員";
 }
 ?> 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,48 +51,51 @@ try {
                     TOP 10
                 </h1>
             </div>
-            <!-- 排行TOP前三名 -->
-            <div class="Haunted-house">
-                <img class="Haunted-house-i" src="./img/leaderboard/xinzhuang-hosp.jpg" alt="" />
-                <?php 
-while( $prodRow = $leaderboard1->fetchObject()){?>
-            <!-- 排行TOP第一名 -->
-               <div class="Strip-background">
-					<h2 class="Haunted-house-t">01</h2>
-					<a class="Haunted-house-p" href="#"> <?=$prodRow->spot_name?><?=$prodRow->spot_vote?>票</a> 
-                </div>
-			<?php
-}
-?>
-            </div>
-            <div class="Haunted-house">
-                <img class="Haunted-house-i" src="./img/leaderboard/theme-park.jpg" alt="" />   
+  <!-- 排行TOP前三名 -->
+  <div class="Haunted-house">
 <?php 
-while( $prodRow = $leaderboard2->fetchObject()){
+while( $prodRow = $sopt1->fetchObject()){
 ?>
-            <!-- 排行TOP第2名 -->
-               <div class="Strip-background">
-					<h2 class="Haunted-house-t">02</h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote?>票</a> 
-                </div>
+			<!-- 排行TOP第1名 -->
+			<img class="Haunted-house-i" src="./img/leaderboard/xinzhuang-hosp.jpg" alt="" />
+                <div class="Strip-background">
+					<h2 class="Haunted-house-t"><?="01"?></h2>
+					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+				</div>
 			<?php
 }
 ?>
-            </div>
-            <div class="Haunted-house">
-                <img class="Haunted-house-i" src="./img/leaderboard/hosp.jpg" alt="" />
-                <?php 
-while( $prodRow = $leaderboard3->fetchObject()){
+</div>
+<div class="Haunted-house">
+<?php 
+while( $prodRow = $sopt2->fetchObject()){
 ?>
-            <!-- 排行TOP第3名 -->
-               <div class="Strip-background">
-					<h2 class="Haunted-house-t">03</h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote?>票</a> 
-                </div>
+			<!-- 排行TOP第2名 -->
+			<img class="Haunted-house-i" src="./img/leaderboard/theme-park.jpg" alt="" />
+			<div class="Strip-background">
+					<h2 class="Haunted-house-t"><?="02"?></h2>
+					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+			</div>
 			<?php
 }
 ?>
-            </div>
+</div>
+<div class="Haunted-house">
+<?php 
+while( $prodRow = $sopt3->fetchObject()){
+?>
+			<!-- 排行TOP第3名 -->
+			<img class="Haunted-house-i" src="./img/leaderboard/hosp.jpg" alt="" />
+                <div class="Strip-background">
+					<h2 class="Haunted-house-t"><?="03"?></h2>
+					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+				</div>
+			<?php
+}
+?>
+	</div>
+
+
             <!--   來抓交替囉 -->
 
             <div id="alternately">
