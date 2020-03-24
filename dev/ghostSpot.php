@@ -17,7 +17,7 @@ try{
     $sql = "
     select tr.tour_title, tr.tour_image, m.mem_name, m.mem_img, date(tr.tour_datetime) AS datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
     from tour tr join spot s on (tr.spot_no = s.spot_no) 
-                join member m on (tr.mem_no = m.mem_no) 
+                left join member m on (tr.mem_no = m.mem_no) 
                 left join food f on (tr.food_no = f.food_no) 
                 left join temple tm on (tr.temple_no = tm.temple_no)
     where tr.spot_no =:spot_no
@@ -30,7 +30,7 @@ try{
 
     //抓該景點推薦行程
     $sql = "
-    select tr.spot_budget, tr.spot_tool, tr.food_budget, tr.food_tool, tr.temple_budget, tr.temple_tool, tr.tour_order,
+    select tr.spot_budget, tr.spot_tool, tr.food_budget, tr.food_tool, tr.temple_budget, tr.temple_tool,
             s.spot_name, s.spot_content, s.spot_address, s.spot_image_card,
             f.food_name, f.food_location, f.food_content, f.food_img,
             tm.temple_name, tm.temple_location, tm.temple_content, tm.temple_img
@@ -62,6 +62,7 @@ try{
 }catch(PDOException $e){
     $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
     $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+    echo $errMsg;
 }
 ?>
 

@@ -1,7 +1,7 @@
 .createAdventure {
   padding-top: 15%;
   // background-color: aquamarine;
-  background-image: url("../../../img/spot/BG/spotBG.png");
+  background-image: url("../img/spot/BG/spotBG.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -203,6 +203,10 @@
               .detailstext {
                 font-size: 1rem;
                 color: rgba(255, 255, 255, 0.7);
+
+                hr{
+                  opacity: .5;
+                }
               }
             }
             .selectionsframe {
@@ -285,7 +289,7 @@
           .selected_spot {
             height: 82%;
             padding: 15px;
-            border: 3px solid red;
+            // border: 3px solid red;
             overflow-y: scroll;
             div {
               span{
@@ -825,7 +829,7 @@
               .spiderweb {
                 width: 400px;
                 position: absolute;
-                top: 150px;
+                top: 60px;
                 right: -150px;
 
                 img {
@@ -1083,8 +1087,8 @@
                     border-radius: 50%;
                     border: 1px solid #8c8a8a;
                     position: absolute;
-                    top: -18.5px;
-                    right: -4px;
+                    top: -17.7px;
+                    right: -3.6px;
                   }
 
                   .line {
