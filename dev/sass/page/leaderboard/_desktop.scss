@@ -1,5 +1,5 @@
 #leaderboard{
-  background-image: url(../img/leaderboard/Background-image.png);
+  // background-image: url(../img/leaderboard/Background-image.png);
   width: 1200px;
   width: 100%;
   background-repeat: no-repeat;
@@ -8,7 +8,8 @@
   font-weight: bold;
   overflow-x : hidden;  
   overflow-y : auto; 
-  a{
+  
+ a{
     color: rgb(199, 198, 196);
     text-decoration: none;
   }        
@@ -72,10 +73,10 @@ a:active {
   margin-bottom: 100px;
   margin-top: 120px;
   height: 400px;
-
         // 景點圖片 
         .Haunted-house-i{
-          width: 21.5%;
+          width:400px;
+          // width: 21.5%;
           border-radius: 100%;
           display: flex;
           justify-content: flex-start ;
@@ -293,10 +294,11 @@ width: 100%;
   width: 990px;
   width: 100%;
   max-height:350px;
+  margin-left: 100px;
         // 景點圖片 
         .Haunted-house-i{
           width:350px;
-          margin-left: 50px;          
+         
          }
          .Haunted-house-i:hover{//滑鼠滑過去圖片放大
           width: 400px;
@@ -323,15 +325,16 @@ width: 100%;
 }
 // 來抓交替囉 
 #alternately{
-  width: 250px;
-  margin-top: -645px;
+  width: 230px;
+  margin-top: -700px;
         .alternately-p{
-          width: 250px;
+          width: 230px;
           max-height:30px;
+          font-size: 1.3rem;
           }
         .alternately-i{
-          width: 250px;
-          max-height: 250px;
+          width: 230px;
+          max-height: 230px;
           }
 }
 

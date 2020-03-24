@@ -10,7 +10,7 @@
         <table class="table table-responsive-sm table-sm">
           <thead>
             <tr>
-              <th>測驗題目編號</th>
+              <th>編號</th>
               <th>題目圖片</th>
               <th>選項一</th>
               <th>選項二</th>
@@ -18,7 +18,6 @@
               <th>選項一分數</th>
               <th>選項二分數</th>
               <th>選項三分數</th>
-              <th>上下架狀態</th>
               <th>修改答案</th>
               <th>刪除題目</th>
             </tr>
@@ -27,16 +26,17 @@
             <tr>
               <td>1</td>
               <td>
-                <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlFile1">請上傳題目圖片一張</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                  </div>
-                </form>
+                <div><img src=""></div>
               </td>
-              <td>看得我神經衰弱，不喜歡</td>
-              <td>超級喜歡</td>
-              <td>一個人肯定不能承受的啦,需要個人一起看</td>
+              <td>
+                <input type="text" name="quiz_option" class="form-control" placeholder="">
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="">
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="">
+              </td>
               <td>
                 <select class="custom-select custom-select-sm">
                   <option selected>點選輸入分數</option>
@@ -61,20 +61,12 @@
                   <option value="3">1.5</option>
                 </select>
               </td>
+
               <td>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1"></label>
-                </div>
+                <button type="button" class="btn btn-danger">刪除</button>
               </td>
               <td>
-              <td><button class="btn btn-primary active questionModifyStart" type="button">修改</button>
-                <button class="btn btn-outline-success active questionModifyConfirm d-none" type="button"
-                  aria-pressed="true" data-toggle="modal" data-whatever="@modify" data-target="#alertModal">確認</button>
-              </td>
-              </td>
-              <td>
-                <button type="button" class="btn btn-danger">刪除題目</button>
+                <button type="button" class="btn btn-dark">儲存</button>
               </td>
             </tr>
 
@@ -92,7 +84,7 @@
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <form action="" method="post" enctype="multipart/form-data" id="questionAddForm">
+      <form action="insert_game_quiz.php" method="post" enctype="multipart/form-data" id="questionAddForm">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">新增題庫資料</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -101,61 +93,58 @@
         </div>
         <div class="modal-body">
           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="question">影片題目</label>
-              <input type="text" class="form-control" required placeholder="喜歡看鬼片嗎?" id="question" name="question">
+            <div class="form-group col-md-12">
+              <label for="question">測驗題目</label>
+              <input type="text" name="quiz_question" class="form-control" required placeholder="喜歡看哪種鬼片?" id="question"
+                name="question">
             </div>
 
-            <div>
-              <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Example file input</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-              </form>
-            </div>
+
             <div class="form-group col-md-6">
               <label for="opt_1">題目選項一<span class="ml-3 invalid-feedback"></span></label>
-              <input type="text" class="form-control" required id="opt_1" name="opt_1">
+              <input type="text" name="quiz_opt1" class="form-control" required id="opt_1">
             </div>
             <div class="form-group col-md-6">
               <label for="opt_2">題目選項二<span class="ml-3 invalid-feedback"></span></label>
-              <input type="text" class="form-control" required id="opt_2" name="opt_2">
+              <input type="text" name="quiz_opt2" class="form-control" required id="opt_2">
             </div>
             <div class="form-group col-md-6">
               <label for="opt_3">題目選項三<span class="ml-3 invalid-feedback"></span></label>
-              <input type="text" class="form-control" required id="opt_3" name="opt_3">
+              <input type="text" name="quiz_opt3" class="form-control" required id="opt_3">
             </div>
             <div class="form-group ml-auto mr-auto col-md-6 col-sm-8">
-              <label for="level_no">選項一分數</label>
-              <select class="form-control" id="level_no" name="level_no">
+              <label for="opt1-point">選項一分數</label>
+              <select class="form-control" name="quiz_opt1_point" id="opt1-point">
                 <option value="1">0</option>
                 <option value="2">1</option>
                 <option value="3">1.5</option>
               </select>
             </div>
             <div class="form-group ml-auto mr-auto col-md-6 col-sm-8">
-              <label for="level_no">選項二分數</label>
-              <select class="form-control" id="level_no" name="level_no">
+              <label for="opt2-point">選項二分數</label>
+              <select class="form-control" name="quiz_opt2_point" id="opt2-point">
                 <option value="1">0</option>
                 <option value="2">1</option>
                 <option value="3">1.5</option>
               </select>
             </div>
             <div class="form-group ml-auto mr-auto col-md-6 col-sm-8">
-              <label for="level_no">選項三分數</label>
-              <select class="form-control" id="level_no" name="level_no">
+              <label for="opt3-point">選項三分數</label>
+              <select class="form-control" name="quiz_opt3_point" id="opt3-point">
                 <option value="1">0</option>
                 <option value="2">1</option>
                 <option value="3">1.5</option>
               </select>
             </div>
-            <div class="form-group col-md-6">
-              <label for="answer">正確解答<span class="ml-3 invalid-feedback">沒有相對的選項</span></label>
-              <input type="text" class="form-control" required name="answer" id="answer">
+            <div>
+              <form>
+                <div class="form-group">
+                  <label for="quiz_img_File">上傳測驗圖片</label>
+                  <input type="file" name="quiz_img" class="form-control-file" id="quiz_img_File">
+                </div>
+              </form>
             </div>
           </div>
-          <input type="hidden" value="addQuestion" name="type">
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary addConfirm">確認</button>
