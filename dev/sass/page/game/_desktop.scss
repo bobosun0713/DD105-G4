@@ -655,12 +655,14 @@
           img{
             width:150px;
           }
-          p{
+          a{
             /* border:1px solid blue; */
             margin-top:5px;
+            text-decoration: none;
+            color:black;
           }
           .heading{
-            font-size: 22px;
+            font-size:18px;
             color:black;
             margin-bottom: 5px;
             margin: 0;

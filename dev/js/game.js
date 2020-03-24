@@ -17,7 +17,14 @@ function getWidth() {
 // create quiz
 var startbtn = document.getElementById('startbtn')
 startbtn.onclick = startGame
-document.querySelector('.recommendcardground').style.display = 'none'
+
+let recommendcardground=document.querySelectorAll('.recommendcardground')
+for(i=0;i<recommendcardground.length;i++){
+    recommendcardground[i].style.display = 'none'
+}
+
+
+
 document.querySelector('.test_score_title').style.display = 'none'
 document.querySelector('.cancel_ghost_group').style.display = 'none'
 //Mouseover /moustout 開始遊戲 /回到首頁 button
@@ -115,18 +122,33 @@ function btnClick(e) {
         document.querySelector('#gotoindex_btn').style.display = 'inline-block'
         document.querySelector('.grid').style.backgroundImage = "url('../img/game/quizreport_bg.png')"
         document.querySelector('.recommendtitle').innerHTML = '為您推薦';
-        document.querySelector('.recommendcardground').style.display = 'flex'
+        
+        
+        
         document.querySelector('#dolphin_block').style.display = 'block'
         document.querySelector('.test_score_title').style.display = 'inline-block'
         if (total < 5) {
+            let below5=document.querySelectorAll(".below5")
+            for(i=0;i<below5.length;i++){
+                below5[i].style.display = 'flex'
+            }
             document.querySelector('#resulttitle').innerHTML = types[0].resulttitle
             document.querySelector('#resultinnertext').innerHTML = types[0].resultinnertext
         } else if (total < 8) {
             document.querySelector('#resulttitle').innerHTML = types[1].resulttitle
             document.querySelector('#resultinnertext').innerHTML = types[1].resultinnertext
+            let below8=document.querySelectorAll(".below8")
+            for(i=0;i<below8.length;i++){
+                below8[i].style.display = 'flex'
+            }
+            
         } else {
             document.querySelector('#resulttitle').innerHTML = types[2].resulttitle
             document.querySelector('#resultinnertext').innerHTML = types[2].resultinnertext
+            let above8=document.querySelectorAll(".above8")
+            for(i=0;i<above8.length;i++){
+                above8[i].style.display = 'flex'
+            }
         }
     }
     document.getElementsByClassName('innerimg')[0].src = questions[currentquestionIndex].quizimg
