@@ -1,8 +1,9 @@
 .indexfog {
-  // background-image: url('../../img/spot/BG/spotBG.png');
   background-size: cover;
-  // background-position: center;
+  pointer-events: none;
+  
   position: fixed;
+  top: 0px;
   background-repeat: no-repeat;
 
   z-index: 0 !important;
