@@ -30,7 +30,7 @@ try{
 
     //抓該景點推薦行程
     $sql = "
-    select tr.spot_budget, tr.spot_tool, tr.food_budget, tr.food_tool, tr.temple_budget, tr.temple_tool,
+    select  tr.spot_budget, tr.spot_tool, tr.food_budget, tr.food_tool, tr.temple_budget, tr.temple_tool,
             s.spot_name, s.spot_content, s.spot_address, s.spot_image_card,
             f.food_name, f.food_location, f.food_content, f.food_img,
             tm.temple_name, tm.temple_location, tm.temple_content, tm.temple_img
@@ -769,7 +769,7 @@ if( $errMsg != ""){ //例外
                                     </div>
 
                                     <div class="newMyTour btn-outline">
-                                        <a href="./createAdventure.html">
+                                        <a href="./createAdventure.php?spot_no=<?=$spot_no?>">
                                             建立客製化揪團
                                         </a>
                                     </div>
@@ -840,149 +840,6 @@ if( $errMsg != ""){ //例外
                                     </div>
                                 <?php } ?>
 
-                                <!-- <div class="spotMsg">
-
-                                    <div class="msgWrap">
-                                        <div class="headIcon">
-                                            <img src="./img/icon/default_header.svg">
-                                        </div>
-
-                                        <div class="txtZone">
-
-                                            <div class="msgInfo">
-                                                <p class="name">富江我老婆</p>
-                                                <p class="date">2020-02-12 18:19 發表</p>
-                                            </div>
-
-                                            <div class="msgContent">
-                                                <p>
-                                                    這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                    這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                                </p>
-                                            </div>
-
-                                            <div class="reportZone">
-                                                <img src="./img/icon/report_red.svg">
-                                                <p>檢舉留言</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="ghostFace">
-                                        <img src="./img/spot/msgGhostFace.png">
-                                    </div>
-
-
-                                </div>
-
-                                <div class="spotMsg">
-
-                                    <div class="msgWrap">
-                                        <div class="headIcon">
-                                            <img src="./img/icon/default_header.svg">
-                                        </div>
-
-                                        <div class="txtZone">
-
-                                            <div class="msgInfo">
-                                                <p class="name">富江我老婆</p>
-                                                <p class="date">2020-02-12 18:19 發表</p>
-                                            </div>
-
-                                            <div class="msgContent">
-                                                <p>
-                                                    這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                    這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                                </p>
-                                            </div>
-
-                                            <div class="reportZone">
-                                                <img src="./img/icon/report_red.svg">
-                                                <p>檢舉留言</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="ghostFace">
-                                        <img src="./img/spot/msgGhostFace.png">
-                                    </div>
-
-
-                                </div>
-
-                                <div class="spotMsg">
-
-                                    <div class="msgWrap">
-                                        <div class="headIcon">
-                                            <img src="./img/icon/default_header.svg">
-                                        </div>
-
-                                        <div class="txtZone">
-
-                                            <div class="msgInfo">
-                                                <p class="name">富江我老婆</p>
-                                                <p class="date">2020-02-12 18:19 發表</p>
-                                            </div>
-
-                                            <div class="msgContent">
-                                                <p>
-                                                    這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                    這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                                </p>
-                                            </div>
-
-                                            <div class="reportZone">
-                                                <img src="./img/icon/report_red.svg">
-                                                <p>檢舉留言</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="ghostFace">
-                                        <img src="./img/spot/msgGhostFace.png">
-                                    </div>
-
-
-                                </div>
-
-                                <div class="spotMsg">
-
-                                    <div class="msgWrap">
-                                        <div class="headIcon">
-                                            <img src="./img/icon/default_header.svg">
-                                        </div>
-
-                                        <div class="txtZone">
-
-                                            <div class="msgInfo">
-                                                <p class="name">富江我老婆</p>
-                                                <p class="date">2020-02-12 18:19 發表</p>
-                                            </div>
-
-                                            <div class="msgContent">
-                                                <p>
-                                                    這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                    這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                                </p>
-                                            </div>
-
-                                            <div class="reportZone">
-                                                <img src="./img/icon/report_red.svg">
-                                                <p>檢舉留言</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="ghostFace">
-                                        <img src="./img/spot/msgGhostFace.png">
-                                    </div>
-
-
-                                </div> -->
 
                             </div>   
                         </div>

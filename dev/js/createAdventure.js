@@ -37,10 +37,10 @@ window.addEventListener("load", function () {
   let spotlightbox = document.querySelector(".spotlightbox");
 
   //把主要景點 DOM 起來 讓他跑上下移動function
-  let majorspot_btn = document.querySelectorAll(".selected_spot .majorspot");
+  // let majorspot_btn = document.querySelectorAll(".selected_spot .majorspot");
   // console.log(majorspot_btn[0].lastElementChild.firstElementChild)
-  majorspot_btn[0].lastElementChild.firstElementChild.onclick = shift_up_spot;
-  majorspot_btn[0].lastElementChild.lastElementChild.onclick = shift_down_spot;
+  // majorspot_btn[0].lastElementChild.firstElementChild.onclick = shift_up_spot;
+  // majorspot_btn[0].lastElementChild.lastElementChild.onclick = shift_down_spot;
   for (let m = 0; m < addbtn.length; m++) {
     addbtn[m].onclick = function (n) {
       var additinerarybtn = document.querySelector(".additinerarybtn");
@@ -95,20 +95,20 @@ window.addEventListener("load", function () {
     //上下移動按鈕
 
     //向上移動按鈕
-    let shift_up_btn = document.createElement("button");
-    shift_up_btn.innerText = "上移鈕";
-    shift_up_btn.classList.add("shift_up_btn");
-    shift_up_btn.addEventListener('click', shift_up_spot);
+    // let shift_up_btn = document.createElement("button");
+    // shift_up_btn.innerText = "上移鈕";
+    // shift_up_btn.classList.add("shift_up_btn");
+    // shift_up_btn.addEventListener('click', shift_up_spot);
     //向下移動按鈕
-    let shift_down_btn = document.createElement("button");
-    shift_down_btn.innerText = "下移鈕";
-    shift_down_btn.classList.add("shift_down_btn");
-    shift_down_btn.addEventListener('click', shift_down_spot);
+    // let shift_down_btn = document.createElement("button");
+    // shift_down_btn.innerText = "下移鈕";
+    // shift_down_btn.classList.add("shift_down_btn");
+    // shift_down_btn.addEventListener('click', shift_down_spot);
 
-    let shiftbtns = document.createElement("div");
-    shiftbtns.classList.add("shiftbtns");
-    shiftbtns.appendChild(shift_up_btn);
-    shiftbtns.appendChild(shift_down_btn);
+    // let shiftbtns = document.createElement("div");
+    // shiftbtns.classList.add("shiftbtns");
+    // shiftbtns.appendChild(shift_up_btn);
+    // shiftbtns.appendChild(shift_down_btn);
 
 
     //刪除按鈕
@@ -125,7 +125,7 @@ window.addEventListener("load", function () {
 
     // console.log()
     //hide panel 上下移btn
-    hideshift_btn()
+    // hideshift_btn()
 
     // 燈箱關掉
     let spotlightbox = document.querySelector(".spotlightbox");
@@ -140,7 +140,7 @@ window.addEventListener("load", function () {
     if (templecls.length > 1) {
 
       let get_templecls_id = templecls[0].querySelectorAll("input")[0].id;
-      console.log(get_templecls_id, "hi there")
+      // console.log(get_templecls_id, "hi there")
       //如果廟宇選超過一個 就把之前已新增的廟宇刪掉
       let spot_inner = document.querySelectorAll(".spotoptions .content input");
       for (let i = 0; i < spot_inner.length; i++) {
@@ -154,7 +154,7 @@ window.addEventListener("load", function () {
     if (foodcls.length > 1) {
 
       let get_foodcls_id = foodcls[0].querySelectorAll("input")[0].id;
-      console.log(get_foodcls_id, "hi there")
+      // console.log(get_foodcls_id, "hi there")
       //如果美食選超過一個 就把之前已新增的美食刪掉
       let spot_inner = document.querySelectorAll(".spotoptions .content input");
       for (let i = 0; i < spot_inner.length; i++) {
@@ -189,6 +189,8 @@ window.addEventListener("load", function () {
     creatTourInfo();
 
   }
+
+  /*
   function shift_up_spot() {
     let panelparentNode = this.parentNode.parentNode.parentNode;
     //  console.log(panelparentNode,"上移")
@@ -240,6 +242,7 @@ window.addEventListener("load", function () {
     }
 
   }
+  */
 
 
   //步驟一二三四的tab切換
