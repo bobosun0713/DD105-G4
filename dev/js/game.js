@@ -1,3 +1,19 @@
+//自動取得螢幕寬度
+getWidth();
+
+function getWidth() {
+    var screenwidth = document.body.clientWidth;
+    console.log(screenwidth, "寬")
+    if (screenwidth < 1199) {
+        document.querySelector('.cancel_ghost_group').style.display = 'none'
+
+    } else {
+        document.querySelector('.cancel_ghost_group').style.display = 'block'
+    }
+}
+
+
+
 // create quiz
 var startbtn = document.getElementById('startbtn')
 startbtn.onclick = startGame
@@ -30,7 +46,8 @@ function mouseoutGhost2() {
 let shufflequestion, currentquestionIndex
 function startGame() {
     //放cancel鬼
-    document.querySelector('.cancel_ghost_group').style.display = 'block'
+    getWidth();
+
     document.getElementById('startbtn').parentNode.style.display = 'none'
     document.getElementById('gotoindex').parentNode.style.display = 'none'
     document.querySelector('.progressblock').style.display = 'block'
