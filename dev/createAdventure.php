@@ -415,10 +415,10 @@ try{
                     <div class="detailstext"></div>
                   </div>
                   <!-- <button class="delete_btn"></button> -->
-                  <!-- <div class="shiftbtns">
+                  <div class="shiftbtns">
                     <button class="shift_up_btn" style="display:none;" type="button">上移鈕</button>
                     <button class="shift_down_btn" style="display:none;" type="button">下移鈕</button>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </div>

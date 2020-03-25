@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header m-3">美食景點管理</div>
+
+        <!-- 功能內容 -->
+        <div class="card-body">
+        
+          <!-- 新增美食按鈕 -->
+          <button class="btn btn-warning mr-1 m-3" id="create_new_food" type="button">新增美食景點</button>
+
+          <!-- 美食景點清單、修改 -->
+          <table class="table table-responsive-sm table-sm">
+
+            <!-- 表頭 -->
+            <thead>
+              <tr class="food_row_number">
+                <th class="p-3">編號</th>
+                <th class="p-3">名稱</th>
+                <th class="p-3">地點</th>
+                <th class="p-3">簡介</th>
+                <th class="p-3">美食圖片</th>
+                <th class="p-3">狀態</th>
+                <th class="p-3">修改</th>
+                <th class="p-3">刪除</th>
+              </tr>
+            </thead>
+ 
+            <tbody>
+
+                <!-- 以下動態新增修改刪除區域 -->
+              <tr>
+                <td class="p-3">1</td>
+                <td class="p-3">
+                    <span class="food_info_txt" style="display: block;">99泰式燒烤火鍋</span>
+                    <input type="text" class="food_info_input" style="display: none;" value="99泰式燒烤火鍋">
+                </td>
+                <td class="p-3">
+                    <span class="food_info_txt" style="display: block;">新北市新莊區中正路810號</span>
+                    <input type="text" class="food_info_input" style="display: none;" value="新北市新莊區中正路810號">
+                </td>
+                <td class="p-3">
+                    <span class="food_info_txt" style="display: block;">道地的炭火燒烤，提供一種豬肉 一種牛肉與火鍋菜盤無限續，泰式奶茶，醬料無限供應，肉質鮮嫩醬料下飯，極度推薦</span>
+                    <textarea name="" class="food_info_input" style="display: none; resize:none;" value="道地的炭火燒烤，提供一種豬肉 一種牛肉與火鍋菜盤無限續，泰式奶茶，醬料無限供應，肉質鮮嫩醬料下飯，極度推薦" cols="30" rows="5">道地的炭火燒烤，提供一種豬肉 一種牛肉與火鍋菜盤無限續，泰式奶茶，醬料無限供應，肉質鮮嫩醬料下飯，極度推薦</textarea>
+                </td>
+                <td class="p-3">
+                    <img class="food_info_txt" src="./img/food/food1-1.jpg" alt="food-1">
+                    <input type="file" class="food_info_input" style="display: none;" value="修改圖片" accept="image/*">
+                </td>
+                <td class="p-3">
+                    <label class="switch switch-pill switch-success">
+                        <input type="checkbox" class="switch-input" id="change_food_status" checked>
+                        <span class="switch-slider"></span>
+                      </label>
+                </td>
+                <td class="p-3">
+                    <button type="button" class="btn btn-dark" id="manage_this_food">修改</button>
+                </td>
+                <td class="p-3">
+                    <button type="button" class="btn btn-danger" id="delete_this_food">刪除</button>
+                </td>
+              </tr>
+
+            </tbody>
+
+            <!-- 隱藏的表單 -->
+            <tfoot>
+                <form action="" method="post">
+                    <tr class="food_hidden_table">
+                        <input type="hidden" name="food_no" value="">
+                        <input type="hidden" name="food_name" value="">
+                        <input type="hidden" name="food_location" value="">
+                        <input type="hidden" name="food_content" value="">
+                        <input type="hidden" name="food_img" value="">
+                        <input type="hidden" name="food_status" value="">
+                        <input type="submit" style="display: none;">
+                    </tr>
+                </form>
+            </tfoot>
+          </table>
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>
