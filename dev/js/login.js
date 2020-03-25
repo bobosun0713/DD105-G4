@@ -26,7 +26,7 @@ function showLoginForm() {
                 alert(xhr.status)
             }
         }
-        xhr.open("get", "../php/Logout.php", true)
+        xhr.open("get", "./php/Logout.php", true)
         xhr.send(null)
     }
 }
@@ -80,7 +80,7 @@ function sendForm() {
         }
     }
 
-    xhr.open("Post", "../php/Login.php", true)
+    xhr.open("Post", "./php/Login.php", true)
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
     xhr.send(data_info)
 }
@@ -106,7 +106,7 @@ function getLoginInfo() {
             $id("login_btn1").innerText = "登出"
         }
     }
-    xhr.open("get", "../php/Logininfo.php", true)
+    xhr.open("get", "./php/Logininfo.php", true)
     xhr.send(null)
 } //
 
