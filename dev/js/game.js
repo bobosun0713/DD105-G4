@@ -3,7 +3,7 @@ getWidth();
 
 function getWidth() {
     var screenwidth = document.body.clientWidth;
-    console.log(screenwidth, "寬")
+    // console.log(screenwidth, "寬")
     if (screenwidth < 1199) {
         document.querySelector('.cancel_ghost_group').style.display = 'none'
 
@@ -22,8 +22,6 @@ let recommendcardground=document.querySelectorAll('.recommendcardground')
 for(i=0;i<recommendcardground.length;i++){
     recommendcardground[i].style.display = 'none'
 }
-
-
 
 document.querySelector('.test_score_title').style.display = 'none'
 document.querySelector('.cancel_ghost_group').style.display = 'none'
@@ -63,7 +61,7 @@ function startGame() {
 
 
     currentquestionIndex = 0
-    var randomNum = Math.floor(Math.random() * questions.length)
+    var randomNum = Math.floor(Math.random() * quiz_RowsCount)
     // var newQuestionArray=[];
     // for(let a=0;a<questions.length+1;a++){
     //     newQuestionArray.push(questions.splice(randomNum,1));
@@ -82,14 +80,14 @@ function setnextquestion() {
     document.querySelector('#logoimg').style.display = 'none'
     document.querySelector('.buttons').style.display = 'block'
     document.querySelector('#progress').style.display = 'block'
-    document.getElementsByClassName('innerimg')[0].src = questions[currentquestionIndex].quizimg
-    document.getElementById('question').innerHTML = questions[currentquestionIndex].title
-    document.querySelectorAll('.choice')[0].innerHTML = questions[currentquestionIndex].choice[0]
-    document.querySelectorAll('.choice')[1].innerHTML = questions[currentquestionIndex].choice[1]
-    document.querySelectorAll('.choice')[2].innerHTML = questions[currentquestionIndex].choice[2]
-    document.querySelectorAll('.choice')[0].value = questions[currentquestionIndex].point[0]
-    document.querySelectorAll('.choice')[1].value = questions[currentquestionIndex].point[1]
-    document.querySelectorAll('.choice')[2].value = questions[currentquestionIndex].point[2]
+    document.getElementsByClassName('innerimg')[0].src = quiz_img[currentquestionIndex].innerHTML
+    document.getElementById('question').innerHTML = quiz_question[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[0].innerHTML = quiz_opt1[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[1].innerHTML = quiz_opt2[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[2].innerHTML = quiz_opt3[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[0].value =parseFloat(quiz_opt1_point[currentquestionIndex].innerHTML)
+    document.querySelectorAll('.choice')[1].value =parseFloat(quiz_opt2_point[currentquestionIndex].innerHTML)
+    document.querySelectorAll('.choice')[2].value =parseFloat(quiz_opt3_point[currentquestionIndex].innerHTML)
     // console.log('目前第幾題' + currentquestionIndex)
 }
 
@@ -105,7 +103,7 @@ function btnClick(e) {
     }
 
     currentquestionIndex++
-    if (currentquestionIndex == questions.length) {
+    if (currentquestionIndex == quiz_RowsCount) {
 
         for (let i = 0; i < 3; i++) {
             btn[i].innerHTML = ''
@@ -122,9 +120,6 @@ function btnClick(e) {
         document.querySelector('#gotoindex_btn').style.display = 'inline-block'
         document.querySelector('.grid').style.backgroundImage = "url('../img/game/quizreport_bg.png')"
         document.querySelector('.recommendtitle').innerHTML = '為您推薦';
-        
-        
-        
         document.querySelector('#dolphin_block').style.display = 'block'
         document.querySelector('.test_score_title').style.display = 'inline-block'
         if (total < 5) {
@@ -151,97 +146,41 @@ function btnClick(e) {
             }
         }
     }
-    document.getElementsByClassName('innerimg')[0].src = questions[currentquestionIndex].quizimg
-    document.getElementById('question').innerHTML = questions[currentquestionIndex].title
-    document.querySelectorAll('.choice')[0].innerHTML = questions[currentquestionIndex].choice[0]
-    document.querySelectorAll('.choice')[1].innerHTML = questions[currentquestionIndex].choice[1]
-    document.querySelectorAll('.choice')[2].innerHTML = questions[currentquestionIndex].choice[2]
-    document.querySelectorAll('.choice')[0].value = questions[currentquestionIndex].point[0]
-    document.querySelectorAll('.choice')[1].value = questions[currentquestionIndex].point[1]
-    document.querySelectorAll('.choice')[2].value = questions[currentquestionIndex].point[2]
+    document.getElementsByClassName('innerimg')[0].src =quiz_img[currentquestionIndex].innerHTML
+    document.getElementById('question').innerHTML = quiz_question[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[0].innerHTML = quiz_opt1[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[1].innerHTML = quiz_opt2[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[2].innerHTML = quiz_opt3[currentquestionIndex].innerHTML
+    document.querySelectorAll('.choice')[0].value =parseFloat(quiz_opt1_point[currentquestionIndex].innerHTML)
+    document.querySelectorAll('.choice')[1].value =parseFloat(quiz_opt2_point[currentquestionIndex].innerHTML)
+    document.querySelectorAll('.choice')[2].value =parseFloat(quiz_opt3_point[currentquestionIndex].innerHTML)
 
 
     // console.log("btnclick目前第幾題"+currentquestionIndex)
     document.getElementById('progress').innerHTML = currentquestionIndex + 1 + '/' + Qnum
-    total = total + parseInt(e.target.value)
+    total = total + parseFloat(e.target.value*2)
 }
-// create questions here
+// create questions here 從game.php撈db table資料
+//count sql撈出的 $gameRowsCount
+var quiz_RowsCount=document.querySelectorAll(".quiz_length")[0].innerHTML
 
-var questions = [
-    {
-        title: '1.你喜歡看恐怖片嗎？',
-        choice: ['看得我神經衰弱，不喜歡', '超級喜歡', '一個人肯定不能承受的啦,需要個人一起看'],
-        point: [0, 1, 0.5],
-        quizimg: './img/game/quiz1_img.jpg',
-    },
+var quiz_question=document.querySelectorAll(".quiz_question")
+var quiz_opt1=document.querySelectorAll(".quiz_opt1")
+var quiz_opt2=document.querySelectorAll(".quiz_opt2")
+var quiz_opt3=document.querySelectorAll(".quiz_opt3")
+var quiz_opt1_point=document.querySelectorAll(".quiz_opt1_point")
+var quiz_opt2_point=document.querySelectorAll(".quiz_opt2_point")
+var quiz_opt3_point=document.querySelectorAll(".quiz_opt3_point")
+var quiz_img=document.querySelectorAll(".quiz_img")
 
-    {
-        title: '2.當貞子披頭散髮從電視機裏爬出來時，你會:',
-        choice: [
-            '撥開她的長頭髮，看她的臉到底長成什麼樣',
-            '拚命暗示自己：別怕別怕，她不會從電視機裏爬出來的',
-            '嚇到跑出門外！',
-        ],
-        point: [1, 0.5, 0],
-        quizimg: './img/game/quiz2_img.jpg',
-    },
 
-    {
-        title: '3.晚上獨自在家，下列哪個東西令你感到最可怕:',
-        choice: ['鏡子出現人影', '電燈閃爍不停', '電視機出現雜訊'],
-        point: [0, 0.5, 1],
-        quizimg: './img/game/quiz3_img.jpg',
-    },
 
-    {
-        title: '4.什麼樣的恐怖片情節最令你害怕:',
-        choice: ['用高超的電腦特技畫出的巨大異形怪物', '以人皮縫製「面具」的殘忍手段', '鏡子裏看到的不是自己的臉'],
-        point: [0, 1, 0.5],
-        quizimg: './img/game/quiz4_img.jpg',
-    },
-    {
-        title: '5.你與朋友進入一間屋子，朋友手上的佛珠都突然斷開，掉了滿地，此時，你會？',
-        choice: ['覺得繩子總是會有斷的一天，減少恐懼', '逃離屋子', '念阿彌陀佛，以分散注意力'],
-        point: [1, 0.5, 0],
-        quizimg: './img/game/quiz5_img.png',
-    },
-    {
-        title: '6.你在夢裡被人追殺，如果不幸被殺，現實中的你也會死，你會：',
-        choice: ['好想鬧鐘快快響', '怎麼會有這種事？被殺也不怕', '很可怕ㄟ..不要再說了'],
-        point: [0.5, 1, 0],
-        quizimg: './img/game/quiz6_img.jpg',
-    },
-    {
-        title: '7.剛看完鬼片後……',
-        choice: ['如若一個人會睡不著', '伸個懶腰，輕鬆許多', '走！去大吃一頓，化恐怖為食慾'],
-        point: [0, 0.5, 1],
-        quizimg: './img/game/quiz7_img.png',
-    },
-    {
-        title: '8.魔鬼請你喝下午茶，你想選哪種：',
-        choice: ['大體蛋糕', '斷手造型的巧克力蛋糕', '草莓蛋糕'],
-        point: [1, 0.5, 0],
-        quizimg: './img/game/quiz8_img.jpg',
-    },
-    {
-        title: '9.你家人忽然變成殭屍，到處咬人，槍都打不死，怎麼辦？',
-        choice: ['炸死他們', '讓他們咬，你也變成殭屍，一起橫行霸道', '太可怕了!要快點逃走'],
-        point: [2, 1, 0],
-        quizimg: './img/game/quiz9_img.jpg',
-    },
-    {
-        title: '10.家裡出現鬼影，你會：',
-        choice: ['請個法師來做法事', '應該是看錯了吧', '科學一點好嗎?世上哪有鬼'],
-        point: [0.5, 0, 1],
-        quizimg: './img/game/quiz10_img.jpg',
-    },
-]
-//why
+
 var types = [
     { resulttitle: '【膽小如鼠型】', resultinnertext: '神經超級脆弱的你，恐怖承受力指數低到可憐。' },
-    { resulttitle: '【冒充膽大型】', resultinnertext: '你一個人是不敢冒險的，必定招朋引伴一起看才比較安全嘛。恐怖承受力中等。', },
+    { resulttitle: '【冒充膽大型】', resultinnertext: '你一個人是不敢冒險的，必定招朋引伴一起看才比較安全嘛。恐怖承受力中等。'},
     { resulttitle: '【越恐怖越放鬆型】', resultinnertext: '你的神經粗得要命，恐怖承受力指數超強，鬼還比較怕你!' },
 ]
 
-var Qnum = questions.length
+var Qnum =quiz_RowsCount
 // var randomNum=Math.floor(Math.random()*questions.length);
