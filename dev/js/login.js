@@ -26,7 +26,7 @@ function showLoginForm() {
                 alert(xhr.status)
             }
         }
-        xhr.open("get", "../php/Logout.php", true)
+        xhr.open("get", "./php/Logout.php", true)
         xhr.send(null)
     }
 }

@@ -49,15 +49,47 @@
                 </td>
                 <td class="p-3">
                     <label class="switch switch-pill switch-success">
-                        <input type="checkbox" class="switch-input" id="change_food_status" checked>
+                        <input type="checkbox" class="switch-input change_food_status" checked>
                         <span class="switch-slider"></span>
                       </label>
                 </td>
                 <td class="p-3">
-                    <button type="button" class="btn btn-dark" id="manage_this_food">修改</button>
+                    <button type="button" class="btn btn-dark manage_this_food" >修改</button>
                 </td>
                 <td class="p-3">
-                    <button type="button" class="btn btn-danger" id="delete_this_food">刪除</button>
+                    <button type="button" class="btn btn-danger delete_this_food">刪除</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="p-3">2</td>
+                <td class="p-3">
+                    <span class="food_info_txt" style="display: block;">aaaa</span>
+                    <input type="text" class="food_info_input" style="display: none;" value="aaaa">
+                </td>
+                <td class="p-3">
+                    <span class="food_info_txt" style="display: block;">aaaa</span>
+                    <input type="text" class="food_info_input" style="display: none;" value="aaaa">
+                </td>
+                <td class="p-3">
+                    <span class="food_info_txt" style="display: block;">aaaaaa</span>
+                    <textarea name="" class="food_info_input" style="display: none; resize:none;" cols="30" rows="5">aaaaaaa</textarea>
+                </td>
+                <td class="p-3">
+                    <img class="food_info_txt" src="./img/food/food1-1.jpg" alt="food-1">
+                    <input type="file" class="food_info_input" style="display: none;" value="修改圖片" accept="image/*">
+                </td>
+                <td class="p-3">
+                    <label class="switch switch-pill switch-success">
+                        <input type="checkbox" class="switch-input change_food_status" checked>
+                        <span class="switch-slider"></span>
+                      </label>
+                </td>
+                <td class="p-3">
+                    <button type="button" class="btn btn-dark manage_this_food" >修改</button>
+                </td>
+                <td class="p-3">
+                    <button type="button" class="btn btn-danger delete_this_food">刪除</button>
                 </td>
               </tr>
 
@@ -67,13 +99,11 @@
             <tfoot>
                 <form action="" method="post">
                     <tr class="food_hidden_table">
-                        <input type="hidden" name="food_no" value="">
-                        <input type="hidden" name="food_name" value="">
-                        <input type="hidden" name="food_location" value="">
-                        <input type="hidden" name="food_content" value="">
-                        <input type="hidden" name="food_img" value="">
-                        <input type="hidden" name="food_status" value="">
-                        <input type="submit" style="display: none;">
+                        <input type="hidden" name="food_no" id="form_food_no" value="">
+                        <input type="hidden" name="food_name" id="form_food_name" value="">
+                        <input type="hidden" name="food_location" id="form_food_location" value="">
+                        <input type="hidden" name="food_content" id="form_food_content" value="">
+                        <input type="hidden" name="food_img" id="form_food_img" value="">
                     </tr>
                 </form>
             </tfoot>

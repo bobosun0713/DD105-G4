@@ -44,7 +44,7 @@ function register() {
 
     $.ajax({
         type: "POST",
-        url: "../php/Login_insert.php",
+        url: "./php/Login_insert.php",
         data: {
             mem_id: $("#memid").val(),
             mem_psw: $("#mempwd").val(),
