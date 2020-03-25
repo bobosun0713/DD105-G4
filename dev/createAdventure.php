@@ -1,27 +1,289 @@
+<?php
+$spot_no = $_REQUEST["spot_no"];
+$errMsg = "";
+
+//連線資料庫
+try{
+    require_once("./php/connect.php");
+
+    $sql = "select * 
+            from spot 
+            where spot_no = :spot_no";
+    $spots = $pdo->prepare($sql);
+    $spots ->bindValue(":spot_no", $spot_no);    
+    $spots ->execute();
+
+    $sql = "select *
+            from temple 
+            where substr(temple_location,1,2) in 
+                     (select substr(spot_address,1,2)
+                      from spot
+                      where spot_no=:spot_no);";
+    $temples = $pdo->prepare($sql);
+    $temples ->bindValue(":spot_no", $spot_no);    
+    $temples ->execute();
+
+    $sql = "select *
+            from food 
+            where substr(food_location,1,2) in 
+                     (select substr(spot_address,1,2)
+                      from spot
+                      where spot_no=:spot_no);";
+    $foods = $pdo->prepare($sql);
+    $foods ->bindValue(":spot_no", $spot_no);    
+    $foods ->execute();
+
+
+}catch(PDOException $e){
+    $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+    $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+    echo $errMsg;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>createAdventure</title>
-  @@include('layout/head.html')
+  <title>尋鬼探險 - 新增揪團</title>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<!-- ---------------------共用區---------------------- -->
+<!-- hamberger -->
+<script src="./js/hamburger.js"></script>
+<!-- headerScroll 效果 -->
+<script src="./js/headerScroll.js"></script>
+<!-- 音樂效果 -->
+<script src="./js/soundSwitch.js"></script>
+<!--all css -->
+<link rel="stylesheet" href="./css/main.css" />
+<!-- 鬼島logo小圖示 -->
+<link rel="shortcut icon" href="../img/icon/logo-icon.png" />
+<!-- jquery-3.4.1 -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- 登入登出 -->
+<script src="./js/login.js"></script>
+<!-- TweenMax.min外掛 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<!-- awesome icon外掛包 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+<script src="js/mouse_ghost.js"></script>
+
+<!-- 阿禎scorll外掛 -->
+  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+  <script src="js/tab.js"></script>
+
+  <script src="./js/index_Txt_fadeIn.js"></script>
+
   <script src="js/createAdventure.js"></script>
 
 </head>
 
 <body>
-  @@include('layout/component/mouse_ghost.html')
+  <!-- 滑鼠上的鬼 -->
+  <div id="mouse"></div>
+  <!-- 滑鼠上的鬼-->
+
 
   <div class="createAdventure">
-    @@include('layout/component/indexsmoke.html')
-    @@include('layout/header.html',{
-    "link002" : "pageSelectEffect2",
-    "link001-2":"pageSelectEffect1"
-    })
-    
 
+    <section class="indexfog">
+      <figure
+          class="absolute-bg"
+          style="background-image: url('https://source.unsplash.com/3ytjETpQMNY/1600x900');"
+      ></figure>
+      <div class="fog__container">
+          <div class="fog__img fog__img--first"></div>
+          <div class="fog__img fog__img--second"></div>
+      </div>
+    </section>
+
+    <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
+
+    <!-- ========== HEADDDER ============= -->
+    <header id="topHeader">
+        <div id="navStatus">
+            <div id="soundStatus">
+                <img src="./img/icon/music_btn_off.svg" id="soundClick" />
+                <p id="soundTxt">Sound On</p>
+            </div>
+            <div id="memStatus">
+                <a href="">
+                    <img src="./img/icon/default_header.svg" />
+                </a>
+                <p><span class="login_btn">登入</span></p>
+                <p><span class="creat_btn">註冊</span></p>
+            </div>
+        </div>
+        <nav class="desktopHeader">
+            <ul>
+                <li class="@@link001-1">
+                    <a href="ghostIsland.php" class="title @@link001">
+                        前進鬼島
+                    </a>
+                </li>
+                <li class="pageSelectEffect1">
+                    <a href="adventrue.html" class="title pageSelectEffect2">
+                        尋鬼探險
+                    </a>
+                </li>
+                <li class="@@link001-3">
+                    <a href="leaderboard.html" class="title @@link003">
+                        靈異票選
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <img id="topLogo" src="./img/logo/LOGO_white.png" />
+                    </a>
+                </li>
+                <li class="@@link001-4">
+                    <a href="game.html" class="title @@link004">
+                        試膽測驗
+                    </a>
+                </li>
+                <li class="@@link001-5">
+                    <a href="forum.html" class="title @@link005">
+                        靈異討論
+                    </a>
+                </li>
+                <li class="@@link001-6">
+                    <a href="member.html" class="title @@link006">
+                        會員中心
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="rwdHeader">
+            <div class="rwdHeaderWrap">
+                <a href="../index.html">
+                    <img id="topLogo2" src="./img/logo/LOGO_white.png" />
+                </a>
+
+                <button class="hamburger hamburger--elastic" id="hamburger" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </nav>
+
+        <div id="rwdHamburgerMenu">
+            <nav>
+                <ul>
+                    <a href="../ghostIsland.html">
+                        <li class="title">前進鬼島</li>
+                    </a>
+                    <a href="../adventrue.html">
+                        <li class="title">尋鬼探險</li>
+                    </a>
+                    <a href="../leaderboard.html">
+                        <li class="title">靈異票選</li>
+                    </a>
+                    <a href="../game.html">
+                        <li class="title">試膽測驗</li>
+                    </a>
+                    <a href="../forum.html">
+                        <li class="title">靈異討論</li>
+                    </a>
+                    <a href="../member.html">
+                        <li class="title">會員中心</li>
+                    </a>
+                    <a>
+                        <li class="title login_btn">登入/註冊</li>
+                    </a>
+
+                    <li id="hamburgerSound" class="title">Sound Off</li>
+                </ul>
+            </nav>
+        </div>
+        <div id="indexLogin">
+            <section class="login_page1" style="display: none;">
+                <div class="logincancel"></div>
+                <div class="login_cover">
+                    <img src="./img/logo/LOGO_black.png" alt="" />
+                </div>
+                <form action="" method="POST">
+                    <p>
+                        <input type="text" id="memid" placeholder="帳號" />
+                    </p>
+                    <p>
+                        <input type="text" id="mempwd" placeholder="密碼" />
+                    </p>
+                </form>
+                <div id="loginbutton">登入</div>
+                <div class="next_login">註冊會員</div>
+            </section>
+
+            <section class="login_page2" style="display: none;">
+                <div class="logincancel"></div>
+                <div class="login_cover">
+                    <img src="./img/login/registered-01 (1).png" alt="" />
+                </div>
+                <form action="" method="POST">
+                    <p>
+                        <label for="memid">會員帳號</label>
+                        <input type="text" id="memid" placeholder="4~12英文字母、數字" />
+                    </p>
+                    <p>
+                        <label for="mempwd">會員密碼</label>
+                        <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
+                    </p>
+                    <p>
+                        <label for="mempwdcheck">確認密碼</label>
+                        <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
+                    </p>
+                    <p>
+                        <label for="memname">會員姓名</label>
+                        <input type="text" id="memname" placeholder="姓名" />
+                    </p>
+                    <p>
+                        <label for="memcell">手機號碼</label>
+                        <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
+                    </p>
+                    <p>
+                        <label for="memail">電子信箱</label>
+                        <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
+                    </p>
+                </form>
+                <div id="sure_btn">註冊會員</div>
+            </section>
+            <!-- <script>
+                $(document).ready(function() {
+                    $(".login_btn").click(function() {
+                        $("#indexLogin, .login_page1").css("display", "block")
+                    })
+                    $(".creat_btn").click(function() {
+                        $("#indexLogin, .login_page2").css("display", "block")
+                    })
+                    $(".next_login").click(function() {
+                        $(".login_page2").css("display", "block")
+                        $(".login_page1").css("display", "none")
+                    })
+                    $(".logincancel").click(function() {
+                        $(".login_page1 , .login_page2").css("display", "none")
+                        $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
+                    })
+                })
+            </script> -->
+        </div>
+    </header>
+    <!-- ========== HEADDDER ============= -->
+
+
+    <!-- PHP有修改 -->
+    <?php 
+      if( $errMsg != ""){ //例外
+        alert($errMsg);
+      }else{
+          $spotRow = $spots->fetchObject();}
+    ?>
     <section class="section_wrapper">
       <div class="form-tabs">
-        <div class="mainspot tourTitle">【新莊廢棄醫院】</div>
+        <div class="mainspot tourTitle">【<?php echo $spotRow->spot_name;?>】</div>
 
         <!-- 導覽列 -->
         <ul class="form-menu">
@@ -49,6 +311,14 @@
       <form method="POST"  enctype="multipart/form-data">
         <div class="wrapper">
 
+
+          <?php 
+            if( $errMsg != ""){ //例外
+              alert($errMsg);
+            }else{
+                $templesRow = $temples->fetchAll(PDO::FETCH_ASSOC);}
+          ?>
+
           <!-- 步驟1 -->
           <div id="tab-1" class="hide tab">
             <div class="tab-1 left">
@@ -60,53 +330,67 @@
               </div>
 
               <div class="spotselections">
+                <!-- 廟宇、美食詳細資訊燈箱 -->
                 <div class="spotlightbox">
                   <button class="cancelbtn" type="button">X</button>
                   <button class="additinerarybtn" type="button">加入揪團行程</button>
                 </div>
+                <!-- 廟宇、美食詳細資訊燈箱 -->
+
+               
                 <div class="selectionsframe">
+
+                  <!-- 廟宇清單 -->
+                  <?php 
+                    foreach($templesRow as $i =>$templeRow){
+                  ?>
                   <div class="spotoptions templeopt">
                     <div class="addbtn">
                       <img src="img/createAdventure/zoom_up_icon.png" />
                     </div>
                     <div class="content temple_cls">
-                      <span>合興宮</span>
+                      <span><?=$templeRow["temple_name"];?></span>
                       <div class="imgframe">
-                        <img src="img/createAdventure/spot1_temple1.png" alt="廟照片" />
+                        <img src="<?=$templeRow["temple_img"];?>" alt="廟照片" />
                       </div>
-                      <input id="temple_1" type="hidden" name="temple_no"
-                        value="合興宮|新莊「合興宮」，創立於乾隆年間且頗具規模的老牌土地公廟見證了此廟悠久的歷史風華。|地址1111|temple_1" />
+                      <input id="temple_<?=$templeRow["temple_no"];?>" type="hidden" name="temple_no"
+                        value="<?=$templeRow["temple_name"];?>|<?=$templeRow["temple_content"];?>|<?=$templeRow["temple_location"];?>|temple_<?=$templeRow["temple_no"];?>" />
                       <div class="detailstext"></div>
                     </div>
                   </div>
-                  <div class="spotoptions templeopt">
-                    <div class="addbtn">
-                      <img src="img/createAdventure/zoom_up_icon.png" />
-                    </div>
-                    <div class="content temple_cls">
-                      <span>後港昭德宮</span>
-                      <div class="imgframe">
-                        <img src="img/createAdventure/spot1_temple2.png" alt="廟照片" />
-                      </div>
-                      <input id="temple_2" type="hidden" name="temple_no"
-                        value="後港昭德宮|新莊後港昭德宮建於清乾隆三十年間，由信徒開會決議籌建廟宇以供信徒前來參拜。|地址111111|temple_2" />
-                      <div class="detailstext"></div>
-                    </div>
-                  </div>
+                  <?php
+                    }
+                  ?>
+
+                  <?php 
+                    if( $errMsg != ""){ //例外
+                      alert($errMsg);
+                    }else{
+                      $foodsRow = $foods->fetchAll(PDO::FETCH_ASSOC);}
+                  ?>
+
+                   <!-- 美食清單 -->
+                   <?php 
+                    foreach($foodsRow as $i =>$foodRow){
+                  ?>
                   <div class="spotoptions foodopt optionhide">
                     <div class="addbtn">
                       <img src="img/createAdventure/zoom_up_icon.png" />
                     </div>
                     <div class="content food_cls">
-                      <span>日本料理好好吃</span>
+                      <span><?=$foodRow["food_name"];?></span>
                       <div class="imgframe">
-                        <img src="img/createAdventure/food001.jpg" alt="廟照片" />
+                        <img src="<?=$foodRow["food_img"];?>.jpg" alt="食物照片" />
                       </div>
-                      <input id="food_1" type="hidden" name="food_no"
-                        value="日本料理好好吃|店內裝潢打破傳統日式居酒屋的空間氛圍，設計以極簡具現代感為主，並採半開放式空間規劃，從4至8人的包廂，到2至50人的大型聚餐的雅座都有|台南市中山區中山北路二段39巷16-2號|food_1" />
+                      <input id="food_<?=$foodRow["food_no"];?>" type="hidden" name="food_no"
+                        value="<?=$foodRow["food_name"];?>|<?=$foodRow["food_content"];?>|<?=$foodRow["food_location"];?>|food_<?=$foodRow["food_no"];?>" />
                       <div class="detailstext"></div>
                     </div>
                   </div>
+                  <?php
+                    }
+                  ?>
+
                 </div>
               </div>
             </div>
@@ -115,23 +399,26 @@
                 <img src="img/createAdventure/selectedspotheading_icon.png" />
                 專屬行程規劃
               </div>
-
+              
+              <!-- 菜單 -->
               <div class="selected_spot">
+
+                <!-- 主要景點 -->
                 <div class="majorspot">
                   <div class="content">
-                    <span>主要行程</span>
+                    <span>主要行程【<?php echo $spotRow->spot_name;?>】</span>
                     <div class="imgframe">
-                      <img src="img/createAdventure/majorspot001.jpg" alt="景點照片">
+                      <img src="<?php echo $spotRow->spot_image_card;?>" alt="景點照片">
                     </div>
-                    <input id="spot_1" type="hidden" name="spot_no"
-                      value="聖家堂|建築大師高第傑作「聖家堂」2026年完工！相隔137年屬於上帝的建築取得施工執照|Carrer de Mallorca, 401, Barcelona|spot_1">
+                    <input id="spot_<?php echo $spotRow->spot_no;?>" type="hidden" name="spot_no"
+                      value="<?php echo $spotRow->spot_name;?>|<?php echo $spotRow->spot_content;?>|<?php echo $spotRow->spot_address;?>|spot_<?php echo $spotRow->spot_no;?>">
                     <div class="detailstext"></div>
                   </div>
                   <!-- <button class="delete_btn"></button> -->
-                  <div class="shiftbtns">
+                  <!-- <div class="shiftbtns">
                     <button class="shift_up_btn" style="display:none;" type="button">上移鈕</button>
                     <button class="shift_down_btn" style="display:none;" type="button">下移鈕</button>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -511,7 +798,103 @@
 
     </section>
 
-    @@include('layout/footer.html')
+
+
+    <!-- ==========FOOOOOOTER============= -->
+    <footer>
+      <div id="warn">
+          <p id="warnTitle" class="title">
+              <span class="title">鬼島探險</span>
+              注意事項</p>
+          <ol>
+              <li>美食壯膽，再出發探險</li>
+              <li>不要半夜吹口哨、不要嬉笑打鬧</li>
+              <li>有人拍肩，不要回頭看</li>
+              <li>尋鬼探險事後三炷香</li>
+              <li>探險完畢若有不適，本站既不負責</li>
+          </ol>
+      </div>
+      <div id="spell" class="cameraSpell">
+          <div class="papper">
+              <img src="./img/footer/spell_1.png">
+          </div>
+          
+      </div>
+      <div id="footLink">
+          <a href="">
+              <img src="./img/logo/LOGO_black.png" id="BottomLogo">
+          </a>
+          <nav>
+              <ul>
+                  <li>
+                      <p>
+                          <a href="../ghostIsland.html">
+                              前進鬼島
+                          </a>
+                      </p>
+
+                      <p>
+                          <a href="../index.html">
+                              尋鬼探險
+                          </a>
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                          <a href="../leaderboard.html">
+                              靈異票選
+                          </a>
+                      </p>
+
+                      <p>
+                          <a href="../game.html">
+                              試膽測驗
+                          </a>
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                          <a href="../forum.html">
+                              靈異討論
+                          </a>
+                      </p>
+
+                      <p>
+                          <a href="../forum.html">
+                              文章投稿
+                          </a>
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                          <a href="../member.html">
+                              會員中心
+                          </a>
+
+                      </p>
+                      <p>
+                          <span class="subLink">
+                              <a href="../member.html">
+                                  會員資料
+                              </a>
+                              <a href="../member.html">
+                                  揪團紀錄
+                              </a>
+                          </span>
+                          <span class="subLink">
+                              <a href="../member.html">
+                                  我的收藏
+                              </a>
+                              <a href="../member.html">
+                                  投稿紀錄
+                              </a>
+                          </span>
+                      </p>
+                  </li>
+              </ul>
+          </nav>
+      </div>
+    </footer>
   </div>
 
 </body>

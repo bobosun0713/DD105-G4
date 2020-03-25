@@ -757,8 +757,11 @@
           }
 
           .txtZone {
-            width: 80%;
+            width: 100%;
             // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
             color: #3b3b3b;
 
             .msgInfo {
@@ -776,6 +779,7 @@
 
             .msgContent {
               width: 100%;
+              flex-grow: 2;
               //   border: 1px solid greenyellow;
 
               p {
@@ -787,7 +791,7 @@
               // border:  1px solid green;
               display: inline-flex;
               justify-content: end;
-              float: right;
+              // float: right;
               cursor: pointer;
 
               img {

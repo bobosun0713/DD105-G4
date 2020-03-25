@@ -52,11 +52,11 @@ header {
             display: inline-flex;
             align-items: center;
 
-            p:last-child {
-                &:before {
-                    content: "/";
-                }
-            }
+            // p:last-child {
+            //     &:before {
+            //         content: "/";
+            //     }
+            // }
 
             span {
                 text-decoration: none;
@@ -259,7 +259,7 @@ header {
         z-index: 999;
 
         // 登入
-        .login_page1 {
+        #login_page1 {
             // border: 1px solid red;
             border-radius: 15px;
             background-image: url("../img/login/cardBg.png");
@@ -272,7 +272,7 @@ header {
             color: black;
 
             // 關閉按鈕
-            .logincancel {
+            #logincancel {
                 position: absolute;
                 background-color: white;
                 border: 0.5px solid #888;
@@ -312,9 +312,9 @@ header {
                 text-align: center;
                 font-size: 0;
                 img {
-                    margin: 10px 0;
-                    width: 250px;
-                    height: 180px;
+                    margin: 20px 0;
+                    width: 235px;
+                    height: 160px;
                     // object-fit: cover;
                 }
             }
@@ -352,7 +352,7 @@ header {
                     box-shadow: 2px 3px 1px #461818;
                 }
             }
-            .next_login {
+            #next_login {
                 text-decoration: underline;
                 text-align: center;
                 font-size: 0.875rem;
@@ -365,7 +365,7 @@ header {
         }
 
         // 註冊
-        .login_page2 {
+        #login_page2 {
             // border: 1px solid red;
             border-radius: 15px;
             background-image: url("../img/login/cardBg.png");
@@ -388,7 +388,7 @@ header {
                     object-fit: contain;
                 }
             }
-            .logincancel {
+            #logincancel2 {
                 position: absolute;
                 background-color: white;
                 border: 0.5px solid #888;

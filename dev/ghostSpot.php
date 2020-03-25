@@ -3,6 +3,7 @@ $spot_no = $_REQUEST["spot_no"];
 $order_no = $_REQUEST["order_no"];
 $errMsg = "";
 
+
 //連線資料庫
 try{
     require_once("./php/connect.php");
@@ -16,7 +17,7 @@ try{
     $sql = "
     select tr.tour_title, tr.tour_image, m.mem_name, m.mem_img, date(tr.tour_datetime) AS datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
     from tour tr join spot s on (tr.spot_no = s.spot_no) 
-                join member m on (tr.mem_no = m.mem_no) 
+                left join member m on (tr.mem_no = m.mem_no) 
                 left join food f on (tr.food_no = f.food_no) 
                 left join temple tm on (tr.temple_no = tm.temple_no)
     where tr.spot_no =:spot_no
@@ -29,7 +30,7 @@ try{
 
     //抓該景點推薦行程
     $sql = "
-    select tr.spot_budget, tr.spot_tool, tr.food_budget, tr.food_tool, tr.temple_budget, tr.temple_tool, tr.tour_order,
+    select  tr.spot_budget, tr.spot_tool, tr.food_budget, tr.food_tool, tr.temple_budget, tr.temple_tool,
             s.spot_name, s.spot_content, s.spot_address, s.spot_image_card,
             f.food_name, f.food_location, f.food_content, f.food_img,
             tm.temple_name, tm.temple_location, tm.temple_content, tm.temple_img
@@ -44,9 +45,24 @@ try{
     $OfficialTour ->execute();
 
 
+    //顯示所有該景點留言
+    $sql = "
+    select msg.spot_no, mem.mem_name, mem.mem_img, msg.spot_msg_datetime msg_time, msg.spot_msg_content
+    from spot_msg msg join spot s on (msg.spot_no = s.spot_no) 
+                      left join member mem on (msg.mem_no = mem.mem_no) 
+    where msg.spot_no =:spot_no
+    order by msg_time desc 
+    ";
+    $spotMsg = $pdo->prepare($sql);
+    $spotMsg ->bindValue(":spot_no", $spot_no);    
+    $spotMsg ->execute();
+    
+
+
 }catch(PDOException $e){
     $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
     $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+    echo $errMsg;
 }
 ?>
 
@@ -108,7 +124,7 @@ if( $errMsg != ""){ //例外
         <!-- 跳出留言視窗 PHP 有改 -->
         <div class="spotWroteMsgBG">
             <div class="spotWroteMsgContent">
-                <h2>【<?php echo $spotRow->spot_name; ?>】</h2>
+                <h2>【<?php echo $spotRow->spot_name;?></h2>
                 <div class="writeMsgZone">
                     <div class="personalMsg">
                         <div class="headIcon">
@@ -118,11 +134,13 @@ if( $errMsg != ""){ //例外
                             <p>黃冠禎</p>
                         </div>
                     </div>
-                    <form action="">
-                        <textarea name="" id="spotMsg" cols="30" rows="10"  placeholder="詳細說明你的靈異體驗...."></textarea>
+                    <form method="post" >
+                        <input type="hidden" name="spot_no" id="SpotMsgNo" value="<?php echo $spotRow->spot_no;?>">
+                        <input type="hidden" name="mem_no" id="SpotMsgMemNo" value="3">
+                        <textarea name="spot_msg_content" id="spotMsg" cols="30" rows="10"  placeholder="詳細說明你的靈異體驗...."></textarea>
                         <div class="btnWrap">
                             <input type="reset" value="取消" id="cancelMsgBtn" class="btn-outline cancelMsg">
-                            <input type="submit" value="發佈" class="btn-outline sendMsg">
+                            <input type="submit" value="發佈" id="sendSpotMsg" class="btn-outline sendMsg">
                         </div>
                     </form>
                 </div>
@@ -407,7 +425,7 @@ if( $errMsg != ""){ //例外
             <!-- section2 PHP 有改 -->
             <?php 
             if( $errMsg != ""){
-            alert($errMsg);
+                alert($errMsg);
             }else{
                 $tourRows = $tour->fetchAll(PDO::FETCH_ASSOC);
             ?>
@@ -483,12 +501,9 @@ if( $errMsg != ""){ //例外
                                     </p>
                                 </div>
                             </a>
-
-
-
                         </div>
 
-                        <?php } ?>
+                        <?php }} ?>
 
 
                     </div>
@@ -512,507 +527,427 @@ if( $errMsg != ""){ //例外
 
             </section>
 
-            <?php }?>
 
             <!-- section3 PHP 有改 -->
-            <?php 
-            if( $errMsg != ""){
-            alert($errMsg);
-            }else{
-                $OfficialTourRows = $OfficialTour->fetchObject();
-            ?>
+
             <section id="ghostSpotSection3">
                 <nav>
                     <h3 class="tablink selected" id="tab1">推薦行程</h3>
                     <h3 class="tablink" id="tab2">景點留言</h3>
                 </nav>
                 <div class="allTabPage">
-                    <div id="tabPage1" class="tabpage">
+                    <?php 
+                        if( $errMsg != ""){
+                            alert($errMsg);
+                        }else{
+                            $OfficialTourRows = $OfficialTour->fetchObject();
+                        ?>
+                            <div id="tabPage1" class="tabpage">
 
-                        <div id="officalTour">
+                                <div id="officalTour">
 
-                            <div class="newOffTour btn-outline2">
-                                <a href="./createAdventure.html">
-                                    建立推薦行程
-                                </a> 
+                                    <div class="newOffTour btn-outline2">
+                                        <a href="./createAdventure.html">
+                                            建立推薦行程
+                                        </a> 
+                                    </div>
+
+                                    <!-- 食物或廟宇 -->
+                                    <?php if($OfficialTourRows->temple_name != null){
+                                        echo '<div class="tourSpot">
+                                            <div class="tourImg">
+                                                <img src="',$OfficialTourRows->temple_img,'">
+                                            </div>
+                                            <div class="tourSpotTxt">
+                                                <h2 class="spotTitle">【行程一】<span>',$OfficialTourRows->temple_name,'</span></h2>
+                                                <p>',$OfficialTourRows->temple_content,'</p>
+
+                                                <div class="tourSpotInfo">
+
+                                                    <div class="btn-outline2">
+                                                        <img src="./img/icon/location.png">
+                                                        <p>地理位置</p>
+                                                        <div class="moreInfo">
+                                                            ',$OfficialTourRows->temple_location,'
+                                                        </div>
+                                                        <div class="triangle"></div>
+
+
+                                                    </div>
+
+                                                    <div class="btn-outline2">
+                                                        <img src="./img/icon/tool.png">
+                                                        <p>所需工具</p>
+                                                        <div class="moreInfo">
+                                                            ',$OfficialTourRows->temple_tool,'
+                                                        </div>
+                                                        <div class="triangle"></div>
+                                                    </div>
+
+                                                    <div class="btn-outline2">
+                                                        <img src="./img/icon/fee.png">
+                                                        <p>參加費用</p>
+                                                        <div class="moreInfo">
+                                                            ',$OfficialTourRows->temple_budget,'圓
+                                                        </div>
+                                                        <div class="triangle"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tourSpotInfoRwd">
+
+                                                    <div class="moreInfo">
+                                                        <img src="./img/icon/location.png">
+                                                        <p>地理位置：<span>',$OfficialTourRows->temple_location,'</span> </p>
+                                                    </div>
+
+                                                    <div class="moreInfo">
+                                                        <img src="./img/icon/tool.png">
+                                                        <p>所需工具：<span>',$OfficialTourRows->temple_tool,'</span> </p>
+                                                    </div>
+
+                                                    <div class="moreInfo">
+                                                        <img src="./img/icon/fee.png">
+                                                        <p>參加費用：<span>',$OfficialTourRows->temple_budget,'</span>圓</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>'
+                                    ;}elseif($OfficialTourRows->food_name != null) {
+                                        echo '<div class="tourSpot">
+                                            <div class="tourImg">
+                                                <img src="',$OfficialTourRows->food_img,'.jpg">
+                                            </div>
+                                            <div class="tourSpotTxt">
+                                                <h2 class="spotTitle">【行程一】<span>',$OfficialTourRows->food_name,'</span></h2>
+                                                <p>',$OfficialTourRows->food_content,'</p>
+
+                                                <div class="tourSpotInfo">
+
+                                                    <div class="btn-outline2">
+                                                        <img src="./img/icon/location.png">
+                                                        <p>地理位置</p>
+                                                        <div class="moreInfo">
+                                                            ',$OfficialTourRows->food_location,'
+                                                        </div>
+                                                        <div class="triangle"></div>
+
+                                                    </div>
+
+                                                    <div class="btn-outline2">
+                                                        <img src="./img/icon/tool.png">
+                                                        <p>所需工具</p>
+                                                        <div class="moreInfo">
+                                                            ',$OfficialTourRows->food_tool,'
+                                                        </div>
+                                                        <div class="triangle"></div>
+                                                    </div>
+
+                                                    <div class="btn-outline2">
+                                                        <img src="./img/icon/fee.png">
+                                                        <p>參加費用</p>
+                                                        <div class="moreInfo">
+                                                            ',$OfficialTourRows->food_budget,'圓
+                                                        </div>
+                                                        <div class="triangle"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tourSpotInfoRwd">
+
+                                                    <div class="moreInfo">
+                                                        <img src="./img/icon/location.png">
+                                                        <p>地理位置：<span>',$OfficialTourRows->food_location,'</span> </p>
+                                                    </div>
+
+                                                    <div class="moreInfo">
+                                                        <img src="./img/icon/tool.png">
+                                                        <p>所需工具：<span>',$OfficialTourRows->food_tool,'</span> </p>
+                                                    </div>
+
+                                                    <div class="moreInfo">
+                                                        <img src="./img/icon/fee.png">
+                                                        <p>參加費用：<span>',$OfficialTourRows->food_budget,'</span>圓</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>'
+                                        
+                                    ;}?>
+
+                                    <!-- 靈異景點 -->
+                                    <div class="tourSpot">
+                                        <div class="tourImg">
+                                            <img src="<?=$OfficialTourRows->spot_image_card;?>">
+                                        </div>
+                                        <div class="tourSpotTxt">
+                                            <h2 class="spotTitle">【行程二】<span><?=$OfficialTourRows->spot_name;?></span></h2>
+                                            <p><?=$OfficialTourRows->spot_content;?></p>
+
+                                            <div class="tourSpotInfo">
+
+                                                <div class="btn-outline2">
+                                                    <img src="./img/icon/location.png">
+                                                    <p>地理位置</p>
+                                                    <div class="moreInfo">
+                                                        <?=$OfficialTourRows->spot_address;?>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+
+                                                <div class="btn-outline2">
+                                                    <img src="./img/icon/tool.png">
+                                                    <p>所需工具</p>
+                                                    <div class="moreInfo">
+                                                        <?=$OfficialTourRows->spot_tool;?>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+
+                                                <div class="btn-outline2">
+                                                    <img src="./img/icon/fee.png">
+                                                    <p>參加費用</p>
+                                                    <div class="moreInfo">
+                                                        <?=$OfficialTourRows->spot_budget;?>圓
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tourSpotInfoRwd">
+
+                                                <div class="moreInfo">
+                                                    <img src="./img/icon/location.png">
+                                                    <p>地理位置：<span><?=$OfficialTourRows->spot_address;?></span> </p>
+                                                </div>
+
+                                                <div class="moreInfo">
+                                                    <img src="./img/icon/tool.png">
+                                                    <p>所需工具：<span><?=$OfficialTourRows->spot_tool;?></span> </p>
+                                                </div>
+
+                                                <div class="moreInfo">
+                                                    <img src="./img/icon/fee.png">
+                                                    <p>參加費用：<span><?=$OfficialTourRows->spot_budget;?></span>圓</p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <nav class="tourStatus">
+                                        <ul>
+                                            <li class="statusCircle selected">
+                                                <p class=" circle selected2"></p>
+                                                <p class="line"></p>
+                                            </li>
+                                            <li class="statusCircle">
+                                                <p class="circle"></p>
+                                            </li>
+                                        </ul>
+
+                                    </nav>
+
+                                </div>
+
+                                <div class="myTourGuide">
+                                    <div class="G1">
+
+                                        <img src="./img/map/G1.png" class="G1img">
+
+                                        <img src="./img/map/G1_L.png" class="G1L">
+
+                                        <div class="ghostTalk">
+                                            <p class="line"></p>
+                                            <p>客倌不滿意...？自己當團主....</p>
+                                            <p class="line"></p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="newMyTour btn-outline">
+                                        <a href="./createAdventure.php?spot_no=<?=$spot_no?>">
+                                            建立客製化揪團
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                    <?php }?>
+
+
+                    <!-- section3-留言 PHP 有改 -->
+                    <?php 
+                        if( $errMsg != ""){
+                            alert($errMsg);
+                        }else{
+                            $spotMsgRows = $spotMsg->fetchAll(PDO::FETCH_ASSOC);
+                    ?>
+                        <div id="tabPage2" class="tabpage">
+
+                            <div class="writeBtnWrap">
+                                <div class="btn-outline OpenwriteMsgBox">
+                                    撰寫留言
+                                </div>
                             </div>
 
-                            <div class="tourSpot">
-                                <div class="tourImg">
-                                    <img src="<?=$OfficialTourRows->temple_img;?>">
-                                </div>
-                                <div class="tourSpotTxt">
-                                    <h2 class="spotTitle">【行程一】<span><?=$OfficialTourRows->temple_name;?></span></h2>
-                                    <p><?=$OfficialTourRows->temple_content;?></p>
+                            <!-- 動態新增區塊 -->
+                            <div class="msgZone">
 
-                                    <div class="tourSpotInfo">
-
-                                        <div class="btn-outline2">
-                                            <img src="./img/icon/location.png">
-                                            <p>地理位置</p>
-                                            <div class="moreInfo">
-                                                <?=$OfficialTourRows->temple_location;?>
+                                <?php foreach($spotMsgRows as $i => $spotMsgRow){?>
+                                    <div class="spotMsg">
+                                        <div class="msgWrap">
+                                            <div class="headIcon">
+                                                <img src="
+                                                <?php if( $spotMsgRow['mem_img'] == null ){?>
+                                                    ./img/icon/default_header.svg
+                                                <?php }else{  
+                                                    echo $spotMsgRow['mem_img']
+                                                ;}?>
+                                                ">
                                             </div>
-                                            <div class="triangle"></div>
 
+                                            <div class="txtZone">
 
-                                        </div>
+                                                <div class="msgInfo">
+                                                    <p class="name"><?=$spotMsgRow['mem_name']?></p>
+                                                    <p class="date"><?=$spotMsgRow['msg_time']?> 發表</p>
+                                                </div>
 
-                                        <div class="btn-outline2">
-                                            <img src="./img/icon/tool.png">
-                                            <p>所需工具</p>
-                                            <div class="moreInfo">
-                                                <?=$OfficialTourRows->temple_tool;?>
+                                                <div class="msgContent">
+                                                    <p>
+                                                        <?=$spotMsgRow['spot_msg_content']?>
+                                                    </p>
+                                                </div>
+
+                                                <div class="reportZone">
+                                                    <img src="./img/icon/report_red.svg">
+                                                    <p>檢舉留言</p>
+                                                </div>
+
                                             </div>
-                                            <div class="triangle"></div>
                                         </div>
 
-                                        <div class="btn-outline2">
-                                            <img src="./img/icon/fee.png">
-                                            <p>參加費用</p>
-                                            <div class="moreInfo">
-                                                <?=$OfficialTourRows->temple_budget;?>圓
-                                            </div>
-                                            <div class="triangle"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tourSpotInfoRwd">
-
-                                        <div class="moreInfo">
-                                            <img src="./img/icon/location.png">
-                                            <p>地理位置：<span><?=$OfficialTourRows->temple_location;?></span> </p>
+                                        <div class="ghostFace">
+                                            <img src="./img/spot/msgGhostFace.png">
                                         </div>
 
-                                        <div class="moreInfo">
-                                            <img src="./img/icon/tool.png">
-                                            <p>所需工具：<span><?=$OfficialTourRows->temple_tool;?></span> </p>
-                                        </div>
-
-                                        <div class="moreInfo">
-                                            <img src="./img/icon/fee.png">
-                                            <p>參加費用：<span><?=$OfficialTourRows->temple_budget;?></span>圓</p>
-                                        </div>
 
                                     </div>
+                                <?php } ?>
 
-                                </div>
-                            </div>
 
-                            <div class="tourSpot">
-                                <div class="tourImg">
-                                    <img src="<?=$OfficialTourRows->spot_image_card;?>">
-                                </div>
-                                <div class="tourSpotTxt">
-                                    <h2 class="spotTitle">【行程二】<span><?=$OfficialTourRows->spot_name;?></span></h2>
-                                    <p><?=$OfficialTourRows->spot_content;?></p>
-
-                                    <div class="tourSpotInfo">
-
-                                        <div class="btn-outline2">
-                                            <img src="./img/icon/location.png">
-                                            <p>地理位置</p>
-                                            <div class="moreInfo">
-                                                <?=$OfficialTourRows->spot_address;?>
-                                            </div>
-                                            <div class="triangle"></div>
-                                        </div>
-
-                                        <div class="btn-outline2">
-                                            <img src="./img/icon/tool.png">
-                                            <p>所需工具</p>
-                                            <div class="moreInfo">
-                                                <?=$OfficialTourRows->spot_tool;?>
-                                            </div>
-                                            <div class="triangle"></div>
-                                        </div>
-
-                                        <div class="btn-outline2">
-                                            <img src="./img/icon/fee.png">
-                                            <p>參加費用</p>
-                                            <div class="moreInfo">
-                                                <?=$OfficialTourRows->spot_budget;?>圓
-                                            </div>
-                                            <div class="triangle"></div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="tourSpotInfoRwd">
-
-                                        <div class="moreInfo">
-                                            <img src="./img/icon/location.png">
-                                            <p>地理位置：<span><?=$OfficialTourRows->spot_address;?></span> </p>
-                                        </div>
-
-                                        <div class="moreInfo">
-                                            <img src="./img/icon/tool.png">
-                                            <p>所需工具：<span><?=$OfficialTourRows->spot_tool;?></span> </p>
-                                        </div>
-
-                                        <div class="moreInfo">
-                                            <img src="./img/icon/fee.png">
-                                            <p>參加費用：<span><?=$OfficialTourRows->spot_budget;?></span>圓</p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <nav class="tourStatus">
-                                <ul>
-                                    <li class="statusCircle selected">
-                                        <p class=" circle selected2"></p>
-                                        <p class="line"></p>
-                                    </li>
-                                    <li class="statusCircle">
-                                        <p class="circle"></p>
-                                    </li>
-                                </ul>
-
-                            </nav>
-
+                            </div>   
                         </div>
+                    <?php }?>
+                </div>
 
-                        <div class="myTourGuide">
-                            <div class="G1">
 
-                                <img src="./img/map/G1.png" class="G1img">
 
-                                <img src="./img/map/G1_L.png" class="G1L">
 
-                                <div class="ghostTalk">
-                                    <p class="line"></p>
-                                    <p>客倌不滿意...？自己當團主....</p>
-                                    <p class="line"></p>
-                                </div>
-
-                            </div>
-
-                            <div class="newMyTour btn-outline">
-                                <a href="./createAdventure.html">
-                                    建立客製化揪團
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div id="tabPage2" class="tabpage">
-
-                        <div class="writeBtnWrap">
-                            <div class="btn-outline OpenwriteMsgBox">
-                                撰寫留言
-                            </div>
-                        </div>
-
-
-                        <div class="msgZone">
-
-                            <div class="spotMsg">
-
-                                <div class="msgWrap">
-                                    <div class="headIcon">
-                                        <img src="./img/icon/default_header.svg">
-                                    </div>
-
-                                    <div class="txtZone">
-
-                                        <div class="msgInfo">
-                                            <p class="name">富江我老婆</p>
-                                            <p class="date">2020-02-12 18:19 發表</p>
-                                        </div>
-
-                                        <div class="msgContent">
-                                            <p>
-                                                這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                            </p>
-                                        </div>
-
-                                        <div class="reportZone">
-                                            <img src="./img/icon/report_red.svg">
-                                            <p>檢舉留言</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="ghostFace">
-                                    <img src="./img/spot/msgGhostFace.png">
-                                </div>
-
-
-                            </div>
-
-                            <div class="spotMsg">
-
-                                <div class="msgWrap">
-                                    <div class="headIcon">
-                                        <img src="./img/icon/default_header.svg">
-                                    </div>
-
-                                    <div class="txtZone">
-
-                                        <div class="msgInfo">
-                                            <p class="name">富江我老婆</p>
-                                            <p class="date">2020-02-12 18:19 發表</p>
-                                        </div>
-
-                                        <div class="msgContent">
-                                            <p>
-                                                這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                            </p>
-                                        </div>
-
-                                        <div class="reportZone">
-                                            <img src="./img/icon/report_red.svg">
-                                            <p>檢舉留言</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="ghostFace">
-                                    <img src="./img/spot/msgGhostFace.png">
-                                </div>
-
-
-                            </div>
-
-                            <div class="spotMsg">
-
-                                <div class="msgWrap">
-                                    <div class="headIcon">
-                                        <img src="./img/icon/default_header.svg">
-                                    </div>
-
-                                    <div class="txtZone">
-
-                                        <div class="msgInfo">
-                                            <p class="name">富江我老婆</p>
-                                            <p class="date">2020-02-12 18:19 發表</p>
-                                        </div>
-
-                                        <div class="msgContent">
-                                            <p>
-                                                這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                            </p>
-                                        </div>
-
-                                        <div class="reportZone">
-                                            <img src="./img/icon/report_red.svg">
-                                            <p>檢舉留言</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="ghostFace">
-                                    <img src="./img/spot/msgGhostFace.png">
-                                </div>
-
-
-                            </div>
-
-                            <div class="spotMsg">
-
-                                <div class="msgWrap">
-                                    <div class="headIcon">
-                                        <img src="./img/icon/default_header.svg">
-                                    </div>
-
-                                    <div class="txtZone">
-
-                                        <div class="msgInfo">
-                                            <p class="name">富江我老婆</p>
-                                            <p class="date">2020-02-12 18:19 發表</p>
-                                        </div>
-
-                                        <div class="msgContent">
-                                            <p>
-                                                這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                            </p>
-                                        </div>
-
-                                        <div class="reportZone">
-                                            <img src="./img/icon/report_red.svg">
-                                            <p>檢舉留言</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="ghostFace">
-                                    <img src="./img/spot/msgGhostFace.png">
-                                </div>
-
-
-                            </div>
-
-                            <div class="spotMsg">
-
-                                <div class="msgWrap">
-                                    <div class="headIcon">
-                                        <img src="./img/icon/default_header.svg">
-                                    </div>
-
-                                    <div class="txtZone">
-
-                                        <div class="msgInfo">
-                                            <p class="name">富江我老婆</p>
-                                            <p class="date">2020-02-12 18:19 發表</p>
-                                        </div>
-
-                                        <div class="msgContent">
-                                            <p>
-                                                這個地方我來了很多次，特別有愛所以寫攻略文。
-                                                這邊有居民所以還是希望不要來打擾到人家。旁邊的廢棄宿舍是隱藏關卡，因為那邊有狗會叫引來警衛所以很難過去。
-                                            </p>
-                                        </div>
-
-                                        <div class="reportZone">
-                                            <img src="./img/icon/report_red.svg">
-                                            <p>檢舉留言</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="ghostFace">
-                                    <img src="./img/spot/msgGhostFace.png">
-                                </div>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="pageWrap">
-                            <div class="pagination">
-                <div class="pageBtn"><span class="toLeft">〈 </span></div>
-                <p class="PageSelected">1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
-                <div class="pageBtn"><span class="toRight"> 〉</span></div>
-            </div>
-            <?php }?>
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-
-
-
+            
             </section>
 
 
 
             <footer>
-    <div id="warn">
-        <p id="warnTitle" class="title">
-            <span class="title">鬼島探險</span>
-            注意事項</p>
-        <ol>
-            <li>美食壯膽，再出發探險</li>
-            <li>不要半夜吹口哨、不要嬉笑打鬧</li>
-            <li>有人拍肩，不要回頭看</li>
-            <li>尋鬼探險事後三炷香</li>
-            <li>探險完畢若有不適，本站既不負責</li>
-        </ol>
-    </div>
-    <div id="spell" class="cameraSpell">
-        <div class="papper">
-            <img src="./img/footer/spell_1.png">
-        </div>
-        
-    </div>
-    <div id="footLink">
-        <a href="">
-            <img src="./img/logo/LOGO_black.png" id="BottomLogo">
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <p>
-                        <a href="../ghostIsland.html">
-                            前進鬼島
-                        </a>
-                    </p>
+                <div id="warn">
+                    <p id="warnTitle" class="title">
+                        <span class="title">鬼島探險</span>
+                        注意事項</p>
+                    <ol>
+                        <li>美食壯膽，再出發探險</li>
+                        <li>不要半夜吹口哨、不要嬉笑打鬧</li>
+                        <li>有人拍肩，不要回頭看</li>
+                        <li>尋鬼探險事後三炷香</li>
+                        <li>探險完畢若有不適，本站既不負責</li>
+                    </ol>
+                </div>
+                <div id="spell" class="cameraSpell">
+                    <div class="papper">
+                        <img src="./img/footer/spell_1.png">
+                    </div>
+                    
+                </div>
+                <div id="footLink">
+                    <a href="">
+                        <img src="./img/logo/LOGO_black.png" id="BottomLogo">
+                    </a>
+                    <nav>
+                        <ul>
+                            <li>
+                                <p>
+                                    <a href="../ghostIsland.html">
+                                        前進鬼島
+                                    </a>
+                                </p>
 
-                    <p>
-                        <a href="../index.html">
-                            尋鬼探險
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="../leaderboard.html">
-                            靈異票選
-                        </a>
-                    </p>
+                                <p>
+                                    <a href="../index.html">
+                                        尋鬼探險
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="../leaderboard.html">
+                                        靈異票選
+                                    </a>
+                                </p>
 
-                    <p>
-                        <a href="../game.html">
-                            試膽測驗
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="../forum.html">
-                            靈異討論
-                        </a>
-                    </p>
+                                <p>
+                                    <a href="../game.html">
+                                        試膽測驗
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="../forum.html">
+                                        靈異討論
+                                    </a>
+                                </p>
 
-                    <p>
-                        <a href="../forum.html">
-                            文章投稿
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="../member.html">
-                            會員中心
-                        </a>
+                                <p>
+                                    <a href="../forum.html">
+                                        文章投稿
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="../member.html">
+                                        會員中心
+                                    </a>
 
-                    </p>
-                    <p>
-                        <span class="subLink">
-                            <a href="../member.html">
-                                會員資料
-                            </a>
-                            <a href="../member.html">
-                                揪團紀錄
-                            </a>
-                        </span>
-                        <span class="subLink">
-                            <a href="../member.html">
-                                我的收藏
-                            </a>
-                            <a href="../member.html">
-                                投稿紀錄
-                            </a>
-                        </span>
-                    </p>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</footer>
+                                </p>
+                                <p>
+                                    <span class="subLink">
+                                        <a href="../member.html">
+                                            會員資料
+                                        </a>
+                                        <a href="../member.html">
+                                            揪團紀錄
+                                        </a>
+                                    </span>
+                                    <span class="subLink">
+                                        <a href="../member.html">
+                                            我的收藏
+                                        </a>
+                                        <a href="../member.html">
+                                            投稿紀錄
+                                        </a>
+                                    </span>
+                                </p>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
         </div>
     </div>
 
