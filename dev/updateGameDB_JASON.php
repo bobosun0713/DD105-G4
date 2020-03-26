@@ -1,7 +1,9 @@
 <?php
 try{
   require_once("./php/connect.php");
-  $sql = "update `game` set where quiz_no=:quiz_no ";
+  // $sql = "update `game` set where quiz_no=:quiz_no ";
+
+  $sql = "select * from `game`";
   $updategameDB = $pdo->prepare($sql);
   $updategameDB->bindValue(":quiz_no", $_GET["quiz_no"]);
   $updategameDB->execute();

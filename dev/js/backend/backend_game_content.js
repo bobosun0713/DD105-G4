@@ -85,12 +85,17 @@ function Dom_GameDB(){
 
 function getGameDB_quiz_no(e){
   let get_quiz_no=e.target.parentNode.parentNode.parentNode.firstElementChild.firstElementChild
-  
+  let get_tr=e.target.parentNode.parentNode
+  console.log(get_tr,"get_tr")
   
   updateGameDB(get_quiz_no);
 }
 
 function updateGameDB(get_quiz_no) {
+
+  
+  // console.log(get_quiz_no,"what is get_quiz_no")
+
   var xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status == 200) {
@@ -104,6 +109,7 @@ function updateGameDB(get_quiz_no) {
   var url = "../../updateGameDB_JASON.php";
    
   xhr.open("Post", url, true);
+  xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
  
 
   //送出資料
