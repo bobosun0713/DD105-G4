@@ -153,7 +153,6 @@ function updateGameDB(get_quiz_no, get_quiz_question, get_quiz_opt1, get_quiz_op
 
   // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
 
-
   //送出資料
   xhr.send(formData_update);
 }
@@ -188,7 +187,6 @@ function deleteGameDB(get_delete_quiz_no) {
   }
 
   var url = "../../deleteGameDB_JASON.php";
-
   xhr.open("Post", url, true);
   let formData_update = new FormData();
   formData_update.append('quiz_no', get_delete_quiz_no);

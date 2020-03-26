@@ -10,6 +10,7 @@
         width: 200px;
         right: 200px;
         bottom: -350px;
+        display: none;
 
         img {
           width: 100%;
@@ -23,14 +24,14 @@
       .mapZone {
         display: none;
       }
+
+      .route2{
+        display: none;
+      }
     }
   }
-  #indexSection2 {
-    margin: 200px 0;
-    .mapZone {
-      display: none;
-    }
-  }
+
+
   #section3 {
 
     .adventure_all {
@@ -63,8 +64,9 @@
       }
     }
 
-
-
+    .route3{
+      display: none;
+    }
 
   }
 

@@ -122,6 +122,10 @@ gulp.task("default", function () {
     // gulp.watch(web.js, ['lint']).on('change', reload);
     gulp.watch(web.img, ["img"]).on("change", reload)
     gulp.watch(web.font, ["font"]).on("change", reload)
+<<<<<<< HEAD
     gulp.watch(web.php, ['concatphp']).on('change', reload)
+=======
+    // gulp.watch(web.php,['concatphp']).on('change',reload)
+>>>>>>> 7643ddc3de52bc7cbcac7b758a8ab4c1a3c97b7d
     // gulp.watch(web.music, ['music'].on('change'), reload)
 })
