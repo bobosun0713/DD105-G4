@@ -37,14 +37,14 @@ window.addEventListener("load", function () {
   let spotlightbox = document.querySelector(".spotlightbox");
 
   //把主要景點 DOM 起來 讓他跑上下移動function
-  // let majorspot_btn = document.querySelectorAll(".selected_spot .majorspot");
-  // console.log(majorspot_btn[0].lastElementChild.firstElementChild)
+  let majorspot_btn = document.querySelectorAll(".selected_spot .majorspot");
+  console.log(majorspot_btn[0].lastElementChild.firstElementChild)
   // majorspot_btn[0].lastElementChild.firstElementChild.onclick = shift_up_spot;
   // majorspot_btn[0].lastElementChild.lastElementChild.onclick = shift_down_spot;
   for (let m = 0; m < addbtn.length; m++) {
     addbtn[m].onclick = function (n) {
       var additinerarybtn = document.querySelector(".additinerarybtn");
-      // var clonecontent = document.querySelector("clonecontent");
+      var clonecontent = document.querySelector("clonecontent");
 
       spotlightbox.style.display = "block";
       // console.log(n.target.parentNode.nextElementSibling);
@@ -99,7 +99,7 @@ window.addEventListener("load", function () {
     // shift_up_btn.innerText = "上移鈕";
     // shift_up_btn.classList.add("shift_up_btn");
     // shift_up_btn.addEventListener('click', shift_up_spot);
-    //向下移動按鈕
+    // // 向下移動按鈕
     // let shift_down_btn = document.createElement("button");
     // shift_down_btn.innerText = "下移鈕";
     // shift_down_btn.classList.add("shift_down_btn");
@@ -120,7 +120,7 @@ window.addEventListener("load", function () {
     let spot_block = document.createElement("div");
     spot_block.appendChild(clone_panelcontent);
     spot_block.appendChild(delete_btn);
-    spot_block.appendChild(shiftbtns);
+    // spot_block.appendChild(shiftbtns);
     selected_spot_panel.appendChild(spot_block);
 
     // console.log()
@@ -190,59 +190,59 @@ window.addEventListener("load", function () {
 
   }
 
-  /*
-  function shift_up_spot() {
-    let panelparentNode = this.parentNode.parentNode.parentNode;
-    //  console.log(panelparentNode,"上移")
-    //  console.log(this.parentNode.parentNode,"要移的")
-    panelparentNode.insertBefore(this.parentNode.parentNode, this.parentNode.parentNode.previousSibling);
-    hideshift_btn();
+  
+  // function shift_up_spot() {
+  //   let panelparentNode = this.parentNode.parentNode.parentNode;
+  //   //  console.log(panelparentNode,"上移")
+  //   //  console.log(this.parentNode.parentNode,"要移的")
+  //   panelparentNode.insertBefore(this.parentNode.parentNode, this.parentNode.parentNode.previousSibling);
+  //   hideshift_btn();
 
-    creatTourInfo();
-  }
-  function shift_down_spot() {
-    let panelparentNode = this.parentNode.parentNode.parentNode;
-    // console.log(this.parentNode.parentNode,"要移的")
-    // console.log(this.parentNode.parentNode.nextSibling,"參考兄弟")
-    // panelparentNode.insertAfter(this.parentNode.parentNode,this.parentNode.parentNode.nextSibling);
-    panelparentNode.insertBefore(this.parentNode.parentNode.nextSibling, this.parentNode.parentNode);
-    hideshift_btn();
+  //   creatTourInfo();
+  // }
+  // function shift_down_spot() {
+  //   let panelparentNode = this.parentNode.parentNode.parentNode;
+  //   // console.log(this.parentNode.parentNode,"要移的")
+  //   // console.log(this.parentNode.parentNode.nextSibling,"參考兄弟")
+  //   // panelparentNode.insertAfter(this.parentNode.parentNode,this.parentNode.parentNode.nextSibling);
+  //   panelparentNode.insertBefore(this.parentNode.parentNode.nextSibling, this.parentNode.parentNode);
+  //   hideshift_btn();
 
-    creatTourInfo();
-  }
+  //   creatTourInfo();
+  // }
 
 
   //影藏第一個selected_spot上的移動按鈕
-  function hideshift_btn() {
-    if (selected_spot_panel.hasChildNodes()) {
-      // // 為何while鎖死
-      let countnodes = selected_spot_panel.children;
-      let updown_btn = selected_spot_panel.firstElementChild.lastElementChild;
-      let clearwholebtns = document.querySelectorAll(".shiftbtns button")
-      for (let w = 0; w < clearwholebtns.length; w++) {
-        clearwholebtns[w].style.display = "block";
-      }
+  // function hideshift_btn() {
+  //   if (selected_spot_panel.hasChildNodes()) {
+  //     // // 為何while鎖死
+  //     let countnodes = selected_spot_panel.children;
+  //     let updown_btn = selected_spot_panel.firstElementChild.lastElementChild;
+  //     let clearwholebtns = document.querySelectorAll(".shiftbtns button")
+  //     for (let w = 0; w < clearwholebtns.length; w++) {
+  //       clearwholebtns[w].style.display = "block";
+  //     }
 
-      if (countnodes.length <= 1) {
-        updown_btn.style.display = "none";
+  //     if (countnodes.length <= 1) {
+  //       updown_btn.style.display = "none";
 
-      } else {
-        //?????????
-        let SSSS = document.querySelectorAll(".shiftbtns")
-        for (let u = 0; u < SSSS.length; u++) {
-          SSSS[u].style.display = "block";
-        }
-        let firstkid_up_btn = selected_spot_panel.firstElementChild.lastElementChild.firstElementChild;
-        let lastkid_down_btn = selected_spot_panel.lastElementChild.lastElementChild.lastElementChild;
+  //     } else {
+  //       //?????????
+  //       let SSSS = document.querySelectorAll(".shiftbtns")
+  //       for (let u = 0; u < SSSS.length; u++) {
+  //         SSSS[u].style.display = "block";
+  //       }
+  //       let firstkid_up_btn = selected_spot_panel.firstElementChild.lastElementChild.firstElementChild;
+  //       let lastkid_down_btn = selected_spot_panel.lastElementChild.lastElementChild.lastElementChild;
 
-        firstkid_up_btn.style.display = "none";
-        lastkid_down_btn.style.display = "none";
+  //       firstkid_up_btn.style.display = "none";
+  //       lastkid_down_btn.style.display = "none";
 
-      }
-    }
+  //     }
+  //   }
 
-  }
-  */
+  // }
+  
 
 
   //步驟一二三四的tab切換

@@ -351,7 +351,7 @@ try{
                     <div class="content temple_cls">
                       <span><?=$templeRow["temple_name"];?></span>
                       <div class="imgframe">
-                        <img src="<?=$templeRow["temple_img"];?>" alt="廟照片" />
+                        <img src="./img/temple/<?=$templeRow["temple_img"];?>" alt="廟照片" />
                       </div>
                       <input id="temple_<?=$templeRow["temple_no"];?>" type="hidden" name="temple_no"
                         value="<?=$templeRow["temple_name"];?>|<?=$templeRow["temple_content"];?>|<?=$templeRow["temple_location"];?>|temple_<?=$templeRow["temple_no"];?>" />
@@ -380,7 +380,7 @@ try{
                     <div class="content food_cls">
                       <span><?=$foodRow["food_name"];?></span>
                       <div class="imgframe">
-                        <img src="<?=$foodRow["food_img"];?>.jpg" alt="食物照片" />
+                        <img src="./img/food/<?=$foodRow["food_img"];?>" alt="食物照片" />
                       </div>
                       <input id="food_<?=$foodRow["food_no"];?>" type="hidden" name="food_no"
                         value="<?=$foodRow["food_name"];?>|<?=$foodRow["food_content"];?>|<?=$foodRow["food_location"];?>|food_<?=$foodRow["food_no"];?>" />
@@ -415,10 +415,10 @@ try{
                     <div class="detailstext"></div>
                   </div>
                   <!-- <button class="delete_btn"></button> -->
-                  <!-- <div class="shiftbtns">
+                  <div class="shiftbtns">
                     <button class="shift_up_btn" style="display:none;" type="button">上移鈕</button>
                     <button class="shift_down_btn" style="display:none;" type="button">下移鈕</button>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </div>

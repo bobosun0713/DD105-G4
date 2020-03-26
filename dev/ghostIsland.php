@@ -277,7 +277,7 @@ try{
                     <img class="mapImg" src="./img/map/twMap.png" />
                     <div class="twMapWidth" id="twMap01">
                         <div class="locationWrap">
-                            <a href="ghostSpot.php?spot_no=%201&order_no=" id="loc3">
+                            <a href="ghostSpot.php?spot_no=%201&order_no=1" id="loc3">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell1.png" id="spell3" class="spellSize" />
@@ -322,7 +322,7 @@ try{
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell7.png" id="spell9" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%208&order_no=" id="loc10">
+                            <a href="ghostSpot.php?spot_no=%208&order_no=3" id="loc10">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell8.png" id="spell10" class="spellSize" />
@@ -334,7 +334,7 @@ try{
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell12.png" id="spell11" class="spellSize" />
-                            <a href="ghostSpot.php?spot_no=%2011&order_no=" id="loc12">
+                            <a href="ghostSpot.php?spot_no=%2011&order_no=2" id="loc12">
                                 <p class="location"></p>
                             </a>
                             <img src="./img/map/spell10.png" id="spell12" class="spellSize" />
