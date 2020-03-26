@@ -644,77 +644,77 @@
                         <input type="button" id="right_btn" />
                     </div>
                 </div>
-                 <!-- 圖片 -->
-                    <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
-                    <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
+                <!-- 圖片 -->
+                <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
+                <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
 
-                    <script>
-                        function $id(id) {
-                            return document.getElementById(id)
+                <script>
+                    function $id(id) {
+                        return document.getElementById(id)
+                    }
+                    window.addEventListener('load', function () {
+                        let card = 0
+                        let slider = document.getElementById('card_slider')
+                        let left_btn = document.getElementById('left_btn')
+                        let right_btn = document.getElementById('right_btn')
+
+                        // 右按鈕
+                        $id('right_btn').onclick = function () {
+                            let Width = 386
+                            card++
+                            card_slider.style.left = -Width * card + 'px'
+                            $id('left_btn').disabled = false
+                            left_btn.style.opacity = 1
+
+                            if (window.innerWidth < 768) {
+                                if (card >= 8) {
+                                    $id('right_btn').disabled = true
+                                    right_btn.style.opacity = 0.3
+                                    console.log(card)
+                                }
+                            } else if (window.innerWidth >= 768) {
+                                if (card >= 7) {
+                                    $id('right_btn').disabled = true
+                                    right_btn.style.opacity = 0.3
+                                }
+                            }
                         }
-                        window.addEventListener('load', function () {
-                            let card = 0
-                            let slider = document.getElementById('card_slider')
-                            let left_btn = document.getElementById('left_btn')
-                            let right_btn = document.getElementById('right_btn')
 
-                            // 右按鈕
-                            $id('right_btn').onclick = function () {
-                                let Width = 386
-                                card++
-                                card_slider.style.left = -Width * card + 'px'
-                                $id('left_btn').disabled = false
-                                left_btn.style.opacity = 1
+                        // 左按鈕
+                        $id('left_btn').onclick = function () {
+                            let Width = 386
 
-                                if (window.innerWidth < 768) {
-                                    if (card >= 8) {
-                                        $id('right_btn').disabled = true
-                                        right_btn.style.opacity = 0.3
-                                        console.log(card)
-                                    }
-                                } else if (window.innerWidth >= 768) {
-                                    if (card >= 7) {
-                                        $id('right_btn').disabled = true
-                                        right_btn.style.opacity = 0.3
-                                    }
+                            card--
+                            card_slider.style.left = -Width * card + 'px'
+                            $id('right_btn').disabled = false
+                            right_btn.style.opacity = 1
+
+                            if (window.innerWidth < 768) {
+                                if (card == 0) {
+                                    $id('left_btn').disabled = true
+                                    left_btn.style.opacity = 0.3
+                                    console.log(card)
+                                }
+                            } else if (window.innerWidth >= 768) {
+                                if (card == 0) {
+                                    $id('left_btn').disabled = true
+                                    left_btn.style.opacity = 0.3
                                 }
                             }
-
-                            // 左按鈕
-                            $id('left_btn').onclick = function () {
-                                let Width = 386
-
-                                card--
-                                card_slider.style.left = -Width * card + 'px'
-                                $id('right_btn').disabled = false
-                                right_btn.style.opacity = 1
-
-                                if (window.innerWidth < 768) {
-                                    if (card == 0) {
-                                        $id('left_btn').disabled = true
-                                        left_btn.style.opacity = 0.3
-                                        console.log(card)
-                                    }
-                                } else if (window.innerWidth >= 768) {
-                                    if (card == 0) {
-                                        $id('left_btn').disabled = true
-                                        left_btn.style.opacity = 0.3
-                                    }
-                                }
-                            }
-                        })
-                    </script>
+                        }
+                    })
+                </script>
             </section>
             @@include('layout/footer.html')
         </div>
-    <!-- 視差滑動 -->
-    <script>
-        var scene = document.getElementById('scene')
-        var parallax = new Parallax(scene)
-    </script>
+        <!-- 視差滑動 -->
+        <script>
+            var scene = document.getElementById('scene')
+            var parallax = new Parallax(scene)
+        </script>
 
-    <!-- 靈異景點top3輪播 -->
-    <script src="./js/indexSpotCarasoul.js"></script>
+        <!-- 靈異景點top3輪播 -->
+        <script src="./js/indexSpotCarasoul.js"></script>
 </body>
 
 </html>
