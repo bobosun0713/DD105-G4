@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("./php/connect.php");
+  require_once("./connect.php");
   $sql = "update `game` 
   set quiz_question = :quiz_question, quiz_opt1 = :quiz_opt1,quiz_opt2 = :quiz_opt2,quiz_opt3 = :quiz_opt3,quiz_opt1_point = :quiz_opt1_point,quiz_opt2_point = :quiz_opt2_point,quiz_opt3_point = :quiz_opt3_point
   where quiz_no = :quiz_no";

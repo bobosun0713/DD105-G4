@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("./php/connect.php");
+  require_once("./connect.php");
   $sql = "delete from `game` 
   where quiz_no = :quiz_no";
   $deletegameDB = $pdo->prepare($sql);

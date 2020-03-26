@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("./php/connect.php");
+  require_once("./connect.php");
   $sql = "select * from `game`";
   $gameDB = $pdo->prepare($sql);
 //   $member->bindValue(":memId", $_GET["memId"]);

@@ -68,7 +68,7 @@ function getGameDB() {
     }
   }
 
-  var url = "../../getGameDB_JASON.php";
+  var url = "./php/getGameDB_JASON.php";
   xhr.open("Get", url, true);
   xhr.send(null);
 }
@@ -138,7 +138,7 @@ function updateGameDB(get_quiz_no, get_quiz_question, get_quiz_opt1, get_quiz_op
     }
   }
 
-  var url = "../../updateGameDB_JASON.php";
+  var url = "./php/updateGameDB_JASON.php";
 
   xhr.open("Post", url, true);
   let formData_update = new FormData();
@@ -186,7 +186,7 @@ function deleteGameDB(get_delete_quiz_no) {
     }
   }
 
-  var url = "../../deleteGameDB_JASON.php";
+  var url = "./php/deleteGameDB_JASON.php";
   xhr.open("Post", url, true);
   let formData_update = new FormData();
   formData_update.append('quiz_no', get_delete_quiz_no);
