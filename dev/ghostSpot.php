@@ -546,17 +546,17 @@ if( $errMsg != ""){ //例外
 
                                 <div id="officalTour">
 
-                                    <div class="newOffTour btn-outline2">
+                                    <!-- <div class="newOffTour btn-outline2">
                                         <a href="./createAdventure.html">
                                             建立推薦行程
                                         </a> 
-                                    </div>
+                                    </div> -->
 
                                     <!-- 食物或廟宇 -->
                                     <?php if($OfficialTourRows->temple_name != null){
                                         echo '<div class="tourSpot">
                                             <div class="tourImg">
-                                                <img src="',$OfficialTourRows->temple_img,'">
+                                                <img src="./img/temple/',$OfficialTourRows->temple_img,'">
                                             </div>
                                             <div class="tourSpotTxt">
                                                 <h2 class="spotTitle">【行程一】<span>',$OfficialTourRows->temple_name,'</span></h2>
@@ -616,7 +616,7 @@ if( $errMsg != ""){ //例外
                                     ;}elseif($OfficialTourRows->food_name != null) {
                                         echo '<div class="tourSpot">
                                             <div class="tourImg">
-                                                <img src="',$OfficialTourRows->food_img,'.jpg">
+                                                <img src="./img/food/',$OfficialTourRows->food_img,'.jpg">
                                             </div>
                                             <div class="tourSpotTxt">
                                                 <h2 class="spotTitle">【行程一】<span>',$OfficialTourRows->food_name,'</span></h2>

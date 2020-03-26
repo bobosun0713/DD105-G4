@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>食物景點管理</title>
+
     <!-- Icons-->
-    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet" />
-    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet" />
-    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+
+    <!-- lily新增 -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/all.min.css">
+
     <!-- Main styles for this application-->
     <link href="css/backend.css" rel="stylesheet" />
 
@@ -25,37 +26,33 @@
 
     <div class="app-body">
         <div class="sidebar">
+
             <!-- sidebar menu-->
             @@include('layout/backend/sidebar_nav.html')
-            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
         </div>
 
         <main class="main">
             <!-- Breadcrumb-->
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">Home</li>
                 <li class="breadcrumb-item">
-                    <a href="#">Admin</a>
+                    <a href="./index.html">
+                        <i class="cil-home"></i>
+                    </a>
                 </li>
-                <li class="breadcrumb-item active">Dashboard</li>
-                <!-- Breadcrumb Menu-->
-                <li class="breadcrumb-menu d-md-down-none">
-                    <div class="btn-group" role="group" aria-label="Button group">
-                        <a class="btn" href="#">
-                            <i class="icon-speech"></i>
-                        </a>
-                        <a class="btn" href="./"> <i class="icon-graph"></i> Dashboard</a>
-                        <a class="btn" href="#"> <i class="icon-settings"></i> Settings</a>
-                    </div>
+                <li class="breadcrumb-item">
+                    <a href="#">後台管理</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    你的管理頁面叫什麼？
                 </li>
             </ol>
 
 
             <div class="container-fluid">
+                
                 <!-- 中間內容 -->
-
                 @@include('layout/backend/spot_manage.html')
-                <!-- end -->
+                <!-- 中間內容 -->
 
 
             </div>
@@ -79,8 +76,9 @@
                     </a>
                 </li>
             </ul>
+
             <!-- Tab panes-->
-            <div class="tab-content">
+            <!-- <div class="tab-content">
                 <div class="tab-pane active" id="timeline" role="tabpanel">
                     <div class="list-group list-group-accent">
                         <div
@@ -360,7 +358,8 @@
                     </div>
                     <small class="text-muted">25GB/256GB</small>
                 </div>
-            </div>
+            </div> -->
+        
         </aside>
     </div>
     @@include('layout/backend/footer.html')
