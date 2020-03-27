@@ -163,7 +163,7 @@ function change_this_food_status(){
 //==============================上傳食物圖片
 
 function upload_food_img(){
-    alert("AAAAA");
+    // alert("AAAAA");
     let xhr = new XMLHttpRequest();
 
     xhr.onload = function(){

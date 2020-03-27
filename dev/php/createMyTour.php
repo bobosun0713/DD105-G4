@@ -1,5 +1,8 @@
 
 <?php
+session_start();
+$mem_no = $_SESSION["mem_no"];
+
 try{
   require_once("./connect.php");
   $pdo->beginTransaction();
@@ -21,12 +24,12 @@ try{
     //把現有表單的資訊先放進去資料庫
     $sql = "
     insert into tour( tour_no, tour_title, tour_content, tour_image,
-                      tour_datetime, tour_settime, tour_endtime, max_of_participants,
+                      tour_datetime, tour_settime, tour_endtime, max_of_participants, mem_no,
                       spot_no, spot_tool, spot_budget, spot_content,
                       food_no, food_tool, food_budget, food_content,
                       temple_no, temple_tool, temple_budget, temple_content)
     values ( null, :tour_title, :tour_content, '',
-            :tour_datetime, :tour_settime, :tour_endtime, :max_of_participants,
+            :tour_datetime, :tour_settime, :tour_endtime, :max_of_participants, :mem_no,
             :spot_no, :spot_tool, :spot_budget, :spot_content,
             :food_no, :food_tool, :food_budget, :food_content,
             :temple_no, :temple_tool, :temple_budget, :temple_content) 
@@ -37,6 +40,7 @@ try{
     $tour->bindValue(":tour_datetime", $_POST["tour_datetime"]);
     $tour->bindValue(":tour_settime", $_POST["tour_settime"]);
     $tour->bindValue(":tour_endtime", $_POST["tour_endtime"]);
+    $tour->bindValue(":mem_no", $mem_no);
     $tour->bindValue(":max_of_participants", $_POST["max_of_participants"]);
     $tour->bindValue(":spot_no", $_POST["spot_no"]);
     $tour->bindValue(":spot_tool", $_POST["spot_tool"]);
@@ -73,12 +77,17 @@ try{
 			$tour_img -> bindValue(":tour_image", $fileName);
 			$tour_img -> execute();
       $pdo->commit();
+
+      $new_tour_no = (int)$tour_no;
+
+      echo json_encode( $new_tour_no );
+      // echo "你已成功新增揪團～";
+      // header("Location:../StartGroup.php?tour_no=$tour_no");  
       
 		}else{
-			$pdo->rollBack();
+      $pdo->rollBack();
+      echo "你尚未上傳揪團圖片";
 		}
-
-    echo "你已成功新增揪團～";
 
 
   }else{

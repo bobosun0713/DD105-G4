@@ -54,194 +54,180 @@ try{
 
 
 <body>
-    <!-- 滑鼠上的鬼 -->
-<div id="mouse"></div>
-<!-- 滑鼠上的鬼-->
 
+    <!-- 滑鼠上的鬼 -->
+    <div id="mouse"></div>
+    <!-- 滑鼠上的鬼-->
 
     <div id="ghostIslandWrapper">
+
+        <!-- ================ 霧 ================ -->
         <section class="indexfog">
-    <figure
-        class="absolute-bg"
-        style="background-image: url('https://source.unsplash.com/3ytjETpQMNY/1600x900');"
-    ></figure>
-    <div class="fog__container">
-        <div class="fog__img fog__img--first"></div>
-        <div class="fog__img fog__img--second"></div>
-    </div>
-</section>
+            <figure
+                class="absolute-bg"
+                style="background-image: url('https://source.unsplash.com/3ytjETpQMNY/1600x900');"
+            ></figure>
+            <div class="fog__container">
+                <div class="fog__img fog__img--first"></div>
+                <div class="fog__img fog__img--second"></div>
+            </div>
+        </section>
+        <!-- ================ 霧 ================ -->
 
+        <!-- ================ HEADER ================ -->
         <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
-
-<header id="topHeader">
-    <div id="navStatus">
-        <div id="soundStatus">
-            <img src="./img/icon/music_btn_off.svg" id="soundClick" />
-            <p id="soundTxt">Sound On</p>
-        </div>
-        <div id="memStatus">
-            <a href="">
-                <img src="./img/icon/default_header.svg" />
-            </a>
-            <p><span class="login_btn">登入</span></p>
-            <p><span class="creat_btn">註冊</span></p>
-        </div>
-    </div>
-    <nav class="desktopHeader">
-        <ul>
-            <li class="pageSelectEffect1">
-                <a href="ghostIsland.html" class="title pageSelectEffect2">
-                    前進鬼島
-                </a>
-            </li>
-            <li class="pageSelectEffect2-2">
-                <a href="adventrue.html" class="title @@link002">
-                    尋鬼探險
-                </a>
-            </li>
-            <li class="pageSelectEffect2-3">
-                <a href="leaderboard.html" class="title @@link003">
-                    靈異票選
-                </a>
-            </li>
-            <li>
-                <a href="index.html">
-                    <img id="topLogo" src="./img/logo/LOGO_white.png" />
-                </a>
-            </li>
-            <li class="pageSelectEffect2-4">
-                <a href="game.html" class="title @@link004">
-                    試膽測驗
-                </a>
-            </li>
-            <li class="pageSelectEffect2-5">
-                <a href="forum.html" class="title @@link005">
-                    靈異討論
-                </a>
-            </li>
-            <li class="pageSelectEffect2-6">
-                <a href="member.html" class="title @@link006">
-                    會員中心
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <nav class="rwdHeader">
-        <div class="rwdHeaderWrap">
-            <a href="../index.html">
-                <img id="topLogo2" src="./img/logo/LOGO_white.png" />
-            </a>
-
-            <button class="hamburger hamburger--elastic" id="hamburger" type="button">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </div>
-    </nav>
-
-    <div id="rwdHamburgerMenu">
-        <nav>
-            <ul>
-                <a href="../ghostIsland.html">
-                    <li class="title">前進鬼島</li>
-                </a>
-                <a href="../adventrue.html">
-                    <li class="title">尋鬼探險</li>
-                </a>
-                <a href="../leaderboard.html">
-                    <li class="title">靈異票選</li>
-                </a>
-                <a href="../game.html">
-                    <li class="title">試膽測驗</li>
-                </a>
-                <a href="../forum.html">
-                    <li class="title">靈異討論</li>
-                </a>
-                <a href="../member.html">
-                    <li class="title">會員中心</li>
-                </a>
-                <a>
-                    <li class="title login_btn">登入/註冊</li>
-                </a>
-
-                <li id="hamburgerSound" class="title">Sound Off</li>
-            </ul>
-        </nav>
-    </div>
-    <div id="indexLogin">
-        <section class="login_page1" style="display: none;">
-            <div class="logincancel"></div>
-            <div class="login_cover">
-                <img src="./img/logo/LOGO_black.png" alt="" />
+        <header id="topHeader">
+            <div id="navStatus">
+                <div id="soundStatus">
+                    <img src="./img/icon/music_btn_off.svg" id="soundClick" />
+                    <p id="soundTxt">Sound On</p>
+                </div>
+                <div id="memStatus">
+                    <a href="">
+                        <img src="./img/icon/default_header.svg" />
+                    </a>
+                    <p><span id="memName"></span></p>
+                    <p><span id="login_btn">登入</span></p>
+                </div>
             </div>
-            <form action="" method="POST">
-                <p>
-                    <input type="text" id="memid" placeholder="帳號" />
-                </p>
-                <p>
-                    <input type="text" id="mempwd" placeholder="密碼" />
-                </p>
-            </form>
-            <div id="loginbutton">登入</div>
-            <div class="next_login">註冊會員</div>
-        </section>
+            <nav class="desktopHeader">
+                <ul>
+                    <li class="@@link001-1">
+                        <a href="ghostIsland.php" class="title @@link001">
+                            前進鬼島
+                        </a>
+                    </li>
+                    <li class="@@link001-2">
+                        <a href="adventrue.html" class="title @@link002">
+                            尋鬼探險
+                        </a>
+                    </li>
+                    <li class="@@link001-3">
+                        <a href="leaderboard.html" class="title @@link003">
+                            靈異票選
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <img id="topLogo" src="./img/logo/LOGO_white.png" />
+                        </a>
+                    </li>
+                    <li class="@@link001-4">
+                        <a href="game.php" class="title @@link004">
+                            試膽測驗
+                        </a>
+                    </li>
+                    <li class="@@link001-5">
+                        <a href="forum.html" class="title @@link005">
+                            靈異討論
+                        </a>
+                    </li>
+                    <li class="@@link001-6">
+                        <a href="member.html" class="title @@link006">
+                            會員中心
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-        <section class="login_page2" style="display: none;">
-            <div class="logincancel"></div>
-            <div class="login_cover">
-                <img src="./img/login/registered-01 (1).png" alt="" />
+            <nav class="rwdHeader">
+                <div class="rwdHeaderWrap">
+                    <a href="../index.html">
+                        <img id="topLogo2" src="./img/logo/LOGO_white.png" />
+                    </a>
+
+                    <button class="hamburger hamburger--elastic" id="hamburger" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </nav>
+
+            <div id="rwdHamburgerMenu">
+                <nav>
+                    <ul>
+                        <a href="../ghostIsland.html">
+                            <li class="title">前進鬼島</li>
+                        </a>
+                        <a href="../adventrue.html">
+                            <li class="title">尋鬼探險</li>
+                        </a>
+                        <a href="../leaderboard.html">
+                            <li class="title">靈異票選</li>
+                        </a>
+                        <a href="../game.html">
+                            <li class="title">試膽測驗</li>
+                        </a>
+                        <a href="../forum.html">
+                            <li class="title">靈異討論</li>
+                        </a>
+                        <a href="../member.html">
+                            <li class="title">會員中心</li>
+                        </a>
+                        <a>
+                            <!-- <li class="title" id="memName1"></li> -->
+                            <li class="title" id="login_btn1">登入</li>
+                        </a>
+
+                        <li id="hamburgerSound" class="title">Sound Off</li>
+                    </ul>
+                </nav>
             </div>
-            <form action="" method="POST">
-                <p>
-                    <label for="memid">會員帳號</label>
-                    <input type="text" id="memid" placeholder="4~12英文字母、數字" />
-                </p>
-                <p>
-                    <label for="mempwd">會員密碼</label>
-                    <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
-                </p>
-                <p>
-                    <label for="mempwdcheck">確認密碼</label>
-                    <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
-                </p>
-                <p>
-                    <label for="memname">會員姓名</label>
-                    <input type="text" id="memname" placeholder="姓名" />
-                </p>
-                <p>
-                    <label for="memcell">手機號碼</label>
-                    <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
-                </p>
-                <p>
-                    <label for="memail">電子信箱</label>
-                    <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
-                </p>
-            </form>
-            <div id="sure_btn">註冊會員</div>
-        </section>
-        <!-- <script>
-            $(document).ready(function() {
-                $(".login_btn").click(function() {
-                    $("#indexLogin, .login_page1").css("display", "block")
-                })
-                $(".creat_btn").click(function() {
-                    $("#indexLogin, .login_page2").css("display", "block")
-                })
-                $(".next_login").click(function() {
-                    $(".login_page2").css("display", "block")
-                    $(".login_page1").css("display", "none")
-                })
-                $(".logincancel").click(function() {
-                    $(".login_page1 , .login_page2").css("display", "none")
-                    $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
-                })
-            })
-        </script> -->
-    </div>
-</header>
+            <div id="indexLogin">
+                <section id="login_page1" style="display: none;">
+                    <div id="logincancel"></div>
+                    <div class="login_cover">
+                        <img src="./img/logo/LOGO_black.png" alt="" />
+                    </div>
+                    <form action="" method="POST">
+                        <p>
+                            <input type="text" id="mem_id" name="mem_id" placeholder="帳號" />
+                        </p>
+                        <p>
+                            <input type="password" id="mem_psw" name="mem_psw" placeholder="密碼" />
+                        </p>
+                    </form>
+                    <div id="loginbutton">登入</div>
+                    <div id="next_login">註冊會員</div>
+                </section>
 
+                <section id="login_page2" style="display: none;">
+                    <div id="logincancel2"></div>
+                    <div class="login_cover">
+                        <img src="./img/login/registered-01 (1).png" alt="" />
+                    </div>
+                    <form action="" method="POST">
+                        <p>
+                            <label for="memid">會員帳號</label>
+                            <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
+                        </p>
+                        <p>
+                            <label for="mempwd">會員密碼</label>
+                            <input type="password" id="mempwd" name="mempwd" placeholder="4~20英文字母、數字" />
+                        </p>
+                        <p>
+                            <label for="mempwdcheck">確認密碼</label>
+                            <input type="password" id="mempwdcheck" name="mempwdcheck" placeholder="重新確認密碼" />
+                        </p>
+                        <p>
+                            <label for="memname">會員姓名</label>
+                            <input type="text" id="memname" name="memname" placeholder="姓名" />
+                        </p>
+                        <p>
+                            <label for="memcell">手機號碼</label>
+                            <input type="text" id="memcell" name="memcell" placeholder="09XX-XXX-XXX" />
+                        </p>
+                        <p>
+                            <label for="memail">電子信箱</label>
+                            <input type="mail" id="memail" name="memail" placeholder="輸入Email須包含{@和.}" />
+                        </p>
+                    </form>
+                    <div id="sure_btn">註冊會員</div>
+                </section>
+            </div>
+        </header>
+        <!-- ================ HEADER ================ -->
 
         <section id="ghostIslandSection1">
 
@@ -568,99 +554,100 @@ try{
         </div>
 
         <footer>
-    <div id="warn">
-        <p id="warnTitle" class="title">
-            <span class="title">鬼島探險</span>
-            注意事項</p>
-        <ol>
-            <li>美食壯膽，再出發探險</li>
-            <li>不要半夜吹口哨、不要嬉笑打鬧</li>
-            <li>有人拍肩，不要回頭看</li>
-            <li>尋鬼探險事後三炷香</li>
-            <li>探險完畢若有不適，本站既不負責</li>
-        </ol>
-    </div>
-    <div id="spell" class="cameraSpell">
-        <div class="papper">
-            <img src="./img/footer/spell_1.png">
-        </div>
+            <div id="warn">
+                <p id="warnTitle" class="title">
+                    <span class="title">鬼島探險</span>
+                    注意事項</p>
+                <ol>
+                    <li>美食壯膽，再出發探險</li>
+                    <li>不要半夜吹口哨、不要嬉笑打鬧</li>
+                    <li>有人拍肩，不要回頭看</li>
+                    <li>尋鬼探險事後三炷香</li>
+                    <li>探險完畢若有不適，本站既不負責</li>
+                </ol>
+            </div>
+            <div id="spell" class="cameraSpell">
+                <div class="papper">
+                    <img src="./img/footer/spell_1.png">
+                </div>
+                
+            </div>
+            <div id="footLink">
+                <a href="">
+                    <img src="./img/logo/LOGO_black.png" id="BottomLogo">
+                </a>
+                <nav>
+                    <ul>
+                        <li>
+                            <p>
+                                <a href="../ghostIsland.html">
+                                    前進鬼島
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="../index.html">
+                                    尋鬼探險
+                                </a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="../leaderboard.html">
+                                    靈異票選
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="../game.html">
+                                    試膽測驗
+                                </a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="../forum.html">
+                                    靈異討論
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="../forum.html">
+                                    文章投稿
+                                </a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="../member.html">
+                                    會員中心
+                                </a>
+
+                            </p>
+                            <p>
+                                <span class="subLink">
+                                    <a href="../member.html">
+                                        會員資料
+                                    </a>
+                                    <a href="../member.html">
+                                        揪團紀錄
+                                    </a>
+                                </span>
+                                <span class="subLink">
+                                    <a href="../member.html">
+                                        我的收藏
+                                    </a>
+                                    <a href="../member.html">
+                                        投稿紀錄
+                                    </a>
+                                </span>
+                            </p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
         
-    </div>
-    <div id="footLink">
-        <a href="">
-            <img src="./img/logo/LOGO_black.png" id="BottomLogo">
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    <p>
-                        <a href="../ghostIsland.html">
-                            前進鬼島
-                        </a>
-                    </p>
-
-                    <p>
-                        <a href="../index.html">
-                            尋鬼探險
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="../leaderboard.html">
-                            靈異票選
-                        </a>
-                    </p>
-
-                    <p>
-                        <a href="../game.html">
-                            試膽測驗
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="../forum.html">
-                            靈異討論
-                        </a>
-                    </p>
-
-                    <p>
-                        <a href="../forum.html">
-                            文章投稿
-                        </a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="../member.html">
-                            會員中心
-                        </a>
-
-                    </p>
-                    <p>
-                        <span class="subLink">
-                            <a href="../member.html">
-                                會員資料
-                            </a>
-                            <a href="../member.html">
-                                揪團紀錄
-                            </a>
-                        </span>
-                        <span class="subLink">
-                            <a href="../member.html">
-                                我的收藏
-                            </a>
-                            <a href="../member.html">
-                                投稿紀錄
-                            </a>
-                        </span>
-                    </p>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</footer>
     </div>
     <script src="./js/ghostIslandSelect.js"></script>
 </body>

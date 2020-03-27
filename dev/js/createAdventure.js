@@ -1,12 +1,13 @@
-//0321_FF
-var storage = sessionStorage;
 
 window.addEventListener("load", function () {
+
+  checkLoginStatus();
 
   // DOM廟宇與美食的按鈕 做TAB切換功能
   let templefoodbuttons = document.querySelectorAll(".templefoodbuttons button");
   templefoodbuttons[0].onclick = togglefortab;
   templefoodbuttons[1].onclick = togglefortab;
+
   function togglefortab() {
     let hideall = document.querySelectorAll(".selectionsframe .spotoptions");
     for (let i = 0; i < hideall.length; i++) {
@@ -279,7 +280,7 @@ window.addEventListener("load", function () {
 
       if(nextbtn.getAttribute('type') == 'submit'){
         nextbtn.removeAttribute("type","submit");
-      nextbtn.setAttribute("type","button");
+        nextbtn.setAttribute("type","button");
       }
     }
 
@@ -306,6 +307,7 @@ window.addEventListener("load", function () {
     let noneDate = "請選取日期";
     let myTourTitle = document.querySelectorAll('#tab-2 input')[1].value;
     let myTourIntro = document.querySelector('#tab-2 textarea').value;
+    let tour_image = document.querySelector('.tour_imagePreview_default').classList.length;
     console.log(selected_spot.length, "spotlength")
     if (currentindex == 0) {
 
@@ -317,14 +319,16 @@ window.addEventListener("load", function () {
     } else if (currentindex == 1) {
       console.log(currentindex, "currentindex")
       // console.log("WHERE")
-      if (selected_date_1 == noneDate | selected_date_2 == noneDate | selected_date_3 == noneDate | myTourTitle == "" | myTourIntro == "") {
-        alert("尚未完整填寫基本資料");
+      if (selected_date_1 == noneDate | selected_date_2 == noneDate | selected_date_3 == noneDate | myTourTitle == "" | myTourIntro == "" | tour_image != 2) {
+        alert("尚未完整填寫 基本資料 和 上傳圖片");
       } else {
         console.log("WHERE")
         nextPage();
       }
     } else if(currentindex == 3){
       // alert('AAAAAAA');
+      this.setAttribute("type","submit");
+      alert(nextbtn.getAttribute('type'));
       sendMyTour();
     }else {
       nextPage();
@@ -705,6 +709,7 @@ window.addEventListener("load", function () {
       reader.addEventListener("load", function () {
         tour_image.setAttribute("src", this.result);
         tour_image.style.width = 130 + "%";
+        tour_image.classList.add('already_upload');
         // console.log(this);
       });
 
@@ -1121,6 +1126,7 @@ function formatDate(d) {
 
 
 
+
 //=======================送出表單ajax檔
 function sendMyTour(){
 
@@ -1128,8 +1134,21 @@ function sendMyTour(){
 
   xhr.onload = function(){
       if(xhr.status == 200){
-          alert(xhr.responseText);
+          // alert(xhr.responseText);
+          // link_to_tourPage(xhr.responseText);
+          mem_no = JSON.parse(xhr.responseText);
           location.href= "./StartGroup.html";
+          // location.href= `./StartGroup.php?${mem_no}`;
+
+          // if( typeof mem_no == 'number'){
+          //   location.href= "./StartGroup.html";
+          //   location.href= `./StartGroup.php?${mem_no}`;
+          // }else{
+          //   alert(xhr.responseText);
+          //   location.href= "./ghostIsland.php";
+          // }
+          
+
       }else{
           alert(xhr.status);  
       }
@@ -1205,9 +1224,39 @@ function sendMyTour(){
     }
   }
 
-  // alert(formData);
+  alert(formData);
   console.log(formData)
   xhr.send(formData);
   
+}
+
+//=======================跳轉回某頁面
+// function link_to_tourPage(){
+
+// }
+
+//====================== 檢查登入狀態
+function checkLoginStatus() {
+  let spot_no = document.getElementById('spot_value').value.split('|')[3].split('_')[1];
+  // alert(spot_no);
+  var xhr = new XMLHttpRequest()
+  var url = "./php/logininfo.php"
+  xhr.open("GET", url, true)
+  xhr.send(null)
+  xhr.onload = function() {
+
+      if (xhr.status == 200) {
+          member = JSON.parse(xhr.responseText)
+          
+          //把會員資料寫進燈箱
+          if( !member.mem_no ){
+            alert('請先登入會員');
+            location.href= `./ghostSpot.php?spot_no=${spot_no}&order_no=`;
+          }
+          
+      }else{
+          alert(xhr.status);
+      }
+  }
 }
 

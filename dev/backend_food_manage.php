@@ -54,7 +54,7 @@ try{
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- LOGO -->
-        <a class="navbar-brand mr-auto" href="#">
+        <a class=" pl-4 mr-auto" href="#">
             <img class="navbar-brand-full" src="img/logo/LOGO_black.png" width="60" alt="鬼島Logo" />
             <!-- <img class="navbar-brand-minimized" src="img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo" /> -->
         </a>
@@ -177,14 +177,14 @@ try{
                                         <!-- 表頭 -->
                                         <thead >
                                             <tr class="food_row_number">
-                                                <th class="p-3">編號</th>
-                                                <th class="p-3">名稱</th>
-                                                <th class="p-3">地點</th>
-                                                <th class="p-3">簡介</th>
-                                                <th class="p-3">美食圖片</th>
-                                                <th class="p-3">狀態</th>
-                                                <th class="p-3">修改</th>
-                                                <th class="p-3">刪除</th>
+                                                <th class="p-2">編號</th>
+                                                <th class="p-2">名稱</th>
+                                                <th class="p-2">地點</th>
+                                                <th class="p-2">簡介</th>
+                                                <th class="p-2">美食圖片</th>
+                                                <th class="p-2">狀態</th>
+                                                <th class="p-2">修改</th>
+                                                <th class="p-2">刪除</th>
                                             </tr>
                                         </thead>
                             

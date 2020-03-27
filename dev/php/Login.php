@@ -17,11 +17,12 @@ try{
     $_SESSION["mem_no"] = $memRow["mem_no"];
     $_SESSION["mem_id"] = $memRow["mem_id"];
     $_SESSION["mem_name"] = $memRow["mem_name"];
-    $_SESSION["mem _mail"] = $memRow["mem _mail"];
+    $_SESSION["mem_mail"] = $memRow["mem_mail"];
+    $_SESSION["mem_img"] = $memRow["mem_img"];
     $_SESSION["mem_tel"] = $memRow["mem_tel"];
 
     //送出登入者的姓名資料
-    $member = ["mem_n o"=>$_SESSION["mem_no"], "mem_id"=>$_SESSION["mem_id"], "mem_name"=>$_SESSION["mem_name"], "mem _mail"=>$_SESSION["mem _mail"]];
+    $member = ["mem_no"=>$_SESSION["mem_no"], "mem_id"=>$_SESSION["mem_id"], "mem_name"=>$_SESSION["mem_name"], "mem_mail"=>$_SESSION["mem_mail"],"mem_img"=>$_SESSION["mem_img"]];
     echo json_encode($member);
   }
 }catch(PDOException $e){

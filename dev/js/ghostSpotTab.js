@@ -10,8 +10,6 @@ $(document).ready(function () {
       $(this).toggleClass("selected");
       $(".tabpage")
         .eq(index)
-        // .toggleClass("tabshow");
-        // .fadeToggle();
         .fadeIn();
     });
   });

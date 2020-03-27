@@ -15,7 +15,7 @@ try{
 
     //景點相關揪團
     $sql = "
-    select tr.tour_title, tr.tour_image, m.mem_name, m.mem_img, date(tr.tour_datetime) AS datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
+    select tr.tour_title, tr.tour_image, m.mem_name, m.mem_img, date(tr.tour_datetime) datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
     from tour tr join spot s on (tr.spot_no = s.spot_no) 
                 left join member m on (tr.mem_no = m.mem_no) 
                 left join food f on (tr.food_no = f.food_no) 
@@ -152,8 +152,9 @@ if( $errMsg != ""){ //例外
 
         
         <div id="ghostSpotBG">
-            <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
 
+            <!-- ================ HEADER ================ -->
+            <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
             <header id="topHeader">
                 <div id="navStatus">
                     <div id="soundStatus">
@@ -164,23 +165,23 @@ if( $errMsg != ""){ //例外
                         <a href="">
                             <img src="./img/icon/default_header.svg" />
                         </a>
-                        <p><span class="login_btn">登入</span></p>
-                        <p><span class="creat_btn">註冊</span></p>
+                        <p><span id="memName"></span></p>
+                        <p><span id="login_btn">登入</span></p>
                     </div>
                 </div>
                 <nav class="desktopHeader">
                     <ul>
-                        <li class="pageSelectEffect1">
-                            <a href="ghostIsland.php" class="title pageSelectEffect2">
+                        <li class="@@link001-1">
+                            <a href="ghostIsland.php" class="title @@link001">
                                 前進鬼島
                             </a>
                         </li>
-                        <li class="pageSelectEffect2-2">
+                        <li class="@@link001-2">
                             <a href="adventrue.html" class="title @@link002">
                                 尋鬼探險
                             </a>
                         </li>
-                        <li class="pageSelectEffect2-3">
+                        <li class="@@link001-3">
                             <a href="leaderboard.html" class="title @@link003">
                                 靈異票選
                             </a>
@@ -190,17 +191,17 @@ if( $errMsg != ""){ //例外
                                 <img id="topLogo" src="./img/logo/LOGO_white.png" />
                             </a>
                         </li>
-                        <li class="pageSelectEffect2-4">
-                            <a href="game.html" class="title @@link004">
+                        <li class="@@link001-4">
+                            <a href="game.php" class="title @@link004">
                                 試膽測驗
                             </a>
                         </li>
-                        <li class="pageSelectEffect2-5">
+                        <li class="@@link001-5">
                             <a href="forum.html" class="title @@link005">
                                 靈異討論
                             </a>
                         </li>
-                        <li class="pageSelectEffect2-6">
+                        <li class="@@link001-6">
                             <a href="member.html" class="title @@link006">
                                 會員中心
                             </a>
@@ -244,7 +245,8 @@ if( $errMsg != ""){ //例外
                                 <li class="title">會員中心</li>
                             </a>
                             <a>
-                                <li class="title login_btn">登入/註冊</li>
+                                <!-- <li class="title" id="memName1"></li> -->
+                                <li class="title" id="login_btn1">登入</li>
                             </a>
 
                             <li id="hamburgerSound" class="title">Sound Off</li>
@@ -252,78 +254,62 @@ if( $errMsg != ""){ //例外
                     </nav>
                 </div>
                 <div id="indexLogin">
-                    <section class="login_page1" style="display: none;">
-                        <div class="logincancel"></div>
+                    <section id="login_page1" style="display: none;">
+                        <div id="logincancel"></div>
                         <div class="login_cover">
                             <img src="./img/logo/LOGO_black.png" alt="" />
                         </div>
                         <form action="" method="POST">
                             <p>
-                                <input type="text" id="memid" placeholder="帳號" />
+                                <input type="text" id="mem_id" name="mem_id" placeholder="帳號" />
                             </p>
                             <p>
-                                <input type="text" id="mempwd" placeholder="密碼" />
+                                <input type="password" id="mem_psw" name="mem_psw" placeholder="密碼" />
                             </p>
                         </form>
                         <div id="loginbutton">登入</div>
-                        <div class="next_login">註冊會員</div>
+                        <div id="next_login">註冊會員</div>
                     </section>
 
-                    <section class="login_page2" style="display: none;">
-                        <div class="logincancel"></div>
+                    <section id="login_page2" style="display: none;">
+                        <div id="logincancel2"></div>
                         <div class="login_cover">
                             <img src="./img/login/registered-01 (1).png" alt="" />
                         </div>
                         <form action="" method="POST">
                             <p>
                                 <label for="memid">會員帳號</label>
-                                <input type="text" id="memid" placeholder="4~12英文字母、數字" />
+                                <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
                             </p>
                             <p>
                                 <label for="mempwd">會員密碼</label>
-                                <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
+                                <input type="password" id="mempwd" name="mempwd" placeholder="4~20英文字母、數字" />
                             </p>
                             <p>
                                 <label for="mempwdcheck">確認密碼</label>
-                                <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
+                                <input type="password" id="mempwdcheck" name="mempwdcheck" placeholder="重新確認密碼" />
                             </p>
                             <p>
                                 <label for="memname">會員姓名</label>
-                                <input type="text" id="memname" placeholder="姓名" />
+                                <input type="text" id="memname" name="memname" placeholder="姓名" />
                             </p>
                             <p>
                                 <label for="memcell">手機號碼</label>
-                                <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
+                                <input type="text" id="memcell" name="memcell" placeholder="09XX-XXX-XXX" />
                             </p>
                             <p>
                                 <label for="memail">電子信箱</label>
-                                <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
+                                <input type="mail" id="memail" name="memail" placeholder="輸入Email須包含{@和.}" />
                             </p>
                         </form>
                         <div id="sure_btn">註冊會員</div>
                     </section>
-                    <!-- <script>
-                        $(document).ready(function() {
-                            $(".login_btn").click(function() {
-                                $("#indexLogin, .login_page1").css("display", "block")
-                            })
-                            $(".creat_btn").click(function() {
-                                $("#indexLogin, .login_page2").css("display", "block")
-                            })
-                            $(".next_login").click(function() {
-                                $(".login_page2").css("display", "block")
-                                $(".login_page1").css("display", "none")
-                            })
-                            $(".logincancel").click(function() {
-                                $(".login_page1 , .login_page2").css("display", "none")
-                                $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
-                            })
-                        })
-                    </script> -->
                 </div>
             </header>
+            <!-- ================ HEADER ================ -->
 
-            <!-- section1 PHP 有改 -->
+
+            <!-- ================ section1 PHP 有改 ================ -->
             <section id="ghostSpotSection1">
 
                 <div class="breadcrumb">
@@ -336,7 +322,7 @@ if( $errMsg != ""){ //例外
 
                 <div class="spotIntro">
 
-                    <!-- 是前三名的話顯示名次 start -->
+                    <!--  是前三名的話顯示名次 start -->
                     <?php if($order_no < 4 && $order_no != ""){?>
                     <div id="rank">
                         <img src="./img/component/card/rank.png">
@@ -414,22 +400,18 @@ if( $errMsg != ""){ //例外
 
                 </div>
 
-                <div>
-
-                </div>
             </section>
 
 <?php 
 }
 ?>
-            <!-- section2 PHP 有改 -->
+            <!-- ================ section2 PHP 有改 ================ -->
             <?php 
             if( $errMsg != ""){
                 alert($errMsg);
             }else{
                 $tourRows = $tour->fetchAll(PDO::FETCH_ASSOC);
             ?>
-
             <section id="ghostSpotSection2">
 
                 <div class="titleZone">
@@ -446,7 +428,7 @@ if( $errMsg != ""){ //例外
                         <div class="tourCard">
                             <a href="./StartGroup.php?spot_no=<?=$tourRow["tour_no"]?>">
                                 <div class="tourImg">
-                                    <img src="<?=$tourRow['tour_image']?>">
+                                    <img src="./img/tour/<?=$tourRow['tour_image']?>">
                                 </div>
                                 <div class="tourTxt">
                                     <h2 class="tourTitle">【<?php echo $tourRow['tour_title']?>】</h2>
@@ -528,8 +510,7 @@ if( $errMsg != ""){ //例外
             </section>
 
 
-            <!-- section3 PHP 有改 -->
-
+            <!-- ================ section3 PHP 有改 ================ -->
             <section id="ghostSpotSection3">
                 <nav>
                     <h3 class="tablink selected" id="tab1">推薦行程</h3>
@@ -845,14 +826,8 @@ if( $errMsg != ""){ //例外
                         </div>
                     <?php }?>
                 </div>
-
-
-
-
             
             </section>
-
-
 
             <footer>
                 <div id="warn">
@@ -948,6 +923,8 @@ if( $errMsg != ""){ //例外
                     </nav>
                 </div>
             </footer>
+
+
         </div>
     </div>
 

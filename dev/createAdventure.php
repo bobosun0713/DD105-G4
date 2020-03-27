@@ -2,6 +2,12 @@
 $spot_no = $_REQUEST["spot_no"];
 $errMsg = "";
 
+
+session_start();
+$session_mem_no = $_SESSION["mem_no"];
+$session_mem_name = $_SESSION["mem_name"];
+$session_mem_img = $_SESSION["mem_img"];
+
 //連線資料庫
 try{
     require_once("./php/connect.php");
@@ -18,7 +24,8 @@ try{
             where substr(temple_location,1,2) in 
                      (select substr(spot_address,1,2)
                       from spot
-                      where spot_no=:spot_no);";
+                      where spot_no=:spot_no)
+                      and temple_status = 0;";
     $temples = $pdo->prepare($sql);
     $temples ->bindValue(":spot_no", $spot_no);    
     $temples ->execute();
@@ -28,7 +35,8 @@ try{
             where substr(food_location,1,2) in 
                      (select substr(spot_address,1,2)
                       from spot
-                      where spot_no=:spot_no);";
+                      where spot_no=:spot_no)
+                  and food_status = 0;";
     $foods = $pdo->prepare($sql);
     $foods ->bindValue(":spot_no", $spot_no);    
     $foods ->execute();
@@ -100,9 +108,8 @@ try{
       </div>
     </section>
 
-    <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
-
     <!-- ========== HEADDDER ============= -->
+    <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
     <header id="topHeader">
         <div id="navStatus">
             <div id="soundStatus">
@@ -113,8 +120,8 @@ try{
                 <a href="">
                     <img src="./img/icon/default_header.svg" />
                 </a>
-                <p><span class="login_btn">登入</span></p>
-                <p><span class="creat_btn">註冊</span></p>
+                <p><span id="memName"></span></p>
+                <p><span id="login_btn">登入</span></p>
             </div>
         </div>
         <nav class="desktopHeader">
@@ -124,8 +131,8 @@ try{
                         前進鬼島
                     </a>
                 </li>
-                <li class="pageSelectEffect1">
-                    <a href="adventrue.html" class="title pageSelectEffect2">
+                <li class="@@link001-2">
+                    <a href="adventrue.html" class="title @@link002">
                         尋鬼探險
                     </a>
                 </li>
@@ -140,7 +147,7 @@ try{
                     </a>
                 </li>
                 <li class="@@link001-4">
-                    <a href="game.html" class="title @@link004">
+                    <a href="game.php" class="title @@link004">
                         試膽測驗
                     </a>
                 </li>
@@ -193,7 +200,8 @@ try{
                         <li class="title">會員中心</li>
                     </a>
                     <a>
-                        <li class="title login_btn">登入/註冊</li>
+                        <!-- <li class="title" id="memName1"></li> -->
+                        <li class="title" id="login_btn1">登入</li>
                     </a>
 
                     <li id="hamburgerSound" class="title">Sound Off</li>
@@ -201,80 +209,62 @@ try{
             </nav>
         </div>
         <div id="indexLogin">
-            <section class="login_page1" style="display: none;">
-                <div class="logincancel"></div>
+            <section id="login_page1" style="display: none;">
+                <div id="logincancel"></div>
                 <div class="login_cover">
                     <img src="./img/logo/LOGO_black.png" alt="" />
                 </div>
                 <form action="" method="POST">
                     <p>
-                        <input type="text" id="memid" placeholder="帳號" />
+                        <input type="text" id="mem_id" name="mem_id" placeholder="帳號" />
                     </p>
                     <p>
-                        <input type="text" id="mempwd" placeholder="密碼" />
+                        <input type="password" id="mem_psw" name="mem_psw" placeholder="密碼" />
                     </p>
                 </form>
                 <div id="loginbutton">登入</div>
-                <div class="next_login">註冊會員</div>
+                <div id="next_login">註冊會員</div>
             </section>
 
-            <section class="login_page2" style="display: none;">
-                <div class="logincancel"></div>
+            <section id="login_page2" style="display: none;">
+                <div id="logincancel2"></div>
                 <div class="login_cover">
                     <img src="./img/login/registered-01 (1).png" alt="" />
                 </div>
                 <form action="" method="POST">
                     <p>
                         <label for="memid">會員帳號</label>
-                        <input type="text" id="memid" placeholder="4~12英文字母、數字" />
+                        <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
                     </p>
                     <p>
                         <label for="mempwd">會員密碼</label>
-                        <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
+                        <input type="password" id="mempwd" name="mempwd" placeholder="4~20英文字母、數字" />
                     </p>
                     <p>
                         <label for="mempwdcheck">確認密碼</label>
-                        <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
+                        <input type="password" id="mempwdcheck" name="mempwdcheck" placeholder="重新確認密碼" />
                     </p>
                     <p>
                         <label for="memname">會員姓名</label>
-                        <input type="text" id="memname" placeholder="姓名" />
+                        <input type="text" id="memname" name="memname" placeholder="姓名" />
                     </p>
                     <p>
                         <label for="memcell">手機號碼</label>
-                        <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
+                        <input type="text" id="memcell" name="memcell" placeholder="09XX-XXX-XXX" />
                     </p>
                     <p>
                         <label for="memail">電子信箱</label>
-                        <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
+                        <input type="mail" id="memail" name="memail" placeholder="輸入Email須包含{@和.}" />
                     </p>
                 </form>
                 <div id="sure_btn">註冊會員</div>
             </section>
-            <!-- <script>
-                $(document).ready(function() {
-                    $(".login_btn").click(function() {
-                        $("#indexLogin, .login_page1").css("display", "block")
-                    })
-                    $(".creat_btn").click(function() {
-                        $("#indexLogin, .login_page2").css("display", "block")
-                    })
-                    $(".next_login").click(function() {
-                        $(".login_page2").css("display", "block")
-                        $(".login_page1").css("display", "none")
-                    })
-                    $(".logincancel").click(function() {
-                        $(".login_page1 , .login_page2").css("display", "none")
-                        $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
-                    })
-                })
-            </script> -->
         </div>
     </header>
     <!-- ========== HEADDDER ============= -->
 
 
-    <!-- PHP有修改 -->
+    <!-- ==================== 表頭 ==================== -->
     <?php 
       if( $errMsg != ""){ //例外
         alert($errMsg);
@@ -307,7 +297,7 @@ try{
       </div>
       <div id="progressbar"></div>
 
-      <!-- FORM 表單開始 -->
+      <!-- ==================== FORM 表單開始 ==================== -->
       <form method="POST"  enctype="multipart/form-data">
         <div class="wrapper">
 
@@ -410,7 +400,7 @@ try{
                     <div class="imgframe">
                       <img src="<?php echo $spotRow->spot_image_card;?>" alt="景點照片">
                     </div>
-                    <input id="spot_<?php echo $spotRow->spot_no;?>" type="hidden" name="spot_no"
+                    <input id="spot_value" type="hidden" name="spot_no"
                       value="<?php echo $spotRow->spot_name;?>|<?php echo $spotRow->spot_content;?>|<?php echo $spotRow->spot_address;?>|spot_<?php echo $spotRow->spot_no;?>">
                     <div class="detailstext"></div>
                   </div>
@@ -622,9 +612,14 @@ try{
                     <ul>
                       <li>
                         <div class="StartGroup_people_img">
-                          <img src="img/StartGroup/揪團團組.png" alt="">
+                          <img src="
+                                    <?php if($session_mem_img != null){
+                                             echo $session_mem_img 
+                                            ;}else{
+                                              echo './img/icon/default_header.svg'
+                                            ;}?>" alt="">
                         </div>
-                        揪團者by <span id="tourHost">富江我老婆</span>
+                        揪團者 by <span id="tourHost"><?=$session_mem_name?></span>
                       </li>
                       <li>
                         <img src="./img/icon/location.png">
@@ -760,8 +755,6 @@ try{
 
                 </div> -->
 
-
-
                 <nav class="tourStatus">
                   <ul>
                     <li class="statusCircle selected">
@@ -776,9 +769,6 @@ try{
                 </nav>
 
               </div>
-
-
-
 
 
 

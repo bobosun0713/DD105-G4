@@ -11,7 +11,7 @@ try{
         mkdir("../img/food");
     }
     $fileInfoArr = pathinfo( $_FILES["food_img"]["name"] );
-    $fileName = "{$food_no}-{$fileInfoArr["extension"]}";
+    $fileName = "food-{$food_no}.{$fileInfoArr["extension"]}";
 
     $from = $_FILES["food_img"]["tmp_name"];
     $to = "../img/food/$fileName";

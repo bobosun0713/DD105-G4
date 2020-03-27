@@ -1,5 +1,8 @@
 
 <?php
+session_start();
+$mem_no = $_SESSION["mem_no"];
+
 try{
   require_once("./connect.php");
 
@@ -10,7 +13,7 @@ try{
   ";
   $spot_msg = $pdo->prepare($sql);
   $spot_msg->bindValue(":spot_no", $_POST["spot_no"]);
-  $spot_msg->bindValue(":mem_no", $_POST["mem_no"]);
+  $spot_msg->bindValue(":mem_no", $mem_no);
   $spot_msg->bindValue(":spot_msg_content", $_POST["spot_msg_content"]);
   $spot_msg->execute();
 

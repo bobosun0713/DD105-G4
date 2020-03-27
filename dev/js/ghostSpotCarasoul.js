@@ -1,5 +1,4 @@
 // 加入收藏、輪播、投票功能ajax檔都寫在這裡面
-
 function $id(id){
     return document.getElementById(id);
     }
@@ -48,8 +47,7 @@ function sendSpotMsg(){
     xhr.open("post", url, true);
     
     xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-    let data_info = "spot_no=" + document.getElementById("SpotMsgNo").value+ "&spot_msg_content=" + document.getElementById("spotMsg").value+ "&mem_no=" + document.getElementById("SpotMsgMemNo").value;
-    // console.log(document.getElementById("SpotMsgNo").value, document.getElementById("spotMsg").value)
+    let data_info = "spot_no=" + document.getElementById("SpotMsgNo").value+ "&spot_msg_content=" + document.getElementById("spotMsg").value;
     xhr.send(data_info);
 }
 

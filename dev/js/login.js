@@ -74,6 +74,7 @@ function sendForm() {
                 $id("mem_psw").value = ""
                 mempsw.style.border = ""
                 memid.style.border = ""
+                location.reload();
             }
         } else {
             alert(xhr.status)
