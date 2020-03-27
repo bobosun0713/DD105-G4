@@ -7,14 +7,14 @@ try{
   $deletegameDB->bindValue(":quiz_no", $_POST["quiz_no"]);
 
   $deletegameDB->execute();
-
+  header("Location:../backend_game.html");
   //如果找得資料，取回資料，送出JSON字串
   if($deletegameDB->rowCount() == 0){ //無此會員資料
   	echo "{沒有題庫}";
   }else{
   	$deletegameDBRow = $deletegameDB->fetchAll(PDO::FETCH_ASSOC);
     
-    echo json_encode($deletegameDBRow);
+    // echo json_encode($deletegameDBRow);
     
   }
   

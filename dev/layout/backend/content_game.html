@@ -83,9 +83,9 @@
 <!-- 題目內容燈箱 -->
 <div class="modal fade " id="questionModal" tabindex="-1" role="dialog" aria-labelledby="alertModalTitle"
   aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog">
     <div class="modal-content">
-      <form action="insert_game_quiz.php" method="post" enctype="multipart/form-data" id="questionAddForm">
+      <form action="./php/insertGameDB.php" method="post" enctype="multipart/form-data" id="questionAddForm">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">新增題庫資料</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -138,17 +138,15 @@
               </select>
             </div>
             <div>
-              <form>
                 <div class="form-group">
                   <label for="quiz_img_File">上傳測驗圖片</label>
                   <input type="file" name="quiz_img" class="form-control-file" id="quiz_img_File">
                 </div>
-              </form>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary insertbtn">確認</button>
+          <input type="submit" class="btn btn-primary checkformVal" name="submit">
           <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">取消</button>
         </div>
       </form>
