@@ -57,7 +57,7 @@ try {
 while( $prodRow = $sopt1->fetchObject()){
 ?>
 			<!-- 排行TOP第1名 -->
-			<img class="Haunted-house-i" src="./img/leaderboard/xinzhuang-hosp.jpg" alt="" />
+			<img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
                 <div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="01"?></h2>
 					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
@@ -71,7 +71,7 @@ while( $prodRow = $sopt1->fetchObject()){
 while( $prodRow = $sopt2->fetchObject()){
 ?>
 			<!-- 排行TOP第2名 -->
-			<img class="Haunted-house-i" src="./img/leaderboard/theme-park.jpg" alt="" />
+			<img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
 			<div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="02"?></h2>
 					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
@@ -85,7 +85,7 @@ while( $prodRow = $sopt2->fetchObject()){
 while( $prodRow = $sopt3->fetchObject()){
 ?>
 			<!-- 排行TOP第3名 -->
-			<img class="Haunted-house-i" src="./img/leaderboard/hosp.jpg" alt="" />
+			<img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
                 <div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="03"?></h2>
 					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 

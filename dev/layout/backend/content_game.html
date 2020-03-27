@@ -1,16 +1,15 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <div class="card-header">試膽測驗題庫管理</div>
+      <div class="card-header"></div>
       <div class="card-body">
         <button class="btn btn-warning mr-1 mb-2 quizGameUpload" type="button" data-toggle="modal"
           data-target="#questionModal" data-whatever="@add">上傳題庫
         </button>
-        <button class="btn btn-block btn-outline-primary" type="button">目前題庫</button>
         <table class="table table-responsive-sm table-sm">
           <thead>
             <tr>
-              <th >編號</th>
+              <th>編號</th>
               <th>題目圖片</th>
               <th>選項一</th>
               <th>選項二</th>
@@ -18,12 +17,13 @@
               <th>選項一分數</th>
               <th>選項二分數</th>
               <th>選項三分數</th>
+              <th>題目圖片</th>
               <th>刪除題目</th>
               <th>修改題目</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
+          <tbody id="showPanel_gameDB">
+            <!-- <tr>
               <td>1</td>             
               <td>
                 <input type="text" name="quiz_option" class="form-control" placeholder="">
@@ -68,7 +68,7 @@
               <td>
                 <button type="button" class="btn btn-dark">儲存</button>
               </td>
-            </tr>
+            </tr> -->
 
           </tbody>
         </table>
@@ -82,9 +82,9 @@
 <!-- 題目內容燈箱 -->
 <div class="modal fade " id="questionModal" tabindex="-1" role="dialog" aria-labelledby="alertModalTitle"
   aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog">
     <div class="modal-content">
-      <form action="insert_game_quiz.php" method="post" enctype="multipart/form-data" id="questionAddForm">
+      <form action="./php/insertGameDB.php" method="post" enctype="multipart/form-data" id="questionAddForm">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">新增題庫資料</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -95,8 +95,8 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <label for="question">測驗題目</label>
-              <input type="text" name="quiz_question" class="form-control" required placeholder="喜歡看哪種鬼片?" id="question"
-                name="question">
+              <input type="text" name="quiz_question" class="form-control" required placeholder="喜歡看哪種鬼片?"
+                id="form_question">
             </div>
 
 
@@ -114,7 +114,7 @@
             </div>
             <div class="form-group ml-auto mr-auto col-md-6 col-sm-8">
               <label for="opt1-point">選項一分數</label>
-              <select class="form-control" name="quiz_opt1_point" id="opt1-point">
+              <select class="form-control" name="quiz_opt1_point" id="opt_1_point">
                 <option value="1">0</option>
                 <option value="2">1</option>
                 <option value="3">1.5</option>
@@ -122,7 +122,7 @@
             </div>
             <div class="form-group ml-auto mr-auto col-md-6 col-sm-8">
               <label for="opt2-point">選項二分數</label>
-              <select class="form-control" name="quiz_opt2_point" id="opt2-point">
+              <select class="form-control" name="quiz_opt2_point" id="opt_2_point">
                 <option value="1">0</option>
                 <option value="2">1</option>
                 <option value="3">1.5</option>
@@ -130,29 +130,25 @@
             </div>
             <div class="form-group ml-auto mr-auto col-md-6 col-sm-8">
               <label for="opt3-point">選項三分數</label>
-              <select class="form-control" name="quiz_opt3_point" id="opt3-point">
+              <select class="form-control" name="quiz_opt3_point" id="opt_3_point">
                 <option value="1">0</option>
                 <option value="2">1</option>
                 <option value="3">1.5</option>
               </select>
             </div>
             <div>
-              <form>
                 <div class="form-group">
                   <label for="quiz_img_File">上傳測驗圖片</label>
                   <input type="file" name="quiz_img" class="form-control-file" id="quiz_img_File">
                 </div>
-              </form>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary addConfirm">確認</button>
-          <button type="button" class="btn btn-secondary btn-danger addCancel" data-dismiss="modal">取消</button>
+          <input type="submit" class="btn btn-primary checkformVal" name="submit">
+          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">取消</button>
         </div>
       </form>
     </div>
   </div>
 </div>
-
-

@@ -18,7 +18,7 @@
     border-radius: 10px;
     text-align: center;
     background-position: -30px;
-    margin: 80px auto 0px auto;
+    margin: 15px auto 0px auto;
     position: relative;
     .allcandlesblock{
       display: flex;
@@ -670,7 +670,9 @@
           }
         }
       }
-
+      .quiz_database{
+        display: none;
+      }
 
 
 
