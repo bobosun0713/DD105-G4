@@ -130,12 +130,13 @@ function btnClick(e) {
             document.querySelector('#resulttitle').innerHTML = types[0].resulttitle
             document.querySelector('#resultinnertext').innerHTML = types[0].resultinnertext
         } else if (total < 8) {
-            document.querySelector('#resulttitle').innerHTML = types[1].resulttitle
-            document.querySelector('#resultinnertext').innerHTML = types[1].resultinnertext
             let below8 = document.querySelectorAll(".below8")
             for (i = 0; i < below8.length; i++) {
                 below8[i].style.display = 'flex'
             }
+            document.querySelector('#resulttitle').innerHTML = types[1].resulttitle
+            document.querySelector('#resultinnertext').innerHTML = types[1].resultinnertext
+
 
         } else {
             document.querySelector('#resulttitle').innerHTML = types[2].resulttitle

@@ -3,7 +3,8 @@
 window.addEventListener("load", function () {
 
   getGameDB();
-
+  //html撈到db資料後註冊insertbtn事件
+  Dom_GameDB_insertbtn();
 }, false);
 
 function showgameDB(jsonStr) {
@@ -52,8 +53,7 @@ function showgameDB(jsonStr) {
   Dom_GameDB_updatebtn();
   //html撈到db資料後註冊deletebtn事件
   Dom_GameDB_deletebtn();
-  //html撈到db資料後註冊insertbtn事件
-  Dom_GameDB_insertbtn();
+
 }
 
 
@@ -193,5 +193,76 @@ function deleteGameDB(get_delete_quiz_no) {
 
   //送出資料
   xhr.send(formData_update);
+}
+
+
+//html撈到db資料後註冊insertbtn事件========================================================
+function Dom_GameDB_insertbtn() {
+
+  let insertbtn = document.querySelectorAll(".insertbtn");
+  // console.log(insertbtn[0], "新增按鈕")
+  insertbtn[0].onclick = get_insertGameDB_formdata;
+
+}
+function get_insertGameDB_formdata() {
+
+  let form_question = document.querySelector("#form_question");
+  let form_opt_1 = document.querySelector("#opt_1 ");
+  let form_opt_2 = document.querySelector("#opt_2 ");
+  let form_opt_3 = document.querySelector("#opt_3 ");
+  let form_opt_1_point = document.querySelectorAll("#opt_1_point option");
+  let form_opt_2_point = document.querySelectorAll("#opt_2_point option");
+  let form_opt_3_point = document.querySelectorAll("#opt_3_point option");
+
+  for (let i = 0; i < form_opt_1_point.length; i++) {
+    if (form_opt_1_point[i].selected == true) {
+      var get_form_opt_1_point = form_opt_1_point[i].innerText
+      console.log(get_form_opt_1_point, "題目內容1")
+    }
+  }
+  for (let i = 0; i < form_opt_2_point.length; i++) {
+    if (form_opt_2_point[i].selected == true) {
+      var get_form_opt_2_point = form_opt_2_point[i].innerText
+      console.log(get_form_opt_2_point, "題目內容2")
+    }
+  }
+  for (let i = 0; i < form_opt_3_point.length; i++) {
+    if (form_opt_3_point[i].selected == true) {
+      var get_form_opt_3_point = form_opt_3_point[i].innerText
+      console.log(get_form_opt_3_point, "題目內容3")
+    }
+  }
+
+  // if (form_question.value == "" || form_opt_1.value == "" || form_opt_2.value == "" || form_opt_3.value == "") {
+  //   alert("請輸入空白欄位");
+  // }
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status == 200) {
+      alert("修改題目成功");
+      // show_updategameDB(xhr.responseText);
+    } else {
+      alert(xhr.status);
+    }
+  }
+
+  var url = "./php/insertGameDB_JASON.php";
+
+  xhr.open("Post", url, true);
+  let formData_insert = new FormData();
+  formData_insert.append('quiz_no', get_quiz_no);
+  formData_insert.append('quiz_question', form_question);
+  formData_insert.append('quiz_opt1', form_opt_1);
+  formData_insert.append('quiz_opt2', form_opt_2);
+  formData_insert.append('quiz_opt3', form_opt_3);
+  formData_insert.append('quiz_opt1_point', form_opt_1_point);
+  formData_insert.append('quiz_opt2_point', form_opt_2_point);
+  formData_insert.append('quiz_opt3_point', form_opt_3_point);
+
+  // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+  //送出資料
+  xhr.send(formData_insert);
+
 }
 
