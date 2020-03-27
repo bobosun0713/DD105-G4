@@ -51,8 +51,7 @@ function showgameDB(jsonStr) {
   document.querySelector("#showPanel_gameDB").innerHTML = html;
   //html撈到db資料後註冊updatebtn事件
   Dom_GameDB_updatebtn();
-  //html撈到db資料後註冊deletebtn事件
-  Dom_GameDB_deletebtn();
+
 
 }
 
@@ -157,45 +156,4 @@ function updateGameDB(get_quiz_no, get_quiz_question, get_quiz_opt1, get_quiz_op
   //送出資料
   xhr.send(formData_update);
 }
-
-
-//getGameDB 刪除試膽測驗DB資料==============================================================
-function Dom_GameDB_deletebtn() {
-
-  let deletebtn = document.querySelectorAll(".deletebtn");
-
-  for (let i = 0; i < deletebtn.length; i++) {
-    deletebtn[i].onclick = get_deleteGameDB_quiz_no;
-
-  }
-}
-function get_deleteGameDB_quiz_no(e) {
-  let get_delete_quiz_no = e.target.parentNode.parentNode.firstElementChild.innerHTML
-
-  deleteGameDB(get_delete_quiz_no);
-}
-
-function deleteGameDB(get_delete_quiz_no) {
-
-  var xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    if (xhr.status == 200) {
-      getGameDB();
-      alert("刪除題目成功");
-      // show_updategameDB(xhr.responseText);
-     
-    } else {
-      alert(xhr.status);
-    }
-  }
-
-  var url = "./php/deleteGameDB_JASON.php";
-  xhr.open("Post", url, true);
-  let formData_update = new FormData();
-  formData_update.append('quiz_no', get_delete_quiz_no);
-
-  //送出資料
-  xhr.send(formData_update);
-}
-
 
