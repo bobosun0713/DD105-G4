@@ -17,7 +17,7 @@ try{
     $sql = "
     select tr.tour_title, tr.tour_image, m.mem_name, m.mem_img, date(tr.tour_datetime) datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
     from tour tr join spot s on (tr.spot_no = s.spot_no) 
-                left join member m on (tr.mem_no = m.mem_no) 
+                left join `member` m on (tr.mem_no = m.mem_no) 
                 left join food f on (tr.food_no = f.food_no) 
                 left join temple tm on (tr.temple_no = tm.temple_no)
     where tr.spot_no =:spot_no
@@ -49,7 +49,7 @@ try{
     $sql = "
     select msg.spot_no, mem.mem_name, mem.mem_img, msg.spot_msg_datetime msg_time, msg.spot_msg_content
     from spot_msg msg join spot s on (msg.spot_no = s.spot_no) 
-                      left join member mem on (msg.mem_no = mem.mem_no) 
+                      left join `member` mem on (msg.mem_no = mem.mem_no) 
     where msg.spot_no =:spot_no
     order by msg_time desc 
     ";

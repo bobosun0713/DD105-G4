@@ -1,15 +1,19 @@
 //自動取得螢幕寬度
 getWidth();
-
+window.addEventListener('resize', function(){
+    getWidth(); 
+}, true);
 function getWidth() {
     var screenwidth = document.body.clientWidth;
     // console.log(screenwidth, "寬")
     if (screenwidth < 1199) {
         document.querySelector('.cancel_ghost_group').style.display = 'none'
-
+       
     } else {
         document.querySelector('.cancel_ghost_group').style.display = 'block'
     }
+
+
 }
 
 
@@ -52,7 +56,7 @@ let shufflequestion, currentquestionIndex
 function startGame() {
     //放cancel鬼
     getWidth();
-
+   
     document.getElementById('startbtn').parentNode.style.display = 'none'
     document.getElementById('gotoindex').parentNode.style.display = 'none'
     document.querySelector('.progressblock').style.display = 'block'
@@ -75,7 +79,7 @@ function startGame() {
 }
 
 function setnextquestion() {
-
+    
     document.querySelector('#testheading').style.display = 'none'
     document.querySelector('#logoimg').style.display = 'none'
     document.querySelector('.buttons').style.display = 'block'
@@ -120,7 +124,15 @@ function btnClick(e) {
         document.querySelector('#gotoindex_btn').style.display = 'inline-block'
         document.querySelector('.grid').style.backgroundImage = "url('../img/game/quizreport_bg.png')"
         document.querySelector('.recommendtitle').innerHTML = '為您推薦';
-        document.querySelector('#dolphin_block').style.display = 'block'
+        //讓海豚消失
+        var screenwidth = document.body.clientWidth;
+        if(screenwidth<1199){
+            document.querySelector('#dolphin_block').style.display = 'none'
+        }else{
+            document.querySelector('#dolphin_block').style.display = 'block'
+    
+        }
+        // document.querySelector('#dolphin_block').style.display = 'block'
         document.querySelector('.test_score_title').style.display = 'inline-block'
         if (total < 5) {
             let below5 = document.querySelectorAll(".below5")
@@ -155,7 +167,7 @@ function btnClick(e) {
     document.querySelectorAll('.choice')[0].value = parseFloat(quiz_opt1_point[currentquestionIndex].innerHTML)
     document.querySelectorAll('.choice')[1].value = parseFloat(quiz_opt2_point[currentquestionIndex].innerHTML)
     document.querySelectorAll('.choice')[2].value = parseFloat(quiz_opt3_point[currentquestionIndex].innerHTML)
-
+   
 
     // console.log("btnclick目前第幾題"+currentquestionIndex)
     document.getElementById('progress').innerHTML = currentquestionIndex + 1 + '/' + Qnum
@@ -185,3 +197,21 @@ var types = [
 
 var Qnum = quiz_RowsCount
 // var randomNum=Math.floor(Math.random()*questions.length);
+
+//放鬼臉
+let showface=document.querySelector(".showface")
+
+showface.addEventListener("click",function letscaryfaceout(){
+let creepy_face=document.querySelector(".creepy_face");
+setTimeout(byeface,3000);
+
+creepy_face.style.display="block";
+console.log("show")
+function byeface(){
+    creepy_face.style.display="none";
+    console.log("noshow")
+    window.location.href = './index.html';
+}
+
+});
+

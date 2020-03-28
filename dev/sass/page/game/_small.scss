@@ -9,6 +9,13 @@
      
    }
   #quiz{
+    .buttons{
+      #btn0{
+        &:before {
+            display: none;
+        }
+      }
+    }
     .startbtn{
       background-size:90% ;
       background-position: 5px;
