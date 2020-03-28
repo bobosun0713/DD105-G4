@@ -20,11 +20,7 @@ try{
             m.mem_name, m.mem_img, date(tr.tour_datetime) datetime, 
             s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
     from tour tr join spot s on (tr.spot_no = s.spot_no) 
-<<<<<<< HEAD
                 join `member` m on (tr.mem_no = m.mem_no) 
-=======
-                left join `member` m on (tr.mem_no = m.mem_no) 
->>>>>>> ed7ae31d2ffcd48029947bfa691abb848eb73825
                 left join food f on (tr.food_no = f.food_no) 
                 left join temple tm on (tr.temple_no = tm.temple_no)
     where tr.spot_no =:spot_no
