@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   // border: 1px solid blue;
-  height:1300px;
+  // height:1300px;
   // overflow: hidden;
   overflow-y: hidden;
   
@@ -446,9 +446,9 @@
       .cancel_ghost_group{
         position: absolute;
         width: 400px;
-        height:50%;
-        left:-130%;
-        bottom:-20%;
+        height:40%;
+        left:-100%;
+        top:58%;
         overflow: hidden;
         // border:1px solid blanchedalmond;
         
@@ -466,7 +466,7 @@
             position: absolute;
             
           }
-          a{ 
+          .showface{ 
             .canceltext{
               color: black;
               font-size:26px;
@@ -478,8 +478,12 @@
               z-index: 99;
               transform:rotateZ(20deg);
             }
+            &:hover{
+              cursor: pointer;
+            }
             &:hover .canceltext{
               animation:blur 2s linear infinite;
+
               
             }
             
@@ -628,6 +632,7 @@
             width: 120px;
             height: 184px;
             animation: updown 1.5s infinite ease-in-out alternate-reverse;
+            
           }
         }
         
@@ -679,4 +684,21 @@
     }
 
   }
+  .creepy_face{
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+    border: 1px solid white;
+    display:none;
+    img{
+      width:100%;
+      height:100%;
+    }
+
+  }
+
 }  
