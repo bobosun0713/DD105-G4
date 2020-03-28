@@ -13,7 +13,7 @@ function showgameDB(jsonStr) {
   for (let i = 0; i < gameDB.length; i++) {
     html += `<tr>
             <td>${gameDB[i].quiz_no}</td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_question}"></td>
+            <td p-3><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_question}"></td>
             <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt1}"></td>
             <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt2}"></td>
             <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt3}"></td>
@@ -183,7 +183,7 @@ function deleteGameDB(get_delete_quiz_no) {
       getGameDB();
       alert("刪除題目成功");
       // show_updategameDB(xhr.responseText);
-     
+
     } else {
       alert(xhr.status);
     }

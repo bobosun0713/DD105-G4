@@ -13,10 +13,10 @@ function showgameDB(jsonStr) {
   for (let i = 0; i < gameDB.length; i++) {
     html += `<tr>
             <td>${gameDB[i].quiz_no}</td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_question}"></td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt1}"></td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt2}"></td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt3}"></td>
+            <td><input type="text" class="form-control form-control-sm modified" placeholder="" value="${gameDB[i].quiz_question}"></td>
+            <td><input type="text" class="form-control form-control-sm modified" placeholder="" value="${gameDB[i].quiz_opt1}"></td>
+            <td><input type="text" class="form-control form-control-sm modified" placeholder="" value="${gameDB[i].quiz_opt2}"></td>
+            <td><input type="text" class="form-control form-control-sm modified" placeholder="" value="${gameDB[i].quiz_opt3}"></td>
             <td>
                 <select class="custom-select-sm opt1_select_point">
                   <option value="0">${gameDB[i].quiz_opt1_point}</option>
