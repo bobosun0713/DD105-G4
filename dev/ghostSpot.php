@@ -1,6 +1,7 @@
 <?php
 $spot_no = $_REQUEST["spot_no"];
 $order_no = $_REQUEST["order_no"];
+session_start();
 $errMsg = "";
 
 
@@ -15,9 +16,11 @@ try{
 
     //景點相關揪團
     $sql = "
-    select tr.tour_title, tr.tour_image, m.mem_name, m.mem_img, date(tr.tour_datetime) datetime, s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
+    select tr.tour_no, tr.tour_title, tr.tour_image, 
+            m.mem_name, m.mem_img, date(tr.tour_datetime) datetime, 
+            s.spot_name, f.food_name, tm.temple_name, tr.number_of_participants, tr.max_of_participants 
     from tour tr join spot s on (tr.spot_no = s.spot_no) 
-                left join member m on (tr.mem_no = m.mem_no) 
+                join `member` m on (tr.mem_no = m.mem_no) 
                 left join food f on (tr.food_no = f.food_no) 
                 left join temple tm on (tr.temple_no = tm.temple_no)
     where tr.spot_no =:spot_no
@@ -49,7 +52,7 @@ try{
     $sql = "
     select msg.spot_no, mem.mem_name, mem.mem_img, msg.spot_msg_datetime msg_time, msg.spot_msg_content
     from spot_msg msg join spot s on (msg.spot_no = s.spot_no) 
-                      left join member mem on (msg.mem_no = mem.mem_no) 
+                      left join `member` mem on (msg.mem_no = mem.mem_no) 
     where msg.spot_no =:spot_no
     order by msg_time desc 
     ";
@@ -100,12 +103,43 @@ try{
 <!-- 阿禎scorll外掛 -->
 <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 <script src="js/tab.js"></script>
-<?php 
-if( $errMsg != ""){ //例外
-  alert($errMsg);
-}else{
-    $spotRow = $spots->fetchObject();
-?>
+
+<!-- 顯示該景點資訊 -->
+    <?php 
+    if( $errMsg != ""){ //例外
+    alert($errMsg);
+    }else{
+        $spotRow = $spots->fetchObject();}
+    ?>
+
+<!-- 顯示該景點推薦揪團 -->
+    <?php 
+    if( $errMsg != ""){
+        alert($errMsg);
+    }else{
+        $tourRows = $tour->fetchAll(PDO::FETCH_ASSOC);}
+    ?>
+
+<!-- 顯示該景點官方行程 -->
+    <?php 
+    if( $errMsg != ""){
+        alert($errMsg);
+    }else{
+        $OfficialTourRows = $OfficialTour->fetchObject();}
+    ?>
+
+<!-- 顯示所有該景點留言 -->
+    <?php 
+    if( $errMsg != ""){
+        alert($errMsg);
+    }else{
+        $spotMsgRows = $spotMsg->fetchAll(PDO::FETCH_ASSOC);}
+    ?>
+
+
+
+
+
 <!-- title PHP 有改 -->
     <title>前進鬼島-<?php echo $spotRow->spot_name; ?></title>
 
@@ -119,19 +153,17 @@ if( $errMsg != ""){ //例外
     <!-- 鬼箭頭 -->
     
 
-    <!-- 撰寫留言視窗 -->
-        <!-- 跳出留言視窗 -->
-        <!-- 跳出留言視窗 PHP 有改 -->
+        <!-- ================ 撰寫留言視窗 ================ -->
         <div class="spotWroteMsgBG">
             <div class="spotWroteMsgContent">
                 <h2>【<?php echo $spotRow->spot_name;?></h2>
                 <div class="writeMsgZone">
                     <div class="personalMsg">
                         <div class="headIcon">
-                            <img src="./img/icon/header2.png">
+                            <img src="<?=$_SESSION["mem_img"]?>">
                         </div>
                         <div class="neme">
-                            <p>黃冠禎</p>
+                            <p><?=$_SESSION["mem_name"]?></p>
                         </div>
                     </div>
                     <form method="post" >
@@ -147,6 +179,7 @@ if( $errMsg != ""){ //例外
                 
             </div>
         </div>
+        <!-- ================ 撰寫留言視窗 ================ -->
 
     <div class="wrapper">
 
@@ -402,16 +435,9 @@ if( $errMsg != ""){ //例外
 
             </section>
 
-<?php 
-}
-?>
+
             <!-- ================ section2 PHP 有改 ================ -->
-            <?php 
-            if( $errMsg != ""){
-                alert($errMsg);
-            }else{
-                $tourRows = $tour->fetchAll(PDO::FETCH_ASSOC);
-            ?>
+            
             <section id="ghostSpotSection2">
 
                 <div class="titleZone">
@@ -425,8 +451,8 @@ if( $errMsg != ""){ //例外
 
                         <?php foreach($tourRows as $i => $tourRow){?>
                         
-                        <div class="tourCard">
-                            <a href="./StartGroup.php?spot_no=<?=$tourRow["tour_no"]?>">
+                        <div class="tourCard" title="<?=$tourRow['tour_no']?>">
+                            
                                 <div class="tourImg">
                                     <img src="./img/tour/<?=$tourRow['tour_image']?>">
                                 </div>
@@ -478,14 +504,13 @@ if( $errMsg != ""){ //例外
                                 </div>
                                 <div class="tourFavorite">
                                     <p class="like">
-                                        <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                        10
+                                        <img src="./img/icon/likeBefore.svg" title="加入收藏">
                                     </p>
                                 </div>
-                            </a>
+                            
                         </div>
 
-                        <?php }} ?>
+                        <?php } ?>
 
 
                     </div>
@@ -517,12 +542,7 @@ if( $errMsg != ""){ //例外
                     <h3 class="tablink" id="tab2">景點留言</h3>
                 </nav>
                 <div class="allTabPage">
-                    <?php 
-                        if( $errMsg != ""){
-                            alert($errMsg);
-                        }else{
-                            $OfficialTourRows = $OfficialTour->fetchObject();
-                        ?>
+                    
                             <div id="tabPage1" class="tabpage">
 
                                 <div id="officalTour">
@@ -597,7 +617,7 @@ if( $errMsg != ""){ //例外
                                     ;}elseif($OfficialTourRows->food_name != null) {
                                         echo '<div class="tourSpot">
                                             <div class="tourImg">
-                                                <img src="./img/food/',$OfficialTourRows->food_img,'.jpg">
+                                                <img src="./img/food/',$OfficialTourRows->food_img,'">
                                             </div>
                                             <div class="tourSpotTxt">
                                                 <h2 class="spotTitle">【行程一】<span>',$OfficialTourRows->food_name,'</span></h2>
@@ -758,16 +778,9 @@ if( $errMsg != ""){ //例外
                                 </div>
 
                             </div>
-                    <?php }?>
 
 
                     <!-- section3-留言 PHP 有改 -->
-                    <?php 
-                        if( $errMsg != ""){
-                            alert($errMsg);
-                        }else{
-                            $spotMsgRows = $spotMsg->fetchAll(PDO::FETCH_ASSOC);
-                    ?>
                         <div id="tabPage2" class="tabpage">
 
                             <div class="writeBtnWrap">
@@ -805,10 +818,10 @@ if( $errMsg != ""){ //例外
                                                     </p>
                                                 </div>
 
-                                                <div class="reportZone">
+                                                <!-- <div class="reportZone">
                                                     <img src="./img/icon/report_red.svg">
                                                     <p>檢舉留言</p>
-                                                </div>
+                                                </div> -->
 
                                             </div>
                                         </div>
@@ -824,7 +837,6 @@ if( $errMsg != ""){ //例外
 
                             </div>   
                         </div>
-                    <?php }?>
                 </div>
             
             </section>

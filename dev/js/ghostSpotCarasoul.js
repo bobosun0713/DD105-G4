@@ -54,6 +54,7 @@ function sendSpotMsg(){
 
 
 
+
 window.addEventListener('load', function(){
     let curIndex = 0;
     let cardDisplay = document.querySelector("#cardDisplay");

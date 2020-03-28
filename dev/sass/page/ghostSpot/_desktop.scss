@@ -122,6 +122,10 @@
         p {
           color: #8c8a8a;
           margin: 5px;
+          text-shadow: 0 0 5px transparent;
+          transform: all .3s linear ;
+
+          
         }
       }
 
@@ -138,6 +142,16 @@
             justify-content: start;
             align-items: center;
             padding: auto 0;
+            transition: .3s linear;
+
+            &:hover{
+              color: white;
+              text-shadow: 0 0 5px red;
+
+              img{
+                filter:drop-shadow( 0 0 5px red);
+              }
+            }
 
             span {
               font-size: 2rem;
@@ -418,9 +432,18 @@
 
         .tourImg {
           width: 35%;
+          overflow: hidden;
 
           img {
             width: 100%;
+            filter: contrast(90%);
+            transition: .5s linear;
+
+            &:hover{
+              filter: contrast(120%);
+              transform-origin: center;
+              transform: scale(1.1);
+            }
           }
         }
 
@@ -530,6 +553,11 @@
             height: 20px;
             border-radius: 50%;
             background: #8c8a8a;
+            transition: .2s linear;
+
+            &:hover{
+              box-shadow: 0px 0px 18px red;
+            }
 
             .circle {
               width: 28px;
@@ -537,8 +565,14 @@
               border-radius: 50%;
               border: 1px solid #8c8a8a;
               position: relative;
-              top: -4px;
-              right: 3.5px;
+              top: -5px;
+              right: 4px;
+              transition: .2s linear;
+
+              &:hover{
+                box-shadow: 0px 0px 18px red;
+              }
+
             }
 
             .line {
@@ -741,6 +775,11 @@
 
         display: inline-flex;
         justify-content: space-between;
+        transition: .3s linear;
+
+        &:hover{
+          transform: translateX(20px);
+        }
 
         .msgWrap {
           display: inline-flex;
