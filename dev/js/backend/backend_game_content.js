@@ -13,10 +13,10 @@ function showgameDB(jsonStr) {
   for (let i = 0; i < gameDB.length; i++) {
     html += `<tr>
             <td>${gameDB[i].quiz_no}</td>
-            <td p-3><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_question}"></td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt1}"></td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt2}"></td>
-            <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt3}"></td>
+            <td p-3><input type="text" class="form-control form-control-sm" placeholder="" value="${gameDB[i].quiz_question}"></td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="" value="${gameDB[i].quiz_opt1}"></td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="" value="${gameDB[i].quiz_opt2}"></td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="" value="${gameDB[i].quiz_opt3}"></td>
             <td>
                 <select class="custom-select-sm opt1_select_point">
                   <option value="0">${gameDB[i].quiz_opt1_point}</option>
@@ -41,7 +41,7 @@ function showgameDB(jsonStr) {
                   <option value="3">1.5</option>
                 </select>
             </td>
-            <td><div><img src="${gameDB[i].quiz_img}"></div></td>
+            <td><div class="game_db_img"><img src="${gameDB[i].quiz_img}"></div></td>
 
             <td><button type="button" class="btn btn-danger deletebtn">刪除</button></td>
             <td><button type="button" class="btn btn-dark updatebtn">儲存</button></td>
