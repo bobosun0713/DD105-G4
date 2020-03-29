@@ -17,7 +17,6 @@ var web = {
     img: ["dev/img/*.*", "dev/img/**/*.*"],
     font: ["dev/font/*.*", "dev/font/**/*.*"],
 }
-<<<<<<< HEAD
 var options={
     base:'./dest',
     debug:true,
@@ -30,20 +29,6 @@ var options={
     bin:'/Applications/MAMP/bin/php/php7.4.1/bin/php',
     ini:'/Applications/MAMP/bin/php/php7.4.1/conf/php.ini',
     port:8080,
-=======
-var options = {
-    base: "./dest",
-    debug: true,
-
-    //路徑如果不同請隱藏別人的路徑 新增自己的路徑 3Q
-    //下面是張馨的路徑
-    bin: "C:/php-7.4.2-nts-Win32-vc15-x64/php.exe",
-    ini: "C:/php-7.4.2-nts-Win32-vc15-x64/php.ini",
-    //下面是lilly的路徑
-    // bin:'/Applications/MAMP/bin/php/php7.4.1/bin/php',
-    // ini:'/Applications/MAMP/bin/php/php7.4.1/conf/php.ini',
-    port: 8080,
->>>>>>> cbb2df8539cb894e3d8c6ca7616e231137d79351
 }
 
 //     //路徑如果不同請隱藏別人的路徑 新增自己的路徑 3Q
