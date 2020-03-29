@@ -3,81 +3,45 @@
     <head>
         @@include('layout/head.html')
         <title>討論區</title>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>
-            $(document).ready(function() {
-                // 發表文章
-                $("#opener").click(function() {
-                    $("#forum_chatbox").fadeIn()
-                })
-                $(".cancechat").click(function() {
-                    $("#forum_chatbox").fadeOut()
-                })
-
-                // 文章內容
-                $(".content_btn").click(function() {
-                    $("#forum_contentbox").fadeIn()
-                })
-
-                $(".content_out").click(function() {
-                    $("#forum_contentbox").fadeOut()
-                })
-
-                // 檢舉視窗
-                $(".report_btn").click(function() {
-                    $("#forum_report").css("display", "block")
-                })
-                $("#forum_report_cance").click(function() {
-                    $("#forum_report").css("display", "none")
-                })
-            })
-        </script>
     </head>
     <body>
-        <!-- 霧氣 -->
-        @@include('layout/component/smoke.html')
-        <!-- ======================= 燈箱列 ============================= -->
+        <!-- 滑鼠鬼 -->
+        @@include('layout/component/mouse_ghost.html')
         <!-- 發文 燈箱 -->
         <div id="forum_chatbox">
             <div class="chatbox">
                 <h2>【發表文章】</h2>
-                <form action="">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="chatbox_user">
-                        <div class="user_path">
-                            <img src="./img/icon/default_header.png" alt="" />
+                        <!-- <div class="user_path">
+                            <img src="./img/icon/deCfault_header.png" alt="" />
                         </div>
                         <div class="user_name">
                             非洲酋長
-                        </div>
+                        </div> -->
                     </div>
                     <div class="user_select">
-                        <select name="" id="">
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
-                            <option value="">測試測試</option>
+                        <select name="forum_area" id="forum_area">
+                            <option value="北部">北部</option>
+                            <option value="中部">中部</option>
+                            <option value="南部">南部</option>
                         </select>
-                        <label for="forum_cover"
-                            >上傳封面<input type="file" id="forum_cover" style="display: none;"
+                        <label for="images"
+                            >上傳封面<input type="file" name="images" id="images" style="display: none;"
                         /></label>
                     </div>
-                    <input type="text" placeholder="請輸入標題" />
-                    <textarea name="" id="" class="chat_editor" placeholder="請輸入文章內容"></textarea>
+                    <input type="text" name="forum_title" id="forum_title" placeholder="請輸入標題" />
+                    <textarea
+                        name="forum_content"
+                        class="forum_content"
+                        id="forum_content"
+                        placeholder="請輸入文章內容"
+                    ></textarea>
+                    <input type="hidden" id="forum_view" value="0" />
+                    <input type="hidden" id="forum_chat" value="0" />
                     <div class="forum_control">
                         <input type="reset" value="取消" class="cancechat" />
-                        <input type="submit" value="發布" class="getchat" />
+                        <input type="reset" value="發布" class="getchat" />
                     </div>
                 </form>
             </div>
@@ -85,71 +49,10 @@
         <!-- 文章 燈箱 -->
         <div id="forum_contentbox">
             <div class="content_out"></div>
-            <div class="cotentbox">
-                <div class="user_loc">【恐怖廢棄醫院】</div>
-                <div class="chatbox_user">
-                    <div class="user_path">
-                        <img src="./img/icon/header1.png" alt="" />
-                    </div>
-                    <div class="user_name">非洲酋長<span>2020-03-08</span></div>
-                </div>
-                <div class="chatbox_content">
-                    <div class="conten_img">
-                        <img src="https://picsum.photos/350/400" alt="" />
-                    </div>
-                    <div class="content_p">
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam, consequatur, illum
-                            blanditiis quas alias ea enim animi magni commodi mollitia perspiciatis, quae aliquam.
-                            Possimus quibusdam illo illum veritatis, officia quia!
-                        </p>
-                    </div>
-                </div>
-                <div class="chatbox_status">
-                    <div class="art_path">
-                        <div class="art_icon">
-                            <img src="img/icon/eye.png" />
-                            <span>11</span>
-                        </div>
-                        <div class="art_icon">
-                            <img src="img/icon/chat.svg" />
-                            <span>12</span>
-                        </div>
-                        <div class="art_icon">
-                            <img src="img/icon/heart.png" />
-                            <span>11</span>
-                        </div>
-                    </div>
-                    <div class="art_report report_btn">
-                        <img src="./img/forum/warning_black.svg" alt="" />
-                    </div>
-                </div>
-                <!-- 留言內容 -->
-                <div class="msg_space">
-                    <div class="msg_user">
-                        <div class="msg_user_space">
-                            <img src="./img/icon/default_header.svg" alt="" />
-                            <div class="msg_title_user">
-                                <div class="msg_title_name">非洲阿民</div>
-                                <div class="msg_title_time">2020-04-06</div>
-                            </div>
-                        </div>
-                        <div class="msg_report report_btn">
-                            <img src="./img/forum/warning.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="msg_p">
-                        <p>
-                            測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- 留言 -->
             <div class="chat_msg">
-                <form action="">
-                    <input type="text" placeholder="回應 ....." />
-                    <input type="submit" value="送出" />
+                <form action="" method="post" onsubmit="return false" enctype="multipart/form-data">
+                    <input type="text" id="msg_chat" name="msg_chat" placeholder="回應 ....." />
+                    <input type="submit" id="msg_send" name="msg_send" value="送出" />
                 </form>
             </div>
         </div>
@@ -157,289 +60,82 @@
         <div id="forum_report">
             <h2>檢舉原因為何？</h2>
             <form action="">
-                <input type="hidden" />
-                <input type="hidden" />
-                <input type="hidden" />
                 <p>
-                    <input type="radio" name="report" id="report_1" />
+                    <input type="radio" name="report" id="report_1" value="色情、暴力等不雅內容" />
                     <label for="report_1">色情、暴力等不雅內容</label>
                 </p>
                 <p>
-                    <input type="radio" name="report" id="report_2" />
+                    <input type="radio" name="report" id="report_2" value="辱罵他人等文字" />
                     <label for="report_2">辱罵他人等文字</label>
                 </p>
                 <p>
-                    <input type="radio" name="report" id="report_3" />
+                    <input type="radio" name="report" id="report_3" value="其他違規事項" />
                     <label for="report_3">其他違規事項</label>
                 </p>
                 <div class="forum_report_control">
                     <input type="button" value="取消" id="forum_report_cance" />
-                    <input type="submit" value="送出" id="forum_report_sub" />
+                    <input type="button" value="送出" id="forum_report_sub" />
                 </div>
             </form>
         </div>
-        <!-- 內文 -->
         <div class="forum_wrapper">
-            <!-- 滑鼠 -->
-            <!-- @@include('layout/component/mouse_ghost.html') -->
+            <!-- 霧氣 -->
+            @@include('layout/component/smoke.html')
             <!-- 導覽列 -->
-            @@include('layout/header.html',{ "link005" : "pageSelectEffect2"})
+            @@include('layout/header.html')
             <div class="forum_container">
                 <!-- 文章標題 -->
                 <div class="article_title">
-                    <div class="art_title">所有文章列表<span>共519篇文章</span></div>
+                    <div class="art_title">所有文章列表</div>
                     <span id="opener">投稿</span>
                 </div>
                 <!-- 篩選 -->
                 <div class="forum_filter">
-                    <select name="">
-                        <option value="" selected>地區</option>
-                        <option value="">北部</option>
-                        <option value="">中部</option>
-                        <option value="">南部</option>
+                    <div class="serch">篩選方式 :</div>
+                    <select name="" id="area_selcet">
+                        <option value="地區" selected>地區</option>
+                        <option value="北部">北部</option>
+                        <option value="中部">中部</option>
+                        <option value="南部">南部</option>
                     </select>
-                    <select name="">
-                        <option value="" selected>景點名稱</option>
-                        <option value="">第一條</option>
-                        <option value="">第二條</option>
-                        <option value="">第三條</option>
-                        <option value="">第四條</option>
-                        <option value="">第五條</option>
-                        <option value="">第六條</option>
-                        <option value="">第七條</option>
-                        <option value="">第八條</option>
-                        <option value="">第九條</option>
-                        <option value="">第十條</option>
-                        <option value="">第十一條</option>
-                        <option value="">第十二條</option>
-                        <option value="">第十三條</option>
-                        <option value="">第十四條</option>
-                        <option value="">第十五條</option>
-                    </select>
-                    <select name="">
-                        <option value="" selected>排序方式</option>
-                        <option value="">最新發佈</option>
-                        <option value="">收藏最多</option>
-                        <option value="">膽量指數</option>
+                    <select name="" id="articel_Sort">
+                        <option value="排序方式" selected>排序方式</option>
+                        <option value="最新發佈">最新發佈</option>
+                        <option value="瀏覽最多">瀏覽最多</option>
+                        <option value="回復最多">回復最多</option>
                     </select>
                     <div class="forum_filter_serch">
                         <input type="text" id="serch" />
                         <label for="serch" class="btn btn-type4">搜尋</label>
                     </div>
                 </div>
-                <!-- 文章 -->
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/280" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/chat.svg" />
-                                    <span>12</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/280" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/chat.svg" />
-                                    <span>12</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/280" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/chat.svg" />
-                                    <span>12</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/280" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/chat.svg" />
-                                    <span>12</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/280" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/chat.svg" />
-                                    <span>12</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="forum_filter_articlec content_btn">
-                    <div class="art_img">
-                        <img src="https://picsum.photos/350/280" alt="" />
-                    </div>
-                    <div class="art_con">
-                        <div class="art_title">
-                            <img src="img/icon/default_header.png" alt="" />
-                            <h1>非洲酋長<span>2019-10-07刊登</span></h1>
-                        </div>
-                        <div class="art_p">
-                            <h1>花蓮凶宅第一天遇到．．．</h1>
-                            <p>
-                                「王八蛋！妳拍的這是什麼東西？」「我要的照片是腥、羶、色，
-                                妳到底懂不懂！」正在罵人的是八卦雜誌《六周刊》的禿頭總編。
-                            </p>
-                        </div>
-                        <div class="art_info">
-                            <div class="btn-border3">北區｜恐怖凶宅</div>
-                            <div class="art_path">
-                                <div class="art_icon">
-                                    <img src="img/icon/eye.png" />
-                                    <span>11</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/chat.svg" />
-                                    <span>12</span>
-                                </div>
-                                <div class="art_icon">
-                                    <img src="img/icon/heart.png" />
-                                    <span>11</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="forum_space"></div>
             </div>
+            <!-- footer -->
             @@include('layout/footer.html')
         </div>
+        <script src="./js/forum.js"></script>
+        <script>
+            //判斷會員登入
+            function checkLoginStatus() {
+                var xhr = new XMLHttpRequest()
+                var url = "./php/logininfo.php"
+                xhr.open("GET", url, true)
+                xhr.send(null)
+                xhr.onload = function() {
+                    if (xhr.status == 200) {
+                        member = JSON.parse(xhr.responseText)
+                        if (!member.mem_name) {
+                            alert("請先登入")
+                            $("#forum_chatbox").fadeOut()
+                            $("#forum_contentbox").fadeOut()
+                            $("#indexLogin,#login_page1").css("display", "block")
+                        }
+                    }
+                }
+            }
+            document.getElementById("opener").addEventListener("click", checkLoginStatus)
+            document.getElementById("msg_chat").addEventListener("click", checkLoginStatus)
+        </script>
     </body>
 </html>
