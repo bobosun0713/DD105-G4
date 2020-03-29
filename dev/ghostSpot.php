@@ -156,7 +156,7 @@ try{
         <!-- ================ 撰寫留言視窗 ================ -->
         <div class="spotWroteMsgBG">
             <div class="spotWroteMsgContent">
-                <h2>【<?php echo $spotRow->spot_name;?></h2>
+                <h2>【<?php echo $spotRow->spot_name;?>】</h2>
                 <div class="writeMsgZone">
                     <div class="personalMsg">
                         <div class="headIcon">
