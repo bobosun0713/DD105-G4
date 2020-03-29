@@ -7,12 +7,12 @@ window.addEventListener('load', function() {
     soundBtn.onclick = function() {
         if (music.paused) {
             music.play();
-            soundBtn.src = '../img/icon/music_btn_off.svg';
+            soundBtn.src = './img/icon/music_btn_off.svg';
             soundTxt.innerText = "Sound Off";
 
         } else {
             music.pause();
-            soundBtn.src = '../img/icon/music_btn_on.svg';
+            soundBtn.src = './img/icon/music_btn_on.svg';
             soundTxt.innerText = "Sound On";
         }
     }
