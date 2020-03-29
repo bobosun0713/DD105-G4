@@ -77,7 +77,7 @@ try{
             <nav class="sidebar-nav">
                 <ul class="nav pt-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="＃">
+                        <a class="nav-link" href="./backend.html">
                             <i class="cil-cog m-2"></i>
                             管理員帳號 
                         </a>
@@ -113,9 +113,9 @@ try{
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="backend_StartGroup_msg_report.html">
                             <i class="cil-flag-alt m-2"></i>
-                            揪團檢舉管理
+                            揪團留言檢舉管理
                         </a>
                     </li>
                     <li class="nav-item">
@@ -125,7 +125,7 @@ try{
                         </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="＃">
+                        <a class="nav-link" href="./backend_leader.php">
                             <i class="cil-star m-2"></i>
                             排行榜管理
                         </a>
@@ -136,6 +136,7 @@ try{
         </div>
 
         <main class="main">
+            
             <!-- =================== Breadcrumb =================== -->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -238,6 +239,7 @@ try{
                                         </tr>
                                     </form>
                                 </tfoot>
+                                
                             </table>
                     
                     

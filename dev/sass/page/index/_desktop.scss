@@ -291,8 +291,10 @@
 
       #loc2 {
         position: absolute;
-        top: 250px;
+        
+        top: 400px;
         left: 150px;
+       
         transition: all 0.3s linear;
 
         &:hover + #spell2 {
@@ -301,18 +303,20 @@
       }
       #spell2 {
         position: absolute;
-        top: 280px;
+
+        top: 430px;
         left: 110px;
       }
       #mapRank2 {
         position: absolute;
-        top: 240px;
+        top: 390px;
         left: 30px;
+
       }
 
       #loc3 {
         position: absolute;
-        top: 400px;
+        top: 250px;
         left: 150px;
         transition: all 0.3s linear;
 
@@ -322,12 +326,12 @@
       }
       #spell3 {
         position: absolute;
-        top: 430px;
+        top: 280px;
         left: 110px;
       }
       #mapRank3 {
         position: absolute;
-        top: 390px;
+        top: 240px;
         left: 30px;
       }
 

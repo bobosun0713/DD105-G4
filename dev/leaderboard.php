@@ -1,11 +1,10 @@
+<!-- 連接資料庫 -->
+
+
 <?php 
 try {
-	$dsn = "mysql:host=localhost;port=3306;dbname=dd105g4;charset";
-	$user = "f26828449";//mysql使用者帳號
-	$password = "362ac150219";//mysql密碼
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
+    require_once("./php/connect.php");
 
-	$pdo = new PDO($dsn, $user, $password, $options);
 	$sql =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 1";//第1名
 	$sopt1 = $pdo->query($sql);
 
@@ -60,7 +59,7 @@ while( $prodRow = $sopt1->fetchObject()){
 			<img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
                 <div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="01"?></h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+					<a class="Haunted-house-p" href="ghostIsland.php"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
 				</div>
 			<?php
 }
@@ -74,7 +73,7 @@ while( $prodRow = $sopt2->fetchObject()){
 			<img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
 			<div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="02"?></h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+					<a class="Haunted-house-p" href="ghostIsland.php"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
 			</div>
 			<?php
 }
@@ -88,7 +87,7 @@ while( $prodRow = $sopt3->fetchObject()){
 			<img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
                 <div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="03"?></h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+					<a class="Haunted-house-p" href="ghostIsland.php"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
 				</div>
 			<?php
 }

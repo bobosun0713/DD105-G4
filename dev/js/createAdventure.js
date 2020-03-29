@@ -328,7 +328,7 @@ window.addEventListener("load", function () {
     } else if(currentindex == 3){
       // alert('AAAAAAA');
       this.setAttribute("type","submit");
-      alert(nextbtn.getAttribute('type'));
+      // alert(nextbtn.getAttribute('type'));
       sendMyTour();
     }else {
       nextPage();
@@ -1134,19 +1134,11 @@ function sendMyTour(){
 
   xhr.onload = function(){
       if(xhr.status == 200){
-          // alert(xhr.responseText);
-          // link_to_tourPage(xhr.responseText);
+
           mem_no = JSON.parse(xhr.responseText);
           location.href= "./StartGroup.html";
           // location.href= `./StartGroup.php?${mem_no}`;
 
-          // if( typeof mem_no == 'number'){
-          //   location.href= "./StartGroup.html";
-          //   location.href= `./StartGroup.php?${mem_no}`;
-          // }else{
-          //   alert(xhr.responseText);
-          //   location.href= "./ghostIsland.php";
-          // }
           
 
       }else{
@@ -1224,7 +1216,7 @@ function sendMyTour(){
     }
   }
 
-  alert(formData);
+  // alert(formData);
   console.log(formData)
   xhr.send(formData);
   

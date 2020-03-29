@@ -29,6 +29,13 @@ function show_top3_info(jsonStr) {
     
     for( let i = 0; i<3; i++){
 
+        let mem_img;
+        if( top_3_info.top_3_msg_info[i]['mem_img'] != null){
+            mem_img = top_3_info.top_3_msg_info[i]['mem_img'];
+        }else{
+            mem_img = "./img/icon/default_header.svg";
+        }
+
         let html = `
                     <div class="spotInfo">
                         <div class="imgZone">
@@ -72,7 +79,7 @@ function show_top3_info(jsonStr) {
                                 </div>
 
                                 <div class="msgNew">
-                                    <img src="${top_3_info.top_3_msg_info[i]['mem_img']}" />
+                                    <img src="${mem_img}" />
 
                                     <div class="msgContent">
                                         <p class="personalInform">

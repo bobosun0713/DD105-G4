@@ -1,11 +1,7 @@
+
 <?php 
 try {
-	$dsn = "mysql:host=localhost;port=3306;dbname=dd105g4;charset";
-	$user = "f26828449";//mysql使用者帳號
-	$password = "362ac150219";//mysql密碼
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
-
-	$pdo = new PDO($dsn, $user, $password, $options);
+	require_once("./php/connect.php");
 	$sql4 =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 1";//第1名
 	$n01 = $pdo->query($sql4);
 
