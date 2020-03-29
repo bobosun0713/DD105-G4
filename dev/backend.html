@@ -1,70 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- head-->
-<head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-        <title>廟宇景點管理</title>
-    
-        <!-- Icons-->
-        <!-- lily新增 -->
-        <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/all.min.css">
-    
-        <!-- Main styles for this application-->
-        <link href="css/backend.css" rel="stylesheet" />
-    
-        <!-- 美食管理js檔案 -->
-        <script src="./js/backend/admin_manage.js"></script>
-</head>  
-
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-
-    <!-- =================== top_header =================== -->
-    @@include('layout/backend/top_header.html')
-    <!-- =================== top_header =================== -->
-
-    <div class="app-body">
-        <div class="sidebar">
-            <!-- =================== sidebar menu =================== -->
-            @@include('layout/backend/sidebar_nav.html')
-            <!-- =================== sidebar menu =================== -->
-        </div>
-
-        <main class="main">
-            
-            <!-- =================== Breadcrumb =================== -->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="./index.html">
-                        <i class="cil-home"></i>
-                    </a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#">後台管理</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    管理員帳號
-                </li>
-            </ol>
-            <!-- =================== Breadcrumb =================== -->
-
-
-            <div class="container-fluid">
-
-                <!-- =================== 中間內容 =================== -->
-                @@include('layout/backend/content.html')  
-                <!-- =================== 中間內容 =================== -->
-
+    <!-- head-->
+    @@include('layout/backend/head.html')
+    <title>鬼島後台</title>
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+        <!-- top_header -->
+        @@include('layout/backend/top_header.html')
+        <div class="app-body">
+            <div class="sidebar">
+                <!-- sidebar menu-->
+                @@include('layout/backend/sidebar_nav.html')
+                <button class="sidebar-minimizer brand-minimizer" type="button" style="margin-bottom: 20px;"></button>
             </div>
-
-        </main>
-
-    </div>
-
-    @@include('layout/backend/footer.html')
-</body>
-
-
+            <main class="main">
+                <!-- Breadcrumb-->
+                <ol class="breadcrumb"></ol>
+                <div class="container-fluid">
+                    <!-- 中間內容 -->
+                    @@include('layout/backend/content.html')
+                    <!-- end -->
+                </div>
+            </main>
+            <aside class="aside-menu"></aside>
+        </div>
+        @@include('layout/backend/footer.html')
+    </body>
 </html>

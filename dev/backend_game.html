@@ -1,66 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- head-->
+    @@include('layout/backend/head.html')
     <title>食物景點管理</title>
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+        <!-- top_header -->
+        @@include('layout/backend/top_header.html')
 
-    <!-- Icons-->
-
-    <!-- lily新增 -->
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/all.min.css">
-
-    <!-- Main styles for this application-->
-    <link href="css/backend.css" rel="stylesheet" />
-
-    <!-- 美食管理js檔案 -->
-    <script src="./js/backend/backend_game_content.js"></script>
-</head>
-
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-
-    <!-- top_header -->
-    @@include('layout/backend/top_header.html')
-
-    <div class="app-body">
-        <div class="sidebar">
-
-            <!-- sidebar menu-->
-            @@include('layout/backend/sidebar_nav.html')
-        </div>
-
-        <main class="main">
-            <!-- Breadcrumb-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="./index.html">
-                        <i class="cil-home"></i>
-                    </a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#">後台管理</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    試膽測驗題庫管理
-                </li>
-            </ol>
-
-
-            <div class="container-fluid">
-
-                <!-- 中間內容 -->
-                @@include('layout/backend/content_game.html')
-                <!-- 中間內容 -->
-
-
+        <div class="app-body">
+            <div class="sidebar">
+                <!-- sidebar menu-->
+                @@include('layout/backend/sidebar_nav.html')
             </div>
 
-        </main>
-    </div>
-    @@include('layout/backend/footer.html')
-    
-</body>
+            <main class="main">
+                <!-- Breadcrumb-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="./index.html">
+                            <i class="cil-home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">後台管理</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        試膽測驗題庫管理
+                    </li>
+                </ol>
 
+                <div class="container-fluid">
+                    <!-- 中間內容 -->
+                    @@include('layout/backend/content_game.html')
+
+                    <!-- 中間內容 -->
+                </div>
+            </main>
+        </div>
+        @@include('layout/backend/footer.html')
+    </body>
 </html>
