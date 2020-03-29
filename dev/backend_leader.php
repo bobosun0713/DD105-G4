@@ -1,12 +1,7 @@
+<?php include './php/connect.php';?>
+
 <?php 
 try {
-	$dsn = "mysql:host=localhost;port=3306;dbname=dd105g4;charset";
-	$user = "f26828449";//mysql使用者帳號
-	$password = "362ac150219";//mysql密碼
-	$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
-
-    $pdo = new PDO($dsn, $user, $password, $options);
-  // top 03
   
 	$sql1 =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 1";//第1名
 	$n01 = $pdo->query($sql1);
@@ -154,7 +149,7 @@ while( $prodRow = $n03->fetchObject()){
     <div class="card-body">
       <div class="card">
         <div class="card-header justify-content-end d-flex">
-          <h4 class="text-muted col "><i class="c-icon c-icon-2xl mt-5 mb-2 cil-star"> </i>Top 03</h4>
+          <h4 class="text-muted col "><i class="c-icon c-icon-2xl mt-5 mb-2 cil-star"> </i>Top 10</h4>
         </div>
         <table class="table text-center">
             <thead class="thead">
