@@ -794,6 +794,16 @@
             background-color: white;
             color: rgb(29, 15, 8);
           }
+          &:hover a{
+      
+            color: rgb(29, 15, 8);
+          }
+          a {
+            color: white;
+            text-decoration: none;
+            
+          }
+          
         }
       }
       // .adventrue_left
@@ -838,25 +848,28 @@
                 padding: 0;
               }
               > p {
+                text-align: left;
                 margin: 5px 0;
                 padding: 0;
                 color: rgb(58, 58, 58);
               }
               > ul {
                 width: 100%;
-                display: flex;
+                display: inline-flex;
 
                 > li {
+                  width: 30%;
                   margin-right: 1%;
                   font-size: 16px;
                   color: rgb(58, 58, 58);
+                  text-align: left;
                   // border: 1px solid red;
                   display: inline-block;
-                  width: 100px;
+
                   i {
+                    box-sizing: border-box;
                     display: inline-block;
                     margin-right: 2%;
-                    // border: 1px solid red;
                   }
                 }
               }
@@ -1123,17 +1136,6 @@
     }
     .adventure_btn3 {
       display: none;
-    }
-  }
-
-  //媗敏新增
-  .route3{
-    position: absolute;
-    bottom: -110px;
-    left: 25%;
-    width: 476px;
-    img{
-      width:100%;
     }
   }
 }

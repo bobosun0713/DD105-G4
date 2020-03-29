@@ -124,7 +124,8 @@ body {
       border-radius: 0px 5px;
       .ikeyword {
         background-color: #f3f3f3;
-        width: 40%;
+        width: 48%;
+       
         //   background-color: transparent;
         height: 44px;
         > input {
@@ -141,14 +142,14 @@ body {
         .b-divide {
           height: 15px;
           width: 1px;
-          background: rgb(82, 82, 82);
+          background: rgb(44, 44, 44);
         }
       }
 
       .area {
         background-color: #f3f3f3;
         height: 44px;
-        width: 30%;
+        width: 48%;
         //   width: 100%;
 
         .area_filter {
@@ -160,7 +161,7 @@ body {
           padding: 0 0px 0 20px;
           background-color: transparent;
           outline: none;
-          color: $subtitle;
+          color: rgb(52, 52, 52);
           &:hover {
             cursor: pointer;
           }
@@ -242,12 +243,11 @@ body {
     display: flex;
     width: 100%;
     .left_filter {
-    
       box-shadow: 2px 2px 8px black;
       background-image: url("../img/StartGroup/行程背景.jpg");
       // background-position: right;
       margin-right: 2%;
-      background-size:cover ;
+      background-size: cover;
       background-position: center;
       width: 30%;
       border-radius: 10px;
@@ -417,7 +417,7 @@ body {
               box-shadow: inset 0 1px 2px rgb(151, 5, 5), 0 1px rgba(255, 255, 255, 0.08);
               position: relative;
               border-radius: 4px;
-              width:100%;
+              width: 100%;
               height: 4px;
               // animation: line2 5s infinite;
               // @keyframes line2 {
@@ -463,7 +463,7 @@ body {
                 box-sizing: border-box;
               }
               > span {
-                width:130px;
+                width: 130px;
                 position: absolute;
                 bottom: -55px;
                 font-size: 14px;
@@ -482,7 +482,6 @@ body {
                   }
                 }
                 > p {
-                 
                   color: $subtitle;
                 }
               }
@@ -496,6 +495,35 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+
+          .tour_endtime {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #2a2a2a;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color ease 0.5s;
+            margin-bottom: 5px;
+            cursor: pointer;
+          }
+
+          //這是紅色填滿按鈕，拿來做立即加入
+          .btn_fill_red {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #d11c00;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color ease 0.5s;
+            margin-bottom: 5px;
+            &:hover {
+              background-color: red;
+              cursor: pointer;
+            }
+          }
+
           .main_people {
             display: flex;
             flex-direction: column;
@@ -670,11 +698,13 @@ body {
     overflow: auto;
     box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.603), 0 1px rgba(255, 255, 255, 0.08);
     .filter_img {
-      // filter: grayscale(1);
+      filter: grayscale(1);
       overflow: hidden;
       width: 250px;
+      height: 150px;
       margin: 10px 10px 0 10px;
       position: relative;
+
       span {
         z-index: 10;
         position: absolute;
@@ -683,6 +713,7 @@ body {
         font-size: 18px;
         color: rgb(177, 175, 175);
         transition: color 0.8s ease;
+        text-shadow: 1px 1px 1px black;
       }
       &:hover > span {
         color: white;
@@ -698,32 +729,32 @@ body {
         }
       }
     }
-    .filter_border{
+
+    .filter_border {
       padding: 5px;
       font-size: 0;
       border: 3px solid #d11c00;
       box-sizing: border-box;
       vertical-align: middle;
+     filter: grayscale(0);
     }
   }
   //確認送出
-  .true_sumbit{
-    
+  .true_sumbit {
     background-color: white;
     text-align: center;
     padding: 10px 0;
-    button{
-      font-size:18px;
+    button {
+      font-size: 18px;
       font-weight: 700;
       border-radius: 20px;
-      color:white;
-      background-color:rgb(24, 24, 24);
-      border:0;
-      padding:10px 30px;
+      color: white;
+      background-color: rgb(24, 24, 24);
+      border: 0;
+      padding: 10px 30px;
       cursor: pointer;
     }
   }
-
 }
 
 //跳出個人燈箱
@@ -734,7 +765,7 @@ body {
   position: fixed;
   display: none;
   flex-wrap: wrap;
-  z-index: 10;
+  z-index: 100;
 
   .people_message {
     // background-color: white;
@@ -768,7 +799,6 @@ body {
       margin: 0 auto;
       // transform: translateY(-50px);
       border-radius: 50%;
-      border: 6px solid white;
       font-size: 0;
       position: absolute;
       left: 50%;
@@ -842,7 +872,7 @@ body {
         margin: 5px;
         padding: 10px;
         box-sizing: border-box;
-
+        background-color: rgba(255, 255, 255, 0.421);
         .tab_img {
           height: 120px;
           overflow: hidden;
@@ -874,7 +904,7 @@ body {
 
           p {
             font-size: 12px;
-            color: rgb(148, 148, 148);
+            color: $subtitle;
             display: block;
 
             &:nth-child(2) {
