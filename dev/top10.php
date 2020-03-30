@@ -1,4 +1,3 @@
-
 <?php 
 try {
 	$sql4 =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 1";//第1名

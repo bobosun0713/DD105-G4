@@ -1,9 +1,7 @@
 <!-- 連接資料庫 -->
-
 <?php 
 try {
     require_once("./php/connect.php");
-
 	$sql =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 1";//第1名
 	$sopt1 = $pdo->query($sql);
 
@@ -137,7 +135,7 @@ try {
                 <a href="../adventrue.html">
                     <li class="title">尋鬼探險</li>
                 </a>
-                <a href="../leaderboard.html">
+                <a href="../leaderboard.php">
                     <li class="title">靈異票選</li>
                 </a>
                 <a href="../game.php">

@@ -41,7 +41,7 @@ function showgameDB(jsonStr) {
                   <option value="3">1.5</option>
                 </select>
             </td>
-            <td><div><img src="../img/game/${gameDB[i].quiz_img}" width="200px"></div></td>
+            <td><div><img src="./img/game/${gameDB[i].quiz_img}" width="200px"></div></td>
 
             <td><button type="button" class="btn btn-danger deletebtn">刪除</button></td>
             <td><button type="button" class="btn btn-dark updatebtn">儲存</button></td>
