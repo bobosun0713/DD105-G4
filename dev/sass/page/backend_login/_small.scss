@@ -1,1 +1,66 @@
-@include respond(small) {}
+@include respond(small) {
+
+    .backend_login {
+        .grid {
+
+            .allcandlesblock {
+          
+                .outercontainer {
+          
+                  .container1 {
+
+                    left: 53%;
+          
+
+                  }
+                  .candle {
+
+                    left: 64%;
+
+                  }
+                }
+                .outercontainer2 {
+
+                  .container2 {
+                    left: 24%;
+                  }
+                  .candle2 {
+                    left: 33%;
+                  }
+                }
+              }
+
+        
+            #camera1 {
+
+              .box1 {
+
+                #L_magicpaper {
+                  left: -40%;
+
+                }
+              }
+            }
+            #camera2 {
+
+              .box2 {
+       
+                #R_magicpaper {
+
+                  left: 80%;
+                }
+              }
+            }
+        
+        
+          }
+
+      
+        .to_front {
+
+          display: none;
+      
+
+          }
+      }
+}

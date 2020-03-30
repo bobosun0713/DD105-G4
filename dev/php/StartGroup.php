@@ -1,33 +1,51 @@
 <?php
 $tour_no = $_REQUEST["tour_no"];
+$spot_no = $_REQUEST["spot_no"];
 $errMsg = "";
 
 //連線資料庫
 try {
+   
     require_once("./php/connect.php");
+
+    // 基本資訊
     $sql =
-        "SELECT *
-     FROM tour t JOIN spot s ON  (t.spot_no = s.spot_no)
-     where tour_no = :tour_no ";
+        "SELECT * 
+        FROM tour t JOIN spot s ON (t.spot_no = s.spot_no) left join `member` m on (t.mem_no = m.mem_no) 
+        where t.tour_no  = :tour_no ";
     $tours = $pdo->prepare($sql);
     $tours->bindValue(":tour_no", $tour_no);
     $tours->execute();
     // $toursRow = $tours->fetchObject();
 
-
-
-
-
-
+    //推薦行程
     $sql = "SELECT * 
     from tour t join spot s on (t.spot_no = s.spot_no) 
                 left join food f on (t.food_no = f.food_no) 
                 left join temple tm on (t.temple_no = tm.temple_no)
+                 join `member` m on (t.mem_no = m.mem_no)  
                 where tour_no = :tour_no ";
     // -- FROM tour t JOIN spot s ON t.spot_no = s.spot_no where tour_no = :tour_no ";
     $OfficialTour = $pdo->prepare($sql);
     $OfficialTour->bindValue(":tour_no", $tour_no);
     $OfficialTour->execute();
+
+
+    //相關行程  以既定景點為標準
+
+    $sql = "SELECT * 
+    from tour t join spot s on (t.spot_no = s.spot_no) 
+                left join food f on (t.food_no = f.food_no) 
+                left join temple tm on (t.temple_no = tm.temple_no)
+                left join `member` m on (t.mem_no = m.mem_no)  
+                where s.spot_no = :spot_no
+                limit 1,6 ";
+    // -- FROM tour t JOIN spot s ON t.spot_no = s.spot_no where tour_no = :tour_no ";
+    $spot_nos = $pdo->prepare($sql);
+    $spot_nos->bindValue(":spot_no", $spot_no);
+    $spot_nos->execute();
+
+
 
 
     //顯示所有該景點留言
@@ -129,6 +147,8 @@ order by msg_time desc
 
             <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
 
+            <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
+
             <header id="topHeader">
                 <div id="navStatus">
                     <div id="soundStatus">
@@ -139,14 +159,14 @@ order by msg_time desc
                         <a href="">
                             <img src="./img/icon/default_header.svg" />
                         </a>
-                        <p><span class="login_btn">登入</span></p>
-                        <p><span class="creat_btn">註冊</span></p>
+                        <p><span id="memName"></span></p>
+                        <p><span id="login_btn">登入</span></p>
                     </div>
                 </div>
                 <nav class="desktopHeader">
                     <ul>
                         <li class="@@link001-1">
-                            <a href="ghostIsland.html" class="title @@link001">
+                            <a href="ghostIsland.php" class="title @@link001">
                                 前進鬼島
                             </a>
                         </li>
@@ -166,7 +186,7 @@ order by msg_time desc
                             </a>
                         </li>
                         <li class="@@link001-4">
-                            <a href="game.html" class="title @@link004">
+                            <a href="game.php" class="title @@link004">
                                 試膽測驗
                             </a>
                         </li>
@@ -219,7 +239,8 @@ order by msg_time desc
                                 <li class="title">會員中心</li>
                             </a>
                             <a>
-                                <li class="title login_btn">登入/註冊</li>
+                                <!-- <li class="title" id="memName1"></li> -->
+                                <li class="title" id="login_btn1">登入</li>
                             </a>
 
                             <li id="hamburgerSound" class="title">Sound Off</li>
@@ -227,76 +248,59 @@ order by msg_time desc
                     </nav>
                 </div>
                 <div id="indexLogin">
-                    <section class="login_page1" style="display: none;">
-                        <div class="logincancel"></div>
+                    <section id="login_page1" style="display: none;">
+                        <div id="logincancel"></div>
                         <div class="login_cover">
                             <img src="./img/logo/LOGO_black.png" alt="" />
                         </div>
                         <form action="" method="POST">
                             <p>
-                                <input type="text" id="memid" placeholder="帳號" />
+                                <input type="text" id="mem_id" name="mem_id" placeholder="帳號" />
                             </p>
                             <p>
-                                <input type="text" id="mempwd" placeholder="密碼" />
+                                <input type="password" id="mem_psw" name="mem_psw" placeholder="密碼" />
                             </p>
                         </form>
                         <div id="loginbutton">登入</div>
-                        <div class="next_login">註冊會員</div>
+                        <div id="next_login">註冊會員</div>
                     </section>
 
-                    <section class="login_page2" style="display: none;">
-                        <div class="logincancel"></div>
+                    <section id="login_page2" style="display: none;">
+                        <div id="logincancel2"></div>
                         <div class="login_cover">
                             <img src="./img/login/registered-01 (1).png" alt="" />
                         </div>
                         <form action="" method="POST">
                             <p>
                                 <label for="memid">會員帳號</label>
-                                <input type="text" id="memid" placeholder="4~12英文字母、數字" />
+                                <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
                             </p>
                             <p>
                                 <label for="mempwd">會員密碼</label>
-                                <input type="text" id="mempwd" placeholder="4~12英文字母、數字" />
+                                <input type="password" id="mempwd" name="mempwd" placeholder="4~20英文字母、數字" />
                             </p>
                             <p>
                                 <label for="mempwdcheck">確認密碼</label>
-                                <input type="text" id="mempwdcheck" placeholder="重新確認密碼" />
+                                <input type="password" id="mempwdcheck" name="mempwdcheck" placeholder="重新確認密碼" />
                             </p>
                             <p>
                                 <label for="memname">會員姓名</label>
-                                <input type="text" id="memname" placeholder="姓名" />
+                                <input type="text" id="memname" name="memname" placeholder="姓名" />
                             </p>
                             <p>
                                 <label for="memcell">手機號碼</label>
-                                <input type="text" id="memcell" placeholder="09XX-XXX-XXX" />
+                                <input type="text" id="memcell" name="memcell" placeholder="09XX-XXX-XXX" />
                             </p>
                             <p>
                                 <label for="memail">電子信箱</label>
-                                <input type="text" id="memail" placeholder="輸入Email須包含{@和.}" />
+                                <input type="mail" id="memail" name="memail" placeholder="輸入Email須包含{@和.}" />
                             </p>
                         </form>
                         <div id="sure_btn">註冊會員</div>
                     </section>
-                    <!-- <script>
-            $(document).ready(function() {
-                $(".login_btn").click(function() {
-                    $("#indexLogin, .login_page1").css("display", "block")
-                })
-                $(".creat_btn").click(function() {
-                    $("#indexLogin, .login_page2").css("display", "block")
-                })
-                $(".next_login").click(function() {
-                    $(".login_page2").css("display", "block")
-                    $(".login_page1").css("display", "none")
-                })
-                $(".logincancel").click(function() {
-                    $(".login_page1 , .login_page2").css("display", "none")
-                    $("#memid, #mempwd, #mempwdcheck, #memname, #memcell, #memail").val("")
-                })
-            })
-        </script> -->
                 </div>
             </header>
+
 
             <section class="fog">
                 <figure class="absolute-bg" style="background-image: url('https://source.unsplash.com/3ytjETpQMNY/1600x900');"></figure>
@@ -353,7 +357,7 @@ order by msg_time desc
                                         <div class="StartGroup_people_img">
                                             <img src="img/StartGroup/揪團團組.png" alt="">
                                         </div>
-                                        <!-- <?php $toursRow->mem_name ?> //這裡 -->
+                                        <?php echo $toursRow->mem_name ?>
                                     </li>
                                     <li>
                                         <img src="./img/icon/location.png">
@@ -402,7 +406,6 @@ order by msg_time desc
                     <!-- 進度條 -->
                     <div class="progress">
                         <span>
-                            報名截止<p>2020/02/31</p>
                         </span>
                         <div class="progress-bar">
                             <span>
@@ -609,13 +612,17 @@ order by msg_time desc
                                     </div>
                                     <nav class="tourStatus">
                                         <ul>
-                                            <li class="statusCircle selected">
-                                                <p class=" circle selected2"></p>
-                                                <p class="line"></p>
+                                            
+                                            <!-- <li class="statusCircle">
+                                            <p class=" circle "></p>
+                                                 <p class="line"></p>
+                                                
                                             </li>
                                             <li class="statusCircle">
-                                                <p class="circle"></p>
-                                            </li>
+                                       
+                                            <p class=" circle "></p>
+                                            </li> -->
+                                                                                   
                                         </ul>
 
                                     </nav>
@@ -710,52 +717,31 @@ order by msg_time desc
 
 
                                 </div>
+
+                                <div class="pageWrap">
+                                    <div class="pagination">
+                                        <div class="pageBtn"><span class="toLeft">〈 </span></div>
+                                        <p class="PageSelected">1</p>
+                                        <p>2</p>
+                                        <p>3</p>
+                                        <p>4</p>
+                                        <p>5</p>
+                                        <p>6</p>
+                                        <div class="pageBtn"><span class="toRight"> 〉</span></div>
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
+
+
+
+
                         <?php } ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="pageWrap">
-                            <div class="pagination">
-                                <div class="pageBtn"><span class="toLeft">〈 </span></div>
-                                <p class="PageSelected">1</p>
-                                <p>2</p>
-                                <p>3</p>
-                                <p>4</p>
-                                <p>5</p>
-                                <p>6</p>
-                                <div class="pageBtn"><span class="toRight"> 〉</span></div>
-                            </div>
-                        </div>
 
 
                     </div>
@@ -773,461 +759,227 @@ order by msg_time desc
 
 
 
+        <?php
+        if ($errMsg != "") {
+        } else {
+            $spotnoRows = $spot_nos->fetchAll(PDO::FETCH_ASSOC);
+        ?>
 
+            <section id="StartGroup_Section3">
+                <div class="titleZone">
+                    <h1 class="title">相關揪團</h1>
+                    <img src="./img/spot/spiderweb2.png">
+                </div>
 
-        <section id="StartGroup_Section3">
-            <div class="titleZone">
-                <h1 class="title">相關揪團</h1>
-                <img src="./img/spot/spiderweb2.png">
-            </div>
+                <div class="cardContain">
 
-            <div class="cardContain">
+                    <div id="cardDisplay">
+                        <?php foreach ($spotnoRows as $i => $spotnoRow) { ?>
 
-                <div id="cardDisplay">
-
-                    <div class="tourCard ">
-                        <a href="">
-                            <div class="tourImg">
-                                <img src="./img/component/card/spotCard01.png">
-                            </div>
-                            <div class="tourTxt">
-                                <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                <div class="tourHost">
-
-                                    <img src="./img/icon/header1.png" class="header">
-                                    <p class="name">富江我老婆</p>
-
-                                </div>
-
-                                <div class="tourInfo">
-
-
-                                    <div class="date">
-                                        <img src="./img/icon/date.svg">
-                                        <p>
-                                            出團日期：2020/01/29
-                                        </p>
-
+                            <div class="tourCard ">
+                                <a href="">
+                                    <div class="tourImg">
+                                        <img src="./img/tour/<?php echo $spotnoRow['tour_image'] ?>">
                                     </div>
+                                    <div class="tourTxt">
+                                        <h2 class="tourTitle">【<?php echo $spotnoRow['tour_title'] ?>】</h2>
 
-                                    <div class="tourSpot">
-                                        <img src="./img/icon/location_red.png">
-                                        <p>
-                                            新莊廢棄醫院、天后宮、酸辣粉
+                                        <div class="tourHost">
+
+                                            <img src="<?php
+                                                        if ($spotnoRow['mem_img'] == null) {
+
+                                                            echo "img/adventrue/個人頭像_無_工作區域 1.png";
+                                                        } else {
+                                                            echo $spotnoRow['mem_img'];
+                                                        }
+                                                        ?>" class="header">
+                                            <p class="name"><?php echo $spotnoRow['mem_name'] ?></p>
+
+                                        </div>
+
+                                        <div class="tourInfo">
+                                            <div class="date">
+                                                <img src="./img/icon/date.svg">
+                                                <p>
+                                                    <?php echo $spotnoRow['tour_datetime'] ?>
+                                                </p>
+
+                                            </div>
+
+                                            <div class="tourSpot">
+                                                <img src="./img/icon/location_red.png">
+                                                <p>
+                                                    <?php echo $spotnoRow['spot_name'] ?>、 <?php echo $spotnoRow['temple_name'] ?>、<?php echo $spotnoRow['food_name'] ?>
+                                                </p>
+                                            </div>
+
+                                            <div class="tourJoin">
+                                                <img src="./img/icon/tourCount.svg">
+                                                <p>
+                                                    參加人數：<?php echo $spotnoRow['number_of_participants'] ?>/<?php echo $spotnoRow['max_of_participants'] ?> 人
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tourFavorite">
+                                        <p class="like">
+                                            <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
+                                            10
                                         </p>
                                     </div>
-
-                                    <div class="tourJoin">
-                                        <img src="./img/icon/tourCount.svg">
-                                        <p>
-                                            參加人數：6/10 人
-                                        </p>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
-                            <div class="tourFavorite">
-                                <p class="like">
-                                    <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                    10
-                                </p>
-                            </div>
-                        </a>
 
+                        <?php ;
+                        } ?>
 
-
+                    <?php ;
+                } ?>
+                    <button id="rightScroll" class="scrollBtn" disabled>
+                        <span>〈</span>
+                    </button>
+                    <button id="leftScroll" class="scrollBtn">
+                        <span>〉</span>
+                    </button>
                     </div>
 
-                    <div class="tourCard">
-                        <a href="">
-                            <div class="tourImg">
-                                <img src="./img/component/card/spotCard01.png">
-                            </div>
-                            <div class="tourTxt">
-                                <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                <div class="tourHost">
-
-                                    <img src="./img/icon/header1.png" class="header">
-                                    <p class="name">富江我老婆</p>
-
-                                </div>
-
-                                <div class="tourInfo">
-
-
-                                    <div class="date">
-                                        <img src="./img/icon/date.svg">
-                                        <p>
-                                            出團日期：2020/01/29
-                                        </p>
-
-                                    </div>
-
-                                    <div class="tourSpot">
-                                        <img src="./img/icon/location_red.png">
-                                        <p>
-                                            新莊廢棄醫院、天后宮、酸辣粉
-                                        </p>
-                                    </div>
-
-                                    <div class="tourJoin">
-                                        <img src="./img/icon/tourCount.svg">
-                                        <p>
-                                            參加人數：6/10 人
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tourFavorite">
-                                <p class="like">
-                                    <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                    10
-                                </p>
-                            </div>
-                        </a>
+                    <div class="G2">
+                        <img src="./img/spot/G2.png">
+                    </div>
+                    <div class="ghostTalk">
+                        <p class="line"></p>
+                        <p>天乾物燥...小心火燭...</p>
+                        <p class="line"></p>
                     </div>
 
-                    <div class="tourCard">
-                        <a href="">
-                            <div class="tourImg">
-                                <img src="./img/component/card/spotCard01.png">
-                            </div>
-                            <div class="tourTxt">
-                                <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
+            </section>
 
-                                <div class="tourHost">
-
-                                    <img src="./img/icon/header1.png" class="header">
-                                    <p class="name">富江我老婆</p>
-
+            <section id="StartGroup_Section4">
+                <div class="adventure_main">
+                    <div class="adventure_btn">
+                        <a href="adventrue.html">
+                            <div class="ghost_btn_all">
+                                <div class="ghost_btn_img1">
+                                    <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
                                 </div>
-
-                                <div class="tourInfo">
-
-
-                                    <div class="date">
-                                        <img src="./img/icon/date.svg">
-                                        <p>
-                                            出團日期：2020/01/29
-                                        </p>
-
-                                    </div>
-
-                                    <div class="tourSpot">
-                                        <img src="./img/icon/location_red.png">
-                                        <p>
-                                            新莊廢棄醫院、天后宮、酸辣粉
-                                        </p>
-                                    </div>
-
-                                    <div class="tourJoin">
-                                        <img src="./img/icon/tourCount.svg">
-                                        <p>
-                                            參加人數：6/10 人
-                                        </p>
-                                    </div>
+                                <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
+                                <div class="ghost_tape">
+                                    <span>更多揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
                                 </div>
                             </div>
-                            <div class="tourFavorite">
-                                <p class="like">
-                                    <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                    10
-                                </p>
+                        </a>
+                        <a href="adventrue.html">
+                            <div class="ghost_btn2_all">
+                                <div class="ghost_btn_img2">
+                                    <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
+                                </div>
+                                <div class="ghost_btn2"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
+                                <div class="ghost_tape">
+                                    <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                                </div>
                             </div>
                         </a>
                     </div>
+                </div>
+            </section>
 
-                    <div class="tourCard">
-                        <a href="">
-                            <div class="tourImg">
-                                <img src="./img/component/card/spotCard01.png">
-                            </div>
-                            <div class="tourTxt">
-                                <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
 
-                                <div class="tourHost">
-                                    <img src="./img/icon/header1.png" class="header">
-                                    <p class="name">富江我老婆</p>
-                                </div>
 
-                                <div class="tourInfo">
-
-                                    <div class="date">
-                                        <img src="./img/icon/date.svg">
-                                        <p>
-                                            出團日期：2020/01/29
-                                        </p>
-                                    </div>
-
-                                    <div class="tourSpot">
-                                        <img src="./img/icon/location_red.png">
-                                        <p>
-                                            新莊廢棄醫院、天后宮、酸辣粉
-                                        </p>
-                                    </div>
-
-                                    <div class="tourJoin">
-                                        <img src="./img/icon/tourCount.svg">
-                                        <p>
-                                            參加人數：6/10 人
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="tourFavorite">
-                                <p class="like">
-                                    <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                    10
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tourCard">
-                        <a href="">
-                            <div class="tourImg">
-                                <img src="./img/component/card/spotCard01.png">
-                            </div>
-                            <div class="tourTxt">
-                                <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                <div class="tourHost">
-                                    <img src="./img/icon/header1.png" class="header">
-                                    <p class="name">富江我老婆</p>
-                                </div>
-
-                                <div class="tourInfo">
-
-                                    <div class="date">
-                                        <img src="./img/icon/date.svg">
-                                        <p>
-                                            出團日期：2020/01/29
-                                        </p>
-                                    </div>
-
-                                    <div class="tourSpot">
-                                        <img src="./img/icon/location_red.png">
-                                        <p>
-                                            新莊廢棄醫院、天后宮、酸辣粉
-                                        </p>
-                                    </div>
-
-                                    <div class="tourJoin">
-                                        <img src="./img/icon/tourCount.svg">
-                                        <p>
-                                            參加人數：6/10 人
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="tourFavorite">
-                                <p class="like">
-                                    <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                    10
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="tourCard">
-                        <a href="">
-                            <div class="tourImg">
-                                <img src="./img/component/card/spotCard01.png">
-                            </div>
-                            <div class="tourTxt">
-                                <h2 class="tourTitle">【深夜廢棄醫院探險】</h2>
-
-                                <div class="tourHost">
-                                    <img src="./img/icon/header1.png" class="header">
-                                    <p class="name">富江我老婆</p>
-                                </div>
-
-                                <div class="tourInfo">
-
-                                    <div class="date">
-                                        <img src="./img/icon/date.svg">
-                                        <p>
-                                            出團日期：2020/01/29
-                                        </p>
-                                    </div>
-
-                                    <div class="tourSpot">
-                                        <img src="./img/icon/location_red.png">
-                                        <p>
-                                            新莊廢棄醫院、天后宮、酸辣粉
-                                        </p>
-                                    </div>
-
-                                    <div class="tourJoin">
-                                        <img src="./img/icon/tourCount.svg">
-                                        <p>
-                                            參加人數：6/10 人
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="tourFavorite">
-                                <p class="like">
-                                    <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                    10
-                                </p>
-                            </div>
-                        </a>
+            <footer>
+                <div id="warn">
+                    <p id="warnTitle" class="title">
+                        <span class="title">鬼島探險</span>
+                        注意事項</p>
+                    <ol>
+                        <li>美食壯膽，再出發探險</li>
+                        <li>不要半夜吹口哨、不要嬉笑打鬧</li>
+                        <li>有人拍肩，不要回頭看</li>
+                        <li>尋鬼探險事後三炷香</li>
+                        <li>探險完畢若有不適，本站既不負責</li>
+                    </ol>
+                </div>
+                <div id="spell" class="cameraSpell">
+                    <div class="papper">
+                        <img src="./img/footer/spell_1.png">
                     </div>
 
                 </div>
-
-                <button id="rightScroll" class="scrollBtn" disabled>
-                    <span>〈</span>
-                </button>
-                <button id="leftScroll" class="scrollBtn">
-                    <span>〉</span>
-                </button>
-            </div>
-
-            <div class="G2">
-                <img src="./img/spot/G2.png">
-            </div>
-            <div class="ghostTalk">
-                <p class="line"></p>
-                <p>天乾物燥...小心火燭...</p>
-                <p class="line"></p>
-            </div>
-
-        </section>
-
-        <section id="StartGroup_Section4">
-            <div class="adventure_main">
-                <div class="adventure_btn">
-                    <a href="adventrue.html">
-                        <div class="ghost_btn_all">
-                            <div class="ghost_btn_img1">
-                                <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
-                            </div>
-                            <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
-                            <div class="ghost_tape">
-                                <span>更多揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                            </div>
-                        </div>
+                <div id="footLink">
+                    <a href="">
+                        <img src="./img/logo/LOGO_black.png" id="BottomLogo">
                     </a>
-                    <a href="adventrue.html">
-                        <div class="ghost_btn2_all">
-                            <div class="ghost_btn_img2">
-                                <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
-                            </div>
-                            <div class="ghost_btn2"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
-                            <div class="ghost_tape">
-                                <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                            </div>
-                        </div>
-                    </a>
+                    <nav>
+                        <ul>
+                            <li>
+                                <p>
+                                    <a href="../ghostIsland.html">
+                                        前進鬼島
+                                    </a>
+                                </p>
+
+                                <p>
+                                    <a href="../index.html">
+                                        尋鬼探險
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="../leaderboard.html">
+                                        靈異票選
+                                    </a>
+                                </p>
+
+                                <p>
+                                    <a href="../game.html">
+                                        試膽測驗
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="../forum.html">
+                                        靈異討論
+                                    </a>
+                                </p>
+
+                                <p>
+                                    <a href="../forum.html">
+                                        文章投稿
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="../member.html">
+                                        會員中心
+                                    </a>
+
+                                </p>
+                                <p>
+                                    <span class="subLink">
+                                        <a href="../member.html">
+                                            會員資料
+                                        </a>
+                                        <a href="../member.html">
+                                            揪團紀錄
+                                        </a>
+                                    </span>
+                                    <span class="subLink">
+                                        <a href="../member.html">
+                                            我的收藏
+                                        </a>
+                                        <a href="../member.html">
+                                            投稿紀錄
+                                        </a>
+                                    </span>
+                                </p>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>
-        </section>
-
-
-
-        <footer>
-            <div id="warn">
-                <p id="warnTitle" class="title">
-                    <span class="title">鬼島探險</span>
-                    注意事項</p>
-                <ol>
-                    <li>美食壯膽，再出發探險</li>
-                    <li>不要半夜吹口哨、不要嬉笑打鬧</li>
-                    <li>有人拍肩，不要回頭看</li>
-                    <li>尋鬼探險事後三炷香</li>
-                    <li>探險完畢若有不適，本站既不負責</li>
-                </ol>
-            </div>
-            <div id="spell" class="cameraSpell">
-                <div class="papper">
-                    <img src="./img/footer/spell_1.png">
-                </div>
-
-            </div>
-            <div id="footLink">
-                <a href="">
-                    <img src="./img/logo/LOGO_black.png" id="BottomLogo">
-                </a>
-                <nav>
-                    <ul>
-                        <li>
-                            <p>
-                                <a href="../ghostIsland.html">
-                                    前進鬼島
-                                </a>
-                            </p>
-
-                            <p>
-                                <a href="../index.html">
-                                    尋鬼探險
-                                </a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <a href="../leaderboard.html">
-                                    靈異票選
-                                </a>
-                            </p>
-
-                            <p>
-                                <a href="../game.html">
-                                    試膽測驗
-                                </a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <a href="../forum.html">
-                                    靈異討論
-                                </a>
-                            </p>
-
-                            <p>
-                                <a href="../forum.html">
-                                    文章投稿
-                                </a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <a href="../member.html">
-                                    會員中心
-                                </a>
-
-                            </p>
-                            <p>
-                                <span class="subLink">
-                                    <a href="../member.html">
-                                        會員資料
-                                    </a>
-                                    <a href="../member.html">
-                                        揪團紀錄
-                                    </a>
-                                </span>
-                                <span class="subLink">
-                                    <a href="../member.html">
-                                        我的收藏
-                                    </a>
-                                    <a href="../member.html">
-                                        投稿紀錄
-                                    </a>
-                                </span>
-                            </p>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
+            </footer>
     </div>
 
 
@@ -1260,3 +1012,88 @@ order by msg_time desc
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
