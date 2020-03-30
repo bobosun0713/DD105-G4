@@ -41,7 +41,6 @@ function choose() {
         let Array_data = JSON.parse(data);
         // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑轉譯成JS物件↑↑↑↑↑↑↑↑↑↑↑↑↑↑
         new_filter_Array = Array_data;
-        alert("有吃到data"+data)
 
         //-------------------------熱門篩選----------------------------------
 
