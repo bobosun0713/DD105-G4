@@ -176,7 +176,7 @@ order by msg_time desc
                             </a>
                         </li>
                         <li class="@@link001-3">
-                            <a href="leaderboard.html" class="title @@link003">
+                            <a href="leaderboard.php" class="title @@link003">
                                 靈異票選
                             </a>
                         </li>

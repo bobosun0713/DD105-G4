@@ -86,7 +86,7 @@ $(document).ready(function() {
                                     </div>
                                     <div class="art_con">
                                         <div class="art_title">
-                                            <img src="${data.mem_img}" alt="" />
+                                            <img src="${data[i].mem_img}" alt="" />
                                             <h1>
                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                             </h1>
@@ -225,7 +225,7 @@ function opencard() {
                                             <input type="hidden" class="chat" value="${data.forum_chat}">
                                         </div>
                                     </div>
-                                    <div class="art_report report_btn">
+                                    <div class="art_report report_btn" onclick="report_article()">
                                         <img src="./img/forum/warning_black.svg" alt="" />
                                     </div>
                                 </div>
@@ -237,7 +237,7 @@ function opencard() {
                 // 抓取瀏覽數
                 view()
                 // 檢舉開啟關閉
-                report_article()
+                // report_article()
 
                 // 關閉燈箱 並清掉內容
                 $(".content_out").click(function() {

@@ -17,7 +17,7 @@ $(document).ready(function() {
                     <td>${data[i].forum_report_reason}</td>
                     <td>
                       <label class="switch switch-3d switch-success">
-                          <input class="switch-input question_status modified" type="checkbox" name="question_status" value="1" style="border: 1px solid rgb(204, 204, 204);" checked psn="${data[i].forum_no}">
+                          <input class="switch-input question_status modified" type="checkbox" name="question_status" value="1" style="border: 1px solid rgb(204, 204, 204);" psn="${data[i].forum_no}" checked >
                           <span class="switch-slider"></span>
                       </label>
                     </td>

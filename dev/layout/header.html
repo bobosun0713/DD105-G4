@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="@@link001-3">
-                <a href="leaderboard.html" class="title @@link003">
+                <a href="leaderboard.php" class="title @@link003">
                     靈異票選
                 </a>
             </li>
@@ -118,7 +118,13 @@
             <div class="login_cover">
                 <img src="./img/login/registered-01 (1).png" alt="" />
             </div>
-            <form action="" method="POST">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="user_border">
+                    <div id="user_path"></div>
+                    <label for="user_img"
+                        >上傳封面<input type="file" name="userimg" id="user_img" style="display: none;"
+                    /></label>
+                </div>
                 <p>
                     <label for="memid">會員帳號</label>
                     <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
@@ -145,6 +151,26 @@
                 </p>
             </form>
             <div id="sure_btn">註冊會員</div>
+            <!-- 換圖JS -->
+            <script>
+                function $id(id) {
+                    return document.getElementById(id)
+                }
+                let user_img = $id("user_img")
+                let user_path = $id("user_path")
+
+                user_img.addEventListener("change", function() {
+                    var file = user_img.files[0]
+                    var filereader = new FileReader()
+                    filereader.readAsDataURL(file)
+                    filereader.addEventListener("load", function(e) {
+                        user_path.style.backgroundImage = `url(${e.target.result})`
+                    })
+                    $(this)
+                        .parent()
+                        .css("color", "transparent")
+                })
+            </script>
         </section>
     </div>
 </header>
