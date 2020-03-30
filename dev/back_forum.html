@@ -2,7 +2,7 @@
 <html lang="en">
     <!-- head-->
     @@include('layout/backend/head.html')
-    <title>食物景點管理</title>
+    <title>討論區管理</title>
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
         <!-- top_header -->
         @@include('layout/backend/top_header.html')
@@ -12,7 +12,6 @@
                 <!-- sidebar menu-->
                 @@include('layout/backend/sidebar_nav.html')
             </div>
-
             <main class="main">
                 <!-- Breadcrumb-->
                 <ol class="breadcrumb">
@@ -25,18 +24,37 @@
                         <a href="#">後台管理</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        揪團留言檢舉管理
+                        討論區檢舉管理
                     </li>
                 </ol>
 
                 <div class="container-fluid">
                     <!-- 中間內容 -->
-                    @@include('layout/backend/content_SartGroup_msg_report.html')
-
+                    @@include('layout/backend/content_forum.html')
                     <!-- 中間內容 -->
                 </div>
             </main>
+            <aside class="aside-menu">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
+                            <i class="icon-list"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                            <i class="icon-speech"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                            <i class="icon-settings"></i>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
         </div>
         @@include('layout/backend/footer.html')
+        <!-- CoreUI and necessary plugins-->
     </body>
 </html>

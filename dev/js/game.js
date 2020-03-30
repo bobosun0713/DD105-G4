@@ -122,7 +122,7 @@ function btnClick(e) {
         document.querySelector('#resultheading').innerHTML = '分析結果'
         document.querySelector('#playagain_btn').style.display = 'inline-block'
         document.querySelector('#gotoindex_btn').style.display = 'inline-block'
-        document.querySelector('.grid').style.backgroundImage = "url('../img/game/quizreport_bg.png')"
+        document.querySelector('.grid').style.backgroundImage = "url('./img/game/quizreport_bg.png')"
         document.querySelector('.recommendtitle').innerHTML = '為您推薦';
         //讓海豚消失
         var screenwidth = document.body.clientWidth;
