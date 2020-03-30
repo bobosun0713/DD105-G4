@@ -7,7 +7,7 @@ var jshint = require("gulp-jshint")
 var sourcemaps = require("gulp-sourcemaps")
 var browserSync = require("browser-sync").create()
 var reload = browserSync.reload
-// var connectPHP = require('gulp-connect-php')
+var connectPHP = require('gulp-connect-php')
 
 //path 路徑
 var web = {
@@ -17,18 +17,18 @@ var web = {
     img: ["dev/img/*.*", "dev/img/**/*.*"],
     font: ["dev/font/*.*", "dev/font/**/*.*"],
 }
-var options = {
-    base: "./dest",
-    debug: true,
+var options={
+    base:'./dest',
+    debug:true,
 
     //路徑如果不同請隱藏別人的路徑 新增自己的路徑 3Q
-    //下面是張馨的路徑
-    bin: "C:/php-7.4.2-nts-Win32-vc15-x64/php.exe",
-    ini: "C:/php-7.4.2-nts-Win32-vc15-x64/php.ini",
-    //下面是lilly的路徑
-    // bin:'/Applications/MAMP/bin/php/php7.4.1/bin/php',
-    // ini:'/Applications/MAMP/bin/php/php7.4.1/conf/php.ini',
-    port: 8080,
+    //下面是張馨的路徑 
+    // bin:'C:/php-7.4.2-nts-Win32-vc15-x64/php.exe',
+    // ini:'C:/php-7.4.2-nts-Win32-vc15-x64/php.ini',
+     //下面是lilly的路徑
+    bin:'/Applications/MAMP/bin/php/php7.4.1/bin/php',
+    ini:'/Applications/MAMP/bin/php/php7.4.1/conf/php.ini',
+    port:8080,
 }
 
 //     //路徑如果不同請隱藏別人的路徑 新增自己的路徑 3Q
@@ -122,16 +122,16 @@ gulp.task("mini_img", function() {
 // });
 
 gulp.task("default", function() {
-    // browserSync.init({
-    //     server: {
-    //         baseDir: "./dest",
-    //         proxy:'localhost:8080',
-    //         port:3000,
-    //         watch:true,
-    //         index: "index.html",
-    //     },
-    // })
-    // connectPHP.server(options)
+    browserSync.init({
+        server: {
+            baseDir: "./dest",
+            proxy:'localhost:8080',
+            port:3000,
+            watch:true,
+            index: "index.html",
+        },
+    })
+    connectPHP.server(options)
     gulp.watch(web.html, ["fileinclude"]).on("change", reload)
     gulp.watch(web.sass, ["sass"]).on("change", reload)
     gulp.watch(web.js, ["concatjs"]).on("change", reload)

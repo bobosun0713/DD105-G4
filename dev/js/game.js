@@ -1,14 +1,14 @@
 //自動取得螢幕寬度
 getWidth();
-window.addEventListener('resize', function(){
-    getWidth(); 
+window.addEventListener('resize', function () {
+    getWidth();
 }, true);
 function getWidth() {
     var screenwidth = document.body.clientWidth;
     // console.log(screenwidth, "寬")
     if (screenwidth < 1199) {
         document.querySelector('.cancel_ghost_group').style.display = 'none'
-       
+
     } else {
         document.querySelector('.cancel_ghost_group').style.display = 'block'
     }
@@ -56,7 +56,7 @@ let shufflequestion, currentquestionIndex
 function startGame() {
     //放cancel鬼
     getWidth();
-   
+
     document.getElementById('startbtn').parentNode.style.display = 'none'
     document.getElementById('gotoindex').parentNode.style.display = 'none'
     document.querySelector('.progressblock').style.display = 'block'
@@ -79,12 +79,12 @@ function startGame() {
 }
 
 function setnextquestion() {
-    
+
     document.querySelector('#testheading').style.display = 'none'
     document.querySelector('#logoimg').style.display = 'none'
     document.querySelector('.buttons').style.display = 'block'
     document.querySelector('#progress').style.display = 'block'
-    document.getElementsByClassName('innerimg')[0].src = quiz_img[currentquestionIndex].innerHTML
+    document.getElementsByClassName('innerimg')[0].src = `./img/game${quiz_img[currentquestionIndex].innerHTML}`
     document.getElementById('question').innerHTML = quiz_question[currentquestionIndex].innerHTML
     document.querySelectorAll('.choice')[0].innerHTML = quiz_opt1[currentquestionIndex].innerHTML
     document.querySelectorAll('.choice')[1].innerHTML = quiz_opt2[currentquestionIndex].innerHTML
@@ -126,11 +126,11 @@ function btnClick(e) {
         document.querySelector('.recommendtitle').innerHTML = '為您推薦';
         //讓海豚消失
         var screenwidth = document.body.clientWidth;
-        if(screenwidth<1199){
+        if (screenwidth < 1199) {
             document.querySelector('#dolphin_block').style.display = 'none'
-        }else{
+        } else {
             document.querySelector('#dolphin_block').style.display = 'block'
-    
+
         }
         // document.querySelector('#dolphin_block').style.display = 'block'
         document.querySelector('.test_score_title').style.display = 'inline-block'
@@ -159,7 +159,7 @@ function btnClick(e) {
             }
         }
     }
-    document.getElementsByClassName('innerimg')[0].src = quiz_img[currentquestionIndex].innerHTML
+    document.getElementsByClassName('innerimg')[0].src = `./img/game${quiz_img[currentquestionIndex].innerHTML}`
     document.getElementById('question').innerHTML = quiz_question[currentquestionIndex].innerHTML
     document.querySelectorAll('.choice')[0].innerHTML = quiz_opt1[currentquestionIndex].innerHTML
     document.querySelectorAll('.choice')[1].innerHTML = quiz_opt2[currentquestionIndex].innerHTML
@@ -167,7 +167,7 @@ function btnClick(e) {
     document.querySelectorAll('.choice')[0].value = parseFloat(quiz_opt1_point[currentquestionIndex].innerHTML)
     document.querySelectorAll('.choice')[1].value = parseFloat(quiz_opt2_point[currentquestionIndex].innerHTML)
     document.querySelectorAll('.choice')[2].value = parseFloat(quiz_opt3_point[currentquestionIndex].innerHTML)
-   
+
 
     // console.log("btnclick目前第幾題"+currentquestionIndex)
     document.getElementById('progress').innerHTML = currentquestionIndex + 1 + '/' + Qnum
@@ -199,19 +199,25 @@ var Qnum = quiz_RowsCount
 // var randomNum=Math.floor(Math.random()*questions.length);
 
 //放鬼臉
-let showface=document.querySelector(".showface")
+let showface = document.querySelector(".showface")
 
-showface.addEventListener("click",function letscaryfaceout(){
-let creepy_face=document.querySelector(".creepy_face");
-setTimeout(byeface,3000);
+showface.addEventListener("click", function letscaryfaceout() {
+    let creepy_face = document.querySelector(".creepy_face");
+    let screammusic = document.querySelector("#screammusic")
 
-creepy_face.style.display="block";
-console.log("show")
-function byeface(){
-    creepy_face.style.display="none";
-    console.log("noshow")
-    window.location.href = './index.html';
-}
+    setTimeout(byeface, 3000);
+    creepy_face.style.display = "block";
+    //放尖叫音效
+    if (screammusic.paused) {
+        screammusic.play();
+    }
+    console.log("show")
+    function byeface() {
+        screammusic.pause();
+        creepy_face.style.display = "none";
+        console.log("noshow")
+        window.location.href = './index.html';
+    }
 
 });
 

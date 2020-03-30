@@ -25,7 +25,7 @@ function show_top3_info(jsonStr) {
 
     let top_3_info = JSON.parse(jsonStr);
     // console.log(top_3_info)
-    let final_html;
+    let final_html = "";
     
     for( let i = 0; i<3; i++){
 
@@ -36,8 +36,7 @@ function show_top3_info(jsonStr) {
             mem_img = "./img/icon/default_header.svg";
         }
 
-        let html = `
-                    <div class="spotInfo">
+        let html = `<div class="spotInfo">
                         <div class="imgZone">
                             <a href="./ghostSpot.php?spot_no=${top_3_info.top_3_info[i]['spot_no']}&order_no=${i+1}">
                                 <img src="${top_3_info.top_3_info[i]['spot_image_card']}" />

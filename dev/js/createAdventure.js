@@ -1129,15 +1129,15 @@ function formatDate(d) {
 
 //=======================送出表單ajax檔
 function sendMyTour(){
-
+  let spot_no = document.getElementById('spot_value').value.split('|')[3].split('_')[1];
   let xhr = new XMLHttpRequest();
 
   xhr.onload = function(){
       if(xhr.status == 200){
 
-          mem_no = JSON.parse(xhr.responseText);
-          location.href= "./StartGroup.html";
-          // location.href= `./StartGroup.php?${mem_no}`;
+          tour_no = JSON.parse(xhr.responseText);
+          // location.href= "./StartGroup.html";
+          location.href= `./StartGroup.php?tour_no=${tour_no}&spot_no=${spot_no}`;
 
           
 

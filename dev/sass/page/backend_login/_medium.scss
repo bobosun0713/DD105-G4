@@ -1,1 +1,108 @@
-@include respond(medium) {}
+@include respond(medium) {
+    .backend_login {
+        background-image: url("../img/game/game_index_bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+      
+        .grid {
+
+    
+      
+          #camera1 {
+
+            .box1 {
+
+              #L_magicpaper {
+
+                left: -65%;
+
+              }
+            }
+          }
+          #camera2 {
+
+            .box2 {
+
+              #R_magicpaper {
+
+                left: 104%;
+
+              }
+            }
+          }
+      
+      
+        }
+      
+        .to_front {
+          // border: 1px solid green;
+          position: absolute;
+          width: 353px;
+          height: 290px;
+          bottom: 0px;
+          left: 0px;
+          overflow: hidden;
+      
+          &:hover{
+            .cat{
+              transform: translateX(40px) translateY(-50px) rotate(-2deg);
+            }
+      
+            .dialog{
+              top: 10px;
+              opacity: 1;
+            }
+            
+          }
+      
+            .cat{
+              position: absolute;
+              width: 1000px;
+              top: -40px;
+              left: -750px;
+              
+              transition: all .5s ease-in;
+      
+              img{
+                width: 100%;
+              }
+      
+      
+              
+            }
+            
+      
+            .dialog {
+              position: absolute;
+              top: 30px;
+              right: 30px;
+              width: 173px;
+              opacity: 0;
+              transform: rotate(20deg);
+              transition: .5s ease-in;
+              animation: swing 1s linear infinite;
+      
+              img {
+                width: 100%;
+              }
+      
+              p {
+                position: absolute;
+                top: 24px;
+                left: 37px;
+                font-size: 1rem;
+                transform: rotate(5deg);
+                color: rgba(0, 0, 0, 0.7);
+              }
+            }
+            @keyframes swing {
+              0%{ transform: rotate(20deg);}
+              50%{ transform: rotate(10deg); }
+              100%{ transform: rotate(20deg); }
+            }
+          }
+      }
+}

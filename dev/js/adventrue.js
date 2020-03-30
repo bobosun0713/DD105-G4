@@ -28,38 +28,38 @@ $(document).ready(function () {
         })
     })
 })
-// var infScroll = new InfiniteScroll('.item_all',{
-//     path: function () {
-//         // 頁面路徑
+var infScroll = new InfiniteScroll('.item_all',{
+    path: function () {
+        // 頁面路徑
 
-//         if (this.loadCount < 2) {
-//             // 只讀取前兩頁資料
-//             var nextIndex = this.loadCount + 2 // 2
-//             return 'page' + nextIndex + '.html' // page2.html
-//             console.log(this.loadCount)
-//         }
-//     },
-//     append: '.item', // 把頁面顯示出來的方式,預設是false
-//     // responseType: 'text', // 設定頁面請求返回的響應型別 text時是json
-//     prefill: true, //預填充 ，加上後append屬性必須。
-//     // status: '.page-load-status',
-//     // hideNav: '.pagination',
-//     history: false, //更改瀏覽器歷史記錄和URL。
-//     scrollThreshold: 40, //設定滾動條與滾動區域之間的距離，預設是40
-// })
-// /* 按下GoTop按鈕時的事件 */
-// $('.go_top').click(function () {
-//     $('html,body').animate({ scrollTop: 0 }, 'slow') /* 返回到最頂上 */
-//     return false
-// })
-// /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
-// $(window).scroll(function () {
-//     if ($(this).scrollTop() > 400) {
-//         $('.go_top').fadeIn()
-//     } else {
-//         $('.go_top').fadeOut()
-//     }
-// })
+        if (this.loadCount < 2) {
+            // 只讀取前兩頁資料
+            var nextIndex = this.loadCount + 2 // 2
+            return 'page' + nextIndex + '.html' // page2.html
+            console.log(this.loadCount)
+        }
+    },
+    append: '.item', // 把頁面顯示出來的方式,預設是false
+    // responseType: 'text', // 設定頁面請求返回的響應型別 text時是json
+    prefill: true, //預填充 ，加上後append屬性必須。
+    // status: '.page-load-status',
+    // hideNav: '.pagination',
+    history: false, //更改瀏覽器歷史記錄和URL。
+    scrollThreshold: 40, //設定滾動條與滾動區域之間的距離，預設是40
+})
+/* 按下GoTop按鈕時的事件 */
+$('.go_top').click(function () {
+    $('html,body').animate({ scrollTop: 0 }, 'slow') /* 返回到最頂上 */
+    return false
+})
+/* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 400) {
+        $('.go_top').fadeIn()
+    } else {
+        $('.go_top').fadeOut()
+    }
+})
 
 // 數字增加
 //数字自增到某一值动画参数（目标元素,自定义配置）
@@ -514,7 +514,7 @@ function ajax_take_odject() {
                 </div>
                 <div class="txt">
                   <div class="txt_header">
-                  <h1>${new_filter_Array[i].tour_title}</h1>
+                  <a href="StartGroup.php?tour_no=${new_filter_Array[i].tour_no}&spot_no=${new_filter_Array[i].spot_no}"> <h1>${new_filter_Array[i].tour_title}</h1></a>
          
                  </div>
                     <span><i class="fas fa-map-marker-alt"></i>${new_filter_Array[i].spot_name}、${new_filter_Array[i].food_name}、${new_filter_Array[i].temple_name}</span>
@@ -565,6 +565,8 @@ function ajax_take_odject() {
                 if (iDays[i] < 0) {
                     tour_endtime1 = document.getElementsByName('tour_endtime_data');
                     tour_endtime1[i].innerText = "已截止";
+                    var last_time = $elements(".last_time");
+                    last_time[i].style.display = "none";
                     tour_endtime1[i].onclick = function () {
                         return false;
                     }
@@ -612,16 +614,34 @@ function ajax_take_odject() {
                 main_people[i].onclick = function () {
                     mem_no_att = this.getAttribute("mem_no");
                     //這是我幫他標記的東東,
-
                     tab_heads = $elements('.tab_head li a');
+                    for (let i = 0; i < tab_heads.length; i++) {
+                        tab_heads[i].classList.remove('show_tab');
+                    }
+                    tab_heads[0].classList.add('show_tab');
+                    tabChange()
+
                     people_message_background.style.display = 'block';
                     for (let i = 0; i < tab_heads.length; i++) {
-                        tab_heads[0].classList.add('show_tab');
-                        tab_heads[i].onclick = tabChange;
+                        
+                        //移除所有tab顯眼
+
+                        tab_heads[i].onclick =function(){
+                            for (let i = 0; i < tab_heads.length; i++) {
+                                tab_heads[i].classList.remove('show_tab');
+                            }
+                            this.classList.add('show_tab');
+                            //tab標籤顯眼
+                            tabChange()
+                        };
                     }
+
                 };
             };
         };
+
+
+
 
         //-------------------------------------------叉叉按鈕----------------------------------------
         close('.people_message_shut_down', '.people_message_background')
@@ -634,12 +654,9 @@ function ajax_take_odject() {
         }
         //-------------------------------------------叉叉按鈕----------------------------------------
         function tabChange() {
-            for (let i = 0; i < tab_heads.length; i++) {
-                tab_heads[i].classList.remove('show_tab');
-            }
-            //移除所有tab顯眼
-            this.classList.add('show_tab');
-            //tab標籤顯眼
+
+          
+
             var xhr1 = new XMLHttpRequest();
             //聯繫伺服器物件
             xhr1.open('post', './php/adventrue_Ajax_2.php', true);
@@ -649,8 +666,9 @@ function ajax_take_odject() {
                 var people_message = "";
                 var people_message_name = $element('.people_message_name');
                 people_message_name.innerText = Array_data2[0].mem_name;
+
                 if (tab_heads[0].className == "show_tab") {
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < Array_data2.length; i++) {
 
                         //-------------------人數處理;-----------------------------------
                         var number_of_participart = Array_data2[i].number_of_participart;
@@ -661,7 +679,7 @@ function ajax_take_odject() {
                         //-------------------照片處理;-----------------------------------
                         let mem_img = Array_data2[0].mem_img;
                         if (mem_img == null) {
-                            mem_img = "img/adventrue/個人頭像_無_工作區域 1.png";
+                            mem_img = "../img/adventrue/個人頭像_無_工作區域 1.png";
                         } else {
                             mem_img = `${Array_data2[0].mem_img}`
                         }
@@ -674,7 +692,7 @@ function ajax_take_odject() {
                         //-------------------時間處理;-----------------------------------
 
                         var people_message_img = $element('.people_message_img');
-                        people_message_img.innerHTML = `<img src=+${mem_img} `
+                        people_message_img.innerHTML = "<img src=" + mem_img + ">"
                         //    這有問題明天搞
                         var find_group = `<div class="show">
               <div class="tab_img"><img src="./img/tour/${Array_data2[i].tour_image}" alt="">
@@ -694,7 +712,7 @@ function ajax_take_odject() {
                         people_message += find_group;
                     }
                 } else {
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < Array_data2.length; i++) {
                         var find_group = `<div class="show">
                <div class="tab_img"><img src="http://i1.wp.com/inews.gtimg.com/newsapp_match/0/287578922/0" alt="">
                </div>
