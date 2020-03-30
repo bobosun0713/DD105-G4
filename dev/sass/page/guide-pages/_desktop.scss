@@ -1,3 +1,7 @@
+a.front-span{
+    text-decoration: none;
+
+}
 #Guide-page-img{
     width: auto;
     width: 100%;
@@ -90,9 +94,11 @@
                 font-size: 50px;
                 text-align: center;
                 color: rgb(194, 192, 192);
+                font-weight: bold;
                 }
             .front-span:hover {
-                   color: rgb(238, 65, 59);
+                   color: rgb(121, 20, 17);
+                   text-shadow: 4px 2px rgb(250, 245, 245) ;
                     }
 
 }
