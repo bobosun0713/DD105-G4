@@ -17,7 +17,7 @@ function showLoginForm() {
         xhr.onload = function() {
             if (xhr.status == 200) {
                 //自server正確的登出
-                $id("memName").innerHTML = "&nbsp"
+                $id("memName").style.display = "none"
                 $id("login_btn").innerHTML = "登入"
                 // RWD
                 // $id("memName1").innerHTML = "&nbsp"
@@ -64,7 +64,8 @@ function sendForm() {
             } else {
                 member = JSON.parse(xhr.responseText)
                 alert("登入成功")
-                $id("memName").innerText = member.mem_name
+                $id("memName").style.display = "block"
+                $id("memName").src = member.mem_img
                 $id("login_btn").innerText = "登出"
                 // 關閉燈箱
                 $id("indexLogin").style.display = "none"
@@ -74,7 +75,7 @@ function sendForm() {
                 $id("mem_psw").value = ""
                 mempsw.style.border = ""
                 memid.style.border = ""
-                location.reload();
+                location.reload()
             }
         } else {
             alert(xhr.status)
@@ -100,7 +101,8 @@ function getLoginInfo() {
 
         if (member.mem_id) {
             // 桌機
-            $id("memName").innerText = member.mem_name
+            $id("memName").style.display = "block"
+            $id("memName").src = member.mem_img
             $id("login_btn").innerText = "登出"
             // RWD
             // $id("memName1").innerText = member.mem_name
