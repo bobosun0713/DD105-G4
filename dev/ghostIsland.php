@@ -382,8 +382,8 @@ try{
                                             <a href="ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                         </p>
                                         <p class="groupJoin">
-                                            <a href="./adventrue.html">
-                                            查看景點相關揪團
+                                            <a href="./createAdventure.php?spot_no=<?=$spotRow["spot_no"]?>">
+                                                立即開始揪團
                                             </a>
                                         </p>
                                     </div>
@@ -411,8 +411,8 @@ try{
                                                     <a href="ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                                 </p>
                                                 <p class="groupJoin">
-                                                    <a href="./adventrue.html">
-                                                    查看景點相關揪團
+                                                    <a href="./createAdventure.php?spot_no=<?=$spotRow["spot_no"]?>">
+                                                        立即開始揪團
                                                     </a>
                                                 </p>
                                             </div>
@@ -440,8 +440,8 @@ try{
                                                 <a href="ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                             </p>
                                             <p class="groupJoin">
-                                                <a href="./adventrue.html">
-                                                查看景點相關揪團
+                                                <a href="./createAdventure.php?spot_no=<?=$spotRow["spot_no"]?>">
+                                                    立即開始揪團
                                                 </a>
                                             </p>
                                     </div>
@@ -467,8 +467,8 @@ try{
                                             <a href=" ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                         </p>
                                         <p class="groupJoin">
-                                            <a href="./adventrue.html">
-                                            查看景點相關揪團
+                                            <a href="./createAdventure.php?spot_no=<?=$spotRow["spot_no"]?>">
+                                                立即開始揪團
                                             </a>
                                         </p>
                                     </div>
@@ -492,8 +492,8 @@ try{
                                                     <a href="ghostSpot.php?spot_no= <?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                                 </p>
                                                 <p class="groupJoin">
-                                                    <a href="./adventrue.html">
-                                                    查看景點相關揪團
+                                                    <a href="./createAdventure.php?spot_no=<?=$spotRow["spot_no"]?>">
+                                                        立即開始揪團
                                                     </a>
                                                 </p>
                                             </div>
@@ -517,8 +517,8 @@ try{
                                         <a href="ghostSpot.php?spot_no=<?=$spotRow["spot_no"]?>&order_no=<?php echo $i+1?>"><?= $spotRow["spot_intro"]?>....(more)</a>
                                     </p>
                                     <p class="groupJoin">
-                                        <a href="./adventrue.html">
-                                        查看景點相關揪團
+                                        <a href="./createAdventure.php?spot_no=<?=$spotRow["spot_no"]?>">
+                                            立即開始揪團
                                         </a>
                                     </p>
                                 </div>

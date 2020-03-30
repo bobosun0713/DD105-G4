@@ -84,66 +84,66 @@ try{
 
     <div class="app-body">
         <div class="sidebar">
+            
             <!-- =================== sidebar menu =================== -->
             <nav class="sidebar-nav">
-    <ul class="nav pt-2">
-        <li class="nav-item">
-            <a class="nav-link" href="./backend.html">
-                <i class="cil-cog m-2"></i>
-                管理員帳號
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./backend_member.html">
-                <i class="cil-people m-2"></i>
-                會員管理
-            </a>
-        </li>
-        <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="＃">
-                <i class="cil-location-pin m-2"></i>
-                景點管理
-            </a>
-            <ul class="nav-dropdown-items">
-                <li class="nav-item">
-                    <a class="nav-link pl-5" href="./backend_food_manage.php">
-                        美食景點管理
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-5" href="./backend_temple_manage.php">
-                        廟宇景點管理
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./backend_game.html">
-                <i class="cil-file m-2"></i>
-                試膽測驗題庫管理
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./backend_StartGroup_msg_report.html">
-                <i class="cil-flag-alt m-2"></i>
-                揪團留言檢舉管理
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./back_forum.html">
-                <i class="cil-speech m-2"></i>
-                討論區檢舉管理
-            </a>
-        </li>
-        <li class="nav-item nav-dropdown">
-            <a class="nav-link" href="./backend_leader.php">
-                <i class="cil-star m-2"></i>
-                排行榜管理
-            </a>
-        </li>
-    </ul>
-</nav>
-
+                <ul class="nav pt-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./backend.html">
+                            <i class="cil-cog m-2"></i>
+                            管理員帳號
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./backend_member.html">
+                            <i class="cil-people m-2"></i>
+                            會員管理
+                        </a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="＃">
+                            <i class="cil-location-pin m-2"></i>
+                            景點管理
+                        </a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link pl-5" href="./backend_food_manage.php">
+                                    美食景點管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-5" href="./backend_temple_manage.php">
+                                    廟宇景點管理
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./backend_game.html">
+                            <i class="cil-file m-2"></i>
+                            試膽測驗題庫管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./backend_StartGroup_msg_report.html">
+                            <i class="cil-flag-alt m-2"></i>
+                            揪團留言檢舉管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./back_forum.html">
+                            <i class="cil-speech m-2"></i>
+                            討論區檢舉管理
+                        </a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="./backend_leader.php">
+                            <i class="cil-star m-2"></i>
+                            排行榜管理
+                        </a>
+                    </li>
+                </ul>
+            </nav>
             <!-- =================== sidebar menu =================== -->
         </div>
 
@@ -172,6 +172,7 @@ try{
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+                        <div class="card-header"></div>
 
                                 <!-- 功能內容 -->
                                 <div class="card-body">
@@ -217,9 +218,9 @@ try{
                                                 </td>
                                                 <td class="p-3">
                                                     <?php if( $foodRow["food_img"] != null ){
-                                                        echo '<img class="food_info_txt" width="300px" src="./img/food/',$foodRow["food_img"],'" alt="food-',$foodRow["food_no"],'">'
+                                                        echo '<img class="food_info_txt" width="200px" src="./img/food/',$foodRow["food_img"],'" alt="food-',$foodRow["food_no"],'">'
                                                     ;}else {
-                                                        echo '<input type="file" name="food_img" class="food_info_img_upload" accept="image/*">';
+                                                        echo '<input type="file" name="food_img" style="width:200px;" class="food_info_img_upload" accept="image/*">';
                                                         echo '<input type="button" class="mt-3 btn btn-dark food_info_img_send" value="上傳圖片">';
                                                     } ?>
                                                 </td>

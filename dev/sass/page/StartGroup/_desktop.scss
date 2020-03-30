@@ -2,7 +2,7 @@ body {
   overflow-x: hidden;
 }
 
-#StartGroupSpotBG {
+.StartGroup_wrapper {
   //border: 1px solid blue;
   background-image: url("../img/adventrue/尋鬼探險.png");
   background-size: 100%;
@@ -303,7 +303,7 @@ body {
   width: 1000px;
   margin: 10px auto;
   padding: 50px;
-  // height: 1200px;
+  height: 1200px;
 
   // .allTabPage {
   //   position: relative;
@@ -595,7 +595,6 @@ body {
         .newMyTour {
           display: block;
           // width: 200px;
-
           padding: 10px 40px;
           color: white;
           text-align: center;
@@ -609,6 +608,10 @@ body {
             background: #700000;
             border: #700000;
             color: white;
+          }
+          >a{
+            color:white;
+            text-decoration: none;
           }
         }
       }
@@ -746,15 +749,38 @@ body {
         margin-top: 20px;
       }
     }
+
+
+
+
+
+
+
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 #StartGroup_Section3 {
+  padding: 150px 0 50px 0;
   margin-bottom: 80px;
+  margin-top: 80px;
   position: relative;
   //   height: 500px;
 
   .titleZone {
     border-bottom: 1px solid #cbcbcb;
+    // border: 1px solid green;
     width: 350px;
     text-align: right;
     padding: 20px 0;
@@ -878,6 +904,7 @@ body {
   }
 }
 
+
 #StartGroup_Section4 {
   .adventure_main {
     padding: 150px 0;
@@ -999,6 +1026,7 @@ body {
     }
   }
 }
+
 
 
 

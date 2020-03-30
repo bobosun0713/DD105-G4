@@ -5,11 +5,7 @@ $errMsg = "";
 
 //連線資料庫
 try {
-    echo var_dump($spot_no);
-    echo var_dump($spot_no);
-    echo var_dump($spot_no);
-    echo var_dump($spot_no);
-    echo var_dump($spot_no);
+   
     require_once("./php/connect.php");
 
     // 基本資訊
@@ -1021,7 +1017,7 @@ order by msg_time desc
 
 
 
-`   .
+
 
 
 

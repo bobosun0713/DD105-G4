@@ -1,13 +1,12 @@
 @include respond(small) {
   .adventure_wrap {
-    background-size:200%;
+    background-size: 200%;
     background-position-x: center;
-
   }
   .adventure_container {
     width: 100%;
     .people_Layout {
-     padding: 0 0 20px 0;
+      padding: 0 0 20px 0;
       .people_group {
         transform-origin: 150px 15px;
         width: 280px;
@@ -49,7 +48,7 @@
         align-items: flex-start;
         flex-wrap: wrap;
         justify-content: center;
-     
+
         .ikeyword {
           height: 34px;
           width: 95%;
@@ -89,14 +88,14 @@
 
     .down_filter_all {
       flex-wrap: wrap;
-    
-      width:90%;
+
+      width: 90%;
       margin: 15px auto;
       .down_filter {
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
         margin-bottom: 5px;
-        width:45%;
+        width: 45%;
         label {
           display: block;
           margin-bottom: 5px;
@@ -119,24 +118,53 @@
     #trash {
       margin-top: 10px;
     }
-    .item_all {
-      .item {
-        width: 80%;
-        margin: 25px auto;
-        .peple_number {
-          .btn_fill_red {
-           border-radius: 20px;
-            width:50%;
-            padding: 10px 5px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+    .item_all_left_filter {
+      .item_all {
+        .item {
+          width: 80%;
+          margin: 25px auto;
+          .peple_number {
+            .btn_fill_red {
+              border-radius: 20px;
+              width: 50%;
+              padding: 10px 5px;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: center;
+              margin-bottom: 20px;
+            }
           }
-
         }
-
       }
+    }
+  }
+
+  .go_top {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    z-index: 10;
+    // background-color: red;
+    right: 25px;
+    bottom: 130px;
+    animation: gotop 2.5s infinite;
+    animation-timing-function: ease;
+
+    // border: 2px solid rgb(255, 255, 255);
+    img {
+      width: 100%;
+    }
+  }
+  @keyframes gotop {
+    0% {
+      transform: translateY(50px);
+    }
+    50% {
+      transform: translateY(75px);
+    }
+    100% {
+      transform: translateY(50px);
     }
   }
 }
