@@ -213,9 +213,9 @@ try{
                                     </td>
                                     <td class="p-3">
                                         <?php if( $templeRow["temple_img"] != null ){
-                                                echo '<img class="temple_info_txt" width="300px" src="./img/temple/',$templeRow["temple_img"],'" alt="temple-',$templeRow["temple_no"],'">'
+                                                echo '<img class="temple_info_txt" width="200px" src="./img/temple/',$templeRow["temple_img"],'" alt="temple-',$templeRow["temple_no"],'">'
                                             ;}else {
-                                                echo '<input type="file" name="temple_img" class="temple_info_img_upload" accept="image/*">';
+                                                echo '<input type="file" name="temple_img" style="width:200px;" class="temple_info_img_upload" accept="image/*">';
                                                 echo '<input type="button" class="mt-3 btn btn-dark temple_info_img_send" value="上傳圖片">';
                                         } ?> 
                                     </td>
