@@ -135,7 +135,7 @@ try {
                 <a href="../adventrue.html">
                     <li class="title">尋鬼探險</li>
                 </a>
-                <a href="../leaderboard.html">
+                <a href="../leaderboard.php">
                     <li class="title">靈異票選</li>
                 </a>
                 <a href="../game.php">
