@@ -128,6 +128,8 @@ try{
                         <img src="./img/game/ghosttalk_bg.png">
                         
                         <div class="showface">
+                            <audio id="screammusic" src="./music/scream_sound.mp3" loop="false"></audio>
+
                             <span class="canceltext">離開測驗?</span>
                         </div>
                         <!-- <a href="index.html">
