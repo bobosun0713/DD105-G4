@@ -13,13 +13,15 @@ $(document).ready(function() {
         $.ajax({
             url: "./php/forum_status.php",
             type: "post",
+            dataType: "json",
             success: function(data) {
+                console.log(data)
                 let html = ""
                 html += `
                 <div class="user_path">
-                    <img src="./img/icon/default_header.png" alt="" />
+                    <img src="./img/user/${data.mem_img}" alt="" />
                 </div>
-                 <div class="user_name">${data}</div>
+                 <div class="user_name">${data.mem_name}</div>
                 `
                 $(".chatbox_user").empty()
                 $(".chatbox_user").append(html)
@@ -145,7 +147,7 @@ function serchcard() {
                                 </div>
                                 <div class="art_con">
                                     <div class="art_title">
-                                        <img src="img/icon/default_header.png" alt="" />
+                                        <img src="img/user/${data[i].mem_img}" alt="" />
                                         <h1>
                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                         </h1>
@@ -196,9 +198,9 @@ function opencard() {
                                 <div class="user_loc">${data.forum_title}</div>
                                 <div class="chatbox_user">
                                     <div class="user_path">
-                                        <img src="img/icon/default_header.png" alt="" />
+                                        <img src="img/user/${data.mem_img}" alt="" />
                                     </div>
-                                    <div class="user_name">${data.mem_name}<span><?=$testRow["ceart_data"]?></span></div>
+                                    <div class="user_name">${data.mem_name}</div>
                                 </div>
                                 <div class="chatbox_content">
                                     <div class="conten_img">
@@ -289,7 +291,7 @@ function forum_msg() {
                     <div class="msg_space">
                         <div class="msg_user">
                         <div class="msg_user_space">
-                                <img src="./img/icon/default_header.svg" alt="" />
+                                <img src="./img/user/${data[i].mem_img}" alt="" />
                                 <div class="msg_title_user">
                                     <div class="msg_title_name">${data[i].mem_name}</div>
                                     <div class="msg_title_time">${data[i].msg_date}</div>
@@ -364,7 +366,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/icon/default_header.png" alt="" />
+                                                        <img src="img/user/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -410,7 +412,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/icon/default_header.png" alt="" />
+                                                        <img src="img/user/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -457,7 +459,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/icon/default_header.png" alt="" />
+                                                        <img src="img/user/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -504,7 +506,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/icon/default_header.png" alt="" />
+                                                        <img src="img/user/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -546,7 +548,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/icon/default_header.png" alt="" />
+                                                        <img src="img/user/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -607,7 +609,7 @@ function report_article() {
                 forum_report_reason: result,
             },
             success: function(data) {
-                alert("舉報成功")
+                // alert("舉報成功")
                 location.reload()
             },
             error: function(data) {

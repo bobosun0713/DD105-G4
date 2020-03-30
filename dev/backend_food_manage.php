@@ -23,21 +23,30 @@ try{
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+<meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>食物景點管理</title>
-
-    <!-- Icons-->
-    <!-- lily新增 -->
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/all.min.css">
-
+    <!-- 鬼島logo小圖示 -->
+    <link rel="shortcut icon" href="../img/icon/logo-icon.png" />
     <!-- Main styles for this application-->
-    <link href="css/backend.css" rel="stylesheet" />
+    <link href="./css/backend.css" rel="stylesheet" />
+    <!-- lily新增 -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/all.min.css" />
+    <!-- 文字前面的icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <!-- login登入 -->
+    <script src="./js/backend/backLogininfo.js"></script>
 
+    <!------------ 各分頁JS檔 --------------->
+    <!-- 討論區js檔案 -->
+    <script src="./js/backend/forum_back.js"></script>
     <!-- 美食管理js檔案 -->
+    <script src="./js/backend/spot_manage.js"></script>
+    <script src="./js/backend/backend_game_content.js"></script>
+    <script src="./js/backend/backend_StartGriuo_msg_report.js"></script>
     <script src="./js/backend/food_manage.js"></script>
 </head>
+<title>食物景點管理</title>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 
@@ -77,63 +86,64 @@ try{
         <div class="sidebar">
             <!-- =================== sidebar menu =================== -->
             <nav class="sidebar-nav">
-                <ul class="nav pt-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./backend.html">
-                            <i class="cil-cog m-2"></i>
-                            管理員帳號 
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="＃">
-                            <i class="cil-people m-2"></i>
-                            會員管理
-                        </a>
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="＃" >
-                            <i class="cil-location-pin m-2"></i>
-                            景點管理
-                        </a>
-                        <ul class="nav-dropdown-items">
-                            <li class="nav-item">
-                                <a class="nav-link pl-5" href="./backend_food_manage.php">
-                                    美食景點管理
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-5" href="./backend_temple_manage.php">
-                                    廟宇景點管理
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="backend_game.html">
-                            <i class="cil-file m-2"></i>
-                            試膽測驗題庫管理
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="backend_StartGroup_msg_report.html">
-                            <i class="cil-flag-alt m-2"></i>
-                            揪團留言檢舉管理
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="＃">
-                            <i class="cil-speech m-2"></i>
-                            討論區檢舉管理
-                        </a>
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="./backend_leader.php">
-                            <i class="cil-star m-2"></i>
-                            排行榜管理
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+    <ul class="nav pt-2">
+        <li class="nav-item">
+            <a class="nav-link" href="./backend.html">
+                <i class="cil-cog m-2"></i>
+                管理員帳號
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./backend_member.html">
+                <i class="cil-people m-2"></i>
+                會員管理
+            </a>
+        </li>
+        <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="＃">
+                <i class="cil-location-pin m-2"></i>
+                景點管理
+            </a>
+            <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                    <a class="nav-link pl-5" href="./backend_food_manage.php">
+                        美食景點管理
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-5" href="./backend_temple_manage.php">
+                        廟宇景點管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./backend_game.html">
+                <i class="cil-file m-2"></i>
+                試膽測驗題庫管理
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./backend_StartGroup_msg_report.html">
+                <i class="cil-flag-alt m-2"></i>
+                揪團留言檢舉管理
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./back_forum.html">
+                <i class="cil-speech m-2"></i>
+                討論區檢舉管理
+            </a>
+        </li>
+        <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="./backend_leader.php">
+                <i class="cil-star m-2"></i>
+                排行榜管理
+            </a>
+        </li>
+    </ul>
+</nav>
+
             <!-- =================== sidebar menu =================== -->
         </div>
 

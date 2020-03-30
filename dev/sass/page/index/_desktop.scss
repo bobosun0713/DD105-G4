@@ -1221,24 +1221,36 @@
                     .card_title_user {
                         margin-left: 10px;
                         .title_name {
-                            font-size: 1.125rem;
+                            font-size: 1.25rem;
                         }
                         .title_time {
-                            font-size: 1rem;
+                            // border: 1px solid red;
+                            font-size: 0.75rem;
                         }
                     }
                 }
             }
             .card_title {
-                font-size: 1.5rem;
+                // border: 1px solid red;
+                font-size: 1.25rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
                 margin: 15px 0px;
             }
             //-- 內文
             .card_content {
                 // border: 1px solid black;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
                 margin: 15px 0 10px;
                 height: 235px;
-                font-size: 1.25rem;
+                font-size: 1.125rem;
             }
             //-- 狀態欄
             .card_status {
@@ -1252,9 +1264,9 @@
                         font-size: 1.125rem;
                     }
                     img {
-                        vertical-align: bottom;
+                        vertical-align: text-bottom;
                         width: 25px;
-                        height: 25px;
+                        height: 20px;
                     }
                 }
             }

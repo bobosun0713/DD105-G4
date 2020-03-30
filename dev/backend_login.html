@@ -1,103 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        @@include('layout/head.html')
+        <title>後台登入註冊</title>
+        <meta charset="UTF-8" />
+        <script src="./js/backend/backLogin.js"></script>
+    </head>
 
-<head>
-    @@include('layout/head.html')
-    <title>後台登入註冊</title>
-    <meta charset="UTF-8" />
-</head>
-
-<body>
-
-    <div class="backend_login">
-
-        <div class="grid">
-
-            <div class="allcandlesblock">
-                <div class="outercontainer">
-                    <div class="container1">
-                        <div class="red light"></div>
-                        <div class="orangered light"></div>
-                        <div class="orange light"></div>
-                        <div class="yellow light"></div>
-                        <div class="white light"></div>
-                    </div>
-                    <img class="candle" src="img/game/candle.png" />
-                </div>
-                <div class="outercontainer2">
-                    <div class="container2">
-                        <div class="red light"></div>
-                        <div class="orangered light"></div>
-                        <div class="orange light"></div>
-                        <div class="yellow light"></div>
-                        <div class="white light"></div>
-                    </div>
-                    <img class="candle2" src="./img/game/candle.png" />
-                </div>
-            </div>
-
-            <div id="camera1">
-                <div class="box1">
-                    <div id="L_magicpaper"></div>
-                </div>
-            </div>
-
-            <div id="camera2">
-                <div class="box2">
-                    <div id="R_magicpaper"></div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="login_frame">
-            <div class="logo_img">
-                <img src="./img/logo/LOGO_white.png" alt="white_logo">
-            </div>
-            <div class="login_section">
-                <form action="" method="POST">
-                    <p>
-                        <input type="text" placeholder="請輸入你的帳號">
-                    </p>
-                    <p>
-                        <input type="password" placeholder="請輸入你的密碼">
-                    </p>
-                    <button type="submit">登入</button>
-                </form>
-                <!-- <div class="to_front">
-                    <a href="./index.html">
-                        <div class="cat">
-
-                            <img src="./img/index/g5.png">
-
+    <body>
+        <div class="backend_login">
+            <div class="grid">
+                <div class="allcandlesblock">
+                    <div class="outercontainer">
+                        <div class="container1">
+                            <div class="red light"></div>
+                            <div class="orangered light"></div>
+                            <div class="orange light"></div>
+                            <div class="yellow light"></div>
+                            <div class="white light"></div>
                         </div>
-                        <div class="dialog">
-                            <img src="./img/component/dialog.png" alt="">
-                            <p>回到前台畫面</p>
+                        <img class="candle" src="img/game/candle.png" />
+                    </div>
+                    <div class="outercontainer2">
+                        <div class="container2">
+                            <div class="red light"></div>
+                            <div class="orangered light"></div>
+                            <div class="orange light"></div>
+                            <div class="yellow light"></div>
+                            <div class="white light"></div>
                         </div>
-                    </a>
+                        <img class="candle2" src="./img/game/candle.png" />
+                    </div>
+                </div>
 
-                </div> -->
+                <div id="camera1">
+                    <div class="box1">
+                        <div id="L_magicpaper"></div>
+                    </div>
+                </div>
+
+                <div id="camera2">
+                    <div class="box2">
+                        <div id="R_magicpaper"></div>
+                    </div>
+                </div>
             </div>
 
-        </div>
-        
-        <div class="to_front">
-            <a href="./index.html">
-                <div class="cat">
-
-                    <img src="./img/index/g5.png">
-
+            <div class="login_frame">
+                <div class="logo_img">
+                    <img src="./img/logo/LOGO_white.png" alt="white_logo" />
                 </div>
-                <div class="dialog">
-                    <img src="./img/component/dialog.png" alt="">
-                    <p>回到前台畫面</p>
+                <div class="login_section">
+                    <form action="" method="POST">
+                        <p>
+                            <input type="text" placeholder="請輸入你的帳號" id="backaccout" />
+                        </p>
+                        <p>
+                            <input type="password" placeholder="請輸入你的密碼" id="backpwd" />
+                        </p>
+                        <button id="backBtn" type="button">登入</button>
+                    </form>
                 </div>
-            </a>
+            </div>
 
+            <div class="to_front">
+                <a href="./index.html">
+                    <div class="cat">
+                        <img src="./img/index/g5.png" />
+                    </div>
+                    <div class="dialog">
+                        <img src="./img/component/dialog.png" alt="" />
+                        <p>回到前台畫面</p>
+                    </div>
+                </a>
+            </div>
         </div>
-
-    </div>
-</body>
-
+        <script src="./js/backend/backenLogin.js"></script>
+    </body>
 </html>
