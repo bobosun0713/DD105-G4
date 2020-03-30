@@ -216,7 +216,7 @@ showface.addEventListener("click", function letscaryfaceout() {
         screammusic.pause();
         creepy_face.style.display = "none";
         console.log("noshow")
-        window.location.href = './index.html';
+        window.location.href = './ghostindex.html';
     }
 
 });

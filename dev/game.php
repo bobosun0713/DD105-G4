@@ -150,7 +150,7 @@ try{
                 <div id="resultinnertext"></div>
                 <div class="btnshowupagaingroup">
                     <a href="game.php"><button class="btn-border3" id="playagain_btn">再玩一次</button></a>
-                    <a href="index.html"><button class="btn-border3" id="gotoindex_btn">回到首頁</button></a>
+                    <a href="ghostindex.html"><button class="btn-border3" id="gotoindex_btn">回到首頁</button></a>
                 </div>
                 <div class="buttons">
                       
