@@ -5,65 +5,65 @@
 //=================
 // reset setting
 //=================
-@import 'base/reset';
+@import "base/reset";
 
 //=================
 //mixins
 //=================
-@import 'mixin/mixins';
+@import "mixin/mixins";
 
 //=================
 // color 變數
 //=================
-@import 'base/color';
+@import "base/color";
 
 //=================
 // base setting
 //=================
-@import 'base/setting';
+@import "base/setting";
 
 //=================
 // font setting
 //=================
-@import 'base/font';
+@import "base/font";
 
 //=================
 // modules
 //=================
 
-@import 'modules/btn';
-@import 'modules/spotCard';
-@import 'modules/tourCard.scss';
-@import 'modules/pagination';
-@import 'modules/checkBox';
-@import 'modules/breadCrumb';
-@import 'modules/smoke';
-@import 'modules/hamburgers';
-@import 'modules/indexsmoke';
-@import 'modules/mouse_ghost';
-@import 'modules/tabline';
+@import "modules/btn";
+@import "modules/spotCard";
+@import "modules/tourCard.scss";
+@import "modules/pagination";
+@import "modules/checkBox";
+@import "modules/breadCrumb";
+@import "modules/smoke";
+@import "modules/hamburgers";
+@import "modules/indexsmoke";
+@import "modules/mouse_ghost";
+@import "modules/tabline";
 
 //=================
 // layout setting
 //=================
 
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/login';
+@import "layout/header";
+@import "layout/footer";
+@import "layout/login";
 
 //=================
 // RWD setting
 //=================
 
-@import 'respond/desktop';
-@import 'respond/medium';
-@import 'respond/small';
-@import 'base/common';
+@import "respond/desktop";
+@import "respond/medium";
+@import "respond/small";
+@import "base/common";
 
 //=================
 // libary setting
 //=================
-@import 'base/jquery_ui';
+@import "base/jquery_ui";
 
 //=================
 // modules 模組 每個專案都會累積不同的

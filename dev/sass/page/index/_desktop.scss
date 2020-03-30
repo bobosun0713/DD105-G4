@@ -1217,6 +1217,8 @@
                         height: 50px;
                         width: 50px;
                         vertical-align: middle;
+                        border-radius: 100%;
+                        object-fit: cover;
                     }
                     .card_title_user {
                         margin-left: 10px;
