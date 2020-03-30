@@ -16,7 +16,7 @@ function doFirst() {
 
     //------------------------------------------人數滿變色----------------------------------------
     if (now_people == max_people) {
-        var participate = $element("#participate");
+        participate = $element("#participate");
         participate.innerText = "已截止";
         participate.onclick = function () {
             //讓他點不了
@@ -27,6 +27,29 @@ function doFirst() {
     }
     //-------------------------------------------人數滿變色----------------------------------------
 
+    //------------------是否截止時間----------------------------------------
+participate = $element("#participate");
+    var tour_endtime = $element("#tour_endtime");
+    //  剩餘時間=截止時間-當前時間        
+    var now_time = new Date();
+    //新增一個當前時間data物件
+    var remain_time = new Date(tour_endtime.innerText);
+    //新增一個截止時間data物件
+    // iDays.push(parseInt((remain_time.getTime() - now_time.getTime()) / 1000 / 60 / 60 / 24));
+    if (now_time.getTime() > remain_time.getTime()) {
+        
+        participate.innerText = "已截止";
+        //當下日期大於截止日期
+        participate.onclick = function (e) {
+            return false;
+        }
+        participate.classList.remove("btn-outline");
+        participate.classList.add("activity_end");
+
+    }
+    //------------------是否截止時間----------------------------------------
+
+
     //-------------------------------------------判斷行程----------------------------------------
     var tourSpotTxt = $elements(".tourSpotTxt");
     var tour_number = $element(".tour_number");
@@ -34,23 +57,37 @@ function doFirst() {
     var circle_in = $element(".tourStatus ul");
     if (tourSpotTxt.length == 2) {
         tour_number.innerText = "二";
-        // p_circle = document.createElement('p');
-        // p_circle.setAttribute('class', 'circle');
-        // statusCircle[1].appendChild(p_circle);
-        p_line = document.createElement('p');
-        p_line.setAttribute('class', 'line');
-        statusCircle[0].appendChild(p_line);
 
-        statusCircle = document.createElement('li');
-        statusCircle.setAttribute('class', 'statusCircle');
-        circle_in.appendChild(statusCircle);
+        for (let i = 0; i < 2; i++) {
+            statusCircle = document.createElement('li');
+            statusCircle.setAttribute('class', 'statusCircle');
+            circle_in.appendChild(statusCircle);
 
-        p_circle = document.createElement('p');
-        p_circle.setAttribute('class', 'circle');
-        statusCircle.appendChild(p_circle);
+
+            p_circle = document.createElement('p');
+            p_circle.setAttribute('class', 'circle');
+            statusCircle.appendChild(p_circle);
+            if (i <= 0) {
+                p_line = document.createElement('p');
+                p_line.setAttribute('class', 'line');
+                statusCircle.appendChild(p_line);
+            }
+        }
 
     } else if (tourSpotTxt.length == 1) {
         tour_number.innerText = "一";
+
+        for (let i = 0; i < 1; i++) {
+            statusCircle = document.createElement('li');
+            statusCircle.setAttribute('class', 'statusCircle');
+            circle_in.appendChild(statusCircle);
+
+
+            p_circle = document.createElement('p');
+            p_circle.setAttribute('class', 'circle');
+            statusCircle.appendChild(p_circle);
+
+        }
 
     } else {
 
@@ -71,8 +108,26 @@ function doFirst() {
         }
 
 
+
     }
     //-------------------------------------------判斷行程----------------------------------------
+    //-------------------------------------------跳出會員----------------------------------------
+    var participate = $element("#participate");
+    participate.onclick = function () {
+        if (participate.innerText != "已截止") {
+            if (login_btn.innerText == "登出") {
+                alert("你已成功加入!")
+                participate.innerText = "已加入";
+            } else {
+                alert("請先登入會員!")
+                $element("#indexLogin").style.display = "block";
+                $element("#login_page1").style.display = "block";
+            }
+        }
+    }
+    //-------------------------------------------跳出會員----------------------------------------
+
+
 
 
 
