@@ -1,478 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    @@include('layout/head.html')
-    <!-- 視差滑動 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-
-    <title>首頁</title>
-</head>
-
-<body>
-    @@include('layout/component/mouse_ghost.html')
-    <div class="wrapper">
-        <div id="ghostIndexBG">
-            <!-- 霧氣 -->
-            @@include('layout/component/indexsmoke.html')
-            @@include('layout/header.html')
-            <section id="indexSection1">
-
-                <div class="parallaxContainer">
-
-                    <ul id="scene">
-
-                        <li class="layer" data-depth="1">
-                            <div class="text-anim ">
-                                <span>探</span>
-                                <span>索</span>
-                                <span>未</span>
-                                <span>知</span>
-                                <span>的</span>
-                                <span> </span>
-                                <span>鬼</span>
-                                <span>島</span>
-                            </div>
-                        </li>
-
-                        <li class="layer" data-depth="1">
-                            <img src="./img/index/g8.png" class="G8" />
-                        </li>
-
-                        <li class="layer" data-depth="0.9">
-                            <img src="./img/index/g7.png" class="G7" />
-                        </li>
-
-                        <li class="layer" data-depth="0.7">
-                            <img src="./img/index/g6.png" class="G6" />
-                        </li>
-
-                        <li class="layer" data-depth="0.6">
-                            <img src="./img/index/g4.png" class="G4" />
-                        </li>
-
-                        <li class="layer" data-depth="0.8">
-                            <img src="./img/index/g5.png" class="G5" />
-                        </li>
-
-                        <li class="layer" data-depth="0.5">
-                            <img src="./img/index/g3.png" class="G3" />
-                        </li>
-
-                        <li class="layer" data-depth="0.4">
-                            <img src="./img/index/g2.png" class="G2" />
-                        </li>
-
-                        <li class="layer" data-depth="0.2">
-                            <img src="./img/index/g1.png" class="G1" />
-                        </li>
-
-                        <li class="layer" data-depth="0.1">
-                            <img src="./img/index/g9.png" class="G9" />
-                        </li>
-                    </ul>
+    <head>
+        @@include('layout/head.html')
+        <!-- 打字機文字 -->
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/t.min.js"></script>
+        <!-- 霧氣 -->
+        @@include('layout/component/indexsmoke.html')
+        <!-- 有鬼箭頭元素 -->
+        @@include('layout/component/mouse_ghost.html')
+    </head>
+    <body>
+        <div id="Guide-page-img">
+            <!-- 幽靈 -->
+            <div id="ghost">
+                <img class="ghost" src="./img/guide-pages/ghost.png" alt="" />
+            </div>
+            <!-- 前後端按鈕 -->
+            <div class="front-end">
+                <div id="front-end">
+                    <a class="front-span" href="./ghostindex.html"> 前 端 </a>
                 </div>
-
-                <div class="route1">
-                    <img src="./img/index/route1.png" />
+                <div id="rear-end">
+                    <a class="front-span" href="./backend_login.html"> 後 端 </a>
                 </div>
-            </section>
+            </div>
 
-            <!-- 第二頻 -->
-            <section id="indexSection2">
-                <div class="indexTitleZone1">
-                    <h1 class="title">靈異景點</h1>
-                    <h1 class="title2 title">TOP3</h1>
-                    <img src="./img/index/spiderweb01.png" />
-                </div>
+            <!--女鬼 與鬼島logo大div-->
 
-                <div class="mapZone">
-                    <img src="./img/index/map.png" />
-                    <div class="mapWidth">
-                        <div class="loc1">
-                            <img src="./img/index/top1.png" class="rank" id="mapRank1" />
-                            <p class="location" id="loc1"></p>
-                            <img src="./img/map/spell1.png" id="spell1" class="spellSize" />
-                        </div>
+            <div class="Female-ghost">
+                <!--女鬼 大圖-->
+                <img id="Female-ghost" src="./img/guide-pages/Female-ghost.png" alt="" />
+                <!--女鬼 小圖-->
+                <img id="Female-ghost-s" src="./img/guide-pages/Female-ghost-s.png" alt="" />
 
-                        <div class="loc2">
-                            <img src="./img/index/top2.png" class="rank" id="mapRank2" />
-                            <p class="location" id="loc2"></p>
-                            <img src="./img/map/spell10.png" id="spell2" class="spellSize" />
-                        </div>
-
-                        <div class="loc3">
-                            <img src="./img/index/top3.png" class="rank" id="mapRank3" />
-                            <p class="location" id="loc3"></p>
-                            <img src="./img/map/spell8.png" id="spell3" class="spellSize" />
-                        </div>
-
-                        <div class="loader loader1" data-text="loaderloader"></div>
-                        <div class="loader loader2" data-text="loaderloader"></div>
-                        <div class="loader loader3" data-text="loaderloader"></div>
-                        <div class="loader loader4" data-text="loaderloader"></div>
-                    </div>
-                </div>
-
-                <div class="spotInfoZone">
-                    <div id="spotInfoWrap">
-                        <!-- <div class="spotInfo">
-                            <div class="imgZone">
-                                <a href="./ghostSpot.html">
-                                    <img src="./img/index/top1Img_1.png" />
-
-                                    <div class="moreInfo">
-                                        <div class="moreInfoContent">
-                                            <img src="./img/index/top1Img_2.png" />
-                                            <div class="moreInfoTxt">
-                                                <h2>【新莊廢棄醫院】</h2>
-                                                <p>膽量指數：<span>8.5</span>/10</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="txtZone">
-                                <div class="locInfo">
-                                    <img src="./img/icon/location.png" />
-                                    <p>
-                                        靈異地址：新北市新莊區雙鳳里
-                                    </p>
-                                </div>
-
-                                <div class="spotContent">
-                                    <img src="./img/icon/report.svg" />
-                                    <p>
-                                        景點簡介：<br />
-                                        早期專門用來隔離麻瘋病患的療養院。現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等....
-                                    </p>
-                                </div>
-
-                                <div class="msgInfo">
-                                    <div class="msgTitle">
-                                        <img src="./img/icon/msgindex.png" />
-                                        <p>
-                                            熱門評論：
-                                        </p>
-                                    </div>
-
-                                    <div class="msgNew">
-                                        <img src="./img/icon/header1.png" />
-
-                                        <div class="msgContent">
-                                            <p class="personalInform">
-                                                <span class="name">富江我老婆</span>
-                                                <span class="time">2020-03-05 18:34</span>
-                                            </p>
-                                            <p class="msg">
-                                                陰暗的地下室，配上到處丟棄的醫療用品，半夜去探險超毛！！！
-                                            </p>
-                                            <p class="triangle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="./ghostSpot.php?spot_no=???&order_no=????">
-                                    <button class="btn-outline">
-                                        查看景點詳情
-                                    </button>
-                                </a>
-                                
-                            </div>
-                        </div> -->
-
-                        <!-- <div class="spotInfo">
-                            <div class="imgZone">
-                                <a href="./ghostSpot.html">
-                                    <img src="./img/index/top1Img_1.png" />
-
-                                    <div class="moreInfo">
-                                        <div class="moreInfoContent">
-                                            <img src="./img/index/top1Img_2.png" />
-                                            <div class="moreInfoTxt">
-                                                <h2>【新莊廢棄醫院】</h2>
-                                                <p>膽量指數：<span>8.5</span>/10</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="txtZone">
-                                <div class="locInfo">
-                                    <img src="./img/icon/location.png" />
-                                    <p>
-                                        靈異地址：新北市新莊區雙鳳里
-                                    </p>
-                                </div>
-
-                                <div class="spotContent">
-                                    <img src="./img/icon/report.svg" />
-                                    <p>
-                                        景點簡介：<br />
-                                        早期專門用來隔離麻瘋病患的療養院。現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等....
-                                    </p>
-                                </div>
-
-                                <div class="msgInfo">
-                                    <div class="msgTitle">
-                                        <img src="./img/icon/msgindex.png" />
-                                        <p>
-                                            熱門評論：
-                                        </p>
-                                    </div>
-
-                                    <div class="msgNew">
-                                        <img src="./img/icon/header1.png" />
-
-                                        <div class="msgContent">
-                                            <p class="personalInform">
-                                                <span class="name">富江我老婆</span>
-                                                <span class="time">2020-03-05 18:34</span>
-                                            </p>
-                                            <p class="msg">
-                                                陰暗的地下室，配上到處丟棄的醫療用品，半夜去探險超毛！！！
-                                            </p>
-                                            <p class="triangle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="btn-outline">
-                                    查看景點詳情
-                                </button>
-                            </div>
-                        </div> -->
-
-                        <!-- <div class="spotInfo">
-                            <div class="imgZone">
-                                <a href="./ghostSpot.html">
-                                    <img src="./img/index/top1Img_1.png" />
-
-                                    <div class="moreInfo">
-                                        <div class="moreInfoContent">
-                                            <img src="./img/index/top1Img_2.png" />
-                                            <div class="moreInfoTxt">
-                                                <h2>【新莊廢棄醫院】</h2>
-                                                <p>膽量指數：<span>8.5</span>/10</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="txtZone">
-                                <div class="locInfo">
-                                    <img src="./img/icon/location.png" />
-                                    <p>
-                                        靈異地址：新北市新莊區雙鳳里
-                                    </p>
-                                </div>
-
-                                <div class="spotContent">
-                                    <img src="./img/icon/report.svg" />
-                                    <p>
-                                        景點簡介：<br />
-                                        早期專門用來隔離麻瘋病患的療養院。現在已經荒廢無人，保留了完整的醫療器材如白醫師袍、聽診器、病床、藥罐等....
-                                    </p>
-                                </div>
-
-                                <div class="msgInfo">
-                                    <div class="msgTitle">
-                                        <img src="./img/icon/msgindex.png" />
-                                        <p>
-                                            熱門評論：
-                                        </p>
-                                    </div>
-
-                                    <div class="msgNew">
-                                        <img src="./img/icon/header1.png" />
-
-                                        <div class="msgContent">
-                                            <p class="personalInform">
-                                                <span class="name">富江我老婆</span>
-                                                <span class="time">2020-03-05 18:34</span>
-                                            </p>
-                                            <p class="msg">
-                                                陰暗的地下室，配上到處丟棄的醫療用品，半夜去探險超毛！！！
-                                            </p>
-                                            <p class="triangle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="btn-outline">
-                                    查看景點詳情
-                                </button>
-                            </div>
-                        </div> -->
-                    </div>
-                    <button id="rightScroll" class="scrollBtn" disabled>
-                        <span>〈</span>
-                    </button>
-                    <button id="leftScroll" class="scrollBtn">
-                        <span>〉</span>
-                    </button>
-                </div>
-
-                <div class="route2">
-                    <img src="./img/index/route2.png" alt="route2">
-                </div>
-
-            </section>
-
-            <!-- 第三頻 -->
-            <section id="section3">
-                <div class="title_forum">
-                    <h1 class="title">驚悚</h1>
-                    <h1 class="title2">尋鬼探險</h1>
-                    <img src="./img/index/forum_hand-2.png" alt="" />
-                </div>
-                <div class="adventure_all">
-                    <div class="adventure_btn">
-                        <a href="adventrue.html">
-                            <div class="ghost_btn">
-                                <div class="ghost_btn_img1">
-                                    <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
-                                </div>
-                                <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去參團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                                </div>
-                            </div>
-                        </a>
-                        <a href="adventrue.html">
-                            <div class="ghost_btn2">
-                                <div class="ghost_btn_img2">
-                                    <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
-                                </div>
-                                <div class="ghost_btn2_ghost"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="index_adventrue">
-                        <div class="adventrue_left">
-                            <div class="adventrue_left_ghost">
-                                <img src="img/index/index_section3.png" alt="">
-                            </div>
-                            <div class="dorp_down_title">
-                                熱門揪團
-                            </div>
-                            <!-- adventrue_left_ghost -->
-                            <div class="dorp_down_menu">
-                                <a class="tab_display">熱門揪團</a>
-                                <a>最新揪團</a>
-                                <a>最多收藏</a>
-                            </div>
-                            <span> <a href="adventrue.html">更多</a></span>
-
-                        </div>
-                        <!-- adventrue_left -->
-                        <div class="adventrue_right">
-                            <div class="adventrue_right_itemall">
-                                <!-- <div class="adventrue_right_item">
-                                <div class="adv_r_item_img">
-                                    <img src="img/index/top1Img_1.png" alt="">
-                                </div>
-                            
-                                <div class="adv_r_item_txt">
-                                    <h1>【台南廢棄醫院之旅】</h1>
-                                    <p>真的快嚇死我了！！！大家都知道前幾年
-                                        有個女教師在新埔站廁所上吊的新聞嗎？
-                                        聽說從那之後捷運站女廁常常會發生突然
-                                        被拍肩的.....
-                                    </p>
-                                    <ul>
-                                        <li><i class="fas fa-user-alt"></i>董董老師</li>
-                                        <li><i class="far fa-calendar-alt"></i>01/06號</li>
-                                        <li><i class="fas fa-user-plus"></i> 1/6人</li>
-                                    </ul>
-
-                                </div>
-                           
-                            </div> -->
-                                <!-- adventrue_right_item 右邊每一攔-->
-
-                            </div>
-
-
-                            <!-- adventrue_right_itemall 右邊全部攔 -->
-                        </div>
-                        <!-- adventrue_right -->
-                    </div>
-                    <!-- index_adventrue -->
-
-                    <div class="adventure_btn2">
-                        <a href="adventrue.html">
-                            <div class="ghost_btn">
-                                <div class="ghost_btn_img1">
-                                    <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
-                                </div>
-                                <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去參團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                                </div>
-                            </div>
-                        </a>
-                        <a href="adventrue.html">
-                            <div class="ghost_btn2">
-                                <div class="ghost_btn_img2">
-                                    <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
-                                </div>
-                                <div class="ghost_btn2_ghost"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="adventure_btn3">
-                        <a>來去參團</a>
-                        <a>來去揪團</a>
-
-                    </div>
-                </div>
-
-
-                <script src="js/index_section3.js"></script>
-            </section>
-
-
-            <section id="section4">
-                <!-- 標題 -->
-                <div class="title_forum">
-                    <h1 class="title">熱門</h1>
-                    <h1 class="title2">靈異討論</h1>
-                    <img src="./img/index/forum_hand-2.png" alt="" />
-                </div>
-                <div class="card_channel">
-                    <div class="card_warp" id="card_slider">
-
-                    </div>
-                    <!-- 左右按鈕 -->
-                    <div id="card_btn">
-                        <input type="button" id="left_btn" style="opacity: 0.3;" disabled />
-                        <input type="button" id="right_btn" />
-                    </div>
-                </div>
-                <!-- 圖片 -->
-                <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
-                <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
-                <script src="./js/index_forun.js"></script>
-            </section>
-            @@include('layout/footer.html')
+                <p class="typewriter">
+                    你，嘗試過毛骨悚然的旅遊體驗嗎？​<br />
+                    你，想試試看自己的膽子到底有多大嗎？<br />
+                    喜歡刺激的你一定會喜歡我們的網站,<br />
+                    跟我們來去鬼島探險囉!
+                </p>
+                <!--鬼島logo 大圖 -->
+                <img id="logo-white-b" src="./img/guide-pages/logo-white-b.png" alt="" />
+                <!--鬼島logo 小圖 -->
+                <img id="logo-white-s" src="./img/guide-pages/logo-white-s.png" alt="" />
+            </div>
         </div>
-        <!-- 視差滑動 -->
-        <script>
-            var scene = document.getElementById('scene')
-            var parallax = new Parallax(scene)
-        </script>
-
-        <!-- 靈異景點top3輪播 -->
-        <script src="./js/indexSpotCarasoul.js"></script>
-</body>
-
+    </body>
+    <script>
+        $(document).ready(function() {
+            //這段文字是用這段套件
+            //找關鍵字default .setting. speed跑的色度. extend .delay多少. blink 打ture閃 .repeat .pause-on-cick  在複製貼上包在物件裡(貼在方法後面)
+            //在in 的effect後面和 在out 的effect後面更改你想要的效果的值
+            //callback後面有function
+            $(".typewriter").t({
+                delay: 0.5, //秒
+                speed: 50, //毫秒
+                speed_vary: true,
+                blink: true,
+                repeat: false,
+                pause_on_click: true,
+            })
+        })
+    </script>
 </html>

@@ -50,8 +50,8 @@ $(document).ready(function() {
                     `
                 }
             }
-            $("#adminTable").empty()
-            $("#adminTable").append(html)
+            $(".forum_report").empty()
+            $(".forum_report").append(html)
             // 回傳給文章資料庫
             $(".switch-input").click(function() {
                 var status = $(this).attr("psn")
@@ -74,7 +74,7 @@ $(document).ready(function() {
             //當按下刪除並刪除檢舉
             $(".btn").click(function() {
                 var replay = $(this).attr("psn")
-                alert(replay)
+                // alert(replay)
                 $.ajax({
                     url: "./php/back_forum_delete.php",
                     type: "POST",
