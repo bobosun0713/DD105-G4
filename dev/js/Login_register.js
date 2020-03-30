@@ -63,9 +63,7 @@ function register() {
             alert("註冊成功")
             $("#login_page2").css("display", "none")
             $("#indexLogin").css("display", "none")
-            // 清掉註冊值＆錯誤外框
-            $("#memid,#mempwd,#mempwdcheck,#memcell, #memail,#memname").val("")
-            $("#memid,#mempwd,#mempwdcheck,#memcell, #memail,memname").css("border", "")
+            location.reload()
             // } else {
             //     alert("註冊失敗")
             // }
