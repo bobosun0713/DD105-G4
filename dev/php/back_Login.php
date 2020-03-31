@@ -17,10 +17,11 @@ try{
     $_SESSION["admin_no"] = $backmemRow["admin_no"];
     $_SESSION["admin_id"] = $backmemRow["admin_id"];
     $_SESSION["admin_name"] = $backmemRow["admin_name"];
+    $_SESSION["admin_authority"] = $backmemRow["admin_authority"];
     
 
     //送出登入者的姓名資料
-    $backmember = ["admin_no"=>$_SESSION["admin_no"], "admin_id"=>$_SESSION["admin_id"], "admin_name"=>$_SESSION["admin_name"]];
+    $backmember = ["admin_no"=>$_SESSION["admin_no"], "admin_id"=>$_SESSION["admin_id"], "admin_name"=>$_SESSION["admin_name"] , "admin_authority"=>$_SESSION["admin_authority"]];
     echo json_encode($backmember);
   }
 }catch(PDOException $e){
