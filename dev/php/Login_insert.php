@@ -3,7 +3,7 @@ $errMsg = "";
     try {      
         require_once("connect.php");
         if( $_FILES["mem_img"]["error"] == UPLOAD_ERR_OK){
-                $sql = "INSERT INTO `member` (`mem_no`, `mem_id` ,`mem_psw`,`mem_name`  , `mem_tel` , `mem_mail` , `mem_img`) values(null ,:mem_id, :mem_psw , :mem_name , :mem_tel , :mem_mail , '')";
+                $sql = "INSERT INTO `member` (`mem_no`, `mem_id` ,`mem_psw`,`mem_name`  , `mem_tel` , `mem_mail` , `mem_img`) values(null ,:mem_id, :mem_psw , :mem_name , :mem_tel , :mem_mail , 'default_header-01.svg')";
                 $member = $pdo->prepare( $sql );
                 $member -> bindValue(":mem_id", $_POST["mem_id"]);
                 $member -> bindValue(":mem_psw", $_POST["mem_psw"]);

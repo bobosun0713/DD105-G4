@@ -102,7 +102,7 @@ function getLoginInfo() {
         if (member.mem_id) {
             // 桌機
             $id("memName").style.display = "block"
-            $id("memName").src = member.mem_img
+            $id("memName").src = "./img/login/" + member.mem_img
             $id("login_btn").innerText = "登出"
             // RWD
             // $id("memName1").innerText = member.mem_name

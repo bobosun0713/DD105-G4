@@ -86,7 +86,7 @@ $(document).ready(function() {
                                     </div>
                                     <div class="art_con">
                                         <div class="art_title">
-                                            <img src="${data[i].mem_img}" alt="" />
+                                            <img src="./img/login${data[i].mem_img}" alt="" />
                                             <h1>
                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                             </h1>
