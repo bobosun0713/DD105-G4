@@ -7,7 +7,7 @@ var jshint = require("gulp-jshint")
 var sourcemaps = require("gulp-sourcemaps")
 var browserSync = require("browser-sync").create()
 var reload = browserSync.reload
-// var connectPHP = require('gulp-connect-php')
+var connectPHP = require('gulp-connect-php')
 
 //path 路徑
 var web = {
@@ -122,16 +122,16 @@ gulp.task("mini_img", function() {
 // });
 
 gulp.task("default", function() {
-    // browserSync.init({
-    //     server: {
-    //         baseDir: "./dest",
-    //         proxy: "localhost:8080",
-    //         port: 3000,
-    //         watch: true,
-    //         index: "index.html",
-    //     },
-    // })
-    // connectPHP.server(options)
+    browserSync.init({
+        server: {
+            baseDir: "./dest",
+            proxy: "localhost:8080",
+            port: 3000,
+            watch: true,
+            index: "index.html",
+        },
+    })
+    connectPHP.server(options)
     gulp.watch(web.html, ["fileinclude"]).on("change", reload)
     gulp.watch(web.sass, ["sass"]).on("change", reload)
     gulp.watch(web.js, ["concatjs"]).on("change", reload)

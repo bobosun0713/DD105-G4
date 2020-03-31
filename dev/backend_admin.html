@@ -3,6 +3,8 @@
     <!-- head-->
     @@include('layout/backend/head.html')
     <title>鬼島後台</title>
+
+
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
         <!-- top_header -->
         @@include('layout/backend/top_header.html')
@@ -17,12 +19,15 @@
                 <ol class="breadcrumb"></ol>
                 <div class="container-fluid">
                     <!-- 中間內容 -->
-                    @@include('layout/backend/content.html')
+                    @@include('layout/backend/content_admin.html')
                     <!-- end -->
                 </div>
+
             </main>
             <aside class="aside-menu"></aside>
         </div>
         @@include('layout/backend/footer.html')
     </body>
+
+    
 </html>
