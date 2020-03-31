@@ -7,10 +7,7 @@
             <p id="soundTxt">Sound On</p>
         </div>
         <div id="memStatus">
-            <a href="">
-                <img src="./img/icon/default_header.svg" />
-            </a>
-            <p><span id="memName"></span></p>
+            <p><img id="memName" src="./img/login/" /></p>
             <p><span id="login_btn">登入</span></p>
         </div>
     </div>
@@ -27,12 +24,12 @@
                 </a>
             </li>
             <li class="@@link001-3">
-                <a href="leaderboard.html" class="title @@link003">
+                <a href="leaderboard.php" class="title @@link003">
                     靈異票選
                 </a>
             </li>
             <li>
-                <a href="index.html">
+                <a href="ghostindex.html">
                     <img id="topLogo" src="./img/logo/LOGO_white.png" />
                 </a>
             </li>
@@ -56,7 +53,7 @@
 
     <nav class="rwdHeader">
         <div class="rwdHeaderWrap">
-            <a href="../index.html">
+            <a href="ghostindex.html">
                 <img id="topLogo2" src="./img/logo/LOGO_white.png" />
             </a>
 
@@ -71,22 +68,22 @@
     <div id="rwdHamburgerMenu">
         <nav>
             <ul>
-                <a href="../ghostIsland.php">
+                <a href="ghostIsland.php">
                     <li class="title">前進鬼島</li>
                 </a>
-                <a href="../adventrue.html">
+                <a href="adventrue.html">
                     <li class="title">尋鬼探險</li>
                 </a>
-                <a href="../leaderboard.php">
+                <a href="leaderboard.php">
                     <li class="title">靈異票選</li>
                 </a>
-                <a href="../game.php">
+                <a href="game.php">
                     <li class="title">試膽測驗</li>
                 </a>
-                <a href="../forum.html">
+                <a href="forum.html">
                     <li class="title">靈異討論</li>
                 </a>
-                <a href="../member.html">
+                <a href="member.html">
                     <li class="title">會員中心</li>
                 </a>
                 <a>
@@ -121,7 +118,13 @@
             <div class="login_cover">
                 <img src="./img/login/registered-01 (1).png" alt="" />
             </div>
-            <form action="" method="POST">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="user_border">
+                    <div id="user_path"></div>
+                    <label for="user_img"
+                        >上傳封面<input type="file" name="userimg" id="user_img" style="display: none;"
+                    /></label>
+                </div>
                 <p>
                     <label for="memid">會員帳號</label>
                     <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
@@ -148,6 +151,26 @@
                 </p>
             </form>
             <div id="sure_btn">註冊會員</div>
+            <!-- 換圖JS -->
+            <script>
+                function $id(id) {
+                    return document.getElementById(id)
+                }
+                let user_img = $id("user_img")
+                let user_path = $id("user_path")
+
+                user_img.addEventListener("change", function() {
+                    var file = user_img.files[0]
+                    var filereader = new FileReader()
+                    filereader.readAsDataURL(file)
+                    filereader.addEventListener("load", function(e) {
+                        user_path.style.backgroundImage = `url(${e.target.result})`
+                    })
+                    $(this)
+                        .parent()
+                        .css("color", "transparent")
+                })
+            </script>
         </section>
     </div>
 </header>
