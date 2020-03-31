@@ -1,405 +1,137 @@
 @include respond(small) {
-	//手機都寫在裡面
+    
+        //平板都寫在裡面
+        .wrapper_Member_center {
+            // border: 1px solid red;
+            // background-color: rgb(112, 111, 103);
+            padding-top: 24%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+            
+            .title_btn{
+                width:90%;
+                margin-bottom:8px ;
+                // border: 1px solid blanchedalmond;
+                display: flex;
+                justify-content:center;
+                
+                .on{
+                    position: relative;
+                    transition: all 1.5s linear;
+                    &:before{
+                        content:"";
+                        width:95%;
+                        height:2px;
+                        background-color: whitesmoke;
+                        position: absolute;
+                        left:1px;
+                        bottom: 0px;
+                    }
+                    
+                }
+                .tab{
+                // background-color: hotpink;
+                font-size: 0.9rem;
+                margin: 0 10px 0 0; 
+                // width:55px;
+                text-align: center;
+                padding:6px 5px 2px 5px;
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+                .H_1{
+                    padding:6px 8px 2px 8px;
+                    // color: rgb(207, 31, 154);
+
+                }
+                .H_5{
+                    padding:6px 8px 2px 8px;
+                    // color: rgb(207, 31, 154);
+
+                }
+                
+            }
+            .member_block1{
+                width:90%;
+                height:auto;
+                // border: 1px solid rgb(43, 187, 43); 
+                display:flex;
+                justify-content: space-around;
+                .profile_photo{
+                    width:auto;
+                    
+                    // border: 1px solid blue;
+                    margin-right:0;
+                    margin-bottom: 10px;
+                   form{   
+
+                       .uploadimg{
+                        //    background-color: lightblue;
+                           width:200px;
+                           input{
+                            height:50px;
+                            width:150px;
+                            //影藏預設 點圖片換圖
+                               display:none;
+                           }
+                           label{
+                                .img_block{
+                                    margin: 0 auto;
+                                    width:150px;
+                                    height:150px;
+                                    border-radius: 50%;
+                                    background-color: gold;
+                                    overflow: hidden;
+                                    img{
+                                        width: 150px;
+                                        height: auto;
+                                    }
+                                }
+                           }
+                       }
+                   }
+                }
+                .tab_form{
+                    // border: 1px solid rgb(207, 31, 154);
+                    width: 95%;
+                        // background-color: green;
+                        .profile{
+                            .tabform1{
+                               .profile_col{
+                                   display:flex;
+                                   justify-content: space-between;
+                                  input{
+                                      width: 160px;
+                                      font-size: 0.7rem;
+                                  
+                                  }
+                                  .col3{
+                                    // background-color: blueviolet;
+                                    width: 40px;
+                                    cursor: pointer;
+                                }
+                                }
+                            }
+                        }
+                    
+                }    
+                
+            }
+         
+        
+        }
+        
+            
+        
+        
+    
+    
+  
+    
 }
 
-.wrapper_member {
-	@media screen and (max-width: 375px){
-		.membertop {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			.section1_member {
-				.menu {
-					margin-bottom: 50px;
-					form {
-						width: 200px;
-						margin: 0;
-						#preview {
-							width: 150px;
-							height: 150px;
-							border: 1px solid gray;
-							border-radius: 50%;
-							margin: 0 auto;
-						}
-					}
-				}
-			}
-			.section2_member {
-				width: 340px;
-				.bar-block {
-					width: 340px;
-					margin: 0 auto;
-					.title_btn {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						margin: 0 auto;
-						.button1 {
-							font-size: 1rem;
-							margin: 10px 5px;
-						}
-					}
-					#class1 {
-						width: 340px;
-						form {
-							width: 340px;
-							p {
-								display: block;
-								margin: 10px 10px 10px 0;
-							}
-							.mem_id,
-							.mem_account,
-							.mem_psw {
-								color: white;
-								margin-left: 0;
-							}
-							.mem_name {
-								margin-left: 0;
-							}
-							.mem_tel,
-							.mem_email {
-								margin-left: 0;
-							}
-							.mem_time {
-								margin-left: 0;
-								font-size: 0.6rem;
-							}
-							.span2 {
-								float: right;
-								cursor: pointer;
-							}
-							.hr2 {
-								width: 340px;
-							}
-						}
-					}
-					#class2,
-					#class3,
-					#class4,
-					#class5 {
-						width: 340px;
-						#tour_table,
-						#tour_table2 {
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: center;
-							width: 340px;
-							.spot_cotent {
-								width: 340px;
-								#tour_msg {
-									#people_join {
-										.peoplenum {
-											width: 80px;
-										}
-									}
-									#people_join_img {
-										.progress {
-											width: 150px;
-										}
-									}
-								}
-								#icon_discuss2 {
-									#espl_icon {
-										width: 90px;
-									}
-									#icon_discuss3 {
-										padding-left: 100px;
-										#love_icon {
-											width: 10px;
-										}
-										#dis_icon {
-											width: 10px;
-										}
-										#view_icon {
-											width: 10px;
-										}
-									}
-								}
-							}
-						}
-						#tour_table h1,
-						#tour_table2 h1 {
-							font-size: 1rem;
-						}
 
-						#tour_table h2,
-						#tour_table2 h2 {
-							font-size: 0.9rem;
-						}
-
-						#tour_table span,
-						#tour_table2 span {
-							font-size: 0.8rem;
-						}
-						.spotimg_member {
-							width: 340px;
-							height:250px;
-						}
-						.spotimg_member2 {
-							width: 340px;
-							height: 100%;
-							object-fit: cover;
-						}
-						#icon_discuss{
-							padding: 40px 0 10px 0;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@media screen and (min-width: 376px) and (max-width: 580px) {
-		.membertop {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			.section1_member {
-				.menu {
-					margin-bottom: 50px;
-					form {
-						width: 200px;
-						margin: 0;
-						#preview {
-							width: 150px;
-							height: 150px;
-							border: 1px solid gray;
-							border-radius: 50%;
-							margin: 0 auto;
-						}
-					}
-				}
-			}
-			.section2_member {
-				width: 376px;
-				.bar-block {
-					width: 376px;
-					margin: 0 auto;
-					.title_btn {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						margin: 0 auto;
-						.button1 {
-							font-size: 1rem;
-							margin: 10px 5px;
-						}
-					}
-					#class1 {
-						width: 376px;
-						form {
-							width: 376px;
-							p {
-								display: block;
-								margin: 10px 10px 10px 0;
-							}
-							.mem_id,
-							.mem_account,
-							.mem_psw {
-								color: white;
-								margin-left: 0;
-							}
-							.mem_name {
-								margin-left: 0;
-							}
-							.mem_tel,
-							.mem_email {
-								margin-left: 0;
-							}
-							.mem_time {
-								margin-left: 0;
-								font-size: 0.6rem;
-							}
-							.span2 {
-								float: right;
-								cursor: pointer;
-							}
-							.hr2 {
-								width: 376px;
-							}
-						}
-					}
-					#class2,
-					#class3,
-					#class4,
-					#class5 {
-						width: 376px;
-						#tour_table,
-						#tour_table2 {
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: center;
-							width: 376px;
-							.spot_cotent {
-								width: 376px;
-								#tour_msg {
-									#people_join {
-										.peoplenum {
-											width: 80px;
-										}
-									}
-									#people_join_img {
-										.progress {
-											width: 150px;
-										}
-									}
-								}
-								#icon_discuss2 {
-									#espl_icon {
-										width: 90px;
-									}
-									#icon_discuss3 {
-										padding-left: 140px;
-										#love_icon {
-											width: 10px;
-										}
-										#dis_icon {
-											width: 10px;
-										}
-										#view_icon {
-											width: 10px;
-										}
-									}
-								}
-							}
-						}
-						#tour_table h1,
-						#tour_table2 h1 {
-							font-size: 1rem;
-						}
-
-						#tour_table h2,
-						#tour_table2 h2 {
-							font-size: 0.9rem;
-						}
-
-						#tour_table span,
-						#tour_table2 span {
-							font-size: 0.8rem;
-						}
-						.spotimg_member {
-							width: 376px;
-							height:250px;
-						}
-						.spotimg_member2 {
-							width: 376px;
-							height: 100%;
-							object-fit: cover;
-						}
-						#icon_discuss{
-							padding: 40px 0 10px 0;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@media screen and (min-width: 581px) and (max-width: 768px) {
-		.membertop {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			.section1_member {
-				.menu {
-					margin-bottom: 50px;
-					form {
-						width: 200px;
-						margin: 0;
-					}
-				}
-			}
-			.section2_member {
-				width: 500px;
-				.bar-block {
-					width: 500px;
-					margin: 0 auto;
-					.title_btn {
-						margin: 0 auto;
-						.button1 {
-							font-size: 1rem;
-							margin: 0 2px;
-						}
-					}
-					#class1 {
-						width: 500px;
-						form {
-							width: 500px;
-							.mem_id,
-							.mem_account,
-							.mem_psw,
-							.mem_name {
-								margin-left: 80px;
-								color: white;
-							}
-							.mem_tel,
-							.mem_email {
-								margin-left: 50px;
-							}
-							.mem_time {
-								margin-left: 20px;
-								font-size: 0.6rem;
-							}
-							.span2 {
-								float: right;
-								cursor: pointer;
-							}
-							.hr2 {
-								width: 500px;
-							}
-						}
-					}
-					#class2,
-					#class3,
-					#class4,
-					#class5 {
-						width: 500px;
-						#tour_table,
-						#tour_table2 {
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: center;
-
-							width: 500px;
-							.spot_cotent {
-								width: 500px;
-							}
-						}
-						#tour_table h1,
-						#tour_table2 h1 {
-							font-size: 1rem;
-						}
-
-						#tour_table h2,
-						#tour_table2 h2 {
-							font-size: 0.9rem;
-						}
-
-						#tour_table span,
-						#tour_table2 span {
-							font-size: 0.8rem;
-						}
-						.spotimg_member {
-							width: 500px;
-						}
-						.spotimg_member2 {
-							width: 500px;
-							height: 250px;
-							object-fit: cover;
-						}
-						#icon_discuss{
-							padding: 40px 0 10px 0;
-							#icon_discuss3{
-								padding-left: 240px;
-							}
-						}
-
-					}
-				}
-			}
-		}
-	}
-}

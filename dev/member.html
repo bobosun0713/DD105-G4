@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 
     @@include('layout/head.html')
 
@@ -14,86 +14,80 @@
 <body>
     @@include('layout/header.html')
     @@include('layout/component/mouse_ghost.html')
-    <div class="wrapper_member">
-    <div class="membertop">
-        <section class="section1_member">
-            <div class="menu">
+    <div class="wrapper_Member_center">
+        <div class="title_btn">
+            <div class="tab tablinks H_1 on" onclick="showContent(event,'profile_info')">個人資訊</div>
+            <div class="tab tablinks" onclick="showContent(event,'created')">已建立揪團</div>
+            <div class="tab tablinks" onclick="showContent(event,'joined')">已參加揪團</div>
+            <div class="tab tablinks" onclick="showContent(event,'forumrecord')">討論區紀錄</div>
+            <div class="tab tablinks H_5" onclick="showContent(event,'favorite')">我的收藏</div>
+        </div>
+        <div id="profile_info" class="tabcontent member_block1">
+            <section class="profile_photo">
                 <form enctype="multipart/form-data" action="" method="post">
-                    <div id="preview">
-                    </div>
-                    <div class="uploadimg"><input type="file" name="imageUpload" class="uploadimg_input"></div>
+
+                    <div class="uploadimg">
+                        <input type="file" name="upFile" id="upFile" class="uploadimg_input">
+                        <label for="upFile">
+                            <div class="img_block">
+                                <img id="imgPreview" src="./img/member/add_default_img.png" width="80">
+                            </div>
+                        </label>
+
                 </form>
-            </div>
-        </section>
+            </section>
 
-        <section class="section2_member">
-                <div class="bar-block">
-                    <div class="container">
-                    </div>
-                    <div class="title_btn">
-                        <div>
-                        <a href="#" class="bar-item button1 tablink testbtn"
-                            onclick="openClass(event, 'class1')">個人資訊</a>
-                        <a href="javascript:void(0)" class="bar-item button1 tablink"
-                            onclick="openClass(event, 'class2')">已建立揪團</a>
-                        <a href="javascript:void(0)" class="bar-item button1 tablink"
-                            onclick="openClass(event, 'class3')">已參加揪團</a>
+
+            <section class="tab_form">
+                <div id="" class="profile">
+                    <form action="" method="POST" class="tabform1">
+                        <div class="profile_col mem_id_member">
+                            <div class="tabtitle">會員編號:</div>
+                            <input type="email" class="mem_id" placeholder="" id="memId" value="99">
+                            <div class="col3"></div>
                         </div>
-                        <div>
-                        <a href="javascript:void(0)" class="bar-item button1 tablink"
-                            onclick="openClass(event, 'class4')">討論區紀錄</a>
-                        <a href="javascript:void(0)" class="bar-item button1 tablink"
-                            onclick="openClass(event, 'class5')">我的收藏</a>
-                        </div>  
-                    </div>
+                        <hr size="0.5px" width="100%">
+                        <div class="profile_col mem_account_member">
+                            <div class="tabtitle">會員帳號:</div>
+                            <input type="text" class="mem_account" placeholder="" id="memAccount" value="99">
+                            <div class="col3"></div>
+                        </div>
+                        <hr size="0.5px" width="100%">
+                        <div class="profile_col mem_psw_member">
+                            <div class="tabtitle">會員密碼:</div>
+                            <input type="text" class="mem_psw" placeholder="" id="memPsw" value="*******">
+                            <div class="col3"><img src="./img/member/edit1.png"></div>
+                        </div>
+                        <hr size="0.5px" width="100%">
+                        <div class="profile_col mem_name_member">
+                            <div class="tabtitle">會員姓名:</div>
+                            <input type="text" class="mem_name" placeholder="" id="memName" value="富江">
+                            <div class="col3"><img src="./img/member/edit1.png"></div>
+                        </div>
+                        <hr size="0.5px" width="100%">
+                        <div class="profile_col mem_tel_member">
+                            <div class="tabtitle">行動電話:</div>
+                            <input type="text" class="mem_tel" placeholder="" id="memTel" value="08000000000">
+                            <div class="col3"><img src="./img/member/edit1.png"></div>
 
-                    <div id="class1" class="container class">
-                        <form action="" method="POST">
-                            
-                            <div class="mem_id_member">
-                                <p>編號:</p>
-                                <span class="mem_id" id="mem_id">A01234567</span>
-                            </div>
-                            <hr class="hr2">
-                            <div class="mem_account_member">
-                                <p>帳號:</p>
-                                <span class="mem_account" id="mem_account">ABCDQEFG</span>
-                            </div>
-                            <hr class="hr2">
-                            <div class="mem_psw_member">
-                            <p>密碼:</p>
-                                <span class="mem_psw" id="mem_psw">**********</span>
-                                <span class="span2"><img src="./img/member/edit1.png"></span>
-                            </div>
-                            <hr class="hr2">
-                            <div class="mem_name_member">
-                            <p>姓名:</p>
-                                <span class="mem_name" id="mem_name">富江</span>
-                                <span class="span2"><img src="./img/member/edit1.png"></span>
-                            </div>
-                            <hr class="hr2">
-                            <div class="mem_tel_member">
-                            <p>行動電話:</p>
-                                <span class="mem_tel" id="mem_tel">0988-123-456</span>
-                                <span class="span2"><img src="./img/member/edit1.png"></span>
-                            
-                            </div>
-                            <hr class="hr2">
-                            <div class="mem_email_member">
-                            <p>電子信箱:</p>
-                                <span class="mem_email" id="mem_email">google@gmail.com</span>
-                                <span class="span2"><img src="./img/member/edit1.png"></span>
-                            </div>
-                            <hr class="hr2">
-                            <div class="mem_time_member">
-                            <p>最後登入時間:</p>
-                            <span class="mem_time" id="mem_time"></span>
-                            </div>
-                            <hr class="hr2">
-                        </form>
+                        </div>
+                        <hr size="0.5px" width="100%">
+                        <div class="profile_col mem_email_member">
+                            <div>電子信箱:</div>
+                            <input type="email" class="mem_email" placeholder="" id="memEmail" value="ssss@gggg.com">
+                            <div class="col3"><img src="./img/member/edit1.png"></div>
+                        </div>
+                        <hr size="0.5px" width="100%">
+                        <div class="profile_col mem_time_member">
+                            <div class="logintime">最後登入時間:</div>
+                            <div class="showtime" id="memTime">2020/01/01 08:47:20</div>
+                            <div class="col3"></div>
+                        </div>
+                        <hr size="0.5px" width="100%">
+                    </form>
 
-                    </div>
-                    <div id="class2" class="container class">
+                </div>
+                <!-- <div id="class2" class="container class">
                         <br>
                         <div id="tour_table">
                             <div class="spotimg_member">
@@ -136,27 +130,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <div id="tour_table2">
-                            <div class="spotimg_member">
-                                <img class="spotimg_member2" src="./img/member/cancel_spot.png"></<img>
-                            </div>
-                            <div class="spot_cotent">
-                                <h1>【午夜醫院探險】</h1>
-                                <div>
-                                    <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
-                                </div>
-                                <div class="spotimg1">
-                                    <span><img src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里
-                                </div>
-                                <div class="spotimg2">
-                                    <span><img src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20
-                                </div>
-                                <div class="spotimg3">
-                                    <span><img src="./img/member/money.png">&nbsp</span>總預算約:1000元
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div id="class3" class="container class">
@@ -172,8 +146,10 @@
                                     <div>
                                         <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
                                     </div>
-                                    <div class="spotimg1"><span><img src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
-                                    <div class="spotimg2"><span><img src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
+                                    <div class="spotimg1"><span><img
+                                                src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
+                                    <div class="spotimg2"><span><img
+                                                src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
                                     <div class="spotimg3"><span><img src="./img/member/money.png">&nbsp</span>總預算約:1000元
                                     </div>
                                 </div>
@@ -188,8 +164,10 @@
                                     <div>
                                         <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
                                     </div>
-                                    <div><span class="spotimg1"><img src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
-                                    <div><span class="spotimg2"><img src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
+                                    <div><span class="spotimg1"><img
+                                                src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
+                                    <div><span class="spotimg2"><img
+                                                src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
                                     <div><span class="spotimg3"><img src="./img/member/money.png">&nbsp</span>總預算約:1000元
                                     </div>
                                 </div>
@@ -204,16 +182,18 @@
                                     <div>
                                         <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
                                     </div>
-                                    <div class="spotimg1"><span><img src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
-                                    <div class="spotimg2"><span><img src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
+                                    <div class="spotimg1"><span><img
+                                                src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
+                                    <div class="spotimg2"><span><img
+                                                src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
                                     <div class="spotimg3"><span><img src="./img/member/money.png">&nbsp</span>總預算約:1000元
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div id="class4" class="container class">
+                <!-- <div id="class4" class="container class">
                         <br>
                         <div id="tour_table_all">
                             <div id="tour_table">
@@ -228,7 +208,8 @@
                                     <div id="icon_discuss">
                                         <span id="icon_discuss2">
                                             <span><img src="./img/member/espl.png" id="espl_icon"></span>
-                                            <span id="icon_discuss3"><img src="./img/member/love.png" id="love_icon">40</span>
+                                            <span id="icon_discuss3"><img src="./img/member/love.png"
+                                                    id="love_icon">40</span>
                                             <span><img src="./img/member/talk.png" id="dis_icon">22</span>
                                             <span><img src="./img/member/eyes.png" id="view_icon">1320</span>
                                         </span>
@@ -249,7 +230,8 @@
                                 <div id="icon_discuss">
                                     <span id="icon_discuss2">
                                         <span><img src="./img/member/espl.png" id="espl_icon"></span>
-                                        <span id="icon_discuss3"><img src="./img/member/love.png" id="love_icon">40</span>
+                                        <span id="icon_discuss3"><img src="./img/member/love.png"
+                                                id="love_icon">40</span>
                                         <span><img src="./img/member/talk.png" id="dis_icon">22</span>
                                         <span><img src="./img/member/eyes.png" id="view_icon">1320</span>
                                     </span>
@@ -269,16 +251,17 @@
                                 <div id="icon_discuss">
                                     <span id="icon_discuss2">
                                         <span><img src="./img/member/espl.png" id="espl_icon"></span>
-                                        <span id="icon_discuss3"><img src="./img/member/love.png" id="love_icon">40</span>
+                                        <span id="icon_discuss3"><img src="./img/member/love.png"
+                                                id="love_icon">40</span>
                                         <span><img src="./img/member/talk.png" id="dis_icon">22</span>
                                         <span><img src="./img/member/eyes.png" id="view_icon">1320</span>
                                     </span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-
+                <!-- 
                     <div id="class5" class="container class">
                         <br>
                         <div id="tour_table_all">
@@ -291,8 +274,10 @@
                                     <div>
                                         <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
                                     </div>
-                                    <div class="spotimg1"><span><img src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
-                                    <div class="spotimg2"><span><img src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
+                                    <div class="spotimg1"><span><img
+                                                src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
+                                    <div class="spotimg2"><span><img
+                                                src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
                                     <div class="spotimg3"><span><img src="./img/member/money.png">&nbsp</span>總預算約:1000元
                                     </div>
                                 </div>
@@ -307,8 +292,10 @@
                                     <div>
                                         <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
                                     </div>
-                                    <div class="spotimg1"><span><img src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
-                                    <div class="spotimg2"><span><img src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
+                                    <div class="spotimg1"><span><img
+                                                src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
+                                    <div class="spotimg2"><span><img
+                                                src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
                                     <div class="spotimg3"><span><img src="./img/member/money.png">&nbsp</span>總預算約:1000元
                                     </div>
                                 </div>
@@ -323,26 +310,37 @@
                                     <div>
                                         <h2>日式風格建築現在已經荒廢無人，保留了完整的醫療器材，如白醫師袍、聽診器、病床、藥罐等。地下室可以清楚看到.......</h2>
                                     </div>
-                                    <div class="spotimg1"><span><img src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
-                                    <div class="spotimg2"><span><img src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
+                                    <div class="spotimg1"><span><img
+                                                src="./img/member/point.png">&nbsp</span>新北市新莊區雙鳳里及桃園市龜山區迴龍里</div>
+                                    <div class="spotimg2"><span><img
+                                                src="./img/member/calender.png">&nbsp</span>出發日期:2020-01-20</div>
                                     <div class="spotimg3"><span><img src="./img/member/money.png">&nbsp</span>總預算約:1000元
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- @@include('layout/component/pagination.html') -->
-                    <script src="js/member.js"></script>
-                </div>
-        </section>
+                    </div> -->
+                <!-- @@include('layout/component/pagination.html') -->
+
+
+            </section>
+        </div>
+        <div id="created" class="tabcontent member_block">
+
+        </div>
+        <div id="joined" class="tabcontent member_block">
+
+        </div>
+        <div id="forumrecord" class="tabcontent member_block">
+
+        </div>
+        <div id="favorite" class="tabcontent member_block">
+
+        </div>
     </div>
-    <!-- <div class="clear_float"></div> -->
-
-
-
     @@include('layout/footer.html')
-
-</div>
+    <script src="js/member.js"></script>
 </body>
+
 
 </html>

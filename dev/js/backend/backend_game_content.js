@@ -15,24 +15,24 @@ function showgameDB(jsonStr) {
             <td>${gameDB[i].quiz_no}</td>
             <td p-3><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_question}"></td>
             <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt1}"></td>
+            <td>
+            <select class="custom-select-sm opt1_select_point">
+              <option value="0">${gameDB[i].quiz_opt1_point}</option>
+              <option value="1">0</option>
+              <option value="2">1</option>
+              <option value="3">1.5</option>
+            </select>
+            </td>
             <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt2}"></td>
+            <td>
+            <select class="custom-select-sm opt2_select_point">
+              <option value="0">${gameDB[i].quiz_opt2_point}</option>
+              <option value="1">0</option>
+              <option value="2">1</option>
+              <option value="3">1.5</option>
+            </select>
+            </td>
             <td><input type="text" class="form-control" placeholder="" value="${gameDB[i].quiz_opt3}"></td>
-            <td>
-                <select class="custom-select-sm opt1_select_point">
-                  <option value="0">${gameDB[i].quiz_opt1_point}</option>
-                  <option value="1">0</option>
-                  <option value="2">1</option>
-                  <option value="3">1.5</option>
-                </select>
-            </td>
-            <td>
-                <select class="custom-select-sm opt2_select_point">
-                  <option value="0">${gameDB[i].quiz_opt2_point}</option>
-                  <option value="1">0</option>
-                  <option value="2">1</option>
-                  <option value="3">1.5</option>
-                </select>
-            </td>
             <td>
                 <select class="custom-select-sm opt3_select_point">
                   <option value="0">${gameDB[i].quiz_opt3_point}</option>
@@ -41,7 +41,7 @@ function showgameDB(jsonStr) {
                   <option value="3">1.5</option>
                 </select>
             </td>
-            <td><div><img src="./img/game/${gameDB[i].quiz_img}" width="200px"></div></td>
+            <td><div><img src="./img/game/${gameDB[i].quiz_img}" width="100px"></div></td>
 
             <td><button type="button" class="btn btn-danger deletebtn">刪除</button></td>
             <td><button type="button" class="btn btn-dark updatebtn">儲存</button></td>

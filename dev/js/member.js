@@ -1,51 +1,44 @@
-//table選擇
-function openClass(evt, className) {
+//tab form
+var mybtn = document.getElementsByClassName("tab")[0];
+//js script檔要放最下
+mybtn.click();
+
+function showContent(evt, idName) {
     var i, x, tablinks;
-    x = document.getElementsByClassName("class");
+    console.log("this1")
+    //影藏tab內容
+    x = document.getElementsByClassName("tabcontent");
     for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
+        x[i].style.display = "none";
     }
-    tablinks = document.getElementsByClassName("tablink");
+    //目前block打開
+    document.getElementById(idName).style.display = "flex";
+    //tablinks變不亮
+    tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < x.length; i++) {
-       tablinks[i].classList.remove("red");
+        tablinks[i].classList.remove("on");
     }
-    document.getElementById(className).style.display = "block";
-    evt.currentTarget.classList.add("red");
-  }
-  
-  var mybtn = document.getElementsByClassName("testbtn")[0];
-  mybtn.click();
-
-
-
-//圖片預覽
-function preview1(file) {
-var img = new Image(), url = img.src = URL.createObjectURL(file)
-var $img = $(img)
-img.onload = function() {
-URL.revokeObjectURL(url)
-$('#preview').empty().append($img)
-}
+    evt.currentTarget.classList.add("on");
 }
 
-function preview2(file) {
-var reader = new FileReader()
-reader.onload = function(e) {
-var $img = $('<img>').attr("src", e.target.result)
-$('#preview').empty().append($img)
-}
-reader.readAsDataURL(file)
-}
 
-$(function() {
-$('[type=file]').change(function(e) {
-var file = e.target.files[0]
-preview1(file)
-})
-})
 
 //登入時間
-function nowtime(){
-   document.getElementById("mem_time").innerHTML = Date();
+
+//圖片預覽
+
+//-------------------------大頭貼.onchange
+document.getElementById("upFile").onchange = function (e) {
+    console.log("點到了拉")
+
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById("imgPreview").src = reader.result;
+    }
+
+    reader.readAsDataURL(file);
 }
-setInterval(nowtime,3000);
+
+
+
