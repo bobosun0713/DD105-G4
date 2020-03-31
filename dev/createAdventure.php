@@ -4,26 +4,29 @@ $errMsg = "";
 
 
 session_start();
-$session_mem_no = $_SESSION["mem_no"];
-$session_mem_name = $_SESSION["mem_name"];
-$session_mem_img = $_SESSION["mem_img"];
+if(isset($_SESSION["mem_no"])){
+  $session_mem_no = $_SESSION["mem_no"];
+  $session_mem_name = $_SESSION["mem_name"];
+  $session_mem_img = $_SESSION["mem_img"];
+}
+
 
 //連線資料庫
 try{
     require_once("./php/connect.php");
 
     $sql = "select * 
-            from spot 
+            from `spot` 
             where spot_no = :spot_no";
     $spots = $pdo->prepare($sql);
     $spots ->bindValue(":spot_no", $spot_no);    
     $spots ->execute();
 
     $sql = "select *
-            from temple 
+            from `temple` 
             where substr(temple_location,1,2) in 
                      (select substr(spot_address,1,2)
-                      from spot
+                      from `spot`
                       where spot_no=:spot_no)
                       and temple_status = 0;";
     $temples = $pdo->prepare($sql);
@@ -31,7 +34,7 @@ try{
     $temples ->execute();
 
     $sql = "select *
-            from food 
+            from `food`
             where substr(food_location,1,2) in 
                      (select substr(spot_address,1,2)
                       from spot
@@ -273,7 +276,7 @@ try{
     ?>
     <section class="section_wrapper">
       <div class="form-tabs">
-        <div class="mainspot tourTitle">【<?php echo $spotRow->spot_name;?>】</div>
+        <div class="mainspot tourTitle">【<?php echo $spotRow->spot_name;?></div>
 
         <!-- 導覽列 -->
         <ul class="form-menu">

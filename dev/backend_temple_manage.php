@@ -71,8 +71,7 @@ try{
             <li class="nav-item ">
                 <span id="admin_name">阿禎</span>
             </li>
-            <li class="nav-item mr-3">
-                /
+            <li class="nav-item mr-3" style="cursor: pointer;">
                 <span id="admin_status">登出</span>
             </li>
         </ul>
@@ -86,7 +85,7 @@ try{
             <nav class="sidebar-nav">
     <ul class="nav pt-2">
         <li class="nav-item">
-            <a class="nav-link" href="./backend.html">
+            <a class="nav-link" href="./backend_admin.html">
                 <i class="cil-cog m-2"></i>
                 管理員帳號
             </a>

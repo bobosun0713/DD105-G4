@@ -3,9 +3,11 @@
 
   #indexSection1 {
     padding-top: 50px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 
     .parallaxContainer {
-      width: 100%;
+      width: 115%;
       margin-top: 100px;
 
       #scene{
@@ -58,6 +60,26 @@
         .spotInfo {
           width: 350px;
           margin-right: 30px;
+
+          .imgZone{
+            .moreInfo{
+              .moreInfoContent{
+                .moreInfoTxt{
+                  left: 65px;
+                }
+              }
+            }
+          }
+
+          .txtZone{
+            .msgInfo{
+              .msgNew{
+                .msgContent{
+                  width: 230px;
+                }
+              }
+            }
+          }
         }
       }
     }
