@@ -152,9 +152,13 @@ function load_all_admin(){
 function show_all_admin(jsonStr){
     let admin = JSON.parse(jsonStr);
     let html = "";
+    let this_admin_auth = $id('admin_status_hidden').value;
 
     for (let i = 0; i < admin.length; i++) {
-      html += `<tr>
+
+        if( this_admin_auth == 0){
+
+            html += `<tr>
                 <td>${admin[i].admin_no}</td>
                 
                 <td>
@@ -189,6 +193,45 @@ function show_all_admin(jsonStr){
                     </button>
                 </td>
                 </tr>`;
+        
+        }else{
+            html += `<tr>
+                <td>${admin[i].admin_no}</td>
+                
+                <td>
+                    <span class="admin_info_txt" style="display: block;">${admin[i].admin_name}</span>
+                    <input type="text" class="admin_info_input" style="display: none;" value="${admin[i].admin_name}">
+                </td>
+
+                <td>
+                    <span class="admin_info_txt" style="display: block;">${admin[i].admin_id}</span>
+                    <input type="text" class="admin_info_input" style="display: none;" value="${admin[i].admin_id}">
+                </td>
+
+                <td>
+                    <span class="admin_info_txt" style="display: block;">${admin[i].admin_psw}</span>
+                    <input type="text" class="admin_info_input" style="display: none;" value="${admin[i].admin_psw}">
+                </td>
+
+                <td class="">
+                    <label class="switch switch-pill switch-success">
+                        <input type="checkbox" class="switch-input change_admin_status disabled" disabled>
+                        <span class="switch-slider"></span>
+                    </label>
+                </td>
+
+                <td>
+                    <button type="button" class="btn btn-dark manage_this_admin disabled" disabled>
+                    修改                    
+                </button> 
+                <td>
+                    <button type="button" class="btn btn-danger delete_this_admin disabled" disabled>
+                    刪除         
+                    </button>
+                </td>
+                </tr>`;
+        }
+      
     }
     document.querySelector("#adminTable").innerHTML = html;
 
@@ -209,13 +252,6 @@ function show_all_admin(jsonStr){
         }
         // alert('aaaaa');
     }
-
-    // for (let i = 0; i < admin.length; i++) {
-    //     if( admin[i].admin_authority == 0){
-    //         admin_List[i].querySelector(".change_admin_status").checked == true;
-    //     }
-    // }
-
 
 }
 

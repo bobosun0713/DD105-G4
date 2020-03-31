@@ -200,6 +200,8 @@ window.addEventListener('load', function () {
         food_List[x].querySelector('.change_food_status').addEventListener('click', change_this_food_status, false);
     }
 
+
+
     //找還沒上傳圖片的list
     let without_img_food_List = document.querySelectorAll('.food_info_img_send');
     for (let y = 0; y < without_img_food_List.length; y++) {
@@ -207,4 +209,10 @@ window.addEventListener('load', function () {
     }
 
     $id('create_new_food').addEventListener('click', create_new_food, false);
+
+    // let this_admin_auth = $id('admin_status_hidden').value;
+    // if( this_admin_auth != 0){
+    //     alert('AAAAA');
+    //     document.querySelectorAll('.btn').disabled = true;
+    // }
 })
