@@ -19,7 +19,7 @@ $(document).ready(function() {
                 let html = ""
                 html += `
                 <div class="user_path">
-                    <img src="${data.mem_img}" alt="" />
+                    <img src="./img/login/${data.mem_img}" alt="" />
                 </div>
                  <div class="user_name">${data.mem_name}</div>
                 `
@@ -86,7 +86,7 @@ $(document).ready(function() {
                                     </div>
                                     <div class="art_con">
                                         <div class="art_title">
-                                            <img src="${data[i].mem_img}" alt="" />
+                                            <img src="./img/login/${data[i].mem_img}" alt="" />
                                             <h1>
                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                             </h1>
@@ -147,7 +147,7 @@ function serchcard() {
                                 </div>
                                 <div class="art_con">
                                     <div class="art_title">
-                                        <img src="${data[i].mem_img}" alt="" />
+                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                         <h1>
                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                         </h1>
@@ -198,7 +198,7 @@ function opencard() {
                                 <div class="user_loc">${data.forum_title}</div>
                                 <div class="chatbox_user">
                                     <div class="user_path">
-                                        <img src="${data.mem_img}" alt="" />
+                                        <img src="./img/login/${data.mem_img}" alt="" />
                                     </div>
                                     <div class="user_name">${data.mem_name}</div>
                                 </div>
@@ -295,7 +295,7 @@ function forum_msg() {
                     <div class="msg_space">
                         <div class="msg_user">
                         <div class="msg_user_space">
-                                <img src="${data[i].mem_img}" alt="" />
+                                <img src="./img/login/${data[i].mem_img}" alt="" />
                                 <div class="msg_title_user">
                                     <div class="msg_title_name">${data[i].mem_name}</div>
                                     <div class="msg_title_time">${data[i].msg_date}</div>
@@ -370,7 +370,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -416,7 +416,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -463,7 +463,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -510,7 +510,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -552,7 +552,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>

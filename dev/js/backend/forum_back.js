@@ -43,7 +43,7 @@ $(document).ready(function() {
                       </label>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" psn="${data[i].forum_report_no}">刪除</button>
+                      <button type="button" class="forum btn btn-secondary btn-danger" data-dismiss="modal" psn="${data[i].forum_report_no}">刪除</button>
   
                     </td>
                     </tr>
@@ -74,7 +74,6 @@ $(document).ready(function() {
             //當按下刪除並刪除檢舉
             $(".btn").click(function() {
                 var replay = $(this).attr("psn")
-                // alert(replay)
                 $.ajax({
                     url: "./php/back_forum_delete.php",
                     type: "POST",

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="分離模式" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 1198.1 1193.2" style="enable-background:new 0 0 1198.1 1193.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A9A8A8;}
+	.st1{clip-path:url(#SVGID_2_);}
+	.st2{fill:#FFFFFF;}
+</style>
+<circle class="st0" cx="598.1" cy="601.7" r="591.2"/>
+<g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<circle id="SVGID_1_" cx="597.1" cy="599.6" r="591.2"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+				</clipPath>
+				<g class="st1">
+					<path class="st2" d="M611.7,712.4c-254.8,0-461.6,202.6-461.6,453.3c0,8.4,0,16.7,0,25.1h921.2c0-8.4,0-16.7,0-25.1
+						C1071.3,915,866.6,712.4,611.7,712.4z"/>
+					<path class="st2" d="M615.9,599.6c129.5,0,234-102.4,234-227.7s-104.4-227.7-234-227.7S382,246.6,382,371.9
+						S486.4,599.6,615.9,599.6z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
