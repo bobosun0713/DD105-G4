@@ -74,7 +74,6 @@ $(document).ready(function() {
             //當按下刪除並刪除檢舉
             $(".btn").click(function() {
                 var replay = $(this).attr("psn")
-                alert(replay)
                 $.ajax({
                     url: "./php/back_forum_delete.php",
                     type: "POST",
