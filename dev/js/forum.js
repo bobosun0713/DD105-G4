@@ -614,7 +614,7 @@ function report_article() {
             },
             success: function(data) {
                 // alert("舉報成功")
-                location.reload()
+                // location.reload()
             },
             error: function(data) {
                 alert("舉報失敗")
