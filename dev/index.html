@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        @@include('layout/head.html')
-        <script src="./js/jquery-3.4.1.min.js"></script>
-        <script src="./js/t.min.js"></script>
-        <!-- 霧氣 -->
-        @@include('layout/component/indexsmoke.html')
-        <!-- 有鬼箭頭元素 -->
-        @@include('layout/component/mouse_ghost.html')
-    </head>
-    <body>
-        <div id="Guide-page-img">
-            <!-- 幽靈 -->
-            <div id="ghost">
-                <img class="ghost" src="./img/guide-pages/ghost.png" alt="" />
+
+<head>
+    @@include('layout/head.html')
+    <!-- 打字機文字 -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/t.min.js"></script>
+    <!-- 霧氣 -->
+    @@include('layout/component/indexsmoke.html')
+    <!-- 有鬼箭頭元素 -->
+    @@include('layout/component/mouse_ghost.html')
+</head>
+
+<body>
+    <div id="Guide-page-img">
+        <!-- 幽靈 -->
+        <div id="ghost">
+            <img class="ghost" src="./img/guide-pages/ghost.png" alt="" />
+        </div>
+        <!-- 前後端按鈕 -->
+        <div class="front-end">
+            <div id="front-end">
+                <a class="front-span" href="./ghostindex.html"> 前 端 </a>
             </div>
-            <!-- 前後端按鈕 -->
-            <div class="front-end">
-                <div id="front-end">
-                    <a class="front-span" href="./ghostindex.html"> 前 端 </a>
-                </div>
-                <div id="rear-end">
-                    <a class="front-span" href="./backend_login.html"> 後 端 </a>
-                </div>
-            </div>
-
-            <!--女鬼 與鬼島logo大div-->
-
-            <div class="Female-ghost">
-                <!--女鬼 大圖-->
-                <img id="Female-ghost" src="./img/guide-pages/Female-ghost.png" alt="" />
-                <!--女鬼 小圖-->
-                <img id="Female-ghost-s" src="./img/guide-pages/Female-ghost-s.png" alt="" />
-
-                <p class="typewriter">
-                    你，嘗試過毛骨悚然的旅遊體驗嗎？​<br />
-                    你，想試試看自己的膽子到底有多大嗎？<br />
-                    喜歡刺激的你一定會喜歡我們的網站,<br />
-                    跟我們來去鬼島探險囉!
-                </p>
-                <!--鬼島logo 大圖 -->
-                <img id="logo-white-b" src="./img/guide-pages/logo-white-b.png" alt="" />
-                <!--鬼島logo 小圖 -->
-                <img id="logo-white-s" src="./img/guide-pages/logo-white-s.png" alt="" />
+            <div id="rear-end">
+                <a class="front-span" href="./backend_login.html"> 後 端 </a>
             </div>
         </div>
-    </body>
-    <script>
-        $(document).ready(function() {
-            //這段文字是用這段套件
-            //找關鍵字default .setting. speed跑的色度. extend .delay多少. blink 打ture閃 .repeat .pause-on-cick  在複製貼上包在物件裡(貼在方法後面)
-            //在in 的effect後面和 在out 的effect後面更改你想要的效果的值
-            //callback後面有function
-            $(".typewriter").t({
-                delay: 0.5, //秒
-                speed: 50, //毫秒
-                speed_vary: true,
-                blink: true,
-                repeat: false,
-                pause_on_click: true,
-            })
+
+        <!--女鬼 與鬼島logo大div-->
+
+        <div class="Female-ghost">
+            <!--女鬼 大圖-->
+            <img id="Female-ghost" src="./img/guide-pages/Female-ghost.png" alt="" />
+            <!--女鬼 小圖-->
+            <img id="Female-ghost-s" src="./img/guide-pages/Female-ghost-s.png" alt="" />
+
+            <p class="typewriter">
+                你，嘗試過毛骨悚然的旅遊體驗嗎？​<br />
+                你，想試試看自己的膽子到底有多大嗎？<br />
+                喜歡刺激的你一定會喜歡我們的網站,<br />
+                跟我們來去鬼島探險囉!
+            </p>
+            <!--鬼島logo 大圖 -->
+            <img id="logo-white-b" src="./img/guide-pages/logo-white-b.png" alt="" />
+            <!--鬼島logo 小圖 -->
+            <img id="logo-white-s" src="./img/guide-pages/logo-white-s.png" alt="" />
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        //這段文字是用這段套件
+        //找關鍵字default .setting. speed跑的色度. extend .delay多少. blink 打ture閃 .repeat .pause-on-cick  在複製貼上包在物件裡(貼在方法後面)
+        //在in 的effect後面和 在out 的effect後面更改你想要的效果的值
+        //callback後面有function
+        $(".typewriter").t({
+            delay: 0.5, //秒
+            speed: 50, //毫秒
+            speed_vary: true,
+            blink: true,
+            repeat: false,
+            pause_on_click: true,
         })
-    </script>
+    })
+</script>
+
 </html>

@@ -1,240 +1,128 @@
 @include respond(medium) {
-	//平板都寫在裡面
-}
-
-
-.wrapper_member {
-	@media screen and (min-width: 769px) and (max-width: 799px) {
-		.membertop {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			.section1_member {
-				.menu {
-					margin-bottom: 50px;
-					form {
-						width: 200px;
-						margin: 0;
-					}
-				}
-			}
-			.section2_member {
-				width: 520px;
-				.bar-block {
-					width: 520px;
-					margin: 0 auto;
-					.title_btn {
-						margin: 0 auto;
-						.button1 {
-							font-size: 1rem;
-							margin: 0 2px;
-						}
-					}
-					#class1 {
-						width: 520px;
-						form {
-							width: 520px;
-								.mem_id,
-								.mem_account,
-								.mem_psw,
-								.mem_name {
-									margin-left: 100px;
-									color: white;
-								}
-								.mem_tel,
-								.mem_email {
-									margin-left: 70px;
-								}
-								.mem_time {
-									margin-left: 40px;
-									font-size: 0.6rem;
-								}
-								.span2 {
-									float: right;
-									cursor: pointer;
-								}
-							.hr2 {
-								width: 520px;
-							}
-						}
-					}
-					#class2,
-					#class3,
-					#class4,
-					#class5 {
-						width: 520px;
-						#tour_table,
-						#tour_table2 {
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: center;
-							width: 520px;
-						}
-						#tour_table h1,
-						#tour_table2 h1 {
-							font-size: 1rem;
-						}
-
-						#tour_table h2,
-						#tour_table2 h2 {
-							font-size: 0.9rem;
-						}
-
-						#tour_table span,
-						#tour_table2 span {
-							font-size: 0.8rem;
-						}
-						.spot_cotent {
-							width: 520px;
-						}
-						.spotimg_member{
-							width: 520px;
-						}
-						.spotimg_member2{
-							width: 520px;
-							height: 250px;
-							object-fit: cover;
-						}
-						#icon_discuss{
-							padding: 40px 0 10px 0;
-							#icon_discuss3{
-								padding-left: 255px;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@media screen and (min-width: 800px) and (max-width: 960px) {
-		.membertop {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			.section1_member {
-				.menu {
-					margin-bottom: 50px;
-					form {
-						width: 200px;
-						margin: 0;
-					}
-				}
-			}
-			.section2_member {
-				width: 600px;
-				.bar-block {
-					width: 600px;
-					margin: 0 auto;
-					.title_btn {
-						margin: 0 auto;
-						.button1 {
-							font-size: 1rem;
-						}
-					}
-					#class1 {
-						width: 600px;
-						form {
-							width: 600px;
-								.mem_id,
-								.mem_account,
-								.mem_psw,
-								.mem_name {
-									margin-left: 100px;
-									color: white;
-								}
-								.mem_tel,
-								.mem_email {
-									margin-left: 70px;
-								}
-								.mem_time {
-									margin-left: 40px;
-								}
-								.span2 {
-									float: right;
-									cursor: pointer;
-								}
-							.hr2 {
-								width: 600px;
-							}
-						}
-					}
-					#class2,
-					#class3,
-					#class4,
-					#class5 {
-						display: flex;
-						flex-direction: column;
-						width: 600px;
-						#tour_table,
-						#tour_table2 {
-							width: 600px;
-						}
-						#tour_table h1,
-						#tour_table2 h1 {
-							font-size: 1rem;
-						}
-
-						#tour_table h2,
-						#tour_table2 h2 {
-							font-size: 0.9rem;
-						}
-
-						#tour_table span,
-						#tour_table2 span {
-							font-size: 0.8rem;
-						}
-						.spot_cotent{
-							width: 400px;
-						}
-						.spotimg_member{
-							width: 200px;
-						}
-						.spotimg_member2{
-							width: 200px;
-							object-fit: cover;
-						}					
-					}
-					#class4{
-						#icon_discuss {
-							padding-top: 50px;
-							
-							#icon_discuss2 {
-							#icon_discuss3 {
-								padding-left: 130px;
-							}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@media screen and (min-width: 961px) and (max-width: 1200px) {
-		.membertop {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			.section1_member {
-				.menu {
-					margin-bottom: 50px;
-					form {
-						width: 200px;
-						margin: 0;
-					}
-				}
-			}
-			.section2_member {
-				.title_btn {
-					margin: 0 auto;
-					.button1 {
-						font-size: 1rem;
-					}
-				}
-			}
-		}
-	}
+    //平板都寫在裡面
+    .wrapper_Member_center {
+        // border: 1px solid red;
+        // background-color: rgb(112, 111, 103);
+        padding-top: 16%;
+        margin-bottom: 50px; 
+        .title_btn{
+            width:90%;
+            margin-bottom:0px ;
+            // border: 1px solid blanchedalmond;
+            display: flex;
+            justify-content:center;
+            .on{
+                position: relative;
+                transition: all 1.5s linear;
+                &:before{
+                   
+                    // content:"";
+                    // width:95%;
+                    // height:2px;
+                    // background-color: whitesmoke;
+                    // position: absolute;
+                    // left:3px;
+                    // bottom:0px;
+                 
+                }
+                
+            }
+            .tab{
+            // background-color: rgb(105, 225, 255);
+            // width: 100px;
+            text-align: center;
+            padding:6px 5px 2px 5px;
+            }
+           
+        }
+        .member_block1{
+            width:90%;
+            height:auto;
+            .profile_photo{
+                width:auto;
+                
+                // border: 1px solid blue;
+                margin-right:0;
+                margin-bottom: 10px;
+            //    form{   
+                //    .uploadimg{
+                    //    background-color: lightblue;
+                     
+                    //    input{
+                     
+                        //影藏預設 點圖片換圖
+                        //    display:none;
+                    //    }
+                    //    label{
+                            // .img_block{
+                                // margin: 0 auto;
+                                // width:100%;
+                                // height:auto;
+                                // border-radius: 50%;
+                                // background-color: gold;
+                                // overflow: hidden;
+                                // img{
+                                    // width: 150px;
+                                    // height: auto;
+                                // }
+                            // }
+                    //    }
+                //    }
+            //    }
+            }
+            // .tab_form{
+            //     border: 1px solid rgb(207, 31, 154);
+            //     width: 70%;
+            //         // background-color: green;
+            //         .profile{
+            //             .tabform1{
+            //                .profile_col{
+            //                    display:flex;
+            //                    justify-content: space-between;
+            //                   input{
+            //                       width: 160px;
+                              
+            //                   }
+            //                   .col3{
+            //                     // background-color: blueviolet;
+            //                     width: 40px;
+            //                     cursor: pointer;
+            //                 }
+            //                 }
+            //             }
+            //         }
+                
+            // }    
+            
+        }
+        // #created{
+        //     display: none;
+        //     width:90%;
+        //     // height: 500px;
+        //     // background-color: cadetblue;
+        //     // border: 1px solid white;
+        // }
+        // #joined{
+        //     display: none;
+        //     width:90%;
+        //     // height: 500px;
+        //     // background-color: coral;
+    
+        // }
+        // #forumrecord{
+        //     display: none;
+        //     width:90%;
+        //     // height: 500px;
+        //     // background-color: crimson;
+        // }
+        // #favorite{
+        //     display: none;
+        //     width:90%;
+        //     // height: 500px;
+        //     // background-color: darkolivegreen;
+        // }
+         
+        
+    
+    }
 }
