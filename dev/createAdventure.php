@@ -276,7 +276,7 @@ try{
     ?>
     <section class="section_wrapper">
       <div class="form-tabs">
-        <div class="mainspot tourTitle">【<?php echo $spotRow->spot_name;?></div>
+        <div class="mainspot tourTitle">【<?php echo $spotRow->spot_name;?>】</div>
 
         <!-- 導覽列 -->
         <ul class="form-menu">

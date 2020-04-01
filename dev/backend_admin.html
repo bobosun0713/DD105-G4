@@ -7,21 +7,43 @@
 
 
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-        <!-- top_header -->
+        
+        <!-- =================== top_header =================== -->
         @@include('layout/backend/top_header.html')
+        <!-- =================== top_header =================== -->
+
         <div class="app-body">
             <div class="sidebar">
-                <!-- sidebar menu-->
+
+                <!-- =================== sidebar menu =================== -->
                 @@include('layout/backend/sidebar_nav.html')
-                <button class="sidebar-minimizer brand-minimizer" type="button" style="margin-bottom: 20px;"></button>
+                <!-- =================== sidebar menu =================== -->
+
             </div>
             <main class="main">
-                <!-- Breadcrumb-->
-                <ol class="breadcrumb"></ol>
+
+                <!-- =================== Breadcrumb =================== -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="./index.html">
+                            <i class="cil-home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">後台管理</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        美食景點管理
+                    </li>
+                </ol>
+                <!-- =================== Breadcrumb =================== -->
+
                 <div class="container-fluid">
-                    <!-- 中間內容 -->
+
+                    <!-- =================== 中間內容 =================== -->
                     @@include('layout/backend/content_admin.html')
-                    <!-- end -->
+                    <!-- =================== 中間內容 =================== -->
+
                 </div>
 
             </main>

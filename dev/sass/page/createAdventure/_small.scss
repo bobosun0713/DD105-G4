@@ -64,11 +64,27 @@
                 height: 135px;
               }
             }
+
+            .spotselections{
+              .spotlightbox{
+                left: -10px;
+              }
+            }
           }
           .right {
             width: 93%;
             height: 300px;
             margin: 30px auto;
+
+            .selected_spot{
+              div{
+                .imgframe{
+                  img{
+                    transform: scaleX(-1) translate(14px, -66px);
+                  }
+                }
+              }
+            }
           }
         }
 
