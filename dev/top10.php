@@ -1,12 +1,5 @@
-
-
 <?php 
 try {
-	
-//連接資料庫
-	require_once("./php/connect.php");
-
-	$pdo = new PDO($dsn, $user, $password, $options);
 	$sql4 =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 1";//第1名
 	$n01 = $pdo->query($sql4);
 
@@ -68,7 +61,7 @@ while( $prodRow = $n01->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="01"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -80,7 +73,7 @@ while( $prodRow = $n02->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="02"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -92,7 +85,7 @@ while( $prodRow = $n03->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="03"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -104,7 +97,7 @@ while( $prodRow = $n04->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="04"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -116,7 +109,7 @@ while( $prodRow = $n05->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="05"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -128,7 +121,7 @@ while( $prodRow = $n06->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="06"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -140,7 +133,7 @@ while( $prodRow = $n07->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="07"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -152,7 +145,7 @@ while( $prodRow = $n08->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="08"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -164,7 +157,7 @@ while( $prodRow = $n09->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="09"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php
@@ -176,7 +169,7 @@ while( $prodRow = $n010->fetchObject()){
 ?>
 <tr class="Ranking">
 	<td><?="10"?></td>
-	<td><a href="ghostIsland.php"><?=$prodRow->spot_name?></a></td>
+	<td><a href="../ghostIsland.php"><?=$prodRow->spot_name?></a></td>
 	<td><?=$prodRow->spot_vote_count?></td>
 </tr>
 <?php

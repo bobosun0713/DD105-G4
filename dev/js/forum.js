@@ -19,7 +19,7 @@ $(document).ready(function() {
                 let html = ""
                 html += `
                 <div class="user_path">
-                    <img src="./img/user/${data.mem_img}" alt="" />
+                    <img src="./img/login/${data.mem_img}" alt="" />
                 </div>
                  <div class="user_name">${data.mem_name}</div>
                 `
@@ -86,7 +86,7 @@ $(document).ready(function() {
                                     </div>
                                     <div class="art_con">
                                         <div class="art_title">
-                                            <img src="img/icon/default_header.png" alt="" />
+                                            <img src="./img/login/${data[i].mem_img}" alt="" />
                                             <h1>
                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                             </h1>
@@ -147,7 +147,7 @@ function serchcard() {
                                 </div>
                                 <div class="art_con">
                                     <div class="art_title">
-                                        <img src="img/user/${data[i].mem_img}" alt="" />
+                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                         <h1>
                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                         </h1>
@@ -198,7 +198,7 @@ function opencard() {
                                 <div class="user_loc">${data.forum_title}</div>
                                 <div class="chatbox_user">
                                     <div class="user_path">
-                                        <img src="img/user/${data.mem_img}" alt="" />
+                                        <img src="./img/login/${data.mem_img}" alt="" />
                                     </div>
                                     <div class="user_name">${data.mem_name}</div>
                                 </div>
@@ -225,7 +225,7 @@ function opencard() {
                                             <input type="hidden" class="chat" value="${data.forum_chat}">
                                         </div>
                                     </div>
-                                    <div class="art_report report_btn">
+                                    <div class="art_report report_btn" onclick="report_article()">
                                         <img src="./img/forum/warning_black.svg" alt="" />
                                     </div>
                                 </div>
@@ -237,7 +237,7 @@ function opencard() {
                 // 抓取瀏覽數
                 view()
                 // 檢舉開啟關閉
-                report_article()
+                // report_article()
 
                 // 關閉燈箱 並清掉內容
                 $(".content_out").click(function() {
@@ -253,6 +253,10 @@ function opencard() {
 function msg_chat() {
     $("#msg_send").click(function() {
         var msg_no = $(".contentbox").attr("psn")
+        if ($("#msg_chat").val() == "") {
+            alert("請輸入文字喔！！！")
+            return
+        }
         $.ajax({
             url: "./php/forum_msg_insert.php",
             type: "POST",
@@ -291,7 +295,7 @@ function forum_msg() {
                     <div class="msg_space">
                         <div class="msg_user">
                         <div class="msg_user_space">
-                                <img src="./img/user/${data[i].mem_img}" alt="" />
+                                <img src="./img/login/${data[i].mem_img}" alt="" />
                                 <div class="msg_title_user">
                                     <div class="msg_title_name">${data[i].mem_name}</div>
                                     <div class="msg_title_time">${data[i].msg_date}</div>
@@ -366,7 +370,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/user/${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -412,7 +416,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/user/${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -459,7 +463,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/user/${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -506,7 +510,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/user/${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -548,7 +552,7 @@ function filterALL() {
                                                 </div>
                                                 <div class="art_con">
                                                     <div class="art_title">
-                                                        <img src="img/user/${data[i].mem_img}" alt="" />
+                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
                                                         <h1>
                                                             ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
                                                         </h1>
@@ -610,7 +614,7 @@ function report_article() {
             },
             success: function(data) {
                 // alert("舉報成功")
-                location.reload()
+                // location.reload()
             },
             error: function(data) {
                 alert("舉報失敗")

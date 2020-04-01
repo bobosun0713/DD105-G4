@@ -39,29 +39,37 @@ function register() {
         memail.style.border = "4px solid red"
         memail.select()
         return
-    } else {
     }
 
+    // var userimg = document.getElementById("user_img")
+    var LoginData = new FormData()
+    LoginData.append("mem_id", $("#memid").val())
+    LoginData.append("mem_psw", $("#mempwd").val())
+    LoginData.append("mem_name", $("#memname").val())
+    LoginData.append("mem_tel", $("#memcell").val())
+    LoginData.append("mem_mail", $("#memail").val())
+    LoginData.append("mem_img", user_img.files[0])
     $.ajax({
         type: "POST",
         url: "./php/Login_insert.php",
-        data: {
-            mem_id: $("#memid").val(),
-            mem_psw: $("#mempwd").val(),
-            mem_name: $("#memname").val(),
-            mem_tel: $("#memcell").val(),
-            mem_mail: $("#memail").val(),
-        },
+        async: false,
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: LoginData,
         success: function(data) {
+            // 測試圖片有無上傳成功
+            // if (data.indexOf("成功") != -1) {
             alert("註冊成功")
             $("#login_page2").css("display", "none")
             $("#indexLogin").css("display", "none")
-            // 清掉註冊值＆錯誤外框
-            $("#memid,#mempwd,#mempwdcheck,#memcell, #memail,#memname").val("")
-            $("#memid,#mempwd,#mempwdcheck,#memcell, #memail,memname").css("border", "")
+            location.reload()
+            // } else {
+            //     alert("註冊失敗")
+            // }
         },
-        error: function(data) {
-            alert("註冊失敗")
+        error: function(xhr) {
+            alert("資料錯誤")
         },
     })
 }
@@ -76,6 +84,7 @@ function opennext() {
 function cancelogin() {
     login_page2.style.display = "none"
 }
+
 window.addEventListener(
     "load",
     function() {

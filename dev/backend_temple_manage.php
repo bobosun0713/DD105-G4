@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION["admin_authority"])){
+  $session_mem_auth = $_SESSION["admin_authority"];
+}
 
 try{
     require_once("./php/connect.php");
@@ -23,30 +27,24 @@ try{
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <!-- 鬼島logo小圖示 -->
-    <link rel="shortcut icon" href="../img/icon/logo-icon.png" />
-    <!-- Main styles for this application-->
-    <link href="./css/backend.css" rel="stylesheet" />
-    <!-- lily新增 -->
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/all.min.css" />
-    <!-- 文字前面的icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
-    <!-- login登入 -->
-    <script src="./js/backend/backLogininfo.js"></script>
-
-    <!------------ 各分頁JS檔 --------------->
-    <!-- 討論區js檔案 -->
-    <script src="./js/backend/forum_back.js"></script>
-    <!-- 美食管理js檔案 -->
-    <script src="./js/backend/spot_manage.js"></script>
-    <script src="./js/backend/backend_game_content.js"></script>
-    <script src="./js/backend/backend_StartGriuo_msg_report.js"></script>
-    <script src="./js/backend/food_manage.js"></script>
-    <script src="./js/backend/temple_manage.js"></script>
-</head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <!-- 鬼島logo小圖示 -->
+        <link rel="shortcut icon" href="../img/icon/logo-icon.png" />
+        <!-- Main styles for this application-->
+        <link href="./css/backend.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- lily新增 -->
+        <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@1.0.0/css/all.min.css" />
+        <!-- 文字前面的icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+        <!-- login登入 -->
+        <script src="./js/backend/backLogininfo.js"></script>
+        <!-- 後台JS -->
+        <script src="./js/backend/temple_manage.js"></script>
+        <title>廟宇景點管理</title>
+    </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 
@@ -71,9 +69,9 @@ try{
             <li class="nav-item ">
                 <span id="admin_name">阿禎</span>
             </li>
-            <li class="nav-item mr-3">
-                /
+            <li class="nav-item mr-3" style="cursor: pointer;">
                 <span id="admin_status">登出</span>
+                <input type="hidden" id="admin_status_hidden" value="" />
             </li>
         </ul>
 
@@ -86,7 +84,7 @@ try{
             <nav class="sidebar-nav">
     <ul class="nav pt-2">
         <li class="nav-item">
-            <a class="nav-link" href="./backend.html">
+            <a class="nav-link" href="./backend_admin.html">
                 <i class="cil-cog m-2"></i>
                 管理員帳號
             </a>
@@ -169,13 +167,15 @@ try{
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+                            
 
                             <!-- 功能內容 -->
                             <div class="card-body">
                             
                             <!-- 新增美食按鈕 -->
-                            <button class="btn btn-warning mr-1 m-3" id="create_new_temple" type="button">新增廟宇景點</button>
-
+                            <div class="card-header justify-content-end d-flex">
+                                <button class="btn btn-warning" id="create_new_temple" type="button">新增廟宇景點</button>
+                            </div>
                             <!-- 美食景點清單、修改 -->
                             <table class="table table-responsive-sm table-sm">
 
@@ -213,9 +213,9 @@ try{
                                     </td>
                                     <td class="p-3">
                                         <?php if( $templeRow["temple_img"] != null ){
-                                                echo '<img class="temple_info_txt" width="300px" src="./img/temple/',$templeRow["temple_img"],'" alt="temple-',$templeRow["temple_no"],'">'
+                                                echo '<img class="temple_info_txt" width="200px" src="./img/temple/',$templeRow["temple_img"],'" alt="temple-',$templeRow["temple_no"],'">'
                                             ;}else {
-                                                echo '<input type="file" name="temple_img" class="temple_info_img_upload" accept="image/*">';
+                                                echo '<input type="file" name="temple_img" style="width:200px;" class="temple_info_img_upload" accept="image/*">';
                                                 echo '<input type="button" class="mt-3 btn btn-dark temple_info_img_send" value="上傳圖片">';
                                         } ?> 
                                     </td>
@@ -229,7 +229,7 @@ try{
                                         <button type="button" class="btn btn-dark manage_this_temple" >修改</button>
                                     </td>
                                     <td class="p-3">
-                                        <button type="button" class="btn btn-danger delete_this_temple">刪除</button>
+                                        <button type="button" class="btn btn-danger delete_this_temple<?php if($session_mem_auth != 0){ echo "disabled";}?>"<?php if($session_mem_auth != 0){ echo "disabled";}?>>刪除</button>
                                     </td>
                                 </tr>
                                 <?php ;}?>

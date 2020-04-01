@@ -46,7 +46,7 @@ $(document).ready(function() {
                 forum += `
                 <div class="card_border">
                     <div class="card_user">
-                        <img src="./img/icon/header1.png" alt="" />
+                        <img src="${data[i].mem_img}" alt="" />
                         <div class="card_title_user">
                             <div class="title_name">${data[i].mem_name}</div>
                             <div class="title_time">${data[i].forum_date}刊登</div>

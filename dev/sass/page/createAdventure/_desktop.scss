@@ -118,8 +118,8 @@
               width: 30px;
               height: 30px;
               /* background-color: crimson; */
-              top: 20px;
-              right: 8px;
+              top: 12px;
+              right: 6px;
               position: absolute;
               background-image: url(../img/createAdventure/trainhead.png);
               background-repeat: no-repeat;
@@ -133,15 +133,29 @@
               background-color: transparent;
               margin: 30px 3px 10px 3px;
               width:100px;
-              padding: 8px 15px;
+              padding: 8px 0px;
               color: white;
               outline: transparent;
               transition: all .5s linear;
+
+              &:after{
+                content: '';
+                display: block;
+                width: 0px;
+                opacity: 0;
+                position: relative;
+                left: 20px;
+                border: 0.5px solid white;
+                transition: all .5s linear;
+              }
+
               &:hover {
                 cursor: pointer;
-                background-color:#c41025 ;
-                
-                border-radius: 20px;
+
+                &:after{
+                  width: 60px;
+                  opacity: 1;
+                }
                 
               }
             }
@@ -215,8 +229,13 @@
               height: 420px;
               overflow-y: scroll;
               padding: 20px 30px;
+
               .spotoptions {
                 position: relative;
+                float: left;
+                margin-right: 30px;
+                margin-bottom: 20px;
+
                 .addbtn {
                   img {
                     color: blue;
@@ -226,6 +245,8 @@
                     height: 80px;
                     border-radius: 50%;
                     transform: translate(70%, 50%);
+                    transition: .5s opacity linear;
+
                     &:hover {
                       cursor: pointer;
                       opacity: 1;
@@ -235,12 +256,19 @@
                 .content {
                   // background-color: blue;
 
+                  &:hover{
+                    img{
+                      filter: saturate(1);
+                    }
+                  }
+
                   img {
                     width: 185px;
                     height: 137px;
                     // border: 3px solid blue;
                     border-radius: 5px;
                     margin-bottom: 5px;
+                    filter: saturate(0.2);
                   }
                   span {
                     //title

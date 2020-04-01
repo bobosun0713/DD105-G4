@@ -598,12 +598,12 @@
   .login_frame {
     position: absolute;
     top: 20%;
-    left: 34%;
+    left: 0;
     // border: 1px solid red;
-    width: 400px;
+    width: 100vw;
 
     .logo_img {
-      width: 60%;
+      width: 200px;
       margin: 0 auto;
 
       img {
@@ -668,7 +668,7 @@
         }
 
         a {
-          margin: 80px;
+          margin: 86px;
           font-size: 0.4rem;
           // text-decoration: none;
           color: rgba(255, 255, 255, 0.5);

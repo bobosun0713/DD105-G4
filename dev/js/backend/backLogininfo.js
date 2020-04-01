@@ -25,11 +25,11 @@ function backLoginInfo() {
     let xhr = new XMLHttpRequest()
     xhr.onload = function() {
         backmember = JSON.parse(xhr.responseText)
-
         if (backmember.admin_id) {
             $id("admin_name").innerText = backmember.admin_name
             $id("admin_status").innerText = "登出"
         }
+        $id("admin_status_hidden").value = backmember.admin_authority
     }
     xhr.open("get", "./php/back_info.php", true)
     xhr.send(null)

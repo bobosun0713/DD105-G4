@@ -13,16 +13,16 @@ $(document).ready(function() {
                     <td>${data[i].forum_no}</td>
                     <td>${data[i].forum_title}</td>
                     <td><img src="./php/images/${data[i].images}" style="width:100px"></td>
-                    <td>${data[i].mem_name}</td>
+                    <td>${data[i].forum_report_name}</td>
                     <td>${data[i].forum_report_reason}</td>
                     <td>
                       <label class="switch switch-3d switch-success">
-                          <input class="switch-input question_status modified" type="checkbox" name="question_status" value="1" style="border: 1px solid rgb(204, 204, 204);" checked psn="${data[i].forum_no}">
+                          <input class="switch-input question_status modified" type="checkbox" name="question_status" value="1" style="border: 1px solid rgb(204, 204, 204);" psn="${data[i].forum_no}" checked >
                           <span class="switch-slider"></span>
                       </label>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" psn="${data[i].forum_report_no}">刪除</button>
+                      <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" no="${data[i].forum_report_name}" psn="${data[i].forum_report_no}">刪除</button>
   
                     </td>
                     </tr>
@@ -34,7 +34,7 @@ $(document).ready(function() {
                     <td>${data[i].forum_no}</td>
                     <td>${data[i].forum_title}</td>
                     <td><img src="./php/images/${data[i].images}" style="width:100px"></td>
-                    <td>${data[i].mem_name}</td>
+                    <td>${data[i].forum_report_name}</td>
                     <td>${data[i].forum_report_reason}</td>
                     <td>
                       <label class="switch switch-3d switch-success">
@@ -43,8 +43,7 @@ $(document).ready(function() {
                       </label>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" psn="${data[i].forum_report_no}">刪除</button>
-  
+                      <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" no="${data[i].forum_report_name}" psn="${data[i].forum_report_no}">刪除</button>
                     </td>
                     </tr>
                     `
@@ -74,12 +73,14 @@ $(document).ready(function() {
             //當按下刪除並刪除檢舉
             $(".btn").click(function() {
                 var replay = $(this).attr("psn")
-                // alert(replay)
+                var no_name = $(this).attr("no")
+                alert(no_name)
                 $.ajax({
                     url: "./php/back_forum_delete.php",
                     type: "POST",
                     data: {
                         forum_report_no: replay,
+                        forum_report_name: no_name,
                     },
                     success: function(data) {
                         alert("刪除成功")
