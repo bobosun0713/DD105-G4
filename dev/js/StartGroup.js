@@ -4,6 +4,7 @@ function $element(element) {
 function $elements(elements) {
     return document.querySelectorAll(elements)
 }
+
 function doFirst() {
     //-------------------------------------------進度bar功能----------------------------------------
     var progress_bar = $element(".progress-bar");
@@ -28,7 +29,7 @@ function doFirst() {
     //-------------------------------------------人數滿變色----------------------------------------
 
     //------------------是否截止時間----------------------------------------
-participate = $element("#participate");
+    participate = $element("#participate");
     var tour_endtime = $element("#tour_endtime");
     //  剩餘時間=截止時間-當前時間        
     var now_time = new Date();
@@ -37,7 +38,7 @@ participate = $element("#participate");
     //新增一個截止時間data物件
     // iDays.push(parseInt((remain_time.getTime() - now_time.getTime()) / 1000 / 60 / 60 / 24));
     if (now_time.getTime() > remain_time.getTime()) {
-        
+
         participate.innerText = "已截止";
         //當下日期大於截止日期
         participate.onclick = function (e) {
@@ -128,9 +129,73 @@ participate = $element("#participate");
     //-------------------------------------------跳出會員----------------------------------------
 
 
+    // 寫留言系統
+    //-------------------------------------------關掉燈箱----------------------------------------
+    //關掉燈箱
+    $('#cancelMsgBtn2').click(function () {
+        $('.spotWroteMsgBG').fadeOut();
+    });
 
 
 
+    $('.spotWroteMsgBG2').fadeOut();
+    // 打開燈箱
+    $('.OpenwriteMsgBox2').click(function () {
+
+        if ($('#login_btn').text() == '登出') {
+            $('.spotWroteMsgBG').fadeIn();
+
+        } else {
+            alert("請先登入會員");
+            $id("indexLogin").style.display = "block";
+            $id("login_page1").style.display = "block";
+        }
+    });
+
+
+
+
+    function sendTourMsg() {
+        // alert("data_info");
+
+         data_info = "tour_no=" + document.getElementById("tourMsgNo").value + "&tour_msg_content=" + document.getElementById("tourMsg").value;
+  
+        var xhr1 = new XMLHttpRequest();
+        //聯繫伺服器物件
+        xhr1.open('post', './php/tour_write_msg.php', false);
+        xhr1.onload = function () {
+            if (xhr.status == 200) {
+                alert(xhr.responseText);
+
+            } else {
+                alert(xhr.status);
+            }
+
+
+        }
+        xhr1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr1.send("tour_no=" + document.getElementById("tourMsgNo").value + "&tour_msg_content=" + document.getElementById("tourMsg").value);
+       
+        // let xhr = new XMLHttpRequest();
+        // xhr.onload = function () {
+        //     if (xhr.status == 200) {
+        //         alert(xhr.responseText);
+
+        //     } else {
+        //         alert(xhr.status);
+        //     }
+        // }
+        // let url = "./php/tour_write_msg.php";
+        // xhr.open("post", url, true);
+        // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        // let data_info = "tour_no=" + document.getElementById("tourMsgNo").value + "&tour_msg_content=" + document.getElementById("tourMsg").value;
+        alert(data_info);
+        // xhr1.send(data_info);
+    }
+    var sendTourMsg1 = document.getElementById("sendSpotMsg");
+    sendTourMsg1.onclick = sendTourMsg;
+
+    //-------------------------------------------跳出會員----------------------------------------
 }
 window.onload = doFirst;
 

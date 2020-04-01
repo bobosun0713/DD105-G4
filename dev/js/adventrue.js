@@ -6,47 +6,45 @@ $(document).ready(function () {
     //     })
     // })
 
-    $(window).scroll(function () {
-        /* Check the location of each desired element */
-        $('.item').each(function (i) {
-            //  each是幹嘛的?
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight()
-            //頁面最頂到物件頂+物件高度
-            var bottom_of_window = $(window).scrollTop() + $(window).height()
-            //滾輪頂部跟你往下滾中間距離   + 視窗高度
-            // console.log($(window).height())
-            /* If the object is completely visible in the window, fade it it */
-            if (bottom_of_window > bottom_of_object) {
-                $(this).animate(
-                    {
-                        opacity: '1',
-                        bottom: '0px',
-                    },
-                    800
-                )
-            }
-        })
-    })
+    // $(window).scroll(function () {
+    //     /* Check the location of each desired element */
+    //     $('.item').each(function (i) {
+    //         //  each是幹嘛的?
+    //         var bottom_of_object = $(this).offset().top + $(this).outerHeight() - 50
+    //         //頁面最頂到物件頂+物件高度
+    //         var bottom_of_window = $(window).scrollTop() + $(window).height()
+    //         //滾輪頂部跟你往下滾中間距離   + 視窗高度
+    //         /* If the object is completely visible in the window, fade it it */
+    //         if (bottom_of_window > bottom_of_object) {
+    //             $(this).animate(
+    //                 {
+    //                     opacity: '1',
+    //                     bottom: '0px',
+    //                 },
+    //                 800
+    //             )
+    //         }
+    //     })
+    // })
 })
-var infScroll = new InfiniteScroll('.item_all',{
-    path: function () {
-        // 頁面路徑
+// var infScroll = new InfiniteScroll('.item_all', {
+//     path: function () {
+//         // 頁面路徑
 
-        if (this.loadCount < 2) {
-            // 只讀取前兩頁資料
-            var nextIndex = this.loadCount + 2 // 2
-            return 'page' + nextIndex + '.html' // page2.html
-            console.log(this.loadCount)
-        }
-    },
-    append: '.item', // 把頁面顯示出來的方式,預設是false
-    // responseType: 'text', // 設定頁面請求返回的響應型別 text時是json
-    prefill: true, //預填充 ，加上後append屬性必須。
-    // status: '.page-load-status',
-    // hideNav: '.pagination',
-    history: false, //更改瀏覽器歷史記錄和URL。
-    scrollThreshold: 40, //設定滾動條與滾動區域之間的距離，預設是40
-})
+//         if (this.loadCount < 2) {
+//             // 只讀取前兩頁資料
+//             var nextIndex = this.loadCount + 2 // 2
+//             return 'page' + nextIndex + '.html' // page2.html
+//         }
+//     },
+//     append: '.item', // 把頁面顯示出來的方式,預設是false
+//     // responseType: 'text', // 設定頁面請求返回的響應型別 text時是json
+//     prefill: true, //預填充 ，加上後append屬性必須。
+//     // status: '.page-load-status',
+//     // hideNav: '.pagination',
+//     history: false, //更改瀏覽器歷史記錄和URL。
+//     scrollThreshold: 40, //設定滾動條與滾動區域之間的距離，預設是40
+// })
 /* 按下GoTop按鈕時的事件 */
 $('.go_top').click(function () {
     $('html,body').animate({ scrollTop: 0 }, 'slow') /* 返回到最頂上 */
@@ -124,14 +122,14 @@ function $elements(elements) {
 // ---------------------燈箱類-------------------------
 
 // // 開啟篩選 放入要開啟的按鈕跟打開的元素
-open_filter('.area', '.filter_background')
-function open_filter(click_object, open_object) {
-    var click_object = $element(click_object)
-    var open_object = $element(open_object)
-    click_object.onclick = function () {
-        open_object.style.display = 'block'
-    }
-}
+// open_filter('.area', '.filter_background')
+// function open_filter(click_object, open_object) {
+//     var click_object = $element(click_object)
+//     var open_object = $element(open_object)
+//     click_object.onclick = function () {
+//         open_object.style.display = 'block'
+//     }
+// }
 // 按掉叉叉組件(輸入叉叉元素跟關閉元素)
 close('.shut_down', '.filter_background')
 //   close('.people_message_shut_down', '.people_message_background')
@@ -254,6 +252,7 @@ doFirst();
 // 景點篩選
 // ------------------------------------ ---左邊AjaxAjaxAjax---------------------
 function ajax_take_odject() {
+    var new_filter_Array;
     var xhr = new XMLHttpRequest();
     //聯繫伺服器物件
     xhr.open('get', './php/adventrue_Ajax.php');
@@ -263,7 +262,9 @@ function ajax_take_odject() {
         let Array_data = JSON.parse(data);
         // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑轉譯成JS物件↑↑↑↑↑↑↑↑↑↑↑↑↑↑
         new_filter_Array = Array_data;
-        console.log(new_filter_Array);
+        // for (let i = 0; i <Array_data.length; i++) {
+    
+        // }
         var item_all = $element('.item_all');
         html = "";
         filter_object();
@@ -284,15 +285,7 @@ function ajax_take_odject() {
         var list_check4 = document.getElementsByName('lab4');
 
         //----------------------把所有篩選按鈕都抓好-------------------------
-
-
-
-
-
-
         // ------------------------------------ ---上方AjaxAjaxAjax---------------------
-
-
         function ajax_search() {
             var search = $element(".search");
             search.onclick = send_search;
@@ -302,6 +295,15 @@ function ajax_take_odject() {
                 //打字的 
                 var key_word = search_key.value;
                 //key進去的值
+
+                if (key_word.replace(/(^s*)|(s*$)/g, "").length == 0) {
+                    ajax_take_odject();
+                }
+                //把篩選欄位全部恢復
+                list_check[0].checked = true;
+                list_check2[0].checked = true;
+                list_check3[0].checked = true;
+                list_check4[0].checked = true;
                 e.preventDefault();
                 // 阻止預設事件
                 var xhr1 = new XMLHttpRequest();
@@ -310,15 +312,12 @@ function ajax_take_odject() {
                 xhr1.onload = function () {
                     let data2 = this.responseText;
                     //回傳
-                    let Array_data3 = JSON.parse(data2);
+                    Array_data3 = JSON.parse(data2);
                     //轉譯
                     Array_data = Array_data3;
                     //把新回傳的 值給我最一開始抓的data
                     new_filter_Array = Array_data;
                     //把新ㄉ 再傳給我更動的物件
-                    console.log(new_filter_Array);
-                    // console.log(data2);
-                    // console.log(Array_data);
                     html = "";
                     filter_object();
                     //呼叫我更動的主要檔案讓他吃到    new_filter_Array 
@@ -337,7 +336,7 @@ function ajax_take_odject() {
         //-------------------------熱門篩選----------------------------------
         for (let i = 0; i < list_check.length; i++) {
             list_check[i].onclick = function () {
-                var filter_parameter = ["spot_no", "tour_no", "max_of_participants", "temple_tool"];
+                var filter_parameter = ["spot_no", "tour_no", "tour_chat", "temple_tool"];
                 // 我要比大小內容
                 checkbox_filter(filter_parameter[i]);
                 //把要篩選的類別帶進來 帶入下面函式的參數，進行比大小
@@ -346,14 +345,27 @@ function ajax_take_odject() {
         //----------------------熱門篩選比大小-------------------------------
         function checkbox_filter(object) {
             Array_data2 = function (obj1, obj2) {
-                val1 = parseInt(obj1[object]);
-                val2 = parseInt(obj2[object]);
-                if (val1 > val2) {
-                    return -1;
-                } else if (val1 < val2) {
-                    return 1;
+                if (object == "tour_no") {
+                    val1 = parseInt(obj1['number_of_participants']) / parseInt(obj1["max_of_participants"]) * 100;
+                    val2 = parseInt(obj2['number_of_participants']) / parseInt(obj2["max_of_participants"]) * 100;
+                    if (val1 > val2) {
+                        return -1;
+                    } else if (val1 < val2) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+
                 } else {
-                    return 0;
+                    val1 = parseInt(obj1[object]);
+                    val2 = parseInt(obj2[object]);
+                    if (val1 > val2) {
+                        return -1;
+                    } else if (val1 < val2) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
                 }
             };
             new_filter_Array.sort(Array_data2);
@@ -361,13 +373,21 @@ function ajax_take_odject() {
             // 他們最後都會導向要回圈顯示的地方
         }
         //-------------------------熱門篩選-------------------------------
+
+
+
+
+
+        var new_filter_Array4 = new_filter_Array;
+        var new_filter_Array3 = new_filter_Array;
+        var new_filter_Array2 = new_filter_Array;
         //-------------------------日期篩選-------------------------------
         function timeForMat(count, data2) {
             var time1 = new Date();
             // date物件 這給當前時間
             var time2 = new Date();
             // date物件 這給幾周前參數
-            var time3 = new Date(data2.tour_datetime);
+            var time3 = new Date(data2.tour_settime);
             // if (count >= 0) {
             //     time1.setTime(time1.getTime())
             //     //把從以前到現在時間轉回秒  再轉回正常時間
@@ -378,7 +398,7 @@ function ajax_take_odject() {
             var D1 = (time1.getDate() > 9 ? time1.getDate() : '0' + time1.getDate())
             var timer1 = Y1 + '-' + M1 + '-' + D1 + ' ' + '23:59:59' // 當前時間
             // time2.setTime(time2.getTime() - (24 * 60 * 60 * 1000 * count));
-            time2.getTime() - (24 * 60 * 60 * 1000 * 7)
+
             var Y2 = time2.getFullYear()
             var M2 = ((time2.getMonth() + 1) > 9 ? (time2.getMonth() + 1) : '0' + (time2.getMonth() + 1))
             var D2 = (time2.getDate() > 9 ? time2.getDate() : '0' + time2.getDate())
@@ -387,85 +407,214 @@ function ajax_take_odject() {
             var M3 = ((time3.getMonth() + 1) > 9 ? (time3.getMonth() + 1) : '0' + (time3.getMonth() + 1))
             var D3 = (time2.getDate() > 9 ? time3.getDate() : '0' + time3.getDate())
             var timer3 = Y3 + '-' + M3 + '-' + D3 + ' ' + '00:00:00' // 參數時間
-            a = time2.getTime();
+            a = time2.getTime() - (24 * 60 * 60 * 1000 * count)
             b = time3.getTime();
-            return [a, b]
+            c = time1.getTime();
+            return [a, b, c]
+        }
+        function alltime(data2) {
+            var return_data = timeForMat(365, data2)
+            // time2.getTime() > time3.getTime()
+            if (return_data[0] < return_data[1]) {
+                return true
+            }
         }
         function today(data2) {
-            var return_data = timeForMat(7, data2)
+            var return_data = timeForMat(1, data2)
             // time2.getTime() > time3.getTime()
-            if (return_data[0] > return_data[1]) {
+            if (return_data[0] < return_data[1] && return_data[1] < return_data[2]) {
                 return true
             }
         }
         function sevenDays(data2) {
+            var return_data = timeForMat(7, data2)
+            // time2.getTime() > time3.getTime()
+            if (return_data[0] < return_data[1]) {
+                return true
+            }
+        }
+        function onemonth(data2) {
             var return_data = timeForMat(30, data2)
             // time2.getTime() > time3.getTime()
-            if (return_data[0] < return_data[1]) {
+            if (return_data[0] < return_data[1] && return_data[1] < return_data[2]) {
                 return true
             }
         }
-        function thirtyDays(data2) {
-            var return_data = timeForMat(1, data2)
+        function threemonth(data2) {
+            var return_data = timeForMat(90, data2)
             // time2.getTime() > time3.getTime()
-            if (return_data[0] < return_data[1]) {
-                return true
-            }
-        }
-        function oneyear(data2) {
-            var return_data = timeForMat(50, data2)
-            // time2.getTime() > time3.getTime()
-            if (return_data[0] < return_data[1]) {
+            if (return_data[0] < return_data[1] && return_data[1] < return_data[2]) {
                 return true
             }
         }
         for (let i = 0; i < list_check3.length; i++) {
             list_check3[i].onclick = function () {
-                var days = [today, sevenDays, thirtyDays, oneyear]
-                new_filter_Array = Array_data.filter(days[i]);
-                // alert(new_filter_Array.length)
+                var days = [alltime, today, sevenDays, onemonth, threemonth]
+                // new_filter_Array3 = Array_data.filter(days[i]);
+                // console.log(new_filter_Array2);
+                new_filter_Array3 = Array_data.filter(days[i]);
+                //把整個恢復到最原始篩選
+                console.log(new_filter_Array3);
+                if (list_check3[0].checked != true) {
+                    new_filter_Array3 = new_filter_Array3.filter(days[i]);
+                    console.log(new_filter_Array3);
+                }
+               
+                if (list_check2[0].checked != true) {
+                    new_filter_Array3 = new_filter_Array2.filter(days[i]);
+                    console.log(new_filter_Array3);
+                }
+                if (list_check4[0].checked != true) {
+                    new_filter_Array3 = new_filter_Array4.filter(days[i]);
+                }
+                new_filter_Array = new_filter_Array3;
                 filter_object();
             }
         }
-        //------------------費用篩選-----------------------
-        function filterFunc0(data) {
-            //任何都可以
-            if (data.spot_budget > 0 || data.spot_budget == 0) {
 
+
+
+
+        //------------------費用篩選-----------------------
+
+        function filterFunc0(data) {
+            let total = parseInt(data.spot_budget) + parseInt(data.food_budget) + parseInt(data.temple_budget);
+            //任何都可以
+            if (total > 0 || total == 0) {
                 return true;
             }
         }
         function filterFunc1(data) {
+            if (data.spot_budget == null) {
+                data.spot_budget = 0;
+            } if (data.food_budget == null) {
+                data.food_budget = 0;
+            } if (data.temple_budget == null) {
+                data.temple_budget = 0;
+            }
+            let total = parseInt(data.spot_budget) + parseInt(data.food_budget) + parseInt(data.temple_budget);
             //無花費
-            if (data.spot_budget == 0) {
+            if (total == 0) {
+
                 return true;
             }
         }
         function filterFunc2(data) {
+            if (data.spot_budget == null) {
+                data.spot_budget = 0;
+            } if (data.food_budget == null) {
+                data.food_budget = 0;
+            } if (data.temple_budget == null) {
+                data.temple_budget = 0;
+            }
+            let total = parseInt(data.spot_budget) + parseInt(data.food_budget) + parseInt(data.temple_budget);
             //1~1000
-            if (data.spot_budget > 0 && data.spot_budget < 1000) {
+            if (total > 0 && total < 500) {
                 return true;
             }
         }
         function filterFunc3(data) {
+            if (data.spot_budget == null) {
+                data.spot_budget = 0;
+            } if (data.food_budget == null) {
+                data.food_budget = 0;
+            } if (data.temple_budget == null) {
+                data.temple_budget = 0;
+            }
+            let total = parseInt(data.spot_budget) + parseInt(data.food_budget) + parseInt(data.temple_budget);
             // 1000以上
-            if (data.spot_budget > 1000) {
+            if (total > 500) {
                 return true;
             }
         }
         for (let i = 0; i < list_check4.length; i++) {
             list_check4[i].onclick = function () {
                 var filterFunc = [filterFunc0, filterFunc1, filterFunc2, filterFunc3]
-                new_filter_Array = Array_data.filter(filterFunc[i]);
-                // alert(new_filter_Array.length);
-                // console.log("這是新ㄉ"+new_filter_Array);
+                new_filter_Array4 = Array_data.filter(filterFunc[i]);
+                console.log("還沒進入判斷new_filter_Array4")+ console.log( new_filter_Array4);
+                if (list_check4[0].checked != true) {
+                    new_filter_Array4 = new_filter_Array4.filter(filterFunc[i]);
+                    console.log("自己判斷new_filter_Array4")+ console.log( new_filter_Array4);
+                }
+                if (list_check2[0].checked != true) {
+                    new_filter_Array4 = new_filter_Array2.filter(filterFunc[i]);
+                    console.log("人數判斷new_filter_Array4")+ console.log( new_filter_Array4);
+                }
+                if (list_check3[0].checked != true) {
+                    new_filter_Array4 = new_filter_Array3.filter(filterFunc[i]);
+                    console.log("花費判斷new_filter_Array4")+ console.log( new_filter_Array4);
+                }
+                new_filter_Array = new_filter_Array4;
                 filter_object();
             }
         }
+
+
+
+
         //------------------費用篩選------------------------------------------
+        //------------------人數篩選------------------------------------------
+
+        function people_filterFunc0(data) {
+            let last_participants = parseInt(data.max_of_participants) - parseInt(data.number_of_participants);
+            //任何都可以
+
+            if (last_participants > 0 || last_participants == 0) {
+                return true;
+            }
+        }
+        function people_filterFunc1(data) {
+            let last_participants = parseInt(data.max_of_participants) - parseInt(data.number_of_participants);
+            //任何都可以
+            if (last_participants > 0 && last_participants < 4) {
+                return true;
+            }
+        }
+        function people_filterFunc2(data) {
+            let last_participants = parseInt(data.max_of_participants) - parseInt(data.number_of_participants);
+            //任何都可以
+            if (last_participants > 3 && last_participants < 7) {
+                return true;
+            }
+        }
+        function people_filterFunc3(data) {
+            let last_participants = parseInt(data.max_of_participants) - parseInt(data.number_of_participants);
+            //任何都可以
+            if (last_participants > 6) {
+                return true;
+            }
+        }
+        for (let i = 0; i < list_check2.length; i++) {
+            list_check2[i].onclick = function () {
+                var people_filterFunc = [people_filterFunc0, people_filterFunc1, people_filterFunc2, people_filterFunc3]
+                new_filter_Array2 = Array_data.filter(people_filterFunc[i]);
+                console.log("new_filter_Array2");  console.log(new_filter_Array2);
+                if (list_check2[0].checked != true) {
+                    new_filter_Array2 = new_filter_Array2.filter(people_filterFunc[i]);
+                    console.log("自己跟自己判斷new_filter_Array2");  console.log(new_filter_Array2);
+                }
+                if (list_check3[0].checked != true) {
+                    new_filter_Array2 = new_filter_Array3.filter(people_filterFunc[i]);
+                    console.log("跟日期判斷new_filter_Array2");  console.log(new_filter_Array2);
+                }
+                if (list_check4[0].checked != true) {
+                    new_filter_Array2 = new_filter_Array4.filter(people_filterFunc[i]);
+                    console.log("花費new_filter_Array4");  console.log(new_filter_Array4);
+                    console.log("人數new_filter_Array2");  console.log(new_filter_Array2);
+                }
+
+                new_filter_Array = new_filter_Array2;
+                // alert(new_filter_Array.length);
+                filter_object();
+            }
+        }
+        //------------------人數篩選------------------------------------------
+
+
 
         //------------------主要重複性揪團卡片工作區域---------------------------
         function filter_object() {
+            // console.log(new_filter_Array);
             item_all.innerHTML = "";
             html = "";
             //上面兩個把原本的都洗掉
@@ -508,6 +657,28 @@ function ajax_take_odject() {
                     mem_name = "猛鬼愛好者-香香";
                 }
                 //-------------------人名處理;-----------------------------------
+                //-------------------切割時間;-----------------------------------
+                var tour_datetime = new_filter_Array[i].tour_datetime;
+                tour_datetime = tour_datetime.substr(0, 10);
+
+
+                //-------------------切割時間;-----------------------------------
+                //-------------------總費用;-----------------------------------
+                if (new_filter_Array[i].spot_budget == null) {
+                    new_filter_Array[i].spot_budget = 0;
+                } else if (new_filter_Array[i].food_budget == null) {
+                    new_filter_Array[i].food_budget = 0;
+                } else if (new_filter_Array[i].temple_budget == null) {
+                    new_filter_Array[i].temple_budget = 0;
+                }
+                total = parseInt(new_filter_Array[i].spot_budget) + parseInt(new_filter_Array[i].food_budget) + parseInt(new_filter_Array[i].temple_budget);
+
+                //-------------------切割時間;-----------------------------------
+
+
+
+
+
                 html += `<div class="item" >  
                <div class="pic">
                 <img src="./img/tour/${new_filter_Array[i].tour_image}" alt="">
@@ -518,13 +689,16 @@ function ajax_take_odject() {
          
                  </div>
                     <span><i class="fas fa-map-marker-alt"></i>${new_filter_Array[i].spot_name}、${new_filter_Array[i].food_name}、${new_filter_Array[i].temple_name}</span>
-             <span><i class="far fa-calendar-alt"></i>${new_filter_Array[i].tour_datetime}</span>
+             <span><i class="far fa-calendar-alt"></i>${tour_datetime}出團</span>
+             <span><i class="far fa-calendar-alt"></i>${new_filter_Array[i].tour_settime}開始揪團</span>
+             <span><i class="far fa-calendar-alt"></i>${total}總費用</span>
+             <span><i class="far fa-calendar-alt"></i>${new_filter_Array[i].tour_chat}點擊數</span>
                      <div class="people_head">
                    </div>
    
                 <p>
                  ${tour_content_word60}
-         <a href="StartGroup.php?tour_no=${new_filter_Array[i].tour_no}&spot_no=${new_filter_Array[i].spot_no}">詳全文</a>
+                <a href="StartGroup.php?tour_no=${new_filter_Array[i].tour_no}&spot_no=${new_filter_Array[i].spot_no}" class="tour_chat">詳全文</a>
     </p>
 
     <div class="progress">
@@ -551,17 +725,21 @@ function ajax_take_odject() {
     <div class="last_time">剩餘時間:${iDays[i]}天</div>
 </div>
 </div>`
-
-
-
-
-
-
             }
             //------------------*-----------------主要重複性揪團卡片工作區域---------------------------
             item_all.innerHTML = html;
 
+
+            //-------------------------------------------讓前4個顯示------------------------------
+            //  for (let i = 0; i < 4; i++) {
+            //     var item = $elements(".item");
+            //     item[i].classList.add("normal_item");
+
+            // };
+            //-------------------------------------------讓前4個顯示------------------------------
+
             for (let i = 0; i < new_filter_Array.length; i++) {
+                var tour_endtime1 = document.getElementsByName('tour_endtime_data');
                 if (iDays[i] < 0) {
                     tour_endtime1 = document.getElementsByName('tour_endtime_data');
                     tour_endtime1[i].innerText = "已截止";
@@ -594,6 +772,36 @@ function ajax_take_odject() {
 
 
 
+
+
+
+
+
+
+            //-------------------------------------------onclick 後記錄點擊數----------------------------------------
+            for (let i = 0; i < new_filter_Array.length; i++) {
+                var tour_chat = $elements(".tour_chat");
+                //-------------------抓點擊回來;-----------------------------------
+                // tour_chat_value = new_filter_Array[i].tour_chat;
+                //-------------------抓點擊回來;-----------------------------------
+                tour_chat[i].onclick = ajax_chat;
+                function ajax_chat() {
+                    tour_chat_value = parseInt(new_filter_Array[i].tour_chat) + 1;
+                    var xhr5 = new XMLHttpRequest();
+                    //聯繫伺服器物件
+                    xhr5.open('post', "./php/tour_chat.php", true);
+                    xhr5.onload = function () {
+
+                    }
+                    xhr5.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr5.send("tour_no=" + new_filter_Array[i].tour_no + "&tour_chat=" + tour_chat_value);
+
+                }
+
+            }
+            //ajax_chat
+            //-------------------------------------------onclick 後記錄點擊數----------------------------------------
+
             //-------------------------------------------進度bar功能----------------------------------------
             for (let i = 0; i < new_filter_Array.length; i++) {
                 var progress_bar = $elements(".progress-bar");
@@ -603,8 +811,6 @@ function ajax_take_odject() {
                 progress_bar[i].style.width = `${rate}%`;
             }
             //-------------------------------------------進度bar功能----------------------------------------
-
-
             var main_people = document.getElementsByClassName('main_people');
             //點擊頭象
             var people_message_background = $element('.people_message_background');
@@ -623,10 +829,10 @@ function ajax_take_odject() {
 
                     people_message_background.style.display = 'block';
                     for (let i = 0; i < tab_heads.length; i++) {
-                        
+
                         //移除所有tab顯眼
 
-                        tab_heads[i].onclick =function(){
+                        tab_heads[i].onclick = function () {
                             for (let i = 0; i < tab_heads.length; i++) {
                                 tab_heads[i].classList.remove('show_tab');
                             }
@@ -654,9 +860,6 @@ function ajax_take_odject() {
         }
         //-------------------------------------------叉叉按鈕----------------------------------------
         function tabChange() {
-
-          
-
             var xhr1 = new XMLHttpRequest();
             //聯繫伺服器物件
             xhr1.open('post', './php/adventrue_Ajax_2.php', true);
@@ -669,7 +872,6 @@ function ajax_take_odject() {
 
                 if (tab_heads[0].className == "show_tab") {
                     for (let i = 0; i < Array_data2.length; i++) {
-
                         //-------------------人數處理;-----------------------------------
                         var number_of_participart = Array_data2[i].number_of_participart;
                         if (number_of_participart == null) {

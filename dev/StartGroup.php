@@ -1,11 +1,12 @@
 <?php
 $tour_no = $_REQUEST["tour_no"];
 $spot_no = $_REQUEST["spot_no"];
+session_start();
 $errMsg = "";
 
 //連線資料庫
 try {
-   
+
     require_once("./php/connect.php");
 
     // 基本資訊
@@ -57,13 +58,41 @@ where msg.spot_no =:spot_no
 order by msg_time desc 
 ";
     $tourMsg = $pdo->prepare($sql);
-    $tourMsg->bindValue(":spot_no", 5);
+    $tourMsg->bindValue(":spot_no", $spot_no);
     $tourMsg->execute();
 } catch (PDOException $e) {
     $errMsg .= "錯誤原因 : " . $e->getMessage() . "<br>";
     $errMsg .= "錯誤行號 : " . $e->getLine() . "<br>";
 }
 ?>
+
+<?php
+if ($errMsg != "") {
+    var_dump(13);
+} else {
+    $toursRow = $tours->fetchObject();
+}
+?>
+
+<?php
+if ($errMsg != "") {
+    var_dump(13);
+} else {
+    $spot_nosRows = $spot_nos->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
+
+
+
+<!-- 顯示所有該留言 -->
+<?php
+if ($errMsg != "") {
+    var_dump(13);
+} else {
+    $tourMsgRows = $tourMsg->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -112,34 +141,7 @@ order by msg_time desc
     <!-- 滑鼠上的鬼-->
 
 
-    <!-- 撰寫留言視窗 -->
-    <!-- 跳出留言視窗 -->
-    <!-- 跳出留言視窗 PHP 有改 -->
-    <div class="spotWroteMsgBG">
-        <div class="spotWroteMsgContent">
-            <h2>喵喵</h2>
-            <div class="writeMsgZone">
-                <div class="personalMsg">
-                    <div class="headIcon">
-                        <img src="./img/icon/header2.png">
-                    </div>
-                    <div class="neme">
-                        <p>黃冠禎</p>
-                    </div>
-                </div>
-                <form method="post">
-                    <input type="hidden" name="spot_no" id="SpotMsgNo" value="">
-                    <input type="hidden" name="mem_no" id="SpotMsgMemNo" value="3">
-                    <textarea name="spot_msg_content" id="spotMsg" cols="30" rows="10" placeholder="詳細說明你的靈異體驗...."></textarea>
-                    <div class="btnWrap">
-                        <input type="reset" value="取消" id="cancelMsgBtn" class="btn-outline cancelMsg">
-                        <input type="submit" value="發佈" id="sendSpotMsg" class="btn-outline sendMsg">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+  
 
 
     <div class="StartGroup_wrapper">
@@ -310,29 +312,24 @@ order by msg_time desc
                 </div>
             </section>
 
-            <?php
-            if ($errMsg != "") { //例外
-                var_dump($errMsg);
-            } else {
-                $toursRow = $tours->fetchObject();
-            ?>
-                <section id="StartGroup_Section1">
-                    <div class="breadcrumb">
-                        <ul>
-                            <li><a href="">首頁</a></li>
-                            <li><a href="">前進鬼島</a></li>
-                            <li><a href="">新莊廢棄醫院</a></li>
-                        </ul>
-                    </div>
 
-                    <div class="spotIntro">
+            <section id="StartGroup_Section1">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="">首頁</a></li>
+                        <li><a href="">尋鬼探險</a></li>
+                        <li><a href="">新莊廢棄醫院</a></li>
+                    </ul>
+                </div>
 
-                        <div class="picZone">
-                            <div class="bigPic">
-                                <!-- //這裡要放照片要跟下面第一章依樣  echo $toursRow->tour_img;  -->
-                                <img src="img/tour/<?php echo $toursRow->tour_image ?>">
-                            </div>
-                            <!-- <div class="photobook">
+                <div class="spotIntro">
+
+                    <div class="picZone">
+                        <div class="bigPic">
+                            <!-- //這裡要放照片要跟下面第一章依樣  echo $toursRow->tour_img;  -->
+                            <img src="img/tour/<?php echo $toursRow->tour_image ?>">
+                        </div>
+                        <!-- <div class="photobook">
                                 <h2>
                                     <img src="./img/icon/camera.png">
                                     靈異相簿
@@ -343,103 +340,103 @@ order by msg_time desc
                                     <img src="./img/spot/spot1/SP_big_3.png" class="smallPic">
                                 </div>
                             </div> -->
-                        </div>
-                        <div class="txtZone">
-                            <h1>【<?php echo $toursRow->tour_title; ?>】</h1>
-                            <div class="introTxt">
-                                <p>
-                                    <?php echo $toursRow->tour_content; ?>
-                                </p>
-                            </div>
-                            <div class="StartGroup_spotInform">
-                                <ul>
-                                    <li>
-                                        <div class="StartGroup_people_img">
-                                            <img src="img/StartGroup/揪團團組.png" alt="">
-                                        </div>
-                                        <?php echo $toursRow->mem_name ?>
-                                    </li>
-                                    <li>
-                                        <img src="./img/icon/location.png">
-                                        <?php echo $toursRow->spot_address; ?>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-calendar-alt"></i>
-                                        出團日期：<span> <?php echo $toursRow->tour_datetime; ?></span>
-                                    </li>
-                                    <li>
-                                        <div>發起日期：</div><span> <?php echo $toursRow->tour_settime; ?> </span>
-                                    </li>
-                                    <li>
-                                        <div>截止日期：</div><span> <?php echo $toursRow->tour_endtime; ?> </span>
-                                    </li>
-
-                                    <li>
-                                        <i class="fas fa-dollar-sign"></i>
-                                        總預算約<span>
-
-                                            <?php
-                                            $spot_budget = $toursRow->spot_budget;
-                                            $food_budget = $toursRow->food_budget;
-                                            echo ($spot_budget + $food_budget);
-
-                                            ?>
-
-
-                                        </span>元
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="spotInform">
-                                <p class="btn-outline" id="participate">
-                                    立即參加
-                                </p>
-                            </div>
-
-                            <div class="spiderweb">
-                                <img src="./img/spot/spiderweb.png">
-                            </div>
-                        </div>
-
                     </div>
-                    <!-- 進度條 -->
-                    <div class="progress">
+                    <div class="txtZone">
+                        <h1>【<?php echo $toursRow->tour_title; ?>】</h1>
+                        <div class="introTxt">
+                            <p>
+                                <?php echo $toursRow->tour_content; ?>
+                            </p>
+                        </div>
+                        <div class="StartGroup_spotInform">
+                            <ul>
+                                <li>
+                                    <div class="StartGroup_people_img">
+                                        <img src="<?php echo $toursRow->mem_img; ?>" alt="">
+                                    </div>
+                                    <?php echo $toursRow->mem_name ?>
+                                </li>
+                                <li>
+                                    <img src="./img/icon/location.png">
+                                    <?php echo $toursRow->spot_address; ?>
+                                </li>
+                                <li>
+                                    <i class="far fa-calendar-alt"></i>
+                                    出團日期：<span> <?php echo $toursRow->tour_datetime; ?></span>
+                                </li>
+                                <li>
+                                    <div>發起日期：</div><span> <?php echo $toursRow->tour_settime; ?> </span>
+                                </li>
+                                <li>
+                                    <div>截止日期：</div><span id="tour_endtime"> <?php echo $toursRow->tour_endtime; ?> </span>
+                                </li>
+
+                                <li>
+                                    <i class="fas fa-dollar-sign"></i>
+                                    總預算約<span>
+
+                                        <?php
+                                        $spot_budget = $toursRow->spot_budget;
+                                        $food_budget = $toursRow->food_budget;
+                                        echo ($spot_budget + $food_budget);
+
+                                        ?>
+
+
+                                    </span>元
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="spotInform">
+                            <p class="btn-outline" id="participate">
+                                立即參加
+                            </p>
+                        </div>
+
+                        <div class="spiderweb">
+                            <img src="./img/spot/spiderweb.png">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 進度條 -->
+                <div class="progress">
+                    <span>
+                    </span>
+                    <div class="progress-bar">
                         <span>
+                            <div class="progress_image">
+                                <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
+                            </div>
+                            <p>目前<span class="number_of_participants"><?php echo $toursRow->number_of_participants; ?></span>/<span class="max_of_participants"><?php echo $toursRow->max_of_participants; ?></span>人</p>
                         </span>
-                        <div class="progress-bar">
-                            <span>
-                                <div class="progress_image">
-                                    <img src="img/adventrue/個人頭像_無_工作區域 1.png" alt="">
-                                </div>
-                                <p>目前<span class="number_of_participants"><?php echo $toursRow->number_of_participants; ?></span>/<span class="max_of_participants"><?php echo $toursRow->max_of_participants; ?></span>人</p>
-                            </span>
-                        </div>
                     </div>
-
-
-                <?php } ?>
-                </section>
+                </div>
 
 
 
-                <section id="StartGroup_Section2">
-                    <nav>
-                        <h3 class="tablink selected" id="tab1">自訂行程</h3>
-                        <h3 class="tablink" id="tab2">揪團留言</h3>
-                    </nav>
-                    <div class="allTabPage">
-                        <?php
-                        if ($errMsg != "") {
-                            var_dump($errMsg);
-                        } else {
-                            $OfficialTourRows = $OfficialTour->fetchObject();
-                        ?>
+            </section>
 
-                            <div id="tabPage1" class="tabpage">
-                                <div id="officalTour">
-                                    <?php if ($OfficialTourRows->temple_name != null) {
-                                        echo  ' <div class="tourSpot">
+
+
+            <section id="StartGroup_Section2">
+                <nav>
+                    <h3 class="tablink selected" id="tab1">自訂行程</h3>
+                    <h3 class="tablink" id="tab2">揪團留言</h3>
+                </nav>
+                <div class="allTabPage">
+                    <?php
+                    if ($errMsg != "") {
+                        var_dump($errMsg);
+                    } else {
+                        $OfficialTourRows = $OfficialTour->fetchObject();
+                    ?>
+
+                        <div id="tabPage1" class="tabpage">
+                            <div id="officalTour">
+                                <?php if ($OfficialTourRows->temple_name != null) {
+                                    echo  ' <div class="tourSpot">
                                 <div class="tourImg">
                                     <img src="./img/temple/', $OfficialTourRows->temple_img, '">
                                 </div>
@@ -480,8 +477,8 @@ order by msg_time desc
                                     </div>
                                 </div>
                             </div>';
-                                        if ($OfficialTourRows->food_name != null) {
-                                            echo  ' <div class="tourSpot">
+                                    if ($OfficialTourRows->food_name != null) {
+                                        echo  ' <div class="tourSpot">
                                 <div class="tourImg">
                                 <img src="./img/food/', $OfficialTourRows->food_img, '">
                                 </div>
@@ -522,10 +519,10 @@ order by msg_time desc
                                     </div>
                                 </div>
                            </div>';
-                                        };
-                                    } elseif ($OfficialTourRows->food_name != null) {
+                                    };
+                                } elseif ($OfficialTourRows->food_name != null) {
 
-                                        echo  ' <div class="tourSpot">
+                                    echo  ' <div class="tourSpot">
                             <div class="tourImg">
                             <img src="./img/food/', $OfficialTourRows->food_img, '">
                             </div>
@@ -566,54 +563,54 @@ order by msg_time desc
                                 </div>
                             </div>
                         </div>';
-                                    } ?>
+                                } ?>
 
-                                    <div class="tourSpot">
-                                        <div class="tourImg">
-                                            <img src="<?php echo $OfficialTourRows->spot_image_card; ?>">
-                                        </div>
-                                        <div class="tourSpotTxt">
-                                            <h2 class="spotTitle">【行程<span class="tour_number"></span>】<span>新莊廢棄醫院</span></h2>
-                                            <p><?php echo $OfficialTourRows->spot_content ?></p>
+                                <div class="tourSpot">
+                                    <div class="tourImg">
+                                        <img src="<?php echo $OfficialTourRows->spot_image_card; ?>">
+                                    </div>
+                                    <div class="tourSpotTxt">
+                                        <h2 class="spotTitle">【行程<span class="tour_number"></span>】<span>新莊廢棄醫院</span></h2>
+                                        <p><?php echo $OfficialTourRows->spot_content ?></p>
 
-                                            <div class="tourSpotInfo">
+                                        <div class="tourSpotInfo">
 
-                                                <div class="btn-outline2">
-                                                    <img src="./img/icon/location.png">
-                                                    <p>地理位置</p>
-                                                    <div class="moreInfo">
-                                                        <?php echo $OfficialTourRows->spot_address ?>
-                                                    </div>
-                                                    <div class="triangle"></div>
+                                            <div class="btn-outline2">
+                                                <img src="./img/icon/location.png">
+                                                <p>地理位置</p>
+                                                <div class="moreInfo">
+                                                    <?php echo $OfficialTourRows->spot_address ?>
                                                 </div>
+                                                <div class="triangle"></div>
+                                            </div>
 
-                                                <div class="btn-outline2">
-                                                    <img src="./img/icon/tool.png">
-                                                    <p>所需工具</p>
-                                                    <div class="moreInfo">
-                                                        <?php echo $OfficialTourRows->spot_tool ?>
-                                                    </div>
-                                                    <div class="triangle"></div>
+                                            <div class="btn-outline2">
+                                                <img src="./img/icon/tool.png">
+                                                <p>所需工具</p>
+                                                <div class="moreInfo">
+                                                    <?php echo $OfficialTourRows->spot_tool ?>
                                                 </div>
+                                                <div class="triangle"></div>
+                                            </div>
 
-                                                <div class="btn-outline2">
-                                                    <img src="./img/icon/fee.png">
-                                                    <p>參加費用</p>
-                                                    <div class="moreInfo">
-                                                        <?php echo $OfficialTourRows->spot_budget ?>元
-                                                    </div>
-                                                    <div class="triangle"></div>
+                                            <div class="btn-outline2">
+                                                <img src="./img/icon/fee.png">
+                                                <p>參加費用</p>
+                                                <div class="moreInfo">
+                                                    <?php echo $OfficialTourRows->spot_budget ?>元
                                                 </div>
-
+                                                <div class="triangle"></div>
                                             </div>
 
                                         </div>
 
                                     </div>
-                                    <nav class="tourStatus">
-                                        <ul>
-                                            
-                                            <!-- <li class="statusCircle">
+
+                                </div>
+                                <nav class="tourStatus">
+                                    <ul>
+
+                                        <!-- <li class="statusCircle">
                                             <p class=" circle "></p>
                                                  <p class="line"></p>
                                                 
@@ -622,150 +619,149 @@ order by msg_time desc
                                        
                                             <p class=" circle "></p>
                                             </li> -->
-                                                                                   
-                                        </ul>
 
-                                    </nav>
+                                    </ul>
+
+                                </nav>
+
+                            </div>
+
+
+                            <!-- 客觀您不滿意 -->
+                            <div class="myTourGuide">
+                                <div class="G1">
+                                    <img src="./img/map/G1.png" class="G1img">
+                                    <img src="./img/map/G1_L.png" class="G1L">
+
+                                    <div class="ghostTalk">
+                                        <p class="line"></p>
+                                        <p>客倌不滿意...？自己當團主....</p>
+                                        <p class="line"></p>
+                                    </div>
 
                                 </div>
 
-
-                                <!-- 客觀您不滿意 -->
-                                <div class="myTourGuide">
-                                    <div class="G1">
-                                        <img src="./img/map/G1.png" class="G1img">
-                                        <img src="./img/map/G1_L.png" class="G1L">
-
-                                        <div class="ghostTalk">
-                                            <p class="line"></p>
-                                            <p>客倌不滿意...？自己當團主....</p>
-                                            <p class="line"></p>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="newMyTour btn-outline">
+                                <div class="newMyTour btn-outline">
+                                    <a href="./createAdventure.php?spot_no=<?= $spot_no ?>">
                                         建立客製化揪團
-                                    </div>
-
+                                    </a>
                                 </div>
 
                             </div>
 
-
-                        <?php }; ?>
-                        <!-- $OfficialTourRows -->
+                        </div>
 
 
+                    <?php }; ?>
+                    <!-- $OfficialTourRows -->
 
-                        <?php
-                        if ($errMsg != "") {
-                        } else {
-                            $spotMsgRows = $tourMsg->fetchObject();
-                        ?>
-                            <div id="tabPage2" class="tabpage">
 
-                                <div class="writeBtnWrap">
-                                    <div class="btn-outline OpenwriteMsgBox">
-                                        撰寫留言
-                                    </div>
-                                </div>
 
-                                <!-- 動態新增區塊 -->
-                                <div class="msgZone">
-                                    <?php foreach ($spotMsgRows as $i => $spotMsgRow) { ?>
-                                        <div class="spotMsg">
-                                            <div class="msgWrap">
-                                                <div class="headIcon">
-                                                    <img src="
-                                                <?php if ($spotMsgRow['mem_img'] == null) { ?>
-                                                    ./img/icon/default_header.svg
-                                                <?php } else {
-                                                    echo $spotMsgRow['mem_img'];
-                                                } ?>
-                                                ">
-                                                </div>
 
-                                                <div class="txtZone">
+                    <div id="tabPage2" class="tabpage">
+                        <div class="writeBtnWrap">
+                            <div class="btn-outline OpenwriteMsgBox">
+                                撰寫留言
+                            </div>
+                        </div>
 
-                                                    <div class="msgInfo">
-                                                        <p class="name"><?= $spotMsgRow['mem_name'] ?></p>
-                                                        <p class="date"><?= $spotMsgRow['msg_time'] ?> 發表</p>
-                                                    </div>
+                        <!-- 動態新增區塊 -->
+                        <div class="msgZone">
 
-                                                    <div class="msgContent">
-                                                        <p>
-                                                            <?= $spotMsgRow['spot_msg_content'] ?>
-                                                        </p>
-                                                    </div>
+                            <?php foreach ($tourMsgRows as $i => $tourMsgRow) { ?>
+                                <div class="spotMsg">
+                                    <div class="msgWrap">
+                                        <div class="headIcon">
+                                            <img src="
+                    <?php if ($tourMsgRow['mem_img'] == null) { ?>
+                        ./img/icon/default_header.svg
+                    <?php } else {
+                                    echo $tourMsgRow['mem_img'];
+                                } ?>
+                    ">
+                                        </div>
 
-                                                    <div class="reportZone">
-                                                        <img src="./img/icon/report_red.svg">
-                                                        <p>檢舉留言</p>
-                                                    </div>
+                                        <div class="txtZone">
 
-                                                </div>
+                                            <div class="msgInfo">
+                                                <p class="name"><?= $tourMsgRow['mem_name'] ?></p>
+                                                <p class="date"><?= $tourMsgRow['msg_time'] ?> 發表</p>
                                             </div>
 
-                                            <div class="ghostFace">
-                                                <img src="./img/spot/msgGhostFace.png">
+                                            <div class="msgContent">
+                                                <p>
+                                                    <?= $tourMsgRow['spot_msg_content'] ?>
+                                                </p>
                                             </div>
 
+                                            <!-- <div class="reportZone">
+                        <img src="./img/icon/report_red.svg">
+                        <p>檢舉留言</p>
+                    </div> -->
 
                                         </div>
-                                    <?php } ?>
-
-
-                                </div>
-
-                                <div class="pageWrap">
-                                    <div class="pagination">
-                                        <div class="pageBtn"><span class="toLeft">〈 </span></div>
-                                        <p class="PageSelected">1</p>
-                                        <p>2</p>
-                                        <p>3</p>
-                                        <p>4</p>
-                                        <p>5</p>
-                                        <p>6</p>
-                                        <div class="pageBtn"><span class="toRight"> 〉</span></div>
                                     </div>
+
+                                    <div class="ghostFace">
+                                        <img src="./img/spot/msgGhostFace.png">
+                                    </div>
+
+
                                 </div>
+                            <?php } ?>
 
 
-
-
-                            </div>
-
-
-
-
-                        <?php } ?>
-
-
-
-
+                        </div>
                     </div>
 
-                    <div class="join">
-
-
-                    </div>
-
-        </div>
 
 
 
-        </section>
 
 
 
-        <?php
-        if ($errMsg != "") {
-        } else {
-            $spotnoRows = $spot_nos->fetchAll(PDO::FETCH_ASSOC);
-        ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <div class="join">
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <section id="StartGroup_Section3">
+
                 <div class="titleZone">
                     <h1 class="title">相關揪團</h1>
                     <img src="./img/spot/spiderweb2.png">
@@ -774,86 +770,109 @@ order by msg_time desc
                 <div class="cardContain">
 
                     <div id="cardDisplay">
-                        <?php foreach ($spotnoRows as $i => $spotnoRow) { ?>
 
-                            <div class="tourCard ">
-                                <a href="">
-                                    <div class="tourImg">
-                                        <img src="./img/tour/<?php echo $spotnoRow['tour_image'] ?>">
+                        <?php foreach ($spot_nosRows as $i => $spot) { ?>
+
+                            <div class="tourCard" title="<?= $spot['tour_no'] ?>">
+
+                                <div class="tourImg">
+                                    <img src="./img/tour/<?= $spot['tour_image'] ?>">
+                                </div>
+                                <div class="tourTxt">
+                                    <h2 class="tourTitle">【<?php echo $spot['tour_title'] ?>】</h2>
+
+                                    <div class="tourHost">
+
+                                        <img src="
+                        <?php if ($spot['mem_img'] == null) { ?>
+                            ./img/icon/default_header.svg
+                        <?php } else {
+                                echo $spot['mem_img'];
+                            } ?>
+                        " class="header">
+                                        <p class="name"><?= $spot['mem_name'] ?></p>
+
                                     </div>
-                                    <div class="tourTxt">
-                                        <h2 class="tourTitle">【<?php echo $spotnoRow['tour_title'] ?>】</h2>
 
-                                        <div class="tourHost">
+                                    <div class="tourInfo">
 
-                                            <img src="<?php
-                                                        if ($spotnoRow['mem_img'] == null) {
 
-                                                            echo "img/adventrue/個人頭像_無_工作區域 1.png";
-                                                        } else {
-                                                            echo $spotnoRow['mem_img'];
-                                                        }
-                                                        ?>" class="header">
-                                            <p class="name"><?php echo $spotnoRow['mem_name'] ?></p>
+                                        <div class="date">
+                                            <img src="./img/icon/date.svg">
+                                            <p>
+                                                出團日期：<?= $spot['tour_datetime'] ?>
+                                            </p>
 
                                         </div>
 
-                                        <div class="tourInfo">
-                                            <div class="date">
-                                                <img src="./img/icon/date.svg">
-                                                <p>
-                                                    <?php echo $spotnoRow['tour_datetime'] ?>
-                                                </p>
+                                        <div class="tourSpot">
+                                            <img src="./img/icon/location_red.png">
+                                            <p>
+                                                <?= $spot['spot_name'] ?><?php if ($spot['temple_name'] != null) {
+                                                                                echo "、", $spot['temple_name'];
+                                                                            } ?><?php if ($spot['food_name'] != null) {
+                                                                                        echo "、", $spot['food_name'];
+                                                                                    } ?>
+                                            </p>
+                                        </div>
 
-                                            </div>
-
-                                            <div class="tourSpot">
-                                                <img src="./img/icon/location_red.png">
-                                                <p>
-                                                    <?php echo $spotnoRow['spot_name'] ?>、 <?php echo $spotnoRow['temple_name'] ?>、<?php echo $spotnoRow['food_name'] ?>
-                                                </p>
-                                            </div>
-
-                                            <div class="tourJoin">
-                                                <img src="./img/icon/tourCount.svg">
-                                                <p>
-                                                    參加人數：<?php echo $spotnoRow['number_of_participants'] ?>/<?php echo $spotnoRow['max_of_participants'] ?> 人
-                                                </p>
-                                            </div>
+                                        <div class="tourJoin">
+                                            <img src="./img/icon/tourCount.svg">
+                                            <p>
+                                                參加人數：<?= $spot['number_of_participants'] ?>/<?= $spot['max_of_participants'] ?>人
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="tourFavorite">
-                                        <p class="like">
-                                            <img id="heart" src="./img/icon/likeBefore.svg" title="加入收藏">
-                                            10
-                                        </p>
-                                    </div>
-                                </a>
+                                </div>
+                                <div class="tourFavorite">
+                                    <p class="like">
+                                        <img src="./img/icon/likeBefore.svg" title="加入收藏">
+                                    </p>
+                                </div>
+
                             </div>
 
-                        <?php ;
-                        } ?>
+                        <?php } ?>
 
-                    <?php ;
-                } ?>
+
+                    </div>
+
                     <button id="rightScroll" class="scrollBtn" disabled>
                         <span>〈</span>
                     </button>
                     <button id="leftScroll" class="scrollBtn">
                         <span>〉</span>
                     </button>
-                    </div>
+                </div>
 
-                    <div class="G2">
-                        <img src="./img/spot/G2.png">
-                    </div>
-                    <div class="ghostTalk">
-                        <p class="line"></p>
-                        <p>天乾物燥...小心火燭...</p>
-                        <p class="line"></p>
-                    </div>
+                <div class="G2">
+                    <img src="./img/spot/G2.png">
+                </div>
+                <div class="ghostTalk">
+                    <p class="line"></p>
+                    <p>天乾物燥...小心火燭...</p>
+                    <p class="line"></p>
+                </div>
 
             </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <section id="StartGroup_Section4">
                 <div class="adventure_main">
@@ -869,7 +888,7 @@ order by msg_time desc
                                 </div>
                             </div>
                         </a>
-                        <a href="adventrue.html">
+                        <a href="./createAdventure.php?spot_no=<?=$spot_no?>">
                             <div class="ghost_btn2_all">
                                 <div class="ghost_btn_img2">
                                     <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
@@ -980,7 +999,7 @@ order by msg_time desc
                     </nav>
                 </div>
             </footer>
-    </div>
+        </div>
 
 
 
@@ -1017,83 +1036,4 @@ order by msg_time desc
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+` .
