@@ -1,9 +1,26 @@
 window.addEventListener("load", function () {
 
-    showtabform();
-    profileimg_onchange();
-    getMemberProfileDB();
 
+    var xhr = new XMLHttpRequest()
+    var url = "./php/logininfo.php"
+    xhr.open("GET", url, true)
+    xhr.send(null)
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            let member_de_JSON = JSON.parse(xhr.responseText)
+            var mem_no = member_de_JSON.mem_no
+            if (!member_de_JSON.mem_name) {
+                alert("請先登入")
+                $("#forum_chatbox").fadeOut()
+                $("#forum_contentbox").fadeOut()
+                $("#indexLogin,#login_page1").css("display", "block")
+            } else {
+                showtabform();
+                profileimg_onchange();
+                getMemberProfileDB(mem_no);
+            }
+        }
+    }
 
 }, false);
 //show tab form
@@ -52,6 +69,8 @@ function profileimg_onchange() {
 function showMemberProfileDB(jsonStr) {
     let memberDB = JSON.parse(jsonStr);
     let html = "";
+    let html_2 = "";
+
     for (let i = 0; i < memberDB.length; i++) {
         html += `<div class="profile_col mem_id_member">
             <div class="tabtitle">會員編號:</div>
@@ -89,16 +108,15 @@ function showMemberProfileDB(jsonStr) {
                 <input type="email" class="mem_email" placeholder="" id="memEmail" value="${memberDB[i].mem_mail}">
                 <div class="col3"><img src="./img/member/edit1.png"></div>
             </div>
-            <hr size="0.5px" width="100%">
-            <div class="profile_col mem_time_member">
-                <div class="logintime">最後登入時間:</div>
-                <div class="showtime" id="memTime">${memberDB[i].login_update_time}</div>
-                <div class="col3"></div>
-            </div>
             <hr size="0.5px" width="100%">`;
+    }
+    for (let i = 0; i < memberDB.length; i++) {
+        html_2 += `<img id="imgPreview" src="./img/login/${memberDB[i].mem_img}" width="80">`;
     }
 
     document.querySelector("#show_memberProfileDB").innerHTML = html;
+    let mem_img = document.querySelector(".img_block").innerHTML = html_2;
+
     //   //html撈到db資料後註冊updatebtn事件
     //   Dom_GameDB_updatebtn();
     //   //html撈到db資料後註冊deletebtn事件
@@ -106,20 +124,21 @@ function showMemberProfileDB(jsonStr) {
 
 }
 
-function getMemberProfileDB() {
+function getMemberProfileDB(mem_no) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-
             showMemberProfileDB(xhr.responseText);
         } else {
             alert(xhr.status);
         }
     }
-
     var url = "./php/member_getMemberProfileDB_JASON.php";
-    xhr.open("Get", url, true);
-    xhr.send(null);
+    xhr.open("post", url, true);
+    //post 要加這行
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("mem_no=" + mem_no);
 
 }
+
 

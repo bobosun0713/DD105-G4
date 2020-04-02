@@ -121,11 +121,7 @@ gulp.task("mini_img", function () {
 //   gulp.watch(['*.html' , '**/*.html'],  ['fileinclude']);
 // });
 
-<<<<<<< HEAD
 gulp.task("default", function () {
-=======
-gulp.task("default", function() {
->>>>>>> 52e76ef90dcaf2ea41eab45ee1acee9700e5f015
     browserSync.init({
         server: {
             baseDir: "./dest",
