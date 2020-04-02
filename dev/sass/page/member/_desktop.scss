@@ -1,213 +1,147 @@
-.wrapper_member {
-	background-image: url("../img/member/mem_background_img.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
-	padding-top: 400px;
 
-	.membertop {
-		display: flex;
-		justify-content: center;
-	}
-	#preview {
-		width: 200px;
-		height: 200px;
-		border: 1px solid gray;
-		border-radius: 50%;
-	}
-	.section2_member {
-		width: 800px;
-		margin: 0;
-	}
-	.title_btn {
-		margin: 0 auto;
-		display: flex;
-		justify-content: center;
-		.button1 {
-			color: gray;
-			display: inline-block;
-			text-decoration: none;
-			font-size: 1.25rem;
-			margin: 0px 10px;
-		}
-	}
+.wrapper_Member_center {
+    // border: 1px solid red;
+    // background-color: rgb(112, 111, 103);
+    padding-top: 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+    .title_btn{
+        width:850px;
+        margin-bottom:8px ;
+        // border: 1px solid blanchedalmond;
+        display: flex;
+        justify-content:flex-end;
+        .on{
+            position: relative;
+            transition: all 1.5s linear;
+            &:before{
+                content:"";
+                width:95%;
+                height:2px;
+                background-color: whitesmoke;
+                position: absolute;
+                left:3px;
+                bottom: 0px;
+            }
+            
+        }
+        .tab{
+        // background-color: rgb(240, 255, 105);
+        font-size: 1rem;
+        margin: 0 10px 0 0; 
+        // width: 120px;
+        text-align: center;
+        padding:6px 5px 2px 5px;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+        
+    }
+    .member_block1{
+        width:850px;
+        // height: 500px;
+        margin-top: 5px;
+        // border: 1px solid rgb(43, 187, 43); 
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .profile_photo{
+            width:auto;
+            display: flex;
+            // align-items: center;
+            justify-content: center;
+            // border: 1px solid blue;
+            margin-right: 18px;
+           form{   
+               .uploadimg{
+                //    background-color: lightblue;
+                   width:200px;
+                   input{
+                    height: 50px;
+                    width:150px;
+                    //影藏預設 點圖片換圖
+                       display:none;
+                   }
+                   label{
+                        .img_block{
+                            margin: 0 auto;
+                            width:150px;
+                            height:150px;
+                            border-radius: 50%;
+                            background-color: rgb(0, 183, 255);
+                            overflow: hidden;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                            img{
+                                width:150px;
+                                height:150px;
+                            }
+                        }
+                   }
+               }
+           }
+        }
+        .tab_form{
+            // border: 1px solid rgb(207, 31, 154);
+            width: 70%;
+                // background-color: green;
+                .profile{
+                    .tabform1{
+                       .profile_col{
+                           display:flex;
+                           justify-content: space-between;
+                          input{
+                              width: 160px;
+                          
+                          }
+                          .col3{
+                            // background-color: blueviolet;
+                            width: 40px;
+                            cursor: pointer;
+                        }
+                        }
+                    }
+                }
+            
+        }    
+        
+    }
+    
+    #created{
+        display: none;
+        width:50%;
+        height: 500px;
+        background-color: cadetblue;
+        border: 1px solid white;
+    }
+    #joined{
+        display: none;
+        width:50%;
+        height: 500px;
+        background-color: coral;
 
-	.red {
-		color: #fff !important;
-		border-bottom: 1px solid white;
-	}
+    }
+    #forumrecord{
+        display: none;
+        width:50%;
+        height: 500px;
+        background-color: crimson;
+    }
+    #favorite{
+        display: none;
+        width:50%;
+        height: 500px;
+        background-color: darkolivegreen;
+    }
+  
 
-	#class1 {
-		width: 800px;
-		margin: 20px 200px 0 0;
-		form {
-			margin: 26 0 0 30px;
-			.mem_id_member,
-			.mem_account_member,
-			.mem_psw_member,
-			.mem_name_member,
-			.mem_tel_member,
-			.mem_email_member,
-			.mem_time_member{
-				line-height: 32px;
-			}
-		}
-		span {
-			display: inline;
-		}
-		.mem_id,
-		.mem_account,
-		.mem_psw,
-		.mem_name {
-			margin-left: 200px;
-			color: white;
-		}
-		.mem_tel,
-		.mem_email {
-			margin-left: 170px;
-		}
-		.mem_time {
-			margin-left: 140px;
-		}
-		.span2 {
-			float: right;
-			cursor: pointer;
-		}
-
-		p {
-			color: white;
-			display: inline;
-			margin: 10px;
-		}
-	}
-
-	.table1 {
-		padding-top: 20px;
-	}
-
-	#tour_table {
-		border: 1px solid white;
-	}
-
-	#tour_table,
-	#tour_table2 {
-		list-style: none;
-		color: white;
-		border: 1px solid white;
-		display: flex;
-		background-color: black;
-		width: 800px;
-		box-sizing: border-box;
-	}
-
-	#tour_table h1,
-	#tour_table2 h1 {
-		font-size: 1.5rem;
-	}
-
-	#tour_table h2,
-	#tour_table2 h2 {
-		font-size: 1.2rem;
-	}
-
-	#tour_table span,
-	#tour_table2 span {
-		font-size: 0.875rem;
-	}
-
-	#tour_table h1 span .btn-type5,
-	#tour_table2 h1 span .btn-type5 {
-		border: 1px solid red;
-		background-color: #d11c00;
-		padding: 4px 8px;
-		border-radius: 50px;
-		cursor: pointer;
-		color: white;
-	}
-
-	#tour_table h1 span .btn-type5:hover,
-	#tour_table2 h1 span .btn-type5:hover {
-		background-color: #e62204;
-	}
-
-	.spotimg_member {
-		width: 300px;
-	}
-	.spotimg_member2 {
-		width: 300px;
-		height: 100%;
-		object-fit: cover;
-	}
-	.spot_cotent {
-		padding: 0 10px;
-
-		h1 {
-			padding: 10px 0;
-		}
-		h2 {
-			padding-bottom: 10px;
-		}
-		.spotimg1,
-		.spotimg2,
-		.spotimg3 {
-			padding-bottom: 5px;
-		}
-	}
-	#icon_discuss{
-		padding-top: 110px;
-	}
-	#icon_discuss2 {
-		#espl_icon {
-			width: 110px;
-		}
-		#icon_discuss3 {
-			padding-left: 220px;
-		}
-		#love_icon {
-			width: 14px;
-		}
-		#dis_icon {
-			width: 14px;
-		}
-		#view_icon {
-			width: 14px;
-		}
-	}
-	.peoplenum {
-		width: 70px;
-	}
-	.progress {
-		width: 300px;
-	}
-
-	@media screen and (min-width: 1201px) and (max-width: 1250px) {
-		.membertop {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			.section1_member {
-				.menu {
-					margin-bottom: 50px;
-					form {
-						width: 200px;
-						margin: 0;
-					}
-				}
-			}
-			.section2_member {
-				.title_btn {
-					margin: 0 auto;
-					.button1 {
-						font-size: 1rem;
-					}
-				}
-			}
-		}
-	}
-
-	@media screen and (min-width: 1251px) and (max-width: 1900px) {
-		.membertop {
-			width: 100%;
-		}
-	}
 }
+
+	
+

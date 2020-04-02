@@ -105,6 +105,20 @@
   }
 }
 
+//張馨遊戲專用按鈕
+.btn-outline_g {
+  border: 1px solid $white;
+  border-radius: 100px;
+  transition: all .1s linear;
+  background-color: white;
+  &:hover {
+    border-color: $white;
+    cursor: pointer;
+  }
+
+}
+
+
 //============  討論區
 .btn-border3 {
   width: 145px;

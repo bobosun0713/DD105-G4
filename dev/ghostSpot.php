@@ -188,157 +188,156 @@ try{
 
             <!-- ================ HEADER ================ -->
             <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
-            <header id="topHeader">
-                <div id="navStatus">
-                    <div id="soundStatus">
-                        <img src="./img/icon/music_btn_off.svg" id="soundClick" />
-                        <p id="soundTxt">Sound On</p>
-                    </div>
-                    <div id="memStatus">
-                        <a href="">
-                            <img src="./img/icon/default_header.svg" />
-                        </a>
-                        <p><span id="memName"></span></p>
-                        <p><span id="login_btn">登入</span></p>
-                    </div>
-                </div>
-                <nav class="desktopHeader">
-                    <ul>
-                        <li class="@@link001-1">
-                            <a href="ghostIsland.php" class="title @@link001">
-                                前進鬼島
-                            </a>
-                        </li>
-                        <li class="@@link001-2">
-                            <a href="adventrue.html" class="title @@link002">
-                                尋鬼探險
-                            </a>
-                        </li>
-                        <li class="@@link001-3">
-                            <a href="leaderboard.php" class="title @@link003">
-                                靈異票選
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html">
-                                <img id="topLogo" src="./img/logo/LOGO_white.png" />
-                            </a>
-                        </li>
-                        <li class="@@link001-4">
-                            <a href="game.php" class="title @@link004">
-                                試膽測驗
-                            </a>
-                        </li>
-                        <li class="@@link001-5">
-                            <a href="forum.html" class="title @@link005">
-                                靈異討論
-                            </a>
-                        </li>
-                        <li class="@@link001-6">
-                            <a href="member.html" class="title @@link006">
-                                會員中心
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
 
-                <nav class="rwdHeader">
-                    <div class="rwdHeaderWrap">
-                        <a href="../index.html">
-                            <img id="topLogo2" src="./img/logo/LOGO_white.png" />
-                        </a>
+<header id="topHeader">
+    <div id="navStatus">
+        <div id="soundStatus">
+            <img src="./img/icon/music_btn_off.svg" id="soundClick" />
+            <p id="soundTxt">Sound On</p>
+        </div>
+        <div id="memStatus">
+            <p><img id="memName" src="" /></p>
+            <p><span id="login_btn">登入</span></p>
+        </div>
+    </div>
+    <nav class="desktopHeader">
+        <ul>
+            <li class="@@link001-1">
+                <a href="ghostIsland.php" class="title @@link001">
+                    前進鬼島
+                </a>
+            </li>
+            <li class="@@link001-2">
+                <a href="adventrue.html" class="title @@link002">
+                    尋鬼探險
+                </a>
+            </li>
+            <li class="@@link001-3">
+                <a href="leaderboard.php" class="title @@link003">
+                    靈異票選
+                </a>
+            </li>
+            <li>
+                <a href="ghostindex.html">
+                    <img id="topLogo" src="./img/logo/LOGO_white.png" />
+                </a>
+            </li>
+            <li class="@@link001-4">
+                <a href="game.php" class="title @@link004">
+                    試膽測驗
+                </a>
+            </li>
+            <li class="@@link001-5">
+                <a href="forum.html" class="title @@link005">
+                    靈異討論
+                </a>
+            </li>
+            <li class="@@link001-6">
+                <a href="member.html" class="title @@link006">
+                    會員中心
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-                        <button class="hamburger hamburger--elastic" id="hamburger" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </nav>
+    <nav class="rwdHeader">
+        <div class="rwdHeaderWrap">
+            <a href="ghostindex.html">
+                <img id="topLogo2" src="./img/logo/LOGO_white.png" />
+            </a>
 
-                <div id="rwdHamburgerMenu">
-                    <nav>
-                        <ul>
-                            <a href="../ghostIsland.html">
-                                <li class="title">前進鬼島</li>
-                            </a>
-                            <a href="../adventrue.html">
-                                <li class="title">尋鬼探險</li>
-                            </a>
-                            <a href="../leaderboard.html">
-                                <li class="title">靈異票選</li>
-                            </a>
-                            <a href="../game.html">
-                                <li class="title">試膽測驗</li>
-                            </a>
-                            <a href="../forum.html">
-                                <li class="title">靈異討論</li>
-                            </a>
-                            <a href="../member.html">
-                                <li class="title">會員中心</li>
-                            </a>
-                            <a>
-                                <!-- <li class="title" id="memName1"></li> -->
-                                <li class="title" id="login_btn1">登入</li>
-                            </a>
+            <button class="hamburger hamburger--elastic" id="hamburger" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
 
-                            <li id="hamburgerSound" class="title">Sound Off</li>
-                        </ul>
-                    </nav>
-                </div>
-                <div id="indexLogin">
-                    <section id="login_page1" style="display: none;">
-                        <div id="logincancel"></div>
-                        <div class="login_cover">
-                            <img src="./img/logo/LOGO_black.png" alt="" />
-                        </div>
-                        <form action="" method="POST">
-                            <p>
-                                <input type="text" id="mem_id" name="mem_id" placeholder="帳號" />
-                            </p>
-                            <p>
-                                <input type="password" id="mem_psw" name="mem_psw" placeholder="密碼" />
-                            </p>
-                        </form>
-                        <div id="loginbutton">登入</div>
-                        <div id="next_login">註冊會員</div>
-                    </section>
+    <div id="rwdHamburgerMenu">
+        <nav>
+            <ul>
+                <a href="ghostIsland.php">
+                    <li class="title">前進鬼島</li>
+                </a>
+                <a href="adventrue.html">
+                    <li class="title">尋鬼探險</li>
+                </a>
+                <a href="leaderboard.php">
+                    <li class="title">靈異票選</li>
+                </a>
+                <a href="game.php">
+                    <li class="title">試膽測驗</li>
+                </a>
+                <a href="forum.html">
+                    <li class="title">靈異討論</li>
+                </a>
+                <a href="member.html">
+                    <li class="title">會員中心</li>
+                </a>
+                <a>
+                    <!-- <li class="title" id="memName1"></li> -->
+                    <li class="title" id="login_btn1">登入</li>
+                </a>
 
-                    <section id="login_page2" style="display: none;">
-                        <div id="logincancel2"></div>
-                        <div class="login_cover">
-                            <img src="./img/login/registered-01 (1).png" alt="" />
-                        </div>
-                        <form action="" method="POST">
-                            <p>
-                                <label for="memid">會員帳號</label>
-                                <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
-                            </p>
-                            <p>
-                                <label for="mempwd">會員密碼</label>
-                                <input type="password" id="mempwd" name="mempwd" placeholder="4~20英文字母、數字" />
-                            </p>
-                            <p>
-                                <label for="mempwdcheck">確認密碼</label>
-                                <input type="password" id="mempwdcheck" name="mempwdcheck" placeholder="重新確認密碼" />
-                            </p>
-                            <p>
-                                <label for="memname">會員姓名</label>
-                                <input type="text" id="memname" name="memname" placeholder="姓名" />
-                            </p>
-                            <p>
-                                <label for="memcell">手機號碼</label>
-                                <input type="text" id="memcell" name="memcell" placeholder="09XX-XXX-XXX" />
-                            </p>
-                            <p>
-                                <label for="memail">電子信箱</label>
-                                <input type="mail" id="memail" name="memail" placeholder="輸入Email須包含{@和.}" />
-                            </p>
-                        </form>
-                        <div id="sure_btn">註冊會員</div>
-                    </section>
-                </div>
-            </header>
+                <li id="hamburgerSound" class="title">Sound Off</li>
+            </ul>
+        </nav>
+    </div>
+    <div id="indexLogin">
+        <section id="login_page1" style="display: none;">
+            <div id="logincancel"></div>
+            <div class="login_cover">
+                <img src="./img/logo/LOGO_black.png" alt="" />
+            </div>
+            <form action="" method="POST">
+                <p>
+                    <input type="text" id="mem_id" name="mem_id" placeholder="帳號" />
+                </p>
+                <p>
+                    <input type="password" id="mem_psw" name="mem_psw" placeholder="密碼" />
+                </p>
+            </form>
+            <div id="loginbutton">登入</div>
+            <div id="next_login">註冊會員</div>
+        </section>
+
+        <section id="login_page2" style="display: none;">
+            <div id="logincancel2"></div>
+            <div class="login_cover">
+                <img src="./img/login/registered-01 (1).png" alt="" />
+            </div>
+            <form action="" method="POST">
+                <p>
+                    <label for="memid">會員帳號</label>
+                    <input type="text" id="memid" name="memid" placeholder="4~20英文字母、數字" />
+                </p>
+                <p>
+                    <label for="mempwd">會員密碼</label>
+                    <input type="password" id="mempwd" name="mempwd" placeholder="4~20英文字母、數字" />
+                </p>
+                <p>
+                    <label for="mempwdcheck">確認密碼</label>
+                    <input type="password" id="mempwdcheck" name="mempwdcheck" placeholder="重新確認密碼" />
+                </p>
+                <p>
+                    <label for="memname">會員姓名</label>
+                    <input type="text" id="memname" name="memname" placeholder="姓名" />
+                </p>
+                <p>
+                    <label for="memcell">手機號碼</label>
+                    <input type="text" id="memcell" name="memcell" placeholder="09XX-XXX-XXX" />
+                </p>
+                <p>
+                    <label for="memail">電子信箱</label>
+                    <input type="mail" id="memail" name="memail" placeholder="輸入Email須包含{@和.}" />
+                </p>
+            </form>
+            <div id="sure_btn">註冊會員</div>
+        </section>
+    </div>
+</header>
+
             <!-- ================ HEADER ================ -->
 
 

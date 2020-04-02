@@ -115,10 +115,14 @@ try{
                     <button id="startbtn">開始遊戲</button>
                     <span class="hoverghost"></span>
                 </div>
-                <div class="gotoindex">
-                    <button id="gotoindex">回到首頁</button>
-                    <span class="hoverghost2"></span>
-                </div>
+                <a href="./ghostindex.html">
+                    <div class="gotoindex">
+                            <button id="gotoindex">
+                                回到首頁
+                            </button>
+                        <span class="hoverghost2"></span>
+                    </div>
+                </a>
                 <div class="quizimg"><img class="innerimg" src=""></div>
                 <div class="progressblock">
                     <p id="progress"></p>
@@ -138,8 +142,7 @@ try{
                     </div>
                     <div class="ghostgroup"><img src="./img/game/ghostgroup.png"></div>
                 </div>
-                <p id="question"></p>
-
+                <div id="question"></div>
                 <div id="resultheading"></div>
                 <div class="test_score_title">
                     膽量指數:
@@ -154,11 +157,11 @@ try{
                 </div>
                 <div class="buttons">
                       
-                    <button id="btn0" class="choice btn-outline" value="0">
+                    <button id="btn0" class="choice btn-outline_g" value="0">
                     </button>
-                    <button id="btn1" class="choice btn-outline" value="0">
+                    <button id="btn1" class="choice btn-outline_g" value="0">
                     </button>
-                    <button id="btn2" class="choice btn-outline" value="0">
+                    <button id="btn2" class="choice btn-outline_g" value="0">
                     </button>
 
                 </div>

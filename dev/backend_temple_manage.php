@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(isset($_SESSION["admin_authority"])){
+  $session_mem_auth = $_SESSION["admin_authority"];
+}
 
 try{
     require_once("./php/connect.php");
@@ -65,9 +69,9 @@ try{
             <li class="nav-item ">
                 <span id="admin_name">阿禎</span>
             </li>
-            <li class="nav-item mr-3">
-                /
+            <li class="nav-item mr-3" style="cursor: pointer;">
                 <span id="admin_status">登出</span>
+                <input type="hidden" id="admin_status_hidden" value="" />
             </li>
         </ul>
 
@@ -80,7 +84,7 @@ try{
             <nav class="sidebar-nav">
     <ul class="nav pt-2">
         <li class="nav-item">
-            <a class="nav-link" href="./backend.html">
+            <a class="nav-link" href="./backend_admin.html">
                 <i class="cil-cog m-2"></i>
                 管理員帳號
             </a>
@@ -163,13 +167,15 @@ try{
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
+                            
 
                             <!-- 功能內容 -->
                             <div class="card-body">
                             
                             <!-- 新增美食按鈕 -->
-                            <button class="btn btn-warning mr-1 m-3" id="create_new_temple" type="button">新增廟宇景點</button>
-
+                            <div class="card-header justify-content-end d-flex">
+                                <button class="btn btn-warning" id="create_new_temple" type="button">新增廟宇景點</button>
+                            </div>
                             <!-- 美食景點清單、修改 -->
                             <table class="table table-responsive-sm table-sm">
 
@@ -223,7 +229,7 @@ try{
                                         <button type="button" class="btn btn-dark manage_this_temple" >修改</button>
                                     </td>
                                     <td class="p-3">
-                                        <button type="button" class="btn btn-danger delete_this_temple">刪除</button>
+                                        <button type="button" class="btn btn-danger delete_this_temple<?php if($session_mem_auth != 0){ echo "disabled";}?>"<?php if($session_mem_auth != 0){ echo "disabled";}?>>刪除</button>
                                     </td>
                                 </tr>
                                 <?php ;}?>

@@ -10,7 +10,7 @@
   // height:1300px;
   // overflow: hidden;
   overflow-y: hidden;
-  height: 100vh;
+  height: 110vh;
   
 
   .grid {
@@ -363,26 +363,30 @@
         }
         
       }
-      .gotoindex{
-        @extend .startbtn;
-        #gotoindex{
-          @extend #startbtn;
+      a{
+        .gotoindex{
+          @extend .startbtn;
           
-        } 
-        .hoverghost2{
-          display: none;
-          background: url("../img/game/R_ghost_small.png") no-repeat;
-          opacity: 0.8;
-          position: absolute;
-          top:0px;
-          right:0px;
-          width: 55px;
-          height: 100px;
-          animation: updown 1.5s infinite ease-in-out alternate-reverse;
+            #gotoindex{
+              @extend #startbtn;
+              
+            } 
+          
+          
+          .hoverghost2{
+            display: none;
+            background: url("../img/game/R_ghost_small.png") no-repeat;
+            opacity: 0.8;
+            position: absolute;
+            top:0px;
+            right:0px;
+            width: 55px;
+            height: 100px;
+            animation: updown 1.5s infinite ease-in-out alternate-reverse;
+          }
+        
         }
-      
       }
-
       @keyframes updown {
         0% {
           transform: translateY(1px);
@@ -532,7 +536,7 @@
 
       #question {
       
-        font-size: 24px;
+        font-size: 22px;
         font-weight:400;
         color: white;
       
@@ -609,17 +613,18 @@
       .buttons {
         margin: 30px auto; 
         display: none; 
-        .btn-outline{
+        .btn-outline_g{
         
           font-size: 1.2rem;
           width: 95%;
           height:auto;
-          margin: 10px auto;
+          margin: 8px auto;
           padding: 12px 24px;
           line-height:24px;
           position: relative;
           color:black;
           outline:none;
+          background-color: white;
         
         }
         #btn0{
