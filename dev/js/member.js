@@ -32,7 +32,7 @@ function showtabform() {
 //點選tab form的title換內容
 function showContent(evt, idName) {
     var i, x, tablinks;
-    console.log("this1")
+
     //影藏tab內容
     x = document.getElementsByClassName("tabcontent");
     for (i = 0; i < x.length; i++) {
@@ -52,8 +52,6 @@ function showContent(evt, idName) {
 //圖片預覽-------------------------大頭貼.onchange
 function profileimg_onchange() {
     document.getElementById("upFile").onchange = function (e) {
-        console.log("點到了拉")
-
         let file = e.target.files[0];
         let reader = new FileReader();
         reader.onload = function (e) {
@@ -74,51 +72,63 @@ function showMemberProfileDB(jsonStr) {
     for (let i = 0; i < memberDB.length; i++) {
         html += `<div class="profile_col mem_id_member">
             <div class="tabtitle">會員編號:</div>
-            <input type="email" class="mem_id" placeholder="" id="memId" value="${memberDB[i].mem_no}">
+            <input type="email" class="mem_id" placeholder="" id="memId" value="${memberDB[i].mem_no}" style="display:none">
+            <div>${memberDB[i].mem_no}</div>
             <div class="col3"></div>
             </div>
             <hr size="0.5px" width="100%">
             <div class="profile_col mem_account_member">
                 <div class="tabtitle">會員帳號:</div>
-                <input type="text" class="mem_account" placeholder="" id="memAccount" value="${memberDB[i].mem_id}">
+                <input type="text" class="mem_account" placeholder="" id="memAccount" value="${memberDB[i].mem_id}" style="display:none">
+                <div>${memberDB[i].mem_id}</div>
                 <div class="col3"></div>
             </div>
             <hr size="0.5px" width="100%">
             <div class="profile_col mem_psw_member">
                 <div class="tabtitle">會員密碼:</div>
-                <input type="text" class="mem_psw" placeholder="" id="memPsw" value="${memberDB[i].mem_psw}">
+                <input type="text" class="mem_psw" placeholder="" id="memPsw" value="${memberDB[i].mem_psw}" style="display:none">
+                <div class="modify_content" style="align-self: flex-start">${memberDB[i].mem_psw}</div>
                 <div class="col3"><img src="./img/member/edit1.png"></div>
             </div>
             <hr size="0.5px" width="100%">
             <div class="profile_col mem_name_member">
                 <div class="tabtitle">會員姓名:</div>
-                <input type="text" class="mem_name" placeholder="" id="memName" value="${memberDB[i].mem_name}">
+                <input type="text" class="mem_name" placeholder="" id="memName" value="${memberDB[i].mem_name}" style="display:none">
+                <div class="modify_content">${memberDB[i].mem_name}</div>
                 <div class="col3"><img src="./img/member/edit1.png"></div>
             </div>
             <hr size="0.5px" width="100%">
             <div class="profile_col mem_tel_member">
                 <div class="tabtitle">行動電話:</div>
-                <input type="text" class="mem_tel" placeholder="" id="memTel" value="${memberDB[i].mem_tel}">
+                <input type="text" class="mem_tel" placeholder="" id="memTel" value="${memberDB[i].mem_tel}" style="display:none">
+                <div class="modify_content">${memberDB[i].mem_tel}</div>
                 <div class="col3"><img src="./img/member/edit1.png"></div>
 
             </div>
             <hr size="0.5px" width="100%">
             <div class="profile_col mem_email_member">
                 <div>電子信箱:</div>
-                <input type="email" class="mem_email" placeholder="" id="memEmail" value="${memberDB[i].mem_mail}">
+                <input type="email" class="mem_email" placeholder="" id="memEmail" value="${memberDB[i].mem_mail}" style="display:none">
+                <div class="modify_content">${memberDB[i].mem_mail}</div>
                 <div class="col3"><img src="./img/member/edit1.png"></div>
             </div>
-            <hr size="0.5px" width="100%">`;
+            <hr size="0.5px" width="100%">
+            <div class="profile_col mem_submit">
+                <div>&emsp;&emsp;&emsp;&emsp;</div>
+                
+                <div class="col3"></div>
+                <input type="button" value="儲存" id="submit_btn_updateMemInfo" class="update_btn">
+            </div>`;
     }
     for (let i = 0; i < memberDB.length; i++) {
         html_2 += `<img id="imgPreview" src="./img/login/${memberDB[i].mem_img}" width="80">`;
     }
 
     document.querySelector("#show_memberProfileDB").innerHTML = html;
-    let mem_img = document.querySelector(".img_block").innerHTML = html_2;
+    document.querySelector(".img_block").innerHTML = html_2;
 
-    //   //html撈到db資料後註冊updatebtn事件
-    //   Dom_GameDB_updatebtn();
+    //html撈到db資料後註冊updatebtn事件
+    Dom_memberDB_updatebtn();
     //   //html撈到db資料後註冊deletebtn事件
     //   Dom_GameDB_deletebtn();
 
@@ -142,3 +152,56 @@ function getMemberProfileDB(mem_no) {
 }
 
 
+function Dom_memberDB_updatebtn() {
+    //把影藏input欄位顯示 原modifycontent影藏
+    let modify_icon = document.querySelectorAll(".col3 img");
+    for (i = 0; i < modify_icon.length; i++) {
+        modify_icon[i].addEventListener("click", function () {
+            this.parentNode.parentNode.querySelector("input").style.display = "block";
+            this.parentNode.parentNode.querySelector("input").nextElementSibling.style.display = "none";
+        }, false)
+    }
+
+    let submit_btn_updateMemInfo = document.querySelector("#submit_btn_updateMemInfo");
+    submit_btn_updateMemInfo.onclick = getMemberDB_value;
+}
+
+//把input value值塞在變數裡面//JASON送出
+function getMemberDB_value(e) {
+    let inputs = e.target.parentNode.parentNode.querySelectorAll(".profile_col input")
+    let get_mem_no = inputs[0].value;
+    let get_mem_id = inputs[1].value;
+    let get_mem_psw = inputs[2].value;
+    let get_mem_name = inputs[3].value;
+    let get_mem_tel = inputs[4].value;
+    let get_mem_mail = inputs[5].value;
+    updateMemberDB(get_mem_no, get_mem_id, get_mem_psw, get_mem_name, get_mem_tel, get_mem_mail);
+}
+function updateMemberDB(get_mem_no, get_mem_id, get_mem_psw, get_mem_name, get_mem_tel, get_mem_mail) {
+    console.log(get_mem_no, get_mem_id, get_mem_psw, get_mem_name, get_mem_tel, get_mem_mail)
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            // getGameDB();
+            alert("修改會員個人資料成功");
+            // show_updategameDB(xhr.responseText);
+        } else {
+            alert(xhr.status);
+        }
+    }
+
+    var url = "./php/updateMemberDB_JASON.php";
+
+    xhr.open("Post", url, true);
+    let member_info_formData_update = new FormData();
+    member_info_formData_update.append('mem_no', get_mem_no);
+    member_info_formData_update.append('mem_id', get_mem_id);
+    member_info_formData_update.append('mem_psw', get_mem_psw);
+    member_info_formData_update.append('mem_name', get_mem_name);
+    member_info_formData_update.append('mem_tel', get_mem_tel);
+    member_info_formData_update.append('mem_mail', get_mem_mail);
+    // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+    //送出資料
+    xhr.send(member_info_formData_update);
+}

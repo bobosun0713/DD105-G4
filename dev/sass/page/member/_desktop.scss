@@ -73,7 +73,12 @@
                             width:150px;
                             height:150px;
                             border-radius: 50%;
-                            background-color: rgb(0, 183, 255);
+                            // background-image: url("../img/member/default_mem_img.png");
+                            // background-repeat: no-repeat;
+                            // background-size:120%;
+                            // background-position-x:-10px;
+                            // background-position-y:-10px;
+                            // background-size: ;
                             overflow: hidden;
                             &:hover{
                                 cursor: pointer;
@@ -100,11 +105,14 @@
                               width: 160px;
                           
                           }
-                          .col3{
-                            // background-color: blueviolet;
-                            width: 40px;
-                            cursor: pointer;
-                        }
+                            .col3{
+                                // background-color: blueviolet;
+                                width: 40px;
+                                cursor: pointer;
+                            } 
+                            .update_btn{
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
