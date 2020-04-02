@@ -43,7 +43,7 @@ $(document).ready(function() {
                       </label>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" no="${data[i].forum_report_name}" psn="${data[i].forum_report_no}">刪除</button>
+                    <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" no="${data[i].forum_report_name}" psn="${data[i].forum_report_no}">刪除</button>                      
                     </td>
                     </tr>
                     `
@@ -51,49 +51,55 @@ $(document).ready(function() {
             }
             $(".forum_report").empty()
             $(".forum_report").append(html)
-            // 回傳給文章資料庫
-            $(".switch-input").click(function() {
-                var status = $(this).attr("psn")
-                // alert(status)
-                $.ajax({
-                    url: "./php/back_forum_status.php",
-                    type: "POST",
-                    data: {
-                        forum_no: status,
-                    },
-                    success: function(data) {
-                        alert("修改成功")
-                        location.reload()
-                    },
-                    error: function() {
-                        alert("修改失敗")
-                    },
-                })
-            })
+            // 文章上下架
+            forumstatus()
             //當按下刪除並刪除檢舉
-            $(".btn").click(function() {
-                var replay = $(this).attr("psn")
-                var no_name = $(this).attr("no")
-                alert(no_name)
-                $.ajax({
-                    url: "./php/back_forum_delete.php",
-                    type: "POST",
-                    data: {
-                        forum_report_no: replay,
-                        forum_report_name: no_name,
-                    },
-                    success: function(data) {
-                        alert("刪除成功")
-                        location.reload()
-                    },
-                    error: function() {
-                        alert("修改失敗")
-                    },
-                })
-            })
+            forumdelete()
         },
         error: function(xhr) {
             alert("資料讀取失敗")
         },
     })
 })
+// ======== 呼叫函式
+function forumstatus() {
+    $(".switch-input").click(function() {
+        var status = $(this).attr("psn")
+        // alert(status)
+        $.ajax({
+            url: "./php/back_forum_status.php",
+            type: "POST",
+            data: {
+                forum_no: status,
+            },
+            success: function(data) {
+                alert("修改成功")
+            },
+            error: function() {
+                alert("修改失敗")
+            },
+        })
+    })
+}
+function forumdelete() {
+    $(".btn").click(function() {
+        var replay = $(this).attr("psn")
+        var no_name = $(this).attr("no")
+        alert(no_name)
+        $.ajax({
+            url: "./php/back_forum_delete.php",
+            type: "POST",
+            data: {
+                forum_report_no: replay,
+                forum_report_name: no_name,
+            },
+            success: function(data) {
+                alert("刪除成功")
+                location.reload()
+            },
+            error: function() {
+                alert("修改失敗")
+            },
+        })
+    })
+}
