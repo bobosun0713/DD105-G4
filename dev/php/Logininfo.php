@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if( isset($_SESSION["mem_id"])){//已登入
-	$member = ["mem_no"=>$_SESSION["mem_no"], "mem_id"=>$_SESSION["mem_id"], "mem_name"=>$_SESSION["mem_name"], "mem_mail"=>$_SESSION["mem_mail"], "mem_img"=>$_SESSION["mem_img"]];
+	$member = ["mem_no"=>$_SESSION["mem_no"], "mem_id"=>$_SESSION["mem_id"], "mem_name"=>$_SESSION["mem_name"], "mem_mail"=>$_SESSION["mem_mail"], "mem_img"=>$_SESSION["mem_img"],"mem_status"=>$_SESSION["mem_status"]];
 	echo json_encode($member);
 }else{
 	echo "{}";

@@ -5,8 +5,11 @@ $(document).ready(function() {
     //留言送出
     msg_chat()
     // // 開啟文章
-    // opencard()
+    opencard()
+    // 檢舉開關
+    report_article()
 
+    // 發表文章=發表人
     $("#opener").click(function() {
         $("#forum_chatbox").fadeIn()
         // 撈頭像回來
@@ -31,7 +34,6 @@ $(document).ready(function() {
             $("#forum_chatbox").fadeOut()
         })
     })
-    // 發表文章
     $(".getchat").click(function() {
         var images = document.getElementById("images")
         var formData = new FormData()
@@ -60,7 +62,6 @@ $(document).ready(function() {
             })
         }
     })
-
     //============ 多重篩選區
     $("#area_selcet,#articel_Sort").change(function() {
         filterALL()
@@ -80,7 +81,7 @@ $(document).ready(function() {
             success: function(data) {
                 let html = ""
                 for (let i = 0; i < data.length; i++) {
-                    html += `<div class="forum_filter_articlec content_btn" psn="${data[i].forum_no}";>
+                    html += `<div class="forum_filter_articlec content_btn wow zoomIn" psn="${data[i].forum_no}";>
                                     <div class="art_img" >
                                         <img src="./php/images/${data[i].images}"?>
                                     </div>
@@ -116,7 +117,6 @@ $(document).ready(function() {
                 location.reload
                 $(".forum_filter_articlec").remove() //先清空網頁上卡片 再重抓！
                 $("#forum_space").append(html)
-                opencard()
             },
             error: function() {
                 alert("失敗")
@@ -141,7 +141,7 @@ function serchcard() {
             data.sort(card_sort)
             let html = ""
             for (i = 0; i < data.length; i++) {
-                html += `<div class="forum_filter_articlec content_btn" psn="${data[i].forum_no}";>
+                html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
                                 <div class="art_img" >
                                     <img src="./php/images/${data[i].images}"?>
                                 </div>
@@ -174,15 +174,16 @@ function serchcard() {
                                 </div>
                             </div>`
             }
+
             $(".forum_filter_articlec").remove() //先清空網頁上卡片 再重抓！
             $("#forum_space").append(html)
-            opencard()
         },
     })
 }
 // 開啟文章內容燈箱的function
 function opencard() {
-    $(".content_btn").click(function() {
+    $(document).on("click", ".content_btn", function() {
+        // $(".content_btn").click(function() {
         $("#forum_contentbox").fadeIn()
         //更新瀏覽次數
         var pns_no = $(this).attr("psn")
@@ -190,6 +191,7 @@ function opencard() {
             url: "./php/forum_article.php",
             type: "post",
             dataType: "json",
+            async: false,
             data: { forum_no: pns_no },
             success: function(data) {
                 let content = ""
@@ -225,7 +227,7 @@ function opencard() {
                                             <input type="hidden" class="chat" value="${data.forum_chat}">
                                         </div>
                                     </div>
-                                    <div class="art_report report_btn" onclick="report_article()">
+                                    <div class="art_report report_btn" >
                                         <img src="./img/forum/warning_black.svg" alt="" />
                                     </div>
                                 </div>
@@ -236,9 +238,6 @@ function opencard() {
                 forum_msg()
                 // 抓取瀏覽數
                 view()
-                // 檢舉開啟關閉
-                // report_article()
-
                 // 關閉燈箱 並清掉內容
                 $(".content_out").click(function() {
                     $("#forum_contentbox").fadeOut()
@@ -248,7 +247,6 @@ function opencard() {
         })
     })
 }
-
 // 留言送出function
 function msg_chat() {
     $("#msg_send").click(function() {
@@ -304,7 +302,7 @@ function forum_msg() {
                         </div>
                         <div class="msg_p">
                             <p>
-                                ${data[i].forum_msg}
+                                <span style="color:gray">説：</span>${data[i].forum_msg}
                             </p>
                         </div>
                     </div>`
@@ -328,7 +326,7 @@ function view() {
             forum_view: view,
         },
         success: function(data) {
-            serchcard()
+            // serchcard()
         },
     })
 }
@@ -346,7 +344,7 @@ function chat() {
             forum_chat: chats,
         },
         success: function(data) {
-            serchcard()
+            // serchcard()
         },
     })
 }
@@ -364,7 +362,7 @@ function filterALL() {
                 let html = ""
                 for (i = 0; i < data.length; i++) {
                     if (data[i].forum_area == area) {
-                        html += `<div class="forum_filter_articlec content_btn" psn="${data[i].forum_no}">
+                        html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
                                                 <div class="art_img">
                                                     <img src="./php/images/${data[i].images}"?>
                                                 </div>
@@ -399,7 +397,7 @@ function filterALL() {
                                             </div>`
                         $(".forum_filter_articlec").remove() //先清空網頁上卡片 再重抓！
                         $("#forum_space").append(html)
-                        opencard()
+                        // opencard()
                     }
                 }
                 if (area && Sort == "最新發佈") {
@@ -410,7 +408,7 @@ function filterALL() {
                     let html = ""
                     for (i = 0; i < data.length; i++) {
                         if (data[i].forum_area == area) {
-                            html += `<div class="forum_filter_articlec content_btn" psn="${data[i].forum_no}">
+                            html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
                                                 <div class="art_img">
                                                     <img src="./php/images/${data[i].images}"?>
                                                 </div>
@@ -445,7 +443,7 @@ function filterALL() {
                                             </div>`
                             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
                             $("#forum_space").append(html)
-                            opencard()
+                            // opencard()
                         }
                     }
                 }
@@ -457,7 +455,7 @@ function filterALL() {
                     let html = ""
                     for (i = 0; i < data.length; i++) {
                         if (data[i].forum_area == area) {
-                            html += `<div class="forum_filter_articlec content_btn" psn="${data[i].forum_no}">
+                            html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
                                                 <div class="art_img">
                                                     <img src="./php/images/${data[i].images}"?>
                                                 </div>
@@ -492,7 +490,7 @@ function filterALL() {
                                             </div>`
                             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
                             $("#forum_space").append(html)
-                            opencard()
+                            // opencard()
                         }
                     }
                 }
@@ -504,7 +502,7 @@ function filterALL() {
                     let html = ""
                     for (i = 0; i < data.length; i++) {
                         if (data[i].forum_area == area) {
-                            html += `<div class="forum_filter_articlec content_btn" psn="${data[i].forum_no}">
+                            html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
                                                 <div class="art_img">
                                                     <img src="./php/images/${data[i].images}"?>
                                                 </div>
@@ -539,51 +537,148 @@ function filterALL() {
                                             </div>`
                             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
                             $("#forum_space").append(html)
-                            opencard()
+                            // opencard()
                         }
                     }
                 }
-            } else if (area == "地區") {
-                let html = ""
-                for (i = 0; i < data.length; i++) {
-                    html += `<div class="forum_filter_articlec content_btn" psn="${data[i].forum_no}">
-                                                <div class="art_img">
-                                                    <img src="./php/images/${data[i].images}"?>
-                                                </div>
-                                                <div class="art_con">
-                                                    <div class="art_title">
-                                                        <img src="./img/login/${data[i].mem_img}" alt="" />
-                                                        <h1>
-                                                            ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
-                                                        </h1>
-                                                    </div>
-
-                                                    <div class="art_p">
-                                                        <h1>${data[i].forum_title}</h1>
-                                                        <p>${data[i].forum_content}</p>
-                                                    </div>
-                                                    <div class="art_info">
-                                                        <div class="btn-border">${data[i].forum_area}</div>
-                                                        <div class="art_path">
-                                                            <div class="art_icon">
-                                                                <img src="img/icon/eye.png" />
-                                                                <span>${data[i].forum_view}</span>
-                                                                <input type="hidden" id="forum_view" value="">
-                                                            </div>
-                                                            <div class="art_icon">
-                                                                <img src="img/icon/chat.svg" />
-                                                                <span>${data[i].forum_chat}</span>
-                                                                <input type="hidden" id="forum_chat" value="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>`
-                    $("#forum_space").empty() //先清空網頁上卡片 再重抓！
-                    $("#forum_space").append(html)
-                    opencard()
-                }
             }
+            // else if (Sort) {
+            //     if (Sort == "最新發佈") {
+            //         function card_sort(a, b) {
+            //             return b.forum_no - a.forum_no
+            //         }
+            //         data.sort(card_sort)
+            //         let html = ""
+            //         for (i = 0; i < data.length; i++) {
+            //             html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
+            //                                     <div class="art_img">
+            //                                         <img src="./php/images/${data[i].images}"?>
+            //                                     </div>
+            //                                     <div class="art_con">
+            //                                         <div class="art_title">
+            //                                             <img src="./img/login/${data[i].mem_img}" alt="" />
+            //                                             <h1>
+            //                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
+            //                                             </h1>
+            //                                         </div>
+
+            //                                         <div class="art_p">
+            //                                             <h1>${data[i].forum_title}</h1>
+            //                                             <p>${data[i].forum_content}</p>
+            //                                         </div>
+            //                                         <div class="art_info">
+            //                                             <div class="btn-border">${data[i].forum_area}</div>
+            //                                             <div class="art_path">
+            //                                                 <div class="art_icon">
+            //                                                     <img src="img/icon/eye.png" />
+            //                                                     <span>${data[i].forum_view}</span>
+            //                                                     <input type="hidden" id="forum_view" value="">
+            //                                                 </div>
+            //                                                 <div class="art_icon">
+            //                                                     <img src="img/icon/chat.svg" />
+            //                                                     <span>${data[i].forum_chat}</span>
+            //                                                     <input type="hidden" id="forum_chat" value="">
+            //                                                 </div>
+            //                                             </div>
+            //                                         </div>
+            //                                     </div>
+            //                                 </div>`
+            //             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
+            //             $("#forum_space").append(html)
+            //             // opencard()
+            //         }
+            //     }
+            //     if (Sort == "瀏覽最多") {
+            //         function card_sort(a, b) {
+            //             return b.forum_view - a.forum_view
+            //         }
+            //         data.sort(card_sort)
+            //         let html = ""
+            //         for (i = 0; i < data.length; i++) {
+            //             html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
+            //                                     <div class="art_img">
+            //                                         <img src="./php/images/${data[i].images}"?>
+            //                                     </div>
+            //                                     <div class="art_con">
+            //                                         <div class="art_title">
+            //                                             <img src="./img/login/${data[i].mem_img}" alt="" />
+            //                                             <h1>
+            //                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
+            //                                             </h1>
+            //                                         </div>
+
+            //                                         <div class="art_p">
+            //                                             <h1>${data[i].forum_title}</h1>
+            //                                             <p>${data[i].forum_content}</p>
+            //                                         </div>
+            //                                         <div class="art_info">
+            //                                             <div class="btn-border">${data[i].forum_area}</div>
+            //                                             <div class="art_path">
+            //                                                 <div class="art_icon">
+            //                                                     <img src="img/icon/eye.png" />
+            //                                                     <span>${data[i].forum_view}</span>
+            //                                                     <input type="hidden" id="forum_view" value="">
+            //                                                 </div>
+            //                                                 <div class="art_icon">
+            //                                                     <img src="img/icon/chat.svg" />
+            //                                                     <span>${data[i].forum_chat}</span>
+            //                                                     <input type="hidden" id="forum_chat" value="">
+            //                                                 </div>
+            //                                             </div>
+            //                                         </div>
+            //                                     </div>
+            //                                 </div>`
+            //             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
+            //             $("#forum_space").append(html)
+            //             // opencard()
+            //         }
+            //     }
+            //     if (Sort == "回復最多") {
+            //         function card_sort(a, b) {
+            //             return b.forum_chat - a.forum_chat
+            //         }
+            //         data.sort(card_sort)
+            //         let html = ""
+            //         for (i = 0; i < data.length; i++) {
+            //             html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
+            //                                     <div class="art_img">
+            //                                         <img src="./php/images/${data[i].images}"?>
+            //                                     </div>
+            //                                     <div class="art_con">
+            //                                         <div class="art_title">
+            //                                             <img src="./img/login/${data[i].mem_img}" alt="" />
+            //                                             <h1>
+            //                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
+            //                                             </h1>
+            //                                         </div>
+
+            //                                         <div class="art_p">
+            //                                             <h1>${data[i].forum_title}</h1>
+            //                                             <p>${data[i].forum_content}</p>
+            //                                         </div>
+            //                                         <div class="art_info">
+            //                                             <div class="btn-border">${data[i].forum_area}</div>
+            //                                             <div class="art_path">
+            //                                                 <div class="art_icon">
+            //                                                     <img src="img/icon/eye.png" />
+            //                                                     <span>${data[i].forum_view}</span>
+            //                                                     <input type="hidden" id="forum_view" value="">
+            //                                                 </div>
+            //                                                 <div class="art_icon">
+            //                                                     <img src="img/icon/chat.svg" />
+            //                                                     <span>${data[i].forum_chat}</span>
+            //                                                     <input type="hidden" id="forum_chat" value="">
+            //                                                 </div>
+            //                                             </div>
+            //                                         </div>
+            //                                     </div>
+            //                                 </div>`
+            //             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
+            //             $("#forum_space").append(html)
+            //             // opencard()
+            //         }
+            //     }
+            // }
         },
     })
 }
@@ -591,7 +686,8 @@ function filterALL() {
 // 檢舉燈箱
 function report_article() {
     // 檢舉開啟關閉
-    $(".report_btn").click(function() {
+    $(document).on("click", ".report_btn", function() {
+        // $(".report_btn").click(function() {
         $("#forum_report").css("display", "block")
         $("#forum_report_cance").click(function() {
             $("#forum_report").css("display", "none")
@@ -608,13 +704,15 @@ function report_article() {
         $.ajax({
             url: "./php/forum_report.php",
             type: "post",
+            async: false,
             data: {
                 forum_no: report_no,
                 forum_report_reason: result,
             },
             success: function(data) {
-                // alert("舉報成功")
-                // location.reload()
+                alert("舉報成功")
+                $("#forum_report").css("display", "none")
+                location.reload()
             },
             error: function(data) {
                 alert("舉報失敗")
