@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head-->
+    @@include('layout/backend/head.html')
+    <title>鬼島後台</title>
+    <script src="./js/backend/admin_manage.js"></script>
+
+
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+        
+        <!-- =================== top_header =================== -->
+        @@include('layout/backend/top_header.html')
+        <!-- =================== top_header =================== -->
+
+        <div class="app-body">
+            <div class="sidebar">
+
+                <!-- =================== sidebar menu =================== -->
+                @@include('layout/backend/sidebar_nav.html')
+                <!-- =================== sidebar menu =================== -->
+
+            </div>
+            <main class="main">
+
+                <!-- =================== Breadcrumb =================== -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="./index.html">
+                            <i class="cil-home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">後台管理</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        美食景點管理
+                    </li>
+                </ol>
+                <!-- =================== Breadcrumb =================== -->
+
+                <div class="container-fluid">
+
+                    <!-- =================== 中間內容 =================== -->
+                    @@include('layout/backend/content_admin.html')
+                    <!-- =================== 中間內容 =================== -->
+
+                </div>
+
+            </main>
+            <aside class="aside-menu"></aside>
+        </div>
+        @@include('layout/backend/footer.html')
+    </body>
+
+    
+</html>
