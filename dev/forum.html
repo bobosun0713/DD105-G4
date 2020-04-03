@@ -4,6 +4,7 @@
         @@include('layout/head.html')
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
         <title>討論區</title>
+        <style></style>
     </head>
     <body>
         <!-- 滑鼠鬼 -->
@@ -13,14 +14,7 @@
             <div class="chatbox">
                 <h2>【發表文章】</h2>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="chatbox_user">
-                        <!-- <div class="user_path">
-                            <img src="./img/icon/deCfault_header.png" alt="" />
-                        </div>
-                        <div class="user_name">
-                            非洲酋長
-                        </div> -->
-                    </div>
+                    <div class="chatbox_user"></div>
                     <div class="user_select">
                         <select name="forum_area" id="forum_area">
                             <option value="北部">北部</option>
@@ -115,12 +109,26 @@
             <!-- footer -->
             @@include('layout/footer.html')
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
         <script src="js/wow.js"></script>
         <script src="./js/forum.js"></script>
         <script>
+            //textillate
+            $(".bannerText").textillate({
+                in: {
+                    effect: "fadeInLeftBig",
+                    delayScale: 8,
+                },
+                out: {
+                    effect: "hinge",
+                    delayScale: 10,
+                },
+                loop: true,
+            })
+            // wow.js
             new WOW().init()
-        </script>
-        <script>
+
             //判斷會員登入
             function checkLoginStatus() {
                 var xhr = new XMLHttpRequest()

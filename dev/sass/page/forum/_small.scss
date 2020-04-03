@@ -13,6 +13,12 @@
             }
             // 篩選
             .forum_filter {
+                .serch {
+                    width: 100px;
+                    height: 45px;
+                    line-height: 40px;
+                    font-size: 1rem;
+                }
                 select {
                     width: 105px;
                     height: 45px;
@@ -30,7 +36,7 @@
                         h1 {
                             font-size: 1.125rem;
                             span {
-                                font-size: 0.875rem;
+                                font-size: 0.8rem;
                             }
                         }
                     }
@@ -70,6 +76,10 @@
         .contentbox {
             width: 100%;
             padding: 15px;
+            .user_loc {
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
 
             .chatbox_user {
                 padding: 15px 0;

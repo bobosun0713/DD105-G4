@@ -1,123 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        @@include('layout/head.html')
+        <!-- 視差滑動 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
-<head>
-
-    @@include('layout/head.html')
-    <!-- 視差滑動 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-
-    <title>首頁</title>
-</head>
-
-<body>
-    @@include('layout/component/mouse_ghost.html')
-    <div class="wrapper">
-        <div id="ghostIndexBG">
-            <!-- 霧氣 -->
-            @@include('layout/component/indexsmoke.html')
-            @@include('layout/header.html')
-            <section id="indexSection1">
-
-                <div class="parallaxContainer">
-
-                    <ul id="scene">
-
-                        <li class="layer" data-depth="1">
-                            <div class="text-anim ">
-                                <span>探</span>
-                                <span>索</span>
-                                <span>未</span>
-                                <span>知</span>
-                                <span>的</span>
-                                <span> </span>
-                                <span>鬼</span>
-                                <span>島</span>
-                            </div>
-                        </li>
-
-                        <li class="layer" data-depth="1">
-                            <img src="./img/index/g8.png" class="G8" />
-                        </li>
-
-                        <li class="layer" data-depth="0.9">
-                            <img src="./img/index/g7.png" class="G7" />
-                        </li>
-
-                        <li class="layer" data-depth="0.7">
-                            <img src="./img/index/g6.png" class="G6" />
-                        </li>
-
-                        <li class="layer" data-depth="0.6">
-                            <img src="./img/index/g4.png" class="G4" />
-                        </li>
-
-                        <li class="layer" data-depth="0.8">
-                            <img src="./img/index/g5.png" class="G5" />
-                        </li>
-
-                        <li class="layer" data-depth="0.5">
-                            <img src="./img/index/g3.png" class="G3" />
-                        </li>
-
-                        <li class="layer" data-depth="0.4">
-                            <img src="./img/index/g2.png" class="G2" />
-                        </li>
-
-                        <li class="layer" data-depth="0.2">
-                            <img src="./img/index/g1.png" class="G1" />
-                        </li>
-
-                        <li class="layer" data-depth="0.1">
-                            <img src="./img/index/g9.png" class="G9" />
-                        </li>
-                    </ul>
+        <title>首頁</title>
+    </head>
+    <body>
+        @@include('layout/component/mouse_ghost.html')
+        <div class="wrapper">
+            <!-- 文章 燈箱 -->
+            <div id="forum_contentbox">
+                <div class="content_out"></div>
+                <div class="chat_msg">
+                    <form action="" method="post" onsubmit="return false" enctype="multipart/form-data">
+                        <input type="text" id="msg_chat" name="msg_chat" placeholder="回應 ....." />
+                        <input type="submit" id="msg_send" name="msg_send" value="送出" />
+                    </form>
                 </div>
-
-                <div class="route1">
-                    <img src="./img/index/route1.png" />
-                </div>
-            </section>
-
-            <!-- 第二頻 -->
-            <section id="indexSection2">
-                <div class="indexTitleZone1">
-                    <h1 class="title">靈異景點</h1>
-                    <h1 class="title2 title">TOP3</h1>
-                    <img src="./img/index/spiderweb01.png" />
-                </div>
-
-                <div class="mapZone">
-                    <img src="./img/index/map.png" />
-                    <div class="mapWidth">
-                        <div class="loc1">
-                            <img src="./img/index/top1.png" class="rank" id="mapRank1" />
-                            <p class="location" id="loc1"></p>
-                            <img src="./img/map/spell1.png" id="spell1" class="spellSize" />
-                        </div>
-
-                        <div class="loc2">
-                            <img src="./img/index/top2.png" class="rank" id="mapRank2" />
-                            <p class="location" id="loc2"></p>
-                            <img src="./img/map/spell10.png" id="spell2" class="spellSize" />
-                        </div>
-
-                        <div class="loc3">
-                            <img src="./img/index/top3.png" class="rank" id="mapRank3" />
-                            <p class="location" id="loc3"></p>
-                            <img src="./img/map/spell8.png" id="spell3" class="spellSize" />
-                        </div>
-
-                        <div class="loader loader1" data-text="loaderloader"></div>
-                        <div class="loader loader2" data-text="loaderloader"></div>
-                        <div class="loader loader3" data-text="loaderloader"></div>
-                        <div class="loader loader4" data-text="loaderloader"></div>
+            </div>
+            <!-- 檢舉 燈箱 -->
+            <div id="forum_report">
+                <h2>檢舉原因為何？</h2>
+                <form action="">
+                    <p>
+                        <input type="radio" name="report" id="report_1" value="色情、暴力等不雅內容" />
+                        <label for="report_1">色情、暴力等不雅內容</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="report" id="report_2" value="辱罵他人等文字" />
+                        <label for="report_2">辱罵他人等文字</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="report" id="report_3" value="其他違規事項" />
+                        <label for="report_3">其他違規事項</label>
+                    </p>
+                    <div class="forum_report_control">
+                        <input type="button" value="取消" id="forum_report_cance" />
+                        <input type="button" value="送出" id="forum_report_sub" />
                     </div>
-                </div>
+                </form>
+            </div>
+            <div id="ghostIndexBG">
+                <!-- 霧氣 -->
+                <!-- @@include('layout/component/indexsmoke.html') -->
+                @@include('layout/header.html')
+                <section id="indexSection1">
+                    <div class="parallaxContainer">
+                        <ul id="scene">
+                            <li class="layer" data-depth="1">
+                                <div class="text-anim ">
+                                    <span>探</span>
+                                    <span>索</span>
+                                    <span>未</span>
+                                    <span>知</span>
+                                    <span>的</span>
+                                    <span> </span>
+                                    <span>鬼</span>
+                                    <span>島</span>
+                                </div>
+                            </li>
 
-                <div class="spotInfoZone">
-                    <div id="spotInfoWrap">
-                        <!-- <div class="spotInfo">
+                            <li class="layer" data-depth="1">
+                                <img src="./img/index/g8.png" class="G8" />
+                            </li>
+
+                            <li class="layer" data-depth="0.9">
+                                <img src="./img/index/g7.png" class="G7" />
+                            </li>
+
+                            <li class="layer" data-depth="0.7">
+                                <img src="./img/index/g6.png" class="G6" />
+                            </li>
+
+                            <li class="layer" data-depth="0.6">
+                                <img src="./img/index/g4.png" class="G4" />
+                            </li>
+
+                            <li class="layer" data-depth="0.8">
+                                <img src="./img/index/g5.png" class="G5" />
+                            </li>
+
+                            <li class="layer" data-depth="0.5">
+                                <img src="./img/index/g3.png" class="G3" />
+                            </li>
+
+                            <li class="layer" data-depth="0.4">
+                                <img src="./img/index/g2.png" class="G2" />
+                            </li>
+
+                            <li class="layer" data-depth="0.2">
+                                <img src="./img/index/g1.png" class="G1" />
+                            </li>
+
+                            <li class="layer" data-depth="0.1">
+                                <img src="./img/index/g9.png" class="G9" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="route1">
+                        <img src="./img/index/route1.png" />
+                    </div>
+                </section>
+
+                <!-- 第二頻 -->
+                <section id="indexSection2">
+                    <div class="indexTitleZone1">
+                        <h1 class="title">靈異景點</h1>
+                        <h1 class="title2 title">TOP3</h1>
+                        <img src="./img/index/spiderweb01.png" />
+                    </div>
+
+                    <div class="mapZone">
+                        <img src="./img/index/map.png" />
+                        <div class="mapWidth">
+                            <div class="loc1">
+                                <img src="./img/index/top1.png" class="rank" id="mapRank1" />
+                                <p class="location" id="loc1"></p>
+                                <img src="./img/map/spell1.png" id="spell1" class="spellSize" />
+                            </div>
+
+                            <div class="loc2">
+                                <img src="./img/index/top2.png" class="rank" id="mapRank2" />
+                                <p class="location" id="loc2"></p>
+                                <img src="./img/map/spell10.png" id="spell2" class="spellSize" />
+                            </div>
+
+                            <div class="loc3">
+                                <img src="./img/index/top3.png" class="rank" id="mapRank3" />
+                                <p class="location" id="loc3"></p>
+                                <img src="./img/map/spell8.png" id="spell3" class="spellSize" />
+                            </div>
+
+                            <div class="loader loader1" data-text="loaderloader"></div>
+                            <div class="loader loader2" data-text="loaderloader"></div>
+                            <div class="loader loader3" data-text="loaderloader"></div>
+                            <div class="loader loader4" data-text="loaderloader"></div>
+                        </div>
+                    </div>
+
+                    <div class="spotInfoZone">
+                        <div id="spotInfoWrap">
+                            <!-- <div class="spotInfo">
                             <div class="imgZone">
                                 <a href="./ghostSpot.html">
                                     <img src="./img/index/top1Img_1.png" />
@@ -182,7 +208,7 @@
                             </div>
                         </div> -->
 
-                        <!-- <div class="spotInfo">
+                            <!-- <div class="spotInfo">
                             <div class="imgZone">
                                 <a href="./ghostSpot.html">
                                     <img src="./img/index/top1Img_1.png" />
@@ -245,7 +271,7 @@
                             </div>
                         </div> -->
 
-                        <!-- <div class="spotInfo">
+                            <!-- <div class="spotInfo">
                             <div class="imgZone">
                                 <a href="./ghostSpot.html">
                                     <img src="./img/index/top1Img_1.png" />
@@ -306,74 +332,74 @@
                                 </button>
                             </div>
                         </div> -->
-                    </div>
-                    <button id="rightScroll" class="scrollBtn" disabled>
-                        <span>〈</span>
-                    </button>
-                    <button id="leftScroll" class="scrollBtn">
-                        <span>〉</span>
-                    </button>
-                </div>
-
-                <div class="route2">
-                    <img src="./img/index/route2.png" alt="route2">
-                </div>
-
-            </section>
-
-            <!-- 第三頻 -->
-            <section id="section3">
-                <div class="title_forum">
-                    <h1 class="title">驚悚</h1>
-                    <h1 class="title2">尋鬼探險</h1>
-                    <img src="./img/index/forum_hand-2.png" alt="" />
-                </div>
-                <div class="adventure_all">
-                    <div class="adventure_btn">
-                        <a href="adventrue.html">
-                            <div class="ghost_btn">
-                                <div class="ghost_btn_img1">
-                                    <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
-                                </div>
-                                <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去參團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                                </div>
-                            </div>
-                        </a>
-                        <a href="adventrue.html">
-                            <div class="ghost_btn2">
-                                <div class="ghost_btn_img2">
-                                    <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
-                                </div>
-                                <div class="ghost_btn2_ghost"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="index_adventrue">
-                        <div class="adventrue_left">
-                            <div class="adventrue_left_ghost">
-                                <img src="img/index/index_section3.png" alt="">
-                            </div>
-                            <div class="dorp_down_title">
-                                熱門揪團
-                            </div>
-                            <!-- adventrue_left_ghost -->
-                            <div class="dorp_down_menu">
-                                <a class="tab_display">熱門揪團</a>
-                                <a>最新揪團</a>
-                                <a>最多收藏</a>
-                            </div>
-                            <span> <a href="adventrue.html">更多</a></span>
-
                         </div>
-                        <!-- adventrue_left -->
-                        <div class="adventrue_right">
-                            <div class="adventrue_right_itemall">
-                                <!-- <div class="adventrue_right_item">
+                        <button id="rightScroll" class="scrollBtn" disabled>
+                            <span>〈</span>
+                        </button>
+                        <button id="leftScroll" class="scrollBtn">
+                            <span>〉</span>
+                        </button>
+                    </div>
+
+                    <div class="route2">
+                        <img src="./img/index/route2.png" alt="route2" />
+                    </div>
+                </section>
+
+                <!-- 第三頻 -->
+                <section id="section3">
+                    <div class="title_forum">
+                        <h1 class="title">驚悚</h1>
+                        <h1 class="title2">尋鬼探險</h1>
+                        <img src="./img/index/forum_hand-2.png" alt="" />
+                    </div>
+                    <div class="adventure_all">
+                        <div class="adventure_btn">
+                            <a href="adventrue.html">
+                                <div class="ghost_btn">
+                                    <div class="ghost_btn_img1">
+                                        <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
+                                    </div>
+                                    <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
+                                    <div class="ghost_tape">
+                                        <span>來去參團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="adventrue.html">
+                                <div class="ghost_btn2">
+                                    <div class="ghost_btn_img2">
+                                        <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
+                                    </div>
+                                    <div class="ghost_btn2_ghost">
+                                        <img src="./img/adventrue/ghost_btn2.png" alt="" />
+                                    </div>
+                                    <div class="ghost_tape">
+                                        <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="index_adventrue">
+                            <div class="adventrue_left">
+                                <div class="adventrue_left_ghost">
+                                    <img src="img/index/index_section3.png" alt="" />
+                                </div>
+                                <div class="dorp_down_title">
+                                    熱門揪團
+                                </div>
+                                <!-- adventrue_left_ghost -->
+                                <div class="dorp_down_menu">
+                                    <a class="tab_display">熱門揪團</a>
+                                    <a>最新揪團</a>
+                                    <a>最多收藏</a>
+                                </div>
+                                <span> <a href="adventrue.html">更多</a></span>
+                            </div>
+                            <!-- adventrue_left -->
+                            <div class="adventrue_right">
+                                <div class="adventrue_right_itemall">
+                                    <!-- <div class="adventrue_right_item">
                                 <div class="adv_r_item_img">
                                     <img src="img/index/top1Img_1.png" alt="">
                                 </div>
@@ -394,89 +420,86 @@
                                 </div>
                            
                             </div> -->
-                                <!-- adventrue_right_item 右邊每一攔-->
+                                    <!-- adventrue_right_item 右邊每一攔-->
+                                </div>
 
+                                <!-- adventrue_right_itemall 右邊全部攔 -->
                             </div>
-
-
-                            <!-- adventrue_right_itemall 右邊全部攔 -->
+                            <!-- adventrue_right -->
                         </div>
-                        <!-- adventrue_right -->
-                    </div>
-                    <!-- index_adventrue -->
+                        <!-- index_adventrue -->
 
-                    <div class="adventure_btn2">
-                        <a href="adventrue.html">
-                            <div class="ghost_btn">
-                                <div class="ghost_btn_img1">
-                                    <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
+                        <div class="adventure_btn2">
+                            <a href="adventrue.html">
+                                <div class="ghost_btn">
+                                    <div class="ghost_btn_img1">
+                                        <img src="./img/adventrue/ghost_btn_img1.png" alt="" />
+                                    </div>
+                                    <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
+                                    <div class="ghost_tape">
+                                        <span>來去參團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                                    </div>
                                 </div>
-                                <div class="ghost_btn1"><img src="./img/adventrue/ghost_btn1.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去參團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                            </a>
+                            <a href="adventrue.html">
+                                <div class="ghost_btn2">
+                                    <div class="ghost_btn_img2">
+                                        <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
+                                    </div>
+                                    <div class="ghost_btn2_ghost">
+                                        <img src="./img/adventrue/ghost_btn2.png" alt="" />
+                                    </div>
+                                    <div class="ghost_tape">
+                                        <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="adventrue.html">
-                            <div class="ghost_btn2">
-                                <div class="ghost_btn_img2">
-                                    <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
-                                </div>
-                                <div class="ghost_btn2_ghost"><img src="./img/adventrue/ghost_btn2.png" alt="" /></div>
-                                <div class="ghost_tape">
-                                    <span>來去揪團</span><img src="./img/adventrue/ghost_tape.png" alt="" />
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
+                        <div class="adventure_btn3">
+                            <a>來去參團</a>
+                            <a>來去揪團</a>
+                        </div>
                     </div>
-                    <div class="adventure_btn3">
-                        <a>來去參團</a>
-                        <a>來去揪團</a>
 
+                    <script src="js/index_section3.js"></script>
+                </section>
+
+                <section id="section4">
+                    <!-- 標題 -->
+                    <div class="title_forum">
+                        <h1 class="title">熱門</h1>
+                        <h1 class="title2">靈異討論</h1>
+                        <img src="./img/index/forum_hand-2.png" alt="" />
                     </div>
-                </div>
-
-
-                <script src="js/index_section3.js"></script>
-            </section>
-
-
-            <section id="section4">
-                <!-- 標題 -->
-                <div class="title_forum">
-                    <h1 class="title">熱門</h1>
-                    <h1 class="title2">靈異討論</h1>
-                    <img src="./img/index/forum_hand-2.png" alt="" />
-                </div>
-                <div class="card_channel">
-                    <div class="card_warp" id="card_slider">
-
+                    <div class="card_channel">
+                        <div class="card_warp" id="card_slider"></div>
+                        <!-- 左右按鈕 -->
+                        <div id="card_btn">
+                            <button id="left_btn" class="scrollBtn" disabled>
+                                <span>〈</span>
+                            </button>
+                            <button id="right_btn" class="scrollBtn">
+                                <span>〉</span>
+                            </button>
+                        </div>
                     </div>
-                    <!-- 左右按鈕 -->
-                    <div id="card_btn">
-                        <button id="left_btn" class="scrollBtn" disabled>
-                            <span>〈</span>
-                        </button>
-                        <button id="right_btn" class="scrollBtn">
-                            <span>〉</span>
-                        </button>
-                    </div>
-                </div>
-                <!-- 圖片 -->
-                <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
-                <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
-                <script src="./js/index_forun.js"></script>
-            </section>
-            @@include('layout/footer.html')
+                    <!-- 圖片 -->
+                    <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
+                    <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
+                    <button class="goForum"><a href="forum.html">查看更多文章</a></button>
+
+                    <script src="./js/index_forun.js"></script>
+                    <script src="./js/forum.js"></script>
+                </section>
+                @@include('layout/footer.html')
+            </div>
+            <!-- 視差滑動 -->
+            <script>
+                var scene = document.getElementById("scene")
+                var parallax = new Parallax(scene)
+            </script>
+            <!-- 靈異景點top3輪播 -->
+            <script src="./js/indexSpotCarasoul.js"></script>
         </div>
-        <!-- 視差滑動 -->
-        <script>
-            var scene = document.getElementById('scene')
-            var parallax = new Parallax(scene)
-        </script>
-
-        <!-- 靈異景點top3輪播 -->
-        <script src="./js/indexSpotCarasoul.js"></script>
-</body>
-
+    </body>
 </html>

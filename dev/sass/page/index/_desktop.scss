@@ -1139,11 +1139,10 @@
 // ========================= 討論區
 
 #section4 {
-    // border: 1px solid red;
     position: relative;
-    // height: 1200px;
     display: flex;
     justify-content: flex-end;
+
     // 討論區標題
     .title_forum {
         // border: 1px solid green;
@@ -1181,7 +1180,7 @@
     // 輪播外框
     .card_channel {
         // border: 1px solid blue;
-        margin: 200px 0;
+        margin: 250px 0;
         position: relative;
         align-self: center;
         width: 1400px;
@@ -1208,6 +1207,7 @@
                 padding: 35px;
                 width: 360px;
                 height: 450px;
+                cursor: pointer;
 
                 //-- 頭像
                 .card_user {
@@ -1291,10 +1291,11 @@
     #card_btn {
         // border: 1px solid red;
         position: absolute;
-        bottom: 0;
+        bottom: 5%;
         left: 25px;
         #left_btn {
             background: transparent;
+            outline: none;
             color: white;
             width: 50px;
             height: 50px;
@@ -1315,6 +1316,7 @@
         }
         #right_btn {
             background: transparent;
+            outline: none;
             color: white;
             width: 50px;
             height: 50px;
@@ -1347,4 +1349,332 @@
         width: 250px;
         height: 250px;
     }
+    //前往討論區按鈕
+    .goForum {
+        position: absolute;
+        outline: none;
+        border: 1px solid white;
+        box-sizing: border-box;
+        border-radius: 100px;
+        background: transparent;
+        transition: all 0.5s linear;
+        bottom: 10%;
+        right: 39%;
+        a {
+            display: block;
+            width: 360px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        &:hover {
+            background: #700000;
+            border: 1px solid transparent;
+        }
+    }
 }
+// //========================== 文章內容燈箱
+// #forum_contentbox {
+//     background: rgba(0, 0, 0, 0.6);
+//     // border: 1px solid blue
+//     width: 100%;
+//     height: 100%;
+//     position: fixed;
+//     display: none;
+//     z-index: 100;
+
+//     // 關閉燈箱用
+//     .content_out {
+//         // border: 1px solid red;
+//         width: 100%;
+//         height: 100%;
+//         position: fixed;
+//     }
+
+//     // 燈箱內容
+//     .contentbox {
+//         // border: 3px solid #700000;s
+//         border-radius: 15px;
+//         // background: rgb(255, 255, 255)
+//         background-image: url("../img/forum/vintage.png");
+//         position: relative;
+//         transform: translate(-50%, -50%);
+//         left: 50%;
+//         top: 49%;
+//         padding: 40px;
+//         width: 50%;
+//         height: 80%;
+//         color: black;
+//         overflow-x: hidden;
+//         overflow-y: auto;
+//         &::-webkit-scrollbar {
+//             height: 1px;
+//             background-color: rgba(255, 255, 255, 0);
+//         }
+//         &::-webkit-scrollbar-track {
+//             background-color: rgba(0, 0, 0, 0.6);
+//         }
+//         &::-webkit-scrollbar-thumb {
+//             background-color: rgba(255, 255, 255, 0.6);
+//             border-radius: 10px;
+//         }
+
+//         // 標題
+//         .user_loc {
+//             // background-color: red;
+//             text-align: center;
+//             font-size: 2rem;
+//             color: #700000;
+//             font-weight: 900;
+//         }
+
+//         // 使用者
+//         .chatbox_user {
+//             // border-bottom: 1px solid #888;
+//             padding: 15px 0;
+//             display: flex;
+
+//             // 使用者
+//             .user_path {
+//                 margin-right: 20px;
+//                 font-size: 0;
+//                 img {
+//                     width: 70px;
+//                     height: 70px;
+//                     object-fit: cover;
+//                     border-radius: 100%;
+//                 }
+//             }
+//             .user_name {
+//                 // border: 1px solid red;
+//                 line-height: 70px;
+//                 font-size: 1.5rem;
+//                 font-weight: 700;
+
+//                 span {
+//                     font-size: 0.5rem;
+//                     margin-left: 10px;
+//                 }
+//             }
+//         }
+
+//         // 封面-內文
+//         .chatbox_content {
+//             // border: 1px solid red;
+//             margin: 20px 0;
+//             display: flex;
+
+//             .conten_img {
+//                 // border: 1px solid red;
+//                 font-size: 0;
+//                 width: 60%;
+//                 height: 400px;
+//                 img {
+//                     width: 100%;
+//                     height: 100%;
+//                 }
+//             }
+
+//             .content_p {
+//                 width: 50%;
+//                 p {
+//                     padding: 0px 15px;
+//                     margin: 0;
+//                     font-size: 1.2rem;
+//                     text-align: left;
+//                 }
+//             }
+//         }
+
+//         // 狀態欄
+//         .chatbox_status {
+//             padding: 10px 0;
+//             // border: 1px solid #888;
+//             background-color: white;
+//             border-radius: 5px;
+//             display: flex;
+//             justify-content: space-between;
+
+//             // 次數
+//             .art_icon,
+//             .art_path {
+//                 // border: 1px solid red;
+//                 display: flex;
+//                 margin: 0 5px;
+//             }
+//             .art_icon {
+//                 img {
+//                     align-self: center;
+//                     width: 30px;
+//                     height: 22px;
+//                 }
+//                 span {
+//                     font-size: 18px;
+//                     margin-left: 10px;
+//                     // align-self: center;
+//                 }
+//             }
+
+//             // 檢舉留言
+//             .art_report {
+//                 // border: 1px solid red;
+//                 margin: 0 10px;
+//                 cursor: pointer;
+//                 img {
+//                     width: 20px;
+//                     height: 20px;
+//                 }
+//             }
+//         }
+//     }
+
+//     // 留言內容
+//     .msg_space {
+//         // border: 0.5px solid #888;
+//         margin: 20px 0;
+
+//         .msg_user {
+//             display: flex;
+//             justify-content: space-between;
+//             background-color: #700000;
+//             padding: 5px 15px;
+
+//             .msg_user_space {
+//                 display: flex;
+//                 img {
+//                     width: 55px;
+//                     height: 55px;
+//                     border-radius: 100%;
+//                     object-fit: cover;
+//                 }
+//                 .msg_title_user {
+//                     margin-left: 15px;
+//                     color: white;
+//                     .msg_title_name {
+//                         font-weight: 700;
+//                         font-size: 1.25rem;
+//                     }
+//                     .msg_title_time {
+//                         font-size: 0.8rem;
+//                     }
+//                 }
+//             }
+//             .msg_report {
+//                 // border: 1px solid red;
+//                 align-self: center;
+//                 margin: 0 5px;
+//                 cursor: pointer;
+//                 img {
+//                     width: 20px;
+//                     height: 20px;
+//                 }
+//             }
+//         }
+
+//         .msg_p {
+//             // border-top: 0.5px solid #888;
+//             background-color: white;
+//             // height: 90px;
+//             padding: 10px 10px;
+//             font-size: 1.2rem;
+//             p {
+//                 padding: 0;
+//             }
+//         }
+//     }
+
+//     // 留言
+//     .chat_msg {
+//         // border: 1px solid red;
+//         position: absolute;
+//         margin: 0 auto;
+//         left: 25%;
+//         bottom: 4%;
+//         width: 50%;
+//         form {
+//             display: flex;
+//             input[type="text"] {
+//                 border-radius: 5px;
+//                 width: 99%;
+//                 height: 50px;
+//                 padding: 15px;
+//                 border-radius: 5px;
+//                 outline: none;
+//                 font-size: 1.125rem;
+//             }
+//             input[type="submit"] {
+//                 outline: none;
+//                 margin-left: 1%;
+//                 border-radius: 5px;
+//                 height: 50px;
+//                 padding: 10px 15px;
+//                 background-color: #700000;
+//                 color: white;
+//                 font-size: 1.125rem;
+//                 font-weight: 700;
+//                 transition: all 0.8s;
+//                 cursor: pointer;
+//                 &:hover {
+//                     border: 0.7px solid #888;
+//                     background-color: white;
+//                     color: black;
+//                 }
+//             }
+//         }
+//     }
+// }
+// //========================== 檢舉燈箱燈箱
+// #forum_report {
+//     border-radius: 10px;
+//     border: 1px solid black;
+//     overflow: hidden;
+//     background: rgb(255, 255, 255);
+//     position: fixed;
+//     display: none;
+//     transform: translate(-50%, -50%);
+//     left: 50%;
+//     top: 50%;
+//     width: 300px;
+//     color: black;
+//     z-index: 200;
+//     h2 {
+//         background-color: #700000;
+//         color: white;
+//         padding: 10px;
+//         text-align: center;
+//         font-size: 1.5rem;
+//     }
+//     form {
+//         p {
+//             font-size: 1rem;
+//             input[type="radio"] {
+//                 margin: 0 5px 0 15px;
+//                 width: 12px;
+//                 height: 16px;
+//                 vertical-align: middle;
+//             }
+//         }
+//         .forum_report_control {
+//             padding: 10px;
+//             font-size: 0;
+//             text-align: center;
+//             background-color: #700000;
+//             #forum_report_sub,
+//             #forum_report_cance {
+//                 font-size: 1rem;
+//                 font-weight: 700;
+//                 border: 0.7px solid #888;
+//                 background-color: black;
+//                 color: white;
+//                 padding: 5px 15px;
+//                 border-radius: 5px;
+//                 outline: none;
+//                 cursor: pointer;
+//             }
+//         }
+//     }
+// }
