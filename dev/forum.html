@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         @@include('layout/head.html')
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
         <title>討論區</title>
     </head>
     <body>
@@ -99,7 +100,7 @@
                         <option value="南部">南部</option>
                     </select>
                     <select name="" id="articel_Sort">
-                        <option value="排序方式" selected>排序方式</option>
+                        <!-- <option value="排序方式" selected>排序方式</option> -->
                         <option value="最新發佈">最新發佈</option>
                         <option value="瀏覽最多">瀏覽最多</option>
                         <option value="回復最多">回復最多</option>
@@ -114,7 +115,11 @@
             <!-- footer -->
             @@include('layout/footer.html')
         </div>
+        <script src="js/wow.js"></script>
         <script src="./js/forum.js"></script>
+        <script>
+            new WOW().init()
+        </script>
         <script>
             //判斷會員登入
             function checkLoginStatus() {

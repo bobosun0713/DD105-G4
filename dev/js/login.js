@@ -28,6 +28,7 @@ function showLoginForm() {
         }
         xhr.open("get", "./php/Logout.php", true)
         xhr.send(null)
+        location.reload()
     }
 }
 
@@ -54,13 +55,15 @@ function sendForm() {
                 mempsw.style.border = "4px solid red"
                 mempsw.select()
             } else if (member == "error") {
-                alert("帳密錯誤請重新輸入")
+                alert("帳密錯誤或已被停權, 如有問題請洽詢管理員")
                 mempsw.style.border = ""
                 memid.style.border = ""
                 memid.style.border = "3px solid blue"
                 mempsw.style.border = "3px solid blue"
                 $id("mem_id").value = ""
                 $id("mem_psw").value = ""
+            } else if (member == "stop") {
+                alert("已被停權")
             } else {
                 member = JSON.parse(xhr.responseText)
                 alert("登入成功")

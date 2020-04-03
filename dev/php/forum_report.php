@@ -2,15 +2,15 @@
 $errMsg = "";
 session_start();
 $memno = $_SESSION["mem_no"];
-$memname = $_SESSION["mem_name"];
+// $memname = $_SESSION["mem_name"];
 try{
     require_once("connect.php");
-    $sql = "INSERT INTO `forum_report`  (`forum_no` , `mem_no`, `forum_report_name`, `forum_report_reason`) 
-    values(:forum_no , :mem_no , :forum_report_name , :forum_report_reason)";
+    $sql = "INSERT INTO `forum_report`  (`forum_no` , `mem_no`, `forum_report_reason`) 
+    values(:forum_no , :mem_no , :forum_report_reason)";
     $forum = $pdo->prepare( $sql );
     $forum -> bindValue(":forum_no", $_POST["forum_no"]);
     $forum -> bindValue(":mem_no", $memno);
-    $forum -> bindValue(":forum_report_name", $memname);
+    // $forum -> bindValue(":forum_report_name", $memname);
     $forum -> bindValue(":forum_report_reason", $_POST["forum_report_reason"]);
     $forum -> execute();   
 }catch (PDOException $e) {
