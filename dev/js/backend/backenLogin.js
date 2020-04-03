@@ -35,7 +35,7 @@ function sendForm() {
             } else {
                 backmember = JSON.parse(xhr.responseText)
                 alert("登入成功")
-                window.location.href = "backend.html"
+                window.location.href = "backend_admin.html"
                 // 清空值跟外框
                 backId.value = ""
                 backPsw.value = ""
