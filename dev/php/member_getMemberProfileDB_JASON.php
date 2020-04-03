@@ -1,9 +1,11 @@
 <?php
   try{
         require_once("./connect.php");
-        $sql = "select * from `member`";
+        $sql = "select * from `member` where mem_no=:memId";
+        $post_mem_no=$_REQUEST['mem_no'];
+       
         $memberDB = $pdo->prepare($sql);
-      //   $member->bindValue(":memId", $_GET["memId"]);
+        $memberDB->bindValue(":memId",$post_mem_no);
         $memberDB->execute();
 
         //如果找得資料，取回資料，送出JSON字串
