@@ -72,86 +72,91 @@ try {
         <div class="app-body">
             <div class="sidebar">
                 <!-- sidebar menu-->
-                <nav class="sidebar-nav">
-                    <ul class="nav pt-2">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="./backend.html">
-                                            <i class="cil-cog m-2"></i>
-                                            管理員帳號
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="./backend_member.html">
-                                            <i class="cil-people m-2"></i>
-                                            會員管理
-                                        </a>
-                                    </li>
-                                    <li class="nav-item nav-dropdown">
-                                        <a class="nav-link nav-dropdown-toggle" href="＃">
-                                            <i class="cil-location-pin m-2"></i>
-                                            景點管理
-                                        </a>
-                                        <ul class="nav-dropdown-items">
-                                            <li class="nav-item">
-                                                <a class="nav-link pl-5" href="./backend_food_manage.php">
-                                                    美食景點管理
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link pl-5" href="./backend_temple_manage.php">
-                                                    廟宇景點管理
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="./backend_game.html">
-                                            <i class="cil-file m-2"></i>
-                                            試膽測驗題庫管理
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="./backend_StartGroup_msg_report.html">
-                                            <i class="cil-flag-alt m-2"></i>
-                                            揪團留言檢舉管理
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="./back_forum.html">
-                                            <i class="cil-speech m-2"></i>
-                                            討論區檢舉管理
-                                        </a>
-                                    </li>
-                                    <li class="nav-item nav-dropdown">
-                                        <a class="nav-link" href="./backend_leader.php">
-                                            <i class="cil-star m-2"></i>
-                                            排行榜管理
-                                        </a>
-                                    </li>
-                                </ul>
-                </nav>
-             <button class="sidebar-minimizer brand-minimizer" type="button" style="margin-bottom: 20px;"></button>
-            </div>
-            <main class="main">
-                 <!-- Breadcrumb-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="./index.html">
-                        <i class="cil-home"></i>
+               <nav class="sidebar-nav">
+    <ul class="nav pt-2">
+        <li class="nav-item">
+            <a class="nav-link" href="./backend_admin.html">
+                <i class="cil-cog m-2"></i>
+                管理員帳號
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./backend_member.html">
+                <i class="cil-people m-2"></i>
+                會員管理
+            </a>
+        </li>
+        <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="＃">
+                <i class="cil-location-pin m-2"></i>
+                景點管理
+            </a>
+            <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                    <a class="nav-link pl-5" href="./backend_food_manage.php">
+                        美食景點管理
                     </a>
                 </li>
-                <li class="breadcrumb-item">
-                  <strong>  <a href="./backend.html">後台管理</a> </strong>
+                <li class="nav-item">
+                    <a class="nav-link pl-5" href="./backend_temple_manage.php">
+                        廟宇景點管理
+                    </a>
                 </li>
-                <li class="breadcrumb-item active">
-                    <li class="fas fa-trophy  fa"></li>
-                    <strong> 排行榜管理 </strong>
-                </li>
-            </ol>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./backend_game.html">
+                <i class="cil-file m-2"></i>
+                試膽測驗題庫管理
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./backend_StartGroup_msg_report.html">
+                <i class="cil-flag-alt m-2"></i>
+                揪團留言檢舉管理
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./back_forum.html">
+                <i class="cil-speech m-2"></i>
+                討論區檢舉管理
+            </a>
+        </li>
+        <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="./backend_leader.php">
+                <i class="cil-star m-2"></i>
+                排行榜管理
+            </a>
+        </li>
+    </ul>
+</nav>
+             <button class="sidebar-minimizer brand-minimizer" type="button" style="margin-bottom: 20px;"></button>
+ 
+                <!-- =================== sidebar menu =================== -->
+
+            </div>
+            <main class="main">
+
+                <!-- =================== Breadcrumb =================== -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="./index.html">
+                            <i class="cil-home"></i>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">後台管理</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        美食景點管理
+                    </li>
+                </ol>
+                <!-- =================== Breadcrumb =================== -->
 
                 <div class="container-fluid">
-                    <!-- 中間內容 -->
 
+                    <!-- =================== 中間內容 =================== -->
+                    
                     <div class="row">
   <div class="col-md-12">
     <div class="card">
