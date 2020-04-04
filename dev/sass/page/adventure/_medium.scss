@@ -45,47 +45,47 @@
         display: block;
         background-color: transparent;
         .ikeyword {
-          width: 100%;
+          width: 80%;
           display: inline-block;
           background-color: white;
           margin-bottom: 10px;
           // > input {
           // }
         }
-        .area {
-          width: 80%;
-          display: inline-block;
-          background-color: white;
-          margin-bottom: 10px;
-          position: relative;
-          .area_filter {
-            padding: 0 0 0 10px;
-            color: rgb(124, 121, 121);
-            // &:hover {
-            // }
-          }
-          > i {
-            position: absolute;
-            right: 10px;
-            bottom: 25%;
-          }
-        }
-        .attraction {
-          width: 40%;
-          display: inline-block;
-          background-color: white;
-          position: relative;
-          margin-bottom: 10px;
-          .attraction_filter {
-            padding: 0 0px 0 10px;
-            color: rgb(124, 121, 121);
-          }
-          > i {
-            position: absolute;
-            right: 10px;
-            bottom: 25%;
-          }
-        }
+        // .area {
+        //   width: 80%;
+        //   display: inline-block;
+        //   background-color: white;
+        //   margin-bottom: 10px;
+        //   position: relative;
+        //   .area_filter {
+        //     padding: 0 0 0 10px;
+        //     color: rgb(124, 121, 121);
+        //     // &:hover {
+        //     // }
+        //   }
+        //   > i {
+        //     position: absolute;
+        //     right: 10px;
+        //     bottom: 25%;
+        //   }
+        // }
+        // .attraction {
+        //   width: 40%;
+        //   display: inline-block;
+        //   background-color: white;
+        //   position: relative;
+        //   margin-bottom: 10px;
+        //   .attraction_filter {
+        //     padding: 0 0px 0 10px;
+        //     color: rgb(124, 121, 121);
+        //   }
+        //   > i {
+        //     position: absolute;
+        //     right: 10px;
+        //     bottom: 25%;
+        //   }
+        // }
         .search {
           width: 120px;
           // &:hover {
@@ -100,18 +100,18 @@
       align-items: center;
       justify-content: space-around;
       .down_filter {
-        label {
-          color: white;
-          padding-right: 5px;
-        }
+        // label {
+        //   color: white;
+        //   padding-right: 5px;
+        // }
         select {
           background-color: transparent;
           border: 1px solid white;
           border-radius: 5px;
-          padding: 2px 20px;
+          padding: 5px 30px;
           color: white;
           opacity: 0.8;
-          -webkit-appearance: none;
+          // -webkit-appearance: none;
           option {
             background-color: rgb(58, 57, 57);
           }
@@ -125,9 +125,9 @@
 
     .item_all_left_filter {
       display: block;
-      width:100%;
+      width: 100%;
       .left_filter {
-        display:none;
+        display: none;
       }
 
       .item_all {
@@ -150,7 +150,6 @@
           display: flex;
           flex-direction: column;
           width: 48%;
-          height: 400px;
           margin-bottom: 25px;
           background-color: #ffffffef;
           border-radius: 10px;
@@ -182,43 +181,34 @@
             padding: 5px 20px;
             .txt_header {
               display: flex;
-              align-items: center;
-              h1 {
-                font-size: 22px;
-                color: #333333ef;
-                margin-left: 0px;
+              a {
+                h1 {
+                  font-size: 25px;
+                  color: #333333ef;
+                  margin-left: 0px;
+                }
+                // h1
               }
-              // h1
             }
             // .txt_header
-            span {
-              display: block;
-              color: #333333ef;
-              padding-bottom: 5px;
-              i {
-                color: #333333ef;
-                padding-right: 10px;
-              }
-            }
-            .people_head {
+            .location1 {
               display: flex;
-              align-items: center;
+              margin:2% 0 0 0;
+              .locationitem {
+                padding: 5px 12px;
+                font-size: 12px;
+                background-color: #272727;
+
+
+              }
             }
             > p {
-              display: none;
-              margin-left: 10px;
-              color: #333333ef;
-              > a {
-                &::before {
-                  content: "";
-                }
-                &:hover {
-                  color: rgb(255, 119, 28);
-                }
-                &:hover::before {
-                  width: 0;
-                }
-              }
+              margin: 0;
+              line-height: 1.5rem;
+              padding: .6rem 0;
+            }
+            .time_total {
+             display: none;
             }
 
             .progress {
@@ -238,7 +228,6 @@
                 width: 50%;
                 height: 4px;
                 animation: line2 5s infinite;
-              
 
                 &::before {
                   content: " ";
@@ -304,7 +293,9 @@
               position: absolute;
               top: 20px;
               left: 20px;
+              
               .main_people_img {
+               
                 width: 45px;
                 height: 45px;
                 margin-right: 10px;
@@ -318,10 +309,18 @@
                 color: white;
               }
             }
+            .tour_endtime {
+              width:80%;
+              padding: 5px 80px;
+              text-align: center;
+              display:block;
+            }
             .btn_fill_red {
-              padding: 5px 20px;
+              text-align: center;
+              width:80%;
+              padding: 5px 80px;
               box-sizing: border-box;
-              display: flex;
+              display:block;
               margin-bottom: 20px;
             }
 
@@ -343,5 +342,13 @@
         // .item
       }
     }
+  }
+}
+
+//跳出個人燈箱
+.people_message_background {
+  .people_message {
+    width: 400px;
+    height: 400px;
   }
 }

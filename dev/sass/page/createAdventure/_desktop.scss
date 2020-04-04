@@ -949,23 +949,23 @@
               width: 80%;
               height: 4px;
               animation: line2 5s infinite;
-              @keyframes line2 {
-                0% {
-                  width: 0;
-                }
-                25% {
-                  width: 20%;
-                }
-                50% {
-                  width: 40%;
-                }
-                75% {
-                  width: 60%;
-                }
-                100% {
-                  width: 80%;
-                }
-              }
+              // @keyframes line2 {
+              //   0% {
+              //     width: 0;
+              //   }
+              //   25% {
+              //     width: 20%;
+              //   }
+              //   50% {
+              //     width: 40%;
+              //   }
+              //   75% {
+              //     width: 60%;
+              //   }
+              //   100% {
+              //     width: 80%;
+              //   }
+              // }
               &::before {
                 content: "";
                 width: 15px;

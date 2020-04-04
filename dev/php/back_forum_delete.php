@@ -16,4 +16,24 @@ try{
     
 }
 
+//當按下刪除ru04文章恢復上架,並刪除檢舉
+// $(".btn").click(function() {
+//     var replay = $(this).attr("psn")
+//     alert(replay)
+//     $.ajax({
+//         url: "./php/back_forum_status.php",
+//         type: "POST",
+//         data: {
+//             forum_report_no: replay,
+//         },
+//         success: function(data) {
+//             alert("刪除成功")
+//             location.reload()
+//         },
+//         error: function() {
+//             alert("修改失敗")
+//         },
+//     })
+// })
+
 ?>

@@ -197,7 +197,7 @@ function opencard() {
                 let content = ""
                 content += `
                             <div class="contentbox" psn="${pns_no}">
-                                <div class="user_loc">${data.forum_title}</div>
+                                <div class="user_loc">【${data.forum_title}】</div>
                                 <div class="chatbox_user">
                                     <div class="user_path">
                                         <img src="./img/login/${data.mem_img}" alt="" />
@@ -599,7 +599,7 @@ function indexForum() {
                 let content = ""
                 content += `
                         <div class="contentbox" psn="${pns_no}">
-                            <div class="user_loc">${data.forum_title}</div>
+                            <div class="user_loc">【${data.forum_title}】</div>
                             <div class="chatbox_user">
                                 <div class="user_path">
                                     <img src="./img/login/${data.mem_img}" alt="" />

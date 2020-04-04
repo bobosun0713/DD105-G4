@@ -84,7 +84,7 @@ try {
                     尋鬼探險
                 </a>
             </li>
-            <li class="@@link001-3">
+            <li class="pageSelectEffect1">
                 <a href="leaderboard.php" class="title pageSelectEffect2">
                     靈異票選
                 </a>
