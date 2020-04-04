@@ -90,8 +90,8 @@ try{
     </div>
     <nav class="desktopHeader">
         <ul>
-            <li class="@@link001-1">
-                <a href="ghostIsland.php" class="title @@link001">
+            <li class="pageSelectEffect1">
+                <a href="ghostIsland.php" class="title pageSelectEffect2">
                     前進鬼島
                 </a>
             </li>

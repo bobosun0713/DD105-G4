@@ -38,7 +38,6 @@
                     > img {
                         width: 100%;
                         height: 280px;
-                        object-fit: cover;
                     }
                 }
                 .art_p {
@@ -77,8 +76,14 @@
                 .content_p {
                     width: 100%;
                     p {
-                        font-size: 1rem;
+                        font-size: 1.125rem;
+                        margin: 15px 0;
                     }
+                }
+            }
+            .msg_space {
+                .msp_p {
+                    font-size: 1.125rem;
                 }
             }
         }

@@ -1,246 +1,337 @@
-
-//  -------RWD---------576pxpx *768px------------- 
+@include respond(small) {
+}
+//  -------RWD---------576px *767px------------- 
  
-@media screen and (min-width:576px) and (max-width:768px){
-    #Guide-page-img{
-        width:768px;
-        width: 100%;
-// 血跡圖片位置 
-.front-end{
-            // 前端血跡圖
-            #front-end{
-                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
-                max-height: 180px;
-                width: 250px;
-                }
-
-            // 後端血跡圖 
-            #rear-end{
-                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
-                max-height: 180px;
-                width: 250px;
-                }
-
-           
-                // 前後端血跡文字
-                .front-span{
-                    width: 150px;
-                    font-size: 2rem;
-                    margin-top: -70px;
-                    margin-left: -118px;
-                    }
-    
+@media screen and (min-width:576px) and (max-width:767px){
+    //第一個div背景圖
+  #guide-pages{
+  width: 560px;
+  width: 100%;
+  
+  //第二個div
+  .Guide-page-img {
+            width: 560px;
+            width: 100%;
+            display: block;
+          //符咒圖div
+      .box1 {
+          width: 1200px;
+          width: 100%;
+          margin: 40px;
+          margin-top: -73px;
+          margin-bottom: -291px;
+          //左邊符咒圖
+          #L_magicpaper {
+          background: url("../img/guide-pages/spell-left-3.png");
+          background-repeat: no-repeat;
+          z-index: 2;
+          width: 180px;
+          height: 400px;
+        }
+        //logo圖
+          #logo-white-b{
+          max-width: 150px;
+          max-height: 150px;
+          margin-top: 50px;
+          margin-right: 68px;
+  
+          } //右邊符咒圖
+        #R_magicpaper {
+          background: url("../img/guide-pages/spell-right-3.png");
+          background-repeat: no-repeat;
+          width: 180px;
+          height: 400px;
+          margin-bottom: -10px;
+          }
     }
-    
-
-        // 女鬼 與鬼島logo大div 
-        .Female-ghost{
-            margin-top: 160px;
-            max-height: 300px;
-            #Female-ghost{
-            display: none;//隱藏女鬼 大圖
-            }
-            #Female-ghost-s{
-            display:block;//顯示女鬼 小圖
-            width: 130px;
-            height: 130px;
-            margin-top: 90px;
-            }
-            
-                 // 喜歡冒險文字typewriter 
-                 .typewriter{
-                    width: 320px;
-                    width: 100%;
-                    margin-top: -68px;
-                    font-size: 1.2rem;
-                    line-height: 40px;
-                    letter-spacing: 5px;
-                    height: 300px;
+  
+  
+        //前後台圖片div位置 
+        .front-end{
+            // height: 200px;
+              display: grid;
+              margin-top: 180px;
+              margin-left: 15px;
+            // 前台圖 
+            #front-end{
+                background-image: url(../img/guide-pages/brand-2.png);
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 80px;
+                // margin: 1px;
+                }
+            // 後台圖 
+            #rear-end{
+                background-image: url(../img/guide-pages/brand-2.png);
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 80px;
+                // margin: 1px;
+              }
+         //前後台文字滑文字 
+         a.front-span{
+          left: 40px;
+          top: 12px;
+          font-size: 2rem;
+          }
+               
+      }
+  
+                //幽靈&老鼠div
+                #Kappa{
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 165px;
+                  // .Kappa-b{
+                    img.Kappa-s{
+                      width: 150px;
+                      height: 150px;
+                      margin-top: 104px;
                     }
-                    #logo-white-b{
-                        display: none;//隱藏logo大圖
-                    }
-                    #logo-white-s{
-                        display:block;//顯示logo小圖
-                         width: 90px;   
-                         height: 80px;
-                         margin-top: 140px;
-                    }
-        
-        }
-    } 
-}
-
-
-
-
-//  -------RWD---------480pxpx *575px------------- 
+                  // }
+                  .ghost-mose-b{
+                    background: url("../img/guide-pages/ghost-mose-s-2.png");
+                    background-repeat: no-repeat;
+                    width: 150px;
+                    height: 150px;
+                    margin-top: 106px;
+                }
+  
+  
+                }
+     
+  
+    }
+  
+  
+   }
+  
+  }
+  
+  //  -------RWD---------320px*575px ------------- 
  
-@media screen and (min-width:480px) and (max-width:575px){
-    #Guide-page-img{
-        width:768px;
-        width: 100%;    
-    
-        .ghost{//縮小幽靈圖
-            width: 120px;
-            height: 120px;
+  @media screen and (min-width:319px) and (max-width:575px){
+    //第一個div背景圖
+  #guide-pages{
+    width: 320px;
+    width: 100%;
+  
+  //第二個div
+  .Guide-page-img {
+            width: 320px;
+            width: 100%;
+            display: block;
+          //符咒圖div
+      .box1 {
+          width: 320px;
+          width: 100%;
+          margin: 7px;
+          margin-top: -73px;
+          //左邊符咒圖
+          #L_magicpaper {
+          background: url("../img/guide-pages/spell-left-4.png");
+          background-repeat: no-repeat;
+          z-index: 2;
+          width: 100px;
+          height: 400px;
         }
-// 血跡圖片位置
-.front-end{
+        //logo圖
+          #logo-white-b{
+          max-width: 120px;
+          max-height: 120px;
+          margin-top: 50px;
+          margin-right: -3px;
+          margin-left: -27px;
+          } //右邊符咒圖
+        #R_magicpaper {
+          background: url("../img/guide-pages/spell-right-4.png");
+          background-repeat: no-repeat;
+          width: 100px;
+          height: 400px;
+          margin-bottom: -10px;
+          }
+    }
+  
+  
+        //前後台圖片div位置 
+        .front-end{
+              height: auto;
+              display: grid;
+              margin-top: 22px;
+              margin-left: 15px;
+            // 前台圖 
+            #front-end{
+                background-image: url(../img/guide-pages/brand-2.png);
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 80px;
+                // margin: 1px;
+                }
+            // 後台圖 
+            #rear-end{
+                background-image: url(../img/guide-pages/brand-2.png);
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 80px;
+              }
+         //前後台文字滑文字 
+         a.front-span{
+          left: 40px;
+          top: 12px;
+          font-size: 2rem;
+          }
+               
+      }
+  
+                //幽靈&老鼠div
+                #Kappa{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 165px;
+                      img.Kappa-s{
+                        width: 80px;
+                        height: 80px;
+                        margin-top: -87px;
+                      }
+                    .ghost-mose-b{
+                      background: url("../img/guide-pages/ghost-mose-s-4.png");
+                      background-repeat: no-repeat;
+                      width: 80px;
+                      height: 80px;
+                      margin-top: -81px;
+  
+                      }
+                      
+                  }   
+  
+     
+  
+    }
+  
+  
+   }
+  
+  }
+  
+  //  -------RWD---------414px ------------- 
+ 
+@media screen and (max-width:414px){
+    //第一個div背景圖
+  #guide-pages{
+    width: 320px;
+    width: 100%;
+    .Guide-page-img {
         width: 320px;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        display: grid;
-            // 前端血跡圖 
-            #front-end{
-                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
-                max-height: 130px;
-                width: 180px;
-                margin: 20px;
-                margin-top:40px;
-                }
+        display: block;
 
-            // 後端血跡圖 
-            #rear-end{
-                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
-                max-height: 130px;
-                width: 180px;
-                margin: 20px;
-                margin-top:40px;
-                }
+        .box1 {
+        margin-top: -63px;
+        margin-bottom: 81px;
+        #logo-white-b{
+            margin-top: 100px;
+            }
+        }  
 
+        //前後台圖片div位置 
+        .front-end{
+            margin-top:-78px;
            
-            // 前後端血跡文字 
-            .front-span{
-                width: 150px;
-                font-size: 2rem;
-                margin-top: -70px;
-                margin-left: -118px;
-                }
-
-}
-
-
-        // 女鬼 與鬼島logo大div 
-        .Female-ghost{
-            margin-top: 180px;
-            max-height: 255px;
-            #Female-ghost{
-            display: none;//隱藏女鬼 大圖
-            }
-            #Female-ghost-s{
-            display:block;//顯示女鬼 小圖
-            width: 100px;
-            height: 100px;
-            margin-top: 120px;
-            }
-            
-                //喜歡冒險文字typewriter 
-                .typewriter{
-                    width: 320px;
-                    width: 100%;
-                    margin-top: -30px;
-                    font-size: 16px;
-                    line-height: 31px;
-                    // letter-spacing: 0px;
-                    }
-                    #logo-white-b{
-                        display: none;//隱藏logo大圖
-                    }
-                    #logo-white-s{
-                        display:block;//顯示logo小圖
-                         width: 90px;   
-                         height: 80px;
-                         margin-top: 140px;
-                    }
-        
+          // 前台圖 
+          #front-end{
+            margin: 40px;
         }
-    } 
-}
+          // 後台圖 
+          #rear-end{
+              margin: 40px;
+            }
+        }
+      
+     }
+                
+   }
+  
+  }
 
-
-//  -------RWD---------320pxpx *479px------------- 
+      //  -------RWD---------375px ------------- 
  
-@media screen and (min-width:319px) and (max-width:479px){
-    #Guide-page-img{
-        width:319px;
-        width: 100%;    
-        .ghost{//縮小幽靈圖
-            width: 120px;
-            height: 120px;
-        }
-// 血跡圖片位置 
-.front-end{
+@media screen and  (max-width:375px){
+    //第一個div背景圖
+  #guide-pages{
+    width: 320px;
+    width: 100%;
+    .Guide-page-img {
         width: 320px;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        display: grid;
-            // 前端血跡圖 
-            #front-end{
-                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
-                max-height: 130px;
-                width: 180px;
-                margin: 20px;
-                margin-top:40px;
+        display: block;
+
+        .box1 {
+            margin-top: -74px;
+            margin-bottom: -153px;
+            }  
+                
+     }
+                
+   }
+  
+  }
+    //  -------RWD---------360px ------------- 
+ 
+@media screen and  (max-width:360px){
+    //第一個div背景圖
+  #guide-pages{
+    width: 320px;
+    width: 100%;
+    .Guide-page-img {
+        width: 320px;
+        width: 100%;
+        display: block;
+
+        .box1 {
+            margin-top: -74px;
+            margin-bottom: 71px;
+            }  
+            //前後台圖片div位置 
+            .front-end{
+                margin-top:-185px;
                 }
-
-            // 後端血跡圖
-            #rear-end{
-                background-image: url(../img/guide-pages/Bloodstain-s-1.png);
-                max-height: 130px;
-                width: 180px;
-                margin: 20px;
-                margin-top:40px;
+                
+                //幽靈&老鼠div
+                #Kappa{
+                  margin-top: 103px;
+                    }
+    
+      
+     }
+                
+   }
+  
+  }
+      //  -------RWD---------320px ------------- 
+ 
+@media screen and (max-width:320px){
+    //第一個div背景圖
+  #guide-pages{
+    width: 320px;
+    width: 100%;
+    .Guide-page-img {
+        width: 320px;
+        width: 100%;
+        display: block;
+        .box1 {
+            margin-top: -50px;
+            margin-bottom: 4px;
+            #logo-white-b{
+                margin-top: 50px;
                 }
-
-           
-            // 前後端血跡文字 
-            .front-span{
-                width: 150px;
-                font-size: 2rem;
-                margin-top: -70px;
-                margin-left: -118px;
-                }
-
-}
-
-
-        // 女鬼 與鬼島logo大div 
-        .Female-ghost{
-            margin-top: 167px;
-            max-height: 255px;
-            #Female-ghost{
-            display: none;//隱藏女鬼 大圖
+            }  
+            .front-end{
+                margin-top: -206px;
             }
-            #Female-ghost-s{
-            display:block;//顯示女鬼 小圖
-            width: 80px;
-            height: 80px;
-            margin-top: 120px;
-            }
-            
-                //喜歡冒險文字typewriter
-                .typewriter{
-                    width: 320px;
-                    width: 100%;
-                    margin-top: -45px;
-                    font-size: 12px;
-                    line-height: 31px;
-                    height: 280px;
-                    // letter-spacing: 0px;
-                    }
-                    #logo-white-b{
-                        display: none;//隱藏logo大圖
-                    }
-                    #logo-white-s{
-                        display:block;//顯示logo小圖
-                         width: 60px;   
-                         height: 60px;
-                         margin-top: 140px;
-                    }
-        
-        }
-    } 
-}
+  
+      
+     }
+                
+   }
+  
+  }

@@ -1,6 +1,10 @@
 window.addEventListener("load", function () {
 
+    checkloginstatus();
 
+
+}, false);
+function checkloginstatus() {
     var xhr = new XMLHttpRequest()
     var url = "./php/logininfo.php"
     xhr.open("GET", url, true)
@@ -22,7 +26,8 @@ window.addEventListener("load", function () {
         }
     }
 
-}, false);
+}
+
 //show tab form
 function showtabform() {
     var mybtn = document.getElementsByClassName("tab")[0];
@@ -35,14 +40,14 @@ function showContent(evt, idName) {
 
     //影藏tab內容
     x = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < x.length; i++) {
+    for (i = 0; i < 1; i++) {
         x[i].style.display = "none";
     }
     //目前block打開
     document.getElementById(idName).style.display = "flex";
     //tablinks變不亮
     tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < x.length; i++) {
+    for (i = 0; i < 1; i++) {
         tablinks[i].classList.remove("on");
     }
     evt.currentTarget.classList.add("on");
@@ -182,7 +187,7 @@ function updateMemberDB(get_mem_no, get_mem_id, get_mem_psw, get_mem_name, get_m
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            // getGameDB();
+            checkloginstatus();
             alert("修改會員個人資料成功");
             // show_updategameDB(xhr.responseText);
         } else {

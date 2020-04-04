@@ -470,7 +470,7 @@ header {
                 }
                 p {
                     label {
-                        font-size: 1rem;
+                        font-size: 1.25rem;
                         font-weight: 700;
                     }
                     input {
@@ -484,22 +484,45 @@ header {
                     }
                 }
             }
-            #sure_btn {
-                // border: 1px solid red;
-                background-color: #700000;
-                color: white;
-                font-weight: 700;
-                font-size: 1rem;
-                padding: 5px 15px;
-                width: 100px;
-                border-radius: 20px;
-                text-align: center;
-                margin: 15px auto;
-                box-shadow: 3px 4px 3px #461818;
-                cursor: pointer;
-                &:active {
-                    transform: translateY(3px);
-                    box-shadow: 2px 3px 1px #461818;
+            .surespace {
+                margin: 18px 0;
+                #sure_btn {
+                    // border: 1px solid red;
+                    background-color: #700000;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    padding: 5px 15px;
+                    width: 100px;
+                    border-radius: 20px;
+                    text-align: center;
+                    margin: 15px auto;
+                    box-shadow: 3px 4px 3px #461818;
+                    margin: 0 5px;
+                    cursor: pointer;
+                    &:active {
+                        transform: translateY(3px);
+                        box-shadow: 2px 3px 1px #461818;
+                    }
+                }
+                #sure_back {
+                    // border: 1px solid red;
+                    background-color: #700000;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    padding: 5px 15px;
+                    width: 100px;
+                    border-radius: 20px;
+                    text-align: center;
+                    margin: 15px auto;
+                    box-shadow: 3px 4px 3px #461818;
+                    margin: 0 5px;
+                    cursor: pointer;
+                    &:active {
+                        transform: translateY(3px);
+                        box-shadow: 2px 3px 1px #461818;
+                    }
                 }
             }
         }

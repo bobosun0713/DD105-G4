@@ -1,66 +1,107 @@
-
-//  -------RWD---------768pxpx *992px------------- 
- 
-@media screen and (min-width:768px) and (max-width:991px){
-    #Guide-page-img{
-        width:768px;
-        width: 100%;
-// 血跡圖片位置 
-.front-end{
-            // 前端血跡圖 
-            #front-end{
-                background-image: url(../img/guide-pages/Bloodstain-s.png);
-                max-height: 200px;
-                width: 250px;
-                }
-
-            // 後端血跡圖
-            #rear-end{
-                background-image: url(../img/guide-pages/Bloodstain-s.png);
-                max-height: 200px;
-                width: 250px;
-                }
-
-            // 前後端血跡文字 
-            .front-span{
-                font-size: 45px;
-                margin-top: -52px;
-                margin-left: -60px;
-                }
-
+@include respond(medium) { 
 }
-
-
-        // 女鬼 與鬼島logo大div
-        .Female-ghost{
-            margin-top: 196px;
-            max-height: 255px;
-            #Female-ghost{
-            display: none;//隱藏女鬼 大圖
-            }
-            #Female-ghost-s{
-            display:block;//顯示女鬼 小圖
-            width: 200px;
-
-            }
-            
-                // 喜歡冒險文字typewriter
-                .typewriter{
-                    margin-top: -80px;
-                    font-size: 1.1rem;
-                    letter-spacing: 1px;
-            
-                    }
-                    #logo-white-b{
-                        display: none;//隱藏logo大圖
-                    }
-                    #logo-white-s{
-                        display:block;//顯示logo小圖
-                        width: 150px;
-                        height: 150px;
-                        margin-top: 70px;
-                    }
-        
+//  -------RWD---------768px *1199px------------- 
+ 
+@media screen and (min-width:768px) and (max-width:989px){
+    //第一個div背景圖
+  #guide-pages{
+  width: 990px;
+  width: 100%;
+  
+  //第二個div
+  .Guide-page-img {
+          width: 1200px;
+          width: 100%;
+          display: block;
+          //符咒圖div
+      .box1 {
+          width: 1200px;
+          width: 100%;
+          margin: 20px;
+          margin-top: -135px;
+          margin-bottom: -280px;
+          //左邊符咒圖
+          #L_magicpaper {
+          background: url("../img/guide-pages/spell-left-2.png");
+          background-repeat: no-repeat;
+          z-index: 2;
+          width: 300px;
+          height: 700px;
         }
-    } 
+        //logo圖
+          #logo-white-b{
+          max-width: 200px;
+          max-height: 200px;
+          margin-top: 120px;
+          margin-right: 68px;
+  
+          } //右邊符咒圖
+        #R_magicpaper {
+          background: url("../img/guide-pages/spell-right-2.png");
+          background-repeat: no-repeat;
+          width: 300px;
+          height: 700px;
+          margin-bottom: -10px;
+          }
+    }
+  
+  
+        //前後台圖片div位置 
+        .front-end{
+              margin-top: -120px;
+              margin: 25px;
+            // 前台圖 
+            #front-end{
+                background-image: url(../img/guide-pages/brand-1.png);
+                background-repeat: no-repeat;
+                margin: 1px;
+                }
+            // 後台圖 
+            #rear-end{
+                background-image: url(../img/guide-pages/brand-1.png);
+                background-repeat: no-repeat;
+                margin: 1px;
+              }
+         //前後台文字滑文字 
+         a.front-span{
+          left: 70px;
+          top: 68px;
+          }
+               
+      }
+  
+                //幽靈&老鼠div
+                #Kappa{
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 68px;
+                  // .Kappa-b{
+                    img.Kappa-s{
+                      width: 220px;
+                      height: 220px;
+                      margin-top: 84px;
+                    }
+                  .ghost-mose-b{
+                    background: url("../img/guide-pages/ghost-mose-s-1.png");
+                    background-repeat: no-repeat;
+                    width: 200px;
+                    height: 200px;
+                    margin-top: 106px;
+                }
+  
+  
+                }
+  
+     
+  
+    }
+  
+  
+   }
+  
+  }
+  @media screen and (max-width:768px){
+    #guide-pages .Guide-page-img .box1 {
+        margin-bottom: -220px;
+  }
 }

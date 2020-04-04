@@ -2,31 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-
     @@include('layout/head.html')
-
 </head>
 
 <body>
-    @@include('layout/header.html')
-    @@include('layout/component/mouse_ghost.html')
+    @@include('layout/header.html',{ "link006":"pageSelectEffect2" ,"link001-6":"pageSelectEffect1" })
+    include('layout/component/mouse_ghost.html')
     <div class="wrapper_Member_center">
         <div class="title_btn">
             <div class="tab tablinks H_1 on" onclick="showContent(event,'profile_info')">個人資訊</div>
-            <div class="tab tablinks" onclick="showContent(event,'created')">已建立揪團</div>
-            <div class="tab tablinks" onclick="showContent(event,'joined')">已參加揪團</div>
-            <div class="tab tablinks" onclick="showContent(event,'forumrecord')">討論區紀錄</div>
-            <div class="tab tablinks H_5" onclick="showContent(event,'favorite')">我的收藏</div>
+            <!-- <div class="tab tablinks" onclick="showContent(event,'created')">已建立揪團</div>
+                <div class="tab tablinks" onclick="showContent(event,'joined')">已參加揪團</div>
+                <div class="tab tablinks" onclick="showContent(event,'forumrecord')">討論區紀錄</div>
+                <div class="tab tablinks H_5" onclick="showContent(event,'favorite')">我的收藏</div> -->
         </div>
         <div id="profile_info" class="tabcontent member_block1">
             <section class="profile_photo">
                 <form enctype="multipart/form-data" action="" method="post">
                     <div class="uploadimg">
-                        <input type="file" name="upFile" id="upFile" class="uploadimg_input">
+                        <input type="file" name="upFile" id="upFile" class="uploadimg_input" />
                         <label for="upFile">
                             <div class="img_block">
                                 <!-- <img id="imgPreview" src="" width="80"> -->
@@ -82,7 +80,6 @@
                             <input type="button" value="儲存" id="submit_btn_updateMemInfo" class="update_btn">
                         </div> -->
                     </form>
-
                 </div>
                 <!-- <div id="class2" class="container class">
                         <br>
@@ -318,26 +315,15 @@
                         </div>
                     </div> -->
                 <!-- @@include('layout/component/pagination.html') -->
-
-
             </section>
         </div>
-        <div id="created" class="tabcontent member_block">
-
-        </div>
-        <div id="joined" class="tabcontent member_block">
-
-        </div>
-        <div id="forumrecord" class="tabcontent member_block">
-
-        </div>
-        <div id="favorite" class="tabcontent member_block">
-
-        </div>
+        <div id="created" class="tabcontent member_block"></div>
+        <div id="joined" class="tabcontent member_block"></div>
+        <div id="forumrecord" class="tabcontent member_block"></div>
+        <div id="favorite" class="tabcontent member_block"></div>
     </div>
     @@include('layout/footer.html')
     <script src="js/member.js"></script>
 </body>
-
 
 </html>

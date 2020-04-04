@@ -2,6 +2,11 @@ function $id(id) {
     return document.getElementById(id)
 }
 
+function register_back() {
+    $id("login_page2").style.display = "none"
+    $id("login_page1").style.display = "block"
+}
+
 function register() {
     var memid = $id("memid")
     var mempwd = $id("mempwd")
@@ -9,32 +14,37 @@ function register() {
     var memname = $id("memname")
     var memcell = $id("memcell")
     var memail = $id("memail")
-    if (memid.value.length < 3) {
-        alert("帳號不得低於3碼")
+    if (memid.value.length < 4) {
+        alert("帳號不得低於4碼")
         memid.style.border = "4px solid red"
         memid.select()
         return
-    } else if (mempwd.value.length < 3) {
-        alert("密碼不得低於3碼")
+    }
+    if (mempwd.value.length < 4) {
+        alert("密碼不得低於4碼")
         mempwd.style.border = "4px solid red"
         mempwd.select()
         return
-    } else if (mempwdcheck.value != mempwd.value) {
+    }
+    if (mempwdcheck.value != mempwd.value) {
         alert("密碼不一致")
         mempwdcheck.style.border = "4px solid red"
         mempwdcheck.select()
         return
-    } else if (memcell.value.length < 10) {
+    }
+    if (memcell.value.length < 10) {
         alert("手機號碼不得低於10碼")
         memcell.style.border = "4px solid red"
         memcell.select()
         return
-    } else if (memname.value == "") {
+    }
+    if (memname.value == "") {
         alert("請輸入名子")
         memname.style.border = "4px solid red"
         memname.select()
         return
-    } else if (memail.value == "") {
+    }
+    if (memail.value == "") {
         alert("請輸入信箱")
         memail.style.border = "4px solid red"
         memail.select()
@@ -94,6 +104,8 @@ window.addEventListener(
         $id("logincancel2").onclick = cancelogin
         // 註冊鈕
         $id("sure_btn").onclick = register
+        // 返回
+        $id("sure_back").onclick = register_back
     },
     false
 )
