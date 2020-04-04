@@ -235,7 +235,7 @@ while( $prodRow = $sopt1->fetchObject()){
             <img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
                 <div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="01"?></h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+					<a class="Haunted-house-p" href="ghostSpot.php?spot_no=%201&order_no=1"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
 				</div>
 			<?php
 }
@@ -249,7 +249,7 @@ while( $prodRow = $sopt2->fetchObject()){
             <img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
 			<div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="02"?></h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+					<a class="Haunted-house-p" href="ghostSpot.php?spot_no=11&order_no=2"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
 			</div>
 			<?php
 }
@@ -263,7 +263,7 @@ while( $prodRow = $sopt3->fetchObject()){
             <img class="Haunted-house-i" src="<?=$prodRow->spot_image_1?>" alt="" />
                 <div class="Strip-background">
 					<h2 class="Haunted-house-t"><?="03"?></h2>
-					<a class="Haunted-house-p" href="#"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
+					<a class="Haunted-house-p" href="ghostSpot.php?spot_no=8&order_no=3"><?=$prodRow->spot_name?> <?=$prodRow->spot_vote_count?>票 </a> 
 				</div>
 			<?php
 }
