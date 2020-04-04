@@ -30,8 +30,6 @@ try {
 	$sql13 =  "select * from dd105g4.spot  Order By spot_vote_count desc limit 9,1";//第10名
 	$n010 = $pdo->query($sql13);
 
-	//$sql4 =  "select * from dd105g4.spot Order BY spot_no asc limit 10;";//1-10數字
-	//$sopt4 = $pdo->query($sql4);
 
 } catch (PDOException $e) {
 	echo "錯誤行號 : " . $e->getLine() . "<br>";
