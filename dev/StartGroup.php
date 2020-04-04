@@ -1,7 +1,9 @@
 <?php
+session_start();
 $tour_no = $_REQUEST["tour_no"];
 $spot_no = $_REQUEST["spot_no"];
-session_start();
+
+
 $errMsg = "";
 
 //連線資料庫
@@ -33,7 +35,6 @@ try {
 
 
     //相關行程  以既定景點為標準
-
     $sql = "SELECT * 
     from tour t join spot s on (t.spot_no = s.spot_no) 
                 left join food f on (t.food_no = f.food_no) 
@@ -48,23 +49,33 @@ try {
 
 
 
-
-    //顯示所有該景點留言
-    $sql = "
-select msg.spot_no, mem.mem_name, mem.mem_img, msg.spot_msg_datetime msg_time, msg.spot_msg_content
-from spot_msg msg join spot s on (msg.spot_no = s.spot_no) 
-                  left join `member` mem on (msg.mem_no = mem.mem_no) 
-where msg.spot_no =:spot_no
-order by msg_time desc 
-";
+    //顯示所有該揪團景點留言
+    $sql = "select msg.tour_no, mem.mem_name, mem.mem_img, msg.tour_msg_datetime msg_time, msg.tour_msg_content 
+    from tour_msg msg join tour t on (msg.tour_no = t.tour_no) 
+    left join `member` mem on (msg.mem_no = mem.mem_no)
+     where msg.tour_no =:tour_no
+     order by msg_time desc";
     $tourMsg = $pdo->prepare($sql);
-    $tourMsg->bindValue(":spot_no", $spot_no);
+    $tourMsg->bindValue(":tour_no",$tour_no);
     $tourMsg->execute();
 } catch (PDOException $e) {
     $errMsg .= "錯誤原因 : " . $e->getMessage() . "<br>";
     $errMsg .= "錯誤行號 : " . $e->getLine() . "<br>";
 }
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php
 if ($errMsg != "") {
@@ -73,6 +84,24 @@ if ($errMsg != "") {
     $toursRow = $tours->fetchObject();
 }
 ?>
+
+
+<?php
+                    if ($errMsg != "") {
+                        var_dump($errMsg);
+                    } else {
+                        $OfficialTourRows = $OfficialTour->fetchObject();
+                    };
+                     ?>
+
+
+
+
+
+
+
+
+
 
 <?php
 if ($errMsg != "") {
@@ -89,9 +118,12 @@ if ($errMsg != "") {
 if ($errMsg != "") {
     var_dump(13);
 } else {
-    $tourMsgRows = $tourMsg->fetchAll(PDO::FETCH_ASSOC);
+    $tourMsgRows=$tourMsg->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -131,7 +163,7 @@ if ($errMsg != "") {
 </head>
 
 <body>
-
+ 
     <!-- 鬼箭頭 -->
     <div class="go_top">
         <img src="img/adventrue/go_top.png" alt="">
@@ -140,17 +172,40 @@ if ($errMsg != "") {
     <div id="mouse"></div>
     <!-- 滑鼠上的鬼-->
 
+     <!-- ================ 撰寫留言視窗 ================ -->
+     <div class="spotWroteMsgBG">
+            <div class="spotWroteMsgContent">
+                <h2>【<?php echo $toursRow->tour_title;?>】</h2>
+                <div class="writeMsgZone">
+                    <div class="personalMsg">
+                        <div class="headIcon">
+                           
+                        </div>
+                        <div class="neme">
+                            <p><?=$_SESSION["mem_name"]?></p>
+                        </div>
+                    </div>
+                    <form method="post" >
+                        <input type="hidden" name="tour_no" id="tourMsgNo" value="<?php echo $toursRow->tour_no;?>">
+                        <input type="hidden" name="mem_no" id="SpotMsgMemNo" value="3">
+                        <textarea name="spot_msg_content" id="tourMsg" cols="30" rows="10"  placeholder="詳細說明你的靈異體驗...." value="ddasdsadds"></textarea>
+                        <div class="btnWrap">
+                            <input type="reset" value="取消" id="cancelMsgBtn2" class="btn-outline cancelMsg">
+                            <input type="submit" value="發佈" id="sendSpotMsg" class="btn-outline sendMsg">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        <!-- ================ 撰寫留言視窗 ================ -->
 
-  
 
 
+        
     <div class="StartGroup_wrapper">
         <div id="StartGroupSpotBG">
-
             <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
-
-            <audio id="music" src="./music/bgmusic.mp3" loop="true" autoplay="true"></audio>
-
             <header id="topHeader">
                 <div id="navStatus">
                     <div id="soundStatus">
@@ -178,7 +233,7 @@ if ($errMsg != "") {
                             </a>
                         </li>
                         <li class="@@link001-3">
-                            <a href="leaderboard.php" class="title @@link003">
+                            <a href="leaderboard.html" class="title @@link003">
                                 靈異票選
                             </a>
                         </li>
@@ -316,8 +371,8 @@ if ($errMsg != "") {
             <section id="StartGroup_Section1">
                 <div class="breadcrumb">
                     <ul>
-                        <li><a href="">首頁</a></li>
-                        <li><a href="">尋鬼探險</a></li>
+                        <li><a href="./ghostindex.html">首頁</a></li>
+                        <li><a href="./adventrue.html">尋鬼探險</a></li>
                         <li><a href="">新莊廢棄醫院</a></li>
                     </ul>
                 </div>
@@ -390,7 +445,7 @@ if ($errMsg != "") {
 
                         <div class="spotInform">
                             <p class="btn-outline" id="participate">
-                                立即參加
+                            立即加入>
                             </p>
                         </div>
 
@@ -418,23 +473,22 @@ if ($errMsg != "") {
 
             </section>
 
-
-
             <section id="StartGroup_Section2">
                 <nav>
                     <h3 class="tablink selected" id="tab1">自訂行程</h3>
                     <h3 class="tablink" id="tab2">揪團留言</h3>
                 </nav>
                 <div class="allTabPage">
-                    <?php
-                    if ($errMsg != "") {
-                        var_dump($errMsg);
-                    } else {
-                        $OfficialTourRows = $OfficialTour->fetchObject();
-                    ?>
+                   
 
                         <div id="tabPage1" class="tabpage">
                             <div id="officalTour">
+                                         <?php if ($OfficialTourRows->temple_tool==null){
+                                             $temple_tool = "無";
+                                         }else{
+                                            $temple_tool=$OfficialTourRows->temple_tool;
+                                         }?>
+
                                 <?php if ($OfficialTourRows->temple_name != null) {
                                     echo  ' <div class="tourSpot">
                                 <div class="tourImg">
@@ -461,7 +515,7 @@ if ($errMsg != "") {
                                             <img src="./img/icon/tool.png">
                                             <p>所需工具</p>
                                             <div class="moreInfo">
-                                            ', $OfficialTourRows->temple_tool, '
+                                            ',$temple_tool, '
                                             </div>
                                             <div class="triangle"></div>
                                         </div>
@@ -492,18 +546,16 @@ if ($errMsg != "") {
                                         <img src="./img/icon/location.png">
                                             <p>地理位置</p>
                                             <div class="moreInfo">
-                                                 ', $OfficialTourRows->food_location, '
+                                                 ',$OfficialTourRows->food_location, '
                                             </div>
                                             <div class="triangle"></div>
-    
-    
                                         </div>
     
                                         <div class="btn-outline2">
                                             <img src="./img/icon/tool.png">
                                             <p>所需工具</p>
                                             <div class="moreInfo">
-                                                ', $OfficialTourRows->food_tool, '
+                                                ', $temple_tool, '
                                             </div>
                                             <div class="triangle"></div>
                                         </div>
@@ -531,12 +583,11 @@ if ($errMsg != "") {
                                 <p>', $OfficialTourRows->food_content, '</p>
 
                                 <div class="tourSpotInfo">
-
                                     <div class="btn-outline2">
                                         <img src="./img/icon/location.png">
                                         <p>地理位置</p>
                                         <div class="moreInfo">
-                                            台北市新莊區思源路177巷32號
+                                        ',$OfficialTourRows->food_location, '
                                         </div>
                                         <div class="triangle"></div>
 
@@ -547,7 +598,7 @@ if ($errMsg != "") {
                                         <img src="./img/icon/tool.png">
                                         <p>所需工具</p>
                                         <div class="moreInfo">
-                                            一顆虔誠的心
+                                            ',$temple_tool,'
                                         </div>
                                         <div class="triangle"></div>
                                     </div>
@@ -556,7 +607,7 @@ if ($errMsg != "") {
                                         <img src="./img/icon/fee.png">
                                         <p>參加費用</p>
                                         <div class="moreInfo">
-                                            香油錢150圓
+                                        ', $OfficialTourRows->food_budget,'
                                         </div>
                                         <div class="triangle"></div>
                                     </div>
@@ -570,7 +621,7 @@ if ($errMsg != "") {
                                         <img src="<?php echo $OfficialTourRows->spot_image_card; ?>">
                                     </div>
                                     <div class="tourSpotTxt">
-                                        <h2 class="spotTitle">【行程<span class="tour_number"></span>】<span>新莊廢棄醫院</span></h2>
+                                        <h2 class="spotTitle">【行程<span class="tour_number"></span>】<span><?php echo $OfficialTourRows->spot_name;?></span></h2>
                                         <p><?php echo $OfficialTourRows->spot_content ?></p>
 
                                         <div class="tourSpotInfo">
@@ -588,7 +639,13 @@ if ($errMsg != "") {
                                                 <img src="./img/icon/tool.png">
                                                 <p>所需工具</p>
                                                 <div class="moreInfo">
-                                                    <?php echo $OfficialTourRows->spot_tool ?>
+                                                    <?php 
+                                                    if($OfficialTourRows->spot_tool==null){
+                                                    echo "無";
+                                                    }else{
+                                                        echo $OfficialTourRows->spot_tool;
+                                                    };
+                                                    ?>
                                                 </div>
                                                 <div class="triangle"></div>
                                             </div>
@@ -597,7 +654,14 @@ if ($errMsg != "") {
                                                 <img src="./img/icon/fee.png">
                                                 <p>參加費用</p>
                                                 <div class="moreInfo">
-                                                    <?php echo $OfficialTourRows->spot_budget ?>元
+                                                <?php 
+                                                    if($OfficialTourRows->spot_budget==null){
+                                                    echo "0元";
+                                                    }else{
+                                                        echo $OfficialTourRows->spot_budget."元";
+                                                    };
+                                                    ?>
+                                                  
                                                 </div>
                                                 <div class="triangle"></div>
                                             </div>
@@ -652,22 +716,16 @@ if ($errMsg != "") {
                         </div>
 
 
-                    <?php }; ?>
+                 
                     <!-- $OfficialTourRows -->
-
-
-
-
                     <div id="tabPage2" class="tabpage">
                         <div class="writeBtnWrap">
-                            <div class="btn-outline OpenwriteMsgBox">
+                            <div class="btn-outline OpenwriteMsgBox2">
                                 撰寫留言
                             </div>
                         </div>
-
                         <!-- 動態新增區塊 -->
                         <div class="msgZone">
-
                             <?php foreach ($tourMsgRows as $i => $tourMsgRow) { ?>
                                 <div class="spotMsg">
                                     <div class="msgWrap">
@@ -680,9 +738,7 @@ if ($errMsg != "") {
                                 } ?>
                     ">
                                         </div>
-
                                         <div class="txtZone">
-
                                             <div class="msgInfo">
                                                 <p class="name"><?= $tourMsgRow['mem_name'] ?></p>
                                                 <p class="date"><?= $tourMsgRow['msg_time'] ?> 發表</p>
@@ -690,7 +746,7 @@ if ($errMsg != "") {
 
                                             <div class="msgContent">
                                                 <p>
-                                                    <?= $tourMsgRow['spot_msg_content'] ?>
+                                                    <?= $tourMsgRow['tour_msg_content'] ?>
                                                 </p>
                                             </div>
 
@@ -698,64 +754,23 @@ if ($errMsg != "") {
                         <img src="./img/icon/report_red.svg">
                         <p>檢舉留言</p>
                     </div> -->
-
                                         </div>
                                     </div>
 
                                     <div class="ghostFace">
                                         <img src="./img/spot/msgGhostFace.png">
                                     </div>
-
-
                                 </div>
                             <?php } ?>
 
 
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
 
                 <div class="join">
                 </div>
             </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -811,8 +826,8 @@ if ($errMsg != "") {
                                                 <?= $spot['spot_name'] ?><?php if ($spot['temple_name'] != null) {
                                                                                 echo "、", $spot['temple_name'];
                                                                             } ?><?php if ($spot['food_name'] != null) {
-                                                                                        echo "、", $spot['food_name'];
-                                                                                    } ?>
+                                                                                    echo "、", $spot['food_name'];
+                                                                                } ?>
                                             </p>
                                         </div>
 
@@ -888,7 +903,7 @@ if ($errMsg != "") {
                                 </div>
                             </div>
                         </a>
-                        <a href="./createAdventure.php?spot_no=<?=$spot_no?>">
+                        <a href="./createAdventure.php?spot_no=<?= $spot_no ?>">
                             <div class="ghost_btn2_all">
                                 <div class="ghost_btn_img2">
                                     <img src="./img/adventrue/ghost_btn_img2.png" alt="" />
@@ -1027,13 +1042,8 @@ if ($errMsg != "") {
 
     <!-- <script src="js/index._section3_tab.js"></script> -->
     <script src="js/StartGroup.js"></script>
-
+    <!-- //抓他的團名稱 -->
+    <span id="chat_tour"><?php echo $tour_no ?></span>
 </body>
 
 </html>
-
-
-
-
-
-` .

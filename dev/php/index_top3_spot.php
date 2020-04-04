@@ -39,8 +39,10 @@
         //把兩個陣列分別塞進物件回傳
 
         $newArr = array('top_3_info'=> $spotRows, 'top_3_msg_info' => $latest_spot_msg_Rows);
+        // $newJson = a
 
         echo json_encode($newArr);
+        // echo "有用嗎";
 
 
     }catch(PDOException $e){

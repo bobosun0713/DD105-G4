@@ -23,12 +23,12 @@
           width: 150px;
           top: 50px;
           left: -50px;
-        }
+                }
         .people_group_number {
           top: 40%;
           left: 20%;
           h1 {
-            font-size: 28px;
+            font-size: 32px;
             margin: 0;
           }
           #add_number {
@@ -88,7 +88,6 @@
 
     .down_filter_all {
       flex-wrap: wrap;
-
       width: 90%;
       margin: 15px auto;
       .down_filter {
@@ -101,6 +100,7 @@
           margin-bottom: 5px;
         }
         select {
+          cursor: pointer;
           width: 100%;
           border: 1px solid white;
           border-radius: 3px;
@@ -108,7 +108,6 @@
           box-sizing: border-box;
           color: white;
           opacity: 0.8;
-          -webkit-appearance: none;
           option {
             background-color: rgb(58, 57, 57);
           }
@@ -117,25 +116,44 @@
     }
     #trash {
       margin-top: 10px;
+      cursor: pointer;
     }
     .item_all_left_filter {
       .item_all {
+        display: flex;
+        justify-content: center;
         .item {
           width: 80%;
-          margin: 25px auto;
-          .peple_number {
-            .btn_fill_red {
-              border-radius: 20px;
-              width: 50%;
-              padding: 10px 5px;
-              box-sizing: border-box;
-              display: flex;
-              justify-content: center;
-              margin-bottom: 20px;
+          .pic {
+            height: 200px;
+          }
+          .txt {
+            .txt_header {
+              a {
+                h1 {
+                  font-size: 28px;
+                  margin: 0;
+                  padding: 0;
+                }
+              }
             }
           }
+          .peple_number {
+            .last_time {
+              top: 154px;
+              .tour_endtime {
+                padding: 10px 80px;
+              }
+              .btn_fill_red {
+                padding: 10px 80px;
+              }
+            }
+          }
+          // .peple_number
         }
+        // item
       }
+      // .item_all
     }
   }
 
@@ -165,6 +183,21 @@
     }
     100% {
       transform: translateY(50px);
+    }
+  }
+}
+//跳出個人燈箱
+.people_message_background {
+  .people_message {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    // width: 400px;
+    height: 600px;
+    margin-left: -200px;
+    margin-top: -200px;
+    .tab_content {
+      height: 400px;
     }
   }
 }

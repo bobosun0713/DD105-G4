@@ -65,40 +65,43 @@
             </form>
             <div class="down_filter_all">
                 <div class="down_filter">
-                    <label for="">熱門篩選</label>
-                    <select name="YourLocation" id="">
-                        　<option value="Taipei">熱門</option>
-                        　<option value="Taoyuan">即將額滿</option>
-                        　<option value="Hsinchu">最多點擊</option>
-                        　<option value="Miaoli">最多收藏</option>
+                    <!-- <label for="">熱門篩選</label> -->
+                    <select name="select1" id="selectID1">
+                        <option value="Taipei" style="display: none" selected name="option1" class="option1">熱門篩選</option>
+                        　<option value="Taipei" class="option1">最新揪團</option>
+                        　<option value="Taoyuan" class="option1">即將額滿</option>
+                        　<option value="Hsinchu" class="option1">熱門揪團</option>
                     </select>
                 </div>
                 <div class="down_filter">
-                    <label for="">目前參加人數</label>
-                    <select name="YourLocation" id="">
-                        　<option value="Taipei">不限</option>
-                        　<option value="Taoyuan">1~5人</option>
-                        　<option value="Hsinchu">5~10人</option>
-                        　<option value="Miaoli">10人以上</option>
+                    <!-- <label for="">目前參加人數</label> -->
+                    <select name="select2" id="selectID2">
+                        <option value="Taipei" style="display: none"  selected >目前參加人數</option>
+                        　<option value="Taipei" name="option2">不限人數</option>
+                        　<option value="Taoyuan" name="option2">1~3人</option>
+                        　<option value="Hsinchu" name="option2">4~6人</option>
+                        　<option value="Miaoli" name="option2">6人以上</option>
                     </select>
                 </div>
                 <div class="down_filter">
-                    <label for="">創團日期</label>
-                    <select name="YourLocation" id="">
-                        　<option value="Taipei">不限</option>
-                        <option value="Taipei">一日內</option>
-                        　<option value="Taoyuan">一周內</option>
-                        　<option value="Hsinchu">一個月內</option>
-                        　<option value="Miaoli">三個月內</option>
+                    <!-- <label for="">創團日期</label> -->
+                    <select name="select3" id="selectID3">
+                        <option value="Taipei" style="display: none"  selected name="option3">創團日期</option>
+                        　<option value="Taipei" name="option3">不限時間</option>
+                        <option value="Taipei" name="option3">一日內</option>
+                        　<option value="Taoyuan" name="option3">一周內</option>
+                        　<option value="Hsinchu" name="option3">一個月內</option>
+                        　<option value="Miaoli" name="option3">三個月內</option>
                     </select>
                 </div>
                 <div class="down_filter">
-                    <label for="">行程花費</label>
-                    <select name="YourLocation" id="">
-                        　<option value="Taipei">不限</option>
-                        　<option value="Taoyuan">無花費</option>
-                        　<option value="Hsinchu">0~1000元</option>
-                        　<option value="Miaoli">1000元以上</option>
+                    <!-- <label for="">行程花費</label> -->
+                    <select name="select4" id="selectID4">
+                        <option value="Taipei" style="display: none"  selected name="option2">行程花費</option>
+                        　<option value="Taipei" name="option4">不限花費</option>
+                        　<option value="Taoyuan" name="option4">無花費</option>
+                        　<option value="Hsinchu" name="option4">0~500元</option>
+                        　<option value="Miaoli" name="option4">500元以上</option>
                     </select>
                 </div>
                 <div id="trash"><i class="fas fa-trash"></i>
@@ -106,77 +109,81 @@
             </div>
             <!--上方篩選欄位 -->
             <div class="item_all_left_filter">
-                <div class="left_filter">
-                    <h2><i class="fas fa-filter"></i>
-                        自訂篩選</h2>
-                    <div class="group_filter">
-                        <div class="filter_list">
-                            <h2><i class="fab fa-hotjar"></i>
+                <div class="left_filter_group">
+                    <div class="left_filter">
+                        <h2><i class="fas fa-filter"></i>
+                            自訂篩選</h2>
+                        <div class="group_filter">
+                            <div class="filter_list">
+                                <h2><i class="fab fa-hotjar"></i>
 
-                                熱門篩選</h2>
-                            <div class="filter_list_group">
-                                <input type="radio" class="list_check" id="lab1" name="lab1" checked>
-                                <label for="lab1" class="list_check1">最新</label>
-                                <input type="radio" class="list_check" id="lab2" name="lab1">
-                                <label for="lab2" class="list_check1">即將額滿</label>
-                                <input type="radio" class="list_check" id="lab3" name="lab1">
-                                <label for="lab3" class="list_check1">最熱門</label>
-                                <input type="radio" class="list_check" id="lab4" name="lab1">
-                                <label for="lab4" class="list_check1">最多收藏</label>
+                                    熱門篩選</h2>
+                                <div class="filter_list_group">
+                                    <input type="radio" class="list_check" id="lab1" name="lab1" checked>
+                                    <label for="lab1" class="list_check1">最新揪團</label>
+                                    <input type="radio" class="list_check" id="lab2" name="lab1">
+                                    <label for="lab2" class="list_check1">即將額滿</label>
+                                    <input type="radio" class="list_check" id="lab3" name="lab1">
+                                    <label for="lab3" class="list_check1">熱門揪團</label>
+                                    <!-- <input type="radio" class="list_check" id="lab4" name="lab1">
+                                    <label for="lab4" class="list_check1">最多收藏</label> -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="filter_list">
-                            <h2><i class="fas fa-user-friends"></i>
-                               還差幾人!!</h2>
-                            <div class="filter_list_group">
-                                <input type="radio" class="list_check" id="lab5" name="lab2" checked>
-                                <label for="lab5">不限</label>
-                                <input type="radio" class="list_check" id="lab6" name="lab2">
-                                <label for="lab6">1~3人</label>
-                                <input type="radio" class="list_check" id="lab7" name="lab2">
-                                <label for="lab7">4~6人</label>
-                                <input type="radio" class="list_check" id="lab8" name="lab2">
-                                <label for="lab8">7人以上</label>
+                            <div class="filter_list">
+                                <h2><i class="fas fa-user-friends"></i>
+                                    還差幾人!!</h2>
+                                <div class="filter_list_group">
+                                    <input type="radio" class="list_check" id="lab5" name="lab2" checked>
+                                    <label for="lab5">不限人數</label>
+                                    <input type="radio" class="list_check" id="lab6" name="lab2">
+                                    <label for="lab6">1~3人</label>
+                                    <input type="radio" class="list_check" id="lab7" name="lab2">
+                                    <label for="lab7">4~6人</label>
+                                    <input type="radio" class="list_check" id="lab8" name="lab2">
+                                    <label for="lab8">7人以上</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="filter_list">
-                            <h2><i class="far fa-calendar-alt"></i>
+                            <div class="filter_list">
+                                <h2><i class="far fa-calendar-alt"></i>
 
-                                創團日期</h2>
-                            <div class="filter_list_group">
-                                <input type="radio" class="list_check" id="lab9" name="lab3" checked>
-                                <label for="lab9">不限</label>
-                                <input type="radio" class="list_check" id="lab10" name="lab3">
-                                <label for="lab10">一日內</label>
-                                <input type="radio" class="list_check" id="lab11" name="lab3">
-                                <label for="lab11">一周內</label>
-                                <input type="radio" class="list_check" id="lab12" name="lab3">
-                                <label for="lab12">一個月內</label>
-                                <input type="radio" class="list_check" id="lab13" name="lab3">
-                                <label for="lab13">三個月內</label>
+                                    創團日期</h2>
+                                <div class="filter_list_group">
+                                    <input type="radio" class="list_check" id="lab9" name="lab3" checked>
+                                    <label for="lab9">不限時間</label>
+                                    <input type="radio" class="list_check" id="lab10" name="lab3">
+                                    <label for="lab10">一日內</label>
+                                    <input type="radio" class="list_check" id="lab11" name="lab3">
+                                    <label for="lab11">一周內</label>
+                                    <input type="radio" class="list_check" id="lab12" name="lab3">
+                                    <label for="lab12">一個月內</label>
+                                    <input type="radio" class="list_check" id="lab13" name="lab3">
+                                    <label for="lab13">三個月內</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="filter_list">
-                            <h2><i class="fas fa-dollar-sign"></i>
+                            <div class="filter_list">
+                                <h2><i class="fas fa-dollar-sign"></i>
 
-                                行程花費</h2>
-                            <div class="filter_list_group">
-                                <input type="radio" class="list_check" id="lab14" name="lab4" checked>
-                                <label for="lab14">不限</label>
-                                <input type="radio" class="list_check" id="lab15" name="lab4">
-                                <label for="lab15">無花費</label>
-                                <input type="radio" class="list_check" id="lab16" name="lab4">
-                                <label for="lab16">0~500元</label>
-                                <input type="radio" class="list_check" id="lab17" name="lab4">
-                                <label for="lab17">500元以上</label>
+                                    行程花費</h2>
+                                <div class="filter_list_group">
+                                    <input type="radio" class="list_check" id="lab14" name="lab4" checked>
+                                    <label for="lab14">不限花費</label>
+                                    <input type="radio" class="list_check" id="lab15" name="lab4">
+                                    <label for="lab15">無花費</label>
+                                    <input type="radio" class="list_check" id="lab16" name="lab4">
+                                    <label for="lab16">0~500元</label>
+                                    <input type="radio" class="list_check" id="lab17" name="lab4">
+                                    <label for="lab17">500元以上</label>
+                                </div>
                             </div>
                         </div>
+
+
+
                     </div>
-
-
-
                 </div>
+
                 <div class="item_all">
+                    <!-- <div class="no_resule">無任何篩選結果</div> -->
                     <!-- <div class="search_list">共找到7個揪團</div> -->
                     <!-- <div class="item">
                         <div class="pic">
