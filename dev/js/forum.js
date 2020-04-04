@@ -8,6 +8,8 @@ $(document).ready(function() {
     opencard()
     // 檢舉開關
     report_article()
+    // 首頁討論區ＪＳ
+    indexForum()
 
     // 發表文章=發表人
     $("#opener").click(function() {
@@ -160,14 +162,14 @@ function serchcard() {
                                         <div class="btn-border">${data[i].forum_area}</div>
                                         <div class="art_path">
                                             <div class="art_icon">
-                                                <img src="img/icon/eye.png" />
+                                                <img src="img/forum/eye_gray.svg" />
                                                 <span>${data[i].forum_view}</span>
                                                 <input type="hidden" class="forum_view" value="">
                                             </div>
                                             <div class="art_icon">
                                                 <img src="img/icon/chat.svg" />
                                                 <span>${data[i].forum_chat}</span>
-                                                <input type="hidden" id="forum_chat" value="">
+                                                <input type="hidden" class="forum_chat" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -183,9 +185,7 @@ function serchcard() {
 // 開啟文章內容燈箱的function
 function opencard() {
     $(document).on("click", ".content_btn", function() {
-        // $(".content_btn").click(function() {
         $("#forum_contentbox").fadeIn()
-        //更新瀏覽次數
         var pns_no = $(this).attr("psn")
         $.ajax({
             url: "./php/forum_article.php",
@@ -197,7 +197,7 @@ function opencard() {
                 let content = ""
                 content += `
                             <div class="contentbox" psn="${pns_no}">
-                                <div class="user_loc">${data.forum_title}</div>
+                                <div class="user_loc">【${data.forum_title}】</div>
                                 <div class="chatbox_user">
                                     <div class="user_path">
                                         <img src="./img/login/${data.mem_img}" alt="" />
@@ -217,7 +217,7 @@ function opencard() {
                                 <div class="chatbox_status">
                                     <div class="art_path">
                                         <div class="art_icon">
-                                            <img src="img/icon/eye.png" />
+                                            <img src="img/forum/eye.svg" />
                                             <span>${data.forum_view}</span>
                                             <input type="hidden" class="view" value="${data.forum_view}">
                                         </div>
@@ -228,7 +228,7 @@ function opencard() {
                                         </div>
                                     </div>
                                     <div class="art_report report_btn" >
-                                        <img src="./img/forum/warning_black.svg" alt="" />
+                                        <img src="./img/forum/warning.svg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -302,7 +302,7 @@ function forum_msg() {
                         </div>
                         <div class="msg_p">
                             <p>
-                                <span style="color:gray">説：</span>${data[i].forum_msg}
+                                ${data[i].forum_msg}
                             </p>
                         </div>
                     </div>`
@@ -542,143 +542,6 @@ function filterALL() {
                     }
                 }
             }
-            // else if (Sort) {
-            //     if (Sort == "最新發佈") {
-            //         function card_sort(a, b) {
-            //             return b.forum_no - a.forum_no
-            //         }
-            //         data.sort(card_sort)
-            //         let html = ""
-            //         for (i = 0; i < data.length; i++) {
-            //             html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
-            //                                     <div class="art_img">
-            //                                         <img src="./php/images/${data[i].images}"?>
-            //                                     </div>
-            //                                     <div class="art_con">
-            //                                         <div class="art_title">
-            //                                             <img src="./img/login/${data[i].mem_img}" alt="" />
-            //                                             <h1>
-            //                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
-            //                                             </h1>
-            //                                         </div>
-
-            //                                         <div class="art_p">
-            //                                             <h1>${data[i].forum_title}</h1>
-            //                                             <p>${data[i].forum_content}</p>
-            //                                         </div>
-            //                                         <div class="art_info">
-            //                                             <div class="btn-border">${data[i].forum_area}</div>
-            //                                             <div class="art_path">
-            //                                                 <div class="art_icon">
-            //                                                     <img src="img/icon/eye.png" />
-            //                                                     <span>${data[i].forum_view}</span>
-            //                                                     <input type="hidden" id="forum_view" value="">
-            //                                                 </div>
-            //                                                 <div class="art_icon">
-            //                                                     <img src="img/icon/chat.svg" />
-            //                                                     <span>${data[i].forum_chat}</span>
-            //                                                     <input type="hidden" id="forum_chat" value="">
-            //                                                 </div>
-            //                                             </div>
-            //                                         </div>
-            //                                     </div>
-            //                                 </div>`
-            //             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
-            //             $("#forum_space").append(html)
-            //             // opencard()
-            //         }
-            //     }
-            //     if (Sort == "瀏覽最多") {
-            //         function card_sort(a, b) {
-            //             return b.forum_view - a.forum_view
-            //         }
-            //         data.sort(card_sort)
-            //         let html = ""
-            //         for (i = 0; i < data.length; i++) {
-            //             html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
-            //                                     <div class="art_img">
-            //                                         <img src="./php/images/${data[i].images}"?>
-            //                                     </div>
-            //                                     <div class="art_con">
-            //                                         <div class="art_title">
-            //                                             <img src="./img/login/${data[i].mem_img}" alt="" />
-            //                                             <h1>
-            //                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
-            //                                             </h1>
-            //                                         </div>
-
-            //                                         <div class="art_p">
-            //                                             <h1>${data[i].forum_title}</h1>
-            //                                             <p>${data[i].forum_content}</p>
-            //                                         </div>
-            //                                         <div class="art_info">
-            //                                             <div class="btn-border">${data[i].forum_area}</div>
-            //                                             <div class="art_path">
-            //                                                 <div class="art_icon">
-            //                                                     <img src="img/icon/eye.png" />
-            //                                                     <span>${data[i].forum_view}</span>
-            //                                                     <input type="hidden" id="forum_view" value="">
-            //                                                 </div>
-            //                                                 <div class="art_icon">
-            //                                                     <img src="img/icon/chat.svg" />
-            //                                                     <span>${data[i].forum_chat}</span>
-            //                                                     <input type="hidden" id="forum_chat" value="">
-            //                                                 </div>
-            //                                             </div>
-            //                                         </div>
-            //                                     </div>
-            //                                 </div>`
-            //             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
-            //             $("#forum_space").append(html)
-            //             // opencard()
-            //         }
-            //     }
-            //     if (Sort == "回復最多") {
-            //         function card_sort(a, b) {
-            //             return b.forum_chat - a.forum_chat
-            //         }
-            //         data.sort(card_sort)
-            //         let html = ""
-            //         for (i = 0; i < data.length; i++) {
-            //             html += `<div class="forum_filter_articlec content_btn wow slideInUp" psn="${data[i].forum_no}">
-            //                                     <div class="art_img">
-            //                                         <img src="./php/images/${data[i].images}"?>
-            //                                     </div>
-            //                                     <div class="art_con">
-            //                                         <div class="art_title">
-            //                                             <img src="./img/login/${data[i].mem_img}" alt="" />
-            //                                             <h1>
-            //                                                 ${data[i].mem_name}<span>${data[i].forum_date}刊登</span>
-            //                                             </h1>
-            //                                         </div>
-
-            //                                         <div class="art_p">
-            //                                             <h1>${data[i].forum_title}</h1>
-            //                                             <p>${data[i].forum_content}</p>
-            //                                         </div>
-            //                                         <div class="art_info">
-            //                                             <div class="btn-border">${data[i].forum_area}</div>
-            //                                             <div class="art_path">
-            //                                                 <div class="art_icon">
-            //                                                     <img src="img/icon/eye.png" />
-            //                                                     <span>${data[i].forum_view}</span>
-            //                                                     <input type="hidden" id="forum_view" value="">
-            //                                                 </div>
-            //                                                 <div class="art_icon">
-            //                                                     <img src="img/icon/chat.svg" />
-            //                                                     <span>${data[i].forum_chat}</span>
-            //                                                     <input type="hidden" id="forum_chat" value="">
-            //                                                 </div>
-            //                                             </div>
-            //                                         </div>
-            //                                     </div>
-            //                                 </div>`
-            //             $("#forum_space").empty() //先清空網頁上卡片 再重抓！
-            //             $("#forum_space").append(html)
-            //             // opencard()
-            //         }
-            //     }
-            // }
         },
     })
 }
@@ -716,6 +579,72 @@ function report_article() {
             },
             error: function(data) {
                 alert("舉報失敗")
+            },
+        })
+    })
+}
+//首頁燈箱
+
+function indexForum() {
+    $(document).on("click", ".card_border", function() {
+        $("#forum_contentbox").fadeIn()
+        var pns_no = $(this).attr("psn")
+        $.ajax({
+            url: "./php/forum_article.php",
+            type: "post",
+            dataType: "json",
+            async: false,
+            data: { forum_no: pns_no },
+            success: function(data) {
+                let content = ""
+                content += `
+                        <div class="contentbox" psn="${pns_no}">
+                            <div class="user_loc">【${data.forum_title}】</div>
+                            <div class="chatbox_user">
+                                <div class="user_path">
+                                    <img src="./img/login/${data.mem_img}" alt="" />
+                                </div>
+                                <div class="user_name">${data.mem_name}</div>
+                            </div>
+                            <div class="chatbox_content">
+                                <div class="conten_img">
+                                    <img src="./php/images/${data.images}" alt="" />
+                                </div>
+                                <div class="content_p">
+                                    <p>
+                                        ${data.forum_content}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="chatbox_status">
+                                <div class="art_path">
+                                    <div class="art_icon">
+                                        <img src="img/forum/eye.svg" />
+                                        <span>${data.forum_view}</span>
+                                        <input type="hidden" class="view" value="${data.forum_view}">
+                                    </div>
+                                    <div class="art_icon">
+                                        <img src="img/icon/chat.svg" />
+                                        <span>${data.forum_chat}</span>
+                                        <input type="hidden" class="chat" value="${data.forum_chat}">
+                                    </div>
+                                </div>
+                                <div class="art_report report_btn" >
+                                    <img src="./img/forum/warning.svg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    `
+                $("#forum_contentbox").append(content)
+                //抓取留言
+                forum_msg()
+                // 抓取瀏覽數
+                view()
+                // 關閉燈箱 並清掉內容
+                $(".content_out").click(function() {
+                    $("#forum_contentbox").fadeOut()
+                    $(".contentbox").remove()
+                })
             },
         })
     })

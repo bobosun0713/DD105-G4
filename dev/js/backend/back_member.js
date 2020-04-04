@@ -29,7 +29,8 @@ function deletemember() {
                 mem_no: memDelete,
             },
             success: function(data) {
-                alert("修改成功")
+                alert("刪除成功")
+                location.reload()
             },
             error: function() {
                 alert("修改失敗")

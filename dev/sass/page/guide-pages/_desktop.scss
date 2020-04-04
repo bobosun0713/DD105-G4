@@ -1,169 +1,414 @@
-a.front-span{
-    text-decoration: none;
-
-}
-#Guide-page-img{
+  //第一個div背景圖
+#guide-pages{
+    background: url("../img/guide-pages/black.png");
+    background-color: black;
+    background-repeat: no-repeat;
     width: auto;
     width: 100%;
-    background-image: url(../img/guide-pages/Guide-img.jpg);
-    background-repeat: no-repeat;
-// 幽靈  
-#ghost{
-    display: flex;
-    justify-content: flex-end;
-    min-height: auto;
-    min-height: 300px;
+    animation:  pages  5s infinite ease-in-out alternate-reverse;
+        //背景圖動畫
+        @keyframes pages {
+            from { background-position: 0 0; } 
+            to { background-position: 100% 0; }
+          }
 
+    //第二個div
+    .Guide-page-img {
+            display: grid;
+            width: 1200px;
+            width: 100%;
+            //符咒圖div
+        .box1 {
+            display: flex;
+            justify-content: center;
+            width: 1200px;
+            width: 100%;
+            transform-style: 3d;
+            margin: 60px;
+            margin-top: -300px;
+            margin-bottom: -395px;
+            //左邊符咒圖
+            #L_magicpaper {
+            display: flex;
+            justify-content:space-between;
+            background: url("../img/guide-pages/spell-left.png");
+            background-repeat: no-repeat;
+            z-index: 2;
+            width: 510px;
+            height: 1100px;
+            animation: swing1 5s infinite ease-in-out alternate-reverse;
+            animation-delay: 2s;
+          }
+          //logo圖
+            #logo-white-b{
+            max-width: 340px;
+            max-height: 340px;
+            margin-top: 300px;
+            margin-right: 120px;
+            display: flex;
+            justify-content:space-between;
 
-// 幽靈圖動態 
-.ghost{
-    animation: ghost 20s infinite;
-    max-height: 200px;
-    margin-top: 40px;
+            } //右邊符咒圖
+          #R_magicpaper {
+            display: flex;
+            background: url("../img/guide-pages/spell-right.png");
+            background-repeat: no-repeat;
+            z-index: 2;
+            display: flex;
+            justify-content:space-between;
+            width: 510px;
+            height: 1100px;
+            margin-bottom: -10px;
+            animation: swing2 5s infinite ease-in-out alternate-reverse;
+            animation-delay: 2s;
+            }
+        }
+        //左邊符咒圖動效
+      @keyframes swing1 {
+        0% {
+            transform: rotate3d(-1, -1, 0, -25deg);
+        }
+        50% {
+            transform: rotate3d(-1, -1, 0, -0deg);
+        }
+        100% {
+            transform: rotate3d(-1, -1, 0, -25deg);
+        }
+      }
+      //右邊符咒圖動效
+      @keyframes swing2 {
+        0% {
+            transform: rotate3d(1, -1, 0, -40deg);
+          }
+          50% {
+            transform: rotate3d(1, -1, 0, -20deg);
+          }
+          100% {
+            transform: rotate3d(1, -1, 0, -40deg);
+          }
 
-    }
-    // 幽靈圖滑動動態出現
-@keyframes ghost {
-    0% {
-        transform: translate(-8px, 5px);
-    }
-    50% {
-        transform: translate(-185px, -10px);
-    }
-    100% {
-        transform: translate(-8px, -30px);
-    }
-}
+        }
+      //前後台圖片div位置 
+      .front-end{
+          display: flex;
+          width: 1200px;
+          width: 100%;
+          margin-top: -80px;
+          height: 300px; 
+          display: flex;
+          justify-content: center;
+          // 前台圖 
+          #front-end{
+              background-image: url(../img/guide-pages/brand.png);
+              background-repeat: no-repeat;
+              color: ghostwhite;
+              width: 300px;
+              height: 250px;
+              position: relative; 
+              margin: 60px;
+              animation: front-end 5s infinite;
+              }
+          // 後台圖 
+          #rear-end{
+            background-image: url(../img/guide-pages/brand.png);
+            background-repeat: no-repeat;
+              color: ghostwhite;
+              width: 300px;
+              height: 250px;
+              position: relative;
+              margin: 60px;
+              animation: front-end 5s infinite; 
+              }
+          // //前後台圖上下浮動
+          @keyframes front-end {
 
-}
+                  0% {
+                      transform: translate(0px, 10px);
+                      filter: contrast(200%) brightness(150%) hue-rotate(170deg);
 
-
-//血跡圖片位置 
-.front-end{
-    display: flex;
-    width: 1200px;
-    width: 100%;
-    margin-top: -90px;
-    height: 300px; 
-    display: flex;
-    justify-content: center;
-            // 前端血跡圖 
-            #front-end{
-                background-image: url(../img/guide-pages/Bloodstain-b.png);
-                background-repeat: no-repeat;
-                color: ghostwhite;
-                width: 430px;
-                height: 280px;
-                position: relative; 
-                margin: 60px;
-                animation: front-end 1.6s infinite;
-                }
-            
-            // 後端血跡圖 
-            #rear-end{
-                background-image: url(../img/guide-pages/Bloodstain-b.png);
-                background-repeat: no-repeat;
-                color: ghostwhite;
-                width: 430px;
-                height: 280px;
-                position: relative;
-                margin: 60px;
-                animation: front-end 1.6s infinite; 
-            
-                }
-               
-            // 血跡圖上下浮動
-            @keyframes front-end {
-
+                  }
+                  50% {
+                      transform: translate(0px, -30px);
+                  }
+                  100% {
+                      transform: translate(0px, 10px);
+                  }
+              }
+    
+         //前後台文字滑文字 
+          a.front-span{
+              position: absolute;
+              left: 100px;
+              top: 86px;
+              font-size: 50px;
+              text-align: center;
+              text-decoration:none;
+              font-weight: bold;
+              color: rgb(32, 32, 32);
+              animation: front-span 3s infinite ease-in-out alternate-reverse;
+              }
+              //前後台文字滑過
+          .front-span:hover {
+              color: rgb(121, 20, 17);
+              
+              text-shadow: 4px 2px rgb(88, 25, 25) ;
+                // text-shadow:0px 0px 8px rgb(252, 252, 252), 0px 0px 42px rgb(230, 218, 218), 0px 0px 72px rgb(230, 223, 223),0px 0px 150px rgb(219, 25, 25);
+              }
+              //前後台文字滑過動畫
+              @keyframes front-span {
                     0% {
-                        transform: translate(0px, 10px);
-                        
-                    }
+                        text-shadow:0px 0px 8px rgb(209, 202, 202),
+                      }
                     50% {
-                        transform: translate(0px, -30px);
+                        color: rgb(87, 84, 84);
+
+                      }
+                      100% {
+                        text-shadow:0px 0px 8px rgb(252, 252, 252), 
+                        0px 0px 42px rgb(230, 218, 218),
+                        0px 0px 72px rgb(146, 140, 140),
+                        0px 0px 150px rgb(240, 235, 235);
+                      }
+                  }
+
+        }
+                  //幽靈&老鼠div
+                  #Kappa{
+                    display:flex;
+                    justify-content: space-between;
+                    margin-top: -450x;
+                    animation:Kappa-s 3.5s infinite;
+                    animation-timing-function: ease-out ;
+                  
+                      // .Kappa-b{
+                        img.Kappa-s{
+                          display: flex;
+                          margin-top: 10px;
+  
+                        }
+                  
+                    .ghost-mose-b{
+                      background: url("../img/guide-pages/ghost-mose-s.png");
+                      background-repeat: no-repeat;
+                      width: 300px;
+                      height: 300px;
+                  }
+                  //幽靈動態圖
+                  @keyframes Kappa-s {
+                    0% {
+                      margin-bottom: 15px;
+                      transform: translateY(15px);
+                    }
+                    30% {
+                      transform: translateY(0px);
+                      filter: invert(75%);//負片
                     }
                     100% {
-                        transform: translate(0px, 10px);
+                      transform: translateY(15px);
+                      margin-bottom: 15px;
                     }
-                }
-            // 前後端血跡文字 
-            .front-span{
-                position: absolute;
-                left: 140px;
-                top: 105px;
-                font-size: 50px;
-                text-align: center;
-                color: rgb(194, 192, 192);
-                font-weight: bold;
-                }
-            .front-span:hover {
-                   color: rgb(121, 20, 17);
-                   text-shadow: 4px 2px rgb(250, 245, 245) ;
-                    }
+                  }
 
+
+
+                  }
+
+       
+
+
+  }
+      
+    
 }
+  
+     
+ //  -------RWD---------1200px *1610px------------- 
+ 
+@media screen and (min-width:1200px) and (max-width:1610px){
+    //第一個div背景圖
+#guide-pages{
+  width: 990px;
+  width: 100%;
 
-// 女鬼 與鬼島logo大div 
-.Female-ghost{
-    display: flex;
-    margin-top: 85px;
-    flex-direction: row;
-    justify-content: space-between;
-    #Female-ghost-s{
-        display:none;//影藏女鬼 小圖
+  //第二個div
+  .Guide-page-img {
+          width: 1200px;
+          width: 100%;
+          //符咒圖div
+      .box1 {
+          width: 1200px;
+          width: 100%;
+          margin: 22px;
+          margin-top: -160px;
+          margin-bottom: -200px;
+          //左邊符咒圖
+          #L_magicpaper {
+          background: url("../img/guide-pages/spell-left-1.png");
+          background-repeat: no-repeat;
+          z-index: 2;
+          width: 410px;
+          height: 800px;
+        }
+        //logo圖
+          #logo-white-b{
+          max-width: 300px;
+          max-height: 300px;
+          margin-top: 170px;
+          margin-right: 120px;
+
+          } //右邊符咒圖
+        #R_magicpaper {
+          background: url("../img/guide-pages/spell-right-1.png");
+          background-repeat: no-repeat;
+          width: 410px;
+          height: 800px;
+          margin-bottom: -10px;
+          }
     }
 
-        // 喜歡冒險文字typewriter
-        .typewriter{
-            color: rgb(218, 216, 211);
-            text-align: center;
-            display: block;
-            height: 250px;
-            margin-top: 30px;
-            line-height: 60px;
-            font-size: 1.3rem;
-            letter-spacing: 8px;
-            }
 
-            #logo-white-s{
-                display: none;//隱藏logo小圖
-            }
+        //前後台圖片div位置 
+        .front-end{
+              margin-top: -120px;
+            // 前台圖 
+            #front-end{
+                background-image: url(../img/guide-pages/brand-1.png);
+                background-repeat: no-repeat;
+                }
+            // 後台圖 
+            #rear-end{
+                background-image: url(../img/guide-pages/brand-1.png);
+                background-repeat: no-repeat;
+              }
+         //前後台文字滑文字 
+         a.front-span{
+          left: 70px;
+          top: 68px;
+          }
+               
+      }
+
+                //幽靈&老鼠div
+                #Kappa{
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 10px;
+                    img.Kappa-s{
+                      max-width: 297px;
+                      max-height: 297px;
+                    }
+                  .ghost-mose-b{
+                      max-width: 300px;
+                      max-height: 300px;
+                  }
+
+
+                }
+
+     
+
+    }
+
+
+   }
+  
 }
-
-
-}
-
-//  -------RWD---------992px *1300px------------- 
+     
+ //  -------RWD---------990px *1199px------------- 
  
-@media screen and (min-width:992px) and (max-width:1300px){
-    #Guide-page-img{
-        width:990px;
+ @media screen and (min-width:990px) and (max-width:1199px){
+  //第一個div背景圖
+#guide-pages{
+width: 990px;
+width: 100%;
+background-color: rgb(197, 174, 197); 
+
+//第二個div
+.Guide-page-img {
+        width: 1200px;
         width: 100%;
-        // 女鬼 與鬼島logo大div 
-        .Female-ghost{
-            margin-top: 166px;
-            max-height: 350px;
-            #Female-ghost{
-            display: none;//隱藏女鬼 大圖
-            margin-top: 15px;
-            }
-            #Female-ghost-s{
-            display:block;//顯示女鬼 小圖
-            width: 250px;
-            }
-            
-                // 喜歡冒險文字typewriter 
-                .typewriter{
-                    margin-top: -30px;
-                    font-size: 1.15rem;
-                    }
-                    #logo-white-b{
-                        display: none;//隱藏logo大圖
-                    }
-                    #logo-white-s{
-                        display:block;//顯示logo小圖
-                    }
-        
+        //符咒圖div
+    .box1 {
+        width: 1200px;
+        width: 100%;
+        margin: 39px;
+        margin-top: -150px;
+        margin-bottom: -95px;
+        //左邊符咒圖
+        #L_magicpaper {
+        background: url("../img/guide-pages/spell-left-2.png");
+        background-repeat: no-repeat;
+        z-index: 2;
+        width: 300px;
+        height: 700px;
+      }
+      //logo圖
+        #logo-white-b{
+        max-width: 250px;
+        max-height: 250px;
+        margin-top: 120px;
+        margin-right: 120px;
+
+        } //右邊符咒圖
+      #R_magicpaper {
+        background: url("../img/guide-pages/spell-right-2.png");
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 700px;
+        margin-bottom: -10px;
         }
-    } 
+  }
+
+
+      //前後台圖片div位置 
+      .front-end{
+            margin-top: -120px;
+          // 前台圖 
+          #front-end{
+              background-image: url(../img/guide-pages/brand-1.png);
+              background-repeat: no-repeat;
+              margin: 20px;
+              }
+          // 後台圖 
+          #rear-end{
+              background-image: url(../img/guide-pages/brand-1.png);
+              background-repeat: no-repeat;
+              margin: 20px;
+            }
+       //前後台文字滑文字 
+       a.front-span{
+        left: 70px;
+        top: 68px;
+        }
+             
+    }
+
+              //幽靈&老鼠div
+              #Kappa{
+                display: flex;
+                justify-content: space-between;
+                margin-top: -4px;
+                  img.Kappa-s{
+                    width: 220px;
+                    height: 220px;
+                    margin-top: 84px;
+                  }
+                .ghost-mose-b{
+                  background: url("../img/guide-pages/ghost-mose-s-1.png");
+                  background-repeat: no-repeat;
+                  width: 200px;
+                  height: 200px;
+                  margin-top: 106px;
+              }
+
+
+              }
+
+   
+
+  }
+
+
+ }
+
 }
