@@ -10,6 +10,12 @@
                         display: none;
                     }
                 }
+                > span {
+                    background-size: 12px;
+                    width: 95px;
+                    font-size: 1rem;
+                    line-height: 35px;
+                }
             }
             // 篩選
             .forum_filter {

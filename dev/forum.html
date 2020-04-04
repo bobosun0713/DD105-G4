@@ -140,9 +140,10 @@
                     if (xhr.status == 200) {
                         member = JSON.parse(xhr.responseText)
                         if (!member.mem_name) {
+                            $("#forum_chatbox").css("display", "none")
+                            $("#forum_contentbox").css("display", "none")
+                            $(".contentbox").remove()
                             alert("請先登入")
-                            $("#forum_chatbox").fadeOut()
-                            $("#forum_contentbox").fadeOut()
                             $("#indexLogin,#login_page1").css("display", "block")
                         }
                     }
