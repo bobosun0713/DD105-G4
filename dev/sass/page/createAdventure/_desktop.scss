@@ -42,12 +42,12 @@
 
           .form-span {
             display: inline-block;
-            width: 30px;
-            line-height: 28px;
+            width: 40px;
+            line-height: 40px;
             -moz-border-radius: 20px;
             border-radius: 20px;
             background-color: #333;
-            border: 1px solid white;
+            // border: 0.5px solid white;
             color: white;
             text-align: center;
             margin-right: 10px;
@@ -57,13 +57,14 @@
 
           .active {
             background-color: #7d0021;
-            border: 1px solid #7d0021;
+            // border: 1px solid #7d0021;
           }
           //步驟title
           .nav-label {
             left: 0px;
             position: relative;
             top: 35px;
+            left: 7px;
             width: 130px;
             text-align: center;
             display: block;
@@ -74,11 +75,12 @@
         li .progressbar::after {
           content: "";
           transform: translate(18px);
-          height: 2px;
+          // height: 1px;
+          border: 0.5px solid white;
           width: 90px;
           display: block;
-          left: 25px;
-          top: 12px;
+          left: 31px;
+          top: 17px;
           position: absolute;
           background-color: white;
         }
@@ -127,42 +129,49 @@
           }
 
           .templefoodbuttons {
+
+            padding-left: 20px;
+
             button {
               font-size: 22px;
               border: none;
               background-color: transparent;
               margin: 30px 3px 10px 3px;
-              width:100px;
-              padding: 8px 0px;
+              width: 60px;
+              padding: 5px 0px;
               color: white;
               outline: transparent;
-              transition: all .5s linear;
+              cursor: pointer;
+              // border-bottom: 1px solid white;
+              transition: all 0.5s linear;
 
-              &:after{
-                content: '';
+              &:after {
+                content: " ";
                 display: block;
-                width: 0px;
+                width: 1px;
                 opacity: 0;
                 position: relative;
-                left: 20px;
+                left: 0px;
+                bottom: -6px;
                 border: 0.5px solid white;
-                transition: all .5s linear;
+                transition: all 0.5s linear;
               }
 
               &:hover {
-                cursor: pointer;
-
-                &:after{
+                // border-bottom: 1px solid white;
+                
+                &:after {
                   width: 60px;
                   opacity: 1;
                 }
-                
+
               }
             }
           }
           .spotselections {
             position: relative;
             // background-color: grey;
+
             .spotlightbox {
               position: absolute;
               background-color: rgba(0, 0, 0, 0.9);
@@ -175,7 +184,7 @@
               left: 30%;
               display: none;
 
-              .content{
+              .content {
                 margin: auto;
               }
 
@@ -200,7 +209,7 @@
               .additinerarybtn {
                 margin-top: 18px;
                 float: right;
-                &:after{
+                &:after {
                   content: " ";
                   clear: both;
                 }
@@ -212,23 +221,36 @@
               }
               span {
                 font-size: 1.5rem;
-                
               }
               .detailstext {
                 font-size: 1rem;
                 color: rgba(255, 255, 255, 0.7);
 
-                hr{
-                  opacity: .5;
+                hr {
+                  opacity: 0.5;
                 }
               }
             }
             .selectionsframe {
-              border: 2px solid white;
+              // border: 1px solid white;
+              background-color: rgba(0, 0, 0, 0.5);
               border-radius: 5px;
               height: 420px;
               overflow-y: scroll;
               padding: 20px 30px;
+
+              &::-webkit-scrollbar {
+                width: 10px;
+                background-color: rgba(255, 255, 255, 0);
+              }
+              &::-webkit-scrollbar-track {
+                background-color: rgba(0, 0, 0, 0.6);
+                border-radius: 10px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.6);
+                border-radius: 10px;
+              }
 
               .spotoptions {
                 position: relative;
@@ -245,7 +267,7 @@
                     height: 80px;
                     border-radius: 50%;
                     transform: translate(70%, 50%);
-                    transition: .5s opacity linear;
+                    transition: 0.5s opacity linear;
 
                     &:hover {
                       cursor: pointer;
@@ -254,21 +276,12 @@
                   }
                 }
                 .content {
-                  // background-color: blue;
-
-                  &:hover{
-                    img{
-                      filter: saturate(1);
-                    }
-                  }
-
                   img {
                     width: 185px;
                     height: 137px;
                     // border: 3px solid blue;
                     border-radius: 5px;
                     margin-bottom: 5px;
-                    filter: saturate(0.2);
                   }
                   span {
                     //title
@@ -283,7 +296,7 @@
                   }
                 }
               }
-              .optionhide{
+              .optionhide {
                 display: none;
               }
             }
@@ -302,12 +315,16 @@
           background-size: 250%;
           background-position: -30px;
           flex: none;
+
           .heading {
             line-height: 1.2rem;
             // border: 1px solid blue;
             margin-bottom: 30px;
             font-size: 1.2rem;
             padding-left: 10px;
+            display: flex;
+            align-items: center;
+
             img {
               margin-right: 12px;
               width: 20px;
@@ -315,29 +332,43 @@
             }
           }
           .selected_spot {
-            height: 82%;
+            height: 90%;
             padding: 15px;
             // border: 3px solid red;
             overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+              width: 10px;
+              background-color: rgba(255, 255, 255, 0);
+            }
+            &::-webkit-scrollbar-track {
+              background-color: rgba(0, 0, 0, 0.6);
+              border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: rgba(255, 255, 255, 0.6);
+              border-radius: 10px;
+            }
+
             div {
-              span{
+              span {
                 font-size: 1.2rem;
                 font-weight: 800;
                 width: 100%;
                 float: right;
               }
-              .imgframe{
-                width:100%;
-                height:150px;
+              .imgframe {
+                width: 100%;
+                height: 150px;
                 border-radius: 10px;
                 overflow: hidden;
                 img {
-                  width:120%;
-                  height:auto;
+                  width: 120%;
+                  height: auto;
                   transform: scaleX(-1) translate(70px, -66px);
                 }
               }
-              
+
               .delete_btn {
                 font-size: 1rem;
                 font-weight: 700;
@@ -347,8 +378,8 @@
                 color: white;
                 position: relative;
                 bottom: 117px;
-                top:-140px;
-                right:10px;
+                top: -140px;
+                right: 10px;
                 float: right;
                 &:hover {
                   cursor: pointer;
@@ -356,20 +387,21 @@
                 }
               }
 
-              .shift_up_btn, .shift_down_btn{
+              .shift_up_btn,
+              .shift_down_btn {
                 position: relative;
                 bottom: 36px;
                 background: black;
                 border: 1px solid transparent;
                 color: white;
-                opacity: .6;
+                opacity: 0.6;
                 padding: 5px 10px;
-                transition: opacity .2s linear;
+                transition: opacity 0.2s linear;
                 // display: inline;
                 float: left;
 
-                &:hover{
-                  opacity: .8;
+                &:hover {
+                  opacity: 0.8;
                 }
               }
             }
@@ -677,8 +709,6 @@
           }
         }
 
-        
-
         .section {
           display: flex;
           flex-wrap: wrap;
@@ -721,11 +751,11 @@
               padding: 0 10px;
             }
 
-            p{
+            p {
               width: 330px;
               height: 45px;
               display: inline-block;
-              margin: 10px 0px 20px 0px
+              margin: 10px 0px 20px 0px;
             }
 
             textarea {
@@ -919,23 +949,23 @@
               width: 80%;
               height: 4px;
               animation: line2 5s infinite;
-              @keyframes line2 {
-                0% {
-                  width: 0;
-                }
-                25% {
-                  width: 20%;
-                }
-                50% {
-                  width: 40%;
-                }
-                75% {
-                  width: 60%;
-                }
-                100% {
-                  width: 80%;
-                }
-              }
+              // @keyframes line2 {
+              //   0% {
+              //     width: 0;
+              //   }
+              //   25% {
+              //     width: 20%;
+              //   }
+              //   50% {
+              //     width: 40%;
+              //   }
+              //   75% {
+              //     width: 60%;
+              //   }
+              //   100% {
+              //     width: 80%;
+              //   }
+              // }
               &::before {
                 content: "";
                 width: 15px;

@@ -44,9 +44,9 @@ $(document).ready(function() {
             let forum = ""
             for (i = 0; i < data.length; i++) {
                 forum += `
-                <div class="card_border">
+                <div class="card_border" psn="${data[i].forum_no}">
                     <div class="card_user">
-                        <img src="${data[i].mem_img}" alt="" />
+                        <img src="./img/login/${data[i].mem_img}" alt="" />
                         <div class="card_title_user">
                             <div class="title_name">${data[i].mem_name}</div>
                             <div class="title_time">${data[i].forum_date}刊登</div>
@@ -56,7 +56,7 @@ $(document).ready(function() {
                     <p class="card_content">${data[i].forum_content}</p>
                     <div class="card_status">
                         <div class="card_icon">
-                            <img src="./img/icon/eye.png" alt="" />
+                            <img src="./img/forum/eye.svg" alt="" />
                             <span class="">${data[i].forum_view}</span>
                         </div>
                         <div class="card_icon">

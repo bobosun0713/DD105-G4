@@ -227,8 +227,8 @@ if ($errMsg != "") {
                                 前進鬼島
                             </a>
                         </li>
-                        <li class="@@link001-2">
-                            <a href="adventrue.html" class="title @@link002">
+                        <li class="pageSelectEffect1">
+                            <a href="adventrue.html" class="title pageSelectEffect2">
                                 尋鬼探險
                             </a>
                         </li>

@@ -2,24 +2,20 @@
 <html lang="en">
     <head>
         @@include('layout/head.html')
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
         <title>討論區</title>
+        <style></style>
     </head>
     <body>
         <!-- 滑鼠鬼 -->
         @@include('layout/component/mouse_ghost.html')
         <!-- 發文 燈箱 -->
         <div id="forum_chatbox">
+            <div class="chatbox_out"></div>
             <div class="chatbox">
                 <h2>【發表文章】</h2>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="chatbox_user">
-                        <!-- <div class="user_path">
-                            <img src="./img/icon/deCfault_header.png" alt="" />
-                        </div>
-                        <div class="user_name">
-                            非洲酋長
-                        </div> -->
-                    </div>
+                    <div class="chatbox_user"></div>
                     <div class="user_select">
                         <select name="forum_area" id="forum_area">
                             <option value="北部">北部</option>
@@ -82,11 +78,11 @@
             <!-- 霧氣 -->
             @@include('layout/component/smoke.html')
             <!-- 導覽列 -->
-            @@include('layout/header.html')
+            @@include('layout/header.html',{ "link005":"pageSelectEffect2" ,"link001-5":"pageSelectEffect1" })
             <div class="forum_container">
                 <!-- 文章標題 -->
                 <div class="article_title">
-                    <div class="art_title">所有文章列表</div>
+                    <div class="art_title title">所有文章列表</div>
                     <span id="opener">投稿</span>
                 </div>
                 <!-- 篩選 -->
@@ -99,7 +95,7 @@
                         <option value="南部">南部</option>
                     </select>
                     <select name="" id="articel_Sort">
-                        <option value="排序方式" selected>排序方式</option>
+                        <!-- <option value="排序方式" selected>排序方式</option> -->
                         <option value="最新發佈">最新發佈</option>
                         <option value="瀏覽最多">瀏覽最多</option>
                         <option value="回復最多">回復最多</option>
@@ -114,8 +110,26 @@
             <!-- footer -->
             @@include('layout/footer.html')
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+        <script src="js/wow.js"></script>
         <script src="./js/forum.js"></script>
         <script>
+            //textillate
+            $(".bannerText").textillate({
+                in: {
+                    effect: "fadeInLeftBig",
+                    delayScale: 8,
+                },
+                out: {
+                    effect: "hinge",
+                    delayScale: 10,
+                },
+                loop: true,
+            })
+            // wow.js
+            new WOW().init()
+
             //判斷會員登入
             function checkLoginStatus() {
                 var xhr = new XMLHttpRequest()
@@ -126,9 +140,10 @@
                     if (xhr.status == 200) {
                         member = JSON.parse(xhr.responseText)
                         if (!member.mem_name) {
+                            $("#forum_chatbox").css("display", "none")
+                            $("#forum_contentbox").css("display", "none")
+                            $(".contentbox").remove()
                             alert("請先登入")
-                            $("#forum_chatbox").fadeOut()
-                            $("#forum_contentbox").fadeOut()
                             $("#indexLogin,#login_page1").css("display", "block")
                         }
                     }

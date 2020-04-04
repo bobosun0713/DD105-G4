@@ -7,6 +7,11 @@
     top: 0;
     left: 0;
     z-index: 10;
-    background-image: url('../img/adventrue/text.png');
+    background-image: url("../img/adventrue/text.png");
     overflow: hidden;
+}
+@media (max-width: 768px) {
+    #mouse {
+        display: none;
+    }
 }

@@ -7,17 +7,21 @@ window.addEventListener("load", function () {
   let templefoodbuttons = document.querySelectorAll(".templefoodbuttons button");
   templefoodbuttons[0].onclick = togglefortab;
   templefoodbuttons[1].onclick = togglefortab;
+  templefoodbuttons[0].style.borderBottom = "1px solid white";
 
   function togglefortab() {
     let hideall = document.querySelectorAll(".selectionsframe .spotoptions");
     for (let i = 0; i < hideall.length; i++) {
       hideall[i].style.display = "none";
     }
+
     if (this.innerText == "廟宇") {
       let templeopt = document.querySelectorAll(".selectionsframe .templeopt")
       for (let i = 0; i < templeopt.length; i++) {
         templeopt[i].style.display = "block";
       }
+      templefoodbuttons[0].style.borderBottom = "1px solid white";
+      templefoodbuttons[1].style.borderBottom = "0px solid white";
     } else {
       let hideall = document.querySelectorAll(".selectionsframe .spotoptions");
       for (let i = 0; i < hideall.length; i++) {
@@ -27,6 +31,8 @@ window.addEventListener("load", function () {
           foodopt[i].style.display = "block";
         }
       }
+      templefoodbuttons[1].style.borderBottom = "1px solid white";
+      templefoodbuttons[0].style.borderBottom = "0px solid white";
     }
   }
 

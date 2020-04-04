@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     @@include('layout/head.html')
     <!-- 視差滑動 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
@@ -13,16 +12,45 @@
 <body>
     @@include('layout/component/mouse_ghost.html')
     <div class="wrapper">
+        <!-- 文章 燈箱 -->
+        <div id="forum_contentbox">
+            <div class="content_out"></div>
+            <div class="chat_msg">
+                <form action="" method="post" onsubmit="return false" enctype="multipart/form-data">
+                    <input type="text" id="msg_chat" name="msg_chat" placeholder="回應 ....." />
+                    <input type="submit" id="msg_send" name="msg_send" value="送出" />
+                </form>
+            </div>
+        </div>
+        <!-- 檢舉 燈箱 -->
+        <div id="forum_report">
+            <h2>檢舉原因為何？</h2>
+            <form action="">
+                <p>
+                    <input type="radio" name="report" id="report_1" value="色情、暴力等不雅內容" />
+                    <label for="report_1">色情、暴力等不雅內容</label>
+                </p>
+                <p>
+                    <input type="radio" name="report" id="report_2" value="辱罵他人等文字" />
+                    <label for="report_2">辱罵他人等文字</label>
+                </p>
+                <p>
+                    <input type="radio" name="report" id="report_3" value="其他違規事項" />
+                    <label for="report_3">其他違規事項</label>
+                </p>
+                <div class="forum_report_control">
+                    <input type="button" value="取消" id="forum_report_cance" />
+                    <input type="button" value="送出" id="forum_report_sub" />
+                </div>
+            </form>
+        </div>
         <div id="ghostIndexBG">
             <!-- 霧氣 -->
             @@include('layout/component/indexsmoke.html')
             @@include('layout/header.html')
             <section id="indexSection1">
-
                 <div class="parallaxContainer">
-
                     <ul id="scene">
-
                         <li class="layer" data-depth="1">
                             <div class="text-anim ">
                                 <span>探</span>
@@ -374,26 +402,26 @@
                         <div class="adventrue_right">
                             <div class="adventrue_right_itemall">
                                 <!-- <div class="adventrue_right_item">
-                                <div class="adv_r_item_img">
-                                    <img src="img/index/top1Img_1.png" alt="">
-                                </div>
-                            
-                                <div class="adv_r_item_txt">
-                                    <h1>【台南廢棄醫院之旅】</h1>
-                                    <p>真的快嚇死我了！！！大家都知道前幾年
-                                        有個女教師在新埔站廁所上吊的新聞嗎？
-                                        聽說從那之後捷運站女廁常常會發生突然
-                                        被拍肩的.....
-                                    </p>
-                                    <ul>
-                                        <li><i class="fas fa-user-alt"></i>董董老師</li>
-                                        <li><i class="far fa-calendar-alt"></i>01/06號</li>
-                                        <li><i class="fas fa-user-plus"></i> 1/6人</li>
-                                    </ul>
+                            <div class="adv_r_item_img">
+                                <img src="img/index/top1Img_1.png" alt="">
+                            </div>
+                        
+                            <div class="adv_r_item_txt">
+                                <h1>【台南廢棄醫院之旅】</h1>
+                                <p>真的快嚇死我了！！！大家都知道前幾年
+                                    有個女教師在新埔站廁所上吊的新聞嗎？
+                                    聽說從那之後捷運站女廁常常會發生突然
+                                    被拍肩的.....
+                                </p>
+                                <ul>
+                                    <li><i class="fas fa-user-alt"></i>董董老師</li>
+                                    <li><i class="far fa-calendar-alt"></i>01/06號</li>
+                                    <li><i class="fas fa-user-plus"></i> 1/6人</li>
+                                </ul>
 
-                                </div>
-                           
-                            </div> -->
+                            </div>
+                       
+                        </div> -->
                                 <!-- adventrue_right_item 右邊每一攔-->
 
                             </div>
@@ -439,18 +467,15 @@
                 <script src="js/index_section3.js"></script>
             </section>
 
-
             <section id="section4">
                 <!-- 標題 -->
                 <div class="title_forum">
                     <h1 class="title">熱門</h1>
-                    <h1 class="title2">靈異討論</h1>
+                    <h1 class="title2 title">靈異討論</h1>
                     <img src="./img/index/forum_hand-2.png" alt="" />
                 </div>
                 <div class="card_channel">
-                    <div class="card_warp" id="card_slider">
-
-                    </div>
+                    <div class="card_warp" id="card_slider"></div>
                     <!-- 左右按鈕 -->
                     <div id="card_btn">
                         <button id="left_btn" class="scrollBtn" disabled>
@@ -464,18 +489,42 @@
                 <!-- 圖片 -->
                 <img class="card_path_1" src="./img/index/forum_hand-1.png" alt="" />
                 <img class="card_path_2" src="./img/index/forum_ghost.png" alt="" />
+                <button class="goForum"><a href="forum.html">查看更多文章</a></button>
+
                 <script src="./js/index_forun.js"></script>
+                <script src="./js/forum.js"></script>
             </section>
             @@include('layout/footer.html')
         </div>
         <!-- 視差滑動 -->
         <script>
-            var scene = document.getElementById('scene')
+            var scene = document.getElementById("scene")
             var parallax = new Parallax(scene)
         </script>
-
         <!-- 靈異景點top3輪播 -->
         <script src="./js/indexSpotCarasoul.js"></script>
+    </div>
+    <!-- 會員判定 -->
+    <script>
+        function checkLoginStatus() {
+            var xhr = new XMLHttpRequest()
+            var url = "./php/logininfo.php"
+            xhr.open("GET", url, true)
+            xhr.send(null)
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    member = JSON.parse(xhr.responseText)
+                    if (!member.mem_name) {
+                        $("#forum_contentbox").css("display", "none")
+                        $(".contentbox").remove()
+                        alert("請先登入")
+                        $("#indexLogin,#login_page1").css("display", "block")
+                    }
+                }
+            }
+        }
+        document.getElementById("msg_chat").addEventListener("click", checkLoginStatus)
+    </script>
 </body>
 
 </html>
