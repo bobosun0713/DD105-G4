@@ -111,12 +111,6 @@ try {
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./backend_StartGroup_msg_report.html">
-                <i class="cil-flag-alt m-2"></i>
-                揪團留言檢舉管理
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="./back_forum.html">
                 <i class="cil-speech m-2"></i>
                 討論區檢舉管理
