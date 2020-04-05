@@ -125,7 +125,7 @@ try {
         <li class="nav-item nav-dropdown">
             <a class="nav-link" href="./backend_leader.php">
                 <i class="cil-star m-2"></i>
-                排行榜管理
+                查看排行榜
             </a>
         </li>
     </ul>
@@ -148,7 +148,7 @@ try {
                         <a href="#">後台管理</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        美食景點管理
+                        查看排行榜
                     </li>
                 </ol>
                 <!-- =================== Breadcrumb =================== -->

@@ -7,6 +7,7 @@
     width: 100%;
     animation:  pages  5s infinite ease-in-out alternate-reverse;
         //背景圖動畫
+        //背景圖動畫
         @keyframes pages {
             from { background-position: 0 0; } 
             to { background-position: 100% 0; }
@@ -105,7 +106,7 @@
               width: 300px;
               height: 250px;
               position: relative; 
-              margin: 60px;
+              margin: 15px;
               animation: front-end 5s infinite;
               }
           // 後台圖 
@@ -116,7 +117,7 @@
               width: 300px;
               height: 250px;
               position: relative;
-              margin: 60px;
+              margin: 15px;
               animation: front-end 5s infinite; 
               }
           // //前後台圖上下浮動
